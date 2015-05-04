@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.6)  4 MAY 2015 19:14
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.6)  4 MAY 2015 22:47
 entering extended mode
 **tenderTemplate.tex
 ("C:\Users\Hakujin\Documents\GitHub\COS-301-Main-Project\Figbook's Tender\tenderTemplate.tex"
@@ -305,7 +305,7 @@ LaTeX Info: Redefining \nameref on input line 11.
 \@outlinefile=\write3
 
 ("C:\Users\Hakujin\Documents\GitHub\COS-301-Main-Project\Figbook's Tender\coverPage.tex"
-<images/UP_Logo.png, id=107, 900.36375pt x 269.50688pt>
+<images/UP_Logo.png, id=131, 900.36375pt x 269.50688pt>
 File: images/UP_Logo.png Graphic file (type png)
  <use images/UP_Logo.png>
 Package pdftex.def Info: images/UP_Logo.png used on input line 6.
@@ -327,28 +327,45 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
                    \relax 
 l.18 \newpage
               [1] ("C:\Users\Hakujin\Documents\GitHub\COS-301-Main-Project\Figbook's Tender\theTeam.tex"
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 8.
+<images/Jimmy.jpg, id=180, 1043.9pt x 782.925pt>
+File: images/Jimmy.jpg Graphic file (type jpg)
+ <use images/Jimmy.jpg>
+Package pdftex.def Info: images/Jimmy.jpg used on input line 8.
+(pdftex.def)             Requested size: 200.75073pt x 150.5612pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 13.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 8.
- [2] [3]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 13.
+ [2 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Figbook's Tender/images/Jimmy.jpg>] [3]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
- [4]
-<images/armand.jpg, id=163, 4175.6pt x 3131.7pt>
+ [4] <images/armand.jpg, id=194, 4175.6pt x 3131.7pt>
 File: images/armand.jpg Graphic file (type jpg)
  <use images/armand.jpg>
-Package pdftex.def Info: images/armand.jpg used on input line 92.
+Package pdftex.def Info: images/armand.jpg used on input line 97.
 (pdftex.def)             Requested size: 200.75073pt x 150.52538pt.
- [5 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Figbook's Tender/images/armand.jpg>] [6]
+
+[5 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Figbook's Tender/images/armand.jpg>] [6]
+<images/Kgomotso.jpg, id=204, 782.925pt x 1043.9pt>
+File: images/Kgomotso.jpg Graphic file (type jpg)
+ <use images/Kgomotso.jpg>
+Package pdftex.def Info: images/Kgomotso.jpg used on input line 143.
+(pdftex.def)             Requested size: 150.5612pt x 200.75073pt.
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
- [7] [8] [9])
+ [7 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Figbook's Tender/images/Kgomotso.jpg>] [8] <images/Ndivhuwo.
+jpg, id=213, 1043.9pt x 782.925pt>
+File: images/Ndivhuwo.jpg Graphic file (type jpg)
+
+<use images/Ndivhuwo.jpg>
+Package pdftex.def Info: images/Ndivhuwo.jpg used on input line 187.
+(pdftex.def)             Requested size: 200.75073pt x 150.5612pt.
+ [9 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Figbook's Tender/images/Ndivhuwo.jpg>] [10])
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
@@ -363,37 +380,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--31
  []
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 33.
-[10]
+[11]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 33.
  ("C:\Users\Hakujin\Documents\GitHub\COS-301-Main-Project\Figbook's Tender\tenderTemplate.aux")
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 33.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 33.
-
-
-Package rerunfilecheck Warning: File `tenderTemplate.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `tenderTemplate.out':
-(rerunfilecheck)             Before: 51E5D066A082B75A26DE16A4DE714163;1975
-(rerunfilecheck)             After:  624569A8B2B63137D841741F529BBD48;2448.
+Package rerunfilecheck Info: File `tenderTemplate.out' has not changed.
+(rerunfilecheck)             Checksum: 624569A8B2B63137D841741F529BBD48;2448.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 33.
  ) 
 Here is how much of TeX's memory you used:
- 5684 strings out of 493921
- 85942 string characters out of 3144871
- 173212 words of memory out of 3000000
- 8881 multiletter control sequences out of 15000+200000
+ 5706 strings out of 493921
+ 86376 string characters out of 3144871
+ 174212 words of memory out of 3000000
+ 8899 multiletter control sequences out of 15000+200000
  9620 words of font info for 34 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 34i,6n,32p,444b,382s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,6n,32p,393b,384s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
 type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Pro
 gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on tenderTemplate.pdf (11 pages, 4918798 bytes).
+Output written on tenderTemplate.pdf (12 pages, 5173778 bytes).
 PDF statistics:
- 228 PDF objects out of 1000 (max. 8388607)
- 44 named destinations out of 1000 (max. 500000)
- 219 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 259 PDF objects out of 1000 (max. 8388607)
+ 45 named destinations out of 1000 (max. 500000)
+ 282 words of extra memory for PDF output out of 10000 (max. 10000000)
 
