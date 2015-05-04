@@ -3,24 +3,30 @@
 \contentsline {subsubsection}{\numberline {1.1.1}Interests:}{2}{subsubsection.1.1.1}
 \contentsline {subsubsection}{\numberline {1.1.2}Technical Skills:}{2}{subsubsection.1.1.2}
 \contentsline {subsubsection}{\numberline {1.1.3}Relevant Past Experience:}{2}{subsubsection.1.1.3}
-\contentsline {subsubsection}{\numberline {1.1.4}Non- Technical Strengths:}{3}{subsubsection.1.1.4}
+\contentsline {subsubsection}{\numberline {1.1.4}Non-Technical Strengths:}{3}{subsubsection.1.1.4}
 \contentsline {subsubsection}{\numberline {1.1.5}Why I chose this project:}{3}{subsubsection.1.1.5}
 \contentsline {subsection}{\numberline {1.2}Sphelele Malo}{4}{subsection.1.2}
 \contentsline {subsubsection}{\numberline {1.2.1}Interests:}{4}{subsubsection.1.2.1}
 \contentsline {subsubsection}{\numberline {1.2.2}Technical Skills:}{4}{subsubsection.1.2.2}
 \contentsline {subsubsection}{\numberline {1.2.3}Relevant Past Experience:}{4}{subsubsection.1.2.3}
-\contentsline {subsubsection}{\numberline {1.2.4}Non- Technical Strengths:}{4}{subsubsection.1.2.4}
+\contentsline {subsubsection}{\numberline {1.2.4}Non-Technical Strengths:}{4}{subsubsection.1.2.4}
 \contentsline {subsubsection}{\numberline {1.2.5}Why I chose this project:}{4}{subsubsection.1.2.5}
 \contentsline {subsection}{\numberline {1.3}Armand Pieterse}{5}{subsection.1.3}
 \contentsline {subsubsection}{\numberline {1.3.1}Interests:}{5}{subsubsection.1.3.1}
 \contentsline {subsubsection}{\numberline {1.3.2}Technical Skills:}{5}{subsubsection.1.3.2}
-\contentsline {subsubsection}{\numberline {1.3.3}Relevant Past Experience:}{5}{subsubsection.1.3.3}
-\contentsline {subsubsection}{\numberline {1.3.4}Non- Technical Strengths:}{5}{subsubsection.1.3.4}
+\contentsline {subsubsection}{\numberline {1.3.3}Relevant Past Experience:}{6}{subsubsection.1.3.3}
+\contentsline {subsubsection}{\numberline {1.3.4}Non-Technical Strengths:}{6}{subsubsection.1.3.4}
 \contentsline {subsubsection}{\numberline {1.3.5}Why I chose this project:}{6}{subsubsection.1.3.5}
 \contentsline {subsection}{\numberline {1.4}Kgomotso Sito}{7}{subsection.1.4}
 \contentsline {subsubsection}{\numberline {1.4.1}Interests:}{7}{subsubsection.1.4.1}
 \contentsline {subsubsection}{\numberline {1.4.2}Technical Skills:}{7}{subsubsection.1.4.2}
 \contentsline {subsubsection}{\numberline {1.4.3}Relevant Past Experience:}{7}{subsubsection.1.4.3}
-\contentsline {subsubsection}{\numberline {1.4.4}Non- Technical Strengths:}{7}{subsubsection.1.4.4}
+\contentsline {subsubsection}{\numberline {1.4.4}Non-Technical Strengths:}{7}{subsubsection.1.4.4}
 \contentsline {subsubsection}{\numberline {1.4.5}Why I chose this project:}{8}{subsubsection.1.4.5}
-\contentsline {section}{\numberline {2}Project Execution}{9}{section.2}
+\contentsline {subsection}{\numberline {1.5}Ndivhuwo Nthambeleni}{9}{subsection.1.5}
+\contentsline {subsubsection}{\numberline {1.5.1}Interests:}{9}{subsubsection.1.5.1}
+\contentsline {subsubsection}{\numberline {1.5.2}Technical Skills:}{9}{subsubsection.1.5.2}
+\contentsline {subsubsection}{\numberline {1.5.3}Relevant Past Experience:}{9}{subsubsection.1.5.3}
+\contentsline {subsubsection}{\numberline {1.5.4}Non-Technical Strengths:}{9}{subsubsection.1.5.4}
+\contentsline {subsubsection}{\numberline {1.5.5}Why I chose this project:}{9}{subsubsection.1.5.5}
+\contentsline {section}{\numberline {2}Project Execution}{10}{section.2}
