@@ -1,7 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.3)  4 MAY 2015 08:22
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.3)  4 MAY 2015 12:52
 entering extended mode
 **tenderTemplate.tex
-("C:\Users\Khomcy\Desktop\LinPhone Group Chat Tender\tenderTemplate.tex"
+
+("C:\Users\Khomcy\Documents\GitHub\COS-301-Main-Project\LinPhone Group Chat Ten
+der\tenderTemplate.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -229,7 +231,8 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \FrameRule=\dimen119
 \FrameSep=\dimen120
 )
-("C:\Users\Khomcy\Desktop\LinPhone Group Chat Tender\tenderTemplate.aux")
+("C:\Users\Khomcy\Documents\GitHub\COS-301-Main-Project\LinPhone Group Chat Ten
+der\tenderTemplate.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
@@ -307,12 +310,14 @@ LaTeX Info: Redefining \ref on input line 11.
 LaTeX Info: Redefining \pageref on input line 11.
 LaTeX Info: Redefining \nameref on input line 11.
 
-("C:\Users\Khomcy\Desktop\LinPhone Group Chat Tender\tenderTemplate.out")
-("C:\Users\Khomcy\Desktop\LinPhone Group Chat Tender\tenderTemplate.out")
+("C:\Users\Khomcy\Documents\GitHub\COS-301-Main-Project\LinPhone Group Chat Ten
+der\tenderTemplate.out")
+("C:\Users\Khomcy\Documents\GitHub\COS-301-Main-Project\LinPhone Group Chat Ten
+der\tenderTemplate.out")
 \@outlinefile=\write3
 
-("C:\Users\Khomcy\Desktop\LinPhone Group Chat Tender\coverPage.tex"
-<images/UP_Logo.png, id=119, 900.36375pt x 269.50688pt>
+("C:\Users\Khomcy\Documents\GitHub\COS-301-Main-Project\LinPhone Group Chat Ten
+der\coverPage.tex" <images/UP_Logo.png, id=79, 900.36375pt x 269.50688pt>
 File: images/UP_Logo.png Graphic file (type png)
 
 <use images/UP_Logo.png>
@@ -326,9 +331,10 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 31.
  [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Khomcy/Desktop/L
-inPhone Group Chat Tender/images/UP_Logo.png>])
-("C:\Users\Khomcy\Desktop\LinPhone Group Chat Tender\tenderTemplate.toc")
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Khomcy/Documents
+/GitHub/COS-301-Main-Project/LinPhone Group Chat Tender/images/UP_Logo.png>])
+("C:\Users\Khomcy\Documents\GitHub\COS-301-Main-Project\LinPhone Group Chat Ten
+der\tenderTemplate.toc")
 \tf@toc=\write4
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
@@ -336,52 +342,125 @@ been already used, duplicate ignored
                    \relax 
 l.18 \newpage
               [1]
-("C:\Users\Khomcy\Desktop\LinPhone Group Chat Tender\theTeam.tex"
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 8.
+("C:\Users\Khomcy\Documents\GitHub\COS-301-Main-Project\LinPhone Group Chat Ten
+der\theTeam.tex" <images/Jimmy.jpg, id=115, 1043.9pt x 782.925pt>
+File: images/Jimmy.jpg Graphic file (type jpg)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+<use images/Jimmy.jpg>
+Package pdftex.def Info: images/Jimmy.jpg used on input line 7.
+(pdftex.def)             Requested size: 200.75073pt x 150.5612pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 12.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 8.
- [2] [3]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 12.
+[2 <C:/Users/Khomcy/Documents/GitHub/COS-301-Main-Project/LinPhone Group Chat T
+ender/images/Jimmy.jpg>] [3]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
- [4] [5]
-[6]
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no “ in font cmr12!
- [7] [8])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 34.
- [9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 34.
+ [4]
+<images/armand.jpg, id=129, 4175.6pt x 3131.7pt>
+File: images/armand.jpg Graphic file (type jpg)
+ <use images/armand.jpg>
+Package pdftex.def Info: images/armand.jpg used on input line 96.
+(pdftex.def)             Requested size: 200.75073pt x 150.52538pt.
 
-("C:\Users\Khomcy\Desktop\LinPhone Group Chat Tender\tenderTemplate.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 34.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 34.
+[5 <C:/Users/Khomcy/Documents/GitHub/COS-301-Main-Project/LinPhone Group Chat T
+ender/images/armand.jpg>] [6]
+<images/Kgomotso.jpg, id=139, 782.925pt x 1043.9pt>
+File: images/Kgomotso.jpg Graphic file (type jpg)
+ <use images/Kgomotso.jpg>
+Package pdftex.def Info: images/Kgomotso.jpg used on input line 142.
+(pdftex.def)             Requested size: 150.5612pt x 200.75073pt.
+
+Runaway argument?
+{figure \subsubsection {Interests:} \begin {itemize} \item Soccer \item \ETC.
+! Paragraph ended before \end was complete.
+<to be read again> 
+                   \par 
+l.164 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no “ in font cmr12!
+)
+
+! LaTeX Error: \begin{figure} on input line 140 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 \end{document}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 46.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 46.
+
+("C:\Users\Khomcy\Documents\GitHub\COS-301-Main-Project\LinPhone Group Chat Ten
+der\tenderTemplate.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 46.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 46.
 Package rerunfilecheck Info: File `tenderTemplate.out' has not changed.
-(rerunfilecheck)             Checksum: 33B7C4D8986624FC863A3F709496C85F;2163.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 34.
- ) 
+(rerunfilecheck)             Checksum: C21DA0C689FF15EFD93979B38B871723;1447.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 46.
+
+! You can't use `\end' in internal vertical mode.
+\enddocument ...es \z@ \Call@AtVeryVeryEnd \@@end 
+                                                  
+l.46 \end{document}
+                   
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+! LaTeX Error: \begin{figure} on input line 140 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 \end{document}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.46 \end{document}
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+)
+! Emergency stop.
+<*> tenderTemplate.tex
+                      
+*** (job aborted, no legal \end found)
+
+ 
 Here is how much of TeX's memory you used:
- 5677 strings out of 493921
- 84972 string characters out of 3147280
- 173212 words of memory out of 3000000
- 8880 multiletter control sequences out of 15000+200000
+ 5670 strings out of 493921
+ 85424 string characters out of 3147280
+ 178212 words of memory out of 3000000
+ 8882 multiletter control sequences out of 15000+200000
  9620 words of font info for 34 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 34i,6n,32p,444b,382s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmtt12.pfb>
-Output written on tenderTemplate.pdf (10 pages, 307156 bytes).
-PDF statistics:
- 231 PDF objects out of 1000 (max. 8388607)
- 40 named destinations out of 1000 (max. 500000)
- 238 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 34i,6n,32p,1019b,447s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!
