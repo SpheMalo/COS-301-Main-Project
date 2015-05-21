@@ -107,10 +107,42 @@ module.}
 \caption{Service contract for creating a new project (manuscript)}
 \end{figure}
 
-\item \textbf{Delete Manuscript}
-\item \textbf{Link to Social Media}
+
+\item \textbf{deleteManuscript – priority: important}\\
+\par{This use case which removes manuscript and persists changes to the database. }
+
+\par{\textbf{service contract:} 
+The service contract for the deleteManuscript  service is shown in figure below. The pre-conditions are enforced (raising the appropriate exception should they not be met) and the manuscript of interest is deleted and changes are persisted through to database.}
+
+\begin{figure}[h]
+\includegraphics[height=300px, width=500px]{epsImages/ManuscriptManagement/deleteManuscript.eps}
+\caption{Service contract for deleting a  project (manuscript)}
+\end{figure}
+
+\item \textbf{linkToSocialMedia – priority: important}\\
+\par{important  This use case which link manuscript to social media and create an automated post}
+
+\par{\textbf{service contract:} 
+The service contract for the linkToSocialMedia service is shown in figure below. The pre-conditions are enforced (raising the appropriate exception should they not be met) and a post for the manuscript of interest  is created.}
+
+\begin{figure}[h]
+\includegraphics[height=300px, width=500px]{epsImages/ManuscriptManagement/linkToSocialMedia.eps}
+\caption{Service contract for linking a  project (manuscript) to a social network}
+\end{figure}
+
+
+\item \textbf{editManuscript – priority: important}\\
+\par{This use case which allows one to edit  manuscript and changes are persisted to database.}
+
+\par{\textbf{service contract:} 
+service contract The service contract for the editManuscript service is shown in figure below. The pre-conditions are enforced (raising the appropriate exception should they not be met) and the manuscript of interest is edited and changes are persisted to database}
+
+\begin{figure}[h]
+\includegraphics[height=300px, width=500px]{epsImages/ManuscriptManagement/editManuscript.eps}
+\caption{Service contract for editing a  project (manuscript)}
+\end{figure}
+
 \item \textbf{Evaluate Manuscript}
-\item \textbf{Edit Manuscript}
 \item \textbf{Read Manuscript}
 \item \textbf{Send Manuscript - priority: important}\\
 This use case allows a user to send a another user on the system the manuscript. This allows the recipient to access it and, depending on the priviledges afforded by the owner of the manuscript, be able to read/modify it.
