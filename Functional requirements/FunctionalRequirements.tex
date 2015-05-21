@@ -7,6 +7,8 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{color}
 \usepackage{framed}
+\usepackage{epsfig}
+\usepackage{epstopdf}
 
 \begin{document}
 
@@ -42,11 +44,21 @@ module.}
 \begin{enumerate}
 
 
-\item \bf{Register} 
-\item \bf{Login}
-\item \bf{Logout}
-\item \bf{EditAccount}
-\item \bf{DeleteAccount}
+\item \textbf{registerAccount  – priority: important } 
+This use case creates  a user account and is persisted through to database.
+
+\par{\textbf{service contract} The service contract for the registerAccount  service is shown in figure below. The pre-conditions are enforced (raising the appropriate exception should they not be met) and the requested account is created and persisted through to database.}
+\\
+\includegraphics[scale=.9]{epsImages/serviceContract.eps}\\
+\item \textbf{Login}
+\item \textbf{Logout}
+\item \textbf{EditAccount}
+\item \textbf{deleteAccount  – priority: important} 
+This use case creates  a user account and is persisted through to database.
+
+\par{\textbf{service contract} The service contract for the deleteAccount  service is shown in figure below. The pre-conditions are enforced (raising the appropriate exception should they not be met) and the account of interest is deleted and changes are persisted through to database.}
+\\
+\includegraphics[scale=.9]{epsImages/deleteAccount.eps}\\
 \item \bf{SuspendAccount}
 \end{enumerate}
 \end{document}
