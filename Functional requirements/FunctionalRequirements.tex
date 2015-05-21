@@ -138,10 +138,10 @@ The service contract for the linkToSocialMedia service is shown in figure below.
 service contract The service contract for the editManuscript service is shown in figure below. The pre-conditions are enforced (raising the appropriate exception should they not be met) and the manuscript of interest is edited and changes are persisted to database}
 
 \begin{figure}[h]
-\includegraphics[height=300px, width=500px]{epsImages/ManuscriptManagement/editManuscript.eps}
+\includegraphics[height=250px, width=500px]{epsImages/ManuscriptManagement/editManuscript.eps}
 \caption{Service contract for editing a  project (manuscript)}
 \end{figure}
-
+\newpage
 \item \textbf{Evaluate Manuscript}
 \item \textbf{Read Manuscript}
 \item \textbf{Send Manuscript - priority: important}\\
@@ -150,7 +150,7 @@ This use case allows a user to send a another user on the system the manuscript.
 \textbf{service contract:} below is a figure of the sendManuscript service contract.
 
 \begin{figure}[h]
-\includegraphics[height=300px, width=500px]{epsImages/ManuscriptManagement/sendManuscriptServiceContract.eps}
+\includegraphics[height=250px, width=500px]{epsImages/ManuscriptManagement/sendManuscriptServiceContract.eps}
 \caption{Service contract for sending a manuscript}
 \end{figure}
  
@@ -166,7 +166,17 @@ module.}
 
 \begin{enumerate}
 \item \textbf{Send Letter}
-\item \textbf{View Messages}
+\item \textbf{View Letter - priority: important}\\
+\par{This use case allows a user to view one of the letters sent to him/her. The letter can be an editorial letter, contract offer or query letter etc.}
+
+\textbf{service contract:} Below is a diagram of a service contract of viewing a letter.
+
+\begin{figure}[h]
+\includegraphics[height=250px, width=500px]{epsImages/Communication/viewLetterServiceContract.eps}
+\caption{Service contract for viewing a letter}
+\end{figure}
+\newpage
+
 \item \textbf{Write Comment}
 
 \end{enumerate}
