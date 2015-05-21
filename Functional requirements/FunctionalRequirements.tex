@@ -84,11 +84,11 @@ This use case allows the system administrator to suspend a users account for any
 \\ \textbf{service contract:} The service contract for the suspendAccount service is shown below. 
 \begin{figure}[h]
 \includegraphics[height=250px, width=500px]{epsImages/Authentication/suspendServiceContract.eps}
-\caption{Service contract for deleting a users account}
+\caption{Service contract for suspending a users account}
 \end{figure} 
 \end{enumerate}
 
-\subsection{Authentication}
+\subsection{Manuscript Management}
 
 \subsubsection{scope}
 \par{This section provides the details use case requirements for the use cases offered by the Authentication
@@ -112,6 +112,30 @@ module.}
 \item \textbf{Evaluate Manuscript}
 \item \textbf{Edit Manuscript}
 \item \textbf{Read Manuscript}
-\item \textbf{Send Manuscript}
+\item \textbf{Send Manuscript - priority: important}\\
+This use case allows a user to send a another user on the system the manuscript. This allows the recipient to access it and, depending on the priviledges afforded by the owner of the manuscript, be able to read/modify it.
+
+\textbf{service contract:} below is a figure of the sendManuscript service contract.
+
+\begin{figure}[h]
+\includegraphics[height=300px, width=500px]{epsImages/ManuscriptManagement/sendManuscriptServiceContract.eps}
+\caption{Service contract for sending a manuscript}
+\end{figure}
+ 
+\end{enumerate}
+
+\subsection{Communication}
+
+\subsubsection{scope}
+\par{This section provides the details use case requirements for the use cases offered by the Authentication
+module.}
+
+\subsubsection{use cases}
+
+\begin{enumerate}
+\item \textbf{Send Letter}
+\item \textbf{View Messages}
+\item \textbf{Write Comment}
+
 \end{enumerate}
 \end{document}
