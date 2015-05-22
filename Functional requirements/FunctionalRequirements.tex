@@ -181,7 +181,7 @@ module.}
 
 \end{enumerate}
 
-\subsection{Manuscript Management}
+\subsection{Reporting}
 
 \subsubsection{scope}
 \par{This section provides the details use case requirements for the use cases offered by the Authentication
@@ -201,7 +201,15 @@ module.}
 \caption{Service contract for editing a work schedule}
 \end{figure}
 
-\item \textbf{createReport}
+\item \textbf{createReport - priority: important}\\
+\par{This use case creates  a report based on filters and provides it in printable format.}\\
+\par{\textbf{service contract:} The service contract for the createReport  service is shown in figure below. The pre-conditions are enforced (raising the appropriate exception should they not be met) and the report is created and return in a printable format.}
+
+\begin{figure}[h]
+\includegraphics[height=250px, width=500px]{epsImages/Reporting/createReport.eps}
+\caption{Service contract for creating a report}
+\end{figure}
+
 \item \textbf{viewReport - priority: important}\\
 \par{This use case allows users to view a generated report, on the system (before exporting to say, a pdf for example).}\\
 \par{\textbf{service contract:} Below is the service contract for viewing a report.}
