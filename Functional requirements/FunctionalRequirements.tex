@@ -51,15 +51,23 @@ module.}
 \begin{enumerate}
 
 
-\item \textbf{registerAccount  – priority: important } 
+\item \textbf{registerAccount  – priority: critical } 
 This use case creates  a user account and is persisted through to database.
 
 \par{\textbf{service contract} The service contract for the registerAccount  service is shown in figure below. The pre-conditions are enforced (raising the appropriate exception should they not be met) and the requested account is created and persisted through to database.}
 \begin{figure}[h]
 		\includegraphics[height=200px, width=500px]{epsImages/Authentication/serviceContract.eps}
-		\caption{Service contract for registering a new user account}
+		\caption{Service contract for logging into a user account}
 \end{figure}
-\item \textbf{Login}
+\item \textbf{Login - priority: critical}
+This use case allows a user to log into an existing account.
+
+\par{\textbf{service contract} The service contract for the login service is shown in figure below.}
+\begin{figure}[h]
+		\includegraphics[height=200px, width=500px]{epsImages/Authentication/LoginServiceContract.eps}
+		\caption{Service contract for logging into a user account}
+\end{figure}
+
 \item \textbf{Logout - priority: important} \\
 This use case allows a user to log out of the system safely.
 
@@ -145,10 +153,24 @@ service contract The service contract for the editManuscript service is shown in
 \caption{Service contract for editing a  project (manuscript)}
 \end{figure}
 \newpage
-\item \textbf{Evaluate Manuscript}
-\item \textbf{Read Manuscript}
-\item \textbf{Send Manuscript - priority: important}\\
-This use case allows a user to send a another user on the system the manuscript. This allows the recipient to access it and, depending on the priviledges afforded by the owner of the manuscript, be able to read/modify it.
+\item \textbf{Evaluate Manuscript - priority: critical}
+\par{This use case allows an agent or an editorial to evaluate the manuscript and to give the according feedback to the author, such as a comment or editorial letter.}
+
+\begin{figure}[h]
+\includegraphics[height=300px, width=500px]{epsImages/ManuscriptManagement/EvaluateManuscript.eps}
+\caption{Service contract for evaluating a manuscript}
+\end{figure}
+
+\item \textbf{Read Manuscript - priority: critical}
+\par{This use case grants access to users to view/read the manuscript}
+
+\begin{figure}[h]
+\includegraphics[height=300px, width=500px]{epsImages/ManuscriptManagement/ReadManuscript.eps}
+\caption{Service contract for reading a manuscript}
+\end{figure}
+
+\item \textbf{Send Manuscript - priority: critical}\\
+This use case allows a user link another user on the system to the manuscript. This allows the recipient to access it and, depending on the privileges afforded by the owner of the manuscript, be able to read/modify it.
 
 \textbf{service contract:} below is a figure of the sendManuscript service contract.
 
@@ -168,8 +190,15 @@ module.}
 \subsubsection{use cases}
 
 \begin{enumerate}
-\item \textbf{Send Letter}
-\item \textbf{View Letter - priority: important}\\
+\item \textbf{Send Letter - priority: critical}
+\par{This use case allow the writing and sending of an appropriate letter to the corresponding user, such as a query letter to the agent. Available letters are: editorial letter, contract offer and query letter}
+
+\begin{figure}[h]
+\includegraphics[height=250px, width=500px]{epsImages/Communication/sendLetterServiceContract.eps}
+\caption{Service contract for sending a letter}
+\end{figure}
+
+\item \textbf{View Letter - priority: critical}\\
 \par{This use case allows a user to view one of the letters sent to him/her. The letter can be an editorial letter, contract offer or query letter etc.}
 
 \textbf{service contract:} Below is a diagram of a service contract of viewing a letter.
@@ -193,9 +222,23 @@ module.}
 \subsubsection{use cases}
 
 \begin{enumerate}
-\item \textbf{reateSchedule}
-\item \textbf{viewSchedule}
-\item \textbf{editSchedule - priority: important}\\
+\item \textbf{CreateSchedule - priority: important}
+\par{This use case allows a user to create a work schedule for the book that may consist of multiple tasks.}
+
+\begin{figure}[h]
+\includegraphics[height=250px, width=500px]{epsImages/Reporting/createSchedule.eps}
+\caption{Service contract for creating a work schedule}
+\end{figure}
+
+\item \textbf{ViewSchedule - priority: important}
+\par{This use case allows a user to view the work schedule for the book.}
+
+\begin{figure}[h]
+\includegraphics[height=250px, width=500px]{epsImages/Reporting/viewSchedule.eps}
+\caption{Service contract for viewing a work schedule}
+\end{figure}
+
+\item \textbf{EditSchedule - priority: important}\\
 \par{This use case allows a user to make changes to the work schedule of the book.}
 \par{\textbf{service contract:} below is the service contract for editing a work schedule}
 
