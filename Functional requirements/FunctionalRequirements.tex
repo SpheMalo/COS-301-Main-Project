@@ -3,7 +3,7 @@
 \usepackage{pdflscape}
 \usepackage[margin=0.8in]{geometry}
 \usepackage{titling}
-\usepackage{graphicx} %Required for diagrams
+\usepackage{graphics} %Required for diagrams
 \usepackage[hidelinks]{hyperref}
 \usepackage{color}
 \usepackage{framed}
@@ -30,6 +30,7 @@
 
 \subsection{Project scope}
 
+\newpage
 \section{Application requirements and design}
 \par{This section discusses for each module of the Figbook system the functional requirements
 as well as the process designs for the use cases and the domain models which must be maintained
@@ -46,7 +47,8 @@ module.}
 	\caption{Scope for authentication module}
 \end{figure}
 
-\subsubsection{use cases}
+\newpage
+\subsubsection{Service contracts for use cases}
 
 \begin{enumerate}
 
@@ -96,16 +98,19 @@ This use case allows the system administrator to suspend a users account for any
 \end{figure} 
 \end{enumerate}
 
+\newpage
 \subsection{Manuscript Management}
 
 \subsubsection{scope}
-\par{This section provides the details use case requirements for the use cases offered by the Authentication
-module.}
+\par{This section provides the detailed service contracts for the use cases offered by the Manuscript Management module.}
+
 \begin{figure}[h]
-	\includegraphics[height=200px, width=500px]{epsImages/ManuscriptManagement/manuscriptManagement.eps}
+	\includegraphics[height=200px, width=500px]{epsImages/ManuscriptManagement/scope.eps}
 	\caption{Scope for manuscript management module}
 \end{figure}
 \subsubsection{use cases}
+
+\newpage
 
 \begin{enumerate}
 \item \textbf{Create Manuscript - priority: critical}\\
