@@ -1,0 +1,23 @@
+\contentsline {section}{\numberline {1}Vision and scope}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Project Background}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Project vision}{3}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Project scope}{3}{subsection.1.3}
+\contentsline {section}{\numberline {2}Application requirements and design}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Authentication}{4}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}scope}{4}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Use Cases}{5}{subsubsection.2.1.2}
+\contentsline {subsection}{\numberline {2.2}Manuscript Management}{8}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}scope}{8}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Use Cases}{9}{subsubsection.2.2.2}
+\contentsline {subsection}{\numberline {2.3}Reporting}{17}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}scope}{17}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Use Cases}{17}{subsubsection.2.3.2}
+\contentsline {subsection}{\numberline {2.4}Communication}{19}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}scope}{19}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}Use Cases}{19}{subsubsection.2.4.2}
+\contentsline {subsection}{\numberline {2.5}Design}{21}{subsection.2.5}
+\contentsline {subsubsection}{\numberline {2.5.1}scope}{21}{subsubsection.2.5.1}
+\contentsline {subsubsection}{\numberline {2.5.2}Use Cases}{21}{subsubsection.2.5.2}
+\contentsline {subsection}{\numberline {2.6}Production}{23}{subsection.2.6}
+\contentsline {subsubsection}{\numberline {2.6.1}scope}{23}{subsubsection.2.6.1}
+\contentsline {subsubsection}{\numberline {2.6.2}Use Cases}{24}{subsubsection.2.6.2}
