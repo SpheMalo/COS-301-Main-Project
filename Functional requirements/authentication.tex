@@ -1,10 +1,10 @@
 \subsection{Authentication}
 
 \subsubsection{scope}
-\par{This section provides the details use case requirements for the use cases offered by the Authentication
-module.}
+\par{This module takes care of everything involving the users account. This includes functionality like logging in and out of the system, editing of user accounts etc. Further description is provided in the use cases below}
+
 \begin{figure}[h]
-	\includegraphics[height=200px, width=500px]{epsImages/Authentication/AuthenticationScope.eps}
+	\includegraphics[scale=0.9]{epsImages/Authentication/AuthenticationScope.eps}
 	\caption{Scope for authentication module}
 \end{figure}
 
@@ -13,50 +13,73 @@ module.}
 
 \begin{enumerate}
 
-
 \item \textbf{registerAccount  – priority: critical } 
-This use case creates  a user account and is persisted through to database.
+This use case creates  a user account that gets persisted to database.
 
-\par{\textbf{service contract} The service contract for the registerAccount  service is shown in figure below. The pre-conditions are enforced (raising the appropriate exception should they not be met) and the requested account is created and persisted through to database.}
+\textbf{service contract:}
 
 \begin{figure}[h]
-		\includegraphics[height=200px, width=500px]{epsImages/Authentication/serviceContract.eps}
+		\includegraphics[scale=0.9]{epsImages/Authentication/serviceContract.eps}
 		\caption{Service contract for registering new user account}
 \end{figure}
 
+\newpage
 \item \textbf{Login - priority: critical}
 This use case allows a user to log into an existing account.
 
 \par{\textbf{service contract} The service contract for the login service is shown in figure below.}
 \begin{figure}[h]
-		\includegraphics[height=200px, width=500px]{epsImages/Authentication/LoginServiceContract.eps}
+		\includegraphics[scale=0.9]{epsImages/Authentication/LoginServiceContract.eps}
 		\caption{Service contract for logging into a user account}
 \end{figure}
 
 \item \textbf{Logout - priority: important} \\
-This use case allows a user to log out of the system safely.
+This use case allows a user to log out of the system safely. \\ \\
 
-\par{\textbf{Service contract:} The service contract for logging out is shown below. The preconditions are enforced and the users session is ended, thus logging the user out of the system.}
+\textbf{Service contract:}
 \begin{figure}[h]
 
 \includegraphics[scale=.9]{epsImages/Authentication/logoutServiceContract.eps}
 \caption{Service contract for logging a user out of the system}
 \end{figure}
-\item \textbf{EditAccount}
-\item \textbf{deleteAccount  – priority: important} 
-This use case creates  a user account and is persisted through to database.
 
-\par{\textbf{service contract} The service contract for the deleteAccount  service is shown in figure below. The pre-conditions are enforced (raising the appropriate exception should they not be met) and the account of interest is deleted and changes are persisted through to database.}
+\newpage
+\item \textbf{editAccount - priority: important}
+	\par{This allows a user to make changes to their profile details. They will be allowed to edit the details they added when creating the account.}\\ \\
+	
+	\textbf{service contract:}\\
+	\begin{figure}[h]
+\includegraphics[scale=0.9]{epsImages/Authentication/editAccountServiceContract.eps}
+\caption{Service contract for editing a users account}
+\end{figure}
+
+\newpage
+\item \textbf{deleteAccount  – priority: important} 
+This use case creates  a user account that gets persisted to database.
+
+\textbf{service contract:}
 
 \begin{figure}[h]
-\includegraphics[height=200px, width=500px]{epsImages/Authentication/deleteAccount.eps}
+\includegraphics[scale=0.9]{epsImages/Authentication/deleteAccount.eps}
 \caption{Service contract for deleting a users account}
 \end{figure}
+
+\newpage
 \item \textbf{SuspendAccount - priority: important}\\
-This use case allows the system administrator to suspend a users account for any reason he/she may see as appropriate. A suspended account bars the user from logging in and/or using the account until the administrator lifts the suspension.
-\\ \textbf{service contract:} The service contract for the suspendAccount service is shown below. 
+\par{This use case allows the system administrator to suspend a users account for any reason he/she may see as appropriate. A suspended account bars the user from logging in and/or using the account until the administrator lifts the suspension.}\\ \\
+
+\textbf{service contract:}
+
 \begin{figure}[h]
-\includegraphics[height=250px, width=500px]{epsImages/Authentication/suspendServiceContract.eps}
+\includegraphics[scale=0.9]{epsImages/Authentication/suspendServiceContract.eps}
 \caption{Service contract for suspending a users account}
 \end{figure} 
 \end{enumerate}
+
+\newpage
+\textbf{Domain Model:} The Authentication module will keep Account objects in the database. Any part of the system that checks for user authorisation will check against the account table to see if that particular user has authorisation to do whatever it is they are attempting to do. 
+
+\begin{figure}[h]
+\includegraphics[scale=0.9]{epsImages/Authentication/domainModel.eps}
+\caption{Domain model of Authentication module}
+\end{figure}
