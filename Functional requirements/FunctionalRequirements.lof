@@ -1,0 +1,37 @@
+\contentsline {figure}{\numberline {1}{\ignorespaces Scope for authentication module}}{4}{figure.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces Service contract for registering new user account}}{5}{figure.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Service contract for logging into a user account}}{5}{figure.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces Service contract for logging a user out of the system}}{6}{figure.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces Service contract for deleting a users account}}{6}{figure.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces Service contract for suspending a users account}}{7}{figure.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces Scope for manuscript management module}}{8}{figure.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces Service contract for creating a new project (manuscript)}}{9}{figure.8}
+\contentsline {figure}{\numberline {9}{\ignorespaces Service contract for deleting a project (manuscript)}}{10}{figure.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces Service contract for linking a project (manuscript) to a social network}}{11}{figure.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces Service contract for editing a project (manuscript)}}{12}{figure.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces Service contract for evaluating a manuscript}}{13}{figure.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces Process Specification for evaluating a manuscript}}{13}{figure.13}
+\contentsline {figure}{\numberline {14}{\ignorespaces Service contract for reading a manuscript}}{14}{figure.14}
+\contentsline {figure}{\numberline {15}{\ignorespaces Service contract for sending a manuscript}}{15}{figure.15}
+\contentsline {figure}{\numberline {16}{\ignorespaces Domain model for managing a manuscript}}{16}{figure.16}
+\contentsline {figure}{\numberline {17}{\ignorespaces Scope of Reporting module}}{17}{figure.17}
+\contentsline {figure}{\numberline {18}{\ignorespaces Service contract for creating a work schedule}}{18}{figure.18}
+\contentsline {figure}{\numberline {19}{\ignorespaces Service contract for viewing a work schedule}}{19}{figure.19}
+\contentsline {figure}{\numberline {20}{\ignorespaces Service contract for editing a work schedule}}{20}{figure.20}
+\contentsline {figure}{\numberline {21}{\ignorespaces Service contract for creating a report}}{21}{figure.21}
+\contentsline {figure}{\numberline {22}{\ignorespaces Service contract for viewing a report}}{22}{figure.22}
+\contentsline {figure}{\numberline {23}{\ignorespaces Service contract for exporting a report}}{23}{figure.23}
+\contentsline {figure}{\numberline {24}{\ignorespaces Scope of Communication module}}{24}{figure.24}
+\contentsline {figure}{\numberline {25}{\ignorespaces Service contract for sending a letter}}{25}{figure.25}
+\contentsline {figure}{\numberline {26}{\ignorespaces Service contract for viewing a letter}}{26}{figure.26}
+\contentsline {figure}{\numberline {27}{\ignorespaces Scope of Design module}}{27}{figure.27}
+\contentsline {figure}{\numberline {28}{\ignorespaces Service contract for structuring a menuscript}}{28}{figure.28}
+\contentsline {figure}{\numberline {29}{\ignorespaces Service contract for creating a template design}}{29}{figure.29}
+\contentsline {figure}{\numberline {30}{\ignorespaces Service contract for creating a book cover}}{29}{figure.30}
+\contentsline {figure}{\numberline {31}{\ignorespaces Service contract for uploading a graphic}}{30}{figure.31}
+\contentsline {figure}{\numberline {32}{\ignorespaces Scope for Production module}}{30}{figure.32}
+\contentsline {figure}{\numberline {33}{\ignorespaces Service contract for registering a manuscript's ISBN number.}}{31}{figure.33}
+\contentsline {figure}{\numberline {34}{\ignorespaces Service contract for selecting a copy editor}}{32}{figure.34}
+\contentsline {figure}{\numberline {35}{\ignorespaces Service contract for selecting a proof reader}}{33}{figure.35}
+\contentsline {figure}{\numberline {36}{\ignorespaces Service contract for selecting a design team}}{34}{figure.36}
+\contentsline {figure}{\numberline {37}{\ignorespaces Service contract for evaluating a publish}}{35}{figure.37}
