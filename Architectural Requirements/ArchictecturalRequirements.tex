@@ -1,0 +1,45 @@
+\documentclass[12pt]{article}
+
+\usepackage{pdflscape}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{titling}
+\usepackage{graphics} %Required for diagrams
+\usepackage[hidelinks]{hyperref}
+\usepackage{color}
+\usepackage{framed}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+
+\begin{document}
+
+\input{coverPage.tex}
+
+\newpage
+\tableofcontents
+
+\newpage
+\listoffigures
+
+\newpage
+
+\section{Architecture requirements}
+	\input{ArchitecturalScope}
+
+	\input{QualityRequirements}
+
+	\input{IntegrationAccess}
+
+	\input{ArchitecturalConstraints}
+
+	\input{PatternsStyles}
+
+	\input{ArchitecturalScope}
+
+	\input{ReferenceAchitectures}
+	
+	\input{Technologies}
+
+	\input{test}
+
+	\input{References}
+\end{document}
