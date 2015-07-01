@@ -2,6 +2,7 @@
 
 require("databaseHandler.php");
 require("user.php");
+require("view_profile.php")
 
 
 $dbHandler = new databaseHandler();
@@ -42,7 +43,11 @@ if(isset($actionFlag) && $actionFlag != ""){
         $tmpUser->loginUser($Email, $Userpassword);
         
         
-    }
+    }else if ($actionFlag == "view_profile"){
+		
+		$userInfo = viewProfile($dbHandler, $object->username);
+	}
+		
     
 }else{
     
