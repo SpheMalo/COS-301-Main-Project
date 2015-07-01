@@ -31,7 +31,10 @@ CREATE TABLE IF NOT EXISTS `author` (
   `UserID` int(11) NOT NULL,
   `ManuscriptID` int(11) NOT NULL,
   `UserRoleID` int(11) NOT NULL,
-  PRIMARY KEY (`AuthorID`)
+  PRIMARY KEY (`AuthorID`),
+  FOREIGN KEY (`UserID`) REFERENCES useraccount(`UserID`),
+  FOREIGN KEY (`ManuscriptID`) REFERENCES manuscript(`ManuscriptID`),
+  FOREIGN KEY (`UserRoleID`) REFERENCES userrole(`UserRoleID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -46,7 +49,9 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `Body` longblob NOT NULL,
   `UserID` int(11) NOT NULL,
   `ManuscriptID` int(11) NOT NULL,
-  PRIMARY KEY (`CommentID`)
+  PRIMARY KEY (`CommentID`),
+  FOREIGN KEY (`ManuscriptID`) REFERENCES manuscript(`ManuscriptID`),
+  FOREIGN KEY (`UserID`) REFERENCES userrole(`UserID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -78,7 +83,8 @@ CREATE TABLE IF NOT EXISTS `manuscript` (
   `UserID` int(11) NOT NULL,
   `Status` int(11) NOT NULL,
   `Genre` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`ManuscriptID`)
+  PRIMARY KEY (`ManuscriptID`),
+  FOREIGN KEY (`UserID`) REFERENCES userrole(`UserID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
