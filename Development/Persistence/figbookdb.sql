@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 01, 2015 at 03:15 PM
+-- Generation Time: Jul 01, 2015 at 11:14 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -32,9 +32,10 @@ CREATE TABLE IF NOT EXISTS `author` (
   `ManuscriptID` int(11) NOT NULL,
   `UserRoleID` int(11) NOT NULL,
   PRIMARY KEY (`AuthorID`),
-  FOREIGN KEY (`UserID`) REFERENCES useraccount(`UserID`),
-  FOREIGN KEY (`ManuscriptID`) REFERENCES manuscript(`ManuscriptID`),
-  FOREIGN KEY (`UserRoleID`) REFERENCES userrole(`UserRoleID`)
+  KEY `AuthorID` (`AuthorID`),
+  KEY `UserID` (`UserID`),
+  KEY `ManuscriptID` (`ManuscriptID`),
+  KEY `UserRoleID` (`UserRoleID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -50,8 +51,8 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `UserID` int(11) NOT NULL,
   `ManuscriptID` int(11) NOT NULL,
   PRIMARY KEY (`CommentID`),
-  FOREIGN KEY (`ManuscriptID`) REFERENCES manuscript(`ManuscriptID`),
-  FOREIGN KEY (`UserID`) REFERENCES userrole(`UserID`)
+  KEY `UserID` (`UserID`),
+  KEY `ManuscriptID` (`ManuscriptID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -71,6 +72,25 @@ CREATE TABLE IF NOT EXISTS `letter` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `letterlist`
+--
+
+CREATE TABLE IF NOT EXISTS `letterlist` (
+  `LetterListID` int(11) NOT NULL AUTO_INCREMENT,
+  `FromUserID` int(11) NOT NULL,
+  `ToUserID` int(11) NOT NULL,
+  `LetterID` int(11) NOT NULL,
+  `ManuscriptID` int(11) NOT NULL,
+  PRIMARY KEY (`LetterListID`),
+  KEY `FromUserID` (`FromUserID`,`ToUserID`,`LetterID`,`ManuscriptID`),
+  KEY `ToUserID` (`ToUserID`),
+  KEY `LetterID` (`LetterID`),
+  KEY `ManuscriptID` (`ManuscriptID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `manuscript`
 --
 
@@ -84,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `manuscript` (
   `Status` int(11) NOT NULL,
   `Genre` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`ManuscriptID`),
-  FOREIGN KEY (`UserID`) REFERENCES userrole(`UserID`)
+  KEY `UserID` (`UserID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -115,6 +135,40 @@ CREATE TABLE IF NOT EXISTS `userrole` (
   `PermissionLevel` int(11) NOT NULL,
   PRIMARY KEY (`UserRoleID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `author`
+--
+ALTER TABLE `author`
+  ADD CONSTRAINT `AuthorUserRoleID` FOREIGN KEY (`UserRoleID`) REFERENCES `userrole` (`UserRoleID`),
+  ADD CONSTRAINT `AuthorManuscriptID` FOREIGN KEY (`ManuscriptID`) REFERENCES `manuscript` (`ManuscriptID`),
+  ADD CONSTRAINT `AuthorUserID` FOREIGN KEY (`UserID`) REFERENCES `useraccount` (`UserID`);
+
+--
+-- Constraints for table `comment`
+--
+ALTER TABLE `comment`
+  ADD CONSTRAINT `CommentManuscriptID` FOREIGN KEY (`ManuscriptID`) REFERENCES `manuscript` (`ManuscriptID`),
+  ADD CONSTRAINT `CommentUserID` FOREIGN KEY (`UserID`) REFERENCES `useraccount` (`UserID`);
+
+--
+-- Constraints for table `letterlist`
+--
+ALTER TABLE `letterlist`
+  ADD CONSTRAINT `LetterListManuscriptID` FOREIGN KEY (`ManuscriptID`) REFERENCES `manuscript` (`ManuscriptID`),
+  ADD CONSTRAINT `LetterListFromUserID` FOREIGN KEY (`FromUserID`) REFERENCES `useraccount` (`UserID`),
+  ADD CONSTRAINT `LetterListLetterID` FOREIGN KEY (`LetterID`) REFERENCES `letter` (`LetterID`),
+  ADD CONSTRAINT `LetterListtoUserID` FOREIGN KEY (`ToUserID`) REFERENCES `useraccount` (`UserID`);
+
+--
+-- Constraints for table `manuscript`
+--
+ALTER TABLE `manuscript`
+  ADD CONSTRAINT `ManuscriptUserID` FOREIGN KEY (`UserID`) REFERENCES `useraccount` (`UserID`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
