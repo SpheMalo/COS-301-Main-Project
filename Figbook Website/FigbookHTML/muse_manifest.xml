@@ -1,8 +1,8 @@
-<manifest alg="2" build="6" opt="false" iceEnabled="true" exportTarget="other" resolutions="1x" timestamp="1435673941068">
+<manifest alg="2" build="6" opt="false" iceEnabled="true" exportTarget="other" resolutions="1x" timestamp="1435754162292">
   <folder name="css">
     <file name="site_global.css" crc="426517801"/>
-    <file name="master_a-master.css" crc="3764689098" ref="index"/>
-    <file name="index.css" crc="4256474196" ref="index"/>
+    <file name="master_a-master.css" crc="327729424" ref="index"/>
+    <file name="index.css" crc="3898622680" ref="index"/>
   </folder>
   <folder name="scripts">
     <file name="jquery-1.8.3.min.js" crc="4021225061" ref="index"/>
@@ -16,19 +16,20 @@
     <file name="jquery.watch.js" crc="172956391" ref="index"/>
   </folder>
   <folder name="images">
-    <file name="blueback.jpg" crc="289436548" ref="index"/>
-    <file name="u72-grad.png" crc="285754848" ref="index"/>
+    <file name="u72-grad.png" crc="4070128791" ref="index"/>
     <file name="figbooklogo-u216.png" crc="4032143556" ref="index"/>
     <file name="u163-grad.png" crc="418659801" ref="index"/>
-    <file name="u203-grad.png" crc="5570458" ref="index"/>
-    <file name="u205-4.png" crc="4039837300" ref="index"/>
     <file name="u207-4.png" crc="441931780" ref="index"/>
     <file name="u190-4.png" crc="4271048172" ref="index"/>
     <file name="u178-grad.png" crc="78029389" ref="index"/>
-    <file name="logo.png" crc="4282622696" ref="index"/>
+    <file name="logo.png" crc="86987749" ref="index"/>
     <file name="u230-4.png" crc="3864826857" ref="index"/>
-    <file name="u157-grad.png" crc="260278011" ref="index"/>
-    <file name="u153-grad.png" crc="4009402536" ref="index"/>
+    <file name="dark-blue-background-backgrounds-wallpapers.jpg" crc="98345008" ref="index"/>
+    <file name="u189-grad.png" crc="5570458" ref="index"/>
+    <file name="u191-grad.png" crc="210029421" ref="index"/>
+    <file name="u229-grad.png" crc="4285200986" ref="index"/>
+    <file name="u229-a-grad.png" crc="101752488" ref="index"/>
+    <file name="u227-a-grad.png" crc="4104478657" ref="index"/>
   </folder>
-  <file name="index.html" crc="4074830093" mt="1435673930904" redirect="true"/>
+  <file name="index.html" crc="494828712" mt="1435754153808" redirect="true"/>
 </manifest>

@@ -21,6 +21,13 @@
 	background: url("../images/figbooklogo-u216.png") no-repeat 0px 0px;
 }
 
+#u260
+{
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+}
+
 #u178
 {
 	-pie-box-shadow: 6px 6px 8px #7F7F7F;

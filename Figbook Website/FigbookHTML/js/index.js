@@ -1,2 +1,6 @@
-/* Inpired by Jee Dribbble Shot ( http://dribbble.com/shots/770815-Login ) */ 
-/* coded by alireza attari ( @alireza_attari ) */
+ $("#login-button").click(function(event){
+		 event.preventDefault();
+	 
+	 $('form').fadeOut(500);
+	 $('.wrapper').addClass('form-success');
+});
