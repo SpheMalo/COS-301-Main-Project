@@ -112,6 +112,34 @@ form input {
           transition-duration: 0.25s;
   font-weight: 300;
 }
+form select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 200px;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  
+  font-size: 18px;
+  color: white;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+  font-weight: 300;
+}
+form select:focus {
+  background-color: white;
+  width: 300px;
+  color: black;
+  font-weight: 500;
+}
+form select:hover {
+  background-color: rgba(4, 4, 4, 0.4);
+}
 form input:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }

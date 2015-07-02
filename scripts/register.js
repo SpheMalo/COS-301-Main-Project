@@ -6,9 +6,14 @@ $(document).ready(function(){
 		var UserInfo = {
 			"username" : document.getElementById("username").value,
 			"password" : document.getElementById("password").value,
+<<<<<<< HEAD
+=======
+			"role" : document.getElementById("roleSelect").value,			
+>>>>>>> origin/Interface
 			"email" : document.getElementById("email").value,
 			"action" : "register"
 		}
+		//alert(UserInfo.role);
 		var JSONstring = JSON.stringify(UserInfo);
 		ajaxFunction(JSONstring);
 		

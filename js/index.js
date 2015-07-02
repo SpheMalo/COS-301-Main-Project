@@ -4,4 +4,8 @@
 	 $('form').fadeOut(500);
 	 $('.wrapper').addClass('form-success');
 	 window.location.pathname = "FigbookHtml/inside.html";
+<<<<<<< HEAD
 });*/
+=======
+});
+>>>>>>> origin/Interface
