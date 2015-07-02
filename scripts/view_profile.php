@@ -1,6 +1,33 @@
 <?php
 
-	public function view_profile($dbObject, $userID)
+session_start();
+
+	
+
+	public function view_profile($dbObject)
+	{
+		$userID = $SESSION['userID'];
+		
+		if ($userID != '')
+		{
+			$userRole = getUserRole($dbObject, $userID);
+		
+			if ($userRole == "author")
+			{
+				$sql = "SELECT * FROM author WHERE UserID = ".$userID;
+				$result = $conn->query($sql);
+				
+				$rows = array();
+				while($r = mysqli_fetch_assoc($sth))
+				{
+					$rows[] = $r;
+				}
+				return json_encode($rows);
+			}	
+		}
+	}
+	
+	private function getUserRole($dbObject, $userID)
 	{
 		$sql = "SELECT userRole FROM useraccount WHERE UserID = ".$userID;
 		$result = $conn->query($sql);
@@ -9,9 +36,7 @@
 		{
 			$row = $result->fetch_assoc();
 			
-			if ()
+			return $row['userRole'];
 		}
 	}
-	
-	private function
 ?>
