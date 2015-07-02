@@ -21,7 +21,21 @@ $(document).ready(function(){
 			data: 'json='+JSONstring,
 			dataType: 'json',
 			success: function(data){
-				alert(data);
+
+				if(data == "correct")
+				{
+					alert("Logging in...");
+					 event.preventDefault();
+	 
+					 $('form').fadeOut(500);
+					 $('.wrapper').addClass('form-success');
+					window.location.pathname = "git/inside.html";
+				}
+				else if(JSONstring == "incorrect")
+				{
+					alert("Incorrect credentials");
+				}
+				
 				$(':submit').attr('disabled', false);
 				$(':submit').attr('value','SUBMIT');
 				

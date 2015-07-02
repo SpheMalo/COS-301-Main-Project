@@ -6,9 +6,11 @@ $(document).ready(function(){
 		var UserInfo = {
 			"username" : document.getElementById("username").value,
 			"password" : document.getElementById("password").value,
+			"role" : document.getElementById("roleSelect").value,			
 			"email" : document.getElementById("email").value,
 			"action" : "register"
 		}
+		//alert(UserInfo.role);
 		var JSONstring = JSON.stringify(UserInfo);
 		ajaxFunction(JSONstring);
 		
@@ -27,7 +29,7 @@ $(document).ready(function(){
 				
 			},
 			error: function(data){
-				alert("error :"+data);
+				alert("error :"+data.responseText);
 			}		
 		});
 	}

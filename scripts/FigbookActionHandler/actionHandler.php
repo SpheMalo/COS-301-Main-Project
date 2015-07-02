@@ -21,12 +21,13 @@ if(isset($actionFlag) && $actionFlag != ""){
     if($actionFlag == "register"){ // register user
         
 		$Email = $object->email;
+		$Role = $object->role;
         $Username = $object->username;
         $Userpassword = $object->password;
         
         $tmpUser = new user($dbHandler->getConnection());
         
-        $response = $tmpUser->insertUser($Username, $Userpassword, $Email);
+        $response = $tmpUser->insertUser($Username, $Userpassword, $Email, $Role);
         
         
     }else if($actionFlag == "login"){ //login user

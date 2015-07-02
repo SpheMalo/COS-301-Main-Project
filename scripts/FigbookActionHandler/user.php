@@ -76,7 +76,7 @@ class user {
     //adds a new user to the systems database
     //check if similiar user does not exist 1st
     //if details are correct, a new user is added
-    public function insertUser($uname,$upassword,$uemail){
+    public function insertUser($uname,$upassword,$uemail,$urole){
         
         //suppress notice errors
         error_reporting(E_ALL ^ E_NOTICE);
@@ -118,7 +118,7 @@ class user {
              $date .= "/".$today[year];
             //echo $uname . $upassword . $uemail;
             //add user to database
-            $queryString = "INSERT INTO useraccount (Username,Password,EmailAddress, Status) VALUES('$uname','$upassword','$uemail','1')";
+            $queryString = "INSERT INTO useraccount (Username,UserRole,Password,EmailAddress, Status) VALUES('$uname','$urole','$upassword','$uemail','1')";
         
             $queryResults = mysql_query($queryString);
             $UserID = null;
