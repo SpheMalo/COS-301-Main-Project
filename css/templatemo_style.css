@@ -16,6 +16,7 @@ img	{ width: 100%; }
 
 a {
 	color: #ffffff; outline: 0;
+	
 }
 
 a:hover, a:focus {
@@ -117,6 +118,8 @@ h3 {
 	text-align: center;
 	width: 100%;
 }
+
+
 
 .templatemo_insideportfolio	 h2 { color: #ffffff; }
 .templatemo_insideportfolio	{

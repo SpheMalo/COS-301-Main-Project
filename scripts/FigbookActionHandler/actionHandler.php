@@ -3,7 +3,7 @@
 require("databaseHandler.php");
 require("user.php");
 
-
+$response = "";
 $dbHandler = new databaseHandler();
 
 if($dbHandler->isConnected()){
@@ -18,17 +18,16 @@ $actionFlag = $object->action;
 //determine the type of action
 if(isset($actionFlag) && $actionFlag != ""){
     
-    if($actionFlag == "insertUser"){ // register user
+    if($actionFlag == "register"){ // register user
         
-		$name  = $object->name;
-        $surname  = $object->surname;
 		$Email = $object->email;
+		$Role = $object->role;
         $Username = $object->username;
         $Userpassword = $object->password;
         
         $tmpUser = new user($dbHandler->getConnection());
         
-        $tmpUser->insertUser($name, $surname, $Username, $Userpassword, $Email);
+        $response = $tmpUser->insertUser($Username, $Userpassword, $Email, $Role);
         
         
     }else if($actionFlag == "login"){ //login user
@@ -39,18 +38,18 @@ if(isset($actionFlag) && $actionFlag != ""){
         
         $tmpUser = new user($dbHandler->getConnection());
         
-        $tmpUser->loginUser($Email, $Userpassword);
+        $response = $tmpUser->loginUser($Email, $Userpassword);
         
         
     }
     
 }else{
     
-    die("no valid action specified");
+    $response = "no valid action specified";
 }
 
 }else{ //db connection failed   
-    echo "dbError: database connection failed!";
+    $response =  "dbError: database connection failed!";
 }
-
+echo json_encode($response);
 ?>

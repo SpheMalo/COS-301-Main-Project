@@ -1,8 +1,8 @@
-<manifest alg="2" build="6" opt="false" iceEnabled="true" exportTarget="other" resolutions="1x" timestamp="1435834581895">
+<manifest alg="2" build="6" opt="false" iceEnabled="true" exportTarget="other" resolutions="1x" timestamp="1435841018684">
   <folder name="css">
     <file name="site_global.css" crc="426517801"/>
     <file name="master_a-master.css" crc="327729424" ref="index:inside"/>
-    <file name="index.css" crc="350013099" ref="index"/>
+    <file name="index.css" crc="82144728" ref="index"/>
     <file name="inside.css" crc="4088964608" ref="inside"/>
   </folder>
   <folder name="scripts">
@@ -24,6 +24,6 @@
     <file name="logo.png" crc="86987749" ref="index:inside"/>
     <file name="u230-4.png" crc="3864826857" ref="index:inside"/>
   </folder>
-  <file name="index.html" crc="4117979425" mt="1435834576664" redirect="true"/>
+  <file name="index.html" crc="3973875645" mt="1435840555498" redirect="true"/>
   <file name="inside.html" crc="4259222747" mt="1435831582717" redirect="true"/>
 </manifest>

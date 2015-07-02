@@ -38,7 +38,7 @@ class user {
         $upassword = stripslashes($upassword);
         $upassword = mysql_real_escape_string($upassword);
         
-        $query="SELECT * FROM userAccount WHERE emailAddress='$uemail' AND password = '$upassword'";
+        $query="SELECT * FROM useraccount WHERE EmailAddress='$uemail' AND Password = '$upassword'";
 
 	$queryResult = mysql_query($query); //run query
         
@@ -53,7 +53,7 @@ class user {
                 
                 $this->responseObject = "{\"serverResponse\":\"".$this->message."\",
                                      \"Username\":\"".$found_user['Username']."\",
-                                     \"Email\":\"".$found_user['emailAccount']."\",
+                                     \"Email\":\"".$found_user['EmailAddress']."\",
                                      \"UserID\":\"".$found_user['UserID']."\"
                                      }";
           
@@ -67,7 +67,7 @@ class user {
                 $this->responseObject = "{\"serverResponse\":\"".$this->message."\"}";
                 
                 //return to app
-                echo $this->responseObject;
+                return $this->responseObject;
             }
         }
         
@@ -76,7 +76,7 @@ class user {
     //adds a new user to the systems database
     //check if similiar user does not exist 1st
     //if details are correct, a new user is added
-    public function insertUser($name, $surname, $uname,$upassword,$uemail){
+    public function insertUser($uname,$upassword,$uemail,$urole){
         
         //suppress notice errors
         error_reporting(E_ALL ^ E_NOTICE);
@@ -84,7 +84,7 @@ class user {
         $available = false;
         
         //check username availability
-        $queryString = "SELECT Username from user where Username ='$uname'";
+        $queryString = "SELECT Username from useraccount where Username ='$uname'";
         
         $queryResults = mysql_query($queryString);
         
@@ -96,7 +96,7 @@ class user {
         }
         
         //check email availability
-        $queryResults = mysql_query("SELECT Useremail from user where Useremail ='$uemail'");
+        $queryResults = mysql_query("SELECT EmailAddress from useraccount where EmailAddress ='$uemail'");
         if(mysql_num_rows($queryResults) >= 1){
             //the email exists, append message
             $this->message .= "Useremail already exists.";
@@ -116,9 +116,9 @@ class user {
              $date = $today[mday];
              $date .= "/".$today[mon];
              $date .= "/".$today[year];
-            
+            //echo $uname . $upassword . $uemail;
             //add user to database
-            $queryString = "INSERT INTO userAccount (name, surname, Username,password,emailAddress, status) VALUES('$name', '$surname', '$uname','$upassword','$uemail','1')";
+            $queryString = "INSERT INTO useraccount (Username,UserRole,Password,EmailAddress, Status) VALUES('$uname','$urole','$upassword','$uemail','1')";
         
             $queryResults = mysql_query($queryString);
             $UserID = null;
@@ -127,15 +127,8 @@ class user {
                  $UserID = mysql_insert_id();
                  
              }else if(!$queryResults){
-                 die("user reg failed ".mysql_error());
+                 $this->message = "could not insert user";
              }
-             
-            //create folder to store user related files, with userID as folder name
-            if(!is_dir("Users/".$UserID."")){
-                mkdir("Users/".$UserID."");
-                mkdir("Users/".$UserID."/crop"); //to store cropped images
-            }
-            
             //send success message and current user details 
             $this->message = "success";
             $this->responseObject = "{\"serverResponse\":\"".$this->message."\"
@@ -143,7 +136,7 @@ class user {
         }
         
          //return to app      
-         echo $this->responseObject;
+         return $this->responseObject;
     }
     
     
@@ -197,7 +190,7 @@ class user {
 
                 $this->responseObject = "{\"serverResponse\":\"".$this->message."\"}";
                 
-                echo $this->responseObject;
+                return $this->responseObject;
             }
         }
         
@@ -205,5 +198,6 @@ class user {
     
     
 }
+
 
 ?>

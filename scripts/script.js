@@ -4,13 +4,13 @@ $(document).ready(function(){
 		$(':submit').attr('value','..Processing..');
 		
 		var UserInfo = {
+			"firstname": document.getElementById("firstname").value,
+			"surname" : document.getElementById("surname").value,
 			"username" : document.getElementById("username").value,
 			"password" : document.getElementById("password").value,
-			"role" : document.getElementById("roleSelect").value,			
 			"email" : document.getElementById("email").value,
 			"action" : "register"
 		}
-		//alert(UserInfo.role);
 		var JSONstring = JSON.stringify(UserInfo);
 		ajaxFunction(JSONstring);
 		
@@ -19,7 +19,7 @@ $(document).ready(function(){
 	
 	function ajaxFunction(JSONstring){
 		$.ajax({
-			url: 'scripts/FigbookActionHandler/actionHandler.php',
+			url: 'save.php',
 			data: 'json='+JSONstring,
 			dataType: 'json',
 			success: function(data){
@@ -29,7 +29,7 @@ $(document).ready(function(){
 				
 			},
 			error: function(data){
-				alert("error :"+data.responseText);
+				alert("error :"+data);
 			}		
 		});
 	}
