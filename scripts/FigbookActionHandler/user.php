@@ -38,7 +38,7 @@ class user {
         $upassword = stripslashes($upassword);
         $upassword = mysql_real_escape_string($upassword);
         
-        $query="SELECT * FROM useraccount WHERE EmailAddress='$uemail' AND Password = '$upassword'";
+        $query="SELECT * FROM useraccount WHERE (Username='$uemail' OR  EmailAddress='$uemail') AND Password = '$upassword'";
 
 	$queryResult = mysql_query($query); //run query
         
@@ -58,11 +58,11 @@ class user {
                                      }";
           
                 //return to app
-                echo $this->responseObject;
+                return $this->responseObject;
                 
             }else if(mysql_num_rows($queryResult) <= 0){ //no such user exists
                 
-                $this->message = "'invalid email or password'";
+                $this->message = "'invalid username or password'";
                 
                 $this->responseObject = "{\"serverResponse\":\"".$this->message."\"}";
                 

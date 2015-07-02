@@ -4,20 +4,20 @@ $(document).ready(function(){
 		$(':submit').attr('value','..Processing..');
 		
 		var UserInfo = {
-			"username" : document.getElementById("username").value,
-			"password" : document.getElementById("password").value,
+			"username" : document.getElementById("LoginUsername").value,
+			"password" : document.getElementById("LoginPassword").value,
 			"action" : "login"
 		}
 		var JSONstring = JSON.stringify(UserInfo);
-		alert(JSONstring)
+		//alert(JSONstring);
 		ajaxFunction(JSONstring);
-		
+		document.getElementById("loginform").reset();
 		event.preventDefault();
 	});
 	
 	function ajaxFunction(JSONstring){
 		$.ajax({
-			url: 'scripts/save.php',
+			url: 'scripts/FigbookActionHandler/actionHandler.php',
 			data: 'json='+JSONstring,
 			dataType: 'json',
 			success: function(data){

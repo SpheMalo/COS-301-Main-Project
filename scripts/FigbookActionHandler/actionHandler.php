@@ -32,13 +32,26 @@ if(isset($actionFlag) && $actionFlag != ""){
     }else if($actionFlag == "login"){ //login user
         
         
-        $Email = $object->email;
+        $Email = $object->username;
         $Userpassword = $object->password;
         
         $tmpUser = new user($dbHandler->getConnection());
         
         $response = $tmpUser->loginUser($Email, $Userpassword);
-        
+		$logResponse = json_decode($response);
+		if($logResponse->serverResponse == "success"){
+			
+			session_start();
+			$_SESSION["UserID"] = $logResponse->UserID;
+			$_SESSION["Username"] = $logResponse->Username;
+			$response = "correct";
+		
+		}
+		else{
+		
+			$response = "incorrect";
+		}
+        //responce= incorrect or correct
         
     }
     
