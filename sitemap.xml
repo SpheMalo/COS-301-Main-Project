@@ -37,6 +37,24 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://Figbook.co.za/images/templatemo_service2.jpg</loc>
+    <lastmod>2015-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://Figbook.co.za/images/booklogin.jpg</loc>
+    <lastmod>2015-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://Figbook.co.za/images/openbook.jpg</loc>
+    <lastmod>2015-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://Figbook.co.za/index.html</loc>
     <lastmod>2015-07-02</lastmod>
     <changefreq>weekly</changefreq>

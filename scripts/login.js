@@ -1,7 +1,7 @@
 $(document).ready(function(){
-	$(':submit').live('click',function(event){
-		$(':submit').attr('disabled', true);
-		$(':submit').attr('value','..Processing..');
+	$('#login-button').live('click',function(event){
+		$('#login-button').attr('disabled', true);
+		$('#login-button').attr('value','..Processing..');
 		
 		var UserInfo = {
 			"username" : document.getElementById("LoginUsername").value,
@@ -9,7 +9,7 @@ $(document).ready(function(){
 			"action" : "login"
 		}
 		var JSONstring = JSON.stringify(UserInfo);
-		//alert(JSONstring);
+		alert(JSONstring);
 		ajaxFunction(JSONstring);
 		document.getElementById("loginform").reset();
 		event.preventDefault();
@@ -29,20 +29,20 @@ $(document).ready(function(){
 	 
 					 $('form').fadeOut(500);
 					 $('.wrapper').addClass('form-success');
-					window.location.pathname = "git/inside.html";
+					window.location.pathname = "FigbookHtml/inside.html";
 				}
 				else if(JSONstring == "incorrect")
 				{
 					alert("Incorrect credentials");
 				}
 				
-				$(':submit').attr('disabled', false);
-				$(':submit').attr('value','SUBMIT');
+				$('#login-button').attr('disabled', false);
+				$('#login-button').attr('value','SUBMIT');
 				
 				
 			},
 			error: function(data){
-				alert("error :"+data);
+				alert("error :"+data.responseText);
 			}		
 		});
 	}

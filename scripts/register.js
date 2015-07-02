@@ -1,7 +1,7 @@
 $(document).ready(function(){
-	$(':submit').live('click',function(event){
-		$(':submit').attr('disabled', true);
-		$(':submit').attr('value','..Processing..');
+	$('#register-button').live('click',function(event){
+		$('#register-button').attr('disabled', true);
+		$('#register-button').attr('value','..Processing..');
 		
 		var UserInfo = {
 			"username" : document.getElementById("username").value,
@@ -24,8 +24,8 @@ $(document).ready(function(){
 			dataType: 'json',
 			success: function(data){
 				alert(data);
-				$(':submit').attr('disabled', false);
-				$(':submit').attr('value','SUBMIT');
+				$('#register-button').attr('disabled', false);
+				$('#register-button').attr('value','SUBMIT');
 				
 			},
 			error: function(data){
