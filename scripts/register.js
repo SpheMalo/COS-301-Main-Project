@@ -17,7 +17,7 @@ $(document).ready(function(){
 	
 	function ajaxFunction(JSONstring){
 		$.ajax({
-			url: 'scripts/save.php',
+			url: 'scripts/FigbookActionHandler/actionHandler.php',
 			data: 'json='+JSONstring,
 			dataType: 'json',
 			success: function(data){
