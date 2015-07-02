@@ -6,10 +6,7 @@ $(document).ready(function(){
 		var UserInfo = {
 			"username" : document.getElementById("username").value,
 			"password" : document.getElementById("password").value,
-<<<<<<< HEAD
-=======
 			"role" : document.getElementById("roleSelect").value,			
->>>>>>> origin/Interface
 			"email" : document.getElementById("email").value,
 			"action" : "register"
 		}
@@ -32,7 +29,7 @@ $(document).ready(function(){
 				
 			},
 			error: function(data){
-				alert("error :"+data);
+				alert("error :"+data.responseText);
 			}		
 		});
 	}

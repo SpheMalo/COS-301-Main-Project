@@ -27,11 +27,7 @@ if(isset($actionFlag) && $actionFlag != ""){
         
         $tmpUser = new user($dbHandler->getConnection());
         
-<<<<<<< HEAD
-        $response = $tmpUser->insertUser($Username, $Userpassword, $Email);
-=======
         $response = $tmpUser->insertUser($Username, $Userpassword, $Email, $Role);
->>>>>>> origin/Interface
         
         
     }else if($actionFlag == "login"){ //login user
