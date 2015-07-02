@@ -20,15 +20,13 @@ if(isset($actionFlag) && $actionFlag != ""){
     
     if($actionFlag == "register"){ // register user
         
-		$name  = $object->name;
-        $surname  = $object->surname;
 		$Email = $object->email;
         $Username = $object->username;
         $Userpassword = $object->password;
         
         $tmpUser = new user($dbHandler->getConnection());
         
-        $tmpUser->insertUser($name, $surname, $Username, $Userpassword, $Email);
+        $tmpUser->insertUser($Username, $Userpassword, $Email);
         
         
     }else if($actionFlag == "login"){ //login user

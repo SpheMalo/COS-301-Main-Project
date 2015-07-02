@@ -76,7 +76,7 @@ class user {
     //adds a new user to the systems database
     //check if similiar user does not exist 1st
     //if details are correct, a new user is added
-    public function insertUser($name, $surname, $uname,$upassword,$uemail){
+    public function insertUser($uname,$upassword,$uemail){
         
         //suppress notice errors
         error_reporting(E_ALL ^ E_NOTICE);
