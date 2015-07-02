@@ -67,7 +67,7 @@ class user {
                 $this->responseObject = "{\"serverResponse\":\"".$this->message."\"}";
                 
                 //return to app
-                echo $this->responseObject;
+                return $this->responseObject;
             }
         }
         
@@ -116,9 +116,9 @@ class user {
              $date = $today[mday];
              $date .= "/".$today[mon];
              $date .= "/".$today[year];
-            
+            //echo $uname . $upassword . $uemail;
             //add user to database
-            $queryString = "INSERT INTO userAccount (Username,Password,EmailAddress, Status) VALUES('$uname','$upassword','$uemail','1')";
+            $queryString = "INSERT INTO useraccount (Username,Password,EmailAddress, Status) VALUES('$uname','$upassword','$uemail','1')";
         
             $queryResults = mysql_query($queryString);
             $UserID = null;
@@ -127,15 +127,8 @@ class user {
                  $UserID = mysql_insert_id();
                  
              }else if(!$queryResults){
-                 die("user reg failed ".mysql_error());
+                 $this->message = "could not insert user";
              }
-             
-            //create folder to store user related files, with userID as folder name
-            if(!is_dir("Users/".$UserID."")){
-                mkdir("Users/".$UserID."");
-                mkdir("Users/".$UserID."/crop"); //to store cropped images
-            }
-            
             //send success message and current user details 
             $this->message = "success";
             $this->responseObject = "{\"serverResponse\":\"".$this->message."\"
@@ -143,7 +136,7 @@ class user {
         }
         
          //return to app      
-         echo $this->responseObject;
+         return $this->responseObject;
     }
     
     
@@ -197,7 +190,7 @@ class user {
 
                 $this->responseObject = "{\"serverResponse\":\"".$this->message."\"}";
                 
-                echo $this->responseObject;
+                return $this->responseObject;
             }
         }
         
@@ -205,5 +198,6 @@ class user {
     
     
 }
+
 
 ?>
