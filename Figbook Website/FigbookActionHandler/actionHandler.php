@@ -18,7 +18,7 @@ $actionFlag = $object->action;
 //determine the type of action
 if(isset($actionFlag) && $actionFlag != ""){
     
-    if($actionFlag == "insertUser"){ // register user
+    if($actionFlag == "register"){ // register user
         
 		$name  = $object->name;
         $surname  = $object->surname;

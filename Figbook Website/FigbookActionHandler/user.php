@@ -38,7 +38,7 @@ class user {
         $upassword = stripslashes($upassword);
         $upassword = mysql_real_escape_string($upassword);
         
-        $query="SELECT * FROM userAccount WHERE emailAddress='$uemail' AND password = '$upassword'";
+        $query="SELECT * FROM useraccount WHERE EmailAddress='$uemail' AND Password = '$upassword'";
 
 	$queryResult = mysql_query($query); //run query
         
@@ -53,7 +53,7 @@ class user {
                 
                 $this->responseObject = "{\"serverResponse\":\"".$this->message."\",
                                      \"Username\":\"".$found_user['Username']."\",
-                                     \"Email\":\"".$found_user['emailAccount']."\",
+                                     \"Email\":\"".$found_user['EmailAddress']."\",
                                      \"UserID\":\"".$found_user['UserID']."\"
                                      }";
           
@@ -84,7 +84,7 @@ class user {
         $available = false;
         
         //check username availability
-        $queryString = "SELECT Username from user where Username ='$uname'";
+        $queryString = "SELECT Username from useraccount where Username ='$uname'";
         
         $queryResults = mysql_query($queryString);
         
@@ -96,7 +96,7 @@ class user {
         }
         
         //check email availability
-        $queryResults = mysql_query("SELECT Useremail from user where Useremail ='$uemail'");
+        $queryResults = mysql_query("SELECT EmailAddress from useraccount where EmailAddress ='$uemail'");
         if(mysql_num_rows($queryResults) >= 1){
             //the email exists, append message
             $this->message .= "Useremail already exists.";
@@ -118,7 +118,7 @@ class user {
              $date .= "/".$today[year];
             
             //add user to database
-            $queryString = "INSERT INTO userAccount (name, surname, Username,password,emailAddress, status) VALUES('$name', '$surname', '$uname','$upassword','$uemail','1')";
+            $queryString = "INSERT INTO userAccount (Username,Password,EmailAddress, Status) VALUES('$uname','$upassword','$uemail','1')";
         
             $queryResults = mysql_query($queryString);
             $UserID = null;
