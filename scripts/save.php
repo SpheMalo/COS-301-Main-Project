@@ -14,14 +14,14 @@
 		$username = $object->username;
 		$password = $object->password;
 		
-		if($username == "u" && $password == "p")
+		if($username == "p" && $password == "u")
 		{
-			$returnString = 'logged in';
+			$returnString = 'correct';
 			echo json_encode($returnString);
 		}
 		else
 		{
-			$returnString = 'incorrect credentials';
+			$returnString = 'incorrect';
 			echo json_encode($returnString.'*'.$username.'*'.$password);
 		}
 	}
