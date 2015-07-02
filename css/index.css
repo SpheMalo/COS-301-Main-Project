@@ -1,0 +1,384 @@
+.version.index /* version checker */
+{
+	color: #0000EF;
+	background-color: #95790C;
+}
+
+.html
+{
+	background: #FFFFFF url("../images/dark-blue-background-backgrounds-wallpapers.jpg") no-repeat center center scroll;
+	background-size: cover;
+}
+
+#page
+{
+	z-index: 1;
+	width: 1000px;
+	min-height: 800px;
+	background-image: none;
+	border-style: none;
+	border-color: #000000;
+	background-color: transparent;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#page_position_content
+{
+	margin-top: -36px;
+	margin-bottom: -36px;
+}
+
+#pu72
+{
+	width: 0.01px;
+	padding-bottom: 114px;
+	margin-left: -100px;
+}
+
+#u72
+{
+	z-index: 14;
+	height: 57px;
+	top: 0px;
+}
+
+#u72-bw
+{
+	z-index: 14;
+}
+
+#u216
+{
+	z-index: 17;
+	width: 125px;
+	height: 126px;
+	top: -3px;
+	left: 97px;
+}
+
+#pamphletu275
+{
+	z-index: 22;
+	width: 0.01px;
+	height: 45px;
+	margin-left: 900px;
+	top: -104px;
+	margin-bottom: -45px;
+	position: relative;
+}
+
+#u285
+{
+	z-index: 23;
+	width: 201px;
+	margin-bottom: -1px;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u287
+{
+	position: absolute;
+	width: 59px;
+	height: 44px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #DEDEDE;
+	background-color: #DEDEDE;
+}
+
+#u286
+{
+	position: absolute;
+	width: 59px;
+	height: 44px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #C4C4C4;
+	background-color: #C4C4C4;
+	left: 70px;
+}
+
+#u330
+{
+	position: absolute;
+	width: 59px;
+	height: 44px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #C4C4C4;
+	background-color: #C4C4C4;
+	left: 140px;
+}
+
+#u287:hover,#u286:hover,#u330:hover
+{
+	border-color: #999999;
+	width: 59px;
+	height: 44px;
+	min-height: 0px;
+	margin: 0px;
+}
+
+#u276
+{
+	position: absolute;
+	width: 665px;
+	border-style: none;
+	border-color: transparent;
+	background-color: #191919;
+	background-color: rgba(0, 0, 0, 0.9);
+	padding-bottom: 44px;
+	top: 120px;
+	left: -695px;
+	-pie-background: rgba(0, 0, 0, 0.9);
+}
+
+#u276popup
+{
+	z-index: 27;
+}
+
+#u279
+{
+	z-index: 28;
+	width: 621px;
+	height: 466px;
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+	margin-right: -10000px;
+	position: relative;
+	top: 22px;
+	left: 22px;
+}
+
+#u281
+{
+	z-index: 29;
+	width: 621px;
+	height: 466px;
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+	margin-right: -10000px;
+	position: relative;
+	top: 22px;
+	left: 22px;
+}
+
+#u339
+{
+	z-index: 30;
+	width: 200px;
+	min-height: 102px;
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 182px;
+	left: 211px;
+}
+
+#u331
+{
+	z-index: 31;
+	width: 621px;
+	height: 466px;
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+	margin-right: -10000px;
+	position: relative;
+	top: 22px;
+	left: 22px;
+}
+
+#u335
+{
+	z-index: 32;
+	width: 200px;
+	min-height: 100px;
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 183px;
+	left: 211px;
+}
+
+.PamphletWidget .ThumbGroup .Thumb,.PamphletNextButton,.PamphletPrevButton,.PamphletCloseButton /* pamphlet2 */
+{
+	cursor: pointer;
+}
+
+#pu259
+{
+	width: 0.01px;
+	margin-left: -100px;
+	margin-top: -57px;
+}
+
+#u259
+{
+	z-index: 2;
+	height: 733px;
+}
+
+.ie #u279,.ie #u259
+{
+	background-color: #FFFFFF;
+	opacity: 0.01;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+	filter: alpha(opacity=1);
+}
+
+#u259-bw
+{
+	z-index: 2;
+	margin-top: 25px;
+	height: 733px;
+}
+
+#u260
+{
+	z-index: 3;
+	min-height: 100px;
+}
+
+#u260-bw
+{
+	z-index: 3;
+	min-height: 100px;
+	height: 100px;
+}
+
+#u189
+{
+	z-index: 4;
+	width: 419px;
+	-pie-box-shadow: none;
+	-moz-box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 6px 6px 8px -1px rgba(0, 0, 0, 0.5);
+	box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.5);
+	background: transparent url("../images/u189-grad.png") repeat-x left top;
+	background: -webkit-gradient(linear, center top, center bottom, color-stop(22%, rgba(40, 203, 211, 0.83)),color-stop(100%, #FFFFFF));
+	background: -webkit-linear-gradient(top,rgba(40, 203, 211, 0.83) 148px,#FFFFFF 673px);
+	background: -o-linear-gradient(top,rgba(40, 203, 211, 0.83) 148px,#FFFFFF 673px);
+	background: linear-gradient(to bottom,rgba(40, 203, 211, 0.83) 148px,#FFFFFF 673px);
+	border-style: none;
+	border-color: transparent;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	padding-bottom: 370px;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 77px;
+	left: 663px;
+}
+
+#u190-4
+{
+	z-index: 5;
+	display: block;
+	vertical-align: top;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 12px;
+	left: 143px;
+}
+
+#u206
+{
+	z-index: 9;
+	width: 419px;
+	-pie-box-shadow: none;
+	-moz-box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 6px 6px 8px -1px rgba(0, 0, 0, 0.5);
+	box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.5);
+	background: transparent url("../images/u189-grad.png") repeat-x left top;
+	background: -webkit-gradient(linear, center top, center bottom, color-stop(22%, rgba(40, 203, 211, 0.83)),color-stop(100%, #FFFFFF));
+	background: -webkit-linear-gradient(top,rgba(40, 203, 211, 0.83) 148px,#FFFFFF 673px);
+	background: -o-linear-gradient(top,rgba(40, 203, 211, 0.83) 148px,#FFFFFF 673px);
+	background: linear-gradient(to bottom,rgba(40, 203, 211, 0.83) 148px,#FFFFFF 673px);
+	border-style: none;
+	border-color: transparent;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	padding-bottom: 327px;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 77px;
+	left: 124px;
+}
+
+#u207-4
+{
+	z-index: 10;
+	display: block;
+	vertical-align: top;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 12px;
+	left: 121px;
+}
+
+#pu178
+{
+	width: 0.01px;
+	margin-left: -100px;
+	margin-top: 41px;
+}
+
+#u178
+{
+	z-index: 15;
+}
+
+#u178_align_to_page
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 1000px;
+	left: -100px;
+}
+
+#u179
+{
+	z-index: 16;
+	width: 223px;
+	height: 82px;
+	margin-right: -10000px;
+	margin-top: -25px;
+	left: 970px;
+}
+
+#u178-bw
+{
+	z-index: 15;
+	height: 57px;
+}
+
+#u230-4
+{
+	z-index: 18;
+	margin-right: -10000px;
+	margin-top: 5px;
+	left: 855px;
+}
+
+body
+{
+	position: relative;
+	min-width: 1000px;
+	padding-top: 36px;
+	padding-bottom: 36px;
+}
+
