@@ -4,6 +4,8 @@ $(document).ready(function(){
 		$(':submit').attr('value','..Processing..');
 		
 		var UserInfo = {
+			"firstname": document.getElementById("firstname").value,
+			"surname" : document.getElementById("surname").value,
 			"username" : document.getElementById("username").value,
 			"password" : document.getElementById("password").value,
 			"email" : document.getElementById("email").value,
@@ -17,7 +19,7 @@ $(document).ready(function(){
 	
 	function ajaxFunction(JSONstring){
 		$.ajax({
-			url: 'scripts/save.php',
+			url: 'save.php',
 			data: 'json='+JSONstring,
 			dataType: 'json',
 			success: function(data){
