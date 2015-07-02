@@ -1,10 +1,10 @@
 /*This test is for the setting up of the Qunit framework*/
 
-Qunit.test("register test", function(assert){
+QUnit.test("register test", function(assert){
 	//ok(registration, "exists")
-	assert.equal(registration, "exists");
+	function f(){
+		assert.equal(registration, registration);
+		assert.equal(typeof registration === 'function', true);
+	}
+	f();
 });
-
-/*Qunit.test("register is a function", function(assert){
-	ok(typeof registration === 'function', "registration is a function")
-});*/
