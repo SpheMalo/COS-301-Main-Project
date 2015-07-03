@@ -14,10 +14,7 @@ html, body {
 }
 img	{ width: 100%; }
 
-a {
-	color: #ffffff; outline: 0;
-	
-}
+
 
 a:hover, a:focus {
 	text-decoration: none;
@@ -59,6 +56,12 @@ h3 {
 .homepage{ display: block; }
 .portfolioshow	{ display: block; }
 /* .container	{ position: absolute; } */
+
+#proflieLink
+{
+	color: white;
+	border: none;
+}
 
 .templatemo_link ,.templatemo_linkservice,.templatemo_linkcontact { 
 	font-size: 2em; color: #ffffff;
