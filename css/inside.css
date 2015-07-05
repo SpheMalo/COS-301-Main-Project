@@ -1,0 +1,190 @@
+.version.inside /* version checker */
+{
+	color: #000016;
+	background-color: #D954A3;
+}
+
+.html
+{
+	background: #FFFFFF url("../images/dark-blue-background-backgrounds-wallpapers.jpg") no-repeat center center scroll;
+	background-size: cover;
+}
+
+#page
+{
+	z-index: 1;
+	width: 1000px;
+	min-height: 800px;
+	background-image: none;
+	border-style: none;
+	border-color: #000000;
+	background-color: transparent;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#page_position_content
+{
+	margin-top: -36px;
+	margin-bottom: -36px;
+}
+
+#pu72
+{
+	width: 0.01px;
+	padding-bottom: 114px;
+	margin-left: -100px;
+}
+
+#u72
+{
+	z-index: 12;
+	height: 57px;
+	top: 0px;
+}
+
+#u72-bw
+{
+	z-index: 12;
+}
+
+#u216
+{
+	z-index: 13;
+	width: 125px;
+	height: 126px;
+	top: -3px;
+	left: 97px;
+}
+
+#pu259
+{
+	width: 0.01px;
+	margin-left: -100px;
+	margin-top: -65px;
+}
+
+#u259
+{
+	z-index: 2;
+	height: 733px;
+}
+
+.ie #u259
+{
+	background-color: #FFFFFF;
+	opacity: 0.01;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+	filter: alpha(opacity=1);
+}
+
+#u259-bw
+{
+	z-index: 2;
+	margin-top: 33px;
+	height: 733px;
+}
+
+#u260
+{
+	z-index: 3;
+	min-height: 100px;
+}
+
+#u260-bw
+{
+	z-index: 3;
+	min-height: 100px;
+	margin-top: 8px;
+	height: 100px;
+}
+
+#u362
+{
+	z-index: 4;
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+	padding-bottom: 141px;
+}
+
+#u362_align_to_page
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 1000px;
+	position: relative;
+	left: -100px;
+}
+
+#u377
+{
+	z-index: 5;
+	width: 189px;
+	min-height: 134px;
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 7px;
+}
+
+#u362-bw
+{
+	z-index: 4;
+	height: 140px;
+}
+
+#pu178
+{
+	width: 0.01px;
+	margin-left: -100px;
+	margin-top: 41px;
+}
+
+#u178
+{
+	z-index: 6;
+}
+
+#u178_align_to_page
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 1000px;
+	left: -100px;
+}
+
+#u179
+{
+	z-index: 7;
+	width: 223px;
+	height: 82px;
+	margin-right: -10000px;
+	margin-top: -25px;
+	left: 970px;
+}
+
+#u178-bw
+{
+	z-index: 6;
+	height: 57px;
+}
+
+#u230-4
+{
+	z-index: 8;
+	margin-right: -10000px;
+	margin-top: 5px;
+	left: 855px;
+}
+
+body
+{
+	position: relative;
+	min-width: 1000px;
+	padding-top: 36px;
+	padding-bottom: 36px;
+}
+
