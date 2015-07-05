@@ -172,7 +172,9 @@
     
         
         <script src="scripts/register.js" type="text/javascript"></script>
-
+		<script type="text/javascript"> document.getElementById("password").setCustomValidity("Please enter password");
+		  document.getElementById("confirmpassword").setCustomValidity("Please confirm password");
+		  </script>
         <link rel="stylesheet" href="css/style.css">
 
     
@@ -182,14 +184,14 @@
 
   <body>
 <div class="wrapperReg">
-	<div class="container">
+	<div id = "regDiv" class="container">
 		<h1>Welcome</h1>
 		
 		<form class="form" >
 			<input id="username" type="text" placeholder="Username">
                                     <input id="email" type="email" placeholder="Email Address">
-			<input id="password" type="password" placeholder="Password">
-                                    <input id="confirmpassword" type="password" placeholder="Confirm Password">
+			<input id="password" type="password" name="pass" placeholder="Password" required="true">
+                                    <input id="confirmpassword" type="password" name="confirmpass" placeholder="Confirm Password" required="true">
                                     <select id="roleSelect">
                                        <option>Author</option>
                                        <option>Agent</option>
