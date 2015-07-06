@@ -103,10 +103,14 @@ window.onload = function()
 						 event.preventDefault();					
 						window.location.pathname = "FigbookHtml/inside.html";
 					}
-					else if(JSONstring == "incorrect")
+					else if(data == "incorrect")
 					{
 						alert("Incorrect credentials");
-					}					
+					}
+                                        else if(data == "not_active"){
+                                            
+                                                alert("User is Deactivated");
+                                        }
 				},
 				error: function(data){
 					alert("error :"+data.responseText);
