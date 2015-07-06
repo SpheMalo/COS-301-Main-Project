@@ -40,7 +40,7 @@ if(isset($actionFlag) && $actionFlag != ""){
         
         
         $Email = $object->username;
-        $Userpassword = md5($object->password);
+        $Userpassword = substr(md5($object->password), 0, 25);
         
         $tmpUser = new user($dbHandler->getConnection());
         
