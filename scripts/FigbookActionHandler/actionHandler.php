@@ -23,7 +23,7 @@ if(isset($actionFlag) && $actionFlag != ""){
 		$Email = $object->email;
 		$Role = $object->role;
         $Username = $object->username;
-        $Userpassword = $object->password;
+        $Userpassword = md5($object->password);
         
         $tmpUser = new user($dbHandler->getConnection());
         
@@ -34,7 +34,7 @@ if(isset($actionFlag) && $actionFlag != ""){
         
         
         $Email = $object->username;
-        $Userpassword = $object->password;
+        $Userpassword = md5($object->password);
         
         $tmpUser = new user($dbHandler->getConnection());
         
@@ -48,6 +48,9 @@ if(isset($actionFlag) && $actionFlag != ""){
 			$response = "correct";
 		
 		}
+                else if($logResponse->serverResponse == "not_active"){
+                    $response = "not_active";
+                }
 		else{
 		
 			$response = "incorrect";
