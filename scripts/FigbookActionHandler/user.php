@@ -50,13 +50,17 @@ class user {
                 $found_user = mysql_fetch_array($queryResult);
                 
                 $this->message = "success";
-                
+                 $isactive = $this->isActive($found_user['Username']);
+                if($isactive == "false"){
+                    
+                    $this->message = "not_active";
+                }
                 $this->responseObject = "{\"serverResponse\":\"".$this->message."\",
                                      \"Username\":\"".$found_user['Username']."\",
                                      \"Email\":\"".$found_user['EmailAddress']."\",
                                      \"UserID\":\"".$found_user['UserID']."\"
                                      }";
-          
+               
                 //return to app
                 return $this->responseObject;
                 
@@ -73,6 +77,20 @@ class user {
         
     }
     
+    private function isActive($userName) {
+        
+        $query="SELECT * FROM useraccount WHERE (Username='$userName' OR  EmailAddress='$userName') AND Status=1";
+        $queryResult = mysql_query($query); //run query
+        $result = "false";
+        if($queryResult){
+            
+            if(mysql_num_rows($queryResult) == 1){
+                $result = "true";
+            }
+           
+            }
+        return $result;
+    }
     //adds a new user to the systems database
     //check if similiar user does not exist 1st
     //if details are correct, a new user is added
