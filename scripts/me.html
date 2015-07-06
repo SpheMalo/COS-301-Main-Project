@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+    <head>
+        <script src="jquery-1.8.3.min.js"></script>
+        <script>
+            
+             function viewprofile()
+             {
+                var action =
+                {
+                    "action" : "viewprofile"
+                }
+              	var JSONstring = JSON.stringify(action);
+            	alert(JSONstring);
+			
+			$.ajax({
+				url: 'FigbookActionHandler/actionHandler.php',
+				data: 'json='+JSONstring,
+				dataType: 'json',
+				success: function(data){
+                    createProfile(data);
+					
+				},
+				error: function(data){
+					alert("error :"+data.responseText);
+				}		
+			});
+			
+			event.preventDefault();
+		}
+        
+        function createProfile(jsonObj)
+        {
+            var userInfo = JSON.parse(jsonObj);
+            alert(userInfo.Username);
+        }
+        </script>
+        
+    </head>
+    <body>
+        <button id="viewp" onclick="viewprofile()">View Profile</button>
+    </body>
+</html>

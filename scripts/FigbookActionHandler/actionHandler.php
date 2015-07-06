@@ -36,7 +36,11 @@ if(isset($actionFlag) && $actionFlag != ""){
         $response = $tmpUser->insertUser($Username, $Userpassword, $Email, $Role);
         
         
-    }else if($actionFlag == "login"){ //login user
+    }
+	
+	else if($actionFlag == "viewprofile"){
+	
+	}else if($actionFlag == "login"){ //login user
         
         
         $Email = $object->username;
