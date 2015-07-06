@@ -139,6 +139,23 @@ class user {
          return $this->responseObject;
     }
     
+	//Function update user details
+    public function updateUser($id,$uname,$upassword,$uemail,$urole,$status)
+	{
+		//suppress notice errors
+        error_reporting(E_ALL ^ E_NOTICE);
+         
+        //update user
+        $queryString = "UPDATE useraccount SET Username='$uname', UserRole='$urole', Password='$upassword', EmailAddress='$uemail', Status='$status' WHERE UserID='$id'";
+        
+        $queryResults = mysql_query($queryString);
+        
+        if ($queryResults === TRUE) {
+			return "updated";
+		} else {
+			return "notupdated";
+		}
+	}
     
     
     public function getforgotPassword($Useremail){
