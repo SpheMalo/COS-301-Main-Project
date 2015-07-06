@@ -14,6 +14,12 @@ $object = json_decode(stripslashes($getJSONObject));
 //get the action flag	
 $actionFlag = $object->action;
 
+//change account status
+function accountStatus($id, $status, $dbHandler)
+{
+	$tmpUser = new user($dbHandler->getConnection());
+	return $tmpUser->updateUser($id,'$uname','$upassword','$uemail','$urole', $status);	
+}
 
 //determine the type of action
 if(isset($actionFlag) && $actionFlag != ""){
@@ -58,7 +64,45 @@ if(isset($actionFlag) && $actionFlag != ""){
         //responce= incorrect or correct
         
     }
-    
+	else if($actionFlag == "suspend"){ //suspend account
+		$id = 1; // change to session id
+		$response = accountStatus($id,"2", $dbHandler);
+		
+		if($response == "updated")
+		{
+			$response = "Account Suspended";
+		}
+		else
+		{
+			$response = "Account Not Suspended";
+		}
+	}
+	else if($actionFlag == "delete"){ //delete account
+		$id = 1; // change to session id
+		$response = accountStatus($id,"0", $dbHandler);
+		if($response == "updated")
+		{
+			$response = "Account Deleted";
+		}
+		else
+		{
+			$response = "Account Not Deleted";
+		}
+	}
+	else if($actionFlag == "activate"){ //activate account
+		
+		$id = 1; // change to session id
+		$response = accountStatus($id,"1", $dbHandler);
+		
+		if($response == "updated")
+		{
+			$response = "Account Activated";
+		}
+		else
+		{
+			$response = "Account Not Activate";
+		}
+	}
 }else{
     
     $response = "no valid action specified";

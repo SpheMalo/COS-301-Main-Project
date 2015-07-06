@@ -113,6 +113,50 @@ window.onload = function()
 				}		
 			});
 		}
+		
+		$('#activate-button').click(function(){
+			var UserInfo = {
+				"action" : "activate"
+			}
+			var JSONstring = JSON.stringify(UserInfo);
+			alert(JSONstring);
+			ajaxAccountFunction(JSONstring);
+			event.preventDefault();
+		});
+	
+		$('#delete-button').click(function(){
+			var UserInfo = {
+				"action" : "delete"
+			}
+			var JSONstring = JSON.stringify(UserInfo);
+			alert(JSONstring);
+			ajaxAccountFunction(JSONstring);
+			event.preventDefault();
+		});
+		
+		$('#suspend-button').click(function(){
+			var UserInfo = {
+				"action" : "suspend"
+			}
+			var JSONstring = JSON.stringify(UserInfo);
+			alert(JSONstring);
+			ajaxAccountFunction(JSONstring);
+			event.preventDefault();
+		});
+		
+		function ajaxAccountFunction(JSONstring){
+			$.ajax({
+				url: 'scripts/FigbookActionHandler/actionHandler.php',
+				data: 'json='+JSONstring,
+				dataType: 'json',
+				success: function(data){
+					alert(data);
+				},
+				error: function(data){
+					alert("error :"+data.responseText);
+				}		
+			});
+		}
 	});
 
 }
