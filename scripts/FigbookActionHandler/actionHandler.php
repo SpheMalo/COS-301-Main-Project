@@ -5,7 +5,7 @@ require("user.php");
 
 $response = "";
 $dbHandler = new databaseHandler();
-
+session_start();
 if($dbHandler->isConnected()){
 
 //get json string
@@ -48,7 +48,7 @@ if(isset($actionFlag) && $actionFlag != ""){
 		$logResponse = json_decode($response);
 		if($logResponse->serverResponse == "success"){
 			
-			session_start();
+			
 			$_SESSION["UserID"] = $logResponse->UserID;
 			$_SESSION["Username"] = $logResponse->Username;
 			$response = "correct";
@@ -63,6 +63,7 @@ if(isset($actionFlag) && $actionFlag != ""){
 		}
         //responce= incorrect or correct
         
+<<<<<<< HEAD
     }
 	else if($actionFlag == "suspend"){ //suspend account
 		$id = 1; // change to session id
