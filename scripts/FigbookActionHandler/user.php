@@ -195,6 +195,14 @@ class user {
         }
         
     }
+	
+	public function getUserInfo($userID)
+	{
+		$sql = "SELECT * FROM useraccount WHERE UserID='$userID'";
+		
+		return json_encode(mysql_fetch_assoc(mysql_query($sql)));
+		
+	}
     
     
 }

@@ -5,7 +5,7 @@ require("user.php");
 
 $response = "";
 $dbHandler = new databaseHandler();
-
+session_start();
 if($dbHandler->isConnected()){
 
 //get json string
@@ -42,7 +42,7 @@ if(isset($actionFlag) && $actionFlag != ""){
 		$logResponse = json_decode($response);
 		if($logResponse->serverResponse == "success"){
 			
-			session_start();
+			
 			$_SESSION["UserID"] = $logResponse->UserID;
 			$_SESSION["Username"] = $logResponse->Username;
 			$response = "correct";
@@ -54,7 +54,13 @@ if(isset($actionFlag) && $actionFlag != ""){
 		}
         //responce= incorrect or correct
         
-    }
+    }else if($actionFlag == "viewprofile") 
+	{
+		$userID = 1;
+		$tmpUser = new user($dbHandler->getConnection());
+		
+		$response = $tmpUser->getUserInfo($userID);
+	}
     
 }else{
     
