@@ -2,7 +2,7 @@
 
     define("HOST", "localhost");
     define("USERNAME","root"); 
-    define("PASSWORD","");
+    define("PASSWORD","root");
     define("DATABASE","figbookdb"); 
             
 ?>
