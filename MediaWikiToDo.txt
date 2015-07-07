@@ -1,0 +1,15 @@
+Functional req:
+
+Login:
+	Session Management
+	- How
+	Construction of the page
+	- Adding
+
+Manuscript Management:
+	Save Button functionality
+	Create a page
+	Research necessary extensions
+
+---------------------------------
+Auditing & Monitoring/Reporting
