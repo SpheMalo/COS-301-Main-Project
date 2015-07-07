@@ -114,9 +114,9 @@
     <title>Calm breeze login screen</title>
     
     
-     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <!-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>-->
 
-        <script src="scripts/login.js"></script>
+        
     
         <link rel="stylesheet" href="css/style.css">
 
@@ -128,7 +128,7 @@
   <body>
 
     <div class="wrapper">
-	<div class="container">
+	<div class="container"  id="logDiv">
 		<h1>Welcome</h1>
 		
 		<form class="form">
@@ -171,7 +171,7 @@
     
     
         
-        <script src="scripts/register.js" type="text/javascript"></script>
+        <script src="scripts/authentication.js" type="text/javascript"></script>
 		<script type="text/javascript"> document.getElementById("password").setCustomValidity("Please enter password");
 		  document.getElementById("confirmpassword").setCustomValidity("Please confirm password");
 		  </script>
@@ -190,8 +190,8 @@
 		<form class="form" >
 			<input id="username" type="text" placeholder="Username">
                                     <input id="email" type="email" placeholder="Email Address">
-			<input id="password" type="password" name="pass" placeholder="Password" required="true">
-                                    <input id="confirmpassword" type="password" name="confirmpass" placeholder="Confirm Password" required="true">
+			<input id="password" type="password" name="pass" placeholder="Password" >
+                                    <input id="confirmpassword" type="password" name="confirmpass" placeholder="Confirm Password" >
                                     <select id="roleSelect">
                                        <option>Author</option>
                                        <option>Agent</option>
@@ -217,7 +217,7 @@
 	</ul>
 </div>
   
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <!--<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>-->
 
  
     
