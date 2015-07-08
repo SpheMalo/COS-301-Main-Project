@@ -67,7 +67,7 @@ if(isset($actionFlag) && $actionFlag != ""){
 		}
         //responce= incorrect or correct
         
-<<<<<<< HEAD
+
     }
 	else if($actionFlag == "suspend"){ //suspend account
 		$id = 1; // change to session id

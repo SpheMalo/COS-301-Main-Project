@@ -6,7 +6,11 @@
 
 .html
 {
-	background: #FFFFFF url("../images/dark-blue-background-backgrounds-wallpapers.jpg") no-repeat center center scroll;
+	/*background: #FFFFFF url("../images/dark-blue-background-backgrounds-wallpapers.jpg") no-repeat center center scroll;*/
+	background: #45484d; /* Old browsers */
+background: -moz-linear-gradient(top, #45484d 0%, #000000 47%, #45484d 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(47%,#000000), color-stop(100%,#45484d)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #45484d 0%,#000000 47%,#45484d 100%); /* Chrome10+,Safari5.1+ */
 	background-size: cover;
 }
 
