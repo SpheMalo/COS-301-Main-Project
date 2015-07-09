@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+
+\usepackage{pdflscape}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{titling}
+\usepackage{graphics} %Required for diagrams
+\usepackage[hidelinks]{hyperref}
+\usepackage{color}
+\usepackage{framed}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+
+\begin{document}
+
+\input{coverPage.tex}
+
+\newpage
+\tableofcontents
+
+\newpage
+\listoffigures
+
+\newpage
+
+\section{Architecture Requirements}
+	\subsection{Architecture Scope}
+\input{ArchitectureScope.tex}
+\newpage
+
+	\subsection{Quality Requirements}
+\input{QualityRequirements.tex}
+\newpage
+	\subsection{Integration and Access channel requirements}
+\input{IntegrationRequirements.tex}
+\newpage
+	\subsection{Architecture Constraints}
+\input{ArchitectureConstraints.tex}
+\newpage
+
+\section{Architectural patterns or styles}
+\input{ArchitecturalPatternsOrStyles.tex}
+\newpage
+
+\section{Architectural tactics or strategies}
+\input{ArchitecturalTacticsOrStrategies.tex}
+\newpage
+
+\section{Use of reference architectures and frameworks}
+\input{UseOfReferenceArchitecturesAndFrameworks.tex}
+\newpage
+
+\section{Technologies}
+\input{Technologies.tex}
+\newpage
+
+%\bibliography{Bibliography}
+\section{Bibliography}
+
+%input{*} still to be added
+\newpage
+
+\end{document}

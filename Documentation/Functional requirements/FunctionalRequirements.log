@@ -1,0 +1,1782 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.24)  9 JUL 2015 11:49
+entering extended mode
+**FunctionalRequirements.tex
+
+("C:\Users\Hakujin\Documents\GitHub\COS-301-Main-Project\Documentation\Function
+al requirements\FunctionalRequirements.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo"
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\pdflscape.sty"
+Package: pdflscape 2008/08/11 v0.10 Display of landscape pages in PDF (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+)))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 80.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+\Gm@cnth=\count88
+\Gm@cntv=\count89
+\c@Gm@tempcnt=\count90
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\titling\titling.sty"
+Package: titling 2009/09/04 v2.1d maketitle typesetting
+\thanksmarkwidth=\skip43
+\thanksmargin=\skip44
+\droptitle=\skip45
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen111
+\Hy@linkcounter=\count91
+\Hy@pagecounter=\count92
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count93
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count94
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen112
+\Fld@menulength=\count95
+\Field@Width=\dimen113
+\Fld@charsize=\dimen114
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count96
+\c@Item=\count97
+\c@Hfootnote=\count98
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count99
+\c@bookmark@seq@number=\count100
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip46
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\framed\framed.sty"
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip47
+\fb@frw=\dimen115
+\fb@frh=\dimen116
+\FrameRule=\dimen117
+\FrameSep=\dimen118
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+\Gin@req@height=\dimen119
+\Gin@req@width=\dimen120
+)
+\epsfxsize=\dimen121
+\epsfysize=\dimen122
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
+Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+))
+No file FunctionalRequirements.aux.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count101
+\scratchdimen=\dimen123
+\scratchbox=\box26
+\nofMPsegments=\count102
+\nofMParguments=\count103
+\everyMPshowfont=\toks16
+\MPscratchCnt=\count104
+\MPscratchDim=\dimen124
+\MPnumerator=\count105
+\makeMPintoPDFobject=\count106
+\everyMPtoPDFconversion=\toks17
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(57.81621pt, 498.66258pt, 57.81621pt)
+* v-part:(T,H,B)=(57.81621pt, 679.33757pt, 57.81621pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=498.66258pt
+* \textheight=679.33757pt
+* \oddsidemargin=-14.45378pt
+* \evensidemargin=-14.45378pt
+* \topmargin=-51.45378pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\AtBeginShipoutBox=\box27
+Package hyperref Info: Link coloring OFF on input line 13.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count107
+)
+LaTeX Info: Redefining \ref on input line 13.
+LaTeX Info: Redefining \pageref on input line 13.
+LaTeX Info: Redefining \nameref on input line 13.
+\@outlinefile=\write3
+
+("C:\Users\Hakujin\Documents\GitHub\COS-301-Main-Project\Documentation\Function
+al requirements\coverPage.tex"
+<images/UP_Logo.png, id=3, 900.36375pt x 269.50688pt>
+File: images/UP_Logo.png Graphic file (type png)
+ <use images/UP_Logo.png>
+Package pdftex.def Info: images/UP_Logo.png used on input line 6.
+(pdftex.def)             Requested size: 351.31378pt x 105.1607pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 31.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 31.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 31.
+
+[1
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Hakujin/Document
+s/GitHub/COS-301-Main-Project/Documentation/Functional requirements/images/UP_L
+ogo.png>])
+\tf@toc=\write4
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.20 \newpage
+              [1]
+\tf@lof=\write5
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 39--41
+
+ []
+
+[3]
+("C:\Users\Hakujin\Documents\GitHub\COS-301-Main-Project\Documentation\Function
+al requirements\authentication.tex"
+Package epstopdf Info: Source file: <epsImages/Authentication/AuthenticationSco
+pe.eps>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 43270 bytes
+(epstopdf)             Output file: <epsImages/Authentication/AuthenticationSco
+pe-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 12726 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Authentication/Au
+thenticationScope-eps-converted-to.pdf epsImages/Authentication/AuthenticationS
+cope.eps>
+(epstopdf)             \includegraphics on input line 7.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Authentication/AuthenticationScope-eps-converted-to.pdf, id=33, 557.
+08125pt x 219.82124pt>
+File: epsImages/Authentication/AuthenticationScope-eps-converted-to.pdf Graphic
+ file (type pdf)
+
+<use epsImages/Authentication/AuthenticationScope-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Authentication/AuthenticationScope-eps-conve
+rted-to.pdf used on input line 7.
+(pdftex.def)             Requested size: 501.3685pt x 197.83728pt.
+
+Overfull \hbox (2.70592pt too wide) in paragraph at lines 7--8
+[][] 
+ []
+
+[4 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Functi
+onal requirements/epsImages/Authentication/AuthenticationScope-eps-converted-to
+.pdf>]
+Missing character: There is no â in font cmbx12!
+Missing character: There is no € in font cmbx12!
+Missing character: There is no “ in font cmbx12!
+Package epstopdf Info: Source file: <epsImages/Authentication/serviceContract.e
+ps>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 48003 bytes
+(epstopdf)             Output file: <epsImages/Authentication/serviceContract-e
+ps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 16718 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Authentication/se
+rviceContract-eps-converted-to.pdf epsImages/Authentication/serviceContract.eps
+>
+(epstopdf)             \includegraphics on input line 22.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Authentication/serviceContract-eps-converted-to.pdf, id=69, 557.0812
+5pt x 270.00874pt>
+File: epsImages/Authentication/serviceContract-eps-converted-to.pdf Graphic fil
+e (type pdf)
+
+<use epsImages/Authentication/serviceContract-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Authentication/serviceContract-eps-converted
+-to.pdf used on input line 22.
+(pdftex.def)             Requested size: 501.3685pt x 243.00562pt.
+
+Overfull \hbox (2.70592pt too wide) in paragraph at lines 22--23
+[][] 
+ []
+
+[5 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Functi
+onal requirements/epsImages/Authentication/serviceContract-eps-converted-to.pdf
+>]
+Package epstopdf Info: Source file: <epsImages/Authentication/LoginServiceContr
+act.eps>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 50275 bytes
+(epstopdf)             Output file: <epsImages/Authentication/LoginServiceContr
+act-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 20803 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Authentication/Lo
+ginServiceContract-eps-converted-to.pdf epsImages/Authentication/LoginServiceCo
+ntract.eps>
+(epstopdf)             \includegraphics on input line 32.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Authentication/LoginServiceContract-eps-converted-to.pdf, id=116, 55
+7.08125pt x 284.06125pt>
+File: epsImages/Authentication/LoginServiceContract-eps-converted-to.pdf Graphi
+c file (type pdf)
+
+<use epsImages/Authentication/LoginServiceContract-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Authentication/LoginServiceContract-eps-conv
+erted-to.pdf used on input line 32.
+(pdftex.def)             Requested size: 501.3685pt x 255.65274pt.
+
+Overfull \hbox (2.70592pt too wide) in paragraph at lines 32--33
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--38
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--38
+
+ []
+
+Package epstopdf Info: Source file: <epsImages/Authentication/logoutServiceCont
+ract.eps>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 46261 bytes
+(epstopdf)             Output file: <epsImages/Authentication/logoutServiceCont
+ract-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 18720 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Authentication/lo
+goutServiceContract-eps-converted-to.pdf epsImages/Authentication/logoutService
+Contract.eps>
+(epstopdf)             \includegraphics on input line 42.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Authentication/logoutServiceContract-eps-converted-to.pdf, id=117, 5
+57.08125pt x 209.78375pt>
+File: epsImages/Authentication/logoutServiceContract-eps-converted-to.pdf Graph
+ic file (type pdf)
+
+<use epsImages/Authentication/logoutServiceContract-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Authentication/logoutServiceContract-eps-con
+verted-to.pdf used on input line 42.
+(pdftex.def)             Requested size: 501.3685pt x 188.8036pt.
+
+Overfull \hbox (2.70592pt too wide) in paragraph at lines 42--43
+[][] 
+ []
+
+[6 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Functi
+onal requirements/epsImages/Authentication/LoginServiceContract-eps-converted-t
+o.pdf> <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Fu
+nctional requirements/epsImages/Authentication/logoutServiceContract-eps-conver
+ted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
+
+ []
+
+Package epstopdf Info: Source file: <epsImages/Authentication/editAccountServic
+eContract.eps>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 52941 bytes
+(epstopdf)             Output file: <epsImages/Authentication/editAccountServic
+eContract-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 22039 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Authentication/ed
+itAccountServiceContract-eps-converted-to.pdf epsImages/Authentication/editAcco
+untServiceContract.eps>
+(epstopdf)             \includegraphics on input line 52.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Authentication/editAccountServiceContract-eps-converted-to.pdf, id=2
+18, 557.08125pt x 392.46625pt>
+File: epsImages/Authentication/editAccountServiceContract-eps-converted-to.pdf 
+Graphic file (type pdf)
+
+<use epsImages/Authentication/editAccountServiceContract-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Authentication/editAccountServiceContract-ep
+s-converted-to.pdf used on input line 52.
+(pdftex.def)             Requested size: 501.3685pt x 353.21634pt.
+
+Overfull \hbox (2.70592pt too wide) in paragraph at lines 52--53
+[][] 
+ []
+
+[7 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Functi
+onal requirements/epsImages/Authentication/editAccountServiceContract-eps-conve
+rted-to.pdf>]
+Missing character: There is no â in font cmbx12!
+Missing character: There is no € in font cmbx12!
+Missing character: There is no “ in font cmbx12!
+Package epstopdf Info: Source file: <epsImages/Authentication/deleteAccount.eps
+>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 48174 bytes
+(epstopdf)             Output file: <epsImages/Authentication/deleteAccount-eps
+-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 17672 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Authentication/de
+leteAccount-eps-converted-to.pdf epsImages/Authentication/deleteAccount.eps>
+(epstopdf)             \includegraphics on input line 63.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Authentication/deleteAccount-eps-converted-to.pdf, id=281, 557.08125
+pt x 249.93375pt>
+File: epsImages/Authentication/deleteAccount-eps-converted-to.pdf Graphic file 
+(type pdf)
+
+<use epsImages/Authentication/deleteAccount-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Authentication/deleteAccount-eps-converted-t
+o.pdf used on input line 63.
+(pdftex.def)             Requested size: 501.3685pt x 224.9383pt.
+
+Overfull \hbox (2.70592pt too wide) in paragraph at lines 63--64
+[][] 
+ []
+
+[8 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Functi
+onal requirements/epsImages/Authentication/deleteAccount-eps-converted-to.pdf>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
+
+ []
+
+Package epstopdf Info: Source file: <epsImages/Authentication/suspendServiceCon
+tract.eps>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 49356 bytes
+(epstopdf)             Output file: <epsImages/Authentication/suspendServiceCon
+tract-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 20948 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Authentication/su
+spendServiceContract-eps-converted-to.pdf epsImages/Authentication/suspendServi
+ceContract.eps>
+(epstopdf)             \includegraphics on input line 74.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Authentication/suspendServiceContract-eps-converted-to.pdf, id=331, 
+557.08125pt x 308.15125pt>
+File: epsImages/Authentication/suspendServiceContract-eps-converted-to.pdf Grap
+hic file (type pdf)
+
+<use epsImages/Authentication/suspendServiceContract-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Authentication/suspendServiceContract-eps-co
+nverted-to.pdf used on input line 74.
+(pdftex.def)             Requested size: 501.3685pt x 277.33354pt.
+
+Overfull \hbox (2.70592pt too wide) in paragraph at lines 74--75
+[][] 
+ []
+
+[9 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Functi
+onal requirements/epsImages/Authentication/suspendServiceContract-eps-converted
+-to.pdf>]
+Package epstopdf Info: Source file: <epsImages/Authentication/domainModel.eps>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 41969 bytes
+(epstopdf)             Output file: <epsImages/Authentication/domainModel-eps-c
+onverted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 12950 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Authentication/do
+mainModel-eps-converted-to.pdf epsImages/Authentication/domainModel.eps>
+(epstopdf)             \includegraphics on input line 84.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Authentication/domainModel-eps-converted-to.pdf, id=390, 557.08125pt
+ x 286.06876pt>
+File: epsImages/Authentication/domainModel-eps-converted-to.pdf Graphic file (t
+ype pdf)
+
+<use epsImages/Authentication/domainModel-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Authentication/domainModel-eps-converted-to.
+pdf used on input line 84.
+(pdftex.def)             Requested size: 501.3685pt x 257.45949pt.
+
+Overfull \hbox (2.70592pt too wide) in paragraph at lines 84--85
+[][] 
+ []
+
+) [10 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Fun
+ctional requirements/epsImages/Authentication/domainModel-eps-converted-to.pdf>
+]
+("C:\Users\Hakujin\Documents\GitHub\COS-301-Main-Project\Documentation\Function
+al requirements\manuscriptManagement.tex"
+Package epstopdf Info: Source file: <epsImages/ManuscriptManagement/scope.eps>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 43996 bytes
+(epstopdf)             Output file: <epsImages/ManuscriptManagement/scope-eps-c
+onverted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 13214 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/ManuscriptManagem
+ent/scope-eps-converted-to.pdf epsImages/ManuscriptManagement/scope.eps>
+(epstopdf)             \includegraphics on input line 8.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/ManuscriptManagement/scope-eps-converted-to.pdf, id=420, 557.08125pt
+ x 173.64874pt>
+File: epsImages/ManuscriptManagement/scope-eps-converted-to.pdf Graphic file (t
+ype pdf)
+
+<use epsImages/ManuscriptManagement/scope-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/ManuscriptManagement/scope-eps-converted-to.
+pdf used on input line 8.
+(pdftex.def)             Requested size: 501.88702pt x 200.757pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 8--9
+[][] 
+ []
+
+[11 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Funct
+ional requirements/epsImages/ManuscriptManagement/scope-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 17--19
+
+ []
+
+Package epstopdf Info: Source file: <epsImages/ManuscriptManagement/createManus
+criptServiceContract.eps>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 55475 bytes
+(epstopdf)             Output file: <epsImages/ManuscriptManagement/createManus
+criptServiceContract-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 23267 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/ManuscriptManagem
+ent/createManuscriptServiceContract-eps-converted-to.pdf epsImages/ManuscriptMa
+nagement/createManuscriptServiceContract.eps>
+(epstopdf)             \includegraphics on input line 23.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/ManuscriptManagement/createManuscriptServiceContract-eps-converted-t
+o.pdf, id=455, 557.08125pt x 428.60126pt>
+File: epsImages/ManuscriptManagement/createManuscriptServiceContract-eps-conver
+ted-to.pdf Graphic file (type pdf)
+
+<use epsImages/ManuscriptManagement/createManuscriptServiceContract-eps-convert
+ed-to.pdf>
+Package pdftex.def Info: epsImages/ManuscriptManagement/createManuscriptService
+Contract-eps-converted-to.pdf used on input line 23.
+(pdftex.def)             Requested size: 501.88702pt x 331.2404pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 23--24
+[][] 
+ []
+
+[12 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Funct
+ional requirements/epsImages/ManuscriptManagement/createManuscriptServiceContra
+ct-eps-converted-to.pdf>]
+Missing character: There is no â in font cmbx12!
+Missing character: There is no € in font cmbx12!
+Missing character: There is no “ in font cmbx12!
+Package epstopdf Info: Source file: <epsImages/ManuscriptManagement/deleteManus
+cript.eps>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 49687 bytes
+(epstopdf)             Output file: <epsImages/ManuscriptManagement/deleteManus
+cript-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 18755 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/ManuscriptManagem
+ent/deleteManuscript-eps-converted-to.pdf epsImages/ManuscriptManagement/delete
+Manuscript.eps>
+(epstopdf)             \includegraphics on input line 35.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/ManuscriptManagement/deleteManuscript-eps-converted-to.pdf, id=523, 
+557.08125pt x 436.63126pt>
+File: epsImages/ManuscriptManagement/deleteManuscript-eps-converted-to.pdf Grap
+hic file (type pdf)
+
+<use epsImages/ManuscriptManagement/deleteManuscript-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/ManuscriptManagement/deleteManuscript-eps-co
+nverted-to.pdf used on input line 35.
+(pdftex.def)             Requested size: 501.88702pt x 331.23692pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 35--36
+[][] 
+ []
+
+[13 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Funct
+ional requirements/epsImages/ManuscriptManagement/deleteManuscript-eps-converte
+d-to.pdf>]
+Missing character: There is no â in font cmbx12!
+Missing character: There is no € in font cmbx12!
+Missing character: There is no “ in font cmbx12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
+
+ []
+
+Package epstopdf Info: Source file: <epsImages/ManuscriptManagement/linkToSocia
+lMedia.eps>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 54555 bytes
+(epstopdf)             Output file: <epsImages/ManuscriptManagement/linkToSocia
+lMedia-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 20318 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/ManuscriptManagem
+ent/linkToSocialMedia-eps-converted-to.pdf epsImages/ManuscriptManagement/linkT
+oSocialMedia.eps>
+(epstopdf)             \includegraphics on input line 46.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/ManuscriptManagement/linkToSocialMedia-eps-converted-to.pdf, id=575,
+ 557.08125pt x 498.86375pt>
+File: epsImages/ManuscriptManagement/linkToSocialMedia-eps-converted-to.pdf Gra
+phic file (type pdf)
+
+<use epsImages/ManuscriptManagement/linkToSocialMedia-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/ManuscriptManagement/linkToSocialMedia-eps-c
+onverted-to.pdf used on input line 46.
+(pdftex.def)             Requested size: 501.88702pt x 331.24545pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 46--47
+[][] 
+ []
+
+[14 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Funct
+ional requirements/epsImages/ManuscriptManagement/linkToSocialMedia-eps-convert
+ed-to.pdf>]
+Missing character: There is no â in font cmbx12!
+Missing character: There is no € in font cmbx12!
+Missing character: There is no “ in font cmbx12!
+Package epstopdf Info: Source file: <epsImages/ManuscriptManagement/editManuscr
+ipt.eps>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 48653 bytes
+(epstopdf)             Output file: <epsImages/ManuscriptManagement/editManuscr
+ipt-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 20001 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/ManuscriptManagem
+ent/editManuscript-eps-converted-to.pdf epsImages/ManuscriptManagement/editManu
+script.eps>
+(epstopdf)             \includegraphics on input line 58.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/ManuscriptManagement/editManuscript-eps-converted-to.pdf, id=631, 55
+7.08125pt x 464.73625pt>
+File: epsImages/ManuscriptManagement/editManuscript-eps-converted-to.pdf Graphi
+c file (type pdf)
+
+<use epsImages/ManuscriptManagement/editManuscript-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/ManuscriptManagement/editManuscript-eps-conv
+erted-to.pdf used on input line 58.
+(pdftex.def)             Requested size: 501.88702pt x 331.24857pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 58--59
+[][] 
+ []
+
+[15 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Funct
+ional requirements/epsImages/ManuscriptManagement/editManuscript-eps-converted-
+to.pdf>]
+Package epstopdf Info: Source file: <epsImages/ManuscriptManagement/EvaluateMan
+uscript.eps>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 53153 bytes
+(epstopdf)             Output file: <epsImages/ManuscriptManagement/EvaluateMan
+uscript-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 22010 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/ManuscriptManagem
+ent/EvaluateManuscript-eps-converted-to.pdf epsImages/ManuscriptManagement/Eval
+uateManuscript.eps>
+(epstopdf)             \includegraphics on input line 69.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/ManuscriptManagement/EvaluateManuscript-eps-converted-to.pdf, id=682
+, 557.08125pt x 396.48125pt>
+File: epsImages/ManuscriptManagement/EvaluateManuscript-eps-converted-to.pdf Gr
+aphic file (type pdf)
+
+<use epsImages/ManuscriptManagement/EvaluateManuscript-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/ManuscriptManagement/EvaluateManuscript-eps-
+converted-to.pdf used on input line 69.
+(pdftex.def)             Requested size: 501.88702pt x 240.90338pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 69--70
+[][] 
+ []
+
+Package epstopdf Info: Source file: <epsImages/ManuscriptManagement/EvaluateAct
+ivity.eps>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 55721 bytes
+(epstopdf)             Output file: <epsImages/ManuscriptManagement/EvaluateAct
+ivity-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 19598 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/ManuscriptManagem
+ent/EvaluateActivity-eps-converted-to.pdf epsImages/ManuscriptManagement/Evalua
+teActivity.eps>
+(epstopdf)             \includegraphics on input line 75.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/ManuscriptManagement/EvaluateActivity-eps-converted-to.pdf, id=683, 
+557.08125pt x 219.82124pt>
+File: epsImages/ManuscriptManagement/EvaluateActivity-eps-converted-to.pdf Grap
+hic file (type pdf)
+
+<use epsImages/ManuscriptManagement/EvaluateActivity-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/ManuscriptManagement/EvaluateActivity-eps-co
+nverted-to.pdf used on input line 75.
+(pdftex.def)             Requested size: 501.88702pt x 200.75543pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 75--76
+[][] 
+ []
+
+[16 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Funct
+ional requirements/epsImages/ManuscriptManagement/EvaluateManuscript-eps-conver
+ted-to.pdf> <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentati
+on/Functional requirements/epsImages/ManuscriptManagement/EvaluateActivity-eps-
+converted-to.pdf>]
+Package epstopdf Info: Source file: <epsImages/ManuscriptManagement/ReadManuscr
+ipt.eps>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 51297 bytes
+(epstopdf)             Output file: <epsImages/ManuscriptManagement/ReadManuscr
+ipt-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 21088 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/ManuscriptManagem
+ent/ReadManuscript-eps-converted-to.pdf epsImages/ManuscriptManagement/ReadManu
+script.eps>
+(epstopdf)             \includegraphics on input line 86.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/ManuscriptManagement/ReadManuscript-eps-converted-to.pdf, id=799, 55
+7.08125pt x 490.83376pt>
+File: epsImages/ManuscriptManagement/ReadManuscript-eps-converted-to.pdf Graphi
+c file (type pdf)
+
+<use epsImages/ManuscriptManagement/ReadManuscript-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/ManuscriptManagement/ReadManuscript-eps-conv
+erted-to.pdf used on input line 86.
+(pdftex.def)             Requested size: 501.88702pt x 331.24606pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 86--87
+[][] 
+ []
+
+[17 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Funct
+ional requirements/epsImages/ManuscriptManagement/ReadManuscript-eps-converted-
+to.pdf>]
+Package epstopdf Info: Source file: <epsImages/ManuscriptManagement/sendManuscr
+iptServiceContract.eps>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 55238 bytes
+(epstopdf)             Output file: <epsImages/ManuscriptManagement/sendManuscr
+iptServiceContract-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 22894 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/ManuscriptManagem
+ent/sendManuscriptServiceContract-eps-converted-to.pdf epsImages/ManuscriptMana
+gement/sendManuscriptServiceContract.eps>
+(epstopdf)             \includegraphics on input line 97.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/ManuscriptManagement/sendManuscriptServiceContract-eps-converted-to.
+pdf, id=854, 557.08125pt x 382.42876pt>
+File: epsImages/ManuscriptManagement/sendManuscriptServiceContract-eps-converte
+d-to.pdf Graphic file (type pdf)
+
+<use epsImages/ManuscriptManagement/sendManuscriptServiceContract-eps-converted
+-to.pdf>
+Package pdftex.def Info: epsImages/ManuscriptManagement/sendManuscriptServiceCo
+ntract-eps-converted-to.pdf used on input line 97.
+(pdftex.def)             Requested size: 501.88702pt x 331.25731pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 97--98
+[][] 
+ []
+
+[18 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Funct
+ional requirements/epsImages/ManuscriptManagement/sendManuscriptServiceContract
+-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <epsImages/DomainModels/ManuscriptManagemen
+t.eps>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 50312 bytes
+(epstopdf)             Output file: <epsImages/DomainModels/ManuscriptManagemen
+t-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 17055 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/DomainModels/Manu
+scriptManagement-eps-converted-to.pdf epsImages/DomainModels/ManuscriptManageme
+nt.eps>
+(epstopdf)             \includegraphics on input line 105.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/DomainModels/ManuscriptManagement-eps-converted-to.pdf, id=918, 557.
+08125pt x 378.41376pt>
+File: epsImages/DomainModels/ManuscriptManagement-eps-converted-to.pdf Graphic 
+file (type pdf)
+
+<use epsImages/DomainModels/ManuscriptManagement-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/DomainModels/ManuscriptManagement-eps-conver
+ted-to.pdf used on input line 105.
+(pdftex.def)             Requested size: 501.88702pt x 351.31487pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 105--106
+[][] 
+ []
+
+) [19 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Fun
+ctional requirements/epsImages/DomainModels/ManuscriptManagement-eps-converted-
+to.pdf>]
+("C:\Users\Hakujin\Documents\GitHub\COS-301-Main-Project\Documentation\Function
+al requirements\communication.tex"
+Package epstopdf Info: Source file: <epsImages/Communication/CommunicationScope
+.eps>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 40940 bytes
+(epstopdf)             Output file: <epsImages/Communication/CommunicationScope
+-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 10891 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Communication/Com
+municationScope-eps-converted-to.pdf epsImages/Communication/CommunicationScope
+.eps>
+(epstopdf)             \includegraphics on input line 8.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Communication/CommunicationScope-eps-converted-to.pdf, id=960, 557.0
+8125pt x 249.93375pt>
+File: epsImages/Communication/CommunicationScope-eps-converted-to.pdf Graphic f
+ile (type pdf)
+
+<use epsImages/Communication/CommunicationScope-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Communication/CommunicationScope-eps-convert
+ed-to.pdf used on input line 8.
+(pdftex.def)             Requested size: 501.3685pt x 224.9383pt.
+
+Overfull \hbox (2.70592pt too wide) in paragraph at lines 8--9
+[][] 
+ []
+
+[20
+
+ <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Function
+al requirements/epsImages/Communication/CommunicationScope-eps-converted-to.pdf
+>]
+Package epstopdf Info: Source file: <epsImages/Communication/sendLetterServiceC
+ontract.eps>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 53111 bytes
+(epstopdf)             Output file: <epsImages/Communication/sendLetterServiceC
+ontract-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 22571 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Communication/sen
+dLetterServiceContract-eps-converted-to.pdf epsImages/Communication/sendLetterS
+erviceContract.eps>
+(epstopdf)             \includegraphics on input line 20.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Communication/sendLetterServiceContract-eps-converted-to.pdf, id=987
+, 557.08125pt x 426.59375pt>
+File: epsImages/Communication/sendLetterServiceContract-eps-converted-to.pdf Gr
+aphic file (type pdf)
+
+<use epsImages/Communication/sendLetterServiceContract-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Communication/sendLetterServiceContract-eps-
+converted-to.pdf used on input line 20.
+(pdftex.def)             Requested size: 501.3685pt x 383.93082pt.
+
+Overfull \hbox (2.70592pt too wide) in paragraph at lines 20--21
+[][] 
+ []
+
+[21 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Funct
+ional requirements/epsImages/Communication/sendLetterServiceContract-eps-conver
+ted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+
+ []
+
+Package epstopdf Info: Source file: <epsImages/Communication/viewLetterServiceC
+ontract.eps>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 49406 bytes
+(epstopdf)             Output file: <epsImages/Communication/viewLetterServiceC
+ontract-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 20975 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Communication/vie
+wLetterServiceContract-eps-converted-to.pdf epsImages/Communication/viewLetterS
+erviceContract.eps>
+(epstopdf)             \includegraphics on input line 31.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Communication/viewLetterServiceContract-eps-converted-to.pdf, id=104
+9, 557.08125pt x 332.24126pt>
+File: epsImages/Communication/viewLetterServiceContract-eps-converted-to.pdf Gr
+aphic file (type pdf)
+
+<use epsImages/Communication/viewLetterServiceContract-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Communication/viewLetterServiceContract-eps-
+converted-to.pdf used on input line 31.
+(pdftex.def)             Requested size: 501.3685pt x 299.01436pt.
+
+Overfull \hbox (2.70592pt too wide) in paragraph at lines 31--32
+[][] 
+ []
+
+[22 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Funct
+ional requirements/epsImages/Communication/viewLetterServiceContract-eps-conver
+ted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 37--38
+
+ []
+
+Package epstopdf Info: Source file: <epsImages/Communication/comment.eps>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 49624 bytes
+(epstopdf)             Output file: <epsImages/Communication/comment-eps-conver
+ted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 17819 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Communication/com
+ment-eps-converted-to.pdf epsImages/Communication/comment.eps>
+(epstopdf)             \includegraphics on input line 41.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Communication/comment-eps-converted-to.pdf, id=1107, 557.08125pt x 5
+75.14874pt>
+File: epsImages/Communication/comment-eps-converted-to.pdf Graphic file (type p
+df)
+ <use epsImages/Communication/comment-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Communication/comment-eps-converted-to.pdf u
+sed on input line 41.
+(pdftex.def)             Requested size: 445.6656pt x 460.11961pt.
+ [23 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Func
+tional requirements/epsImages/Communication/comment-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <epsImages/DomainModels/communicationDomain
+Model.eps>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 47354 bytes
+(epstopdf)             Output file: <epsImages/DomainModels/communicationDomain
+Model-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 15185 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/DomainModels/comm
+unicationDomainModel-eps-converted-to.pdf epsImages/DomainModels/communicationD
+omainModel.eps>
+(epstopdf)             \includegraphics on input line 51.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/DomainModels/communicationDomainModel-eps-converted-to.pdf, id=1154,
+ 557.08125pt x 332.24126pt>
+File: epsImages/DomainModels/communicationDomainModel-eps-converted-to.pdf Grap
+hic file (type pdf)
+
+<use epsImages/DomainModels/communicationDomainModel-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/DomainModels/communicationDomainModel-eps-co
+nverted-to.pdf used on input line 51.
+(pdftex.def)             Requested size: 445.6656pt x 265.79335pt.
+)
+[24 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Funct
+ional requirements/epsImages/DomainModels/communicationDomainModel-eps-converte
+d-to.pdf>]
+("C:\Users\Hakujin\Documents\GitHub\COS-301-Main-Project\Documentation\Function
+al requirements\reporting.tex"
+Package epstopdf Info: Source file: <epsImages/Reporting/ReportScope.eps>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 43105 bytes
+(epstopdf)             Output file: <epsImages/Reporting/ReportScope-eps-conver
+ted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 12316 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Reporting/ReportS
+cope-eps-converted-to.pdf epsImages/Reporting/ReportScope.eps>
+(epstopdf)             \includegraphics on input line 7.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Reporting/ReportScope-eps-converted-to.pdf, id=1190, 557.08125pt x 2
+01.75375pt>
+File: epsImages/Reporting/ReportScope-eps-converted-to.pdf Graphic file (type p
+df)
+ <use epsImages/Reporting/ReportScope-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Reporting/ReportScope-eps-converted-to.pdf u
+sed on input line 7.
+(pdftex.def)             Requested size: 501.88702pt x 200.75273pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 7--8
+[][] 
+ []
+
+Package epstopdf Info: Source file: <epsImages/Reporting/createSchedule.eps>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 54775 bytes
+(epstopdf)             Output file: <epsImages/Reporting/createSchedule-eps-con
+verted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 23468 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Reporting/createS
+chedule-eps-converted-to.pdf epsImages/Reporting/createSchedule.eps>
+(epstopdf)             \includegraphics on input line 18.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Reporting/createSchedule-eps-converted-to.pdf, id=1191, 557.08125pt 
+x 432.61626pt>
+File: epsImages/Reporting/createSchedule-eps-converted-to.pdf Graphic file (typ
+e pdf)
+ <use epsImages/Reporting/createSchedule-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Reporting/createSchedule-eps-converted-to.pd
+f used on input line 18.
+(pdftex.def)             Requested size: 501.88702pt x 200.7486pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 18--19
+[][] 
+ []
+
+[25 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Funct
+ional requirements/epsImages/Reporting/ReportScope-eps-converted-to.pdf> <C:/Us
+ers/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Functional requ
+irements/epsImages/Reporting/createSchedule-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <epsImages/Reporting/viewSchedule.eps>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 51689 bytes
+(epstopdf)             Output file: <epsImages/Reporting/viewSchedule-eps-conve
+rted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 21389 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Reporting/viewSch
+edule-eps-converted-to.pdf epsImages/Reporting/viewSchedule.eps>
+(epstopdf)             \includegraphics on input line 27.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Reporting/viewSchedule-eps-converted-to.pdf, id=1285, 557.08125pt x 
+468.75125pt>
+File: epsImages/Reporting/viewSchedule-eps-converted-to.pdf Graphic file (type 
+pdf)
+ <use epsImages/Reporting/viewSchedule-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Reporting/viewSchedule-eps-converted-to.pdf 
+used on input line 27.
+(pdftex.def)             Requested size: 501.88702pt x 200.74371pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 27--28
+[][] 
+ []
+
+Package epstopdf Info: Source file: <epsImages/Reporting/editSchedule.eps>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 54582 bytes
+(epstopdf)             Output file: <epsImages/Reporting/editSchedule-eps-conve
+rted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 23422 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Reporting/editSch
+edule-eps-converted-to.pdf epsImages/Reporting/editSchedule.eps>
+(epstopdf)             \includegraphics on input line 37.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Reporting/editSchedule-eps-converted-to.pdf, id=1286, 557.08125pt x 
+500.87125pt>
+File: epsImages/Reporting/editSchedule-eps-converted-to.pdf Graphic file (type 
+pdf)
+ <use epsImages/Reporting/editSchedule-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Reporting/editSchedule-eps-converted-to.pdf 
+used on input line 37.
+(pdftex.def)             Requested size: 501.88702pt x 200.75pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 37--38
+[][] 
+ []
+
+[26 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Funct
+ional requirements/epsImages/Reporting/viewSchedule-eps-converted-to.pdf> <C:/U
+sers/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Functional req
+uirements/epsImages/Reporting/editSchedule-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <epsImages/Reporting/createReport.eps>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 49043 bytes
+(epstopdf)             Output file: <epsImages/Reporting/createReport-eps-conve
+rted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 17311 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Reporting/createR
+eport-eps-converted-to.pdf epsImages/Reporting/createReport.eps>
+(epstopdf)             \includegraphics on input line 47.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Reporting/createReport-eps-converted-to.pdf, id=1401, 557.08125pt x 
+557.08125pt>
+File: epsImages/Reporting/createReport-eps-converted-to.pdf Graphic file (type 
+pdf)
+ <use epsImages/Reporting/createReport-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Reporting/createReport-eps-converted-to.pdf 
+used on input line 47.
+(pdftex.def)             Requested size: 501.88702pt x 200.7446pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 47--48
+[][] 
+ []
+
+Package epstopdf Info: Source file: <epsImages/Reporting/viewReportServiceContr
+act.eps>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 50703 bytes
+(epstopdf)             Output file: <epsImages/Reporting/viewReportServiceContr
+act-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 21084 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Reporting/viewRep
+ortServiceContract-eps-converted-to.pdf epsImages/Reporting/viewReportServiceCo
+ntract.eps>
+(epstopdf)             \includegraphics on input line 57.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Reporting/viewReportServiceContract-eps-converted-to.pdf, id=1402, 5
+57.08125pt x 370.38374pt>
+File: epsImages/Reporting/viewReportServiceContract-eps-converted-to.pdf Graphi
+c file (type pdf)
+
+<use epsImages/Reporting/viewReportServiceContract-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Reporting/viewReportServiceContract-eps-conv
+erted-to.pdf used on input line 57.
+(pdftex.def)             Requested size: 501.88702pt x 200.75024pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 57--58
+[][] 
+ []
+
+[27 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Funct
+ional requirements/epsImages/Reporting/createReport-eps-converted-to.pdf> <C:/U
+sers/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Functional req
+uirements/epsImages/Reporting/viewReportServiceContract-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <epsImages/Reporting/exportReport.eps>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 48813 bytes
+(epstopdf)             Output file: <epsImages/Reporting/exportReport-eps-conve
+rted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 17830 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Reporting/exportR
+eport-eps-converted-to.pdf epsImages/Reporting/exportReport.eps>
+(epstopdf)             \includegraphics on input line 67.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Reporting/exportReport-eps-converted-to.pdf, id=1504, 557.08125pt x 
+530.98375pt>
+File: epsImages/Reporting/exportReport-eps-converted-to.pdf Graphic file (type 
+pdf)
+ <use epsImages/Reporting/exportReport-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Reporting/exportReport-eps-converted-to.pdf 
+used on input line 67.
+(pdftex.def)             Requested size: 501.88702pt x 200.75504pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 67--68
+[][] 
+ []
+
+Package epstopdf Info: Source file: <epsImages/DomainModels/Reporting.eps>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 49225 bytes
+(epstopdf)             Output file: <epsImages/DomainModels/Reporting-eps-conve
+rted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 17200 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/DomainModels/Repo
+rting-eps-converted-to.pdf epsImages/DomainModels/Reporting.eps>
+(epstopdf)             \includegraphics on input line 76.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/DomainModels/Reporting-eps-converted-to.pdf, id=1505, 557.08125pt x 
+270.00874pt>
+File: epsImages/DomainModels/Reporting-eps-converted-to.pdf Graphic file (type 
+pdf)
+ <use epsImages/DomainModels/Reporting-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/DomainModels/Reporting-eps-converted-to.pdf 
+used on input line 76.
+(pdftex.def)             Requested size: 501.88702pt x 200.75505pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 76--77
+[][] 
+ []
+
+[28 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Funct
+ional requirements/epsImages/Reporting/exportReport-eps-converted-to.pdf> <C:/U
+sers/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Functional req
+uirements/epsImages/DomainModels/Reporting-eps-converted-to.pdf>])
+("C:\Users\Hakujin\Documents\GitHub\COS-301-Main-Project\Documentation\Function
+al requirements\production.tex"
+Package epstopdf Info: Source file: <epsImages/Production/Scope.eps>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 44811 bytes
+(epstopdf)             Output file: <epsImages/Production/Scope-eps-converted-t
+o.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 14217 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Production/Scope-
+eps-converted-to.pdf epsImages/Production/Scope.eps>
+(epstopdf)             \includegraphics on input line 9.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Production/Scope-eps-converted-to.pdf, id=1593, 557.08125pt x 386.44
+376pt>
+File: epsImages/Production/Scope-eps-converted-to.pdf Graphic file (type pdf)
+ <use epsImages/Production/Scope-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Production/Scope-eps-converted-to.pdf used o
+n input line 9.
+(pdftex.def)             Requested size: 501.88702pt x 281.05199pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 9--10
+[][] 
+ []
+
+[29
+
+ <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Function
+al requirements/epsImages/Production/Scope-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <epsImages/Production/RegisterISBNNumber.ep
+s>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 53387 bytes
+(epstopdf)             Output file: <epsImages/Production/RegisterISBNNumber-ep
+s-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 22029 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Production/Regist
+erISBNNumber-eps-converted-to.pdf epsImages/Production/RegisterISBNNumber.eps>
+(epstopdf)             \includegraphics on input line 24.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Production/RegisterISBNNumber-eps-converted-to.pdf, id=1631, 557.081
+25pt x 502.87875pt>
+File: epsImages/Production/RegisterISBNNumber-eps-converted-to.pdf Graphic file
+ (type pdf)
+
+<use epsImages/Production/RegisterISBNNumber-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Production/RegisterISBNNumber-eps-converted-
+to.pdf used on input line 24.
+(pdftex.def)             Requested size: 501.88702pt x 381.42448pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 24--25
+[][] 
+ []
+
+[30 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Funct
+ional requirements/epsImages/Production/RegisterISBNNumber-eps-converted-to.pdf
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
+
+ []
+
+[31]
+Package epstopdf Info: Source file: <epsImages/Production/SelectCopyEditor.eps>
+
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 52586 bytes
+(epstopdf)             Output file: <epsImages/Production/SelectCopyEditor-eps-
+converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 22040 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Production/Select
+CopyEditor-eps-converted-to.pdf epsImages/Production/SelectCopyEditor.eps>
+(epstopdf)             \includegraphics on input line 38.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Production/SelectCopyEditor-eps-converted-to.pdf, id=1697, 557.08125
+pt x 516.93124pt>
+File: epsImages/Production/SelectCopyEditor-eps-converted-to.pdf Graphic file (
+type pdf)
+
+<use epsImages/Production/SelectCopyEditor-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Production/SelectCopyEditor-eps-converted-to
+.pdf used on input line 38.
+(pdftex.def)             Requested size: 501.88702pt x 381.4425pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 38--39
+[][] 
+ []
+
+[32
+
+ <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Function
+al requirements/epsImages/Production/SelectCopyEditor-eps-converted-to.pdf>]
+Missing character: There is no â in font cmbx12!
+Missing character: There is no € in font cmbx12!
+Missing character: There is no “ in font cmbx12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+
+ []
+
+Package epstopdf Info: Source file: <epsImages/Production/SelectProofReader.eps
+>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 52348 bytes
+(epstopdf)             Output file: <epsImages/Production/SelectProofReader-eps
+-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 21874 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Production/Select
+ProofReader-eps-converted-to.pdf epsImages/Production/SelectProofReader.eps>
+(epstopdf)             \includegraphics on input line 50.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Production/SelectProofReader-eps-converted-to.pdf, id=1753, 557.0812
+5pt x 486.81876pt>
+File: epsImages/Production/SelectProofReader-eps-converted-to.pdf Graphic file 
+(type pdf)
+
+<use epsImages/Production/SelectProofReader-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Production/SelectProofReader-eps-converted-t
+o.pdf used on input line 50.
+(pdftex.def)             Requested size: 501.88702pt x 381.4256pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 50--51
+[][] 
+ []
+
+[33 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Funct
+ional requirements/epsImages/Production/SelectProofReader-eps-converted-to.pdf>
+]
+Missing character: There is no â in font cmbx12!
+Missing character: There is no € in font cmbx12!
+Missing character: There is no “ in font cmbx12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
+
+ []
+
+Package epstopdf Info: Source file: <epsImages/Production/SelectDesignTeam.eps>
+
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 54288 bytes
+(epstopdf)             Output file: <epsImages/Production/SelectDesignTeam-eps-
+converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 22778 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Production/Select
+DesignTeam-eps-converted-to.pdf epsImages/Production/SelectDesignTeam.eps>
+(epstopdf)             \includegraphics on input line 62.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Production/SelectDesignTeam-eps-converted-to.pdf, id=1810, 557.08125
+pt x 494.84875pt>
+File: epsImages/Production/SelectDesignTeam-eps-converted-to.pdf Graphic file (
+type pdf)
+
+<use epsImages/Production/SelectDesignTeam-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Production/SelectDesignTeam-eps-converted-to
+.pdf used on input line 62.
+(pdftex.def)             Requested size: 501.88702pt x 381.42735pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 62--63
+[][] 
+ []
+
+[34 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Funct
+ional requirements/epsImages/Production/SelectDesignTeam-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <epsImages/Production/Publish.eps>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 52248 bytes
+(epstopdf)             Output file: <epsImages/Production/Publish-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 21440 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Production/Publis
+h-eps-converted-to.pdf epsImages/Production/Publish.eps>
+(epstopdf)             \includegraphics on input line 75.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Production/Publish-eps-converted-to.pdf, id=1871, 557.08125pt x 480.
+79625pt>
+File: epsImages/Production/Publish-eps-converted-to.pdf Graphic file (type pdf)
+
+ <use epsImages/Production/Publish-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Production/Publish-eps-converted-to.pdf used
+ on input line 75.
+(pdftex.def)             Requested size: 501.88702pt x 381.43152pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 75--76
+[][] 
+ []
+
+[35 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Funct
+ional requirements/epsImages/Production/Publish-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <epsImages/DomainModels/ProductionDomainMod
+el.eps>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 54782 bytes
+(epstopdf)             Output file: <epsImages/DomainModels/ProductionDomainMod
+el-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:56
+(epstopdf)                    size: 19495 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/DomainModels/Prod
+uctionDomainModel-eps-converted-to.pdf epsImages/DomainModels/ProductionDomainM
+odel.eps>
+(epstopdf)             \includegraphics on input line 84.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/DomainModels/ProductionDomainModel-eps-converted-to.pdf, id=1928, 55
+7.08125pt x 300.12125pt>
+File: epsImages/DomainModels/ProductionDomainModel-eps-converted-to.pdf Graphic
+ file (type pdf)
+
+<use epsImages/DomainModels/ProductionDomainModel-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/DomainModels/ProductionDomainModel-eps-conve
+rted-to.pdf used on input line 84.
+(pdftex.def)             Requested size: 501.88702pt x 381.45657pt.
+
+Overfull \hbox (3.22444pt too wide) in paragraph at lines 84--85
+[][] 
+ []
+
+) [36 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Fun
+ctional requirements/epsImages/DomainModels/ProductionDomainModel-eps-converted
+-to.pdf>]
+("C:\Users\Hakujin\Documents\GitHub\COS-301-Main-Project\Documentation\Function
+al requirements\design.tex"
+Package epstopdf Info: Source file: <epsImages/Design/Scope.eps>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 44546 bytes
+(epstopdf)             Output file: <epsImages/Design/Scope-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 14628 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Design/Scope-eps-
+converted-to.pdf epsImages/Design/Scope.eps>
+(epstopdf)             \includegraphics on input line 8.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Design/Scope-eps-converted-to.pdf, id=1980, 557.08125pt x 219.82124p
+t>
+File: epsImages/Design/Scope-eps-converted-to.pdf Graphic file (type pdf)
+ <use epsImages/Design/Scope-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Design/Scope-eps-converted-to.pdf used on in
+put line 8.
+(pdftex.def)             Requested size: 501.3685pt x 197.83728pt.
+ [37
+
+ <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Function
+al requirements/epsImages/Design/Scope-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <epsImages/Design/createTemplateServiceCont
+ract.eps>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 52117 bytes
+(epstopdf)             Output file: <epsImages/Design/createTemplateServiceCont
+ract-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 21980 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Design/createTemp
+lateServiceContract-eps-converted-to.pdf epsImages/Design/createTemplateService
+Contract.eps>
+(epstopdf)             \includegraphics on input line 21.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Design/createTemplateServiceContract-eps-converted-to.pdf, id=2018, 
+557.08125pt x 398.48875pt>
+File: epsImages/Design/createTemplateServiceContract-eps-converted-to.pdf Graph
+ic file (type pdf)
+
+<use epsImages/Design/createTemplateServiceContract-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Design/createTemplateServiceContract-eps-con
+verted-to.pdf used on input line 21.
+(pdftex.def)             Requested size: 445.6656pt x 318.79143pt.
+
+[38 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Funct
+ional requirements/epsImages/Design/createTemplateServiceContract-eps-converted
+-to.pdf>]
+Package epstopdf Info: Source file: <epsImages/Design/createTemplateServiceCont
+ract.eps>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 52117 bytes
+(epstopdf)             Output file: <epsImages/Design/createTemplateServiceCont
+ract-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 21980 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Design/createTemp
+lateServiceContract-eps-converted-to.pdf epsImages/Design/createTemplateService
+Contract.eps>
+(epstopdf)             \includegraphics on input line 32.
+Package epstopdf Info: Output file is already uptodate.
+File: epsImages/Design/createTemplateServiceContract-eps-converted-to.pdf Graph
+ic file (type pdf)
+
+<use epsImages/Design/createTemplateServiceContract-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Design/createTemplateServiceContract-eps-con
+verted-to.pdf used on input line 32.
+(pdftex.def)             Requested size: 445.6656pt x 318.79143pt.
+
+[39]
+Package epstopdf Info: Source file: <epsImages/Design/createBookCover.eps>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 51839 bytes
+(epstopdf)             Output file: <epsImages/Design/createBookCover-eps-conve
+rted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 19855 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Design/createBook
+Cover-eps-converted-to.pdf epsImages/Design/createBookCover.eps>
+(epstopdf)             \includegraphics on input line 44.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Design/createBookCover-eps-converted-to.pdf, id=2085, 557.08125pt x 
+589.20125pt>
+File: epsImages/Design/createBookCover-eps-converted-to.pdf Graphic file (type 
+pdf)
+ <use epsImages/Design/createBookCover-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Design/createBookCover-eps-converted-to.pdf 
+used on input line 44.
+(pdftex.def)             Requested size: 445.6656pt x 471.36163pt.
+
+[40 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Funct
+ional requirements/epsImages/Design/createBookCover-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+
+ []
+
+Package epstopdf Info: Source file: <epsImages/Design/uploadGraphicsServiceCont
+ract.eps>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 53497 bytes
+(epstopdf)             Output file: <epsImages/Design/uploadGraphicsServiceCont
+ract-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 23386 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/Design/uploadGrap
+hicsServiceContract-eps-converted-to.pdf epsImages/Design/uploadGraphicsService
+Contract.eps>
+(epstopdf)             \includegraphics on input line 54.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/Design/uploadGraphicsServiceContract-eps-converted-to.pdf, id=2141, 
+557.08125pt x 362.35374pt>
+File: epsImages/Design/uploadGraphicsServiceContract-eps-converted-to.pdf Graph
+ic file (type pdf)
+
+<use epsImages/Design/uploadGraphicsServiceContract-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/Design/uploadGraphicsServiceContract-eps-con
+verted-to.pdf used on input line 54.
+(pdftex.def)             Requested size: 445.6656pt x 289.88339pt.
+
+[41 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Funct
+ional requirements/epsImages/Design/uploadGraphicsServiceContract-eps-converted
+-to.pdf>]
+Package epstopdf Info: Source file: <epsImages/DomainModels/DesignDomainModel.e
+ps>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 46854 bytes
+(epstopdf)             Output file: <epsImages/DomainModels/DesignDomainModel-e
+ps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-03 18:53:55
+(epstopdf)                    size: 15749 bytes
+(epstopdf)             Command: <epstopdf --outfile=epsImages/DomainModels/Desi
+gnDomainModel-eps-converted-to.pdf epsImages/DomainModels/DesignDomainModel.eps
+>
+(epstopdf)             \includegraphics on input line 65.
+Package epstopdf Info: Output file is already uptodate.
+
+<epsImages/DomainModels/DesignDomainModel-eps-converted-to.pdf, id=2210, 557.08
+125pt x 292.09125pt>
+File: epsImages/DomainModels/DesignDomainModel-eps-converted-to.pdf Graphic fil
+e (type pdf)
+
+<use epsImages/DomainModels/DesignDomainModel-eps-converted-to.pdf>
+Package pdftex.def Info: epsImages/DomainModels/DesignDomainModel-eps-converted
+-to.pdf used on input line 65.
+(pdftex.def)             Requested size: 445.6656pt x 233.6733pt.
+) [42 <C:/Users/Hakujin/Documents/GitHub/COS-301-Main-Project/Documentation/Fun
+ctional requirements/epsImages/DomainModels/DesignDomainModel-eps-converted-to.
+pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 70.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 70.
+
+("C:\Users\Hakujin\Documents\GitHub\COS-301-Main-Project\Documentation\Function
+al requirements\FunctionalRequirements.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 70.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 70.
+
+
+Package rerunfilecheck Warning: File `FunctionalRequirements.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `FunctionalRequirements.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  1368D4637E8EBBAE7A18700B42A33DAE;1947.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 70.
+ ) 
+Here is how much of TeX's memory you used:
+ 6115 strings out of 493921
+ 101567 string characters out of 3144870
+ 172766 words of memory out of 3000000
+ 9141 multiletter control sequences out of 15000+200000
+ 9620 words of font info for 34 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 34i,8n,32p,484b,417s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><
+C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on FunctionalRequirements.pdf (43 pages, 1089464 bytes).
+PDF statistics:
+ 2299 PDF objects out of 2487 (max. 8388607)
+ 149 named destinations out of 1000 (max. 500000)
+ 221 words of extra memory for PDF output out of 10000 (max. 10000000)
+
