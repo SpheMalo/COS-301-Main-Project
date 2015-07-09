@@ -6,7 +6,7 @@ window.onload = function()
 		$('#register-button').click(function(){
 			//$('#register-button').attr('disabled', true);
 			//$('#register-button').attr('value','..Processing..');
-			
+			 
 			var pass1 = document.getElementById('password');
 			var pass2 = document.getElementById('confirmpassword');
 			
@@ -79,8 +79,9 @@ window.onload = function()
 			}
 			else
 			{
+				event.preventDefault();
 				var incorrectVal = document.getElementById('incorrectVal');
-				incorrectVal.innerHTML = "";
+				//incorrectVal.innerHTML = "";
 				
 				var UserInfo = {
 					"username" : document.getElementById("username").value,
@@ -90,8 +91,10 @@ window.onload = function()
 					"action" : "register"
 				}
 				//alert(UserInfo.role);
-				var JSONstring = JSON.stringify(UserInfo);
-				ajaxRegisterFunction(JSONstring);
+				//var JSONstring = JSON.stringify(UserInfo);
+				//ajaxRegisterFunction(JSONstring);
+				
+				wiki_createAccount(UserInfo.username,UserInfo.password,UserInfo.email);
 				
 				event.preventDefault();
 			}
@@ -107,7 +110,7 @@ window.onload = function()
 			var JSONstring = JSON.stringify(UserInfo);
 			//alert(JSONstring);
 			
-			ajaxLoginFunction(JSONstring);
+			ajaxLoginFunction(UserInfo);
 			
 			event.preventDefault();
 		});
@@ -116,6 +119,7 @@ window.onload = function()
 		function ajaxRegisterFunction(JSONstring){
 			$.ajax({
 				url: 'scripts/FigbookActionHandler/actionHandler.php',
+				
 				data: 'json='+JSONstring,
 				dataType: 'json',
 				success: function(data){
@@ -129,9 +133,14 @@ window.onload = function()
 		}
 		
 		
-		function ajaxLoginFunction(JSONstring){
-			$.ajax({
-				url: 'scripts/FigbookActionHandler/actionHandler.php',
+		function ajaxLoginFunction(UserInfo){
+			//alert("Function called ");
+			
+			wiki_auth(UserInfo.username,UserInfo.password,"inside.php");
+			
+			/*$.ajax({
+				//url: 'scripts/FigbookActionHandler/actionHandler.php',
+				url: 'scripts/mediawiki/api.php',
 				data: 'json='+JSONstring,
 				dataType: 'json',
 				success: function(data){
@@ -184,8 +193,81 @@ window.onload = function()
 				error: function(data){
 					alert("error :"+data.responseText);
 				}		
-			});
+			});*/
 		}
+		
+		//This is the function that uses wikis create account api
+		function wiki_createAccount(username, password, email)
+			  {
+				  						
+				  //alert("I get here");
+				$.post('scripts/mediawiki/api.php?action=createaccount&name=' + username + 
+				    '&password=' + password +'&email='+email+'&format=json', function(data) {
+					 
+					    //alert(data.createaccount.token);
+				if(data.createaccount.result == 'NeedToken') {
+					
+				    $.post('scripts/mediawiki/api.php?action=createaccount&name=' + username + '&email='+email +'&realname=test'+ 
+					    '&password=' + password + '&token='+data.createaccount.token+'&format=json', 
+					    function(data) {
+					if(!data.error){
+					   if (data.createaccount.result == "Success") { 
+						   //alert(data.login.sessionid);
+						   //document.location.href=ref; 
+						   alert("You have successfully registered, you can now log in.");
+						    window.location.href = "";
+						   
+						  console.log("Succesfully registered");
+					   } else {
+						console.log('Result: '+ data.createaccount.result);
+					   }
+					} else {
+					   console.log('Error: ' + JSON.stringify(data.error));
+					}
+				    });
+				} else {
+				    console.log('Result: ' + data.createaccount.result);
+				}
+				if(data.error) {
+				    console.log('Error: ' + data.error);
+				}
+			    });
+			}
+		
+		//This calls sends a POST to the api.php with the action being login
+		//thus login executing the login API functionality of mediawiki.		
+		function wiki_auth(login, pass, ref)
+			  {
+				  //alert("I get here");
+				$.post('scripts/mediawiki/api.php?action=login&lgname=' + login + 
+				    '&lgpassword=' + pass + '&format=json', function(data) {
+					   // alert(data.login.token);
+				if(data.login.result == 'NeedToken') {
+					
+				    $.post('scripts/mediawiki/api.php?action=login&lgname=' + login + 
+					    '&lgpassword=' + pass + '&lgtoken='+data.login.token+'&format=json', 
+					    function(data) {
+					if(!data.error){
+					   if (data.login.result == "Success") { 
+						   //alert(data.login.sessionid);
+						   document.location.href=ref; 
+						
+					   } else {
+						console.log('Result: '+ data.login.result);
+					   }
+					} else {
+					   console.log('Error: ' + data.error);
+					}
+				    });
+				} else {
+				    console.log('Result: ' + data.login.result);
+				}
+				if(data.error) {
+				    console.log('Error: ' + data.error);
+				}
+			    });
+			}
+		
 		
 		$('#activate-button').click(function(){
 			var UserInfo = {
