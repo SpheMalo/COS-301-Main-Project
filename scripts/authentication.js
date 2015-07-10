@@ -100,6 +100,8 @@ window.onload = function()
 			}
 		});
 		
+		$('#logoutDiv').click(function(){ alert("Clicking div"); wiki_logout();  });
+		
 		
 		$( "#login-button" ).click(function() {
 			var UserInfo = {
@@ -116,21 +118,7 @@ window.onload = function()
 		});
 		
 		
-		function ajaxRegisterFunction(JSONstring){
-			$.ajax({
-				url: 'scripts/FigbookActionHandler/actionHandler.php',
-				
-				data: 'json='+JSONstring,
-				dataType: 'json',
-				success: function(data){
-					alert("This "+data);
-					
-				},
-				error: function(data){
-					alert("error :"+data.responseText);
-				}		
-			});
-		}
+		
 		
 		
 		function ajaxLoginFunction(UserInfo){
@@ -196,6 +184,8 @@ window.onload = function()
 			});*/
 		}
 		
+		
+		
 		//This is the function that uses wikis create account api
 		function wiki_createAccount(username, password, email)
 			  {
@@ -204,7 +194,7 @@ window.onload = function()
 				$.post('scripts/mediawiki/api.php?action=createaccount&name=' + username + 
 				    '&password=' + password +'&email='+email+'&format=json', function(data) {
 					 
-					    //alert(data.createaccount.token);
+					    //alert(JSON.stringify(data));
 				if(data.createaccount.result == 'NeedToken') {
 					
 				    $.post('scripts/mediawiki/api.php?action=createaccount&name=' + username + '&email='+email +'&realname=test'+ 
@@ -242,6 +232,7 @@ window.onload = function()
 				$.post('scripts/mediawiki/api.php?action=login&lgname=' + login + 
 				    '&lgpassword=' + pass + '&format=json', function(data) {
 					   // alert(data.login.token);
+					     //alert(JSON.stringify(data));
 				if(data.login.result == 'NeedToken') {
 					
 				    $.post('scripts/mediawiki/api.php?action=login&lgname=' + login + 
@@ -250,6 +241,9 @@ window.onload = function()
 					if(!data.error){
 					   if (data.login.result == "Success") { 
 						   //alert(data.login.sessionid);
+						  alert(JSON.stringify(data));
+						  document.cookie="username="+data.login.lgusername;
+						  //localStorage.setItem("lgusername", data.login.lgusername);
 						   document.location.href=ref; 
 						
 					   } else {

@@ -3476,7 +3476,7 @@ function wfSetupSession( $sessionId = false ) {
 		# hasn't already been set to the desired value (that causes errors)
 		ini_set( 'session.save_handler', $wgSessionHandler );
 	}
-		setcookie("sessionLives", $wgCookieHttpOnly ,time()+20,"/");
+		//setcookie("sessionLives", "this" ,time()+43200,"/");
 		
 	session_set_cookie_params(
 		0, $wgCookiePath, $wgCookieDomain, $wgCookieSecure, $wgCookieHttpOnly );
