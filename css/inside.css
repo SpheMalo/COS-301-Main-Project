@@ -177,7 +177,11 @@ background: -webkit-linear-gradient(top, #45484d 0%,#000000 47%,#45484d 100%); /
 	z-index: 6;
 	height: 57px;
 }
-
+.templatemo_logout{
+	background: #259AB8;
+	text-align: center;
+	width: 100%;
+}
 #u230-4
 {
 	z-index: 8;
