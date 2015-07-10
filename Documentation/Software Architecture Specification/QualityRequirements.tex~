@@ -6,7 +6,7 @@
 \renewcommand{\labelitemii}{$\star$}
 %\begin{document}
 
-\subsection{Quality Requirements}
+\subsubsection{Quality Requirements}
 
 \begin{itemize}
 	\item \textbf{Security}

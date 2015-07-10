@@ -27,7 +27,7 @@
 \input{ArchitectureScope.tex}
 \newpage
 
-	%\subsection{Quality Requirements}
+	\subsection{Quality Requirements}
 \input{QualityRequirements.tex}
 \newpage
 	\subsection{Integration and Access channel requirements}
