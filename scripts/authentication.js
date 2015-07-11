@@ -93,8 +93,8 @@ window.onload = function()
 				//alert(UserInfo.role);
 				//var JSONstring = JSON.stringify(UserInfo);
 				//ajaxRegisterFunction(JSONstring);
-				
-				wiki_createAccount(UserInfo.username,UserInfo.password,UserInfo.email);
+				var stat = 1;
+				wiki_createAccount(UserInfo.username,UserInfo.password,UserInfo.email, UserInfo.role, stat);
 				
 				event.preventDefault();
 			}
@@ -197,18 +197,18 @@ window.onload = function()
 		}
 		
 		//This is the function that uses wikis create account api
-		function wiki_createAccount(username, password, email)
+		function wiki_createAccount(username, password, email, role, status)
 			  {
-				  						
+				  			alert(role + status);			
 				  //alert("I get here");
 				$.post('scripts/mediawiki/api.php?action=createaccount&name=' + username + 
-				    '&password=' + password +'&email='+email+'&format=json', function(data) {
+				    '&password=' + password + '&uRole='+ role + '&uStatus=' + status +'&email='+email+'&format=json', function(data) {
 					 
-					    //alert(data.createaccount.token);
+					    alert(data);
 				if(data.createaccount.result == 'NeedToken') {
 					
 				    $.post('scripts/mediawiki/api.php?action=createaccount&name=' + username + '&email='+email +'&realname=test'+ 
-					    '&password=' + password + '&token='+data.createaccount.token+'&format=json', 
+					    '&password=' + password +'&uRole='+ role + '&uStatus=' +status+ '&token='+data.createaccount.token+'&format=json', 
 					    function(data) {
 					if(!data.error){
 					   if (data.createaccount.result == "Success") { 
