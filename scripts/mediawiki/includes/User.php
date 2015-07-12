@@ -324,6 +324,12 @@ class User implements IDBAccessObject {
 	public function __toString() {
 		return $this->getName();
 	}
+    
+    public function setUserStatusAndRole($stat, $rol)
+    {
+        $this->mNewUserRole = $rol;
+        $this->mNewUserStatus = $stat;
+    }
 
 	/**
 	 * Load the user table data for this object from the source given by mFrom.
@@ -334,6 +340,7 @@ class User implements IDBAccessObject {
 		if ( $this->mLoadedItems === true ) {
 			return;
 		}
+    
 
 		// Set it now to avoid infinite recursion in accessors
 		$this->mLoadedItems = true;
@@ -3787,6 +3794,8 @@ class User implements IDBAccessObject {
 		$dbw->insert( 'user',
 			array(
 				'user_id' => $seqVal,
+                'user_role' => $this->mNewUserRole,
+                'user_status' => $this->mNewUserStatus,
 				'user_name' => $this->mName,
 				'user_password' => $this->mPassword->toString(),
 				'user_newpassword' => $this->mNewpassword->toString(),

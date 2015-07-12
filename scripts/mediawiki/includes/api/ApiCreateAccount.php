@@ -76,6 +76,8 @@ class ApiCreateAccount extends ApiBase {
 				'wpPassword' => $params['password'],
 				'wpRetype' => $params['password'],
 				'wpDomain' => $params['domain'],
+				'wpUserRole' => $params['uRole'],
+				'wpUserStatus' => $params['uStatus'],
 				'wpEmail' => $params['email'],
 				'wpRealName' => $params['realname'],
 				'wpCreateaccountToken' => $params['token'],
@@ -187,6 +189,8 @@ class ApiCreateAccount extends ApiBase {
 				ApiBase::PARAM_REQUIRED => true
 			),
 			'password' => null,
+			'uRole' => null,
+			'uStatus' => null,
 			'domain' => null,
 			'token' => null,
 			'email' => array(

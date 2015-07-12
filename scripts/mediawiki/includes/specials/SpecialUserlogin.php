@@ -91,6 +91,8 @@ class LoginForm extends SpecialPage {
 	protected $mEntryError = '';
 	protected $mEntryErrorType = 'error';
 
+	protected $mUserRole;
+	protected $mUserStatus;
 	private $mTempPasswordUsed;
 	private $mLoaded = false;
 	private $mSecureLoginUrl;
@@ -145,7 +147,9 @@ class LoginForm extends SpecialPage {
 			$request = $this->mOverrideRequest;
 		}
 		$this->mRequest = $request;
-
+		
+		$this->mUserRole = $request->getText( 'wpUserRole' );
+		$this->mUserStatus = $request->getText( 'wpUserStatus' );
 		$this->mType = $request->getText( 'type' );
 		$this->mUsername = $request->getText( 'wpName' );
 		$this->mPassword = $request->getText( 'wpPassword' );
@@ -625,9 +629,12 @@ class LoginForm extends SpecialPage {
 	 * @return Status Status object, with the User object in the value member on success
 	 * @private
 	 */
+	
+	
 	function initUser( $u, $autocreate ) {
 		global $wgAuth;
-
+		
+		$u->setUserStatusAndRole($this->mUserStatus, $this->mUserRole);
 		$status = $u->addToDatabase();
 		if ( !$status->isOK() ) {
 			return $status;
