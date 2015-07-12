@@ -1,14 +1,4 @@
-<?php 
-	if(!isset($_COOKIE["sessionLives"]))
-	{
-		header('Location: ../FigbookHtml/');
-		//header("Location: ../FigbookHtml/");
-	}
-	else
-	{
-		echo "Cookie set to  ".$_COOKIE["sessionLives"];
-	}
-?>
+
 
 <!DOCTYPE html>
 <html class="html" lang="en-US">
@@ -22,6 +12,7 @@
   <meta name="generator" content="2014.1.1.276"/>
   <title>Inside</title>
   <!-- CSS -->
+
   <link rel="stylesheet" type="text/css" href="css/site_global.css?426517801"/>
   <link rel="stylesheet" type="text/css" href="css/master_a-master.css?327729424"/>
   <link rel="stylesheet" type="text/css" href="css/inside.css?383341731" id="pagesheet"/>
@@ -66,18 +57,6 @@
     <div class="wrapper1">
 	
 	
-	<ul class="bgf-bubbles">
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-	</ul>
 </div>
    
 

@@ -124,7 +124,7 @@ window.onload = function()
 		function ajaxLoginFunction(UserInfo){
 			//alert("Function called ");
 			
-			wiki_auth(UserInfo.username,UserInfo.password,"inside.php");
+			wiki_auth(UserInfo.username,UserInfo.password,"insideContent.php");
 			
 			/*$.ajax({
 				//url: 'scripts/FigbookActionHandler/actionHandler.php',

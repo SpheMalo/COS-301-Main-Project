@@ -9,8 +9,24 @@ html, body {
 	font-family: Tahoma, Arial; 
 	padding: 0px; 
 	margin: 0px; 
-	background-color:rgba(0,0,0,0);
+	/*background-color:rgba(0,0,0,0);*/
 	font-size: 16px;
+	
+		/*background: #FFFFFF url("../images/dark-blue-background-backgrounds-wallpapers.jpg") no-repeat center center scroll;*/
+	
+	/*background: #FFFFFF url("../images/dark-blue-background-backgrounds-wallpapers.jpg") no-repeat center center scroll;*/
+	background: #45484d; /* Old browsers */
+	background: -moz-linear-gradient(top, #45484d 0%, #000000 47%, #45484d 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(47%,#000000), color-stop(100%,#45484d)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #45484d 0%,#000000 47%,#45484d 100%); /* Chrome10+,Safari5.1+ */
+	background-size: cover;
+	
+	
+}
+
+.html
+{
+
 }
 img	{ width: 100%; }
 
@@ -50,6 +66,77 @@ h3 {
 	text-align: center; 
 	font-size: 2em;
 	}
+/*Everything we put in (Figbook) */
+#aboutme{margin-top:12px;}/*This is the about me textArea*/
+
+	/*This is the about me edit button*/
+#editAboutme
+{
+	position:relative;
+	bottom:40px;left:225px;
+	width:80px;height:50px;
+}
+
+.templatemo_logout{
+	background: #259AB8;
+	text-align: center;
+	width: 100%;
+}
+
+
+a:link
+{
+	text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;
+	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
+	font-size: 50px;
+	color: white;
+	
+	text-shadow: 0 1px 0 #ccc,
+               0 1px 0 #c9c9c9,
+               0 2px 0 #bbb,
+               0 3px 0 #b9b9b9,
+               0 4px 0 #aaa,
+               0 3px 1px rgba(0,0,0,.1),
+               0 0 3px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+	
+	text-decoration: none;
+}
+
+a:visited
+{
+	color: #800080;
+	text-decoration: underline;
+}
+
+a:hover
+{
+	color: green;
+	text-decoration: underline;
+}
+
+a:active
+{
+	color: #EE0000;
+	text-decoration: underline;
+}
+
+a.nontext /* used to override default properties of 'a' tag */
+{
+	color: black;
+	text-decoration: none;
+	font-style: normal;
+	font-weight: normal;
+}
+
+
+/*Everything we put in (Figbook) */
+
+
 
 .clear	{ clear: both; }
 .content { display: none; height: auto; }
