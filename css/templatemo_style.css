@@ -67,13 +67,19 @@ h3 {
 	font-size: 2em;
 	}
 /*Everything we put in (Figbook) */
-#aboutme{margin-top:12px;}/*This is the about me textArea*/
+#portImageBack{height:200px;width:200px; float:none;position:relative; right:-60px;}
+#portImage{height:200px;width:200px;}
+
+#portfolioGray{width:650px;}
+#aboutme{}/*This is the about me textArea*/
+#frame2{float:right;overflow-x:hidden; margin-top: 30px; width:300px;text-align:center;}
+#addtional{margin-top:22px;}
 
 	/*This is the about me edit button*/
 #editAboutme
 {
 	position:relative;
-	bottom:40px;left:225px;
+	bottom:25px;left:255px;
 	width:80px;height:50px;
 }
 

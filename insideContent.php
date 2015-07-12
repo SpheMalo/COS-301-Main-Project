@@ -271,9 +271,11 @@
                 	<div class="templatemo_col50 templatemo_rightgap_about">
                     	<div class="templatemo_graybg templatemo_botgap">
                          <div class="templatemo_frame">
+                           
 						  <h2>About Me</h2>
 						  <textarea id="aboutme" rows="5" cols="33"></textarea>
-						  
+                          <h2 style="margin-top:12px;">Additional information</h2>
+						  <textArea id="additional" rows="5" cols="33" ></textarea>
 						  
                         </div>
 						 <button id="editAboutme" >Edit</button>
@@ -281,16 +283,36 @@
                     </div>
                     <div class="templatemo_col50 templatemo_leftgap templatemo_botgap"><img src="images/templatemo_testimonial1.jpg" alt="testimonial image"></div>
                 </div>
-                <div>
-                	<div class="templatemo_col50 templatemo_rightgap_about">
-                    	<div class="templatemo_graybg templatemo_botgap">
+                <div class="col-lg-7">
+                	<div class="templatemo_col50 templatemo_rightgap_about">                    	
+                        <div id="portfolioGray" class="templatemo_graybg templatemo_botgap">
                         <div class="templatemo_frame">
-                    	<h2>Portfolio</h2>
-                    	<p></p>
+                    		<h2>Portfolio</h2>
+                    		<p style="margin-top:2px;">Username</p><input type="text" />
+                            <p style="margin-top:4px;">Firstname</p><input type="text" />
+                        	<p style="margin-top:4px;">Surname</p><input type="text" />
+                        
+                       		<p style="margin-top:4px;">Genres of Interest</p >
+                        	<textarea rows="4" cols="22"></textarea>
+                        
+                        	
                         </div>
+                        
+                        <div id="frame2">
+                        	<div id="portImageBack" class="templatemo_col50 templatemo_leftgap templatemo_botgap"><img src="images/templatemo_testimonial2.jpg" alt="testimonial image" id="portImage">
+                            </div>
+                            <div>
+                        	<p style="margin-top:4px;">Author of:</p>
+                            <ul id="booklist">
+                            	<p style="font-size:8pt;">..This will be a list loaded dynamicly using javascript..</p>
+                            </ul>
+                            </div>
+                            
+                        </div>
+                        <button>Edit</button>
                         </div>
                     </div>
-                    <div class="templatemo_col50 templatemo_leftgap templatemo_botgap"><img src="images/templatemo_testimonial2.jpg" alt="testimonial image"></div>
+                    
                 </div>
                 <div>
                 	<div class="templatemo_col50 templatemo_rightgap_about">
