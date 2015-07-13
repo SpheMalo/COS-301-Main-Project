@@ -10,70 +10,14 @@ window.onload = function()
 			var pass1 = document.getElementById('password');
 			var pass2 = document.getElementById('confirmpassword');
 			
-			if (pass1.value == "")
+			if (pass1.value == "" || pass2.value == "")
 			{
-				
-				if (document.getElementById('incorrectVal') == null) {
-					var form = document.getElementById("regDiv");
-				
-					var incorrectVal = document.createElement('p');
-					incorrectVal.id = "incorrectVal";
-					incorrectVal.innerHTML = "Password not filled in.";
-					incorrectVal.style.color = "#F95050";
-					incorrectVal.style.fontSize ="18pt";
-					form.appendChild(incorrectVal);
-				}
-				else
-				{	
-					var incorrectVal = document.getElementById('incorrectVal');
-					incorrectVal.innerHTML = "Password not filled in.";
-				}
-				
-				
-				
-				
-				pass2.value = '';
-				pass1.value = '';
-				pass2.style.backgroundColor = "#F95050";
-				pass1.style.backgroundColor = "#F95050";
-				
-				pass1.onfocus = function (){pass1.style.backgroundColor = "white";};
-				pass2.onfocus = function (){pass2.style.backgroundColor = "white";};
-				
-				pass1.onblur = function (){pass1.style.backgroundColor = "#ABD1BC";};
-				pass2.onblur = function (){pass2.style.backgroundColor = "#ABD1BC";};
-				
+				addErrorCode("Passwords Do Not Match. Please try again", "password");
 				event.preventDefault();
 			}
 			else if (pass2.value != pass1.value)
 			{
-				if (document.getElementById('incorrectVal') == null) {
-					var form = document.getElementById("regDiv");
-				
-					var incorrectVal = document.createElement('p');
-					incorrectVal.id = "incorrectVal";
-					incorrectVal.innerHTML = "Passwords do not match.";
-					incorrectVal.style.color = "#F95050";
-					incorrectVal.style.fontSize ="18pt";
-					form.appendChild(incorrectVal);
-				}
-				else
-				{	
-					var incorrectVal = document.getElementById('incorrectVal');
-					incorrectVal.innerHTML = "Password not filled in.";
-				}
-				
-				
-				pass2.value = '';
-				pass1.value = '';
-				pass2.style.backgroundColor = "#F95050";
-				pass1.style.backgroundColor = "#F95050";
-				
-				pass1.onfocus = function (){pass1.style.backgroundColor = "white";};
-				pass2.onfocus = function (){pass2.style.backgroundColor = "white";};
-				
-				pass1.onblur = function (){pass1.style.backgroundColor = "#ABD1BC";};
-				pass2.onblur = function (){pass2.style.backgroundColor = "#ABD1BC";};
+				addErrorCode("Passwords Do Not Match. Please try again", "password");
 				
 				event.preventDefault();
 			}
@@ -90,15 +34,120 @@ window.onload = function()
 					"email" : document.getElementById("email").value,
 					"action" : "register"
 				}
-				//alert(UserInfo.role);
-				//var JSONstring = JSON.stringify(UserInfo);
-				//ajaxRegisterFunction(JSONstring);
+				
 				var stat = 1;
 				wiki_createAccount(UserInfo.username,UserInfo.password,UserInfo.email, UserInfo.role, stat);
 				
 				event.preventDefault();
 			}
 		});
+		
+		/**
+		 *@description This function inserts an error message at the bottom of the register box if registration failed.
+		 *@param {String} errCode The error message to display
+		 *@param {String} field Identifies which field the error came from
+		 */
+		function addErrorCode(errCode, field){
+			
+			if (field == "invalidemailaddress") {
+				errCode = "Invalid email address. Please re-enter email address";
+			}
+				if (document.getElementById('incorrectVal') == null) {
+					var form = document.getElementById("regDiv");
+				
+					var incorrectVal = document.createElement('p');
+					incorrectVal.id = "incorrectVal";
+					incorrectVal.innerHTML = errCode;
+					incorrectVal.style.color = "#F95050";
+					incorrectVal.style.fontSize ="18pt";
+					form.appendChild(incorrectVal);
+				}
+				
+				else
+				{	
+					var incorrectVal = document.getElementById('incorrectVal');
+					incorrectVal.innerHTML = errCode;
+				}
+				
+				if (field == "password" || field == "password-name-match")
+				{
+					var pass1 = document.getElementById('password');
+					var pass2 = document.getElementById('confirmpassword');
+				
+					pass2.value = '';
+					pass1.value = '';
+					pass2.style.backgroundColor = "#F95050";
+					pass1.style.backgroundColor = "#F95050";
+					
+					pass1.onfocus = function (){pass1.style.backgroundColor = "white";};
+					pass2.onfocus = function (){pass2.style.backgroundColor = "white";};
+					
+					pass1.onblur = function (){pass1.style.backgroundColor = "#ABD1BC";};
+					pass2.onblur = function (){pass2.style.backgroundColor = "#ABD1BC";};
+				}
+				
+				else if (field == "invalidemailaddress")
+				{
+					var email = document.getElementById('email');
+					
+					email.value = '';
+					email.style.backgroundColor = "#F95050";
+					
+					email.onfocus = function (){email.style.backgroundColor = "white";};
+					
+					email.onblur = function (){email.style.backgroundColor = "#ABD1BC";};
+				}
+				
+				else if (field == "userexists")
+				{
+					var username = document.getElementById('username');
+					
+					username.value = '';
+					username.style.backgroundColor = "#F95050";
+					
+					username.onfocus = function (){username.style.backgroundColor = "white";};
+					
+					username.onblur = function (){username.style.backgroundColor = "#ABD1BC";};
+				}
+				
+				else if (field == "loginErr")
+				{
+					if (document.getElementById('loginIncorrect') == null)
+					{
+						var form = document.getElementById("logDiv");
+					
+						var incorrectVal = document.createElement('p');
+						incorrectVal.id = "loginIncorrect";
+						incorrectVal.innerHTML = errCode;
+						incorrectVal.style.color = "#F95050";
+						incorrectVal.style.fontSize ="18pt";
+						form.appendChild(incorrectVal);
+					}
+				
+					else
+					{	
+						var incorrectVal = document.getElementById('loginIncorrect');
+						incorrectVal.innerHTML = errCode;
+					}
+					
+					var uname = document.getElementById('LoginUsername');
+					var pword = document.getElementById('LoginPassword');
+					
+					uname.value = '';
+					pword.value = '';
+					
+					uname.style.backgroundColor = "#F95050";
+					pword.style.backgroundColor = "#F95050";
+					
+					uname.onfocus = function (){username.style.backgroundColor = "white";};
+					pword.onfocus = function (){password.style.backgroundColor = "white";};
+					
+					uname.onblur = function (){username.style.backgroundColor = "#ABD1BC";};
+					pword.onblur = function (){password.style.backgroundColor = "#ABD1BC";};
+				}
+				
+				
+		}
 		
 		$('#logoutDiv').click(function(){ alert("Clicking div"); wiki_logout();  });
 		
@@ -188,17 +237,11 @@ window.onload = function()
 		
 		//This is the function that uses wikis create account api
 		function wiki_createAccount(username, password, email, role, status)
-			  {
-				  			alert(role + status);			
+			  {			
 				  //alert("I get here");
 				$.post('scripts/mediawiki/api.php?action=createaccount&name=' + username + 
 				    '&password=' + password + '&uRole='+ role + '&uStatus=' + status +'&email='+email+'&format=json', function(data) {
-					 
-<<<<<<< HEAD
-					    //alert(JSON.stringify(data));
-=======
-					    alert(data);
->>>>>>> origin/master
+
 				if(data.createaccount.result == 'NeedToken') {
 					
 				    $.post('scripts/mediawiki/api.php?action=createaccount&name=' + username + '&email='+email +'&realname=test'+ 
@@ -216,6 +259,9 @@ window.onload = function()
 						console.log('Result: '+ data.createaccount.result);
 					   }
 					} else {
+						var err = JSON.stringify(data.error);
+						err = JSON.parse(err);
+						addErrorCode(err.info, err.code);
 					   console.log('Error: ' + JSON.stringify(data.error));
 					}
 				    });
@@ -251,9 +297,11 @@ window.onload = function()
 						   document.location.href=ref; 
 						
 					   } else {
+						addErrorCode("Invalid Credentials. Please enter valid credentials or Register a new account.", "loginErr");
 						console.log('Result: '+ data.login.result);
 					   }
 					} else {
+						
 					   console.log('Error: ' + data.error);
 					}
 				    });
