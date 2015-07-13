@@ -30,6 +30,7 @@
 	
 	<!--Scripts linked here-->
 	<script src="scripts/authentication.js" type="text/javascript"></script>
+    <script src="scripts/profile.js"></script>
 	<script src="js/jquery-1.10.2.min.js"></script> 
 	<script src="js/jquery.lightbox.js"></script>
 	<script src="js/templatemo_custom.js"></script>
@@ -77,7 +78,6 @@
     <![endif]-->
   </head>
   <body>
-	
 	<div class="wrapper1">
 	  <!--this div provides the floating blocks, using background.css-->
 		<ul class="bgf-bubbles">
@@ -93,6 +93,7 @@
 			<li></li>
 		</ul>
 	</div>
+	
     	<!-- logo start -->
     <div class="logocontainer">
     	<div class="row">
@@ -255,7 +256,7 @@
     		    	<div class="container">
         	<div class="row templatemo_bordergapborder">
             <!--vertical Tabs-->
-      		<div id="cmt">
+      		<div id="cmt" >
             <div class="col-md-3 col-sm-12 templatemo_leftgap_about">
             <ul class="resp-tabs-list templatemo_testitab">
                 <li>About Me</li>
@@ -268,34 +269,34 @@
             </div>
             <div class="resp-tabs-container templatemo_testicontainer">
                 <div>
-                	<div class="templatemo_col50 templatemo_rightgap_about">
-                    	<div class="templatemo_graybg templatemo_botgap">
+                	<div id="aboutLeftBack" class=" templatemo_rightgap_about">
+                    	<div class="templatemo_graybg templatemo_botgap" id="aboutGrey">
                          <div class="templatemo_frame">
                            
 						  <h2>About Me</h2>
-						  <textarea id="aboutme" rows="5" cols="33"></textarea>
+						  <textarea readonly class="aboutMeInfo" id="aboutme" rows="5" cols="33"></textarea>
                           <h2 style="margin-top:12px;">Additional information</h2>
-						  <textArea id="additional" rows="5" cols="33" ></textarea>
+						  <textArea readonly class="aboutMeInfo" id="additional" rows="5" cols="33" ></textarea>
 						  
                         </div>
-						 <button id="editAboutme" >Edit</button>
-                        </div>
+                        <button id="editAboutMe">Edit Details</button>
+					</div>
                     </div>
-                    <div class="templatemo_col50 templatemo_leftgap templatemo_botgap"><img src="images/templatemo_testimonial1.jpg" alt="testimonial image"></div>
+                    <div id="aboutMeImage" class=" templatemo_botgap"><img src="images/templatemo_testimonial1.jpg" alt="testimonial image"></div>
                 </div>
                 <div class="col-lg-7">
                 	<div class="templatemo_col50 templatemo_rightgap_about">                    	
                         <div id="portfolioGray" class="templatemo_graybg templatemo_botgap">
                         <div class="templatemo_frame">
                     		<h2>Portfolio</h2>
-                    		<p style="margin-top:2px;">Username</p><input type="text" />
-                            <p style="margin-top:4px;">Firstname</p><input type="text" />
-                        	<p style="margin-top:4px;">Surname</p><input type="text" />
+                    		<p style="margin-top:2px;">Username</p><input class="profileInfo" readonly type="text" />
+                            <p style="margin-top:4px;">Firstname</p><input class="profileInfo" readonly type="text" />
+                        	<p style="margin-top:4px;">Surname</p><input class="profileInfo" readonly type="text" />
                         
                        		<p style="margin-top:4px;">Genres of Interest</p >
-                        	<textarea rows="4" cols="22"></textarea>
+                        	<textarea class="profileInfo" rows="4" cols="22" readonly></textarea>
                         
-                        	
+                        
                         </div>
                         
                         <div id="frame2">
@@ -309,21 +310,27 @@
                             </div>
                             
                         </div>
-                        <button>Edit</button>
+                        
                         </div>
+                        <button type="button" id="profileEditButton">Edit Details</button>
                     </div>
                     
                 </div>
                 <div>
-                	<div class="templatemo_col50 templatemo_rightgap_about">
-                    	<div class="templatemo_graybg templatemo_botgap">
+                	<div class="templatemo_rightgap_about">
+                    	<div class="templatemo_botgap" id="contactGray">
                         <div class="templatemo_frame">
                     	<h2>Contact</h2>
-                    	<p></p>
+                    		<p style="margin-top:2px;">Cellphone</p><input class="contactInfo" readonly type="text" />
+                            <p style="margin-top:4px;">Home</p><input class="contactInfo" readonly type="text" />
+                        	<p style="margin-top:4px;">Work</p><input class="contactInfo" readonly type="text" />
+                            <p style="margin-top:4px;">Email</p><input class="contactInfo" readonly type="text" />
                         </div>
+                        <button id="editContactInfo">Edit Contact Info</button>
                         </div>
                     </div>
-                    <div class="templatemo_col50 templatemo_leftgap templatemo_botgap"><img src="images/templatemo_testimonial3.jpg" alt="testimonial image"></div>
+                    
+                    <div class=" templatemo_botgap" id="contactImage"><img src="images/templatemo_testimonial3.jpg" alt="testimonial image"></div>
                 </div>
             </div>
         </div>
@@ -450,7 +457,7 @@
         <!-- contact end --> 
     
     </div>
-    
+
     	<!-- logo start -->
     <div class="logocontainer">
     	<div class="row">

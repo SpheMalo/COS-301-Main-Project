@@ -15,11 +15,8 @@ html, body {
 		/*background: #FFFFFF url("../images/dark-blue-background-backgrounds-wallpapers.jpg") no-repeat center center scroll;*/
 	
 	/*background: #FFFFFF url("../images/dark-blue-background-backgrounds-wallpapers.jpg") no-repeat center center scroll;*/
-	background: #45484d; /* Old browsers */
-	background: -moz-linear-gradient(top, #45484d 0%, #000000 47%, #45484d 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(47%,#000000), color-stop(100%,#45484d)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #45484d 0%,#000000 47%,#45484d 100%); /* Chrome10+,Safari5.1+ */
-	background-size: cover;
+	
+	
 	
 	
 }
@@ -67,22 +64,42 @@ h3 {
 	font-size: 2em;
 	}
 /*Everything we put in (Figbook) */
-#portImageBack{height:200px;width:200px; float:none;position:relative; right:-60px;}
+#portImageBack{height:200px;width:200px; float:right;margin-right:20px;}
 #portImage{height:200px;width:200px;}
 
-#portfolioGray{width:650px;}
+#portfolioGray{width:550px;
+	float: left; 
+	background: #cccccc;
+	overflow: hidden;
+	z-index:2;
+}
 #aboutme{}/*This is the about me textArea*/
-#frame2{float:right;overflow-x:hidden; margin-top: 30px; width:300px;text-align:center;}
+#frame2{z-index:2; float:right;overflow-x:hidden; margin-top: 30px; margin-right:20px;width:250px;text-align:center;}
 #addtional{margin-top:22px;}
 
 	/*This is the about me edit button*/
-#editAboutme
+#profileEditButton{position:relative;
+	bottom:52px;left:50px;
+	width:120px;height:30px;}
+#editAboutMe
 {
 	position:relative;
-	bottom:25px;left:255px;
-	width:80px;height:50px;
+	bottom:15px;left:100px;
+	width:140px;height:40px;
 }
-
+#contactGray{width:240px;
+	float: left; 
+	background: #cccccc;
+	overflow: hidden;
+	z-index:2;
+}
+#editContactInfo
+{
+	position:relative;
+	bottom:52px;left:50px;
+	width:120px;height:30px;
+}
+#aboutGrey{width:340px;z-index:2;}
 .templatemo_logout{
 	background: #259AB8;
 	text-align: center;
@@ -92,7 +109,7 @@ h3 {
 
 a:link
 {
-	text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;
+	/*text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;*/
 	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
 	font-size: 50px;
 	color: white;
@@ -143,9 +160,9 @@ a.nontext /* used to override default properties of 'a' tag */
 /*Everything we put in (Figbook) */
 
 
-
+#cmt{z-index:2;}
 .clear	{ clear: both; }
-.content { display: none; height: auto; }
+.content { display: none; height: auto; z-index:1;}
 .homepage{ display: block; }
 .portfolioshow	{ display: block; }
 /* .container	{ position: absolute; } */
@@ -248,7 +265,7 @@ a.nontext /* used to override default properties of 'a' tag */
 	float: left; 
 	background: #cccccc;
 	overflow: hidden;
-	width: 100%;
+	width:auto;
 }
 
 .templatemo_paddinggap	{ padding: 30px; }
@@ -440,7 +457,10 @@ h2.resp-accordion	{ color: #ffffff; }
 
 @media(min-width:1200px) {
 	.templatemo_leftgap	{ padding: 0px 8px; }
-	.templatemo_rightgap_about	{ padding: 0px 8px; }
+	#contactImage{width:400px;float:left;}
+	#aboutMeImage{width:400px;float:left;}
+	#aboutLeftBack{width:360px;}
+	.templatemo_rightgap_about	{ width:260px;float:left;   }
 	.templatemo_botgap	{ margin: 0px 0px 16px 0px; }
 	.templatemo_topgap	{ margin-top: 0px; }
 	.templatemo_portfotopgap	{ margin-top: 0px; }
@@ -467,4 +487,7 @@ h2.resp-accordion	{ color: #ffffff; }
 	.templatemo_insideportfolio	{ height: 316px; }
 	.templatemo_leftgap_about .templatemo_link { height: 142px; line-height: 142px; padding: 0px; }
 	.templatemo_linkservice, .templatemo_linkcontact { height: 145px; line-height: 145px; padding: 0px; }
+}#contactGray {
+}
+#templatemo_graybg {
 }

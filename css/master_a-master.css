@@ -5,7 +5,7 @@
 	-webkit-box-shadow: 7px 7px 8px -1px rgba(0, 0, 0, 0.5);
 	box-shadow: 7px 7px 8px rgba(0, 0, 0, 0.5);
 	background: #FFFFFF url("../images/u72-grad.png") repeat-x left top;
-	background: -webkit-gradient(linear, center top, center bottom, from(#C2FFFB),color-stop(100%, #FFFFFF));
+	background: -webkit-gradient(linear, center top, centerF bottom, from(#C2FFFB),color-stop(100%, #FFFFFF));
 	background: -webkit-linear-gradient(top,#C2FFFB ,#FFFFFF 188px);
 	background: -o-linear-gradient(top,#C2FFFB ,#FFFFFF 188px);
 	background: linear-gradient(to bottom,#C2FFFB ,#FFFFFF 188px);
