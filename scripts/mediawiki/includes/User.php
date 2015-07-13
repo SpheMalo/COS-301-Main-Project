@@ -3789,6 +3789,15 @@ class User implements IDBAccessObject {
 		$this->mTouched = $this->newTouchedTimestamp();
 
 		$dbw = wfGetDB( DB_MASTER );
+        
+        $dbw->insert( 'personal_details',
+			array(
+				'username' => $this->mName,
+				'email' => $this->mEmail,
+			), __METHOD__,
+			array( 'IGNORE' )
+		);
+        
 		$inWrite = $dbw->writesOrCallbacksPending();
 		$seqVal = $dbw->nextSequenceValue( 'user_user_id_seq' );
 		$dbw->insert( 'user',
@@ -3810,6 +3819,7 @@ class User implements IDBAccessObject {
 			), __METHOD__,
 			array( 'IGNORE' )
 		);
+        
 		if ( !$dbw->affectedRows() ) {
 			// The queries below cannot happen in the same REPEATABLE-READ snapshot.
 			// Handle this by COMMIT, if possible, or by LOCK IN SHARE MODE otherwise.
