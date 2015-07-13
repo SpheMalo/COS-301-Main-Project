@@ -10,7 +10,7 @@
 ?>
  <!DOCTYPE html> 
   <head>
-    <title>Matrix HTML5 Template</title>
+    <title>Figbook</title>
     <meta name="description" content="" />
     <meta name="author" content="templatemo">
     <meta charset="UTF-8">
@@ -35,7 +35,7 @@
 	<script src="js/jquery.lightbox.js"></script>
 	<script src="js/templatemo_custom.js"></script>
     <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
-	
+	<script src="scripts/services.js"></script>
 	
      <script>
     function showhide()
@@ -158,9 +158,11 @@
                 <div class="templatemo_col37 col-sm-12 templatemo_leftgap">
                 	<div class="templatemo_graybg">
 			<div class="templatemo_frame">
-				<h2>Our Services</h2>
+				<h2 id="serviceHeading">Our Services</h2>
 			    <div class="clear"></div>
-			    Under construction
+			    <div id="services">
+                	
+                </div>
 			</div>
                	  </div>
               </div>
@@ -330,7 +332,7 @@
                         </div>
                     </div>
                     
-                    <div class=" templatemo_botgap" id="contactImage"><img src="images/templatemo_testimonial3.jpg" alt="testimonial image"></div>
+                    <div class=" templatemo_botgap" id="contactImage"><img src="images/templatemo_testimonial3.jpg" alt="testimonial image" style="max-height:467px;" ></div>
                 </div>
             </div>
         </div>

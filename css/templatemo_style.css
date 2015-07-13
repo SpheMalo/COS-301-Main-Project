@@ -55,7 +55,8 @@ h1	{	font-size: 3em;
 	}
 	
 h2	{ 
-	font-size: 24px; 
+	font-size: 30px;
+	font-weight:bold; 
 	color: #333333;
 	margin-top: 0px;
 	}
@@ -146,6 +147,24 @@ a:hover
 	color: #cccccc;
 	font-size:40px;
 	
+}
+
+.service
+{
+	width:100%;
+	height:35px;
+	background-color:rgba(99,231,72,0.70);
+	margin-top:3px;	
+	text-align:center;
+	line-height:35px;
+	font-size:14pt;
+}
+.service:hover{cursor:pointer;height:38px;border:solid 2px rgba(85,127,184,1.00);}
+#services
+{
+	margin-top:25px;
+	height:auto;
+	width:280px;	
 }
 
 a:active
@@ -355,7 +374,7 @@ a.nontext /* used to override default properties of 'a' tag */
 }
 
 .templatemo_frame { 
-	float: left; overflow-x:hidden; margin-top: 30px;
+	float: left; overflow-x:hidden; margin-top: 30px;text-align:center;
 }
 
 ::-webkit-scrollbar

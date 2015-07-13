@@ -189,7 +189,7 @@
 		<div id="footDiv">
 		
 		</div>
-		<img id="footLogo" src="images/logo.png"  width="200px" height="80px"/><img class="grpelem" id="u230-4" alt="Powered by" width="115" height="23" src="images/u230-4.png"/><!-- rasterized frame -->
+		<img id="footLogo" src="images/logo.png"  width="200px" height="70px"/><img class="grpelem" id="u230-4" alt="Powered by" width="115" height="23" src="images/u230-4.png"/><!-- rasterized frame -->
 	    </footer>    
 		
 

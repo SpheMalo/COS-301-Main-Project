@@ -1,9 +1,0 @@
-v9qDS2dG
-P8VJkPP5
-
-Wiki Media
-Time,possibility
-Multiple Operating systems? Android,windows,linux which to make work on
-Deployment, various ways to deploy to different Operating systems
-
-5 Slides powerpoint, 2 page document good and bad sides of media wiki. on installation and deployment/development etc.
