@@ -5,7 +5,9 @@
   <script type="text/javascript">
    if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["jquery-1.8.3.min.js", "museutils.js", "jquery.musepolyfill.bgsize.js", "jquery.watch.js", "webpro.js", "musewpslideshow.js", "jquery.museoverlay.js", "touchswipe.js", "index.css"], "outOfDate":[]};
 </script>
-  
+	 
+        <script src="scripts/authentication.js" type="text/javascript"></script>
+		
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
   <meta name="generator" content="2014.1.1.276"/>
   <title>Home</title>
@@ -13,12 +15,32 @@
   <link rel="stylesheet" type="text/css" href="css/site_global.css?426517801"/>
   <link rel="stylesheet" type="text/css" href="css/master_a-master.css?327729424"/>
   <link rel="stylesheet" type="text/css" href="css/index.css?267193166" id="pagesheet"/>
+    <link rel="stylesheet" href="css/backgroundIndex.css"/>
+    
   <!-- Other scripts -->
   <script type="text/javascript">
    document.documentElement.className += ' js';
 </script>
    </head>
  <body class="museBGSize">
+
+	<div class="wrapper1">
+	
+	
+	<ul class="bgf-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div> 
+
 
   <div class="clearfix" id="page"><!-- column -->
    <div class="position_content" id="page_position_content">
@@ -34,46 +56,6 @@
      </div>
      <div class="browser_width grpelem" id="u260-bw">
       <div id="u260"><!-- custom html -->
-       <!DOCTYPE html>
-<html >
-  <head>
-
-    
-    
-    
-    
-        <link rel="stylesheet" href="css/background.css">
-
-    
-    
-    
-  </head>
-
-  <body>
-
-    <div class="wrapper1">
-	
-	
-	<ul class="bgf-bubbles">
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-	</ul>
-</div>
-   
-
-    
-    
-    
-  </body>
-</html>
 
 
 </div>
@@ -107,82 +89,55 @@
         <div class="Container grpelem" id="u279"><!-- simple frame --></div>
         <div class="Container invi clearfix grpelem" id="u331"><!-- group -->
          <div class="grpelem" id="u335"><!-- custom html -->
-           <!DOCTYPE html>
-<html >
-  <head>
-    <meta charset="UTF-8">
-    <title>Calm breeze login screen</title>
-    
-    
-    <!-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>-->
 
-        
-    
-        <link rel="stylesheet" href="css/style.css">
+	<!DOCTYPE html>
+	<html>
+	<head>
 
-    
-    
-    
-  </head>
 
-  <body>
+    <link rel="stylesheet" href="css/style.css">
 
-    <div class="wrapper">
-	<div class="container"  id="logDiv">
-		<h1>Welcome</h1>
+	</head>
+
+	<div class="wrapper">
+		<div class="container"  id="logDiv">
+			<h1>Welcome</h1>
+			
+			<form class="form">
+				<input id="LoginUsername" type="text" placeholder="Username">
+				<input id="LoginPassword" type="password" placeholder="Password">
+				<button type="submit" id="login-button">Login</button>
+			</form>
+		</div>
 		
-		<form class="form">
-			<input id="LoginUsername" type="text" placeholder="Username">
-			<input id="LoginPassword" type="password" placeholder="Password">
-			<button type="submit" id="login-button">Login</button>
-		</form>
+		<ul class="bg-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
 	</div>
-	
-	<ul class="bg-bubbles">
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-	</ul>
-</div>
+
+	</body>
+	</html>
+
    
 
-    
-    
-    
-  </body>
-</html>
+
 </div>
         </div>
         <div class="Container invi clearfix grpelem" id="u281"><!-- group -->
          <div class="grpelem" id="u339"><!-- custom html -->
-                 <!DOCTYPE html>
-<html >
-  <head>
-    <meta charset="UTF-8">
-    <title>Calm breeze login screen</title>
     
     
-    
-        
-        <script src="scripts/authentication.js" type="text/javascript"></script>
-		<script type="text/javascript"> document.getElementById("password").setCustomValidity("Please enter password");
-		  document.getElementById("confirmpassword").setCustomValidity("Please confirm password");
-		  </script>
-        <link rel="stylesheet" href="css/style.css">
-
-    
-    
-    
-  </head>
-
-  <body>
+         
+ 
 <div class="wrapperReg">
 	<div id = "regDiv" class="container">
 		<h1>Welcome</h1>
@@ -221,29 +176,23 @@
   <!--<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>-->
 
  
-    
-    
-    
-  </body>
-</html>
 </div>
         </div>
        </div>
       </div>
      </div>
     </div>
-    <div class="clearfix colelem" id="pu178"><!-- group -->
-     <div class="browser_width grpelem" id="u178-bw">
-      <div class="shadow gradient" id="u178"><!-- group -->
-       <div class="clearfix" id="u178_align_to_page">
-        <div class="museBGSize grpelem" id="u179"><!-- simple frame --></div>
-       </div>
-      </div>
-     </div>
-     <img class="grpelem" id="u230-4" alt="Powered by" width="115" height="23" src="images/u230-4.png"/><!-- rasterized frame -->
-    </div>
-   </div>
+	    
   </div>
+	    <footer id="footer">
+		
+		<div id="footDiv">
+		
+		</div>
+		<img id="footLogo" src="images/logo.png"  width="200px" height="80px"/><img class="grpelem" id="u230-4" alt="Powered by" width="115" height="23" src="images/u230-4.png"/><!-- rasterized frame -->
+	    </footer>    
+		
+
   <!-- JS includes -->
   <script type="text/javascript">
    if (document.location.protocol != 'https:') document.write('\x3Cscript src="http://musecdn.businesscatalyst.com/scripts/4.0/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
@@ -273,5 +222,6 @@ Muse.Utils.showWidgetsWhenReady();/* body */
 Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
 } catch(e) { if (e && 'function' == typeof e.notify) e.notify(); else Muse.Assert.fail('Error calling selector function:' + e); }});
 </script>
+
    </body>
 </html>

@@ -12,14 +12,18 @@ background: -moz-linear-gradient(top, #45484d 0%, #000000 47%, #45484d 100%); /*
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(47%,#000000), color-stop(100%,#45484d)); /* Chrome,Safari4+ */
 background: -webkit-linear-gradient(top, #45484d 0%,#000000 47%,#45484d 100%); /* Chrome10+,Safari5.1+ */
 	background-size: cover;
+	
 }
-
+#footLogo{z-index:110001;position:fixed;float:right;bottom:5px;right:200px;}
+#footDiv{
+	background-color:rgb(130, 255, 255);height:60px;position:fixed;left:0px;bottom:0px;width:100%;}
+#footer{z-index:110000;position:fixed;left:0px;bottom:0px;width:100%;}
 #page
 {
 	z-index: 1;
 	width: 1000px;
-	min-height: 800px;
-	background-image: none;
+	height:100%
+
 	border-style: none;
 	border-color: #000000;
 	background-color: transparent;
@@ -440,10 +444,11 @@ background: -webkit-linear-gradient(top, #45484d 0%,#000000 47%,#45484d 100%); /
 
 #u230-4
 {
-	z-index: 29;
-	margin-right: -10000px;
-	margin-top: 5px;
-	left: 855px;
+	z-index: 11001;
+	right:400px;
+	position:fixed;
+	bottom:30px;
+	
 }
 
 body
