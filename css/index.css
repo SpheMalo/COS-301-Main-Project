@@ -16,7 +16,19 @@ background: -webkit-linear-gradient(top, #45484d 0%,#000000 47%,#45484d 100%); /
 }
 #footLogo{z-index:110001;position:fixed;float:right;bottom:5px;right:200px;}
 #footDiv{
-	background-color:rgb(130, 255, 255);height:60px;position:fixed;left:0px;bottom:0px;width:100%;}
+	-pie-box-shadow: 7px 7px 8px #7F7F7F;
+	-moz-box-shadow: 7px 7px 8px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 7px 7px 8px -1px rgba(0, 0, 0, 0.5);
+	box-shadow: 7px 7px 8px rgba(0, 0, 0, 0.5);
+	background: #FFFFFF url("../images/u72-grad.png") repeat-x left top;
+	background: -webkit-gradient(linear, center top, centerF bottom, from(#C2FFFB),color-stop(100%, #FFFFFF));
+	background: -webkit-linear-gradient(top,#C2FFFB ,#FFFFFF 188px);
+	background: -o-linear-gradient(top,#C2FFFB ,#FFFFFF 188px);
+	background: linear-gradient(to bottom,#C2FFFB ,#FFFFFF 188px);
+	border-style: none;
+	border-color: transparent;
+	position: fixed;
+	height:60px;position:fixed;left:0px;bottom:0px;width:100%;}
 #footer{z-index:110000;position:fixed;left:0px;bottom:0px;width:100%;}
 #page
 {
