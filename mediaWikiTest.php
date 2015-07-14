@@ -25,7 +25,9 @@
   <body>
       <br>
       <br>
-
+      <div id="pageList"></div>
+      <br>
+      <br>
       <div id="createPage">
       <form class="form" >
 			<input id="title" type="text" placeholder="title">
