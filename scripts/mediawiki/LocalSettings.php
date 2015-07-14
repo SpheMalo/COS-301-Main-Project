@@ -9,8 +9,7 @@
 #
 # Further documentation for configuration settings may be found at:
 # https://www.mediawiki.org/wiki/Manual:Configuration_settings
-/*error_reporting( E_ALL );
-ini_set( 'display_errors', 1 );*/
+
 # Protect against web entry
 if ( !defined( 'MEDIAWIKI' ) ) {
 	exit;
@@ -19,19 +18,18 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
 
-$wgSitename = "mywiki";
-$wgMetaNamespace = "Mywiki";
+$wgSitename = "Figbook";
 
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
 ## For more information on customizing the URLs
 ## (like /w/index.php/Page_title to /wiki/Page_title) please see:
 ## https://www.mediawiki.org/wiki/Manual:Short_URL
-$wgScriptPath = "/mediawiki";
+$wgScriptPath = "/FigbookHtml/scripts/mediawiki";
 $wgScriptExtension = ".php";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "http://mediawiki";
+$wgServer = "http://localhost";
 
 ## The relative URL path to the skins directory
 $wgStylePath = "$wgScriptPath/skins";
@@ -39,7 +37,7 @@ $wgResourceBasePath = $wgScriptPath;
 
 ## The relative URL path to the logo.  Make sure you change this from the default,
 ## or else you'll overwrite your logo when you upgrade!
-$wgLogo = "$IP/images/figbooklogo-u216.png";
+$wgLogo = "$wgResourceBasePath/resources/assets/wiki.png";
 
 ## UPO means: this is also a user preference option
 
@@ -56,7 +54,7 @@ $wgEmailAuthentication = true;
 ## Database settings
 $wgDBtype = "mysql";
 $wgDBserver = "localhost";
-$wgDBname = "figbookdb";
+$wgDBname = "my_wiki";
 $wgDBuser = "root";
 $wgDBpassword = "root";
 
@@ -99,13 +97,13 @@ $wgShellLocale = "en_US.utf8";
 #$wgCacheDirectory = "$IP/cache";
 
 # Site language code, should be one of the list in ./languages/Names.php
-$wgLanguageCode = "en-gb";
+$wgLanguageCode = "en";
 
-$wgSecretKey = "eda4c13b7cdba9c3dfb57bf4c45d78f005d14c6bd5da328dffb553db9193d48a";
+$wgSecretKey = "0f70c1e297b5afe3dd3e7137273b0654ee177513e36f7f54c8589c4ed9f5c298";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "ec3217591567af25";
+$wgUpgradeKey = "bdf6d1fc97beb505";
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
@@ -116,13 +114,11 @@ $wgRightsText = "";
 $wgRightsIcon = "";
 
 # Path to the GNU diff3 utility. Used for conflict resolution.
-$wgDiff3 = "/usr/bin/diff3";
-
-
+$wgDiff3 = "";
 
 ## Default skin: you can change the default skin. Use the internal symbolic
 ## names, ie 'vector', 'monobook':
-$wgDefaultSkin = "apex";
+$wgDefaultSkin = "vector";
 
 # Enabled skins.
 # The following skins were automatically enabled:
@@ -131,26 +127,7 @@ wfLoadSkin( 'Modern' );
 wfLoadSkin( 'MonoBook' );
 wfLoadSkin( 'Vector' );
 
-require_once "$IP/skins/Metrolook/Metrolook.php";
-require_once "$IP/skins/Pixeled/Pixeled.php";
-require_once "$IP/skins/Dusk/Dusk.php";
-require_once "$IP/skins/Bouquet/Bouquet.php"; //consider
-require_once "$IP/skins/Daddio/Daddio.php";
-require_once "$IP/skins/Nostalgia/Nostalgia.php";
-require_once "$IP/skins/Slate/Slate.php";
-require_once "$IP/skins/Schulenburg/Schulenburg.php";
-require_once "$IP/skins/WPtouch/WPtouch.php";
 require_once "$IP/skins/apex/apex.php";//consider
-require_once "$IP/skins/erudite/erudite.php";
-//require_once "$IP/skins/chameleon/Chameleon.php";
-require_once "$IP/skins/Truglass/Truglass.php";//consider
-require_once "$IP/skins/Synagonism/Synagonism.php";
-require_once "$IP/skins/DeskMessMirrored/DeskMessMirrored.php";
-require_once "$IP/skins/p2wiki/p2wiki.php";
-
-//require_once "$IP/skins/BlueSpiceSkin/BlueSpiceSkin.php";
-
-
 $wgLogo = "images/figbooklogo-u216.png";
 
 $wgEnableApi =true;
@@ -176,9 +153,6 @@ $wgCollectionPODPartners = false;
 $wgEnableWriteAPI = true;
 $wgGroupPermissions['user']['collectionsaveasuserpage'] = true;
 $wgGroupPermissions['autoconfirmed']['collectionsaveascommunitypage'] = true;
-
-
-
-
-
+# End of automatically generated settings.
+# Add more configuration options below.
 
