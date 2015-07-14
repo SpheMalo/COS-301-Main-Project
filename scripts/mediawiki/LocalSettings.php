@@ -9,7 +9,8 @@
 #
 # Further documentation for configuration settings may be found at:
 # https://www.mediawiki.org/wiki/Manual:Configuration_settings
-
+/*error_reporting( E_ALL );
+ini_set( 'display_errors', 1 );*/
 # Protect against web entry
 if ( !defined( 'MEDIAWIKI' ) ) {
 	exit;
@@ -18,7 +19,8 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
 
-$wgSitename = "Figbook";
+$wgSitename = "mywiki";
+$wgMetaNamespace = "Mywiki";
 
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
@@ -29,7 +31,7 @@ $wgScriptPath = "/mediawiki";
 $wgScriptExtension = ".php";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "http://localhost";
+$wgServer = "http://mediawiki";
 
 ## The relative URL path to the skins directory
 $wgStylePath = "$wgScriptPath/skins";
@@ -37,7 +39,7 @@ $wgResourceBasePath = $wgScriptPath;
 
 ## The relative URL path to the logo.  Make sure you change this from the default,
 ## or else you'll overwrite your logo when you upgrade!
-$wgLogo = "$wgResourceBasePath/resources/assets/wiki.png";
+$wgLogo = "$IP/images/figbooklogo-u216.png";
 
 ## UPO means: this is also a user preference option
 
@@ -54,7 +56,7 @@ $wgEmailAuthentication = true;
 ## Database settings
 $wgDBtype = "mysql";
 $wgDBserver = "localhost";
-$wgDBname = "my_wiki";
+$wgDBname = "figbookdb";
 $wgDBuser = "root";
 $wgDBpassword = "root";
 
@@ -97,13 +99,13 @@ $wgShellLocale = "en_US.utf8";
 #$wgCacheDirectory = "$IP/cache";
 
 # Site language code, should be one of the list in ./languages/Names.php
-$wgLanguageCode = "en";
+$wgLanguageCode = "en-gb";
 
-$wgSecretKey = "5c289d1e7718c15373fb63276b26e5ad6b1cca930f8b9ae19ea273895177bee5";
+$wgSecretKey = "eda4c13b7cdba9c3dfb57bf4c45d78f005d14c6bd5da328dffb553db9193d48a";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "999e7f4d717b31a1";
+$wgUpgradeKey = "ec3217591567af25";
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
@@ -114,11 +116,13 @@ $wgRightsText = "";
 $wgRightsIcon = "";
 
 # Path to the GNU diff3 utility. Used for conflict resolution.
-$wgDiff3 = "";
+$wgDiff3 = "/usr/bin/diff3";
+
+
 
 ## Default skin: you can change the default skin. Use the internal symbolic
 ## names, ie 'vector', 'monobook':
-$wgDefaultSkin = "vector";
+$wgDefaultSkin = "apex";
 
 # Enabled skins.
 # The following skins were automatically enabled:
@@ -126,8 +130,55 @@ wfLoadSkin( 'CologneBlue' );
 wfLoadSkin( 'Modern' );
 wfLoadSkin( 'MonoBook' );
 wfLoadSkin( 'Vector' );
-$wgLogo = "../FigbookHTML/images/figbooklogo-u216.png";
+
+require_once "$IP/skins/Metrolook/Metrolook.php";
+require_once "$IP/skins/Pixeled/Pixeled.php";
+require_once "$IP/skins/Dusk/Dusk.php";
+require_once "$IP/skins/Bouquet/Bouquet.php"; //consider
+require_once "$IP/skins/Daddio/Daddio.php";
+require_once "$IP/skins/Nostalgia/Nostalgia.php";
+require_once "$IP/skins/Slate/Slate.php";
+require_once "$IP/skins/Schulenburg/Schulenburg.php";
+require_once "$IP/skins/WPtouch/WPtouch.php";
+require_once "$IP/skins/apex/apex.php";//consider
+require_once "$IP/skins/erudite/erudite.php";
+//require_once "$IP/skins/chameleon/Chameleon.php";
+require_once "$IP/skins/Truglass/Truglass.php";//consider
+require_once "$IP/skins/Synagonism/Synagonism.php";
+require_once "$IP/skins/DeskMessMirrored/DeskMessMirrored.php";
+require_once "$IP/skins/p2wiki/p2wiki.php";
+
+//require_once "$IP/skins/BlueSpiceSkin/BlueSpiceSkin.php";
+
+
+$wgLogo = "images/figbooklogo-u216.png";
+
+$wgEnableApi =true;
 
 # End of automatically generated settings.
 # Add more configuration options below.
+require_once("$IP/extensions/Collection/Collection.php");
+
+
+$wgCollectionFormats = array(
+    'rl' => 'PDF', # enabled by default
+   'odf' => 'ODT',
+#    'docbook' => 'DocBook XML',
+#   'xhtml' => 'XHTML 1.0 Transitional',
+    'epub' => 'e-book (EPUB)',
+#    'zim' => 'Kiwix (OpenZIM)',
+);
+
+$wgCollectionMWServeURL = "http://localhost:8899";
+$wgCollectionPODPartners = false;
+
+
+$wgEnableWriteAPI = true;
+$wgGroupPermissions['user']['collectionsaveasuserpage'] = true;
+$wgGroupPermissions['autoconfirmed']['collectionsaveascommunitypage'] = true;
+
+
+
+
+
 
