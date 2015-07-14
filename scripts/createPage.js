@@ -3,7 +3,31 @@ window.onload = function ()
     $(document).ready(function () {
 
 
+        $.post('scripts/mediawiki/api.php?action=query&list=allpages&aplimit=100&format=json',
+                function (data) {
+                    var html = "";
+                    //alert(JSON.stringify(data.query.allpages));
+                    html += "Page List: <select placeholder='Select Page' id='pageSelect' >" +
+                            "<option value='' disabled='disabled' selected='selected'>Page List</option>";
+                    $.each(data.query.allpages, function (i, v) {
+                        html += "<option value='" + data.query.allpages[i].title + "'>" + data.query.allpages[i].title + "</option>";
+                    });
+                    html += "< /select>";
+                    //alert(html);
+                    document.getElementById("pageList").innerHTML = html;
+                });
+        //event.preventDefault();
 
+        $('#pageList').on('change', 'select', function (event) {
+            
+            var selected = $(this).val();
+            //alert(selected.val());
+            var loadPageInfo = {
+                "title": selected
+            };
+            get_page(loadPageInfo);
+        });
+        
         $("#create-button").click(function () {
 
             var CreatePageInfo = {
@@ -11,25 +35,20 @@ window.onload = function ()
                 "text": document.getElementById("text").value,
                 "action": "edit",
                 "section": "0"
-            }
-            //var JSONstring = JSON.stringify(CreatePageInfo);
-            //alert(CreatePageInfo.title);
+            };
+//var JSONstring = JSON.stringify(CreatePageInfo);
+//alert(CreatePageInfo.title);
 
-            //ajaxLoginFunction(UserInfo);
+//ajaxLoginFunction(UserInfo);
             create_page(CreatePageInfo);
             //event.preventDefault();
         });
         $("#load-button").click(function () {
 
             var loadPageInfo = {
-                "title": document.getElementById("gettitle").value,
-            }
-            //var JSONstring = JSON.stringify(CreatePageInfo);
-            //alert(loadPageInfo.title);
-
-            //ajaxLoginFunction(UserInfo);
+                "title": document.getElementById("gettitle").value
+            };
             get_page(loadPageInfo);
-            //event.preventDefault();
         });
 
         function create_page(params)
@@ -54,10 +73,12 @@ window.onload = function ()
                             dataType: 'json',
                             type: 'POST',
                             success: function (data) {
-                                if (data && data.edit && data.edit.result == 'Success') {
+                                if (data && data.edit && data.edit.result === 'Success') {
                                     alert("Successful");
-                                    window.location.reload(); // reload page if edit was successful
-
+                                    //window.location.reload(); // reload page if edit was successful
+                                    //$('#Page').append("<a href='/scripts/mediawiki/index.php/"+params.title+"'>Link to your book</a>");
+                                    //window.location.href = "/scripts/mediawiki/index.php/"+ params.title;
+                                    get_page(params);
                                 } else if (data && data.error) {
                                     alert('Error: API returned error code "' + data.error.code + '": ' + data.error.info);
                                 } else {
@@ -66,13 +87,16 @@ window.onload = function ()
                             },
                             error: function (data) {
                                 console.log('Error: Request failed. ' + JSON.stringify(data));
-                                alert("Page: "+params.title+" created successfully");
-                                window.location.href = "/scripts/mediawiki/index.php/"+ params.title;
-                                get_page(params);
+                                $('#Page').append("<a href='/scripts/mediawiki/index.php/" + params.title + "'>Link to your book</a>");
+                                //alert("Page: "+params.title+" created successfully");
+                                //window.location.href = "/scripts/mediawiki/index.php/"+ params.title;
 
+                                event.preventDefault();
+                                get_page(params);
                             }
                         });
                     });
+            event.preventDefault();
             //alert(stoken);
 
             //alert("In here3");
@@ -140,7 +164,7 @@ window.onload = function ()
              */
         }
         function get_page(params) {
-            //$('#viewPage').html('scripts/mediawiki/api.php?action=parse&page=' + params.title);
+//$('#viewPage').html('scripts/mediawiki/api.php?action=parse&page=' + params.title);
             console.log('got into get_page');
             /*$.post('scripts/mediawiki/api.php?action=parse&page=' + params.title,
              function (data) {
@@ -173,20 +197,20 @@ window.onload = function ()
             $.ajax({
                 url: "scripts/mediawiki/index.php/" + replaced,
                 dataType: "html"
-            }).success(function (data) {
+            }, 5000).success(function (data) {
                 console.log(JSON.stringify(data));
                 $('#createPage').hide();
                 $('#viewPage').hide();
-                $('#Page').append(data);
-                window.location.href = "/scripts/mediawiki/index.php/"+ params.title;
+                document.getElementById('Page').innerHTML = data;
+                //$('#Page').append(data);
+                //window.location.href = "/scripts/mediawiki/index.php/"+ params.title;
 
-            }).error(function (data){
+            }, 5000).error(function (data) {
                 console.log(JSON.stringify(data));
-                window.location.href = "/scripts/mediawiki/index.php/"+ params.title;
+                //window.location.href = "/scripts/mediawiki/index.php/"+ params.title;
             });
+            event.preventDefault();
         }
 
-
     });
-
-}
+};
