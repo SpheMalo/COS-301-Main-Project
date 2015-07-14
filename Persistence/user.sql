@@ -26,6 +26,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `user`
 --
 
+use my_wiki;
+
 CREATE TABLE IF NOT EXISTS `user` (
   `user_id` int(10) unsigned NOT NULL,
   `user_role` varchar(25) NOT NULL,

@@ -26,6 +26,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `personal_details`
 --
 
+use my_wiki;
+
 CREATE TABLE IF NOT EXISTS `personal_details` (
   `username` varchar(25) NOT NULL,
   `first_name` varchar(25) DEFAULT 'Enter First name...',
