@@ -149,7 +149,7 @@ window.onload = function()
 				
 		}
 		
-		$('#logoutDiv').click(function(){ alert("Clicking div"); wiki_logout();  });
+		$('#logoutDiv').click(function(){wiki_logout();  });
 		
 		
 		$( "#login-button" ).click(function() {
@@ -291,7 +291,7 @@ window.onload = function()
 					if(!data.error){
 					   if (data.login.result == "Success") { 
 						   //alert(data.login.sessionid);
-						  alert(JSON.stringify(data));
+						  console.log(JSON.stringify(data));
 						  document.cookie="username="+data.login.lgusername;
 						  //localStorage.setItem("lgusername", data.login.lgusername);
 						   document.location.href=ref; 
@@ -320,7 +320,7 @@ window.onload = function()
 				"action" : "activate"
 			}
 			var JSONstring = JSON.stringify(UserInfo);
-			alert(JSONstring);
+			console.log(JSONstring);
 			ajaxAccountFunction(JSONstring);
 			event.preventDefault();
 		});
@@ -330,7 +330,7 @@ window.onload = function()
 				"action" : "delete"
 			}
 			var JSONstring = JSON.stringify(UserInfo);
-			alert(JSONstring);
+			console.log(JSONstring);
 			ajaxAccountFunction(JSONstring);
 			event.preventDefault();
 		});
@@ -340,7 +340,7 @@ window.onload = function()
 				"action" : "suspend"
 			}
 			var JSONstring = JSON.stringify(UserInfo);
-			alert(JSONstring);
+			console.log(JSONstring);
 			ajaxAccountFunction(JSONstring);
 			event.preventDefault();
 		});
@@ -351,10 +351,10 @@ window.onload = function()
 				data: 'json='+JSONstring,
 				dataType: 'json',
 				success: function(data){
-					alert(data);
+					console.log(data);
 				},
 				error: function(data){
-					alert("error :"+data.responseText);
+					console.log("error :"+data.responseText);
 				}		
 			});
 		}
