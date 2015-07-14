@@ -233,7 +233,7 @@ class user {
 	
 	public function getUserInfo($userID)
 	{
-		$sql = "SELECT user_role, user_name, first_name, last_name, about_me, genres_of_interest, cell, home, work FROM user, personal_details WHERE user.user_name='$userID' AND personal_details.username='$userID'";
+		$sql = "SELECT user_role, user_name, first_name, last_name, about_me, genres_of_interest, cell, home, email, work FROM user, personal_details WHERE user.user_name='$userID' AND personal_details.username='$userID'";
 		$myResponse = (mysql_fetch_assoc(mysql_query($sql)));
 		
 		return ($myResponse);
@@ -259,8 +259,12 @@ class user {
 	public function updateContactInfo($uID, $jsonObj)
 	{
 		$sql = "UPDATE personal_details SET cell='$jsonObj->cell', home='$jsonObj->home', work='$jsonObj->work', email='$jsonObj->email' WHERE username='$uID'";
-		
 		$myResponse = mysql_query($sql);
+		
+		//This is only gonna return an error once (this should be fixed later on.)
+		$sql = "UPDATE user SET user_email='$jsonObj->email' WHERE user_name='$uID'";
+		$myResponse = mysql_query($sql);
+		
 		return $myResponse;
 	}
     
