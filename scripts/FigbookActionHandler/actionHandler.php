@@ -39,7 +39,26 @@ if(isset($actionFlag) && $actionFlag != ""){
     }
 	
 	else if($actionFlag == "viewprofile"){
+		$uID = $_COOKIE['username'];
+		$tmpUser = new user($dbHandler->getConnection());
+		
+		$response = ($tmpUser->getUserInfo($uID));
 	
+	}elseif ($actionFlag == "updateAboutMe"){
+		$uID = $_COOKIE['username'];
+		$tmpUser = new user($dbHandler->getConnection());
+		
+		$response = ($tmpUser->updateAboutMe($uID, $object));
+	}elseif ($actionFlag == "updatePortfolioInfo"){
+		$uID = $_COOKIE['username'];
+		$tmpUser = new user($dbHandler->getConnection());
+		
+		$response = ($tmpUser->updatePortfolioInfo($uID, $object));
+	}elseif ($actionFlag == "updateContactInfo"){
+		$uID = $_COOKIE['username'];
+		$tmpUser = new user($dbHandler->getConnection());
+		
+		$response = ($tmpUser->updateContactInfo($uID, $object));
 	}else if($actionFlag == "login"){ //login user
         
         

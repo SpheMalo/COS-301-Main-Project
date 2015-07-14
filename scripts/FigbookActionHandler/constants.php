@@ -3,6 +3,6 @@
     define("HOST", "localhost");
     define("USERNAME","root"); 
     define("PASSWORD","root");
-    define("DATABASE","figbookdb"); 
+    define("DATABASE","my_wiki"); 
             
 ?>

@@ -16,6 +16,8 @@ background: -webkit-linear-gradient(top, #45484d 0%,#000000 47%,#45484d 100%); /
 	background-size: cover;
 }
 
+
+
 #page
 {
 	z-index: 1;
@@ -193,4 +195,9 @@ body
 	padding-top: 36px;
 	padding-bottom: 36px;
 }
+
+/*Template insideContent*/
+
+
+
 

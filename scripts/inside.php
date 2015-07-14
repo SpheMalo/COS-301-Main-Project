@@ -1,3 +1,17 @@
+<?php 
+	
+
+	if(!isset($_COOKIE["username"]))
+	{
+		header('Location: ../FigbookHtml/');
+		//header("Location: ../FigbookHtml/");
+	}
+	else
+	{
+	//	echo "Cookie set to  ".$_COOKIE["sessionLives"];
+	}
+?>
+
 <!DOCTYPE html>
 <html class="html" lang="en-US">
  <head>

@@ -233,10 +233,35 @@ class user {
 	
 	public function getUserInfo($userID)
 	{
-		$sql = "SELECT * FROM useraccount WHERE UserID='$userID'";
+		$sql = "SELECT user_role, user_name, first_name, last_name, about_me, genres_of_interest, cell, home, work FROM user, personal_details WHERE user.user_name='$userID' AND personal_details.username='$userID'";
+		$myResponse = (mysql_fetch_assoc(mysql_query($sql)));
 		
-		return json_encode(mysql_fetch_assoc(mysql_query($sql)));
+		return ($myResponse);
 		
+	}
+	
+	public function updateAboutMe($uID, $jsonObj)
+	{
+		$sql = "UPDATE personal_details SET about_me='$jsonObj->aboutme' WHERE username='$uID'";
+		
+		$myResponse = mysql_query($sql);
+		return $myResponse;
+	}
+	
+	public function updatePortfolioInfo($uID, $jsonObj)
+	{
+		$sql = "UPDATE personal_details SET first_name='$jsonObj->firstname', last_name='$jsonObj->surname', genres_of_interest='$jsonObj->genres' WHERE username='$uID'";
+		
+		$myResponse = mysql_query($sql);
+		return $myResponse;
+	}
+	
+	public function updateContactInfo($uID, $jsonObj)
+	{
+		$sql = "UPDATE personal_details SET cell='$jsonObj->cell', home='$jsonObj->home', work='$jsonObj->work', email='$jsonObj->email' WHERE username='$uID'";
+		
+		$myResponse = mysql_query($sql);
+		return $myResponse;
 	}
     
     
