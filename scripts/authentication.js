@@ -242,13 +242,13 @@ window.onload = function()
 				$.post('scripts/mediawiki/api.php?action=createaccount&name=' + username + 
 				    '&password=' + password + '&uRole='+ role + '&uStatus=' + status +'&email='+email+'&format=json', function(data) {
 
-				if(data.createaccount.result == 'NeedToken') {
+				if(data.createaccount.result === 'NeedToken') {
 					
 				    $.post('scripts/mediawiki/api.php?action=createaccount&name=' + username + '&email='+email +'&realname=test'+ 
 					    '&password=' + password +'&uRole='+ role + '&uStatus=' +status+ '&token='+data.createaccount.token+'&format=json', 
 					    function(data) {
 					if(!data.error){
-					   if (data.createaccount.result == "Success") { 
+					   if (data.createaccount.result === "Success") { 
 						   //alert(data.login.sessionid);
 						   //document.location.href=ref; 
 						   alert("You have successfully registered, you can now log in.");
@@ -317,17 +317,7 @@ window.onload = function()
 		
 		$('#activate-button').click(function(){
 			var UserInfo = {
-				"action" : "activate"
-			}
-			var JSONstring = JSON.stringify(UserInfo);
-			console.log(JSONstring);
-			ajaxAccountFunction(JSONstring);
-			event.preventDefault();
-		});
-	
-		$('#delete-button').click(function(){
-			var UserInfo = {
-				"action" : "delete"
+					"action" : "activate"
 			}
 			var JSONstring = JSON.stringify(UserInfo);
 			console.log(JSONstring);
@@ -335,8 +325,23 @@ window.onload = function()
 			event.preventDefault();
 		});
 		
+			
+		
+		$('#delete-button').click(function(){
+			alert("here");
+			//console.log(document.cookie);
+			var UserInfo = {				
+				"action" : "delete"
+			}
+			var JSONstring = JSON.stringify(UserInfo);
+			
+			console.log(JSONstring);
+			ajaxAccountFunction(JSONstring);
+			event.preventDefault();
+		});
+		
 		$('#suspend-button').click(function(){
-			var UserInfo = {
+			var UserInfo = {			
 				"action" : "suspend"
 			}
 			var JSONstring = JSON.stringify(UserInfo);
@@ -360,4 +365,4 @@ window.onload = function()
 		}
 	});
 
-}
+};

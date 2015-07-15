@@ -17,8 +17,15 @@ $actionFlag = $object->action;
 //change account status
 function accountStatus($id, $status, $dbHandler) //To do: select from user get required fields/values to use in the function.
 {
+	
+	
 	$tmpUser = new user($dbHandler->getConnection());
-	return $tmpUser->updateUser($id,'$uname','$upassword','$uemail','$urole', $status);	
+		//echo $_COOKIE['username'];
+	 $result = $tmpUser->getUserDetails($id); //get the user details.
+	
+	$row = mysql_fetch_assoc($result); //get the row of results
+	//echo $row['user_status'];
+	return $tmpUser->updateUser($row[user_name],$row[user_password],$row[user_email],$row[user_role], $status);	
 }
 
 //determine the type of action
@@ -89,7 +96,7 @@ if(isset($actionFlag) && $actionFlag != ""){
 
     }
 	else if($actionFlag == "suspend"){ //suspend account
-		$id = 1; // change to session id
+		$id = $_COOKIE['username']; 
 		$response = accountStatus($id,"2", $dbHandler);
 		
 		if($response == "updated")
@@ -102,7 +109,7 @@ if(isset($actionFlag) && $actionFlag != ""){
 		}
 	}
 	else if($actionFlag == "delete"){ //delete account
-		$id = 1; // change to session id
+		$id = $_COOKIE['username']; 
 		$response = accountStatus($id,"0", $dbHandler);
 		if($response == "updated")
 		{
@@ -115,7 +122,7 @@ if(isset($actionFlag) && $actionFlag != ""){
 	}
 	else if($actionFlag == "activate"){ //activate account
 		
-		$id = 1; // change to session id
+		$id = $_COOKIE['username'];
 		$response = accountStatus($id,"1", $dbHandler);
 		
 		if($response == "updated")
