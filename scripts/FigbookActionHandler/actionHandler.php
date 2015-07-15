@@ -15,7 +15,7 @@ $object = json_decode(stripslashes($getJSONObject));
 $actionFlag = $object->action;
 
 //change account status
-function accountStatus($id, $status, $dbHandler)
+function accountStatus($id, $status, $dbHandler) //To do: select from user get required fields/values to use in the function.
 {
 	$tmpUser = new user($dbHandler->getConnection());
 	return $tmpUser->updateUser($id,'$uname','$upassword','$uemail','$urole', $status);	

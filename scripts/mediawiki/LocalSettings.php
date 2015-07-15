@@ -25,7 +25,7 @@ $wgSitename = "Figbook";
 ## For more information on customizing the URLs
 ## (like /w/index.php/Page_title to /wiki/Page_title) please see:
 ## https://www.mediawiki.org/wiki/Manual:Short_URL
-$wgScriptPath = "/mediawiki";
+$wgScriptPath = "/FigbookHtml/scripts/mediawiki";
 $wgScriptExtension = ".php";
 
 ## The protocol and server name to use in fully-qualified URLs
@@ -99,11 +99,11 @@ $wgShellLocale = "en_US.utf8";
 # Site language code, should be one of the list in ./languages/Names.php
 $wgLanguageCode = "en";
 
-$wgSecretKey = "5c289d1e7718c15373fb63276b26e5ad6b1cca930f8b9ae19ea273895177bee5";
+$wgSecretKey = "0f70c1e297b5afe3dd3e7137273b0654ee177513e36f7f54c8589c4ed9f5c298";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "999e7f4d717b31a1";
+$wgUpgradeKey = "bdf6d1fc97beb505";
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
@@ -126,8 +126,33 @@ wfLoadSkin( 'CologneBlue' );
 wfLoadSkin( 'Modern' );
 wfLoadSkin( 'MonoBook' );
 wfLoadSkin( 'Vector' );
-$wgLogo = "../FigbookHTML/images/figbooklogo-u216.png";
 
+require_once "$IP/skins/apex/apex.php";//consider
+$wgLogo = "images/figbooklogo-u216.png";
+
+$wgEnableApi =true;
+
+# End of automatically generated settings.
+# Add more configuration options below.
+require_once("$IP/extensions/Collection/Collection.php");
+
+
+$wgCollectionFormats = array(
+    'rl' => 'PDF', # enabled by default
+   'odf' => 'ODT',
+#    'docbook' => 'DocBook XML',
+#   'xhtml' => 'XHTML 1.0 Transitional',
+    'epub' => 'e-book (EPUB)',
+#    'zim' => 'Kiwix (OpenZIM)',
+);
+
+$wgCollectionMWServeURL = "http://localhost:8899";
+$wgCollectionPODPartners = false;
+
+
+$wgEnableWriteAPI = true;
+$wgGroupPermissions['user']['collectionsaveasuserpage'] = true;
+$wgGroupPermissions['autoconfirmed']['collectionsaveascommunitypage'] = true;
 # End of automatically generated settings.
 # Add more configuration options below.
 
