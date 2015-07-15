@@ -1,5 +1,4 @@
-window.onload = function ()
-{
+
     $(document).ready(function () {
 
 
@@ -32,7 +31,7 @@ window.onload = function ()
 
             var CreatePageInfo = {
                 "title": document.getElementById("title").value,
-                "text": document.getElementById("text").value,
+                "text": document.getElementById("manuscriptArea").value,
                 "action": "edit",
                 "section": "0"
             };
@@ -201,7 +200,29 @@ window.onload = function ()
                 console.log(JSON.stringify(data));
                 $('#createPage').hide();
                 $('#viewPage').hide();
+				$('#contentDiv').hide();
+				//$('#bodyContent').hide();
+				$('#Page').css('overflow-y','auto');
+				$('#bookDiv').css('overflow','auto');
+				
+				//try parse and traverse the html feedback.
+				 /*var nodeNames = [];
+				 var val = $.parseHTML( data );
+				 $.each( val, function( i, el ) {
+					  nodeNames[ i ] = "<li>" + el.nodeName + "</li>";
+					});
+				 alert(nodeNames);*/
+				 //try parse and traverse the html feedback.
+				 
+				 //For sito add page data here...
                 document.getElementById('Page').innerHTML = data;
+				
+				//These are menu and side panel items that are generated
+				//$("#mw-page-base").hide();
+				//$("#mw-head").hide();
+				//$('#mw-panel').hide();
+				
+				
                 //$('#Page').append(data);
                 //window.location.href = "/scripts/mediawiki/index.php/"+ params.title;
 
@@ -213,4 +234,3 @@ window.onload = function ()
         }
 
     });
-};

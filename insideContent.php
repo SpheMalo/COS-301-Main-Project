@@ -36,6 +36,8 @@
 	<script src="js/templatemo_custom.js"></script>
     <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
 	<script src="scripts/services.js"></script>
+    <script src="scripts/manuscriptManagement.js"></script>
+    <script src="scripts/createPage.js" type="text/javascript"></script>
 	
      <script>
     function showhide()
@@ -149,30 +151,54 @@
     <!-- homepage end -->
     <!--services start -->
    <div class="content services" id="menu-2">
-		<div class="container">
+		<div id="serviceContainer" >
         	<div class="row templatemo_bordergapborder">
-            	<div class="col-md-3 col-sm-12 templatemo_leftgap">
-                	<div class="templatemo_mainimg templatemo_botgap"><img src="images/templatemo_service1.jpg" height="304px" alt="service image"></div>
-                  <div class="templatemo_mainservice templatemo_botgap">
+            	<div class="col-md-3 col-sm-12 templatemo_leftgap" id="leftCol">
+                	<div id="serviceBackground" class="templatemo_graybg">
+                        <div class="templatemo_frame">
+                            <h2>Our Services</h2>
+                            <div class="clear"></div>
+                            <div id="services">
+                                
+                            </div>
+                        </div>
+               	  </div>
+                  <div class="templatemo_mainservice templatemo_botgap" id="goBackService">
                 	<div class="templatemo_linkservice"><a class="show-1 templatemo_homeservice" href="#">Go Back</a></div>
 				  </div>
                 </div>
                 
                 <div class="templatemo_col37 col-sm-12 templatemo_leftgap">
-                	<div class="templatemo_graybg">
-			<div class="templatemo_frame">
-				<h2 id="serviceHeading">Our Services</h2>
-			    <div class="clear"></div>
-			    <div id="services">
                 	
-                </div>
-			</div>
-               	  </div>
+                  
+                  	<div id="bookDiv">
+            			<div id="scriptMenuBar" ></div>                  	
+                        <div id="pageList"></div>
+                        
+                        <div id="contentDiv">
+                       		 <label>Book Title</label><input id="title" type="text"/>
+                            <textarea id="manuscriptArea" cols="80" rows="14" ></textarea>
+                            <button type="submit" id="create-button">Create Book</button>
+                            
+                            <form class="form" >
+                                <input id="gettitle" type="text" placeholder="title">
+                                <button type="submit" id="load-button">Load Page</button>
+                            </form>
+                        </div>
+                        <div id="Page">
+                        
+                        <div>
+            		</div>
+                  
               </div>
-                <div class="templatemo_col37 col-sm-12 templatemo_leftgap templatemo_topgap">
+                <div id="sidePicDiv" class="templatemo_col37 col-sm-12 templatemo_leftgap templatemo_topgap">
                 	<div class="templatemo_mainimg templatemo_botgap"><img src="images/templatemo_service2.jpg" alt="service image"></div>
                 </div>
+                
             </div>
+            
+            
+            
         </div>
      </div>
 	    
