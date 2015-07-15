@@ -157,17 +157,29 @@ class user {
          return $this->responseObject;
     }
     
+	//Function to get required values for delete,suspend,activate account.
+	public function getUserDetails($uname)
+	{
+		$sql = "SELECT * FROM user where user_name = '$uname' ";
+		
+		$queryResults = mysql_query($sql);
+		return $queryResults;
+	}
+	 
 	//Function update user details
-    public function updateUser($id,$uname,$upassword,$uemail,$urole,$status)
+    public function updateUser($uname,$upassword,$uemail,$urole,$status)
 	{
 		//suppress notice errors
         error_reporting(E_ALL ^ E_NOTICE);
          
+		 
+		 
         //update user
-        $queryString = "UPDATE useraccount SET Username='$uname', UserRole='$urole', Password='$upassword', EmailAddress='$uemail', Status='$status' WHERE UserID='$id'";
+	//echo $uname;
+        $queryString = "UPDATE user SET user_role='$urole', user_password='$upassword', user_email='$uemail', user_status='$status' WHERE user_name='$uname'";
         
         $queryResults = mysql_query($queryString);
-        
+        echo $queryResults;
         if ($queryResults === TRUE) {
 			return "updated";
 		} else {

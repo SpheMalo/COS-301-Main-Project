@@ -107,10 +107,13 @@
    <!-- homepage start -->
     <div class="content homepage" id="menu-1">
   	<div class="container">
+    		
           	<div class="col-md-3 col-sm-6 templatemo_leftgap">
             	<div class="templatemo_mainservice templatemo_botgap">
                 	<div class="templatemo_link"><a class="show-2 templatemo_page2" href="#">Services</a></div>
                 	
+			<script src="scripts/authentication.js" type="text/javascript"></script>
+			<!--<button id="delete-button">Delete Account</button>  this is the delete account button for testing purposes-->
                 </div>
                 <div class="templatemo_mainimg"><img src="images/templatemo_home1.jpg" height="316px" alt="home img 01"></div>
             </div>
@@ -463,6 +466,7 @@
     	<!-- logo start -->
     <div class="logocontainer">
     	<div class="row">
+        	
             <!--<div class="templatemo_footer">Copyright © 2084 Company Name</div>-->
        </div>
     </div>
