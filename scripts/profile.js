@@ -1,5 +1,4 @@
-window.onload = function(){
-	
+function loadProfile() {	
 $(document).ready(function() {
 	
 	
@@ -213,5 +212,4 @@ $(document).ready(function() {
 		
     }
 });
-
-};
+}

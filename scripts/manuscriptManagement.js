@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-	//$('#bookDiv').fadeOut( "fast", function() {});
+	$('#bookDiv').fadeOut( "fast", function() {});
 	$('#serviceImg').fadeOut( "fast", function() {});
 	$('#sidePicDiv').fadeOut( "fast", function() {});
 	
