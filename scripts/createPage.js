@@ -228,7 +228,7 @@ window.onload = function ()
 			}
 		}
 		
-		var paragraphs = page.getElementsByTagName("p");
+		var paragraphs = page.getElementsByTagName("h1");
 		var num_par = 1;
 		for(var i=0; i<paragraphs.length; i++) {
 			paragraphs[i].setAttribute('id', num_par);
