@@ -2,41 +2,48 @@
     <head>
         <script src="jquery-1.8.3.min.js"></script>
         <script>
-            
-             function viewprofile()
-             {
-                var action =
-                {
-                    "action" : "viewprofile"
-                }
-              	var JSONstring = JSON.stringify(action);
-            	alert(JSONstring);
-			
-			$.ajax({
-				url: 'FigbookActionHandler/actionHandler.php',
-				data: 'json='+JSONstring,
-				dataType: 'json',
-				success: function(data){
-                    createProfile(data);
-					
-				},
-				error: function(data){
-					alert("error :"+data.responseText);
-				}		
-			});
-			
-			event.preventDefault();
+		function editText()
+		{
+			$post("scripts/mediawiki/api.php?action=query&prop=info|revisions&intoken=edit&rvprop=timestamp&titles=A_Tale_of_Crossed_Paths", function(data){
+				
+				$.ajax({
+                            url: "scripts/mediawiki/api.php",
+                            data: {
+                                format: 'json',
+                                action: 'edit',
+                                title: 'A_Tale_of_Crossed_Paths',
+                                section: '2',
+                                text: "No longer will the struggle continue like this...",
+                                token: data.tokens.edittoken
+                            },
+                            dataType: 'json',
+                            type: 'POST',
+                            success: function (data) {
+                                if (data && data.edit && data.edit.result === 'Success') {
+                                    alert("Successful");
+                                   alert(JSON.stringify(data));
+                                } else if (data && data.error) {
+                                    alert('Error: API returned error code "' + data.error.code + '": ' + data.error.info);
+                                } else {
+                                    alert('Error: Unknown result from API.');
+                                }
+                            },
+                            error: function (data) {
+                                console.log('Error: Request failed. ' + JSON.stringify(data));
+                                $('#Page').append("<a href='/scripts/mediawiki/index.php/" + params.title + "'>Link to your book</a>");
+
+                                event.preventDefault();
+                                get_page(params);
+                            }
+                        });
+				});
 		}
-        
-        function createProfile(jsonObj)
-        {
-            var userInfo = JSON.parse(jsonObj);
-            alert(userInfo);
-        }
+		
+		
         </script>
         
     </head>
     <body>
-        <button id="viewp" onclick="viewprofile()">View Profile</button>
+        <button id="viewp" onclick="editText()">View Profile</button>
     </body>
 </html>
