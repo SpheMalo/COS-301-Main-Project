@@ -1,9 +1,16 @@
+function editSection(value)
+{
+	alert(value);
+}
 
+window.onload = function ()
+{
     $(document).ready(function () {
 
 
         $.post('scripts/mediawiki/api.php?action=query&list=allpages&aplimit=100&format=json',
                 function (data) {
+                    console.log(JSON.stringify(data));
                     var html = "";
                     //alert(JSON.stringify(data.query.allpages));
                     html += "Page List: <select placeholder='Select Page' id='pageSelect' >" +
@@ -31,7 +38,7 @@
 
             var CreatePageInfo = {
                 "title": document.getElementById("title").value,
-                "text": document.getElementById("manuscriptArea").value,
+                "text": document.getElementById("text").value,
                 "action": "edit",
                 "section": "0"
             };
@@ -192,37 +199,46 @@
              });*/
             var title_ = params.title;
             var replaced = title_.split(' ').join('_');
-            alert(replaced);
+           // alert(replaced);
             $.ajax({
                 url: "scripts/mediawiki/index.php/" + replaced,
                 dataType: "html"
             }, 5000).success(function (data) {
-                console.log(JSON.stringify(data));
+                //alert(JSON.stringify(data));
                 $('#createPage').hide();
                 $('#viewPage').hide();
-				$('#contentDiv').hide();
-				//$('#bodyContent').hide();
-				$('#Page').css('overflow-y','auto');
-				$('#bookDiv').css('overflow','auto');
-				
-				//try parse and traverse the html feedback.
-				 /*var nodeNames = [];
-				 var val = $.parseHTML( data );
-				 $.each( val, function( i, el ) {
-					  nodeNames[ i ] = "<li>" + el.nodeName + "</li>";
-					});
-				 alert(nodeNames);*/
-				 //try parse and traverse the html feedback.
-				 
-				 //For sito add page data here...
+		    
                 document.getElementById('Page').innerHTML = data;
-				
-				//These are menu and side panel items that are generated
-				//$("#mw-page-base").hide();
-				//$("#mw-head").hide();
-				//$('#mw-panel').hide();
-				
-				
+		var div = document.getElementById('mw-content-text');
+                var childNodes = div.childNodes;
+		document.getElementById('Page').innerHTML = "";
+		
+		$( "#Page" ).append(childNodes);
+		    
+		var page = document.getElementById("Page");
+		var links = page.getElementsByTagName("a");
+		
+		var num_links =1;
+		for(var i=0; i<links.length; i++) {
+			if(links[i].innerHTML == "edit")
+			{
+				links[i].setAttribute('href', "#");
+				links[i].setAttribute('onclick', "editSection("+num_links+")");
+				num_links++;
+			}
+		}
+		
+		var paragraphs = page.getElementsByTagName("p");
+		var num_par = 1;
+		for(var i=0; i<paragraphs.length; i++) {
+			paragraphs[i].setAttribute('id', num_par);
+			num_par++;
+		}
+		
+		
+
+		
+		
                 //$('#Page').append(data);
                 //window.location.href = "/scripts/mediawiki/index.php/"+ params.title;
 
@@ -234,3 +250,4 @@
         }
 
     });
+};
