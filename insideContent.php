@@ -1,13 +1,4 @@
-<?php 
-	
 
-	if(!isset($_COOKIE["username"]))
-	{
-		header('Location: ../FigbookHtml/');
-		//header("Location: ../FigbookHtml/");
-	}
-	
-?>
  <!DOCTYPE html> 
   <head>
     <title>Figbook</title>
@@ -21,16 +12,18 @@
     -->
 	
 	<!--stylesheets linked here-->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/templatemo_misc.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/templatemo_misc.css"/>
    	<link type="text/css" rel="stylesheet" href="css/easy-responsive-tabs.css" />
-    <link href="css/templatemo_style.css" rel="stylesheet"> 
-    <link rel="stylesheet" href="css/background.css">
+    <link href="css/templatemo_style.css" rel="stylesheet"/> 
+    <link rel="stylesheet" href="css/background.css"/>
 	
 	<!--Scripts linked here-->
 	<script src="scripts/authentication.js" type="text/javascript"></script>
-    <script src="scripts/profile.js"></script>
+	<script src="scripts/profile.js"></script>
+	
+    
 	<script src="js/jquery-1.10.2.min.js"></script> 
 	<script src="js/jquery.lightbox.js"></script>
 	<script src="js/templatemo_custom.js"></script>
@@ -107,7 +100,7 @@
     <!-- logo end -->    
    <div id="menu-container" class="main_menu">
    <!-- homepage start -->
-    <div class="content homepage" id="menu-1">
+    <div class="content homepage col-md-1" id="menu-1">
   	<div class="container">
     		
           	<div class="col-md-3 col-sm-6 templatemo_leftgap">
@@ -170,8 +163,7 @@
                 
                 <div class="templatemo_col37 col-sm-12 templatemo_leftgap">
                 	
-                  
-                  	<div id="bookDiv">
+                  <div id="bookDiv">
             			<div id="scriptMenuBar" ></div>                  	
                         <div id="pageList"></div>
                         
@@ -187,8 +179,9 @@
                         </div>
                         <div id="Page">
                         
-                        <div>
-            		</div>
+                        </div>
+		</div>
+                  	
                   
               </div>
                 <div id="sidePicDiv" class="templatemo_col37 col-sm-12 templatemo_leftgap templatemo_topgap">
@@ -298,7 +291,7 @@
      		<div class="templatemo_link"><a class="show-1 templatemo_hometestimonial" href="index.html">Go Back</a></div>
             </div>
             </div>
-            <div class="resp-tabs-container templatemo_testicontainer">
+            <div class="resp-tabs-container templatemo_testicontainer" >
                 <div>
                 	<div id="aboutLeftBack" class=" templatemo_rightgap_about">
                     	<div class="templatemo_graybg templatemo_botgap" id="aboutGrey">

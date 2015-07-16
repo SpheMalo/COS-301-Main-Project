@@ -364,5 +364,6 @@ window.onload = function()
 			});
 		}
 	});
-
+	
+	loadProfile();
 };
