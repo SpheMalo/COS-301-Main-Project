@@ -10,7 +10,7 @@ window.onload = function ()
 
         $.post('scripts/mediawiki/api.php?action=query&list=allpages&aplimit=100&format=json',
                 function (data) {
-                    console.log(JSON.stringify(data));
+                    //console.log(JSON.stringify(data));
                     var html = "";
                     //alert(JSON.stringify(data.query.allpages));
                     html += "Page List: <select placeholder='Select Page' id='pageSelect' >" +
@@ -22,7 +22,28 @@ window.onload = function ()
                     //alert(html);
                     document.getElementById("pageList").innerHTML = html;
                 });
-        //event.preventDefault();
+        event.preventDefault();
+        
+        $.post('scripts/mediawiki/api.php?action=query&list=allpages&aplimit=100&format=json',
+                function (data) {
+                    //console.log(JSON.stringify(data));
+                    var html = "";
+                    //alert(JSON.stringify(data.query.allpages));
+                    html += "Select Page to delete: <br>" +
+                            "<form class='form'>" +
+                            "<select placeholder='Select Page' id='DelPageSelect' >" +
+                            "<option value='' disabled='disabled' selected='selected'>Page List</option>";
+                            
+                    $.each(data.query.allpages, function (i, v) {
+                        html += "<option value='" + data.query.allpages[i].title + "'>" + data.query.allpages[i].title + "</option>";
+                    });
+                    html += "</select>"+
+                            "<button type='submit' id='deleteMan-button'>Delete Manuscript</button>" +
+                            "</form>";
+                    //console.log(html);
+                    document.getElementById("DelBookPageList").innerHTML = html;
+                });
+        event.preventDefault();
 
         $('#pageList').on('change', 'select', function (event) {
             
@@ -32,6 +53,17 @@ window.onload = function ()
                 "title": selected
             };
             get_page(loadPageInfo);
+        });
+        
+        $('#DelBookPageList').on('click', 'button', function (event) {
+            
+            var selected = $(this).parent().find('#DelPageSelect').val();
+            //alert(selected);
+            var loadPageInfo = {
+                "title": selected,
+                "action": "delete"
+            };
+            delete_page(loadPageInfo);
         });
         
         $("#create-button").click(function () {
@@ -59,7 +91,7 @@ window.onload = function ()
 
         function create_page(params)
         {
-            //alert("In here" + params.title);
+            alert("In here" + params.title);
             //alert(api.getEditToken());
             var stoken = "";
             $.post('scripts/mediawiki/api.php?action=tokens&type=edit&format=json',
@@ -246,6 +278,42 @@ window.onload = function ()
                 console.log(JSON.stringify(data));
                 //window.location.href = "/scripts/mediawiki/index.php/"+ params.title;
             });
+            event.preventDefault();
+        }
+        function delete_page(params){
+            
+            var stoken = "";
+            $.post('scripts/mediawiki/api.php?action=query&meta=tokens&type=csrf&format=json',
+                    function (data) {
+                        stoken = data.query.tokens.csrftoken;
+                        console.log(stoken);
+                        $.ajax({
+                            url: "scripts/mediawiki/api.php",
+                            data: {
+                                format: 'json',
+                                action: params.action,
+                                title: params.title,
+                                token: stoken
+                            },
+                            dataType: 'json',
+                            type: 'POST',
+                            success: function (data) {
+                                if (data && data.delete ) {
+                                    alert("Successful");
+                                    $('#DelBookPageList').append( params.title + "Book Deleted");
+
+                                } else if (data && data.error) {
+                                    alert('Error: API returned error code "' + data.error.code + '": ' + data.error.info);
+                                } else {
+                                    alert('Error: Unknown result from API.');
+                                }
+                            },
+                            error: function (data) {
+                                console.log('Error: Request failed. ' + JSON.stringify(data));
+                               
+                            }
+                        });
+                    });
             event.preventDefault();
         }
 
