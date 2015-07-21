@@ -1,14 +1,15 @@
-function editSection(value)
-{
-	alert(value);
-	
-}
+
 
 		
     $(document).ready(function () {
-
+		function editSection(value)
+		{
+			alert(value);
+			
+		}
 		
-		
+		//Populates the list of books initially when page loads.		
+		getBooks(); 
 		
 		//data for Creating a manuscript:
 		var info = 
@@ -25,10 +26,10 @@ function editSection(value)
 		
 		$('#viewBooks').click(function(){
 			$('#pageView').fadeOut("slow",function(){
-					$('#pageView').html("");
+					//$('#pageView').html("");
 					$('#bookList').fadeIn("slow",function(){});
 			});
-			
+			getBooks();
 		});
 		
 		//This is the next button click event when creating a new manuscript.
@@ -40,7 +41,7 @@ function editSection(value)
 					info.firstname = $('#firstname').val();
 					info.surname = $('#surname').val();
 						
-			if ($('#infoBox').css('display') === "none")
+			if ($('#infoBox').css('display') === "none") //this is when the book gets created...
 			{
 				info.preface = "<preface>"+$('#preface').val()+"</preface>";
 				info.text = info.preface;
@@ -52,23 +53,24 @@ function editSection(value)
 						
 					});
 					$('#bookDiv').fadeOut("slow",function(){
-						
+						$('#infoBox').fadeIn("slow",function(){});
 						$('#serviceBackground').fadeIn("slow",function(){});
 						});
 					
 			}	
-			else
+			else 
 			{		
 				$('#infoBox').fadeOut("slow",function(){
 					//console.log(info.title+" "+info.firstname+" "+info.surname);
 					$('#scriptMenuBar').html("Please Write a short preface.");
+					
 					$('#inputs2').fadeIn("slow",function(){});
 				});
 			}
 			
 		});
 		
-
+		
 		//This is the test to see if the div was faded out... if value is null its faded...
 		//Use it for the back button.
 		$('#back-button').click(function(){
@@ -95,6 +97,7 @@ function editSection(value)
 		function getBooks()
 		{
 			// clear this list before repopulating it
+			$('#bookList').html("");
 			
 			$.post('scripts/mediawiki/api.php?action=query&list=allpages&aplimit=100&format=json',
                 function (data) {
@@ -134,14 +137,14 @@ function editSection(value)
 		}
 		
 		//call the function once on page load...
-		getBooks();
+		
 		 
 		
 		 
 	
         //event.preventDefault();
 
-        $('#pageList').on('change', 'select', function (event) {
+        /*$('#pageList').on('change', 'select', function (event) {
             
             var selected = $(this).val();
             //alert(selected.val());
@@ -149,7 +152,7 @@ function editSection(value)
                 "title": selected
             };
             get_page(loadPageInfo);
-        });
+        });*/
         
        
        
@@ -188,8 +191,7 @@ function editSection(value)
                                     alert("Successful");
 									getBooks();//Repopulate list of books before loading page.
                                     //window.location.reload(); // reload page if edit was successful
-                                    //$('#Page').append("<a href='/scripts/mediawiki/index.php/"+params.title+"'>Link to your book</a>");
-                                    //window.location.href = "/scripts/mediawiki/index.php/"+ params.title;
+                                    
                                     get_page(params);
                                 } else if (data && data.error) {
                                     alert('Error: API returned error code "' + data.error.code + '": ' + data.error.info);
@@ -209,71 +211,7 @@ function editSection(value)
                         });
                     });
             event.preventDefault();
-            //alert(stoken);
-
-            //alert("In here3");
-
-            /*api.postWithToken({action: params.action, title: params.title,
-             section: params.section, text: params.text})
-             .done(function (result, jqXHR) {
-             
-             mw.log("Created successfully");
-             alert("Created successfully");
-             alert(result);
-             //window.location.reload();
-             })
-             .fail(function (code, result) {
-             alert("in error mode");
-             if (code == "http") {
-             mw.log("HTTP error " + result.textStatus);
-             alert("HTTP error " + result.textStatus);
-             }
-             else if (code == "ok-but-empty") {
-             mw.log("empty response from server ");
-             alert("empty response from server ");
-             }
-             else {
-             mw.log("API error" + code);
-             alert("API error" + code);
-             }
-             });
-             */
-            //});
-            /*alert("I get here " + params.title);
-             $.post('scripts/mediawiki/api.php?action='+params.action+'&text=' + params.text + 
-             '&title=' + params.title + '&format=json&section='+params.section, function(data) {
-             //alert(data.edit.token);
-             alert(data.edit.result);
-             if(data.edit.result == 'NeedToken') {
-             
-             $.post('scripts/mediawiki/api.php?action='+params.action+'&text=' + params.text + 
-             '&title=' + params.title + '&format=json&section='+params.section, '&token='+data.edit.token, 
-             function(data) {
-             if(!data.error){
-             if (data.edit.result == "Success") { 
-             //alert(data.login.sessionid);
-             document.location.reload(); 
-             
-             } else {
-             console.log('Result: '+ data.edit.result);
-             alert('Result: '+ data.edit.result);
-             }
-             } else {
-             console.log('Error: ' + data.error);
-             alert('Error: ' + data.error);
-             }
-             });
-             } else {
-             console.log('Result: ' + data.edit.result);
-             alert('Result: ' + data.edit.result);
-             }
-             if(data.error) {
-             console.log('Error: ' + data.error);
-             alert('Error: ' + data.error);
-             }
-             });
-             
-             */
+            
         }
         function get_page(params) {
 

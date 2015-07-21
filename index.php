@@ -64,23 +64,21 @@
       <div class="ThumbGroup clearfix grpelem" id="u285"><!-- none box -->
        <div class="popup_anchor">
         <div class="Thumb popup_element museBGSize clearfix" id="u287"><!-- group -->
-         <div class="clearfix grpelem" id="u342-4"><!-- content -->
+         
           <p>About us</p>
-         </div>
+         
         </div>
        </div>
        <div class="popup_anchor">
         <div class="Thumb popup_element museBGSize clearfix" id="u330"><!-- group -->
-         <div class="clearfix grpelem" id="u343-4"><!-- content -->
-          <p>Login</p>
-         </div>
+			<p>Login</p>
         </div>
        </div>
        <div class="popup_anchor">
         <div class="Thumb popup_element museBGSize clearfix" id="u286"><!-- group -->
-         <div class="clearfix grpelem" id="u341-4"><!-- content -->
+         
           <p>Register</p>
-         </div>
+        
         </div>
        </div>
       </div>
