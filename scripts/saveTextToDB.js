@@ -9,8 +9,11 @@ function saveText()
 
     
     $.post("scripts/mediawiki/api.php?action=query&prop=info|revisions&meta=tokens&rvprop=timestamp&titles="+title+"&format=json", function(data){
+        var string = JSON.stringify(data);
+        var tokens = string.split("\"");
+        var index = tokens[5];
+        var timeStamp = localStorage.getItem("tStamp");
         
-        alert(JSON.stringify(data));
         $.ajax({
                     url: "scripts/mediawiki/api.php",
                     data: {
@@ -38,7 +41,7 @@ function saveText()
                         $('#Page').append("<a href='/scripts/mediawiki/index.php/" + params.title + "'>Link to your book</a>");
 
                         event.preventDefault();
-                        get_page(params);
+                       // get_page(params);
                     }
                 });
         });
