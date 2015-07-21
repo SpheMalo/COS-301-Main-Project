@@ -36,18 +36,19 @@ class user {
          
         //handling sql injections
         $upassword = stripslashes($upassword);
-        $upassword = mysql_real_escape_string($upassword);
+        //$upassword = mysql_real_escape_string($upassword);
+        $upassword = mysqli_real_escape_string($this->dbInstance,$upassword);
         
         $query="SELECT * FROM useraccount WHERE (Username='$uemail' OR  EmailAddress='$uemail') AND Password = '$upassword'";
 
-	$queryResult = mysql_query($query); //run query
-        
+	//$queryResult = mysql_query($query); //run query
+        $queryResult = mysqli_query($this->dbInstance,$query);
         if($queryResult){
             
-            if(mysql_num_rows($queryResult) == 1){
+            if(mysqli_num_rows($queryResult) == 1){
                 
                 //get user details
-                $found_user = mysql_fetch_array($queryResult);
+                $found_user = mysqli_fetch_array($queryResult);
                 
                 $this->message = "success";
                  $isactive = $this->isActive($found_user['Username']);
@@ -64,7 +65,7 @@ class user {
                 //return to app
                 return $this->responseObject;
                 
-            }else if(mysql_num_rows($queryResult) <= 0){ //no such user exists
+            }else if(mysqli_fetch_array($queryResult) <= 0){ //no such user exists
                 
                 $this->message = "'invalid username or password'";
                 
@@ -80,11 +81,11 @@ class user {
     private function isActive($userName) {
         
         $query="SELECT * FROM useraccount WHERE (Username='$userName' OR  EmailAddress='$userName') AND Status=1";
-        $queryResult = mysql_query($query); //run query
+        $queryResult = mysqli_query($this->dbInstance, $query);//run query
         $result = "false";
         if($queryResult){
             
-            if(mysql_num_rows($queryResult) == 1){
+            if(mysqli_num_rows($queryResult) == 1){
                 $result = "true";
             }
            
@@ -104,9 +105,10 @@ class user {
         //check username availability
         $queryString = "SELECT Username from useraccount where Username ='$uname'";
         
-        $queryResults = mysql_query($queryString);
+        $queryResults = mysqli_query($this->dbInstance, $queryString);
         
-        if(mysql_num_rows($queryResults) >= 1){
+        
+        if(mysqli_num_rows($queryResults) >= 1){
                 
            //the username exists, append appropriate message
            $this->message = "Username already exists.";       
@@ -114,8 +116,8 @@ class user {
         }
         
         //check email availability
-        $queryResults = mysql_query("SELECT EmailAddress from useraccount where EmailAddress ='$uemail'");
-        if(mysql_num_rows($queryResults) >= 1){
+        $queryResults = mysqli_query($this->dbInstance, "SELECT EmailAddress from useraccount where EmailAddress ='$uemail'");
+        if(mysqli_num_rows($queryResults) >= 1){
             //the email exists, append message
             $this->message .= "Useremail already exists.";
             $available = TRUE;
@@ -137,12 +139,12 @@ class user {
             //echo $uname . $upassword . $uemail;
             //add user to database
             $queryString = "INSERT INTO useraccount (Username,UserRole,Password,EmailAddress, Status) VALUES('$uname','$urole','$upassword','$uemail','1')";
-        
-            $queryResults = mysql_query($queryString);
+
+             $queryResults = mysqli_query($this->dbInstance, $queryString);
             $UserID = null;
              if($queryResults){
                  
-                 $UserID = mysql_insert_id();
+                 $UserID = mysqli_insert_id($this->dbInstance);
                  
              }else if(!$queryResults){
                  $this->message = "could not insert user";
@@ -162,7 +164,7 @@ class user {
 	{
 		$sql = "SELECT * FROM user where user_name = '$uname' ";
 		
-		$queryResults = mysql_query($sql);
+		$queryResults = mysqli_query($this->dbInstance, $sql);
 		return $queryResults;
 	}
 	 
@@ -178,7 +180,8 @@ class user {
 	//echo $uname;
         $queryString = "UPDATE user SET user_role='$urole', user_password='$upassword', user_email='$uemail', user_status='$status' WHERE user_name='$uname'";
         
-        $queryResults = mysql_query($queryString);
+        //$queryResults = mysql_query($queryString);
+        $queryResults = mysqli_query($this->dbInstance, $queryString);
         echo $queryResults;
         if ($queryResults === TRUE) {
 			return "updated";
@@ -193,13 +196,14 @@ class user {
         //scan usertable searching for matchin email addr,if found, get the username and password of User 
         $query = "SELECT Username, Userpassword FROM User WHERE Useremail = '$Useremail'";
         
-        $queryRes = mysql_query($query);
+        //$queryRes = mysql_query($query);
+        $queryRes = mysqli_query($this->dbInstance, $query);
         
         if($queryRes){
             
-            if(mysql_num_rows($queryRes) >= 1){ //user with the email exists
+            if(mysqli_num_rows($queryRes) >= 1){ //user with the email exists
              
-                $found_user = mysql_fetch_array($queryRes);
+                $found_user = mysqli_fetch_array($queryRes);
               
                 $username = $found_user['Username'];
                 $password = $found_user['Userpassword'];
@@ -246,7 +250,7 @@ class user {
 	public function getUserInfo($userID)
 	{
 		$sql = "SELECT user_role, user_name, first_name, last_name, about_me, genres_of_interest, cell, home, email, work FROM user, personal_details WHERE user.user_name='$userID' AND personal_details.username='$userID'";
-		$myResponse = (mysql_fetch_assoc(mysql_query($sql)));
+		$myResponse = (mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql)));
 		
 		return ($myResponse);
 		
@@ -256,7 +260,7 @@ class user {
 	{
 		$sql = "UPDATE personal_details SET about_me='$jsonObj->aboutme' WHERE username='$uID'";
 		
-		$myResponse = mysql_query($sql);
+		$myResponse = mysqli_query($this->dbInstance, $sql);
 		return $myResponse;
 	}
 	
@@ -264,18 +268,18 @@ class user {
 	{
 		$sql = "UPDATE personal_details SET first_name='$jsonObj->firstname', last_name='$jsonObj->surname', genres_of_interest='$jsonObj->genres' WHERE username='$uID'";
 		
-		$myResponse = mysql_query($sql);
+		$myResponse = mysqli_query($this->dbInstance, $sql);
 		return $myResponse;
 	}
 	
 	public function updateContactInfo($uID, $jsonObj)
 	{
 		$sql = "UPDATE personal_details SET cell='$jsonObj->cell', home='$jsonObj->home', work='$jsonObj->work', email='$jsonObj->email' WHERE username='$uID'";
-		$myResponse = mysql_query($sql);
+		$myResponse = mysqli_query($this->dbInstance, $sql);
 		
 		//This is only gonna return an error once (this should be fixed later on.)
 		$sql = "UPDATE user SET user_email='$jsonObj->email' WHERE user_name='$uID'";
-		$myResponse = mysql_query($sql);
+		$myResponse = mysqli_query($this->dbInstance, $sql);
 		
 		return $myResponse;
 	}
