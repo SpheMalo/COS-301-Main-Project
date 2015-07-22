@@ -36,7 +36,8 @@
 							{
 								//alert(servList[k].childNodes[0].nodeValue);
 								$( "#services" ).append( "<div class='service'>"+servList[k]
-								.childNodes[0].nodeValue+"</div>" );
+								.childNodes[0].nodeValue+"</div>" );break;
+								 // break for now lets only the first element load (create manuscript) in this case.
 							}
 						}
 					}

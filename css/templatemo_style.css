@@ -28,19 +28,16 @@ html, body {
 img	{ width: 100%; }
 
 
-a:hover, a:focus {
+/*a:hover, a:focus {
 	text-decoration: none;
 	color: #cccccc;
 }
 a:active, a:focus {
 	color: #ffffff;
 	border: none;
-}
+}*/
 
-p {
-	color: #333333;
-}
-h1, h2, h3, h4, h5, h6 {
+/*h1, h2, h3, h4, h5, h6 {
 	font-family: Tahoma, Arial;
 	font-weight: 400;
 }
@@ -62,8 +59,43 @@ h2	{
 h3 { 
 	text-align: center; 
 	font-size: 2em;
-	}
+	}*/
 /*Everything we put in (Figbook) */
+#preface{margin-top:14px;resize:vertical;}
+
+.menuItem{color:white;
+	
+	/*text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;*/
+	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
+	font-size: 45px;
+	color: white;
+	
+	text-shadow: 0 1px 0 #ccc,
+               0 1px 0 #c9c9c9,
+               0 2px 0 #bbb,
+               0 3px 0 #b9b9b9,
+               0 4px 0 #aaa,
+               0 3px 1px rgba(0,0,0,.1),
+               0 0 3px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+	
+	text-decoration: none; 
+	
+	}
+.menuItem:hover{color:white;text-decoration:none;
+	font-size: 50px;
+	}
+.menuItem:active{color:white;text-decoration:none;
+font-size: 45px;
+}
+a:visited{color:white;text-decoration:none}
+.menuItem:visited{color:white;text-decoration:none;
+font-size: 45px;
+}
 #portImageBack{height:200px;width:200px; float:right;margin-right:20px;}
 #portImage{height:200px;width:200px;}
 
@@ -78,15 +110,53 @@ h3 {
 	height:100%;
 	width:100%;
 }
+
+#profileFrame{width:320px;}
+
+
 #aboutme{}/*This is the about me textArea*/
 #frame2{z-index:2; float:right;overflow-x:hidden; margin-top: 30px; margin-right:20px;width:250px;text-align:center;}
 #addtional{margin-top:22px;}
 
 /*this is the background div for the textarea where the manuscript will be written*/
-#bookDiv{min-width:900px;height:612px;position:relative;background-color:rgba(200,200,200,1.00);
+#bookDiv{width:500px;min-height:240px;margin-right:auto;margin-left:auto;background-color:rgba(200,200,200,1.00);
 	text-align:center;
+	
+	
+background: rgba(142,208,232,1);
+background: -moz-linear-gradient(top, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(142,208,232,1)), color-stop(50%, rgba(153,226,250,1)), color-stop(100%, rgba(156,218,240,1)));
+background: -webkit-linear-gradient(top, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
+background: -o-linear-gradient(top, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
+background: -ms-linear-gradient(top, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
+background: linear-gradient(to bottom, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
 }
-#scriptMenuBar{width:100%;height:60px;background-color:#252525}
+
+#infoBox{width:320px;height:110px;margin-left:auto;margin-right:auto;margin-top:20px;}
+#labels{float:left;height:auto;width:100px;}
+#inputs{float:right;;height:auto;width:200px;}
+#saveBookForm{margin-top:10px;margin-bottom:10px;}
+
+#scriptMenuBar{width:100%;height:60px;
+background: rgba(196,192,196,1);
+background: -moz-linear-gradient(top, rgba(196,192,196,1) 0%, rgba(130,132,133,1) 50%, rgba(181,181,181,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(196,192,196,1)), color-stop(50%, rgba(130,132,133,1)), color-stop(100%, rgba(181,181,181,1)));
+background: -webkit-linear-gradient(top, rgba(196,192,196,1) 0%, rgba(130,132,133,1) 50%, rgba(181,181,181,1) 100%);
+background: -o-linear-gradient(top, rgba(196,192,196,1) 0%, rgba(130,132,133,1) 50%, rgba(181,181,181,1) 100%);
+background: -ms-linear-gradient(top, rgba(196,192,196,1) 0%, rgba(130,132,133,1) 50%, rgba(181,181,181,1) 100%);
+background: linear-gradient(to bottom, rgba(196,192,196,1) 0%, rgba(130,132,133,1) 50%, rgba(181,181,181,1) 100%);
+
+-webkit-box-shadow: 2px 2px 24px 3px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);
+box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);
+
+  font: 25px Tahoma, Helvetica, Arial, Sans-Serif;
+  text-align: center;
+  color: #1A1A1A;
+  font-weight:500;
+  text-shadow: 0px 2px 3px #848484;
+  line-height:60px;
+}
 #manuscriptArea{margin-top:10px;resize: vertical;column-rule:medium;}
 
 	/*This is the about me edit button*/
@@ -122,7 +192,7 @@ h3 {
 a:link
 {
 	/*text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;*/
-	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
+/*	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
 	font-size: 50px;
 	color: white;
 	
@@ -139,10 +209,10 @@ a:link
                0 10px 10px rgba(0,0,0,.2),
                0 20px 20px rgba(0,0,0,.15);
 	
-	text-decoration: none;
+	text-decoration: none; */
 }
 
-a:visited
+/*a:visited
 {
 	color: #800080;
 	text-decoration: underline;
@@ -153,30 +223,122 @@ a:hover
 	color: #cccccc;
 	font-size:40px;
 	
+}*/
+#viewBooks
+{
+	width:250px;
+	height:40px;
+	background-color:rgba(59,136,192,1.00);
+	-webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
+	float:left;
+border:1px solid rgba(47,47,47,0.92);
+	color:rgba(4,42,130,1.00);
+text-shadow: 0 1px 2px rgba(107,207,198,1.00);
+	text-align:center;
+	line-height:35px;
+	font-size:20pt;
 }
-
+#viewBooks:hover{cursor:pointer;height:38px;border:solid 2px rgba(85,127,184,1.00);}
 .service
 {
-	width:100%;
-	height:35px;
-	background-color:rgba(99,231,72,0.70);
-	margin-top:3px;	
-	margin-left:0px;
+	width:250px;
+	height:40px;
+	top:-1;
+	background-color:rgba(59,136,192,1.00);
+	-webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+border:1px solid rgba(47,47,47,0.92);
+	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
+	float:right;
+	color:rgba(4,42,130,1.00);
+text-shadow: 0 1px 2px rgba(107,207,198,1.00);
+
+	text-align:center;
+	line-height:35px;
+	font-size:20pt;
+}
+.bookItem{margin:5px;float:left;width:239px;height:150px;
+border: 1px solid;
+background-color:rgba(92,211,63,0.89);
+line-height:150px;text-align:center;
+-webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+
+}
+.bookItem:hover{cursor:pointer;
+-webkit-box-shadow: 0px 0px 5px 2px rgba(177,211,224,1);
+-moz-box-shadow: 0px 0px 5px 2px rgba(177,211,224,1);
+box-shadow: 0px 0px 5px 2px rgba(177,211,224,1);
+}
+#bookList
+{
+width:750px;min-height:480px;margin-right:auto;margin-left:auto;
+}
+#scrollDiv{height:520px;width:770px;overflow-y:auto;overflow-x:none;
+margin-left:auto;margin-right:auto; margin-top:20px;}
+
+#serviceBackground{width:800px;height:600px;margin-left:auto;margin-right:auto;
+background: rgba(92,194,219,1);
+background: -moz-linear-gradient(top, rgba(92,194,219,1) 0%, rgba(83,186,214,1) 50%, rgba(109,189,209,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(92,194,219,1)), color-stop(50%, rgba(83,186,214,1)), color-stop(100%, rgba(109,189,209,1)));
+background: -webkit-linear-gradient(top, rgba(92,194,219,1) 0%, rgba(83,186,214,1) 50%, rgba(109,189,209,1) 100%);
+background: -o-linear-gradient(top, rgba(92,194,219,1) 0%, rgba(83,186,214,1) 50%, rgba(109,189,209,1) 100%);
+background: -ms-linear-gradient(top, rgba(92,194,219,1) 0%, rgba(83,186,214,1) 50%, rgba(109,189,209,1) 100%);
+background: linear-gradient(to bottom, rgba(92,194,219,1) 0%, rgba(83,186,214,1) 50%, rgba(109,189,209,1) 100%);
+
+
+}
+#goBackService{
+
+width:150px;
+	height:40px;
+	background-color:rgba(59,136,192,1.00);
+	-webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
+	float:left;
+	
+	
+	border:1px solid rgba(47,47,47,0.92);
 	text-align:center;
 	line-height:35px;
 	font-size:14pt;
-}
-#goBackService{width:240px;}
 
+}
+#goBackService:hover{border:2px solid #2385AF;}
+#serviceGoBack{font-size:20pt;font-weight:normal;
+color:rgba(4,42,130,1.00);
+text-shadow: 0 1px 2px rgba(107,207,198,1.00);
+text-decoration:none;
+}
 .service:hover{cursor:pointer;height:38px;border:solid 2px rgba(85,127,184,1.00);}
 #services
 {
-	margin-top:25px;
-	margin-left:-20px;
-	height:auto;
-	width:220px;	
+	float:right;
+	height:40px;
+	width:500px;	
 }
+#topService{height:40px;width:100%;padding-bottom:1px;
+border-bottom:1px solid #C0C0C0;
+background: rgba(196,192,196,1);
+background: -moz-linear-gradient(top, rgba(196,192,196,1) 0%, rgba(130,132,133,1) 50%, rgba(181,181,181,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(196,192,196,1)), color-stop(50%, rgba(130,132,133,1)), color-stop(100%, rgba(181,181,181,1)));
+background: -webkit-linear-gradient(top, rgba(196,192,196,1) 0%, rgba(130,132,133,1) 50%, rgba(181,181,181,1) 100%);
+background: -o-linear-gradient(top, rgba(196,192,196,1) 0%, rgba(130,132,133,1) 50%, rgba(181,181,181,1) 100%);
+background: -ms-linear-gradient(top, rgba(196,192,196,1) 0%, rgba(130,132,133,1) 50%, rgba(181,181,181,1) 100%);
+background: linear-gradient(to bottom, rgba(196,192,196,1) 0%, rgba(130,132,133,1) 50%, rgba(181,181,181,1) 100%);
 
+-webkit-box-shadow: 2px 2px 24px 3px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);
+box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);
+
+}
 a:active
 {
 	color: white;
@@ -193,6 +355,7 @@ a.nontext /* used to override default properties of 'a' tag */
 
 
 /*Everything we put in (Figbook) */
+
 
 
 #cmt{z-index:2;}

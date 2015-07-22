@@ -1,3 +1,10 @@
+<?php
+	if(!isset($_COOKIE['username']))
+	{
+		header('location: index.php');
+	}
+?>
+
 
  <!DOCTYPE html> 
   <head>
@@ -22,7 +29,7 @@
 	<!--Scripts linked here-->
 	<script src="scripts/authentication.js" type="text/javascript"></script>
 	<script src="scripts/profile.js"></script>
-	
+	<script src="scripts/saveTextToDB.js"></script>
     
 	<script src="js/jquery-1.10.2.min.js"></script> 
 	<script src="js/jquery.lightbox.js"></script>
@@ -73,6 +80,7 @@
     <![endif]-->
   </head>
   <body>
+  	
 	<div class="wrapper1">
 	  <!--this div provides the floating blocks, using background.css-->
 		<ul class="bgf-bubbles">
@@ -105,7 +113,7 @@
     		
           	<div class="col-md-3 col-sm-6 templatemo_leftgap">
             	<div class="templatemo_mainservice templatemo_botgap">
-                	<div class="templatemo_link"><a class="show-2 templatemo_page2" href="#">Services</a></div>
+                	<div class="templatemo_link"><a class="show-2 templatemo_page2 menuItem" href="#">Catalogue</a></div>
                 	
 			<script src="scripts/authentication.js" type="text/javascript"></script>
 			<!--<button id="delete-button">Delete Account</button>  this is the delete account button for testing purposes-->
@@ -115,26 +123,26 @@
             <div class="col-md-3 col-sm-6 templatemo_leftgap">
             	<div class="templatemo_mainimg templatemo_botgap templatemo_portfotopgap"><img height="316px" src="images/templatemo_home2.jpg" alt="home img 02"></div>
                 <div class="templatemo_mainportfolio">
-                      <div class="templatemo_link"><a class="show-3 templatemo_page3" href="#">Catalogue</a></div>
+                      <div class="templatemo_link"><a class="show-3 templatemo_page3 menuItem" href="#">Catalogue</a></div>
                 	                   
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 templatemo_leftgap">
             	<div class="templatemo_maintesti templatemo_botgap templatemo_topgap">
-                	<div class="templatemo_link"><a class="show-4 templatemo_page4" id="profileLink" href="#">Profile</a></div>
+                	<div class="templatemo_link"><a class="show-4 templatemo_page4 menuItem" id="profileLink" href="#">Profile</a></div>
                 </div>
                 <div class="templatemo_mainimg"><img src="images/templatemo_home3.jpg" height="316px" alt="home img 03"></div>
             </div>
             <div class="col-md-3 col-sm-6 templatemo_leftgap">
             	<div id="logoutDiv" class="templatemo_logout templatemo_botgap templatemo_topgap">
              	  <!-- <img src="images/templatemo_home4.jpg" alt="home img 04"> -->
-				 <div class="templatemo_link"><a class="show-7 templatemo_page7" href="#" onclick="wiki_logout()">Logout</a></div>
+				 <div class="templatemo_link"><a class="show-7 templatemo_page7 menuItem" href="#" onclick="wiki_logout()">Logout</a></div>
                 </div>
                 <div class="templatemo_mainabout templatemo_botgap">
-                	<div class="templatemo_link"><a class="show-5 templatemo_page5" href="#">About Us</a></div>
+                	<div class="templatemo_link"><a class="show-5 templatemo_page5 menuItem" href="#">About Us</a></div>
                 </div>
                 <div class="templatemo_maincontact">
-                	<div class="templatemo_link"><a class="show-6 templatemo_page6" href="#">Contact Us</a></div>
+                	<div class="templatemo_link"><a class="show-6 templatemo_page6 menuItem" href="#">Contact Us</a></div>
                 </div>
 				
             </div>
@@ -145,41 +153,76 @@
     <!--services start -->
    <div class="content services" id="menu-2">
 		<div id="serviceContainer" >
-        	<div class="row templatemo_bordergapborder">
-            	<div class="col-md-3 col-sm-12 templatemo_leftgap" id="leftCol">
-                	<div id="serviceBackground" class="templatemo_graybg">
-                        <div class="templatemo_frame">
-                            <h2>Our Services</h2>
-                            <div class="clear"></div>
-                            <div id="services">
-                                
+          <div id="serviceBackground">
+                       
+                        	<div id="topService">
+                                 <div id="services">
+                                    <div id="viewBooks">List Books</div>
+                                 </div>
+                                 <div class="templatemo_mainservice templatemo_botgap" id="goBackService">
+                                    <a id="serviceGoBack" class="show-1 templatemo_homeservice" href="#">Go Back</a>
+                                 </div>
+                        	</div>
+                            <div id="scrollDiv">
+                                <div id="bookList">
+                                        
+                                </div>
+                                <div id="pageView">
+            						
+            					</div>
+                                 <div id="editSection">
+                                      <input type="text" id="pageEditTitle"/><hr/>
+                                          <textarea id="editor" cols="60" rows="10">
+                                          </textarea>
+                                          <button id="saveBtn" onclick="saveText()" >Save</button>
+                                  </div>
                             </div>
-                        </div>
-               	  </div>
-                  <div class="templatemo_mainservice templatemo_botgap" id="goBackService">
-                	<div class="templatemo_linkservice"><a class="show-1 templatemo_homeservice" href="#">Go Back</a></div>
-				  </div>
+                            
+                        
+            </div>
+            
+            
+        	<div class="row templatemo_bordergapborder">
+            	
+            	<div class="col-md-3 col-sm-12 templatemo_leftgap" id="leftCol">
+                	
+                  
                 </div>
                 
                 <div class="templatemo_col37 col-sm-12 templatemo_leftgap">
                 	
                   <div id="bookDiv">
-            			<div id="scriptMenuBar" ></div>                  	
+            			<div id="scriptMenuBar">Please fill in author details.</div>                  	
                         <div id="pageList"></div>
                         
                         <div id="contentDiv">
-                       		 <label>Book Title</label><input id="title" type="text"/>
-                            <textarea id="manuscriptArea" cols="80" rows="14" ></textarea>
-                            <button type="submit" id="create-button">Create Book</button>
+                        	<div id="infoBox">
+                                 <div id="labels">	
+                                     <label>Book Title:</label><br/>
+                                     <label>Author's</label><br/>
+                                     <label>Firstname:</label><br/>
+                                     <label>Surname:</label>
+                                 </div>
+                                 <div id="inputs">
+                                     <input id="title" type="text"/><br/><br/>
+                                     <input id="firstname" type="text"/><br/>
+                                     <input id="surname" type="text"/>
+                                 </div>
+                             </div>                             
+                             <div id="inputs2">
+                                 <textarea id="preface" cols="50" rows="14" ></textarea>
+                             </div>
+                            <textarea id="manuscriptArea" cols="96" rows="14" ></textarea>
                             
-                            <form class="form" >
-                                <input id="gettitle" type="text" placeholder="title">
-                                <button type="submit" id="load-button">Load Page</button>
+                            
+                            <form class="form" id="saveBookForm">
+                            	<button type="submit" id="back-button">Back</button>
+                            	<button type="submit" id="next-button">Next</button>
                             </form>
                         </div>
                         <div id="Page">
-                        
-                        </div>
+                        	
+                        </div>     
 		</div>
                   	
                   
@@ -295,7 +338,7 @@
                 <div>
                 	<div id="aboutLeftBack" class=" templatemo_rightgap_about">
                     	<div class="templatemo_graybg templatemo_botgap" id="aboutGrey">
-                         <div class="templatemo_frame">
+                         <div id="profileFrame" class="templatemo_frame">
                            
 						  <h2>About Me</h2>
 						  <textarea readonly class="aboutMeInfo" id="aboutme" rows="5" cols="33"></textarea>
@@ -331,6 +374,9 @@
                             <ul id="booklist">
                             	<p style="font-size:8pt;">..This will be a list loaded dynamicly using javascript..</p>
                             </ul>
+                                <button id="delete-button">Delete Account</button>
+                                <button id="suspend-button">Suspend Account</button>
+                                <button id="activate-button">Activate Account</button>
                             </div>
                             
                         </div>

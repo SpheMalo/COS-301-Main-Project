@@ -3,6 +3,44 @@
 */
 
 function editSection(section){
+	var editTimeStamp;
+	var title = $("#pageSelect :selected").html();
+	var content = document.getElementById("editor").value;
+	var sectionHeading = $("#pageEditTitle").html();
+	var actualContent = "="+sectionHeading+"= \n"+content;
+	
+	$.ajax({
+                    url: "scripts/FigbookActionHandler/actionHandler.php",
+                    data: {
+                        format: 'json',
+                        action: 'getTimeStamp',
+                        title: title,
+                        section: sectionNumber,
+                    },
+                    dataType: 'json',
+                    type: 'POST',
+                    success: function (data) {
+                        alert(JSON.stringify(data));
+                    },
+                    error: function (data) {
+                        console.log('Error: Request failed. ' + JSON.stringify(data));
+
+                        event.preventDefault();
+                    }
+                });
+	
+	/* $.post("scripts/mediawiki/api.php?action=query&prop=revisions&titles="+title+"&rvprop=timestamp|content&rvsection="+section+"&format=json", function(data){
+		//alert(JSON.stringify(data));
+		
+		var string = JSON.stringify(data);
+        var tokens = string.split("\"");
+        var index = tokens[5];
+       editTimeStamp = data.query.pages[index].revisions[0].timestamp;
+	   
+	localStorage.setItem("tStamp", editTimeStamp);
+	
+
+	 });*/
 	$("#viewPage").hide(900);
 	$("#pageList").hide(700);
 	$("#createPage").hide(500);
@@ -29,10 +67,16 @@ function editSection(section){
 	var arr = $("#"+section).nextUntil("h1");
 	str = "";
 	for(var i = 0; i < arr.length; i++){
-		str+= arr[0].innerHTML;
+		if (arr[i].nodeName == "P") {
+			
+			str+= arr[i].innerHTML+"\n";
+		}
 	}
+	
+	var res = str.replace("<br>", "\n");
+	
 	//alert($("#"+section).nextUnitl().html());
-	$("#editor").html(str);
+	$("#editor").html(res);
 	$("#saveBtn").attr("name","" + section);
 	
 }

@@ -23,7 +23,7 @@ function accountStatus($id, $status, $dbHandler) //To do: select from user get r
 		//echo $_COOKIE['username'];
 	 $result = $tmpUser->getUserDetails($id); //get the user details.
 	
-	$row = mysql_fetch_assoc($result); //get the row of results
+	$row = mysqli_fetch_assoc($result); //get the row of results
 	//echo $row['user_status'];
 	return $tmpUser->updateUser($row[user_name],$row[user_password],$row[user_email],$row[user_role], $status);	
 }
@@ -50,6 +50,13 @@ if(isset($actionFlag) && $actionFlag != ""){
 		$tmpUser = new user($dbHandler->getConnection());
 		
 		$response = ($tmpUser->getUserInfo($uID));
+	
+	}else if($actionFlag == "getTimeStamp"){
+		
+		$uID = $_COOKIE['username'];
+		$tmpUser = new user($dbHandler->getConnection());
+		
+		$response = ($tmpUser->getTimeStamp($uID, $object));
 	
 	}elseif ($actionFlag == "updateAboutMe"){
 		$uID = $_COOKIE['username'];

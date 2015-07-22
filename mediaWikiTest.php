@@ -55,12 +55,6 @@
 
       <!--button id="Dummy" onclick="editSection(1)">Edit</button-->
       <div id="Page"></div>
-      <br>
-      <div id="DelBookDiv">
-     <div id="scriptMenuBar" ></div>                  	
-     <div id="DelBookPageList"></div>
-           
-		</div>
       <div id="editSection" style="visibility: hidden">
           <h2 id="pageEditTitle"></h2><hr />
               <textarea id="editor" cols="100" rows="50">

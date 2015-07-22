@@ -19,17 +19,10 @@ class databaseHandler {
     //open a database connection and initialise connection object
     public function __construct(){
         
-        $this->dbconnection = mysql_connect(HOST, USERNAME, PASSWORD);
+        //$this->dbconnection = mysql_connect(HOST, USERNAME, PASSWORD);
+        $this->dbconnection = mysqli_connect(HOST,USERNAME,PASSWORD,DATABASE);
         
-        if($this->dbconnection){
-            
-            $database = mysql_select_db(DATABASE,$this->dbconnection);  
-            
-            if(!$database){
-                die ("could not select database". mysql_error()) ;
-            }
-            
-        }else if (!$this->dbconnection){
+        if (!$this->dbconnection){
             
             die ("database connection failed ". mysql_error());
         }
@@ -38,7 +31,7 @@ class databaseHandler {
     
     //close the database connection
     public function __destruct() {
-        mysql_close($this->dbconnection);
+        mysqli_close($this->dbconnection);
         
     }
     
@@ -59,7 +52,7 @@ class databaseHandler {
     
     //just in case we have to explicitly close the db connection
     public function closeConnection(){       
-        mysql_close($this->dbconnection);
+        mysqli_close($this->dbconnection);
         
         echo "\n"."connection succesfully closed";
     }
