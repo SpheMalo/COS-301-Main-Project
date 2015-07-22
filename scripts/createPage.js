@@ -1,12 +1,95 @@
+function editSection(value)
+{
+//	var editTimeStamp;
+//	var title = $("#pageSelect :selected").html();
+//	var content = document.getElementById("editor").value;
+//	var sectionHeading = $("#pageEditTitle").html();
+//	var actualContent = "="+sectionHeading+"= \n"+content;
+	var jsonString = {
+					"format": "json",
+					"action": "getTimeStamp",
+					"title": localStorage.bookTitle,
+					"section": value
+				    };
+					
+	jsonString = JSON.stringify(jsonString);				
+					
+					
+					
+	/*$.ajax({
+				url: "scripts/FigbookActionHandler/actionHandler.php",
+				data: "json="+jsonString,
+				dataType: 'json',
+				type: 'POST',
+				success: function (data) {
+					localStorage.setItem("tStamp", data.date_last_edited);
+				},
+				error: function (data) {
+					console.log('Error: Request failed. ' + (data.responseText));
+	
+				}
+			});*/
+	
+/*$.post("scripts/mediawiki/api.php?action=query&prop=revisions&titles="+title+"&rvprop=timestamp|content&rvsection="+section+"&format=json", function(data){
+		//alert(JSON.stringify(data));
+		
+		var string = JSON.stringify(data);
+        var tokens = string.split("\"");
+        var index = tokens[5];
+       editTimeStamp = data.query.pages[index].revisions[0].timestamp;
+	   
+	localStorage.setItem("tStamp", editTimeStamp);
+	
 
+	 });*/
+	 
+	$("#pageView").fadeOut("slow",function(){
+		$('#editSection').fadeIn("slow",function(){});
+	
+	});
+	
+	//$("#pageList").hide(700);
+	//$("#createPage").hide(500);
+	//$("#Dummy").hide(400);
+	//$("#Page").hide(400);
+	
+	var headings = document.getElementsByClassName("sectionHeading");
+	var insideText = document.getElementsByClassName("insideText");
+	
+	
+	$("#pageEditTitle").val(headings[(value-1)].getElementsByClassName("mw-headline")[0].innerHTML);
+	$("#editor").html("");
+
+	var page = document.getElementById("pageView").nextSibling;
+		var links = page.childNodes;
+		
+		/*var num_links =1;
+		for(var i=0; i<links.length; i++) {
+			if(links[i].innerHTML === "edit")
+			{
+				links[i].setAttribute('href', "#");
+				links[i].setAttribute('onclick', "editSection("+num_links+")");
+				num_links++;
+			}
+		} */
+	
+	//alert(insideText[(value-1)].innerHTML + " "+value);
+	
+	
+	
+	
+	
+	//alert($("#"+section).nextUnitl().html());
+	//$("#editor").html("");
+	$("#editor").val(insideText[(value-1)].innerHTML);
+	$("#saveBtn").attr("name","" + value);
+	
+	
+}
 
 		
     $(document).ready(function () {
-		function editSection(value)
-		{
-			alert(value);
-			
-		}
+		
 		
 		//Populates the list of books initially when page loads.		
 		getBooks(); 
@@ -43,7 +126,7 @@
 						
 			if ($('#infoBox').css('display') === "none") //this is when the book gets created...
 			{
-				info.preface = "<preface>"+$('#preface').val()+"</preface>";
+				info.preface = $('#preface').val();
 				info.text = info.preface;
 				//console.log(info.preface);
 				
@@ -125,7 +208,8 @@
 							"title": $(this).html()
 						};	
 						//alert(loadPageInfo.title);
-						
+						localStorage.bookTitle = loadPageInfo.title;
+						//alert(localStorage.bookTitle);
 						//make sure it gets a title for a book to load
 						if (loadPageInfo.title !== "")
 						{
@@ -232,9 +316,39 @@
 							var div = document.getElementById('mw-content-text');
 									var childNodes = div.childNodes;
 							document.getElementById('pageView').innerHTML = "";
-							
-							$( "#pageView" ).append(childNodes);
+							//alert(childNodes.length);
 								
+								var htmlValue = "";
+								var linkNumber = 1;
+								for(var i=0; i<childNodes.length; i++)
+								{	
+									//console.log(childNodes[i].innerHTML);
+									
+									if (childNodes[i].innerHTML !== "" && typeof childNodes[i].innerHTML !== "undefined")
+									{	
+										
+										if(childNodes[i].innerHTML.indexOf('mw-headline') !== -1 )
+										{	
+											//not if it is the first section
+											if (linkNumber !== 1){
+											$( "#pageView" ).append(htmlValue+"</div></div></div>");
+											}
+											// add section div
+											htmlValue = "<div class='sectionDiv' onclick='editSection("+linkNumber+")'><div class='sectionHeading'>"+childNodes[i].innerHTML+"</div><div class='insideText'>";
+											linkNumber++;
+										}
+										else{
+										htmlValue += childNodes[i].innerHTML;
+										}
+									}
+								}
+								$( "#pageView" ).append(htmlValue+"</div></div></div>");
+								
+							//$( "#pageView" ).append(childNodes);
+							var headings = document.getElementsByClassName("mw-headline"); 
+								console.log("headings: "+headings[0].innerHTML);
+							
+							
 							var page = document.getElementById("pageView");
 							var links = page.getElementsByTagName("a");
 							
