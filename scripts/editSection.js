@@ -8,7 +8,28 @@ function editSection(section){
 	var content = document.getElementById("editor").value;
 	var sectionHeading = $("#pageEditTitle").html();
 	var actualContent = "="+sectionHeading+"= \n"+content;
-	 $.post("scripts/mediawiki/api.php?action=query&prop=revisions&titles="+title+"&rvprop=timestamp|content&rvsection="+section+"&format=json", function(data){
+	
+	$.ajax({
+                    url: "scripts/FigbookActionHandler/actionHandler.php",
+                    data: {
+                        format: 'json',
+                        action: 'getTimeStamp',
+                        title: title,
+                        section: sectionNumber,
+                    },
+                    dataType: 'json',
+                    type: 'POST',
+                    success: function (data) {
+                        alert(JSON.stringify(data));
+                    },
+                    error: function (data) {
+                        console.log('Error: Request failed. ' + JSON.stringify(data));
+
+                        event.preventDefault();
+                    }
+                });
+	
+	/* $.post("scripts/mediawiki/api.php?action=query&prop=revisions&titles="+title+"&rvprop=timestamp|content&rvsection="+section+"&format=json", function(data){
 		//alert(JSON.stringify(data));
 		
 		var string = JSON.stringify(data);
@@ -19,7 +40,7 @@ function editSection(section){
 	localStorage.setItem("tStamp", editTimeStamp);
 	
 
-	 });
+	 });*/
 	$("#viewPage").hide(900);
 	$("#pageList").hide(700);
 	$("#createPage").hide(500);

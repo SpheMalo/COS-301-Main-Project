@@ -51,6 +51,13 @@ if(isset($actionFlag) && $actionFlag != ""){
 		
 		$response = ($tmpUser->getUserInfo($uID));
 	
+	}else if($actionFlag == "getTimeStamp"){
+		
+		$uID = $_COOKIE['username'];
+		$tmpUser = new user($dbHandler->getConnection());
+		
+		$response = ($tmpUser->getTimeStamp($uID, $object));
+	
 	}elseif ($actionFlag == "updateAboutMe"){
 		$uID = $_COOKIE['username'];
 		$tmpUser = new user($dbHandler->getConnection());

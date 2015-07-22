@@ -29,7 +29,7 @@
 	<!--Scripts linked here-->
 	<script src="scripts/authentication.js" type="text/javascript"></script>
 	<script src="scripts/profile.js"></script>
-	
+	<script src="scripts/saveTextToDB.js"></script>
     
 	<script src="js/jquery-1.10.2.min.js"></script> 
 	<script src="js/jquery.lightbox.js"></script>
@@ -170,6 +170,12 @@
                                 <div id="pageView">
             						
             					</div>
+                                 <div id="editSection">
+                                      <input type="text" id="pageEditTitle"/><hr/>
+                                          <textarea id="editor" cols="60" rows="10">
+                                          </textarea>
+                                          <button id="saveBtn" onclick="saveText()" >Save</button>
+                                  </div>
                             </div>
                             
                         

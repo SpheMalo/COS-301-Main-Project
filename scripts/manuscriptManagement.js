@@ -5,6 +5,7 @@ $(document).ready(function()
 	$('#sidePicDiv').fadeOut( "fast", function() {});
 	$('#inputs2').fadeOut("fast",function(){});
 	$('#pageView').fadeOut("fast",function(){});
+	$('#editSection').fadeOut("fast",function(){});
 	
 	$('.service:nth-child(2)').click(function()
 	{

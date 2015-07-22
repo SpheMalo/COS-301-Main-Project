@@ -283,6 +283,32 @@ class user {
 		
 		return $myResponse;
 	}
+	
+	/**
+	 *@param string $userID the username of the user that made this call
+	 *@param json $obj json object containing information necessary to make the query to retrieve the timestamp for this section.
+	 *
+	 */
+	public function getTimeStamp($userID, $obj)
+	{
+		//$date = DateTime::createFromFormat("l dS F Y", );
+
+		$sql = "SELECT * FROM section_revisions WHERE book_title = '$obj->title' AND section_number = '$obj->section'";
+		$myResponse = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql));
+		
+		if ($myResponse == null)
+		{
+			$sql = "INSERT INTO section_revisions (book_title, section_number, last_edited_by, date_last_edited)
+			VALUE ('$obj->title', '$obj->section', '$userID', CURRENT_TIME)";
+			mysqli_query($this->dbInstance, $sql);
+			
+			$sql = "SELECT * FROM section_revisions WHERE book_title = '$obj->title' AND section_number = '$obj->section'";
+		$myResponse = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql));
+		}
+		
+		
+		return $myResponse;
+	}
     
     
 }
