@@ -112,8 +112,8 @@ font-size: 45px;
 }
 
 #profileFrame{width:320px;}
-
-
+.sectionDiv{width:100%;background-color:white;min-height:100px;}
+.sectionHeading{width:100%;background-color:rgba(160,152,152,1.00);height:40px;}
 #aboutme{}/*This is the about me textArea*/
 #frame2{z-index:2; float:right;overflow-x:hidden; margin-top: 30px; margin-right:20px;width:250px;text-align:center;}
 #addtional{margin-top:22px;}
