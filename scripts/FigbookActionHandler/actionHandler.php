@@ -58,6 +58,14 @@ if(isset($actionFlag) && $actionFlag != ""){
 		
 		$response = ($tmpUser->getTimeStamp($uID, $object));
 	
+	}else if($actionFlag == "verifyTimeStamp"){
+		
+		$obj = json_decode($getJSONObject);
+		$uID = $_COOKIE['username'];
+		$tmpUser = new user($dbHandler->getConnection());
+		
+		$response = ($tmpUser->verifyTimeStamp($uID, $obj));
+	
 	}elseif ($actionFlag == "updateAboutMe"){
 		$uID = $_COOKIE['username'];
 		$tmpUser = new user($dbHandler->getConnection());
