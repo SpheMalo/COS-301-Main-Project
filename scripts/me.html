@@ -1,58 +1,37 @@
 <!DOCTYPE html>
     <head>
         <script src="jquery-1.8.3.min.js"></script>
-        <script>
-		function editText()
-		{
-			$post("scripts/mediawiki/api.php?action=query&prop=info|revisions&intoken=edit&rvprop=timestamp&titles=A_Tale_of_Crossed_Paths", function(data){
-				
-				$.ajax({
-                            url: "scripts/mediawiki/api.php",
-                            data: {
-                                format: 'json',
-                                action: 'edit',
-                                title: 'A_Tale_of_Crossed_Paths',
-                                section: '2',
-                                text: "No longer will the struggle continue like this...",
-                                token: data.tokens.edittoken
-                            },
-                            dataType: 'json',
-                            type: 'POST',
-                            success: function (data) {
-                                if (data && data.edit && data.edit.result === 'Success') {
-                                    alert("Successful");
-                                   alert(JSON.stringify(data));
-                                } else if (data && data.error) {
-                                    alert('Error: API returned error code "' + data.error.code + '": ' + data.error.info);
-                                } else {
-                                    alert('Error: Unknown result from API.');
-                                }
-                            },
-                            error: function (data) {
-                                console.log('Error: Request failed. ' + JSON.stringify(data));
-                                $('#Page').append("<a href='/scripts/mediawiki/index.php/" + params.title + "'>Link to your book</a>");
-
-                                event.preventDefault();
-                                get_page(params);
-                            }
-                        });
-				});
-		}
-<<<<<<< HEAD
-		
-		
-=======
+        <script src="saveTextToDB.js"></script>
         
-        function createProfile(jsonObj)
-        {
-            var userInfo = JSON.parse(jsonObj);
-            alert(userInfo.Username);
-        }
->>>>>>> 336b9f7349f2226a6ffd06795db983773dad6597
-        </script>
-        
+		<style type="text/css">
+			#oldContent, #newContent
+			{
+				border: solid 1px grey;
+				border-radius: 12px;
+				height: 115px;
+			}
+		</style>
     </head>
-    <body>
-        <button id="viewp" onclick="editText()">View Profile</button>
+    <body onload='resolveConflict()'>
+		
+		<p id="yourChanges">Changes made by you:</p>
+		<div id="newContent">
+			<p id="newPar"></p>
+		</div>
+		
+		<br />
+		<br />
+		<p id="userChanges">Changes made by </p>
+		<div id="oldContent">
+			<p id="oldPar"></p>
+		</div>
+		
+		<button id="addBefore">Add Your Changes Before This</button>
+		<button id="addAfter">Add Your Changes After This</button>
+		
+		<br />
+		<br />
+		<p>Your new content: </p>
+		<textarea id="newContent"></textarea>
     </body>
 </html>
