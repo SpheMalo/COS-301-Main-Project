@@ -291,11 +291,11 @@ class user {
 	 */
 	public function getTimeStamp($userID, $obj)
 	{
-		//$date = DateTime::createFromFormat("l dS F Y", );
 
 		$sql = "SELECT * FROM section_revisions WHERE book_title = '$obj->title' AND section_number = '$obj->section'";
 		$myResponse = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql));
 		
+		// If no such record exists, create it and persist
 		if ($myResponse == null)
 		{
 			$sql = "INSERT INTO section_revisions (book_title, section_number, last_edited_by, date_last_edited)
@@ -303,11 +303,37 @@ class user {
 			mysqli_query($this->dbInstance, $sql);
 			
 			$sql = "SELECT * FROM section_revisions WHERE book_title = '$obj->title' AND section_number = '$obj->section'";
-		$myResponse = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql));
+			$myResponse = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql));
 		}
 		
-		
+		//return the timestamp
 		return $myResponse;
+	}
+	
+	public function verifyTimeStamp($uID, $obj)
+	{
+		$sql = "SELECT * FROM section_revisions WHERE book_title = '$obj->title' AND section_number = '$obj->section'";
+		$myResponse = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql));
+		
+		//Check timestamps
+		if ($myResponse["date_last_edited"] == $obj->timestamp)
+		{
+			$sql = "UPDATE section_revisions SET section_content='$obj->content', date_last_edited=CURRENT_TIME, last_edited_by='$uID' WHERE book_title = '$obj->title' ";
+			mysqli_query($this->dbInstance, $sql);
+			
+			//Getting the updated time
+			$sql = "SELECT date_last_edited FROM section_revisions WHERE book_title = '$obj->title' AND section_number = '$obj->section'";
+		    $temp = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql));
+			
+			$myResponse["message"] = "no_conflict";
+			$myResponse["date_last_edited"] = $temp["date_last_edited"];
+			return $myResponse;
+		}
+		else
+		{
+			$myResponse["message"] = "conflict";
+			return $myResponse;
+		}
 	}
     
     
