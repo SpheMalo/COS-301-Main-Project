@@ -29,7 +29,7 @@
 	<!--Scripts linked here-->
 	<script src="scripts/authentication.js" type="text/javascript"></script>
 	<script src="scripts/profile.js"></script>
-	
+	<script src="scripts/saveTextToDB.js"></script>
     
 	<script src="js/jquery-1.10.2.min.js"></script> 
 	<script src="js/jquery.lightbox.js"></script>
@@ -113,7 +113,7 @@
     		
           	<div class="col-md-3 col-sm-6 templatemo_leftgap">
             	<div class="templatemo_mainservice templatemo_botgap">
-                	<div class="templatemo_link"><a class="show-2 templatemo_page2" href="#">Catalogue</a></div>
+                	<div class="templatemo_link"><a class="show-2 templatemo_page2 menuItem" href="#">Catalogue</a></div>
                 	
 			<script src="scripts/authentication.js" type="text/javascript"></script>
 			<!--<button id="delete-button">Delete Account</button>  this is the delete account button for testing purposes-->
@@ -123,26 +123,26 @@
             <div class="col-md-3 col-sm-6 templatemo_leftgap">
             	<div class="templatemo_mainimg templatemo_botgap templatemo_portfotopgap"><img height="316px" src="images/templatemo_home2.jpg" alt="home img 02"></div>
                 <div class="templatemo_mainportfolio">
-                      <div class="templatemo_link"><a class="show-3 templatemo_page3" href="#">Catalogue</a></div>
+                      <div class="templatemo_link"><a class="show-3 templatemo_page3 menuItem" href="#">Catalogue</a></div>
                 	                   
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 templatemo_leftgap">
             	<div class="templatemo_maintesti templatemo_botgap templatemo_topgap">
-                	<div class="templatemo_link"><a class="show-4 templatemo_page4" id="profileLink" href="#">Profile</a></div>
+                	<div class="templatemo_link"><a class="show-4 templatemo_page4 menuItem" id="profileLink" href="#">Profile</a></div>
                 </div>
                 <div class="templatemo_mainimg"><img src="images/templatemo_home3.jpg" height="316px" alt="home img 03"></div>
             </div>
             <div class="col-md-3 col-sm-6 templatemo_leftgap">
             	<div id="logoutDiv" class="templatemo_logout templatemo_botgap templatemo_topgap">
              	  <!-- <img src="images/templatemo_home4.jpg" alt="home img 04"> -->
-				 <div class="templatemo_link"><a class="show-7 templatemo_page7" href="#" onclick="wiki_logout()">Logout</a></div>
+				 <div class="templatemo_link"><a class="show-7 templatemo_page7 menuItem" href="#" onclick="wiki_logout()">Logout</a></div>
                 </div>
                 <div class="templatemo_mainabout templatemo_botgap">
-                	<div class="templatemo_link"><a class="show-5 templatemo_page5" href="#">About Us</a></div>
+                	<div class="templatemo_link"><a class="show-5 templatemo_page5 menuItem" href="#">About Us</a></div>
                 </div>
                 <div class="templatemo_maincontact">
-                	<div class="templatemo_link"><a class="show-6 templatemo_page6" href="#">Contact Us</a></div>
+                	<div class="templatemo_link"><a class="show-6 templatemo_page6 menuItem" href="#">Contact Us</a></div>
                 </div>
 				
             </div>
@@ -170,6 +170,12 @@
                                 <div id="pageView">
             						
             					</div>
+                                 <div id="editSection">
+                                      <input type="text" id="pageEditTitle"/><hr/>
+                                          <textarea id="editor" cols="60" rows="10">
+                                          </textarea>
+                                          <button id="saveBtn" onclick="saveText()" >Save</button>
+                                  </div>
                             </div>
                             
                         
