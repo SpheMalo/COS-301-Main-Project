@@ -54,7 +54,7 @@ function saveText()
                                 {
                                     alert("Section saved successfully");
                                     console.log(JSON.stringify(data));
-                                    localStorage.tStamp = result.date_last_edited;
+                                    //localStorage.tStamp = result.date_last_edited;
                                     console.log("After saving: " + localStorage.tStamp);
                                 }
                                 else if (data && data.error)
@@ -89,11 +89,17 @@ function saveText()
 }
 
 $("#addBefore").live('click', function(){
-    alert("Add Before");
+    var newContent = $("#newPar").html();
+    newContent += "\n" + $("#oldPar").html();
+    
+    $("#newContentTextArea").val(newContent);
 });
 
 $("#addAfter").live('click', function(){
-    alert("Add After");
+    var newContent = $("#oldPar").html();
+    newContent += "\n" + $("#newPar").html();
+    
+    $("#newContentTextArea").val(newContent);
 });
 function resolveConflict()
 {
