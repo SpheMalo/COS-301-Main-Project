@@ -15,21 +15,25 @@
 			background-color:rgba(160,160,160,1.00);
 			
 			}
+			#background{margin-left:auto;margin-right:auto;height:100%;width:800px;
+			background-color:rgba(229,229,229,0.83);border-radius:10px;
+			}
+			#heading1{margin-right:auto;margin-left:auto;font-size:20pt;}
 		</style>
     </head>
     <body onload='resolveConflict()'>
-		
-		<p id="yourChanges">Changes made by you:</p>
+		<div id='background'>
+		<div id="heading1"><p id="yourChanges">Changes made by you:</p></div>
 		<div id="newContent">
 			<p id="newPar"></p>
 		</div>
 		
 		<br />
 		<br />
-		<p id="userChanges">Changes made by </p>
+		<div id="heading2"><p id="userChanges">Changes made by </p>
 		<div id="oldContent">
 			<p id="oldPar"></p>
-		</div>
+		</div></div>
 		
 		<button id="addBefore">Add Your Changes Before This</button>
 		<button id="addAfter">Add Your Changes After This</button>
@@ -39,5 +43,6 @@
 		<p>Your new content: </p>
 		<textarea id="newContentTextArea"></textarea>
 		<button id="saveConflict">Save</button>
+        </div>
     </body>
 </html>
