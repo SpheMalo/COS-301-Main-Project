@@ -349,7 +349,16 @@ window.onload = function()
 			ajaxAccountFunction(JSONstring);
 			event.preventDefault();
 		});
-		
+		 $('#getStatus-button').click(function(){
+            var UserInfo = {			
+				"action" : "getUserStatus"
+			}
+			var JSONstring = JSON.stringify(UserInfo);
+			console.log(JSONstring);
+			ajaxAccountFunction(JSONstring);
+			event.preventDefault();
+            
+            });
 		function ajaxAccountFunction(JSONstring){
 			$.ajax({
 				url: 'scripts/FigbookActionHandler/actionHandler.php',

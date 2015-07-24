@@ -92,6 +92,26 @@ class user {
             }
         return $result;
     }
+    
+    public function userStatus($userName) {
+        
+        $query="SELECT user_status FROM user WHERE user_name='$userName'";
+        $queryResult = mysqli_query($this->dbInstance, $query);//run query
+        $result = "0";
+        if($queryResult){
+            
+            if(mysqli_num_rows($queryResult) != 1){
+                $result = "Status could not be retrieved";
+            }
+            else{
+                $row = mysqli_fetch_assoc($queryResult);
+                $result = $row[user_status];
+            }
+           
+            }
+        return $result;
+        
+    }
     //adds a new user to the systems database
     //check if similiar user does not exist 1st
     //if details are correct, a new user is added
