@@ -27,17 +27,20 @@
     <link rel="stylesheet" href="css/background.css"/>
 	
 	<!--Scripts linked here-->
+    <script src="js/jquery-1.10.2.min.js"></script> 
 	<script src="scripts/authentication.js" type="text/javascript"></script>
 	<script src="scripts/profile.js"></script>
+     <script src="scripts/createPage.js" type="text/javascript"></script>
 	<script src="scripts/saveTextToDB.js"></script>
     
-	<script src="js/jquery-1.10.2.min.js"></script> 
+	
 	<script src="js/jquery.lightbox.js"></script>
 	<script src="js/templatemo_custom.js"></script>
     <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
 	<script src="scripts/services.js"></script>
     <script src="scripts/manuscriptManagement.js"></script>
-    <script src="scripts/createPage.js" type="text/javascript"></script>
+   
+    
 	
      <script>
     function showhide()
@@ -123,7 +126,7 @@
             <div class="col-md-3 col-sm-6 templatemo_leftgap">
             	<div class="templatemo_mainimg templatemo_botgap templatemo_portfotopgap"><img height="316px" src="images/templatemo_home2.jpg" alt="home img 02"></div>
                 <div class="templatemo_mainportfolio">
-                      <div class="templatemo_link"><a class="show-3 templatemo_page3 menuItem" href="#">Catalogue</a></div>
+                      <div class="templatemo_link"><a id="comLink" class="show-3 templatemo_page3 menuItem" href="#">Communication</a></div>
                 	                   
                 </div>
             </div>
@@ -168,16 +171,16 @@
                                         
                                 </div>
                                 <div id="pageView">
-            						
+            						<button id="refreshBook" style="visibility:hidden;" onclick="refreshBook()">Refresh</button>
             					</div>
                                  <div id="editSection">
-                                      <input type="text" id="pageEditTitle"/><hr/>
-                                          <textarea id="editor" cols="60" rows="10">
+                                      <div id="inputHeading"><input type="text" id="pageEditTitle"/></div><!--<hr/>-->
+                                          <textarea id="editor" cols="93" rows="10">
                                           </textarea>
                                           <button id="saveBtn" onclick="saveText()" >Save</button>
                                   </div>
                             </div>
-                            
+                            	
                         
             </div>
             
@@ -246,7 +249,7 @@
           	<div class="col-md-3 col-sm-6 templatemo_leftgap">
        	      <div class="templatemo_insideportfolio templatemo_botgap">
                	  <div class="templatemo_portfoliotext">
-				<h2>Catalogue</h2>
+				<h2>Communication</h2>
 			    <div class="clear"></div>
                     </div>
               </div>

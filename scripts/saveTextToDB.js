@@ -1,3 +1,4 @@
+
 function saveText()
 {
     
@@ -7,7 +8,13 @@ function saveText()
     var sectionNumber = $("#saveBtn").attr("name");
     var content = document.getElementById("editor").value;
     sectionNumber = parseInt(sectionNumber);
-    
+	
+	//the regex allows the replace to replace all occurrences..
+		/*var find = '\n';
+		var re = new RegExp(find, 'g');
+    content = content.replace(re,'<br/>');*/
+	//alert(content);
+	
     var timeStamp = localStorage.getItem("tStamp");
     console.log("Before saving: " + timeStamp);
 	var jsonString = {
@@ -53,6 +60,23 @@ function saveText()
                                 if (data && data.edit && data.edit.result === 'Success')
                                 {
                                     alert("Section saved successfully");
+									//This will display the actual page again. with updated values
+									var inside = document.getElementsByClassName('insideText'); 
+									var head = document.getElementsByClassName('sectionHeading'); 
+									$('#editSection').fadeOut("slow",function(){//$(inside[(sectionNumber-1)]).html(content);	
+										//$(head[(sectionNumber-1)]).html(sectionHeading);								
+										$('#pageView').fadeIn("slow",function(){
+											$( "#viewBooks" ).trigger( "click" );
+											
+												/*var loadPageInfo = 
+												{
+																"title": localStorage.bookTitle
+												};
+												get_page(loadPageInfo);*/
+											 //alert(document.getElementsByClassName("bookItem").length);
+											});
+										});
+								
                                     console.log(JSON.stringify(data));
                                     //localStorage.tStamp = result.date_last_edited;
                                     console.log("After saving: " + localStorage.tStamp);
@@ -78,7 +102,7 @@ function saveText()
                 {
                     localStorage.conflictInfo = JSON.stringify(result);
                     localStorage.contentToAdd = content;
-                    location.href = "scripts/me.html";
+                    location.href = "conflictResolution.html";
                 }
             },
             error: function (data) {
@@ -88,19 +112,124 @@ function saveText()
 			});	
 }
 
-$("#addBefore").live('click', function(){
+/*function get_page(params) {
+
+            //console.log('got into get_page');
+
+            var title_ = params.title;
+            var replaced = title_.split(' ').join('_');
+           // alert(replaced);
+            $.ajax({
+                url: "scripts/mediawiki/index.php/" + replaced,
+                dataType: "html"
+            }, 5000).success(function (data) {
+                //alert(JSON.stringify(data));
+                $('#bookList').fadeOut("slow",function(){
+					$('#pageView').fadeIn("slow",function(){
+							
+						    document.getElementById('pageView').innerHTML = data;
+							var div = document.getElementById('mw-content-text');
+									var childNodes = div.childNodes;
+									
+							
+								$("#scrollDiv").append($('#editSection').fadeOut("fast",function(){
+									
+									}));
+						
+							document.getElementById('pageView').innerHTML = "";
+							//alert(childNodes.length);
+								
+								var htmlValue = "";
+								var linkNumber = 1;
+								for(var i=0; i<childNodes.length; i++)
+								{	
+									//console.log(childNodes[i].innerHTML);
+									
+									if (childNodes[i].innerHTML !== "" && typeof childNodes[i].innerHTML !== "undefined")
+									{	
+										
+										if(childNodes[i].innerHTML.indexOf('mw-headline') !== -1 )
+										{	
+											//not if it is the first section
+											if (linkNumber !== 1){
+											$( "#pageView" ).append(htmlValue+"</div></div></div>");
+											}
+											// add section div
+											htmlValue = "<div class='sectionDiv' onclick='editSection("+linkNumber+")'><div class='sectionHeading' >"+childNodes[i].innerHTML+"</div><div class='insideText'  >";
+											linkNumber++;
+										}
+										else{
+										htmlValue += childNodes[i].innerHTML;
+										}
+									}
+								}
+								$( "#pageView" ).append(htmlValue+"</div></div></div>");
+								
+							//$( "#pageView" ).append(childNodes);
+							var headings = document.getElementsByClassName("mw-headline"); 
+								console.log("headings: "+headings[0].innerHTML);
+							
+							
+							var page = document.getElementById("pageView");
+							console.log(page);
+							var links = page.getElementsByClassName("mw-editsection");
+							$(links).remove();
+							var num_links =1;
+							for(var i=0; i<links.length; i++) {
+								if(links[i].innerHTML === "edit")
+								{
+									links[i].setAttribute('href', "#");
+									
+									num_links++;
+								}
+							}
+							
+							var paragraphs = page.getElementsByTagName("h1");
+							var num_par = 1;
+							for( i=0; i<paragraphs.length; i++) {
+								paragraphs[i].setAttribute('id', num_par);
+								num_par++;
+							}
+						
+						});
+					
+				});
+                
+		    
+        
+		
+		
+
+		
+		
+                //$('#Page').append(data);
+                //window.location.href = "/scripts/mediawiki/index.php/"+ params.title;
+
+            }, 5000).error(function (data) {
+                console.log(JSON.stringify(data));
+                //window.location.href = "/scripts/mediawiki/index.php/"+ params.title;
+            });
+           // event.preventDefault();
+        }*/
+
+
+jQuery(window).load(function () {
+//window.onload = function(){
+$("#addBefore").click(function(){
     var newContent = $("#newPar").html();
     newContent += "\n" + $("#oldPar").html();
     
     $("#newContentTextArea").val(newContent);
 });
 
-$("#addAfter").live('click', function(){
+$("#addAfter").click(function(){
     var newContent = $("#oldPar").html();
     newContent += "\n" + $("#newPar").html();
     
     $("#newContentTextArea").val(newContent);
 });
+});
+//};
 function resolveConflict()
 {
     var conflictData = JSON.parse(localStorage.conflictInfo);
