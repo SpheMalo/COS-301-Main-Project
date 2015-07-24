@@ -1,10 +1,6 @@
 function editSection(value)
 {
-//	var editTimeStamp;
-//	var title = $("#pageSelect :selected").html();
-//	var content = document.getElementById("editor").value;
-//	var sectionHeading = $("#pageEditTitle").html();
-//	var actualContent = "="+sectionHeading+"= \n"+content;
+	
 	var jsonString = {
 					"format": "json",
 					"action": "getTimeStamp",
@@ -16,7 +12,7 @@ function editSection(value)
 					
 					
 					
-	/*$.ajax({
+	$.ajax({
 				url: "scripts/FigbookActionHandler/actionHandler.php",
 				data: "json="+jsonString,
 				dataType: 'json',
@@ -28,34 +24,31 @@ function editSection(value)
 					console.log('Error: Request failed. ' + (data.responseText));
 	
 				}
-			});*/
+			});
 	
-/*$.post("scripts/mediawiki/api.php?action=query&prop=revisions&titles="+title+"&rvprop=timestamp|content&rvsection="+section+"&format=json", function(data){
-		//alert(JSON.stringify(data));
-		
-		var string = JSON.stringify(data);
-        var tokens = string.split("\"");
-        var index = tokens[5];
-       editTimeStamp = data.query.pages[index].revisions[0].timestamp;
-	   
-	localStorage.setItem("tStamp", editTimeStamp);
-	
-
-	 });*/
 	 
 	$("#pageView").fadeOut("slow",function(){
 		$('#editSection').fadeIn("slow",function(){});
 	
 	});
 	
-	//$("#pageList").hide(700);
-	//$("#createPage").hide(500);
-	//$("#Dummy").hide(400);
-	//$("#Page").hide(400);
 	
 	var headings = document.getElementsByClassName("sectionHeading");
 	var insideText = document.getElementsByClassName("insideText");
-	
+	var sectionDiv = document.getElementsByClassName("sectionDiv");
+	var val = insideText[(value-1)].innerHTML;
+	//var val = jQuery.extend(true, {}, insideText[(value-1)]);
+		//alert(val.innerHTML);
+		
+		//the regex allows the replace to replace all occurrences..
+		var find = '<br>';
+		var re = new RegExp(find, 'g');
+		val = val.replace(re,'\n');
+		//alert(val); 
+			
+			
+			
+
 	
 	$("#pageEditTitle").val(headings[(value-1)].getElementsByClassName("mw-headline")[0].innerHTML);
 	$("#editor").html("");
@@ -81,7 +74,8 @@ function editSection(value)
 	
 	//alert($("#"+section).nextUnitl().html());
 	//$("#editor").html("");
-	$("#editor").val(insideText[(value-1)].innerHTML);
+	
+	$("#editor").val(val);
 	$("#saveBtn").attr("name","" + value);
 	
 	
@@ -108,12 +102,15 @@ function editSection(value)
 			};
 		
 		$('#viewBooks').click(function(){
+			$('#editSection').fadeOut("slow",function(){});
 			$('#pageView').fadeOut("slow",function(){
 					//$('#pageView').html("");
+					
 					$('#bookList').fadeIn("slow",function(){});
 			});
 			getBooks();
 		});
+		
 		
 		//This is the next button click event when creating a new manuscript.
 		$('#next-button').click(function(){
@@ -126,7 +123,7 @@ function editSection(value)
 						
 			if ($('#infoBox').css('display') === "none") //this is when the book gets created...
 			{
-				info.preface = $('#preface').val();
+				info.preface = "=Preface= \n"+$('#preface').val();
 				info.text = info.preface;
 				//console.log(info.preface);
 				
@@ -176,6 +173,14 @@ function editSection(value)
 		
 		//this is a function that finds all the books that exist
 		//needs to be refined to only find books by that user
+		function refreshBook()
+		{
+			var loadPageInfo = 
+			{
+							"title": localStorage.bookTitle
+			};
+			get_page(loadPageInfo);
+		}
 		
 		function getBooks()
 		{
@@ -272,7 +277,8 @@ function editSection(value)
                             type: 'POST',
                             success: function (data) {
                                 if (data && data.edit && data.edit.result === 'Success') {
-                                    alert("Successful");
+                                    alert("Successfully created: "+params.title);
+									localStorage.bookTitle = params.title;
 									getBooks();//Repopulate list of books before loading page.
                                     //window.location.reload(); // reload page if edit was successful
                                     
@@ -299,7 +305,7 @@ function editSection(value)
         }
         function get_page(params) {
 
-            console.log('got into get_page');
+            //console.log('got into get_page');
 
             var title_ = params.title;
             var replaced = title_.split(' ').join('_');
@@ -311,10 +317,16 @@ function editSection(value)
                 //alert(JSON.stringify(data));
                 $('#bookList').fadeOut("slow",function(){
 					$('#pageView').fadeIn("slow",function(){
-						
+							
 						    document.getElementById('pageView').innerHTML = data;
 							var div = document.getElementById('mw-content-text');
 									var childNodes = div.childNodes;
+									
+							
+								$("#scrollDiv").append($('#editSection').fadeOut("fast",function(){
+									
+									}));
+						
 							document.getElementById('pageView').innerHTML = "";
 							//alert(childNodes.length);
 								
@@ -334,7 +346,7 @@ function editSection(value)
 											$( "#pageView" ).append(htmlValue+"</div></div></div>");
 											}
 											// add section div
-											htmlValue = "<div class='sectionDiv' onclick='editSection("+linkNumber+")'><div class='sectionHeading'>"+childNodes[i].innerHTML+"</div><div class='insideText'>";
+											htmlValue = "<div class='sectionDiv' onclick='editSection("+linkNumber+")'><div class='sectionHeading' >"+childNodes[i].innerHTML+"</div><div class='insideText'  >";
 											linkNumber++;
 										}
 										else{
@@ -350,14 +362,15 @@ function editSection(value)
 							
 							
 							var page = document.getElementById("pageView");
-							var links = page.getElementsByTagName("a");
-							
+							console.log(page);
+							var links = page.getElementsByClassName("mw-editsection");
+							$(links).remove();
 							var num_links =1;
 							for(var i=0; i<links.length; i++) {
 								if(links[i].innerHTML === "edit")
 								{
 									links[i].setAttribute('href', "#");
-									links[i].setAttribute('onclick', "editSection("+num_links+")");
+									
 									num_links++;
 								}
 							}
@@ -390,4 +403,8 @@ function editSection(value)
             event.preventDefault();
         }
 
+
+
+
     });
+

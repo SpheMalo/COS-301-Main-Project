@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `user_page`
 --
-
+use my_wiki;
 CREATE TABLE IF NOT EXISTS `user_page` (
   `user_name` int(11) NOT NULL DEFAULT '0',
   `page_id` int(11) NOT NULL DEFAULT '0',

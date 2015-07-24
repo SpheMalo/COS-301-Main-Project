@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <head>
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="scripts/saveTextToDB.js"></script>
+        
+		<style type="text/css">
+			#oldContent, #newContent, #newContentTextArea
+			{
+				border: solid 1px grey;
+				border-radius: 12px;
+				height: 115px;
+			}
+			html{background-color:
+			background: #45484d; /* Old browsers */
+			background-color:rgba(160,160,160,1.00);
+			
+			}
+		</style>
+    </head>
+    <body onload='resolveConflict()'>
+		
+		<p id="yourChanges">Changes made by you:</p>
+		<div id="newContent">
+			<p id="newPar"></p>
+		</div>
+		
+		<br />
+		<br />
+		<p id="userChanges">Changes made by </p>
+		<div id="oldContent">
+			<p id="oldPar"></p>
+		</div>
+		
+		<button id="addBefore">Add Your Changes Before This</button>
+		<button id="addAfter">Add Your Changes After This</button>
+		
+		<br />
+		<br />
+		<p>Your new content: </p>
+		<textarea id="newContentTextArea"></textarea>
+		<button id="saveConflict">Save</button>
+    </body>
+</html>
