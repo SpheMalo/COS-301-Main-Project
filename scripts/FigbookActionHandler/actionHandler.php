@@ -2,6 +2,7 @@
 
 require("databaseHandler.php");
 require("user.php");
+require("manuscript.php");
 
 $response = "";
 $dbHandler = new databaseHandler();
@@ -149,6 +150,11 @@ if(isset($actionFlag) && $actionFlag != ""){
 			$response = "Account Not Activate";
 		}
 	}
+	else if($actionFlag == "checkTitle"){ // register user
+		$tmpMen= new manuscript($dbHandler->getConnection());
+		$response = $tmpMen->titleExists($object->title);
+	}
+	
 }else{
     
     $response = "no valid action specified";

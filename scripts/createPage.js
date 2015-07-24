@@ -113,42 +113,92 @@ function editSection(value)
 		
 		
 		//This is the next button click event when creating a new manuscript.
-		$('#next-button').click(function(){
-			event.preventDefault();
+				$('#next-button').click(function(){
+			
 			
 			//Get the data from inputs
-					info.title = $('#title').val();
-					info.firstname = $('#firstname').val();
-					info.surname = $('#surname').val();
-						
-			if ($('#infoBox').css('display') === "none") //this is when the book gets created...
-			{
-				info.preface = "=Preface= \n"+$('#preface').val();
-				info.text = info.preface;
-				//console.log(info.preface);
-				
-				//Todo call the create page function
-				create_page(info);
-				$('#inputs2').fadeOut("slow",function(){
-						
-					});
-					$('#bookDiv').fadeOut("slow",function(){
-						$('#infoBox').fadeIn("slow",function(){});
-						$('#serviceBackground').fadeIn("slow",function(){});
-						});
-					
-			}	
-			else 
-			{		
-				$('#infoBox').fadeOut("slow",function(){
-					//console.log(info.title+" "+info.firstname+" "+info.surname);
-					$('#scriptMenuBar').html("Please Write a short preface.");
-					
-					$('#inputs2').fadeIn("slow",function(){});
-				});
+			info.title = $('#title').val();
+			info.firstname = $('#firstname').val();
+			info.surname = $('#surname').val();
+			
+			var UserInfo = {
+				"action" : "checkTitle",
+				"title" : info.title
 			}
+			var JSONstring = JSON.stringify(UserInfo);
+			ajaxFunction(JSONstring);
+			event.preventDefault();
+			
 			
 		});
+		
+	function ajaxFunction(JSONstring){
+		$.ajax({
+			url: 'scripts/FigbookActionHandler/actionHandler.php',
+			data: 'json='+JSONstring,
+			dataType: 'json',
+			success: function(data)
+			{
+
+				if(data == "false"){
+					if (document.getElementById('error_par') != null)
+					{
+						document.getElementById('error_par').innerHTML = "";
+					}
+					if ($('#infoBox').css('display') === "none") //this is when the book gets created...
+					{
+						info.preface = "<preface>"+$('#preface').val()+"</preface>";
+						info.text = info.preface;
+						//console.log(info.preface);
+						
+						//Todo call the create page function
+						create_page(info);
+						$('#inputs2').fadeOut("slow",function(){
+								
+							});
+							$('#bookDiv').fadeOut("slow",function(){
+								$('#infoBox').fadeIn("slow",function(){});
+								$('#serviceBackground').fadeIn("slow",function(){});
+								});
+							
+					}	
+					else 
+					{		
+						$('#infoBox').fadeOut("slow",function(){
+							//console.log(info.title+" "+info.firstname+" "+info.surname);
+							$('#scriptMenuBar').html("Please Write a short preface.");
+							
+							$('#inputs2').fadeIn("slow",function(){});
+						});
+					}
+				}
+				else if(data == "true"){
+					
+					var form = document.getElementById("contentDiv");
+					var incorrectVal = document.createElement('p');
+					incorrectVal.id = "error_par";
+					incorrectVal.innerHTML = "Title exist: Choose a different title";
+					incorrectVal.style.color = "#F95050";
+					incorrectVal.style.fontSize ="18pt";
+					form.appendChild(incorrectVal);
+					
+					var title = document.getElementById("title");
+					title.value = '';
+					
+					title.style.backgroundColor = "#F95050";
+					
+					title.onfocus = function (){title.style.backgroundColor = "white";};
+					title.onblur = function (){title.style.backgroundColor = "#ABD1BC";};
+					event.preventDefault();
+					
+				}
+				
+			},
+			error: function(data){
+				console.log("error :"+data.responseText);
+			}		
+		});
+	}
 		
 		
 		//This is the test to see if the div was faded out... if value is null its faded...
