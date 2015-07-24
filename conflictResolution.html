@@ -4,40 +4,67 @@
         <script src="scripts/saveTextToDB.js"></script>
         
 		<style type="text/css">
-			#oldContent, #newContent, #newContentTextArea
+			#oldContent, #newContent
 			{
+				margin-left:auto;margin-right:auto;
 				border: solid 1px grey;
 				border-radius: 12px;
-				height: 115px;
+				width:80%;
+				min-height: 115px;
+				height:auto;
+				background-color:white;
 			}
+			#newContentTextArea{margin-left:auto;margin-right:auto;
+				border: solid 1px grey;
+				border-radius: 12px;
+				
+				height: 115px;}
+				
 			html{background-color:
 			background: #45484d; /* Old browsers */
 			background-color:rgba(160,160,160,1.00);
 			
 			}
+			#background{padding-top:1px;margin-left:auto;margin-right:auto;height:auto;width:800px;
+			background-color:rgba(229,229,229,0.83);border-radius:10px;
+			-webkit-box-shadow: 0px 1px 5px 2px rgba(0,0,0,0.75);
+			-moz-box-shadow: 0px 1px 5px 2px rgba(0,0,0,0.75);
+			box-shadow: 0px 1px 5px 2px rgba(0,0,0,0.75);
+			
+			}
+			#heading1{margin-top:5px;margin-right:auto;margin-left:auto;font-size:20pt;width:300px;}
+			#heading2{margin-right:auto;margin-left:auto;font-size:20pt;width:300px;}
+			#newCont{margin-left:auto;margin-right:auto;width: 80%;height:auto;}
+			#buttons{margin-left:auto;margin-right:auto;width: 80%;text-align:center;}
 		</style>
     </head>
     <body onload='resolveConflict()'>
-		
-		<p id="yourChanges">Changes made by you:</p>
+		<div id='background'>
+		<div id="heading1"><p id="yourChanges">Changes made by you:</p></div>
 		<div id="newContent">
 			<p id="newPar"></p>
 		</div>
 		
 		<br />
 		<br />
-		<p id="userChanges">Changes made by </p>
+		<div id="heading2"><p id="userChanges">Changes made by </p></div>
 		<div id="oldContent">
 			<p id="oldPar"></p>
 		</div>
 		
+        <div id="buttons">
 		<button id="addBefore">Add Your Changes Before This</button>
 		<button id="addAfter">Add Your Changes After This</button>
-		
+		</div>
+        
 		<br />
 		<br />
-		<p>Your new content: </p>
-		<textarea id="newContentTextArea"></textarea>
-		<button id="saveConflict">Save</button>
+            <div id="newCont">
+            <p>Your new content: </p>
+            <textarea cols="88" rows="5" id="newContentTextArea"></textarea>
+            <button id="saveConflict">Save</button>
+            </div>
+            
+        </div>
     </body>
 </html>
