@@ -149,6 +149,14 @@ if(isset($actionFlag) && $actionFlag != ""){
 			$response = "Account Not Activate";
 		}
 	}
+         else if($actionFlag == "getUserStatus"){ //Get User Status
+            
+            $id = $_COOKIE['username'];
+            $tmpUser = new user($dbHandler->getConnection());
+        
+            $response = $tmpUser->userStatus($id);
+            
+        }
 }else{
     
     $response = "no valid action specified";
