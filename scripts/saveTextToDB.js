@@ -78,7 +78,7 @@ function saveText()
 										});
 								
                                     console.log(JSON.stringify(data));
-                                    //localStorage.tStamp = result.date_last_edited;
+                                    localStorage.tStamp = result.date_last_edited;
                                     console.log("After saving: " + localStorage.tStamp);
                                 }
                                 else if (data && data.error)

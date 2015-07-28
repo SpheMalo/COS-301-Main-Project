@@ -113,7 +113,7 @@ function editSection(value)
 		
 		
 		//This is the next button click event when creating a new manuscript.
-				$('#next-button').click(function(){
+		$('#next-button').click(function(){
 			
 			
 			//Get the data from inputs
@@ -132,7 +132,7 @@ function editSection(value)
 			
 		});
 		
-	function ajaxFunction(JSONstring){
+		function ajaxFunction(JSONstring){
 		$.ajax({
 			url: 'scripts/FigbookActionHandler/actionHandler.php',
 			data: 'json='+JSONstring,
@@ -147,7 +147,7 @@ function editSection(value)
 					}
 					if ($('#infoBox').css('display') === "none") //this is when the book gets created...
 					{
-						info.preface = "<preface>"+$('#preface').val()+"</preface>";
+						info.preface = "=Preface= \n"+$('#preface').val();
 						info.text = info.preface;
 						//console.log(info.preface);
 						

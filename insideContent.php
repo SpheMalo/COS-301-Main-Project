@@ -9,15 +9,9 @@
  <!DOCTYPE html> 
   <head>
     <title>Figbook</title>
-    <meta name="description" content="" />
-    <meta name="author" content="templatemo">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 
-    Matrix Template
-    http://www.templatemo.com/preview/templatemo_405_matrix
-    -->
-	
+    
 	<!--stylesheets linked here-->
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/font-awesome.min.css" rel="stylesheet"/>
@@ -28,20 +22,18 @@
 	
 	<!--Scripts linked here-->
     <script src="js/jquery-1.10.2.min.js"></script> 
-	<script src="scripts/authentication.js" type="text/javascript"></script>
-	<script src="scripts/profile.js"></script>
-     <script src="scripts/createPage.js" type="text/javascript"></script>
-	<script src="scripts/saveTextToDB.js"></script>
-    
-	
-	<script src="js/jquery.lightbox.js"></script>
+    <script src="js/jquery.lightbox.js"></script>
 	<script src="js/templatemo_custom.js"></script>
     <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+    
+	<script src="scripts/authentication.js" type="text/javascript"></script>
+	<script src="scripts/profile.js"></script>
+    <script src="scripts/createPage.js" type="text/javascript"></script>
+	<script src="scripts/saveTextToDB.js"></script>
 	<script src="scripts/services.js"></script>
     <script src="scripts/manuscriptManagement.js"></script>
    
-    
-	
+
      <script>
     function showhide()
     {
@@ -71,20 +63,16 @@
 					  });		
 				   
 		}
-	var delete_cookie = function(name) {
-    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+		var delete_cookie = function(name) {
+		document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 	};
 	
   </script>
-  	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
   </head>
   <body>
   	
-	<div class="wrapper1">
+	<div class="wrapper1"> <!--Container for the whole site.-->
 	  <!--this div provides the floating blocks, using background.css-->
 		<ul class="bgf-bubbles">
 			<li></li>
@@ -100,59 +88,55 @@
 		</ul>
 		
 	
-    	<!-- logo start -->
-    <div class="logocontainer">
-    	<div class="row">
-        	<h1><a href="#"></a></h1>
-            <div class="clear"></div>
-            <div class="templatemo_smalltitle"></div>
-       </div>
-    </div>
-    <!-- logo end -->    
-   <div id="menu-container" class="main_menu">
+     
+   <div id="menu-container" class="main_menu"><!--All menus are inside this container-->
    <!-- homepage start -->
-    <div class="content homepage col-md-1" id="menu-1">
-  	<div class="container">
-    		
-          	<div class="col-md-3 col-sm-6 templatemo_leftgap">
-            	<div class="templatemo_mainservice templatemo_botgap">
+    <div class="content homepage " id="menu-1"> <!--contains the main menu tabs-->
+          	
+            	<div class="menuBox templatemo_mainservice ">
                 	<div class="templatemo_link"><a class="show-2 templatemo_page2 menuItem" href="#">Catalogue</a></div>
-                	
-			<script src="scripts/authentication.js" type="text/javascript"></script>
-			<!--<button id="delete-button">Delete Account</button>  this is the delete account button for testing purposes-->
+                    <div class="templatemo_mainimg"><img class="menu-img" src="images/templatemo_home1.jpg" height="316px" alt="home img 01"></div>
                 </div>
-                <div class="templatemo_mainimg"><img src="images/templatemo_home1.jpg" height="316px" alt="home img 01"></div>
-            </div>
-            <div class="col-md-3 col-sm-6 templatemo_leftgap">
-            	<div class="templatemo_mainimg templatemo_botgap templatemo_portfotopgap"><img height="316px" src="images/templatemo_home2.jpg" alt="home img 02"></div>
-                <div class="templatemo_mainportfolio">
-                      <div class="templatemo_link"><a id="comLink" class="show-3 templatemo_page3 menuItem" href="#">Communication</a></div>
-                	                   
+                
+
+                <div class="menuBox templatemo_mainportfolio">
+                      <div class="templatemo_link"><a id="comLink" class="show-3 templatemo_page3 menuItem" href="#">Communication</a></div> 
+                      <div class="templatemo_mainimg templatemo_portfotopgap">
+                        <img height="316px" class="menu-img" src="images/templatemo_home2.jpg" alt="home img 02">
+                      </div>               
                 </div>
-            </div>
-            <div class="col-md-3 col-sm-6 templatemo_leftgap">
-            	<div class="templatemo_maintesti templatemo_botgap templatemo_topgap">
+           
+            
+            
+            	<div class="menuBox templatemo_maintesti ">
                 	<div class="templatemo_link"><a class="show-4 templatemo_page4 menuItem" id="profileLink" href="#">Profile</a></div>
+                    <div class="templatemo_mainimg"><img class="menu-img" src="images/templatemo_home3.jpg" height="316px" alt="home img 03"></div>
                 </div>
-                <div class="templatemo_mainimg"><img src="images/templatemo_home3.jpg" height="316px" alt="home img 03"></div>
-            </div>
-            <div class="col-md-3 col-sm-6 templatemo_leftgap">
-            	<div id="logoutDiv" class="templatemo_logout templatemo_botgap templatemo_topgap">
+                
+            
+            
+            	
+            
+            
+            	
+                <div class="menuBox templatemo_mainabout">
+                	<div class="templatemo_link"><a class="show-5 templatemo_page5 menuItem" href="#">About Us</a></div>
+                </div>
+                
+                <div class="menuBox templatemo_maincontact">
+                	<div class="templatemo_link"><a class="show-6 templatemo_page6 menuItem" href="#">Contact Us</a></div>
+                    
+                </div>
+                
+                <div id="logoutDiv" class="menuBox templatemo_logout ">
              	  <!-- <img src="images/templatemo_home4.jpg" alt="home img 04"> -->
 				 <div class="templatemo_link"><a class="show-7 templatemo_page7 menuItem" href="#" onclick="wiki_logout()">Logout</a></div>
                 </div>
-                <div class="templatemo_mainabout templatemo_botgap">
-                	<div class="templatemo_link"><a class="show-5 templatemo_page5 menuItem" href="#">About Us</a></div>
-                </div>
-                <div class="templatemo_maincontact">
-                	<div class="templatemo_link"><a class="show-6 templatemo_page6 menuItem" href="#">Contact Us</a></div>
-                </div>
-				
-            </div>
-    </div>
+    	  
     
-   </div>
+   </div> <!--contains the main menu tabs END-->
     <!-- homepage end -->
+    
     <!--services start -->
    <div class="content services" id="menu-2">
 		<div id="serviceContainer" >
@@ -184,16 +168,7 @@
                         
             </div>
             
-            
-        	<div class="row templatemo_bordergapborder">
-            	
-            	<div class="col-md-3 col-sm-12 templatemo_leftgap" id="leftCol">
-                	
-                  
-                </div>
-                
-                <div class="templatemo_col37 col-sm-12 templatemo_leftgap">
-                	
+
                   <div id="bookDiv">
             			<div id="scriptMenuBar">Please fill in author details.</div>                  	
                         <div id="pageList"></div>
@@ -226,21 +201,20 @@
                         <div id="Page">
                         	
                         </div>     
-		</div>
+				</div><!--bookDiv ends here-->
                   	
                   
-              </div>
+
                 <div id="sidePicDiv" class="templatemo_col37 col-sm-12 templatemo_leftgap templatemo_topgap">
                 	<div class="templatemo_mainimg templatemo_botgap"><img src="images/templatemo_service2.jpg" alt="service image"></div>
                 </div>
                 
-            </div>
             
             
             
-        </div>
-     </div>
-	    
+            
+        </div><!--serviceContainer ends here-->
+     </div><!--menu-2 ends here--> 
     <!-- services end -->	
 
 	<!-- portfilio start -->
