@@ -1,77 +1,29 @@
-/* Credit: http://www.templatemo.com */
-
-/* 
-Matrix Template 
-http://www.templatemo.com/preview/templatemo_405_matrix 
-*/
-
 html, body {
 	font-family: Tahoma, Arial; 
 	padding: 0px; 
 	margin: 0px; 
-	/*background-color:rgba(0,0,0,0);*/
 	font-size: 16px;
-	overflow:hidden;
-		/*background: #FFFFFF url("../images/dark-blue-background-backgrounds-wallpapers.jpg") no-repeat center center scroll;*/
-	
-	/*background: #FFFFFF url("../images/dark-blue-background-backgrounds-wallpapers.jpg") no-repeat center center scroll;*/
-	
-	
-	
-	
+	overflow-x:hidden;
 }
 
-.html
-{
-
-}
 img	{ width: 100%; }
 
-
-/*a:hover, a:focus {
-	text-decoration: none;
-	color: #cccccc;
-}
-a:active, a:focus {
-	color: #ffffff;
-	border: none;
-}*/
-
-/*h1, h2, h3, h4, h5, h6 {
-	font-family: Tahoma, Arial;
-	font-weight: 400;
-}
-h1	{	font-size: 3em;
-	color: #cccccc;
-	background: #343537;
-	padding: 0px 0px;
-	float: left;
-	text-shadow: 4px 2px 2px rgba(33, 33, 33, 1);
-	margin: 5% 0% 0% 2%;;
-	}
-	
-h2	{ 
-	font-size: 30px;
-	font-weight:bold; 
-	color: #333333;
-	margin-top: 0px;
-	}
-h3 { 
-	text-align: center; 
-	font-size: 2em;
-	}*/
 /*Everything we put in (Figbook) */
+#menu-container{ width:1200px;
+margin-left:auto;margin-right:auto;
+margin-top:40px;
+min-height:500px;
+height:auto;
+}
+
+
 #preface{margin-top:14px;resize:vertical;}
-#comLink{word-wrap:break-word;
-	line-height:10px;margin-top:-20px; font-size:34px;}
-#comLink:hover{font-size:35px;}
-.menuItem{color:white;
-		
-	/*text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;*/
+
+.menuItem{
+	color:white;
 	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
 	font-size: 45px;
-	
-	
+	text-decoration: none;
 	text-shadow: 0 1px 0 #ccc,
                0 1px 0 #c9c9c9,
                0 2px 0 #bbb,
@@ -84,9 +36,6 @@ h3 {
                0 5px 10px rgba(0,0,0,.25),
                0 10px 10px rgba(0,0,0,.2),
                0 20px 20px rgba(0,0,0,.15);
-	
-	text-decoration: none; 
-	
 	}
 .menuItem:hover{color:white;text-decoration:none;
 	font-size: 50px;
@@ -114,7 +63,7 @@ font-size: 45px;
 }
 
 #profileFrame{width:320px;}
-.sectionDiv{width:100%;background-color:white;min-height:600px;}
+.sectionDiv{width:100%;background-color:white;min-height:300px;height:auto;cursor:pointer;}
 .sectionHeading{width:100%;background-color:rgba(243,243,243,1.00);height:40px;text-align:center;font-size:24pt;}
 .insideText{white-space:pre-line;padding:20px;}
 
@@ -292,7 +241,7 @@ width:750px;min-height:480px;margin-right:auto;margin-left:auto;
 #scrollDiv{height:560px;width:770px;overflow-y:auto;overflow-x:none;
 margin-left:auto;margin-right:auto; margin-top:20px;}
 
-#serviceBackground{width:800px;height:700px;margin-left:auto;margin-right:auto;margin-top:-60px;
+#serviceBackground{width:800px;height:700px;margin-left:auto;margin-right:auto;
 background: rgba(92,194,219,1);
 background: -moz-linear-gradient(top, rgba(92,194,219,1) 0%, rgba(83,186,214,1) 50%, rgba(109,189,209,1) 100%);
 background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(92,194,219,1)), color-stop(50%, rgba(83,186,214,1)), color-stop(100%, rgba(109,189,209,1)));
@@ -365,16 +314,13 @@ a.nontext /* used to override default properties of 'a' tag */
 
 
 /*Everything we put in (Figbook) */
-
-
-
 #cmt{z-index:2;}
 .clear	{ clear: both; }
 .content { display: none; height: auto; z-index:1;}
 .homepage{ display: block; }
 .portfolioshow	{ display: block; }
- .container	{ margin-left:auto;margin-right:auto; } 
-#menu-1{width:auto;}
+ .container	{ margin-left:auto;margin-right:auto; height:auto;} 
+#menu-1{width:auto;height:auto;}
 #proflieLink
 {
 	color: white;
@@ -410,11 +356,12 @@ a.nontext /* used to override default properties of 'a' tag */
 }
 
 .templatemo_mainservice	{
-	background: #999933;
+	background: rgba(153,153,51,0.70);
 	text-align: center;
 	width: 100%;
 	float: left;
 }
+.templatemo_mainservice:hover{background: rgba(153,153,51,1.00);}
 
 .templatemo_mainportfolio {
 	background: #993333;
@@ -601,11 +548,14 @@ h2.resp-accordion	{ color: #ffffff; }
 /*----- Page Load ------*/
 
 @media(min-width:320px) {
-	.templatemo_leftgap	{ padding: 0px 10px; }
-	.templatemo_rightgap_about	{ padding: 0px 10px; }
-	.templatemo_botgap	{ margin: 0px 0px 20px 0px; }
-	.templatemo_topgap, .templatemo_portfotopgap	{ margin-top: 20px; }
-	.templatemo_col37	{ float: left; width: 100%; }
+	#menu-container{width:318px;}
+	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
+	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
+	.menuBox{text-align:center;height:150px;width:305px;float:left;margin:5px;}
+	.menuItem{font-size:28pt;}
+	.menuItem:hover{font-size:30pt;}
+	
+	
 	.resp-vtabs .templatemo_aboutcontainer, .resp-vtabs .templatemo_testicontainer	{ width: 100%; }
 	.templatemo_aboutlinkwrapper{ display: none; }
 	.templatemo_aboutlinkwrapper1{  display: block; }
@@ -617,21 +567,70 @@ h2.resp-accordion	{ color: #ffffff; }
 
 }	
 @media(min-width:320px) and (max-width: 767px) {
+	#menu-container{width:318px;}
+	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
+	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
+	.menuBox{text-align:center;height:150px;width:305px;float:left;margin:5px;}
+	.menuItem{font-size:28pt;}
+	.menuItem:hover{font-size:30pt;}
+	
+	/*This is the Catalogue area's styling for a phone size*/
+	#serviceBackground{width:300px;min-height:900px;}
+	#topService{width:300px;height:140px;}
+	#services{height:90px;width:300px;}
+	.service{margin-top:5px;float:left;margin-left:25px;}
+	#scrollDiv{width:260px;overflow-x:hidden;height:700px;}
+	#viewBooks{margin-left:25px;margin-top:5px;}
+	#goBackService{margin-left:75px;margin-top:5px;}
+	#bookDiv{width:98%;}
+	#bookList{width:98%;}
+	#inputs{margin-right:15px;}
+	#preface{width:90%;}
+	#scriptMenuBar{height:80px;line-height:40px;}
+	#next-button{margin-bottom:10px;}
+	/*This is the Catalogue area's styling for a phone size*/
+	
+	
 	/*.container	{ left: 15px; right: 15px; padding: 0px; }*/
 }
 @media(min-width:768px) {
-	.templatemo_leftgap	{ padding: 0px 10px; }
-	.templatemo_botgap	{ margin: 0px 0px 20px 0px; }
-	.templatemo_topgap	{	margin-top: 20px; }
-	.templatemo_portfotopgap	{ margin-top: 0px; } 
-	.templatemo_link { padding-top: 20%; }
+	#menu-container{width:760px;}
+	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
+	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
+	.menuBox{text-align:center;height:150px;width:750px;float:left;margin:5px;}
+	#serviceBackground{width:700px;}
+	
+	/*This is the Catalogue area's styling for a 768+ px size*/
+	#serviceBackground{width:700px;min-height:700px;}
+	#topService{width:700px;height:40px;}
+	
+	
+	#scrollDiv{width:525px;overflow-x:hidden;height:580px;}
+	
+	#bookDiv{width:50%;}
+	#bookList{width:98%;}
+	#inputs{margin-right:15px;}
+	#preface{width:250px;}
+	#scriptMenuBar{height:60px;line-height:60px;}
+	#next-button{margin-bottom:10px;}
+	#preface{width:90%;}
+
 	/*.container { left: 50%; margin-left: -375px; right: 0px; }*/
 	.logocontainer	{ width: 750px; padding: 0px 15px; margin: 0 auto; }
 	.templatemo_insideportfolio	{ height: 398px; }
-	.templatemo_link, .templatemo_linkservice, .templatemo_linkcontact 	{ height: 189px; line-height: 189px; padding: 0px; }
+	.templatemo_linkservice, .templatemo_linkcontact 	{ height: 189px; line-height: 189px; padding: 0px; }
 }
 
 @media(min-width:992px) {
+	#menu-container{width:990px;}
+	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
+	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
+	.menuBox{height:150px;width:482px;float:left;margin:5px;}
+	#serviceBackground{width:800px;}
+	#preface{width:90%;}
+	#scriptMenuBar{height:60px;line-height:60px;}
+	
+	
 	.templatemo_leftgap	{ padding: 0px 6px; }
 	.templatemo_rightgap_about	{ padding: 0px 6px 0px 2px; }
 	.templatemo_botgap	{ margin: 0px 0px 12px 0px; }
@@ -656,22 +655,40 @@ h2.resp-accordion	{ color: #ffffff; }
 	.resp-vtabs ul.templatemo_testitab li, 
 	.resp-vtabs ul.templatemo_testitab li.resp-tab-active	{ line-height: 79px; height: 79px; }
 	.templatemo_frame	{ height: 337px; margin-right: 1px; padding: 0px 30px; }
-	.templatemo_link { padding-top: 15%; }
+	
 	/*.container { left: 50%; margin-left: -485px; }*/
-	.templatemo_link, .templatemo_linkservice, .templatemo_linkcontact { height: 124px; line-height: 124px; padding: 0px; }
+	 .templatemo_linkservice, .templatemo_linkcontact { height: 124px; line-height: 124px; padding: 0px; }
 	.logocontainer	{ width: 970px; padding: 0px 15px; margin: 0 auto; }
 	.templatemo_insideportfolio	{ height: 260px; }
 }
 
 @media(min-width:1200px) {
-	.templatemo_leftgap	{ padding: 0px 8px; }
+	#menu-container{width:1180px;height:auto;}
+	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
+	.templatemo_mainimg{visibility:visible;width:200px;height:150px;margin-top:-30px;margin-left:41px;}
+	.menu-img{width:300px;height:150px;visibility:visible;}
+	.menuBox{height:300px;width:382px;float:left;margin:5px;}
+	
+	
+	#topService{width:800px;height:40px;}
+	
+	
+	#scrollDiv{width:780px;overflow-x:hidden;height:580px;}
+	#bookDiv{width:40%;}
+	#preface{width:90%;}
+	#bookList{width:98%;}
+	#inputs{margin-right:15px;}
+	#scriptMenuBar{height:60px;line-height:60px;}
+	#next-button{margin-bottom:10px;}
+	
+	
 	#contactImage{width:400px;float:left;}
 	#aboutMeImage{width:400px;float:left;}
 	#aboutLeftBack{width:360px;}
 	.templatemo_rightgap_about	{ width:260px;float:left;   }
 	.templatemo_botgap	{ margin: 0px 0px 16px 0px; }
 	.templatemo_topgap	{ margin-top: 0px; }
-	.templatemo_portfotopgap	{ margin-top: 0px; }
+	
 	.templatemo_bordergapborder	{ padding: 0px 16px; }
 	.templatemo_graybg	{ height: 466px; }
 	.templatemo_col37	{ float: left; width: 37.5%; position: relative; }
