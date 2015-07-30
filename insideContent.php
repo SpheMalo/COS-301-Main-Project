@@ -28,12 +28,19 @@
     
 	<script src="scripts/authentication.js" type="text/javascript"></script>
 	<script src="scripts/profile.js"></script>
-    <script src="scripts/createPage.js" type="text/javascript"></script>
+    <script src="scripts/manuscript.js" type="text/javascript"></script>
 	<script src="scripts/saveTextToDB.js"></script>
 	<script src="scripts/services.js"></script>
     <script src="scripts/manuscriptManagement.js"></script>
    
-
+   
+	
+	<script language="Javascript" src="scripts/textarea/htmlbox.colors.js" type="text/javascript"></script>
+	<script language="Javascript" src="scripts/textarea/htmlbox.styles.js" type="text/javascript"></script>
+	<script language="Javascript" src="scripts/textarea/htmlbox.syntax.js" type="text/javascript"></script>
+	<script language="Javascript" src="scripts/textarea/xhtml.js" type="text/javascript"></script>
+	<script language="Javascript" src="scripts/textarea/htmlbox.min.js" type="text/javascript"></script>
+	
      <script>
     function showhide()
     {
