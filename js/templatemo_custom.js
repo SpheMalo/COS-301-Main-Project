@@ -3,7 +3,7 @@ var menuDisabled = false;
 jQuery(document).ready(function($){
 
 	/************** Menu Content Opening *********************/
-	$(".main_menu a").on('click',function(){
+	$(".main_menu a").click(function(){
 		var id =  $(this).attr('class');
 		id = id.split('-');
 		//$("#menu-container .content").hide();
@@ -22,8 +22,9 @@ jQuery(document).ready(function($){
 	});
 	
 	$(".main_menu a.templatemo_page2").click(function( ){
-    $('#menu-container .homepage').fadeOut(1000, function(){									  
-        $('#menu-container .services').fadeIn(1000);
+    $('#menu-container .homepage').fadeOut(1000, function(){
+	window.location.href="content.html";
+        //$('#menu-container .services').fadeIn(1000);
 	    });
 	return false;
 	});
@@ -38,6 +39,7 @@ jQuery(document).ready(function($){
 	$(".main_menu a.templatemo_page3").click(function(){    
     $('#menu-container .homepage').fadeOut(1000, function(){
         $('#menu-container .portfolio').fadeIn(1000);
+	    
 	    });
 		return false;
 	});
@@ -45,6 +47,7 @@ jQuery(document).ready(function($){
 	$(".main_menu a.templatemo_hometestimonial").click(function(){
 		$('#menu-container .testimonial').fadeOut(1000, function(){
         $('#menu-container .homepage').fadeIn(1000);
+			
 	    });
 		return false;
 	});
@@ -52,6 +55,9 @@ jQuery(document).ready(function($){
 	$(".main_menu a.templatemo_page4").click(function(){    
     $('#menu-container .homepage').fadeOut(1000, function(){
         $('#menu-container .testimonial').fadeIn(1000);
+        $('.templatemo_frame').fadeIn(1000);
+        $('#cmt').fadeIn(1000);
+	    
 	    });
 		return false
 	});

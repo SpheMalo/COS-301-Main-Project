@@ -56,6 +56,19 @@ font-size: 45px;
 	overflow: hidden;
 	z-index:2;
 }
+/*this is the background div for the textarea where the manuscript will be written*/
+#bookDiv{width:500px;min-height:240px;margin-right:auto;margin-left:auto;background-color:rgba(200,200,200,1.00);
+	text-align:center;
+	
+	
+background: rgba(142,208,232,1);
+background: -moz-linear-gradient(top, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(142,208,232,1)), color-stop(50%, rgba(153,226,250,1)), color-stop(100%, rgba(156,218,240,1)));
+background: -webkit-linear-gradient(top, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
+background: -o-linear-gradient(top, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
+background: -ms-linear-gradient(top, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
+background: linear-gradient(to bottom, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
+}
 #backDiv{overflow-y:auto;
 	overflow-x:hidden;
 	height:100%;
@@ -77,19 +90,7 @@ font-size: 45px;
 #frame2{z-index:2; float:right;overflow-x:hidden; margin-top: 30px; margin-right:20px;width:250px;text-align:center;}
 #addtional{margin-top:22px;}
 
-/*this is the background div for the textarea where the manuscript will be written*/
-#bookDiv{width:500px;min-height:240px;margin-right:auto;margin-left:auto;background-color:rgba(200,200,200,1.00);
-	text-align:center;
-	
-	
-background: rgba(142,208,232,1);
-background: -moz-linear-gradient(top, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(142,208,232,1)), color-stop(50%, rgba(153,226,250,1)), color-stop(100%, rgba(156,218,240,1)));
-background: -webkit-linear-gradient(top, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
-background: -o-linear-gradient(top, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
-background: -ms-linear-gradient(top, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
-background: linear-gradient(to bottom, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
-}
+
 
 #infoBox{width:320px;height:110px;margin-left:auto;margin-right:auto;margin-top:20px;}
 #labels{float:left;height:auto;width:100px;}

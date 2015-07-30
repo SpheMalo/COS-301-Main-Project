@@ -51,7 +51,9 @@ function editSection(value)
 	$("#saveBtn").attr("name","" + value);
 }
 
+
 $(document).ready(function () {
+	/*
 	//Textarea formmating
 	$(".textarea").css("height","50%").css("width","50%").htmlbox({
 		toolbars:[
@@ -78,7 +80,7 @@ $(document).ready(function () {
 			]
 		],
 		skin:"blue"
-	});
+	});*/
 	    
 	//Populates the list of books initially when page loads.		
 	getBooks(); 
@@ -303,6 +305,10 @@ $(document).ready(function () {
             url: "scripts/mediawiki/index.php/" + replaced,
             dataType: "html"
         }, 5000).success(function (data) {
+			
+			//Takes you to the page content where reading and editing is done.
+			window.location.href = "content.html";
+			
             $('#bookList').fadeOut("slow",function(){
 				$('#pageView').fadeIn("slow",function(){
 				  	document.getElementById('pageView').innerHTML = data;

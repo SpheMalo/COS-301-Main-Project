@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.md or http://ckeditor.com/license
+-->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Book Editor</title>
+	
+    <!--CSS links here-->
+   
+    
+      
+    <link rel="stylesheet" href="textarea/samples/css/samples.css">
+	<link rel="stylesheet" href="textarea/samples/toolbarconfigurator/lib/codemirror/neo.css">
+    
+    
+    
+	<!--Links for textarea formmating-->
+    
+	<script src="textarea/ckeditor.js"></script>
+	<script src="textarea/samples/js/sample.js"></script>
+	
+
+</head>
+<body>
+	<!--This is the book list, view and creator-->
+	<!--services start -->
+   <div class="content services" id="menu-2">
+		<div id="serviceContainer" >
+          <div id="serviceBackground">
+                       
+                        	<div id="topService">
+                                 <div id="services">
+                                    <div id="viewBooks">List Books</div>
+                                 </div>
+                                 <div class="templatemo_mainservice templatemo_botgap" id="goBackService">
+                                    <a id="serviceGoBack" class="show-1 templatemo_homeservice" href="#">Go Back</a>
+                                 </div>
+                        	</div>
+                            <div id="scrollDiv">
+                                <div id="bookList">
+                                        
+                                </div>
+                                <div id="pageView">
+            						<button id="refreshBook" style="visibility:hidden;" onclick="refreshBook()">Refresh</button>
+            					</div>
+                                 <div id="editSection">
+                                      <div id="inputHeading"><input type="text" id="pageEditTitle"/></div><!--<hr/>-->
+                                        <!--  <textarea id="editor" cols="93" rows="10">-->
+					  						<!--This is the rich text editor-->
+                                        <!-- Replace textarea-->
+                                        <div class="adjoined-bottom">
+                                            <div class="grid-container">
+                                                <div class="grid-width-100">
+                                                    <div id="editor">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Replace textarea-->
+					
+					
+                                          
+                                          <button id="saveBtn" onclick="saveText()" >Save</button>
+                                  </div>
+                            </div>
+                            	
+                        
+            </div>
+            
+
+                  <div id="bookDiv">
+            			<div id="scriptMenuBar">Please fill in author details.</div>                  	
+                        <div id="pageList"></div>
+                        
+                        <div id="contentDiv">
+                        	<div id="infoBox">
+                                 <div id="labels">	
+                                     <label>Book Title:</label><br/>
+                                     <label>Author's</label><br/>
+                                     <label>Firstname:</label><br/>
+                                     <label>Surname:</label>
+                                 </div>
+                                 <div id="inputs">
+                                     <input id="title" type="text"/><br/><br/>
+                                     <input id="firstname" type="text"/><br/>
+                                     <input id="surname" type="text"/>
+                                 </div>
+                             </div>                             
+                             <div id="inputs2">
+                                 <textarea id="preface" cols="50" rows="14" ></textarea>
+				 
+			</div>
+                             </div>
+                            <textarea id="manuscriptArea" cols="96" rows="14" ></textarea>
+                            
+                            
+                            <form class="form" id="saveBookForm">
+                            	<button type="submit" id="back-button">Back</button>
+                            	<button type="submit" id="next-button">Next</button>
+                            </form>
+                        </div>
+                        <div id="Page">
+                        	
+                        </div>     
+				</div><!--bookDiv ends here-->
+                  	
+                  
+
+                <div id="sidePicDiv" class="templatemo_col37 col-sm-12 templatemo_leftgap templatemo_topgap">
+                	<div class="templatemo_mainimg templatemo_botgap"><img src="images/templatemo_service2.jpg" alt="service image"></div>
+                </div>
+                
+            
+            
+            
+            
+        </div><!--serviceContainer ends here-->
+     </div><!--menu-2 ends here--> 
+    <!-- services end -->	
+		
+
+	
+
+</body>
+<script>
+	initSample();
+</script>
+
+</html>

@@ -6,8 +6,7 @@
 ?>
 
 
- <!DOCTYPE html> 
-  <head>
+ <!DOCTYPE html><head>
     <title>Figbook</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +20,7 @@
     <link rel="stylesheet" href="css/background.css"/>
 	
 	<!--Scripts linked here-->
+	<!--<script language="Javascript" src="scripts/textarea/jquery-1.3.2.min.js" type="text/javascript"></script>-->
     <script src="js/jquery-1.10.2.min.js"></script> 
     <script src="js/jquery.lightbox.js"></script>
 	<script src="js/templatemo_custom.js"></script>
@@ -30,18 +30,10 @@
 	<script src="scripts/profile.js"></script>
     <script src="scripts/manuscript.js" type="text/javascript"></script>
 	<script src="scripts/saveTextToDB.js"></script>
-	<script src="scripts/services.js"></script>
-    <script src="scripts/manuscriptManagement.js"></script>
-   
-   
 	
-	<script language="Javascript" src="scripts/textarea/htmlbox.colors.js" type="text/javascript"></script>
-	<script language="Javascript" src="scripts/textarea/htmlbox.styles.js" type="text/javascript"></script>
-	<script language="Javascript" src="scripts/textarea/htmlbox.syntax.js" type="text/javascript"></script>
-	<script language="Javascript" src="scripts/textarea/xhtml.js" type="text/javascript"></script>
-	<script language="Javascript" src="scripts/textarea/htmlbox.min.js" type="text/javascript"></script>
-	
+    
      <script>
+     
     function showhide()
     {
         var div = document.getElementById("newpost");
@@ -144,85 +136,7 @@
    </div> <!--contains the main menu tabs END-->
     <!-- homepage end -->
     
-    <!--services start -->
-   <div class="content services" id="menu-2">
-		<div id="serviceContainer" >
-          <div id="serviceBackground">
-                       
-                        	<div id="topService">
-                                 <div id="services">
-                                    <div id="viewBooks">List Books</div>
-                                 </div>
-                                 <div class="templatemo_mainservice templatemo_botgap" id="goBackService">
-                                    <a id="serviceGoBack" class="show-1 templatemo_homeservice" href="#">Go Back</a>
-                                 </div>
-                        	</div>
-                            <div id="scrollDiv">
-                                <div id="bookList">
-                                        
-                                </div>
-                                <div id="pageView">
-            						<button id="refreshBook" style="visibility:hidden;" onclick="refreshBook()">Refresh</button>
-            					</div>
-                                 <div id="editSection">
-                                      <div id="inputHeading"><input type="text" id="pageEditTitle"/></div><!--<hr/>-->
-                                          <textarea id="editor" cols="93" rows="10">
-                                          </textarea>
-                                          <button id="saveBtn" onclick="saveText()" >Save</button>
-                                  </div>
-                            </div>
-                            	
-                        
-            </div>
-            
-
-                  <div id="bookDiv">
-            			<div id="scriptMenuBar">Please fill in author details.</div>                  	
-                        <div id="pageList"></div>
-                        
-                        <div id="contentDiv">
-                        	<div id="infoBox">
-                                 <div id="labels">	
-                                     <label>Book Title:</label><br/>
-                                     <label>Author's</label><br/>
-                                     <label>Firstname:</label><br/>
-                                     <label>Surname:</label>
-                                 </div>
-                                 <div id="inputs">
-                                     <input id="title" type="text"/><br/><br/>
-                                     <input id="firstname" type="text"/><br/>
-                                     <input id="surname" type="text"/>
-                                 </div>
-                             </div>                             
-                             <div id="inputs2">
-                                 <textarea id="preface" cols="50" rows="14" ></textarea>
-                             </div>
-                            <textarea id="manuscriptArea" cols="96" rows="14" ></textarea>
-                            
-                            
-                            <form class="form" id="saveBookForm">
-                            	<button type="submit" id="back-button">Back</button>
-                            	<button type="submit" id="next-button">Next</button>
-                            </form>
-                        </div>
-                        <div id="Page">
-                        	
-                        </div>     
-				</div><!--bookDiv ends here-->
-                  	
-                  
-
-                <div id="sidePicDiv" class="templatemo_col37 col-sm-12 templatemo_leftgap templatemo_topgap">
-                	<div class="templatemo_mainimg templatemo_botgap"><img src="images/templatemo_service2.jpg" alt="service image"></div>
-                </div>
-                
-            
-            
-            
-            
-        </div><!--serviceContainer ends here-->
-     </div><!--menu-2 ends here--> 
-    <!-- services end -->	
+    
 
 	<!-- portfilio start -->
     <div class="portfolio" id="menu-3" style="display: none;" >
@@ -521,6 +435,11 @@
     </div>
     <!-- logo end -->  
    <script type="text/javascript">
+  $(document).ready(function(){
+	   initSample();
+  
+}) ;
+
     $(document).ready(function () {
         $('#horizontalTab').easyResponsiveTabs({
             type: 'default', //Types: default, vertical, accordion
