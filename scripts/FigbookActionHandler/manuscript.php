@@ -14,37 +14,41 @@ ini_set('display_startup_errors',1);
 error_reporting(-1);
 
 class manuscript {
- 
-    //properties
+	///properties
     private $dbInstance;
     private $responseObject;
     private $message;
-    //methods
     
-    //initialise member variable/ properties
-   public function __construct($dbInstance) {
-        
-        $this->dbInstance = $dbInstance;
+    ///methods
+    
+    /**
+    * Initialise member variable/ properties
+    *@param dbInstance  instance of database to be used
+    */
+	public function __construct($dbInstance) {
+    	$this->dbInstance = $dbInstance;
     }
     
-    //clean up, all references
+    /**
+    * Clean up, all references
+    */
     public function __destruct() {
-        
-        $this->dbInstance = null;
+    	$this->dbInstance = null;
     }
     
-    //go to systems database and check if the book title exists
-     public function titleExists($title) {
-        
+    /**
+    *go to systems database and check if the book title exists
+    */
+    public function titleExists($title) {
         $query="SELECT * FROM page WHERE page_title= '$title'";
-        $queryResult = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $query));//run query
+        /// Run query
+        $queryResult = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $query));
         $result = "false";
-	if(($queryResult) > 0){
-		$result = "true";
-	}
+		if(($queryResult) > 0){
+			$result = "true";
+		}
         return $result;
     }
 }
-
 
 ?>

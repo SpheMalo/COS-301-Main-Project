@@ -10,32 +10,28 @@ require("constants.php");
 
 class databaseHandler {
     
-    //properties
+    ///properties
     private $dbconnection;
     
     
-    //methods
+    ///methods
     
-    //open a database connection and initialise connection object
+    ///open a database connection and initialise connection object
     public function __construct(){
-        
-        //$this->dbconnection = mysql_connect(HOST, USERNAME, PASSWORD);
         $this->dbconnection = mysqli_connect(HOST,USERNAME,PASSWORD,DATABASE);
         
         if (!$this->dbconnection){
-            
             die ("database connection failed ". mysql_error());
         }
         
     }
     
-    //close the database connection
+    ///close the database connection
     public function __destruct() {
-        mysqli_close($this->dbconnection);
-        
+        mysqli_close($this->dbconnection); 
     }
     
-    //returns the connection variable 
+    ///returns the connection variable 
     public function getConnection(){
         
         return $this->dbconnection;
@@ -50,7 +46,9 @@ class databaseHandler {
         }
     }
     
-    //just in case we have to explicitly close the db connection
+    /**
+    * Just in case we have to explicitly close the db connection
+    */
     public function closeConnection(){       
         mysqli_close($this->dbconnection);
         

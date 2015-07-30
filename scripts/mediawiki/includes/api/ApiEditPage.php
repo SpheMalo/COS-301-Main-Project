@@ -180,6 +180,7 @@ class ApiEditPage extends ApiBase {
 					$content = $content->getSection( $section );
 
 					if ( !$content ) {
+						echo $content;
 						$this->dieUsage( "There is no section {$section}.", 'nosuchsection' );
 					}
 				}

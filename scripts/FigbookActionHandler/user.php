@@ -13,47 +13,47 @@
 
 class user {
  
-    //properties
+    ///properties
     private $dbInstance;
     private $responseObject;
     private $message;
-    //methods
     
-    //initialise member variable/ properties
-    public function __construct($dbInstance) {
-        
+    ///methods
+    
+    /**
+    * Initialise member variable/ properties
+    */
+    public function __construct($dbInstance){
         $this->dbInstance = $dbInstance;
     }
     
-    //clean up, all references
-    public function __destruct() {
-        
+    /**
+    * Clean up, all references
+    */
+    public function __destruct(){        
         $this->dbInstance = null;
     }
     
-    //go to systems database and check if the username and password match a single record
+    /**
+    * Go to systems database and check if the username and password match a single record
+    */
     public function loginUser($uemail,$upassword){
-         
-        //handling sql injections
+    	///handling sql injections
         $upassword = stripslashes($upassword);
-        //$upassword = mysql_real_escape_string($upassword);
+        ///$upassword = mysql_real_escape_string($upassword);
         $upassword = mysqli_real_escape_string($this->dbInstance,$upassword);
         
         $query="SELECT * FROM useraccount WHERE (Username='$uemail' OR  EmailAddress='$uemail') AND Password = '$upassword'";
 
-	//$queryResult = mysql_query($query); //run query
+		///$queryResult = mysql_query($query); //run query
         $queryResult = mysqli_query($this->dbInstance,$query);
         if($queryResult){
-            
             if(mysqli_num_rows($queryResult) == 1){
-                
-                //get user details
+                ///get user details
                 $found_user = mysqli_fetch_array($queryResult);
-                
                 $this->message = "success";
-                 $isactive = $this->isActive($found_user['Username']);
+                $isactive = $this->isActive($found_user['Username']);
                 if($isactive == "false"){
-                    
                     $this->message = "not_active";
                 }
                 $this->responseObject = "{\"serverResponse\":\"".$this->message."\",
@@ -62,144 +62,130 @@ class user {
                                      \"UserID\":\"".$found_user['UserID']."\"
                                      }";
                
-                //return to app
+                ///return to app
                 return $this->responseObject;
-                
-            }else if(mysqli_fetch_array($queryResult) <= 0){ //no such user exists
-                
+            /// No such user exists    
+            }else if(mysqli_fetch_array($queryResult) <= 0){ 
                 $this->message = "'invalid username or password'";
-                
                 $this->responseObject = "{\"serverResponse\":\"".$this->message."\"}";
-                
-                //return to app
+                ///return to app
                 return $this->responseObject;
             }
-        }
-        
+        }        
     }
     
+    /**
+    * Checks if user is still active in the database
+    */
     private function isActive($userName) {
-        
-        $query="SELECT * FROM useraccount WHERE (Username='$userName' OR  EmailAddress='$userName') AND Status=1";
-        $queryResult = mysqli_query($this->dbInstance, $query);//run query
+    	$query="SELECT * FROM useraccount WHERE (Username='$userName' OR  EmailAddress='$userName') AND Status=1";
+        $queryResult = mysqli_query($this->dbInstance, $query);
         $result = "false";
         if($queryResult){
-            
-            if(mysqli_num_rows($queryResult) == 1){
+        	if(mysqli_num_rows($queryResult) == 1){
                 $result = "true";
             }
-           
-            }
+        }
         return $result;
     }
     
     public function userStatus($userName) {
-        
         $query="SELECT user_status FROM user WHERE user_name='$userName'";
-        $queryResult = mysqli_query($this->dbInstance, $query);//run query
+        $queryResult = mysqli_query($this->dbInstance, $query);
         $result = "0";
         if($queryResult){
-            
-            if(mysqli_num_rows($queryResult) != 1){
+        	if(mysqli_num_rows($queryResult) != 1){
                 $result = "Status could not be retrieved";
             }
             else{
                 $row = mysqli_fetch_assoc($queryResult);
                 $result = $row[user_status];
             }
-           
-            }
+        }
         return $result;
-        
     }
-    //adds a new user to the systems database
-    //check if similiar user does not exist 1st
-    //if details are correct, a new user is added
+    /**
+    * Adds a new user to the systems database,
+    * checks if similiar user does not exist 1st,
+    * if details are correct, a new user is added
+    */
     public function insertUser($uname,$upassword,$uemail,$urole){
-        
-        //suppress notice errors
+        ///suppress notice errors
         error_reporting(E_ALL ^ E_NOTICE);
-         
         $available = false;
-        
-        //check username availability
+        ///check username availability
         $queryString = "SELECT Username from useraccount where Username ='$uname'";
-        
         $queryResults = mysqli_query($this->dbInstance, $queryString);
-        
-        
-        if(mysqli_num_rows($queryResults) >= 1){
                 
-           //the username exists, append appropriate message
-           $this->message = "Username already exists.";       
-           $available = TRUE;
+        if(mysqli_num_rows($queryResults) >= 1){
+  			///the username exists, append appropriate message
+           	$this->message = "Username already exists.";       
+           	$available = TRUE;
         }
         
-        //check email availability
+        ///check email availability
         $queryResults = mysqli_query($this->dbInstance, "SELECT EmailAddress from useraccount where EmailAddress ='$uemail'");
         if(mysqli_num_rows($queryResults) >= 1){
-            //the email exists, append message
+            ///the email exists, append message
             $this->message .= "Useremail already exists.";
             $available = TRUE;
         }
-            
          
-        if($available){
-            
-            //do not store the user
+        if($available){    
+            ///do not store the user
             $this->responseObject = "{\"serverResponse\":\"".$this->message."\"}";
-            
         }else if (!$available){
+            $today = getdate();
+            $date = $today[mday];
+            $date .= "/".$today[mon];
+            $date .= "/".$today[year];
             
-             $today = getdate();
-
-             $date = $today[mday];
-             $date .= "/".$today[mon];
-             $date .= "/".$today[year];
-            //echo $uname . $upassword . $uemail;
-            //add user to database
+            ///Add user to database
             $queryString = "INSERT INTO useraccount (Username,UserRole,Password,EmailAddress, Status) VALUES('$uname','$urole','$upassword','$uemail','1')";
-
-             $queryResults = mysqli_query($this->dbInstance, $queryString);
+            $queryResults = mysqli_query($this->dbInstance, $queryString);
             $UserID = null;
-             if($queryResults){
-                 
-                 $UserID = mysqli_insert_id($this->dbInstance);
-                 
-             }else if(!$queryResults){
-                 $this->message = "could not insert user";
-             }
-            //send success message and current user details 
+
+            if($queryResults){
+                $UserID = mysqli_insert_id($this->dbInstance);
+            }
+            else if(!$queryResults){
+                $this->message = "could not insert user";
+            }
+            
+            ///send success message and current user details 
             $this->message = "success";
             $this->responseObject = "{\"serverResponse\":\"".$this->message."\"
                                      }";
         }
         
-         //return to app      
-         return $this->responseObject;
+        ///return to app      
+        return $this->responseObject;
     }
     
-	//Function to get required values for delete,suspend,activate account.
-	public function getUserDetails($uname)
-	{
+	/**
+    * Function to get required values for delete,suspend,activate account.
+    * @param uname  username as appears in the database
+	*/
+    public function getUserDetails($uname){
 		$sql = "SELECT * FROM user where user_name = '$uname' ";
-		
 		$queryResults = mysqli_query($this->dbInstance, $sql);
 		return $queryResults;
 	}
 	 
-	//Function update user details
-    public function updateUser($uname,$upassword,$uemail,$urole,$status)
-	{
+	/**
+    * Function update user details
+    * @param uname  Username in the database
+    * @param upassword  User's password
+    * @param uemail     User's email
+    * @param urole  User's role (eg. Author, Editor)
+    * @param status     Whether the user is still active
+    */
+    public function updateUser($uname,$upassword,$uemail,$urole,$status){
 		//suppress notice errors
         error_reporting(E_ALL ^ E_NOTICE);
-         
-		 
-		 
         //update user
-	//echo $uname;
+		//echo $uname;
         $queryString = "UPDATE user SET user_role='$urole', user_password='$upassword', user_email='$uemail', user_status='$status' WHERE user_name='$uname'";
-        
         //$queryResults = mysql_query($queryString);
         $queryResults = mysqli_query($this->dbInstance, $queryString);
         echo $queryResults;
@@ -210,154 +196,141 @@ class user {
 		}
 	}
     
-    
-    public function getforgotPassword($Useremail){
-    
-        //scan usertable searching for matchin email addr,if found, get the username and password of User 
+    /**
+    * Retrieve user's forgotten passowrd
+    * @param Useremail  User's email address
+    * @todo get mailing server running 
+    */
+    public function getforgotPassword($Useremail){    
+        ///Scan usertable searching for matchin email addr,if found, get the username and password of User 
         $query = "SELECT Username, Userpassword FROM User WHERE Useremail = '$Useremail'";
-        
-        //$queryRes = mysql_query($query);
         $queryRes = mysqli_query($this->dbInstance, $query);
         
-        if($queryRes){
-            
-            if(mysqli_num_rows($queryRes) >= 1){ //user with the email exists
-             
+        if($queryRes){            
+            ///user with the email exists
+            if(mysqli_num_rows($queryRes) >= 1){ 
                 $found_user = mysqli_fetch_array($queryRes);
-              
                 $username = $found_user['Username'];
                 $password = $found_user['Userpassword'];
-                
-                //try sending email
-                
+                /// Try sending email
                 $to = $Useremail;
                 $subject = "Uthinc Password Recovery";
                 $message = "Hello ".$username." \nThank you for using our password Recovery System \n Your password is:".$password ." \n \n Thank you. \n Regards \n Uthinc Management.";
                 $from = "info@uinc.co.za";
                 $headers = "From:" . $from;
-
-                $check = @mail($to,$subject,$message,$headers);
-                
-                if($check){ //successfull
-                 
+				$check = @mail($to,$subject,$message,$headers);
+                ///successfull
+                if($check){ 
                     $this->message = "Your password has been emailed to you.";
-
                     $this->responseObject = "{\"serverResponse\":\"".$this->message."\"}";
-                    
-                    echo $this->responseObject;
-                    
-                }else{ //unsuccessfull
-                    
-                    $this->message = "Unable to send mail to'$Useremail'!";
-
-                    $this->responseObject = "{\"serverResponse\":\"".$this->message."\"}";
-                    
                     echo $this->responseObject;
                 }
-                
-            }else{ // the email does not exist
-                
+                ///unsuccessfull
+                else{ 
+                    $this->message = "Unable to send mail to'$Useremail'!";
+                    $this->responseObject = "{\"serverResponse\":\"".$this->message."\"}";
+                    echo $this->responseObject;
+                }                
+            }
+            ///the email does not exist
+            else{     
                 $this->message = "Useremail Does not exist!";
-
                 $this->responseObject = "{\"serverResponse\":\"".$this->message."\"}";
-                
                 return $this->responseObject;
             }
         }
-        
     }
 	
-	public function getUserInfo($userID)
-	{
+    /**
+    * Retrieve's the user's details from the database
+    * @param userID     User id of user for which information is retrieved
+    */
+	public function getUserInfo($userID){
 		$sql = "SELECT user_role, user_name, first_name, last_name, about_me, genres_of_interest, cell, home, email, work FROM user, personal_details WHERE user.user_name='$userID' AND personal_details.username='$userID'";
 		$myResponse = (mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql)));
-		
 		return ($myResponse);
-		
 	}
 	
-	public function updateAboutMe($uID, $jsonObj)
-	{
+    /**
+    * Update's About me section of the profile
+    * @param uID    User ID
+    * @param jsonObj Object with required changes
+    */
+	public function updateAboutMe($uID, $jsonObj){
 		$sql = "UPDATE personal_details SET about_me='$jsonObj->aboutme' WHERE username='$uID'";
-		
 		$myResponse = mysqli_query($this->dbInstance, $sql);
 		return $myResponse;
 	}
 	
-	public function updatePortfolioInfo($uID, $jsonObj)
-	{
+    /**
+    * Updates portfolio information of the user
+    * @param uID    User ID
+    * @param jsonObj Object with required changes
+    */
+	public function updatePortfolioInfo($uID, $jsonObj){
 		$sql = "UPDATE personal_details SET first_name='$jsonObj->firstname', last_name='$jsonObj->surname', genres_of_interest='$jsonObj->genres' WHERE username='$uID'";
-		
 		$myResponse = mysqli_query($this->dbInstance, $sql);
 		return $myResponse;
 	}
 	
-	public function updateContactInfo($uID, $jsonObj)
-	{
+    /**
+    * Updates user's contact information
+    * @param uID    User's ID
+    * @param jsonObj    Object containing required information
+    */
+	public function updateContactInfo($uID, $jsonObj){
 		$sql = "UPDATE personal_details SET cell='$jsonObj->cell', home='$jsonObj->home', work='$jsonObj->work', email='$jsonObj->email' WHERE username='$uID'";
-		$myResponse = mysqli_query($this->dbInstance, $sql);
-		
-		//This is only gonna return an error once (this should be fixed later on.)
+		$myResponse = mysqli_query($this->dbInstance, $sql);		
+		///This is only gonna return an error once (this should be fixed later on.)
 		$sql = "UPDATE user SET user_email='$jsonObj->email' WHERE user_name='$uID'";
 		$myResponse = mysqli_query($this->dbInstance, $sql);
-		
 		return $myResponse;
 	}
 	
 	/**
-	 *@param string $userID the username of the user that made this call
-	 *@param json $obj json object containing information necessary to make the query to retrieve the timestamp for this section.
-	 *
-	 */
-	public function getTimeStamp($userID, $obj)
-	{
-
+    * Retrieves latest timestamp in the database for a particular edit
+	* @param string $userID the username of the user that made this call
+	* @param json $obj json object containing information necessary to make the query to retrieve the timestamp for this section.
+	*/
+	public function getTimeStamp($userID, $obj){
 		$sql = "SELECT * FROM section_revisions WHERE book_title = '$obj->title' AND section_number = '$obj->section'";
 		$myResponse = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql));
-		
-		// If no such record exists, create it and persist
-		if ($myResponse == null)
-		{
+		/// If no such record exists, create it and persist
+		if ($myResponse == null){
 			$sql = "INSERT INTO section_revisions (book_title, section_number, last_edited_by, date_last_edited)
 			VALUE ('$obj->title', '$obj->section', '$userID', CURRENT_TIME)";
 			mysqli_query($this->dbInstance, $sql);
-			
 			$sql = "SELECT * FROM section_revisions WHERE book_title = '$obj->title' AND section_number = '$obj->section'";
 			$myResponse = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql));
 		}
-		
-		//return the timestamp
+		///return the timestamp
 		return $myResponse;
 	}
 	
-	public function verifyTimeStamp($uID, $obj)
-	{
+    /**
+    * Verifies that a timestamp does not conflict with another
+    * @param uID    User ID
+    * @param obj    Object containing the timestamps
+    */
+	public function verifyTimeStamp($uID, $obj){
 		$sql = "SELECT * FROM section_revisions WHERE book_title = '$obj->title' AND section_number = '$obj->section'";
 		$myResponse = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql));
-		
-		//Check timestamps
-		if ($myResponse["date_last_edited"] == $obj->timestamp)
-		{
+		///Check timestamps
+		if ($myResponse["date_last_edited"] == $obj->timestamp){
 			$sql = "UPDATE section_revisions SET section_content='$obj->content', date_last_edited=CURRENT_TIME, last_edited_by='$uID' WHERE book_title = '$obj->title' ";
 			mysqli_query($this->dbInstance, $sql);
-			
-			//Getting the updated time
+			///Getting the updated time
 			$sql = "SELECT date_last_edited FROM section_revisions WHERE book_title = '$obj->title' AND section_number = '$obj->section'";
 		    $temp = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql));
-			
 			$myResponse["message"] = "no_conflict";
 			$myResponse["date_last_edited"] = $temp["date_last_edited"];
 			return $myResponse;
 		}
-		else
-		{
+		else{
 			$myResponse["message"] = "conflict";
 			return $myResponse;
 		}
 	}
-    
-    
 }
-
 
 ?>
