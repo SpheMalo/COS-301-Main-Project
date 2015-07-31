@@ -1,18 +1,17 @@
 
 
-\textbf{Introduction}\paragraph{This section will cover the integration channels between the different systems that will eventually make up a working Figbook system.
-Access channels will also be discussed, these are the different channels to access the system together with the APIs used to provide this access. } 
+\textbf{Introduction}\paragraph{This section will cover the integration channels of different systems that will eventually make up a working Figbook system.
+Access channels will also be discussed. The following are the different channels to access the system together with the APIs used to provide this access. } 
 
 \subsubsection{Integration Channels}
 \begin{itemize}
-\item Mediawiki - An open source wiki package to be used in Figbook
+\item Mediawiki - An open source wiki package to be used for Figbook
 \begin{itemize}
-\item The Mediawiki package will be used as an API within the Figbook project, it will provide collabrative writing previllages that are the core of Figbook.
+\item The Mediawiki package will be used as an API within the Figbook project, it will provide collabrative writing previllages this is one the core functionalities of Figbook.
 \item The Mediawiki database will be integrated with the Figbook database (both mysql) for uniform persistance.
 \item This package will also provide other services like communication, reporting and Authentication.
-\item Using Mediawiki as an API will mean that it will be contained within the system reducing dependencies on external systems.
+\item The use of Mediawiki as an API will mean that it will be contained within the system reducing dependencies on external systems.
 \end{itemize}
-\item Bluemix Single Sign On - This service will be used as nice to have for the authentication module, to allow users to sign into the system using external LDAP directories.
 \item SOAP (Simple Access Project Protocol) allows programs that run on different operating system to communicate using HTTP and XML. It is platform and language independent, It is useful in handling asynchronous processing and it supports many protocols and technologies.
 \end{itemize}
 \subsubsection{Access channels}
@@ -25,8 +24,8 @@ Access channels will also be discussed, these are the different channels to acce
 
 \subsubsection{API Specifications used for integration and access}
 \begin{itemize}
-\item Web Service Definition Language(WSDL) - WSDL will be used to describe the functionality and the operations provided by the web-based service (Buzz system).
-\item Interactive Data Language(IDL) - This will be used for data handling purposes for the data source integration for Mediawiki and figbook and any other form of data required by the system.
+\item Web Service Definition Language(WSDL) - will be used to describe the functionality and the operations provided by the web-based service (Figbook system).
+\item Interactive Data Language(IDL) - will be used for data handling purposes for the data source integration for Mediawiki and figbook and any other form of data required by the system.
 \item Php - Mysql APIs will be used to query the database.
 \item Mediawiki uses a RESTful web services API that allows users to access the services without knowledge of the inner system. 
 \end{itemize}

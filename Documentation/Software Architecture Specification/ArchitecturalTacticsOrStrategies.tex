@@ -1,7 +1,5 @@
-\section{Architectural Tactics/Strategies}
-
 \subsection{Security}
-\par{\textbf{Authentication} - Achieved via the Authentication module of the website. Users need to log in with a valid username and password before they can use any functionality of the website. \\\textbf{Encryption} - Sensitive information like user passwords, content of the books etc is encrypted in the database instead of being stored in plain text. }
+\par{\textbf{Authentication} - achieved via the Authentication module of the website. Users need to log in with a valid username and password before they can use any functionality of the website. \\\textbf{Encryption} - sensitive information like user passwords, content of the books etc is encrypted in the database instead of being stored in plain text. }
 
 \subsection{Integrability}
 \par{\textbf{Project planning and system process management} - by assigning roles and making use of an online scrum tool i.e ASANA.
@@ -12,12 +10,10 @@
 
 \subsection{Scalability}
 \par{\textbf{Memcached} - is used to cache image metadata, parser data, differences, users and sessions, and revision text. Metadata, such as article revision history, article relations (links, categories etc.), user accounts and settings are stored in the core databases.
-\\\textbf{Compression} - Text is compressed and only revisions between articles are stored. 
-\\\textbf{Scale by separating} Read and write operations (master/slave).
-\\\textbf{Caching} - Cached expensive results with the use of temporal locality of reference e.g – Reference value(row in array) each iteration and cycling through loop repeatedly .
+\\\textbf{Compression} - text is compressed and only revisions between articles are stored. 
+\\\textbf{Scale by separating} read and write operations (master/slave).
+\\\textbf{Caching} - cached expensive results with the use of temporal locality of reference e.g – Reference value(row in array) each iteration and cycling through loop repeatedly .
 \\\textbf{Avoided expensive algorithm and database queries}
 }
 \subsection{Usability}
-\par{\textbf{Naming Convention} - Buttons and information on the website are labeled with functional names. Whatever a section/button/link does, is what it's called (avoided "Click Me" or "Click Here" type of labels). \\\textbf{Logical Flow of Page Elements} - The webpages follow a human natural flow with its content (beginning of elements on the left, anything that follows from there goes in a right-down direction). }
-
-\subsection{Maintainability}
+\par{\textbf{Naming Convention} - buttons and information on the website are labeled with functional names. Whatever a section/button/link does, is what it's called (avoided "Click Me" or "Click Here" type of labels). \\\textbf{Logical Flow of Page Elements} - the webpages follow a human natural flow with its content (beginning of elements on the left, anything that follows from there goes in a right-down direction). }

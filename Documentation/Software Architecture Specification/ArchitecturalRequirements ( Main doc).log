@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.7.10)  22 JUL 2015 11:17
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.7.10)  31 JUL 2015 10:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -331,7 +331,7 @@ LaTeX Info: Redefining \nameref on input line 13.
 \openout3 = `"ArchitecturalRequirements ( Main doc).out"'.
 
  (./coverPage.tex
-<images/up-logo.jpg, id=108, 287.1528pt x 78.7743pt>
+<images/up-logo.jpg, id=92, 287.1528pt x 78.7743pt>
 File: images/up-logo.jpg Graphic file (type jpg)
  <use images/up-logo.jpg>
 Package pdftex.def Info: images/up-logo.jpg used on input line 6.
@@ -355,12 +355,7 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.20 \newpage
-              [1] (./ArchitecturalRequirements ( Main doc).lof)
-\tf@lof=\write5
-\openout5 = `"ArchitecturalRequirements ( Main doc).lof"'.
-
- [2]
-(./ArchitectureScope.tex) [3] (./QualityRequirements.tex
+              [1] (./ArchitectureScope.tex) [2] (./QualityRequirements.tex
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 12.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
@@ -368,62 +363,46 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 12.
-) [4]
-(./IntegrationRequirements.tex [5]) [6] (./ArchitectureConstraints.tex)
-[7] (./ArchitecturalPatternsOrStyles.tex) [8]
+) [3]
+(./IntegrationRequirements.tex) [4] [5] (./ArchitectureConstraints.tex)
+[6] (./ArchitecturalPatternsOrStyles.tex) [7]
 (./ArchitecturalTacticsOrStrategies.tex
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
-) [9]
-(./UseOfReferenceArchitecturesAndFrameworks.tex
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 8.
-
-) [10] (./Technologies.tex) [11] [12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 62.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 62.
-
-(./ArchitecturalRequirements ( Main doc).aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 62.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 62.
-
-
-Package rerunfilecheck Warning: File `"ArchitecturalRequirements ( Main doc)".o
-ut' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `"ArchitecturalRequirements ( Main d
-oc)".out':
-(rerunfilecheck)             Before: 82422F3F49A501D28D34D75FEE303700;1827
-(rerunfilecheck)             After:  F444FD0859E3AD8031AD5BD085A6EFCB;1766.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 62.
+) [8]
+(./UseOfReferenceArchitecturesAndFrameworks.tex) [9] (./Technologies.tex)
+[10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 56.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 56.
+ (./ArchitecturalRequirements ( Main doc).aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 56.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 56.
+Package rerunfilecheck Info: File `"ArchitecturalRequirements ( Main doc)".out'
+ has not changed.
+(rerunfilecheck)             Checksum: FAB25CC52903E140BF3CC2A780F14BD4;1550.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 56.
  ) 
 Here is how much of TeX's memory you used:
- 5850 strings out of 493304
- 87867 string characters out of 6139871
+ 5835 strings out of 493304
+ 87619 string characters out of 6139871
  179084 words of memory out of 5000000
- 9178 multiletter control sequences out of 15000+600000
+ 9173 multiletter control sequences out of 15000+600000
  9620 words of font info for 34 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 34i,6n,32p,555b,382s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{subsection.4.6} has been referenced but does not 
-exist, replaced by a fixed one
-
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on "ArchitecturalRequirements ( Main doc).pdf" (13 pages, 149903
+ 34i,6n,32p,555b,336s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on "ArchitecturalRequirements ( Main doc).pdf" (11 pages, 148020
  bytes).
 PDF statistics:
- 242 PDF objects out of 1000 (max. 8388607)
- 216 compressed objects within 3 object streams
- 44 named destinations out of 1000 (max. 500000)
- 214 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 210 PDF objects out of 1000 (max. 8388607)
+ 187 compressed objects within 2 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 182 words of extra memory for PDF output out of 10000 (max. 10000000)
 

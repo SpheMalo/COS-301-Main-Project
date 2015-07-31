@@ -12,16 +12,16 @@
 	\item \textbf{Security}
 	\begin{itemize}
 		\item The Mediawiki infrastructure provides secure access to the database and the opportunity to modify user interaction with certain pages on the system.
-		\item Session management in the underlying has been accounted for. Additional session management is added to restrict access to unauthorized pages by users.
+		\item Session management in the underlying has been accounted for. Additional session management is added to restrict unauthorized access to  pages by users.
 	\end{itemize}
 	\item \textbf{Autidability}
 	\begin{itemize}
-		\item The Figbook system uses Mediawiki APIs to track changes made my all users on all pages modified. These changes will not be visible to other users except for the administrator and the users working together on manuscripts.
+		\item The Figbook system uses Mediawiki APIs to track changes made my all users on all pages modified. These changes will not be visible to other users except to the administrator and the users working together on manuscripts.
 	\end{itemize}
 	\item \textbf{Scalability}
 	\begin{itemize}
-		\item The system uses MySQL in conjuction with MediaWiki APIs. This makes it supportive of both small and large scale use.
-		\item The use of objects to represent the database makes decreases the frequency of expensive calls to the database.
+		\item The system uses MySQL in conjuction with MediaWiki APIs, hence the support for both small and large scale use.
+		\item The use of objects to represent the database decreases the frequency of expensive calls to the database.
 	\end{itemize}
 	\item \textbf{Integrability}
 	\begin{itemize}
@@ -37,10 +37,6 @@
 	\begin{itemize}
 		\item The system will provide the user with all the functionality required to carry out the entire lifecycle of a book from the comfort of their own home.
 		\item The registration of an ISBN number will be requested from within the system. Failure to obtain an ISBN number is dependent on entities outside the scope of a system.
-	\end{itemize}
-	\item{Maintainability}
-	\begin{itemize}
-		\item The separation of concerns within the system makes it less tedious to rummage through the code for understanding. Simple calls to the API are used and commenting is to be added effectively.
 	\end{itemize}
 \end{itemize}
 
