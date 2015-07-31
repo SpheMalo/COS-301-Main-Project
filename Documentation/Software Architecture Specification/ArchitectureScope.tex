@@ -1,9 +1,37 @@
-%\documentclass[a4paper,12pt]{report}
-%\addtolength{\textwidth}{2cm}
-%\addtolength{\topmargin}{-2cm}
-%\addtolength{\textheight}{3.5cm}
-%\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
-
+%\renewcommand{\labelitemii}{$\star$}
 %\begin{document}
 
-%\end{document}
+%\subsubsection{Architecture Scope}
+
+\begin{itemize}	
+		\item \textbf{Platform independent}\\
+		Figbook is designed to work on all devices with access to an Internet connection and a Browser. 
+\end{itemize}
+
+\begin{itemize}	
+		\item \textbf{Database}\\
+		The system uses the MySQL 5 database. Support for MySQL distributions prior to 5.6 is still in progress.
+\end{itemize}
+
+\begin{itemize}	
+		\item \textbf{Security}\\
+		\textbf{User Authentication}\\
+			User authentication is done through the APIs that come with the MediaWiki framework. Session management is handled by the framework. However, access to content belonging to users of different groups is rescrited by the users' (proprieters) specifications in conjunction with the system's access rights settings.\\
+			
+		\textbf{Backup}\\
+		\textbf{Servers}\\
+		  	The system runs on a remote server. However, a test and backup server is maintained in case the running one experiences any unexpected problems.
+			\\
+			\textbf{Database}\\
+			All user data is kept safely on the remote database and all user changes are recorded.
+
+		\item \textbf{Usability}\\
+			\textbf{User Interface}\\
+			A simple, elegant and easy-to-use Graphical User Interface is designed for the interaction of the Figbook community.
+\end{itemize}
+
+\begin{itemize}
+	\item \textbf{Process Execution}\\
+		\textbf{Engine}\\
+		The heart of the system is the MediaWiki framework. It creates an environment for all different modules of the system to interact with one another. All work is delegated to the relevant subsystems. The MVC pattern implemented is one of the key architectural features of Figbook.
+\end{itemize}
