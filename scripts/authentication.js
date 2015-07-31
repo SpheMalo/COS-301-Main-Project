@@ -219,9 +219,37 @@ window.onload = function()
 								   if (data.login.result == "Success") { 
 									   //alert(data.login.sessionid);
 									  console.log(JSON.stringify(data));
-									  document.cookie="username="+data.login.lgusername;
-									  //localStorage.setItem("lgusername", data.login.lgusername);
-									   document.location.href=ref; 
+                                                                          document.cookie="username="+data.login.lgusername;
+                                                                          var UserInfo = {			
+                                                                            "action" : "getUserStatus"
+                                                                            }
+                                                                          var JSONstring = JSON.stringify(UserInfo);
+                                                                          $.ajax({
+                                                                                url: 'scripts/FigbookActionHandler/actionHandler.php',
+                                                                                data: 'json='+JSONstring,
+                                                                                dataType: 'json',
+                                                                                success: function(data1){
+                                                                                        console.log(data1);
+                                                                                        if(data1 === "1"){
+                                                                                            document.location.href=ref; 
+                                                                                        }
+                                                                                        else if(data1 === "0"){
+                                                                                            
+                                                                                            document.cookie = "username" + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                                                                                            addErrorCode("Your account has been deleted, contact administrator", "loginErr");
+                                                                                        }
+                                                                                        else if(data1 === "2"){
+                                                                                            document.cookie = "username" + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                                                                                            addErrorCode("This account has been suspended, contact administrator", "loginErr");
+                                                                                        }
+                                                                                        //localStorage.setItem("lgusername", data.login.lgusername);
+                                                                                        //document.location.href=ref; 
+                                                                                },
+                                                                                error: function(data1){
+                                                                                        console.log("error :"+data1.responseText);
+                                                                                }		
+                                                                            });
+									  
 									
 								   } else {
 									addErrorCode("Invalid Credentials. Please enter valid credentials or Register a new account.", "loginErr");
