@@ -110,7 +110,7 @@ $(document).ready(function () {
 	$('#next-button').click(function(){
 		//Get the data from inputs
 		info.title = $('#title').val();
-		info.firstname = $('#firstname').val();
+		info.firstname = readCookie('username');
 		info.surname = $('#surname').val();
 		
 		var UserInfo = {
@@ -123,6 +123,18 @@ $(document).ready(function () {
 		
 		
 	});
+        function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ')
+                c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0)
+                return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+        }
 		
 	function ajaxFunction(JSONstring){
 		$.ajax({
@@ -229,22 +241,54 @@ $(document).ready(function () {
 				html += "<option value='" + data.query.allpages[i].title + "'>" + data.query.allpages[i].title + "</option>";				//alert("ishere");
 						
 				//This is where I load the book titles into block divs...
-				$("#bookList").append("<div class='bookItem'>"+data.query.allpages[i].title+"</div>");
+				var pageTitle = data.query.allpages[i].title;
+                        var replaced = pageTitle.split(' ').join('_');
+                        var loadPageInfo = {
+                            "action": "checkPagePermissions",
+                            "bookTitle": replaced
+                        };
+
+                        var JSONstring = JSON.stringify(loadPageInfo);
+                        $.post('scripts/FigbookActionHandler/actionHandler.php?json=' + JSONstring, function (data)
+                        {
+                            // console.log(JSON.stringify(data));
+                            if (data === "\"success\"") {
+                                html += "<option value='" + pageTitle + "'>" + pageTitle + "</option>";
+                                //console.log("I get here");
+                                var div = document.createElement('div');
+                                div.setAttribute("class", "bookItem");
+                                div.innerHTML = pageTitle;
+                                //div.off('click');
+                                //div.onclick=onClickBook(pageTitle, div);
+
+                                $("#bookList").append(div);
+                                $('.bookItem').click(function () {
+                                    //alert("book clicked : "+$(this).html());
+
+                                    var loadPageInfo = {
+                                        "title": $(this).html()
+                                    };
+                                    //alert(loadPageInfo.title);
+                                    localStorage.bookTitle = loadPageInfo.title;
+                                    //alert(localStorage.bookTitle);
+                                    //make sure it gets a title for a book to load
+                                    if (loadPageInfo.title !== "")
+                                    {
+                                        get_page(loadPageInfo);
+                                    }
+
+                                });
+                            }
+                            else {
+                                //localStorage.permission = "false";
+                            }
+                        });
+
 			});
 			html += "< /select>";
 			
-			document.getElementById("pageList").innerHTML = html;
-			 $('.bookItem').click(function(){
-				var loadPageInfo = {
-					"title": $(this).html()
-				};
-				
-				localStorage.bookTitle = loadPageInfo.title;
-				if (loadPageInfo.title !== "")
-				{
-				 get_page(loadPageInfo);
-				}
-			});
+			//document.getElementById("pageList").innerHTML = html;
+			
         });
 	}
 		
@@ -277,6 +321,7 @@ $(document).ready(function () {
                         if (data && data.edit && data.edit.result === 'Success') {
                             alert("Successfully created: "+params.title);
 							localStorage.bookTitle = params.title;
+                                                        lockBook(params.title);
 							getBooks();//Repopulate list of books before loading page
                             get_page(params);
                         } else if (data && data.error) {
@@ -295,6 +340,27 @@ $(document).ready(function () {
                 });
             }
         );
+        event.preventDefault();
+    }
+    function lockBook(bookTitle) {
+        var replaced = bookTitle.split(' ').join('_');
+        var UserInfo = {
+            "action": "lockBook",
+            "bookTitle": replaced
+        }
+        var JSONstring = JSON.stringify(UserInfo);
+        $.ajax({
+            url: 'scripts/FigbookActionHandler/actionHandler.php',
+            data: 'json=' + JSONstring,
+            dataType: 'json',
+            success: function (data)
+            {
+                //alert(JSON.stringify(data));
+            }
+            , error: function (data) {
+                //alert(JSON.stringify(data));
+            }
+        });
         event.preventDefault();
     }
 
