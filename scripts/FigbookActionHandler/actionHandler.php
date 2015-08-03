@@ -11,6 +11,7 @@ if($dbHandler->isConnected()){
 
 //get json string
 $getJSONObject = $_REQUEST['json'];
+
 $object = json_decode(stripslashes($getJSONObject));
 //get the action flag	
 $actionFlag = $object->action;
@@ -161,24 +162,6 @@ if(isset($actionFlag) && $actionFlag != ""){
             $tmpUser = new user($dbHandler->getConnection());
         
             $response = $tmpUser->userStatus($id);
-            
-        }
-        else if($actionFlag == "lockBook"){ //Get User Status
-            
-            $id = $_COOKIE['username'];
-            $bookTitle = $object->bookTitle;
-            
-            $tmpMen= new manuscript($dbHandler->getConnection());
-            $response = $tmpMen->lockBookToUser($id, $bookTitle);
-            
-        }
-        else if($actionFlag == "checkPagePermissions"){ //Get User Status
-            
-            $id = $_COOKIE['username'];
-            $bookTitle = $object->bookTitle;
-            
-            $tmpMen= new manuscript($dbHandler->getConnection());
-            $response = $tmpMen->checkPagePermissions($id, $bookTitle);
             
         }
 }else{

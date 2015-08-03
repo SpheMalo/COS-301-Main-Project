@@ -213,22 +213,22 @@ function saveText()
         }*/
 
 
-jQuery(window).load(function () {
+window.onload = function() {
 //window.onload = function(){
-$("#addBefore").click(function(){
-    var newContent = $("#newPar").html();
-    newContent += "\n" + $("#oldPar").html();
+    $("#addBefore").click(function(){
+        var newContent = $("#newPar").html();
+        newContent += "\n" + $("#oldPar").html();
+        
+        $("#newContentTextArea").val(newContent);
+    });
     
-    $("#newContentTextArea").val(newContent);
-});
-
-$("#addAfter").click(function(){
-    var newContent = $("#oldPar").html();
-    newContent += "\n" + $("#newPar").html();
-    
-    $("#newContentTextArea").val(newContent);
-});
-});
+    $("#addAfter").click(function(){
+        var newContent = $("#oldPar").html();
+        newContent += "\n" + $("#newPar").html();
+        
+        $("#newContentTextArea").val(newContent);
+    });
+};
 //};
 function resolveConflict()
 {

@@ -42,45 +42,18 @@ function editSection(value)
 	val = val.replace(re,'\n');
 
 	$("#pageEditTitle").val(headings[(value-1)].getElementsByClassName("mw-headline")[0].innerHTML);
-	$("#editor").html("");
+	$(".cke_editable").html("");
 
 	var page = document.getElementById("pageView").nextSibling;
 	var links = page.childNodes;
-
-	$("#editor").val(val);
+	alert(val);
+	$(".cke_editable").html(val);
 	$("#saveBtn").attr("name","" + value);
 }
 
 
 $(document).ready(function () {
-	/*
-	//Textarea formmating
-	$(".textarea").css("height","50%").css("width","50%").htmlbox({
-		toolbars:[
-		    [
-			// Cut, Copy, Paste
-			"separator","cut","copy","paste",
-			// Undo, Redo
-			"separator","undo","redo",
-			// Bold, Italic, Underline, Strikethrough, Sup, Sub
-			"separator","bold","italic","underline","strike","sup","sub",
-			// Left, Right, Center, Justify
-			"separator","justify","left","center","right",
-			// Ordered List, Unordered List, Indent, Outdent
-			"separator","ol","ul","indent","outdent",
-			// Hyperlink, Remove Hyperlink, Image
-			"separator","link","unlink","image"
-			
-			],
-			[// Show code
-			"separator","code",
-		// Formats, Font size, Font family, Font color, Font, Background
-		"separator","formats","fontsize","fontfamily",
-			"separator","fontcolor","highlight",
-			]
-		],
-		skin:"blue"
-	});*/
+	
 	    
 	//Populates the list of books initially when page loads.		
 	getBooks(); 
@@ -96,6 +69,8 @@ $(document).ready(function () {
 			section:"0",
 			text:""
 	};
+	
+	
 		
 	$('#viewBooks').click(function(){
 		$('#editSection').fadeOut("slow",function(){});
@@ -110,39 +85,30 @@ $(document).ready(function () {
 	$('#next-button').click(function(){
 		//Get the data from inputs
 		info.title = $('#title').val();
-		info.firstname = readCookie('username');
+		info.firstname = $('#firstname').val();
 		info.surname = $('#surname').val();
 		
 		var UserInfo = {
 			"action" : "checkTitle",
 			"title" : info.title
 		}
+		
 		var JSONstring = JSON.stringify(UserInfo);
 		ajaxFunction(JSONstring);
 		event.preventDefault();
 		
 		
 	});
-        function readCookie(name) {
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(';');
-        for (var i = 0; i < ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ')
-                c = c.substring(1, c.length);
-            if (c.indexOf(nameEQ) == 0)
-                return c.substring(nameEQ.length, c.length);
-        }
-        return null;
-        }
 		
 	function ajaxFunction(JSONstring){
+		
 		$.ajax({
 			url: 'scripts/FigbookActionHandler/actionHandler.php',
 			data: 'json='+JSONstring,
 			dataType: 'json',
 			success: function(data)
 			{
+				
 				if(data == "false"){
 					if (document.getElementById('error_par') != null)
 					{
@@ -152,7 +118,7 @@ $(document).ready(function () {
 					{
 						info.preface = "=Preface= \n"+$('#preface').val();
 						info.text = info.preface;
-
+						
 						//Todo call the create page function
 						create_page(info);
 						$('#inputs2').fadeOut("slow",function(){});
@@ -162,7 +128,7 @@ $(document).ready(function () {
 						});
 					}	
 					else 
-					{		
+					{						
 						$('#infoBox').fadeOut("slow",function(){
 							$('#scriptMenuBar').html("Please Write a short preface.");
 							$('#inputs2').fadeIn("slow",function(){});
@@ -186,11 +152,12 @@ $(document).ready(function () {
 					
 					title.onfocus = function (){title.style.backgroundColor = "white";};
 					title.onblur = function (){title.style.backgroundColor = "#ABD1BC";};
-					event.preventDefault();
+					//event.preventDefault();
 					
 				}
 			},
 			error: function(data){
+				alert(data.responseText);
 				console.log("error :"+data.responseText);
 			}		
 		});
@@ -199,7 +166,7 @@ $(document).ready(function () {
 	//This is the test to see if the div was faded out... if value is null its faded...
 	//Use it for the back button.
 	$('#back-button').click(function(){
-		event.preventDefault();
+		//event.preventDefault();
 		if ($('#infoBox').css('display') === "none")
 		{
 			$('#scriptMenuBar').html("Please fill in author details.");
@@ -241,54 +208,25 @@ $(document).ready(function () {
 				html += "<option value='" + data.query.allpages[i].title + "'>" + data.query.allpages[i].title + "</option>";				//alert("ishere");
 						
 				//This is where I load the book titles into block divs...
-				var pageTitle = data.query.allpages[i].title;
-                        var replaced = pageTitle.split(' ').join('_');
-                        var loadPageInfo = {
-                            "action": "checkPagePermissions",
-                            "bookTitle": replaced
-                        };
-
-                        var JSONstring = JSON.stringify(loadPageInfo);
-                        $.post('scripts/FigbookActionHandler/actionHandler.php?json=' + JSONstring, function (data)
-                        {
-                            // console.log(JSON.stringify(data));
-                            if (data === "\"success\"") {
-                                html += "<option value='" + pageTitle + "'>" + pageTitle + "</option>";
-                                //console.log("I get here");
-                                var div = document.createElement('div');
-                                div.setAttribute("class", "bookItem");
-                                div.innerHTML = pageTitle;
-                                //div.off('click');
-                                //div.onclick=onClickBook(pageTitle, div);
-
-                                $("#bookList").append(div);
-                                $('.bookItem').click(function () {
-                                    //alert("book clicked : "+$(this).html());
-
-                                    var loadPageInfo = {
-                                        "title": $(this).html()
-                                    };
-                                    //alert(loadPageInfo.title);
-                                    localStorage.bookTitle = loadPageInfo.title;
-                                    //alert(localStorage.bookTitle);
-                                    //make sure it gets a title for a book to load
-                                    if (loadPageInfo.title !== "")
-                                    {
-                                        get_page(loadPageInfo);
-                                    }
-
-                                });
-                            }
-                            else {
-                                //localStorage.permission = "false";
-                            }
-                        });
-
+				$("#bookList").append("<div class='bookItem'>"+data.query.allpages[i].title+"</div>");
 			});
 			html += "< /select>";
 			
-			//document.getElementById("pageList").innerHTML = html;
-			
+			document.getElementById("pageList").innerHTML = html;
+			 $('.bookItem').click(function(){
+				
+				
+				var loadPageInfo = {
+					"title": $(this).html()
+				};
+				
+				localStorage.bookTitle = loadPageInfo.title;
+				if (loadPageInfo.title !== "")
+				{
+				 get_page(loadPageInfo);
+				}
+				//event.preventDefault();
+			});
         });
 	}
 		
@@ -321,7 +259,6 @@ $(document).ready(function () {
                         if (data && data.edit && data.edit.result === 'Success') {
                             alert("Successfully created: "+params.title);
 							localStorage.bookTitle = params.title;
-                                                        lockBook(params.title);
 							getBooks();//Repopulate list of books before loading page
                             get_page(params);
                         } else if (data && data.error) {
@@ -334,34 +271,13 @@ $(document).ready(function () {
                         console.log('Error: Request failed. ' + JSON.stringify(data));
                         $('#Page').append("<a href='/scripts/mediawiki/index.php/" + params.title + "'>Link to your book</a>");
 
-                        event.preventDefault();
+                       // event.preventDefault();
                         get_page(params);
                     }
                 });
             }
         );
-        event.preventDefault();
-    }
-    function lockBook(bookTitle) {
-        var replaced = bookTitle.split(' ').join('_');
-        var UserInfo = {
-            "action": "lockBook",
-            "bookTitle": replaced
-        }
-        var JSONstring = JSON.stringify(UserInfo);
-        $.ajax({
-            url: 'scripts/FigbookActionHandler/actionHandler.php',
-            data: 'json=' + JSONstring,
-            dataType: 'json',
-            success: function (data)
-            {
-                //alert(JSON.stringify(data));
-            }
-            , error: function (data) {
-                //alert(JSON.stringify(data));
-            }
-        });
-        event.preventDefault();
+        //event.preventDefault();
     }
 
     function get_page(params) {
@@ -373,7 +289,7 @@ $(document).ready(function () {
         }, 5000).success(function (data) {
 			
 			//Takes you to the page content where reading and editing is done.
-			window.location.href = "content.html";
+			//window.location.href = "content.html";
 			
             $('#bookList').fadeOut("slow",function(){
 				$('#pageView').fadeIn("slow",function(){
@@ -381,8 +297,8 @@ $(document).ready(function () {
 				   	var div = document.getElementById('mw-content-text');
 					var childNodes = div.childNodes;
 						
-					$("#scrollDiv").append($('#editSection').fadeOut("fast",function(){
-					}));
+					//$("#scrollDiv").append($('#editSection').fadeOut("fast",function(){
+					//}));
 					
 					document.getElementById('pageView').innerHTML = "";
 
@@ -441,7 +357,8 @@ $(document).ready(function () {
             console.log(JSON.stringify(data));
             //window.location.href = "/scripts/mediawiki/index.php/"+ params.title;
         });
-        event.preventDefault();
+        //event.preventDefault();
     }
 });
+
 

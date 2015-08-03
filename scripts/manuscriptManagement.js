@@ -1,5 +1,6 @@
 $(document).ready(function()
 {
+	
 	$('#bookDiv').fadeOut( "fast", function() {});
 	$('#serviceImg').fadeOut( "fast", function() {});
 	$('#sidePicDiv').fadeOut( "fast", function() {});
@@ -7,7 +8,7 @@ $(document).ready(function()
 	$('#pageView').fadeOut("fast",function(){});
 	$('#editSection').fadeOut("fast",function(){});
 	
-	$('.service:nth-child(2)').click(function()
+	$('.service:nth-child(1)').click(function()
 	{
 		$('#sidePicDiv').fadeOut( "slow", function() {
     		// Animation complete.

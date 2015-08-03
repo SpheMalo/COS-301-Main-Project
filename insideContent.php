@@ -28,8 +28,7 @@
     
 	<script src="scripts/authentication.js" type="text/javascript"></script>
 	<script src="scripts/profile.js"></script>
-    <script src="scripts/manuscript.js" type="text/javascript"></script>
-	<script src="scripts/saveTextToDB.js"></script>
+   
 	
     
      <script>
