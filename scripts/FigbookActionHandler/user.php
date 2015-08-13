@@ -105,7 +105,7 @@ class user {
             }
             else{
                 $row = mysqli_fetch_assoc($queryResult);
-                $result = $row[user_status];
+                $result = $row['user_status'];
             }
            
             }
