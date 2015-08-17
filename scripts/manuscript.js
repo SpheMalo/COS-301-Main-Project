@@ -42,13 +42,13 @@ function editSection(value)
 	val = val.replace(re,'\n');
 
 	$("#pageEditTitle").val(headings[(value-1)].getElementsByClassName("mw-headline")[0].innerHTML);
-	$(".cke_editable").html("");
-
+	var iframe = $("iframe").contents();
+	iframe = iframe.find("body").html(val);
 	var page = document.getElementById("pageView").nextSibling;
 	var links = page.childNodes;
-	alert(val);
 	$(".cke_editable").html(val);
 	$("#saveBtn").attr("name","" + value);
+	localStorage.originalContent = val;
 }
 
 
