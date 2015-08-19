@@ -590,7 +590,7 @@ h2.resp-accordion	{ color: #ffffff; }
 	#scriptMenuBar{height:80px;line-height:40px;}
 	#next-button{margin-bottom:10px;}
 	/*This is the Catalogue area's styling for a phone size*/
-	
+	.wrapper1{min-height:1920px;}
 	
 	/*.container	{ left: 15px; right: 15px; padding: 0px; }*/
 }
@@ -620,6 +620,7 @@ h2.resp-accordion	{ color: #ffffff; }
 	.logocontainer	{ width: 750px; padding: 0px 15px; margin: 0 auto; }
 	.templatemo_insideportfolio	{ height: 398px; }
 	.templatemo_linkservice, .templatemo_linkcontact 	{ height: 189px; line-height: 189px; padding: 0px; }
+	.wrapper1{min-height:1920px;}
 }
 
 @media(min-width:992px) {
@@ -630,7 +631,7 @@ h2.resp-accordion	{ color: #ffffff; }
 	#serviceBackground{width:800px;}
 	#preface{width:90%;}
 	#scriptMenuBar{height:60px;line-height:60px;}
-	
+	.wrapper1{height:100%;}
 	
 	.templatemo_leftgap	{ padding: 0px 6px; }
 	.templatemo_rightgap_about	{ padding: 0px 6px 0px 2px; }
@@ -669,7 +670,7 @@ h2.resp-accordion	{ color: #ffffff; }
 	.templatemo_mainimg{visibility:visible;width:200px;height:150px;margin-top:-30px;margin-left:41px;}
 	.menu-img{width:300px;height:150px;visibility:visible;}
 	.menuBox{height:300px;width:382px;float:left;margin:5px;}
-	
+	.wrapper1{height:100%;}
 	
 	#topService{width:800px;height:40px;}
 	

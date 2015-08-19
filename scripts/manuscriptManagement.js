@@ -8,6 +8,11 @@ $(document).ready(function()
 	$('#pageView').fadeOut("fast",function(){});
 	$('#editSection').fadeOut("fast",function(){});
 	
+	$("#goBackService").click(function(){
+		window.location.href = "insideContent.php";	
+		
+	});
+	
 	$('.service:nth-child(1)').click(function()
 	{
 		$('#sidePicDiv').fadeOut( "slow", function() {
