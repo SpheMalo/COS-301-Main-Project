@@ -1,10 +1,17 @@
 /*Figbook styling*/
 /*this is the background div for the textarea where the manuscript will be written*/
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
 html,body
 {
     margin:0;
     background: white; /* Old browsers */
-   
+    font-family: 'Source Sans Pro', sans-serif;
 	background-size:cover;
     
 }
@@ -165,6 +172,17 @@ background: linear-gradient(to bottom, rgba(92,194,219,1) 0%, rgba(83,186,214,1)
 */
 
 }
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #cccccc;
+}
+::-webkit-scrollbar-thumb
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #b1b1b1;
+}
+
 #goBackService{
 
 width:150px;
@@ -195,7 +213,7 @@ text-decoration:none;
 }
 #serviceContainer{
     padding-top:1px;
-    min-height:400px;
+    min-height:800px;
     margin-top:20px;
   /* background: -moz-linear-gradient(top, #45484d 0%, #000000 47%, #45484d 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(47%,#000000), color-stop(100%,#45484d)); 
@@ -233,7 +251,7 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);*/
 #saveBtn:hover{cursor: pointer;}
 /*Figbook styling END*/
 
-@media(min-width:320px) and (max-width: 767px) {
+@media(max-width: 767px) {
 	#menu-container{width:318px;}
 	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
 	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
@@ -259,12 +277,13 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);*/
 	#scriptMenuBar{height:80px;line-height:40px;}
 	#next-button{margin-bottom:10px;}
 	/*This is the Catalogue area's styling for a phone size*/
-	
+	#powered{display:none;}
 	
 	/*.container	{ left: 15px; right: 15px; padding: 0px; }*/
 }
 @media(min-width:768px) {
 	#menu-container{width:760px;}
+    #powered{display:block;}
 	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
 	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
 	.menuBox{text-align:center;height:150px;width:750px;float:left;margin:5px;}
@@ -273,9 +292,9 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);*/
 	/*This is the Catalogue area's styling for a 768+ px size*/
 	#serviceBackground{width:700px;min-height:700px;}
 	#topService{width:100%;height:42px;}
+	.bookItem{width:230px; }
 	
-	
-	#scrollDiv{width:530px;overflow-x:hidden;height:580px;}
+	#scrollDiv{width:750px;overflow-x:hidden;height:680px;}
 	
 	#bookDiv{width:50%;}
 	#bookList{width:98%;}
@@ -297,22 +316,63 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);*/
 	.templatemo_mainimg{visibility:visible;width:200px;height:150px;margin-top:-30px;margin-left:41px;}
 	.menu-img{width:300px;height:150px;visibility:visible;}
 	.menuBox{height:300px;width:382px;float:left;margin:5px;}
-	
+	#powered{display:block;}
 	
 	#topService{width:100%;height:42px;}
 	
-	
-	#scrollDiv{width:780px;overflow-x:hidden;height:580px;}
+	#serviceContainer{min-height:800px;}
+	#scrollDiv{width:780px;overflow-x:hidden;min-height:750px;height:auto;}
 	#bookDiv{width:40%;}
 	#preface{width:90%;}
-	#bookList{width:100%;}
+	#bookList{width:100%;min-height:340px;height:auto;max-height:580px;padding-bottom:1px; }
 	#inputs{margin-right:15px;}
 	#scriptMenuBar{height:60px;line-height:60px;}
 	#next-button{margin-bottom:10px;}
-	#serviceBackground{width:800px;}
+	#serviceBackground{width:800px;min-height:780px;}
 	
 	#contactImage{width:400px;float:left;}
 	#aboutMeImage{width:400px;float:left;}
 	#aboutLeftBack{width:360px;}
  
 }
+
+/*Footer Start*/
+
+#footer{
+
+background:rgba(10,10,10,0.9);
+position: relative;
+
+width:100%;
+height:250px;
+-webkit-box-shadow: 0px -4px 9px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px -4px 9px -4px rgba(0,0,0,0.75);
+box-shadow: 0px -4px 9px -4px rgba(0,0,0,0.75);
+}
+#footDiv{float:right;position:relative;top:170px;right:20px;}
+#footList{
+	float:left;
+	position:relative;
+	padding-top: 10px;
+	padding-bottom:10px;
+	top:0px;
+	left:40px;
+	width:250px;
+	height:250px;
+	
+}
+#footLogo{height:70px;width:180px;}
+span{background:url("../images/smallDot.png") no-repeat left;
+text-shadow: 0px 1px 4px rgba(0,0,0,1.0);font-size:15pt;
+padding-left:20px;
+color:white;
+font-family: 'Source Sans Pro', sans-serif;
+
+}
+span:hover{cursor:pointer;font-size:17pt;
+background:url("../images/smallDotFilled.png") no-repeat left;
+}
+.smallDot{width:12px;height:12px; margin-right:20px;}
+/*Footer end*/
+.text-shadow{color:white;}
+
