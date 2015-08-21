@@ -1,6 +1,84 @@
+
+function addLightbox(insertContent) {
+	// add lightbox/shadow <div/>'s if not previously added
+		if($('#lightbox').size() == 0){
+			var theLightbox = $('<div id="lightbox"/>');
+			var theShadow = $('<div id="lightbox-shadow"/>');
+			$(theShadow).click(function(e){
+				closeLightbox();
+			});
+			$('body').append(theShadow);
+			$('body').append(theLightbox);
+		}
+		
+		// remove any previously added content
+		//$('#lightbox').empty();
+		
+		//center the lightbox
+		//alert(window.innerWidth+" "+$('#lightbox').width());
+		var val = (window.innerWidth-$('#lightbox').width())/2;
+		$('#lightbox').css("left",val);
+		
+		// insert HTML content
+		if(insertContent != null){
+			$('#lightbox').append(insertContent);
+		}
+		
+		$('#lightbox').css('top', $(window).scrollTop() + 100 + 'px');
+		
+		// display the lightbox
+		$('#lightbox').show();
+		$('#lightbox-shadow').show();
+		
+}
+
+// close the lightbox
+function closeLightbox(){
+	
+	// jQuery wrapper (optional, for compatibility only)
+	(function($) {
+		
+		// hide lightbox/shadow <div/>'s
+		$(".wrapper").fadeOut("slow",function(){});
+		$(".wrapperReg").fadeOut("slow",function(){});
+		$('#lightbox').hide();
+		$('#lightbox-shadow').hide();
+		
+		// remove contents of lightbox in case a video or other content is actively playing
+		//$('#lightbox').empty();
+	
+	})(jQuery); // end jQuery wrapper
+	
+}
+window.onresize = function(){
+	var val = (window.innerWidth-$('#lightbox').width())/2;
+		$('#lightbox').css("left",val);
+	
+	
+}
 window.onload = function()
 {
+		
 	$(document).ready(function(){
+			
+				
+		$('#log').click(function(){
+			addLightbox($(".wrapper"));
+				   
+
+			$(".wrapper").fadeIn("slow",function(){/*finished*/});
+
+		});
+		
+		
+		$('#reg').click(function(){
+
+			    addLightbox($(".wrapperReg"));
+			    $(".wrapperReg").fadeIn("slow",function(){/*finished*/});
+
+		});
+		
+		
 		$('#register-button').click(function(){
 
 			var pass1 = document.getElementById('password');
@@ -331,5 +409,5 @@ window.onload = function()
 		}
 	});
 
-	loadProfile();
+	
 };

@@ -129,7 +129,7 @@ $(document).ready(function () {
 					{
 						info.preface = "=Preface= \n"+$('#preface').val();
 						info.text = info.preface;
-						
+						$('#preface').val("");
 						//Todo call the create page function
 						create_page(info);
 						$('#inputs2').fadeOut("slow",function(){});
