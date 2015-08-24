@@ -1,21 +1,47 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+
+
 html, body {
-	font-family: Tahoma, Arial; 
+	 font-family: 'Source Sans Pro', sans-serif;
 	padding: 0px; 
 	margin: 0px; 
 	font-size: 16px;
 	overflow-x:hidden;
+	background:white;
+	/*background:rgba(194, 202, 204,0.5);*/
+	height: 100%;
 }
 
-img	{ width: 100%; }
+ 
+
 
 /*Everything we put in (Figbook) */
-#menu-container{ width:1200px;
-margin-left:auto;margin-right:auto;
-margin-top:40px;
-min-height:500px;
-height:auto;
-}
+#menu-container{
+	
 
+	margin-bottom: -250px;
+	margin-top: 0px;
+	min-height: 600px;
+	position: relative;
+	padding:100px;
+	width:100%;
+	
+	background:rgba(194, 202, 204,0.5);
+	z-index: 0;
+
+	height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+	height: 100%;
+	margin: 0 auto 0px; /* the bottom margin is the negative value of the footer's height */
+	
+	
+}
+#push{height:250px;z-index: 0;}
 
 #preface{margin-top:14px;resize:vertical;}
 
@@ -149,41 +175,8 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);
 }
 
 
-a:link
-{
-	/*text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;*/
-/*	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
-	font-size: 50px;
-	color: white;
-	
-	text-shadow: 0 1px 0 #ccc,
-               0 1px 0 #c9c9c9,
-               0 2px 0 #bbb,
-               0 3px 0 #b9b9b9,
-               0 4px 0 #aaa,
-               0 3px 1px rgba(0,0,0,.1),
-               0 0 3px rgba(0,0,0,.1),
-               0 1px 3px rgba(0,0,0,.3),
-               0 3px 5px rgba(0,0,0,.2),
-               0 5px 10px rgba(0,0,0,.25),
-               0 10px 10px rgba(0,0,0,.2),
-               0 20px 20px rgba(0,0,0,.15);
-	
-	text-decoration: none; */
-}
 
-/*a:visited
-{
-	color: #800080;
-	text-decoration: underline;
-}
-
-a:hover
-{
-	color: #cccccc;
-	font-size:40px;
 	
-}*/
 #viewBooks
 {
 	width:250px;
@@ -239,7 +232,7 @@ box-shadow: 0px 0px 5px 2px rgba(177,211,224,1);
 {
 width:750px;min-height:480px;margin-right:auto;margin-left:auto;
 }
-#scrollDiv{height:560px;width:770px;overflow-y:auto;overflow-x:none;
+#scrollDiv{overflow-y:auto;overflow-x:none;
 margin-left:auto;margin-right:auto; margin-top:20px;}
 
 #serviceBackground{width:800px;height:700px;margin-left:auto;margin-right:auto;
@@ -321,7 +314,7 @@ a.nontext /* used to override default properties of 'a' tag */
 .homepage{ display: block; }
 .portfolioshow	{ display: block; }
  .container	{ margin-left:auto;margin-right:auto; height:auto;} 
-#menu-1{width:auto;height:auto;}
+#menu-1{height:auto;margin-left:auto;margin-right:auto;}
 #proflieLink
 {
 	color: white;
@@ -357,12 +350,14 @@ a.nontext /* used to override default properties of 'a' tag */
 }
 
 .templatemo_mainservice	{
-	background: rgba(153,153,51,0.70);
+	background: rgba(153,153,51,1.00);
 	text-align: center;
 	width: 100%;
 	float: left;
 }
-.templatemo_mainservice:hover{background: rgba(153,153,51,1.00);}
+.templatemo_mainservice:hover{
+	
+	}
 
 .templatemo_mainportfolio {
 	background: #993333;
@@ -549,7 +544,8 @@ h2.resp-accordion	{ color: #ffffff; }
 /*----- Page Load ------*/
 
 @media(min-width:320px) {
-	#menu-container{width:318px;}
+	#menu-1{width:318px;}
+	
 	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
 	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
 	.menuBox{text-align:center;height:150px;width:305px;float:left;margin:5px;}
@@ -567,14 +563,16 @@ h2.resp-accordion	{ color: #ffffff; }
 	.templatemo_link, .templatemo_linkservice, .templatemo_linkcontact  { padding: 50px 0px; }
 
 }	
-@media(min-width:320px) and (max-width: 767px) {
-	#menu-container{width:318px;}
+@media(max-width: 767px) {
+	#menu-1{width:318px;}
+	#powered{display:none;}
+	#menu-container{width:100%;min-height:1200px;}
 	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
 	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
 	.menuBox{text-align:center;height:150px;width:305px;float:left;margin:5px;}
 	.menuItem{font-size:28pt;}
 	.menuItem:hover{font-size:30pt;}
-	
+	.text-shadow{display:block;}
 	/*This is the Catalogue area's styling for a phone size*/
 	#serviceBackground{width:300px;min-height:900px;}
 	#topService{width:300px;height:140px;}
@@ -590,12 +588,13 @@ h2.resp-accordion	{ color: #ffffff; }
 	#scriptMenuBar{height:80px;line-height:40px;}
 	#next-button{margin-bottom:10px;}
 	/*This is the Catalogue area's styling for a phone size*/
-	
+	.wrapper1{min-height:1000px;}
 	
 	/*.container	{ left: 15px; right: 15px; padding: 0px; }*/
 }
 @media(min-width:768px) {
-	#menu-container{width:760px;}
+	#menu-1{width:760px;}
+	#menu-container{width:100%;min-height:1200px;}
 	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
 	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
 	.menuBox{text-align:center;height:150px;width:750px;float:left;margin:5px;}
@@ -604,9 +603,9 @@ h2.resp-accordion	{ color: #ffffff; }
 	/*This is the Catalogue area's styling for a 768+ px size*/
 	#serviceBackground{width:700px;min-height:700px;}
 	#topService{width:700px;height:40px;}
+	.text-shadow{display:block;}
 	
 	
-	#scrollDiv{width:525px;overflow-x:hidden;height:580px;}
 	
 	#bookDiv{width:50%;}
 	#bookList{width:98%;}
@@ -620,10 +619,13 @@ h2.resp-accordion	{ color: #ffffff; }
 	.logocontainer	{ width: 750px; padding: 0px 15px; margin: 0 auto; }
 	.templatemo_insideportfolio	{ height: 398px; }
 	.templatemo_linkservice, .templatemo_linkcontact 	{ height: 189px; line-height: 189px; padding: 0px; }
+
 }
 
 @media(min-width:992px) {
-	#menu-container{width:990px;}
+	#menu-container{width:100%;min-height:800px;}
+	#scrollDiv{width:980px;overflow-x:hidden;min-height:680px;}
+	#menu-1{width:990px;}
 	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
 	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
 	.menuBox{height:150px;width:482px;float:left;margin:5px;}
@@ -631,7 +633,8 @@ h2.resp-accordion	{ color: #ffffff; }
 	#preface{width:90%;}
 	#scriptMenuBar{height:60px;line-height:60px;}
 	
-	
+
+	.text-shadow{display:block;}
 	.templatemo_leftgap	{ padding: 0px 6px; }
 	.templatemo_rightgap_about	{ padding: 0px 6px 0px 2px; }
 	.templatemo_botgap	{ margin: 0px 0px 12px 0px; }
@@ -664,20 +667,21 @@ h2.resp-accordion	{ color: #ffffff; }
 }
 
 @media(min-width:1200px) {
-	#menu-container{width:1180px;height:auto;}
+	#menu-container{width:100%;min-height:800px;}
+	#menu-1{width:1176px;}
 	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
 	.templatemo_mainimg{visibility:visible;width:200px;height:150px;margin-top:-30px;margin-left:41px;}
 	.menu-img{width:300px;height:150px;visibility:visible;}
 	.menuBox{height:300px;width:382px;float:left;margin:5px;}
-	
+	.wrapper1{height:100%;}
 	
 	#topService{width:800px;height:40px;}
+	.text-shadow{display:block;}
 	
-	
-	#scrollDiv{width:780px;overflow-x:hidden;height:580px;}
+	#scrollDiv{width:780px;overflow-x:hidden;min-height:600px;max-height:680px;}
 	#bookDiv{width:40%;}
 	#preface{width:90%;}
-	#bookList{width:98%;}
+	
 	#inputs{margin-right:15px;}
 	#scriptMenuBar{height:60px;line-height:60px;}
 	#next-button{margin-bottom:10px;}
