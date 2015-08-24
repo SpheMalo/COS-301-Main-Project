@@ -164,24 +164,6 @@ if(isset($actionFlag) && $actionFlag != ""){
             $response = $tmpUser->userStatus($id);
             
         }
-         else if($actionFlag == "lockBook"){ //Get User Status
-            
-            $id = $_COOKIE['username'];
-            $bookTitle = $object->bookTitle;
-            
-            $tmpMen= new manuscript($dbHandler->getConnection());
-            $response = $tmpMen->lockBookToUser($id, $bookTitle);
-            
-        }
-        else if($actionFlag == "checkPagePermissions"){ //Get User Status
-            
-            $id = $_COOKIE['username'];
-            $bookTitle = $object->bookTitle;
-            
-            $tmpMen= new manuscript($dbHandler->getConnection());
-            $response = $tmpMen->checkPagePermissions($id, $bookTitle);
-            
-        }
 }else{
     
     $response = "no valid action specified";

@@ -10,7 +10,7 @@
  * @author Ndivhuwo
  */
 
-require_once('ext/Diff/Diff3.php');
+
 class user {
  
     //properties
@@ -338,7 +338,7 @@ class user {
 		//Check timestamps
 		if ($myResponse["date_last_edited"] == $obj->timestamp)
 		{
-			$sql = "UPDATE section_revisions SET section_content='$obj->newContent', date_last_edited=CURRENT_TIME, last_edited_by='$uID' WHERE book_title = '$obj->title' ";
+			$sql = "UPDATE section_revisions SET section_content='$obj->content', date_last_edited=CURRENT_TIME, last_edited_by='$uID' WHERE book_title = '$obj->title' ";
 			mysqli_query($this->dbInstance, $sql);
 			
 			//Getting the updated time
@@ -351,32 +351,8 @@ class user {
 		}
 		else
 		{
-			//attempt Automatic Merge
-			$diff = new Text_Diff3($obj->originalContent, $myResponse["section_content"], $obj->newContent);
-			$var = ($diff->mergedOutput());
-			$conflict = "none";
-			for ($i = 0; $i < $var.length; $i++)
-			{
-				if ($var[$i] == "<<<<<<<")
-				{
-					$conflict = "conflict";
-					break;
-				}
-			}
-			
-			//automatic merge completed with no conflicts
-			if ($conflict == "none")
-			{
-				$myResponse["message"] = "no_conflict";
-				$myResponse["date_last_edited"] = $temp["date_last_edited"];
-				return $myResponse;
-			}
-			else //return the merged text with conflicts in them
-			{
-				$myResponse["message"] = "conflict";
-				$myResponse["mergedText"] = $var;
-				return $myResponse;
-			}
+			$myResponse["message"] = "conflict";
+			return $myResponse;
 		}
 	}
     

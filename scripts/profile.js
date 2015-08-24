@@ -1,6 +1,5 @@
-window.onload = function(){
-	
-   $(document).ready(function() {
+function loadProfile() {	
+$(document).ready(function() {
 	
 	
 	//This is the edit and save button for the users profile/portfolio.
@@ -62,7 +61,7 @@ window.onload = function(){
 		//This is the edit and save button for the users profile/about me.
 	//It has two states: Save and Edit.
 	$("#editAboutMe").click(function(){
-		
+			
 			//This click starts the editing state.
 			if ($(".aboutMeInfo").attr("readonly"))
 			{
@@ -213,5 +212,4 @@ window.onload = function(){
 		
     }
 });
-   
-};
+}
