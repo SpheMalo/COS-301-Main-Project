@@ -37,6 +37,25 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 	
    <div class="content1 services" id="menu-2">
 		<div id="serviceContainer" >
+		  
+		  <div id="commentSide">
+			  
+			  <div id="commentTop">
+			   Comments
+			   <span id="commentImage"></span>
+			  </div> 	  
+		      <div id="commentArea"><br><br><br>
+					Choose a chapter to comment on:<br>
+					<select id="chapterSelect">
+						 <option disabled="true">none</option>
+					</select>
+					<textarea id="commentText" cols="32" rows="30" ></textarea>
+					<button id="saveComment">Save Comment</button>
+			  </div>
+			  
+		  </div>
+		  <div id="commentHide"></div>
+		  
           <div id="serviceBackground">
                        
                         	<div id="topService">
@@ -50,6 +69,8 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
                                  </div>
 								 
                         	</div>
+							
+							
                             <div id="scrollDiv">
                                 <div id="bookList">
                                         
@@ -77,8 +98,7 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
                                           <button id="saveBtn" onclick="saveText()" >Save</button>
                                   </div>
                             </div>
-                            	
-                        
+							
             </div>
             
 
@@ -127,7 +147,7 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
             
             
             
-            
+			   
         </div><!--serviceContainer ends here-->
      </div><!--menu-2 ends here--> 
     <!-- services end -->	

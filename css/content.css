@@ -5,7 +5,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-weight: 300;
+  font-weight: 500;
 }
 html,body
 {
@@ -37,6 +37,8 @@ display:none;
 .sectionDiv{width:100%;background-color:white;min-height:300px;height:auto;cursor:pointer;}
 .sectionHeading{width:100%;background-color:rgba(243,243,243,1.00);height:40px;text-align:center;font-size:24pt;
 line-height:40px;
+border-bottom:1px solid rgba(220,220,220,1.00);
+border-top:1px solid rgba(220,220,220,1.00);
 }
 .insideText{white-space:pre-line;padding:20px;}
 #preface{margin-top:14px;resize:vertical;}
@@ -68,7 +70,8 @@ font-size: 45px;
 #inputHeading{width:100%;height:40px;text-align:center;background-color:rgba(243,243,243,1.00);
 	font-size:18pt;margin-bottom:-20px;
 }
-#pageEditTitle{text-align:center;height:36px;padding:1px;}
+#pageEditTitle{text-align:center;height:36px;padding:1px;margin-top:0px;
+font-size: 24px;}
 
 #infoBox{width:320px;height:110px;margin-left:auto;margin-right:auto;margin-top:20px;}
 #labels{float:left;height:auto;width:100px;}
@@ -133,22 +136,24 @@ text-shadow: 0 1px 2px rgba(107,207,198,1.00);
 }
 .service:hover{cursor:pointer;height:38px;border-bottom:solid 2px rgba(85,127,184,1.00);}
 
-.bookItem{margin:5px;float:left;width:239px;height:150px;
+.bookItem{margin:5px;float:left;width:230px;height:220px;
 
 background-color:transparent;
-background:url("../images/old_book.png") center no-repeat;
-background-size:220px 150px;
-line-height:150px;text-align:center;/*
+background:url("../images/manuscript.png") center no-repeat;
+background-size:150px 150px;
+line-height:50px;text-align:center;/*
 -webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
 box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);*/
-font-size: 16pt;
-
+font-size: 20pt;
+color:rgba(4,32,160,1.00);
+text-shadow: 0 1px 5px rgba(0,0,0,0.50);
 }
 .bookItem:hover{cursor:pointer;
 box-shadow: 0px 0px 10px 0px rgba(119, 119, 119, 0.75);
 -moz-box-shadow: 0px 0px 10px 0px rgba(119, 119, 119, 0.75);
 -webkit-box-shadow: 0px 0px 10px 0px rgba(119, 119, 119, 0.75);
+background-size:170px 170px;
 }
 #bookList
 {
@@ -159,6 +164,7 @@ margin-top:30px;
 #scrollDiv{height:560px;width:770px;overflow-y:auto;overflow-x:none;
 margin-left:auto;margin-right:auto; margin-top:20px;
 padding-top: 1px;
+background-color:rgb(254,254,254);
 }
 
 #serviceBackground{width:800px;height:700px;margin-left:auto;margin-right:auto;
@@ -245,8 +251,8 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);*/
 
 }
 .grid-width-100{margin-top:-6px;background: transparent;}
-.grid-container{margin-top:21px;background: grey;}
-#editSection{ background:grey; }
+.grid-container{margin-top:41px;background: grey;z-index: inherit;}
+#editSection{ z-index:1;background:grey; }
 #saveBtn{width:80px;height:30px;margin-left:32px;}
 #saveBtn:hover{cursor: pointer;}
 /*Figbook styling END*/
@@ -260,14 +266,19 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);*/
 	.menuItem:hover{font-size:30pt;}
 	
 	/*This is the Catalogue area's styling for a phone size*/
-	#serviceBackground{width:300px;min-height:900px;}
-	#topService{width:100%;height:140px;}
+	#serviceBackground{width:300px;min-height:1020px;margin-bottom:1px;}
+	#topService{width:100%;height:140px;z-index:9999;}
 	#services{height:90px;width:200px;margin-right:auto;margin-left:auto;float:none;}
-	.service{margin-top:5px;float:left;margin-left:25px;}
-	#scrollDiv{width:280px;overflow-x:hidden;height:700px;
-    margin-top:40px;
+	.service{margin-top:5px;float:none;margin-left:auto;margin-right:auto;}
+	#scrollDiv{width:100%;overflow-x:hidden;min-height:100%;height:auto;
+    border-right:3px solid rgb(220,220,220);
+    border-left:3px solid rgb(220,220,220);
+     border-top:2px solid rgb(220,220,220);
+     border-bottom:2px solid rgb(220,220,220);
+     margin-top:78px;
+     margin-bottom:1px;
     }
-    #serviceContainer{margin-top:60px;}
+    #serviceContainer{margin-top:60px;min-height:100%}
 	#viewBooks{margin-left:25px;margin-top:5px;}
 	#goBackService{float:none;margin-left:auto;margin-right:auto;margin-top:5px;}
 	#bookDiv{width:98%;}
@@ -279,6 +290,9 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);*/
 	/*This is the Catalogue area's styling for a phone size*/
 	#powered{display:none;}
 	
+    #commentSide{margin-top:98px;height:1020px;}
+    #commentHide{margin-top:78px;height:1020px;}
+    
 	/*.container	{ left: 15px; right: 15px; padding: 0px; }*/
 }
 @media(min-width:768px) {
@@ -290,12 +304,17 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);*/
 	#serviceBackground{width:700px;}
 	
 	/*This is the Catalogue area's styling for a 768+ px size*/
-	#serviceBackground{width:700px;min-height:700px;}
-	#topService{width:100%;height:42px;}
-	.bookItem{width:230px; }
+	#serviceBackground{width:760px;min-height:780px;}
+	#topService{width:100%;height:42px;z-index:9999;}
 	
-	#scrollDiv{width:750px;overflow-x:hidden;height:680px;}
 	
+	#scrollDiv{width:100%;overflow-x:hidden;min-height:100%;height:auto;
+    border-right:3px solid rgb(220,220,220);
+    border-left:3px solid rgb(220,220,220);
+     border-top:2px solid rgb(220,220,220);
+     border-bottom:2px solid rgb(220,220,220);
+    }
+    
 	#bookDiv{width:50%;}
 	#bookList{width:98%;}
 	#inputs{margin-right:15px;}
@@ -307,7 +326,39 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);*/
 	/*.container { left: 50%; margin-left: -375px; right: 0px; }*/
 
 }
-
+@media(min-width:960px)
+{
+    #menu-container{width:1180px;height:auto;}
+	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
+	.templatemo_mainimg{visibility:visible;width:200px;height:150px;margin-top:-30px;margin-left:41px;}
+	.menu-img{width:300px;height:150px;visibility:visible;}
+	.menuBox{height:300px;width:382px;float:left;margin:5px;}
+	#powered{display:block;}
+	
+	#topService{width:100%;height:42px;z-index:9999;}
+	
+	#serviceContainer{min-height:800px;}
+	#scrollDiv{width:100%;overflow-x:hidden;min-height:100%;height:auto;
+    border-right:3px solid rgb(220,220,220);
+    border-left:3px solid rgb(220,220,220);
+     border-top:2px solid rgb(220,220,220);
+     border-bottom:2px solid rgb(220,220,220);
+    }
+	#bookDiv{width:40%;}
+	#preface{width:90%;}
+	#bookList{width:720px;min-height:340px;height:auto;max-height:580px;padding-bottom:1px;
+      margin-left:auto;margin-right:auto;
+    }
+	#inputs{margin-right:15px;}
+	#scriptMenuBar{height:60px;line-height:60px;}
+	#next-button{margin-bottom:10px;}
+	#serviceBackground{width:860px;min-height:780px;}
+	
+	#contactImage{width:400px;float:left;}
+	#aboutMeImage{width:400px;float:left;}
+	#aboutLeftBack{width:360px;}
+  
+}
 
 
 @media(min-width:1200px) {
@@ -318,17 +369,24 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);*/
 	.menuBox{height:300px;width:382px;float:left;margin:5px;}
 	#powered{display:block;}
 	
-	#topService{width:100%;height:42px;}
+	#topService{width:100%;height:42px;z-index:9999;}
 	
 	#serviceContainer{min-height:800px;}
-	#scrollDiv{width:780px;overflow-x:hidden;min-height:750px;height:auto;}
+	#scrollDiv{width:100%;overflow-x:hidden;min-height:100%;height:auto;
+    border-right:3px solid rgb(220,220,220);
+    border-left:3px solid rgb(220,220,220);
+     border-top:2px solid rgb(220,220,220);
+     border-bottom:2px solid rgb(220,220,220);
+    }
 	#bookDiv{width:40%;}
 	#preface{width:90%;}
-	#bookList{width:100%;min-height:340px;height:auto;max-height:580px;padding-bottom:1px; }
+	#bookList{width:720px;min-height:340px;height:auto;max-height:580px;padding-bottom:1px;
+      margin-left:auto;margin-right:auto;
+    }
 	#inputs{margin-right:15px;}
 	#scriptMenuBar{height:60px;line-height:60px;}
 	#next-button{margin-bottom:10px;}
-	#serviceBackground{width:800px;min-height:780px;}
+	#serviceBackground{width:1000px;min-height:780px;}
 	
 	#contactImage{width:400px;float:left;}
 	#aboutMeImage{width:400px;float:left;}
@@ -342,7 +400,7 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);*/
 
 background:rgba(10,10,10,0.9);
 position: relative;
-
+z-index: 101;
 width:100%;
 height:250px;
 -webkit-box-shadow: 0px -4px 9px -4px rgba(0,0,0,0.75);
@@ -376,3 +434,51 @@ background:url("../images/smallDotFilled.png") no-repeat left;
 /*Footer end*/
 .text-shadow{color:white;}
 
+/*Comment side START*/
+#commentSide{float:left;position:absolute;min-height:780px;width:320px;background-color:rgb(240,240,240);left:0px;
+  border-right:2px solid rgb(220,220,220);
+  top:42px;
+  border-bottom:4px solid rgb(220,220,220);
+  z-index:100;
+  display:none;
+}
+#commentTop{height:50px;width:100%;position:relative;
+  border-bottom:2px solid rgba(220,220,220,1.00);
+  border-top:2px solid rgba(220,220,220,1.00);
+  text-align: center;
+  line-height: 50px;
+  font-size: 26px;
+  float:left;
+}
+#commentHide{position:absolute;width:16px;
+float:left;
+left:320px;
+background-color:rgb(235,235,235);
+min-height:inherit;
+border-right:2px solid rgb(220,220,220);
+background-image: url("../images/arrow-left.png");
+background-size: 35px 50px;
+background-position: center;
+background-repeat: no-repeat;
+border-bottom:2px solid rgba(220,220,220,1.00);
+z-index:100;
+display:none;
+}
+#commentHide:hover{cursor: pointer; background-color:rgb(240,240,240);}
+#commentImage{float:right;width:48px;height:48px;
+background-image:url("../images/comment.png");
+background-size: cover;
+background-position:center;
+position:relative;
+right:0px;
+top:-2px;
+}
+#chapterSelect{margin-top:6px;min-width:140px;height:24px; font-size: 11pt;}
+#commentText{margin-top:20px;resize:none;padding:10px;}
+#commentArea{text-align: center;
+font-size: 14pt;
+text-shadow: 1px 2px 2px rgba(0,0,0,0.3);
+}
+#saveComment{height:28px;width:140px;}
+#saveComment:hover{cursor: pointer;}
+/*Comment side END*/

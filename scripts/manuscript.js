@@ -73,10 +73,17 @@ $(document).ready(function () {
 	
 		
 	$('#viewBooks').click(function(){
-		$('#editSection').fadeOut("slow",function(){});
-		$('#pageView').fadeOut("slow",function(){
-				$('#bookList').fadeIn("slow",function(){});
-		});
+		
+		//Make the comment area dissapear
+		$("#commentSide").css('display','none');
+		$("#commentHide").css('display','none');
+		
+		$('#editSection').fadeOut("slow",function(){
+				$('#pageView').fadeOut("slow",function(){
+					$('#bookList').fadeIn("slow",function(){});
+				});
+			});
+		
 		getBooks();
 	});
 		
@@ -238,7 +245,9 @@ $(document).ready(function () {
 	                                $("#bookList").append("<div class='bookItem'>"+pageTitle+"</div>");
 	                                $('.bookItem').click(function () {
 	                                    //alert("book clicked : "+$(this).html());
-	
+										
+										
+										
 	                                    var loadPageInfo = {
 	                                        "title": $(this).html()
 	                                    };
@@ -256,6 +265,9 @@ $(document).ready(function () {
                                                         {
                                                             //alert(JSON.stringify(data));
                                                             localStorage.userRole = data;
+															
+															
+															
                                                         }
                                                         , error: function (data) {
                                                             //alert(JSON.stringify(data));
@@ -266,6 +278,7 @@ $(document).ready(function () {
 	                                    if (loadPageInfo.title !== "")
 	                                    {
 	                                        get_page(loadPageInfo);
+															
 	                                    }
 	
 	                                });
@@ -406,6 +419,10 @@ $(document).ready(function () {
 					console.log(page);//?
 					var links = page.getElementsByClassName("mw-editsection");
 					$(links).remove();
+					
+					//Make the comment area visible
+					$("#commentSide").css('display','block');
+					$("#commentHide").css('display','block');
 
 					var num_links =1;
 					for(var i=0; i<links.length; i++) {
