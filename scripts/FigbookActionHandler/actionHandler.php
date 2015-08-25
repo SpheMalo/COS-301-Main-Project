@@ -3,6 +3,7 @@
 require("databaseHandler.php");
 require("user.php");
 require("manuscript.php");
+require("communication.php");
 
 $response = "";
 $dbHandler = new databaseHandler();
@@ -182,6 +183,31 @@ if(isset($actionFlag) && $actionFlag != ""){
             $response = $tmpMen->checkPagePermissions($id, $bookTitle);
             
         }
+        else if($actionFlag == "getUserRole"){ //Get User Status
+            
+            $id = $_COOKIE['username'];
+            $bookTitle = $object->bookTitle;
+            
+            $tmpMen= new manuscript($dbHandler->getConnection());
+            $response = $tmpMen->getUserRole($id, $bookTitle);
+            
+        }
+         else if($actionFlag == "editorial_letter"){ //Send editorial letter
+            
+            $editor_id = $_COOKIE['username'];
+            $bookTitle = $object->bookTitle;
+            $message = $object->text;
+            $tmpMen= new manuscript($dbHandler->getConnection());
+            if ($tmpMen->getUserRole($editor_id, $bookTitle) == "Editor"){
+                $tmpMen= new communication($dbHandler->getConnection());
+                $response = $tmpMen->sendEditorialLetter($editor_id, $bookTitle, $message);
+            }
+            else{
+                $response = "This User is no book editor";
+            }
+            
+        }
+        
 }else{
     
     $response = "no valid action specified";
