@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript">
+			function nullTest(){
+				var commentContent = document.getElementById("comm").value;
+
+				if(commentContent == ""){
+					alert("Comment cannot be empty");
+					return false;
+				}
+				else{
+					return true;
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div>
+			Here is some text to comment on.
+		</div>
+		<form method="post" action="scripts/FigbookActionHandler/PostComment.php" onsubmit="return nullTest()">
+			<input type="textarea" id="comm" cols="30" rows="30" name="commentText" />
+			<input type="submit" value="Submit" />
+		</form>
+		<br />
+		<form method="post" action="FigbookActionHandler/ViewSectionComments.php">
+			<input type="submit" value="View Comments" />
+		</form>
+	</body>
+</html>
