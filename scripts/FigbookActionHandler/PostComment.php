@@ -16,11 +16,11 @@
 	* Persists comment passed into the database
 	* @param $page_id	ID of the page in the database
 	*/
-	function postComment($page_id){
+	function postComment($page_name, $section_number){
 		$com = test_input($_POST["commentText"]);
 		$db = new databaseHandler();
 		if($db->isConnected()){
-			$insertQuery = "INSERT INTO page_comment (comment, page_id) VALUES ('" . $com . "', '$page_id')";
+			$insertQuery = "INSERT INTO page_comment (comment, page_name, section_number) VALUES ('" . $com . "', '$page_name', '$section_number')";
 			$dbconn = $db->getConnection();
         	$insertQueryResult = mysqli_query($dbconn,$insertQuery);
 
@@ -35,5 +35,5 @@
 			echo "Failed";
 		}
 	}
-	//postComment(25);
+	postComment("Groceries", 1);
 ?>

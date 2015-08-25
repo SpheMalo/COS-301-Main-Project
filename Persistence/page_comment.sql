@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 25, 2015 at 09:37 AM
+-- Generation Time: Aug 25, 2015 at 04:52 PM
 -- Server version: 5.6.19-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -29,17 +29,19 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `page_comment` (
   `comment_id` int(11) NOT NULL AUTO_INCREMENT,
   `comment` text NOT NULL,
-  `page_id` int(10) unsigned NOT NULL,
+  `page_name` varchar(160) NOT NULL,
+  `section_number` int(3) NOT NULL,
   PRIMARY KEY (`comment_id`),
-  KEY `page_id` (`page_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+  KEY `page_name` (`page_name`,`section_number`),
+  KEY `section_number` (`section_number`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `page_comment`
 --
 
-INSERT INTO `page_comment` (`comment_id`, `comment`, `page_id`) VALUES
-(4, 'ijij', 25);
+INSERT INTO `page_comment` (`comment_id`, `comment`, `page_name`, `section_number`) VALUES
+(5, 'commenting', 'Groceries', 1);
 
 --
 -- Constraints for dumped tables
@@ -49,7 +51,8 @@ INSERT INTO `page_comment` (`comment_id`, `comment`, `page_id`) VALUES
 -- Constraints for table `page_comment`
 --
 ALTER TABLE `page_comment`
-  ADD CONSTRAINT `fk_page_id` FOREIGN KEY (`page_id`) REFERENCES `page` (`page_id`);
+  ADD CONSTRAINT `fk_section_number` FOREIGN KEY (`section_number`) REFERENCES `section_revisions` (`section_number`),
+  ADD CONSTRAINT `fk_booktitle` FOREIGN KEY (`page_name`) REFERENCES `section_revisions` (`book_title`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
