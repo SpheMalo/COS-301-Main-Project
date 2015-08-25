@@ -126,6 +126,46 @@ class manuscript {
             //send success message and current user details 
             return $this->message;
     }
+    
+    public function getUserRole($userId, $bookTitle){
+        $query="SELECT page_id FROM page WHERE page_title ='$bookTitle'";
+        $queryResult = mysqli_query($this->dbInstance, $query);//run query
+        $title = "";
+        if($queryResult){
+            
+            $row = mysqli_fetch_assoc($queryResult);
+            $title = $row['page_id'];
+           
+        }
+        
+        $query="SELECT user_id FROM user WHERE user_name ='$userId'";
+        $queryResult = mysqli_query($this->dbInstance, $query);//run query
+        $uid = "";
+        if($queryResult){
+            
+            $row = mysqli_fetch_assoc($queryResult);
+            $uid = $row['user_id'];
+           
+        }
+        
+        $queryString = "SELECT * FROM user_page WHERE user_name= '$uid' AND page_id= '$title'";
+             $queryResults = mysqli_query($this->dbInstance, $queryString);
+             if($queryResults){
+                 
+                 if(mysqli_num_rows($queryResults) > 0){
+                     $row = mysqli_fetch_assoc($queryResults);
+                    $this->message = $row['user_role'];
+                }
+                 else{
+                     $this->message = "Failed";
+                 }
+                 
+             }else if(!$queryResults){
+                 $this->message = "Failed";
+             }
+            //send success message and current user details 
+            return $this->message;
+    }
 }
 
 

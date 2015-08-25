@@ -244,7 +244,24 @@ $(document).ready(function () {
 	                                    };
 	                                    //alert(loadPageInfo.title);
 	                                    localStorage.bookTitle = loadPageInfo.title;
-	                                    //alert(localStorage.bookTitle);
+	                                    var Inf = {
+                                                "action": "getUserRole",
+                                                "bookTitle": localStorage.bookTitle//localStorage.bookTitle
+                                            };
+                                            $.ajax({
+                                                        url: 'scripts/FigbookActionHandler/actionHandler.php',
+                                                        data: 'json=' + JSONstring,
+                                                        dataType: 'json',
+                                                        success: function (data)
+                                                        {
+                                                            //alert(JSON.stringify(data));
+                                                            localStorage.userRole = data;
+                                                        }
+                                                        , error: function (data) {
+                                                            //alert(JSON.stringify(data));
+                                                        }
+                                                    });
+                                                    //event.preventDefault();
 	                                    //make sure it gets a title for a book to load
 	                                    if (loadPageInfo.title !== "")
 	                                    {

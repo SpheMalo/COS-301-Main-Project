@@ -17,6 +17,7 @@
     <script src="scripts/createPage.js" type="text/javascript"></script>
     <script src="scripts/editSection.js" type="text/javascript"></script>
     <script src="scripts/saveTextToDB.js" type="text/javascript"></script>
+    <script src="scripts/communication.js" type="text/javascript"></script>
 	<script>
     //$(function(){
      // $("#u377").load("insideContent.html"); 
@@ -51,6 +52,13 @@
           <!--p id="1"> 
             Here  is some test text
           </p-->
+      </div>
+        
+        <div id="writeLetter" style="visibility: block">
+          <h2 id="writeLetterTitle">Editorial Letter</h2><hr />
+              <textarea id="letter_editor" cols="100" rows="50">
+              </textarea>
+              <button id="letter_saveBtn"  >Send Letter</button>
       </div>
 
       <!--button id="Dummy" onclick="editSection(1)">Edit</button-->
