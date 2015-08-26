@@ -338,6 +338,7 @@ class user {
 		//Check timestamps
 		if ($myResponse["date_last_edited"] == $obj->timestamp)
 		{
+			//updating the timestamp
 			$sql = "UPDATE section_revisions SET section_content='$obj->newContent', date_last_edited=CURRENT_TIME, last_edited_by='$uID' WHERE book_title = '$obj->title' ";
 			mysqli_query($this->dbInstance, $sql);
 			
@@ -352,7 +353,7 @@ class user {
 		else
 		{
 			//attempt Automatic Merge
-			$diff = new Text_Diff3($obj->originalContent, $myResponse["section_content"], $obj->newContent);
+			$diff = new Text_Diff3(explode("\n", $obj->originalContent), explode("\n", $myResponse["section_content"]), explode("\n", $obj->newContent));
 			$var = ($diff->mergedOutput());
 			$conflict = "none";
 			for ($i = 0; $i < $var.length; $i++)
@@ -373,7 +374,16 @@ class user {
 			}
 			else //return the merged text with conflicts in them
 			{
+				//updating the timestamp
+				$sql = "UPDATE section_revisions SET section_content='$obj->newContent', date_last_edited=CURRENT_TIME, last_edited_by='$uID' WHERE book_title = '$obj->title' ";
+				mysqli_query($this->dbInstance, $sql);
+				
+				//getting the new timestamp
+				$sql = "SELECT date_last_edited FROM section_revisions WHERE book_title = '$obj->title' AND section_number = '$obj->section'";
+				$temp = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql));
+				
 				$myResponse["message"] = "conflict";
+				$myResponse["date_last_edited"] = $temp["date_last_edited"];
 				$myResponse["mergedText"] = $var;
 				return $myResponse;
 			}

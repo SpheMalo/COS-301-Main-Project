@@ -1,13 +1,13 @@
-
-function saveText()
+function saveConflict()
 {
     
     //Getting info to pass to the ajax function
-   
-    var sectionHeading = $("#pageEditTitle").val();
-    var sectionNumber = $("#saveBtn").attr("name");
-    var iframe = $("iframe").contents();
-    var content = iframe.find("body").html();
+    var bookInfo = localStorage.bookInformation;
+    
+    var sectionHeading = bookInfo.sectionHeading;
+    var sectionNumber = bookInfo.section;
+    
+    var content = $("#newContentTextArea").html();
     sectionNumber = parseInt(sectionNumber);
 	   
     var timeStamp = localStorage.getItem("tStamp");
@@ -19,7 +19,7 @@ function saveText()
 					"section" : sectionNumber,
                     "timestamp" : timeStamp,
                     "newContent" : content,
-                    "originalContent" : localStorage.originalContent
+                    "originalContent" : content
 				    }
                     
         jsonString = JSON.stringify(jsonString);
@@ -56,6 +56,7 @@ function saveText()
                                 {
                                     alert("Section saved successfully");
 									//This will display the actual page again. with updated values
+                                    location.href = "content.html";
 									var inside = document.getElementsByClassName('insideText'); 
 									var head = document.getElementsByClassName('sectionHeading'); 
 									$('#editSection').fadeOut("slow",function(){//$(inside[(sectionNumber-1)]).html(content);	
@@ -147,6 +148,13 @@ function saveText()
 										//$(head[(sectionNumber-1)]).html(sectionHeading);								
 										$('#pageView').fadeIn("slow",function(){
 											$( "#viewBooks" ).trigger( "click" );
+											
+												/*var loadPageInfo = 
+												{
+																"title": localStorage.bookTitle
+												};
+												get_page(loadPageInfo);*/
+											 //alert(document.getElementsByClassName("bookItem").length);
 											});
 										});
 								
@@ -166,21 +174,12 @@ function saveText()
                             error: function (data)
                             {
                                 console.log('Error: Request failed. ' + JSON.stringify(data));
+                                $('#Page').append("<a href='/scripts/mediawiki/index.php/" + params.title + "'>Link to your book</a>");
                             }
                         });//end of ajax to send save to server
                     }); //end of post to retrieve edit token
                 }//end of no conflict
                 else if (customJsonObj.message == "conflict") {
-                    
-                    var bookInformation = {
-                    sectionHeading: sectionHeading,
-                    section: sectionNumber,
-                    title: localStorage.bookTitle
-                    };
-                    
-                    localstorage.bookInformation = JSON.parse(bookInformation);
-                    
-                    localStorage.tStamp = customJsonObj.date_last_edited;
                     localStorage.conflictInfo = JSON.stringify(customJsonObj);
                     localStorage.contentToAdd = customJsonObj.mergedText;
                     location.href = "conflictResolution.html";
@@ -213,8 +212,7 @@ function resolveConflict()
     var yourChanges = localStorage.contentToAdd.split(",=======,")[0];
     var myChanges = localStorage.contentToAdd.split(",=======,")[1];
     
-    alert(localStorage.contentToAdd);
-    $("#newContentTextArea").val("hello");
+    
     document.getElementById("userChanges").innerHTML += conflictData.last_edited_by;
     document.getElementById("newPar").innerHTML = yourChanges;
     document.getElementById("oldPar").innerHTML = myChanges;

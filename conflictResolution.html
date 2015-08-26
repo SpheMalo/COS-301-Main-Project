@@ -2,6 +2,7 @@
     <head>
         <script src="js/jquery-1.10.2.min.js"></script>
         <script src="scripts/saveTextToDB.js"></script>
+		<script src="scripts/saveConflict.js"></script>
         
 		<style type="text/css">
 			#oldContent, #newContent
@@ -61,8 +62,8 @@
 		<br />
             <div id="newCont">
             <p>Your new content: </p>
-            <textarea cols="88" rows="5" id="newContentTextArea"></textarea>
-            <button id="saveConflict">Save</button>
+            <div id="newContentTextArea" contenteditable='true' style="background-color: white;"></div>
+            <button id="saveConflict" onclick="saveConflict()">Save</button>
             </div>
             
         </div>
