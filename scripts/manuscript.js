@@ -71,13 +71,44 @@ $(document).ready(function () {
 	};
 	
 	
+	///Loading/opening the editorial letter panel.
+	$("#writeEditorial").click(function(){
+		$( "#letterHide" ).trigger( "click" );
+			//alert($('#serviceBackground').css('margin-left'));
+		if($('#serviceBackground').css('margin-left') != '20px'){
+			$("#serviceBackground").animate({
+				marginLeft: '20'
+			},500)
+			
+			$('#editorialLetter').css('display','block');
+			$('#letterHide').css('display','block');
+			
+		}else{//this should actually be triggered by another button like save or send or close
+				
+				var val = $("#serviceBackground").css('margin-right');
+				
+				var val = val.substring(0,val.indexOf('px'));
+				//alert(val);
+				
+			$("#serviceBackground").css('margin-left','auto')
+			
+			 
+		}
+           //$('#serviceBackground').slideToggle(500)         
+                   
+	});
+	
+	
 		
 	$('#viewBooks').click(function(){
 		
 		//Make the comment area dissapear
 		$("#commentSide").css('display','none');
 		$("#commentHide").css('display','none');
-		
+		//Make the editorial letter dissappear
+		$('#editorialLetter').css('display','none');
+		$('#letterHide').css('display','none');
+			
 		$('#editSection').fadeOut("slow",function(){
 				$('#pageView').fadeOut("slow",function(){
 					$('#bookList').fadeIn("slow",function(){});

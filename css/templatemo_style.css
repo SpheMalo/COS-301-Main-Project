@@ -314,7 +314,7 @@ a.nontext /* used to override default properties of 'a' tag */
 .homepage{ display: block; }
 .portfolioshow	{ display: block; }
  .container	{ margin-left:auto;margin-right:auto; height:auto;} 
-#menu-1{height:auto;margin-left:auto;margin-right:auto;}
+#menu-1{height:auto;}
 #proflieLink
 {
 	color: white;
@@ -564,7 +564,7 @@ h2.resp-accordion	{ color: #ffffff; }
 
 }	
 @media(max-width: 767px) {
-	#menu-1{width:318px;}
+	#menu-1{width:318px;margin-left:auto;margin-right:auto;}
 	#powered{display:none;}
 	#menu-container{width:100%;min-height:1200px;}
 	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
@@ -593,7 +593,7 @@ h2.resp-accordion	{ color: #ffffff; }
 	/*.container	{ left: 15px; right: 15px; padding: 0px; }*/
 }
 @media(min-width:768px) {
-	#menu-1{width:760px;}
+	#menu-1{width:760px;margin-left:auto;margin-right:auto;}
 	#menu-container{width:100%;min-height:1200px;}
 	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
 	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
@@ -625,7 +625,7 @@ h2.resp-accordion	{ color: #ffffff; }
 @media(min-width:992px) {
 	#menu-container{width:100%;min-height:800px;}
 	#scrollDiv{width:980px;overflow-x:hidden;min-height:680px;}
-	#menu-1{width:990px;}
+	#menu-1{width:990px;margin-left:auto;margin-right:auto;}
 	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
 	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
 	.menuBox{height:150px;width:482px;float:left;margin:5px;}
@@ -668,7 +668,7 @@ h2.resp-accordion	{ color: #ffffff; }
 
 @media(min-width:1200px) {
 	#menu-container{width:100%;min-height:800px;}
-	#menu-1{width:1176px;}
+	#menu-1{height:auto;width:1176px;margin-left:auto;margin-right:auto;}
 	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
 	.templatemo_mainimg{visibility:visible;width:200px;height:150px;margin-top:-30px;margin-left:41px;}
 	.menu-img{width:300px;height:150px;visibility:visible;}

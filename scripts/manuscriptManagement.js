@@ -74,6 +74,39 @@ $(document).ready(function()
                    
 	});
 	
+	$("#letterHide").click(function(){
+			
+                    if(!$('#editorialLetter').is(':hidden')){
+						$(this).css('background-image','url("images/arrow-left.png")');
+                        $(this).animate({
+                    
+                            right: '0px'
+                    
+                        },500)
+						$('#editorialLetter').animate({
+                    
+                            right: '-620px'
+                    
+                        },500)
+						$('#editorialLetter').slideToggle(500)
+                    }else{
+							$(this).css('background-image','url("images/arrow-right.png")');
+							$('#editorialLetter').slideToggle(0)
+                        $(this).animate({
+                    
+                            right: '620px'
+							
+                        },500)
+						$('#editorialLetter').animate({
+							
+                            right: '0px'
+                    
+							},500)
+						 
+                    }
+                    
+                   
+	});	
 	
 	//$('#serviceBackground').append($('#goBackService'));
 });
