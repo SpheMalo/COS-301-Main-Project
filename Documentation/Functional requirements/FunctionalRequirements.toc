@@ -11,3 +11,7 @@
 \contentsline {subsubsection}{\numberline {2.2.1}Scope}{11}{subsubsection.2.2.1}
 \contentsline {subsubsection}{\numberline {2.2.2}Use Cases}{12}{subsubsection.2.2.2}
 \contentsline {subsubsection}{\numberline {2.2.3}Domain Model}{19}{subsubsection.2.2.3}
+\contentsline {subsection}{\numberline {2.3}Communication}{20}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}scope}{20}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Use Cases}{21}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Domain Model}{24}{subsubsection.2.3.3}

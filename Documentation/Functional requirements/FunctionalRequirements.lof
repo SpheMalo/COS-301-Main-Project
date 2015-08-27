@@ -16,3 +16,8 @@
 \contentsline {figure}{\numberline {16}{\ignorespaces Service contract for reading a manuscript}}{17}{figure.16}
 \contentsline {figure}{\numberline {17}{\ignorespaces Service contract for sending a manuscript}}{18}{figure.17}
 \contentsline {figure}{\numberline {18}{\ignorespaces Domain model for managing a manuscript}}{19}{figure.18}
+\contentsline {figure}{\numberline {19}{\ignorespaces Scope of Communication module}}{20}{figure.19}
+\contentsline {figure}{\numberline {20}{\ignorespaces Service contract for sending a letter}}{21}{figure.20}
+\contentsline {figure}{\numberline {21}{\ignorespaces Service contract for viewing a letter}}{22}{figure.21}
+\contentsline {figure}{\numberline {22}{\ignorespaces Service contract for writing a comment a manuscript}}{23}{figure.22}
+\contentsline {figure}{\numberline {23}{\ignorespaces Service contract for writing a comment a manuscript}}{24}{figure.23}
