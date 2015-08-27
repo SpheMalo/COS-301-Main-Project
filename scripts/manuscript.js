@@ -2,6 +2,36 @@
  * Populates relevant text for edit 
  * @param {Number} value
  */
+function postComment(){
+	var comment = {
+	            "commentText": "",
+	            "page_name": "",
+	            "section_number":""
+
+	        }
+	        	alert("Its here");
+	        comment.commentText = document.getElementById("commentText").value;
+	        comment.page_name = localStorage.bookTitle;
+	        //comment.page_name = "Comment_Test";
+	        comment.section_number = 1;
+
+	        alert(comment.commentText);
+	        alert(comment.page_name);
+	        var JSONstring = JSON.stringify(comment);
+	        $.ajax({
+	            url: 'scripts/FigbookActionHandler/postComment.php',
+	            data: 'json=' + JSONstring,
+	            dataType: 'json',
+	            success: function (data)
+	            {
+	                alert(JSON.stringify(data));
+	            }
+	            , error: function (data) {
+	                alert(JSON.stringify(data));
+	            }
+	        });
+}
+
 function editSection(value)
 {
 	var jsonString = {
@@ -274,9 +304,6 @@ $(document).ready(function () {
 	                                //div.onclick=onClickBook(pageTitle, div);
 	
 	                                $("#bookList").append("<div class='bookItem'>"+pageTitle+"</div>");
-                                        localStorage.bookTitle = "";
-                                        localStorage.userRole = "";
-                                        localStorage.reload = "yes";
 	                                $('.bookItem').click(function () {
 	                                    //alert("book clicked : "+$(this).html());
 										
@@ -289,21 +316,22 @@ $(document).ready(function () {
 	                                    localStorage.bookTitle = loadPageInfo.title;
 	                                    var Inf = {
                                                 "action": "getUserRole",
-                                                "bookTitle": localStorage.bookTitle
+                                                "bookTitle": localStorage.bookTitle//localStorage.bookTitle
                                             };
-                                            var JSONstring = JSON.stringify(Inf);
                                             $.ajax({
                                                         url: 'scripts/FigbookActionHandler/actionHandler.php',
                                                         data: 'json=' + JSONstring,
                                                         dataType: 'json',
-                                                        success: function (data1)
+                                                        success: function (data)
                                                         {
-                                                            //alert(JSON.stringify(data1));
-                                                            localStorage.userRole = data1;
+                                                            //alert(JSON.stringify(data));
+                                                            localStorage.userRole = data;
+															
+															
 															
                                                         }
-                                                        , error: function (data1) {
-                                                            //alert(JSON.stringify(data1));
+                                                        , error: function (data) {
+                                                            //alert(JSON.stringify(data));
                                                         }
                                                     });
                                                     //event.preventDefault();
