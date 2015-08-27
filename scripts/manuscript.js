@@ -274,6 +274,9 @@ $(document).ready(function () {
 	                                //div.onclick=onClickBook(pageTitle, div);
 	
 	                                $("#bookList").append("<div class='bookItem'>"+pageTitle+"</div>");
+                                        localStorage.bookTitle = "";
+                                        localStorage.userRole = "";
+                                        localStorage.reload = "yes";
 	                                $('.bookItem').click(function () {
 	                                    //alert("book clicked : "+$(this).html());
 										
@@ -286,22 +289,21 @@ $(document).ready(function () {
 	                                    localStorage.bookTitle = loadPageInfo.title;
 	                                    var Inf = {
                                                 "action": "getUserRole",
-                                                "bookTitle": localStorage.bookTitle//localStorage.bookTitle
+                                                "bookTitle": localStorage.bookTitle
                                             };
+                                            var JSONstring = JSON.stringify(Inf);
                                             $.ajax({
                                                         url: 'scripts/FigbookActionHandler/actionHandler.php',
                                                         data: 'json=' + JSONstring,
                                                         dataType: 'json',
-                                                        success: function (data)
+                                                        success: function (data1)
                                                         {
-                                                            //alert(JSON.stringify(data));
-                                                            localStorage.userRole = data;
-															
-															
+                                                            //alert(JSON.stringify(data1));
+                                                            localStorage.userRole = data1;
 															
                                                         }
-                                                        , error: function (data) {
-                                                            //alert(JSON.stringify(data));
+                                                        , error: function (data1) {
+                                                            //alert(JSON.stringify(data1));
                                                         }
                                                     });
                                                     //event.preventDefault();

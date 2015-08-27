@@ -207,6 +207,14 @@ if(isset($actionFlag) && $actionFlag != ""){
             }
             
         }
+         else if($actionFlag == "get_editorial_letter"){ //Send editorial letter
+            
+            $bookTitle = $object->bookTitle;
+            $tmpMen= new communication($dbHandler->getConnection());
+            $response = $tmpMen->getEditorialLetters($bookTitle);
+            
+            
+        }
         
 }else{
     
