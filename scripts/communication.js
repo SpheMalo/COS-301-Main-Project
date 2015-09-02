@@ -3,7 +3,7 @@ $(document).ready(function () {
     setInterval(function () {
         var role = localStorage.userRole;
         var book = localStorage.bookTitle;
-        console.log(localStorage.reload + " role: " + role);
+        //console.log(localStorage.reload + " role: " + role);
         if (localStorage.reload === "yes") {
             if (document.getElementById("updateLetter") !== null) {
                 var element = document.getElementById("updateLetter");
