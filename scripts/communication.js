@@ -3,6 +3,7 @@ $(document).ready(function () {
     setInterval(function () {
         var role = localStorage.userRole;
         var book = localStorage.bookTitle;
+        console.log(localStorage.reload + " role: " + role);
         if (localStorage.reload === "yes") {
             if (document.getElementById("updateLetter") !== null) {
                 var element = document.getElementById("updateLetter");
@@ -29,13 +30,6 @@ $(document).ready(function () {
 
             }
             else if (role === "") {
-                var element = document.getElementById("listLetters");
-                element.outerHTML = "";
-                delete element;
-
-                var element = document.getElementById("letterError");
-                element.outerHTML = "";
-                delete element;
                 $('#letterText').css('display', 'block');
                 $('#sendLetter').css('display', 'block');
             }
@@ -49,7 +43,7 @@ $(document).ready(function () {
             }
         }
 
-    }, 5000);
+    }, 1000);
 
 
     $('#sendLetter').click(function () {
@@ -60,7 +54,7 @@ $(document).ready(function () {
         };
         var JSONstring = JSON.stringify(letterInfo);
         var myrole = localStorage.userRole;
-        alert("Book title: " + JSONstring.bookTitle + "role: " + myrole);
+        //alert("Book title: " + JSONstring.bookTitle + "role: " + myrole);
         var send = true;
 
         if (letterInfo.bookTitle === "" || myrole === "") {

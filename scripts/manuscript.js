@@ -273,6 +273,8 @@ $(document).ready(function () {
 		
 	function getBooks(){
 		// clear this list before repopulating it
+                localStorage.userRole = "";
+                localStorage.reload = "yes";
 		$('#bookList').html("");
 			
 		$.post('scripts/mediawiki/api.php?action=query&list=allpages&aplimit=100&format=json',
@@ -305,8 +307,7 @@ $(document).ready(function () {
 	
 	                                $("#bookList").append("<div class='bookItem'>"+pageTitle+"</div>");
                                         localStorage.bookTitle = "";
-                                        localStorage.userRole = "";
-                                        localStorage.reload = "yes";
+                                        
 	                                $('.bookItem').click(function () {
 	                                    //alert("book clicked : "+$(this).html());
 										
