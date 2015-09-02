@@ -21,7 +21,7 @@ $(document).ready(function () {
             }
 
             if (role === "Creator") {
-
+                localStorage.reload = "no";
                 $('#letterText').css('display', 'none');
                 $('#sendLetter').css('display', 'none');
                 addErrorCode("Inbox", "letterArea", "#478B4D");
