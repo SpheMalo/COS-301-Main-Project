@@ -215,6 +215,25 @@ if(isset($actionFlag) && $actionFlag != ""){
             
             
         }
+        else if($actionFlag == "get_editorial_letter_editor"){ //Send editorial letter
+            $editor_id = $_COOKIE['username'];
+            $bookTitle = $object->bookTitle;
+            $tmpMen= new communication($dbHandler->getConnection());
+            $response = $tmpMen->getEditorialLettersEditor($bookTitle, $editor_id); 
+            
+            
+        }
+        else if($actionFlag == "editorial_letter_update"){ //Send editorial letter
+            
+            $editor_id = $_COOKIE['username'];
+            $bookTitle = $object->letter;
+            $message = $object->text;
+            $tmpMen= new communication($dbHandler->getConnection());
+            $response = $tmpMen->updateEditorialLetter($bookTitle, $message);
+           
+            
+        }
+        
         
 }else{
     
