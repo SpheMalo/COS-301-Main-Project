@@ -18,4 +18,26 @@
 	  \end{itemize}
 				\end{itemize}
 		\end{itemize}
+	\subsection{Blackboard Architecture}
+\par{The blackboard paradigm defines heterogeneous problem solving representations as independent modules called
+knowledge sources(Sections). Knowledge sources can be seen as specialists in sub-felds of the global application and are
+only able to solve sub-problems.
+Users read and write relevant data in a book(blackboard) which is a structured textual resource existing the the database
+\\
+
+Each book or section has a set of triggering conditions that can be satisfied by particular kinds of events, that is
+global changes in the book resulting from user inputs. Only when these events are satisfied can you manipulate the given resource(knowlidge source)
+to achieve your goal.
+}
+\begin{itemize}
+			\item Reasons for using:
+				\begin{itemize}
+					\item Reusability. Sections are independent specialists that can be reused in different projects. Reuse
+is made easier by the fact that there is no direct communication between knowledge sources. 
+\item Changeability and maintainability. High level of modularization and clear separation between control and
+domain (i.e. the knowledge sources) makes the maintenance phase easier. 
+\item Robustness. The model naturally leads to the definition of alternative knowledge sources to solve(Collaborate) a given sub-problem, in this case sections of a book.
+				\end{itemize}
+\end{itemize}
+	
 %\end{document}

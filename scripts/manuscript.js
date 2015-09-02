@@ -2,6 +2,58 @@
  * Populates relevant text for edit 
  * @param {Number} value
  */
+
+ /*Manuscript Manangement*/
+
+function addSection()
+{
+  
+	/**
+    *  This call checks the timestamp retrieved once editing began, and compares it to the timestamp in the database currently.
+    *  If the timestamps match, it means there was no conflict and "true" is returned.
+    *  If the timestamps don't match it means there is a conflict. "false" is returned
+    */
+    $.post("scripts/mediawiki/api.php?action=query&prop=info|revisions&meta=tokens&rvprop=timestamp&titles="+localStorage.bookTitle+"&format=json",function(data){	
+    
+    $.ajax({	
+            url: "scripts/mediawiki/api.php",
+            data: {
+                    format: 'json',
+                    action: 'edit',
+                    title: localStorage.bookTitle,
+                    section: 'new',
+                    text: "="+ document.getElementById('sectionName').value + "=",
+                    token: data.query.tokens.csrftoken
+                  },
+            dataType: 'json',
+            type: 'POST',
+            success: function (data)
+            {
+
+                if (data && data.edit && data.edit.result === 'Success')
+                {
+                    alert("Section saved successfully");
+					//This will display the actual page again. with updated values
+					
+                }
+                else if (data && data.error)
+                {
+                    alert('Error: API returned error code "' + data.error.code + '": ' + data.error.info);
+                }
+                else
+                {
+                    alert('Error: Unknown result from API.');
+                }
+            },
+            error: function (data)
+            {
+                console.log('Error: Request failed. ' + JSON.stringify(data));
+                $('#Page').append("<a href='/scripts/mediawiki/index.php/" + params.title + "'>Link to your book</a>");
+            }
+        });//end of ajax to send save to server
+    }); //end of post to retrieve edit token
+}
+
 function postComment(){
 	var comment = {
 	            "commentText": "",

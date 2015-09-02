@@ -13,6 +13,7 @@
 \contentsline {section}{\numberline {2}Architectural patterns or styles}{7}{section.2}
 \contentsline {paragraph}{This section will cover the architectural patterns and/or styles we will be using to solve certain challenges we might face, as well as provide us with a way to meet certain quality requirements. }{7}{section*.4}
 \contentsline {subsection}{\numberline {2.1}Three-tier Architecture}{7}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Blackboard Architecture}{7}{subsection.2.2}
 \contentsline {section}{\numberline {3}Architectural tactics or strategies}{8}{section.3}
 \contentsline {subsection}{\numberline {3.1}Security}{8}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Integrability}{8}{subsection.3.2}

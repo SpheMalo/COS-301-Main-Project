@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.7.10)  27 AUG 2015 17:17
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.7.10)  28 AUG 2015 20:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -330,7 +330,7 @@ LaTeX Info: Redefining \nameref on input line 13.
 \openout3 = `FunctionalRequirements.out'.
 
  (./coverPage.tex
-<images/UP_Logo.png, id=56, 900.36375pt x 269.50688pt>
+<images/UP_Logo.png, id=72, 900.36375pt x 269.50688pt>
 File: images/UP_Logo.png Graphic file (type png)
 
 <use images/UP_Logo.png>
@@ -378,7 +378,7 @@ Scope.eps>
 (epstopdf)             \includegraphics on input line 7.
 Package epstopdf Info: Output file is already uptodate.
 
-<epsImages/Authentication/AuthenticationScope-eps-converted-to.pdf, id=131, 557
+<epsImages/Authentication/AuthenticationScope-eps-converted-to.pdf, id=161, 557
 .08125pt x 219.82124pt>
 File: epsImages/Authentication/AuthenticationScope-eps-converted-to.pdf Graphic
  file (type pdf)
@@ -410,7 +410,7 @@ s>
 (epstopdf)             \includegraphics on input line 22.
 Package epstopdf Info: Output file is already uptodate.
 
-<epsImages/Authentication/serviceContract-eps-converted-to.pdf, id=164, 557.081
+<epsImages/Authentication/serviceContract-eps-converted-to.pdf, id=194, 557.081
 25pt x 270.00874pt>
 File: epsImages/Authentication/serviceContract-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -439,7 +439,7 @@ ontract.eps>
 (epstopdf)             \includegraphics on input line 32.
 Package epstopdf Info: Output file is already uptodate.
 
-<epsImages/Authentication/LoginServiceContract-eps-converted-to.pdf, id=209, 55
+<epsImages/Authentication/LoginServiceContract-eps-converted-to.pdf, id=239, 55
 7.08125pt x 284.06125pt>
 File: epsImages/Authentication/LoginServiceContract-eps-converted-to.pdf Graphi
 c file (type pdf)
@@ -477,7 +477,7 @@ eContract.eps>
 (epstopdf)             \includegraphics on input line 42.
 Package epstopdf Info: Output file is already uptodate.
 
-<epsImages/Authentication/logoutServiceContract-eps-converted-to.pdf, id=210, 5
+<epsImages/Authentication/logoutServiceContract-eps-converted-to.pdf, id=240, 5
 57.08125pt x 209.78375pt>
 File: epsImages/Authentication/logoutServiceContract-eps-converted-to.pdf Graph
 ic file (type pdf)
@@ -517,7 +517,7 @@ ountServiceContract.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 <epsImages/Authentication/editAccountServiceContract-eps-converted-to.pdf, id=3
-10, 557.08125pt x 392.46625pt>
+40, 557.08125pt x 392.46625pt>
 File: epsImages/Authentication/editAccountServiceContract-eps-converted-to.pdf 
 Graphic file (type pdf)
 
@@ -548,7 +548,7 @@ eleteAccount-eps-converted-to.pdf epsImages/Authentication/deleteAccount.eps>
 (epstopdf)             \includegraphics on input line 63.
 Package epstopdf Info: Output file is already uptodate.
 
-<epsImages/Authentication/deleteAccount-eps-converted-to.pdf, id=372, 557.08125
+<epsImages/Authentication/deleteAccount-eps-converted-to.pdf, id=403, 557.08125
 pt x 249.93375pt>
 File: epsImages/Authentication/deleteAccount-eps-converted-to.pdf Graphic file 
 (type pdf)
@@ -591,7 +591,7 @@ iceContract.eps>
 (epstopdf)             \includegraphics on input line 74.
 Package epstopdf Info: Output file is already uptodate.
 
-<epsImages/Authentication/suspendServiceContract-eps-converted-to.pdf, id=422, 
+<epsImages/Authentication/suspendServiceContract-eps-converted-to.pdf, id=452, 
 557.08125pt x 308.15125pt>
 File: epsImages/Authentication/suspendServiceContract-eps-converted-to.pdf Grap
 hic file (type pdf)
@@ -618,7 +618,7 @@ omainModel-eps-converted-to.pdf epsImages/Authentication/domainModel.eps>
 (epstopdf)             \includegraphics on input line 84.
 Package epstopdf Info: Output file is already uptodate.
 
-<epsImages/Authentication/domainModel-eps-converted-to.pdf, id=480, 557.08125pt
+<epsImages/Authentication/domainModel-eps-converted-to.pdf, id=511, 557.08125pt
  x 286.06876pt>
 File: epsImages/Authentication/domainModel-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -646,7 +646,7 @@ ment/scope-eps-converted-to.pdf epsImages/ManuscriptManagement/scope.eps>
 (epstopdf)             \includegraphics on input line 8.
 Package epstopdf Info: Output file is already uptodate.
 
-<epsImages/ManuscriptManagement/scope-eps-converted-to.pdf, id=509, 557.08125pt
+<epsImages/ManuscriptManagement/scope-eps-converted-to.pdf, id=539, 557.08125pt
  x 173.64874pt>
 File: epsImages/ManuscriptManagement/scope-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -680,7 +680,7 @@ anagement/createManuscriptServiceContract.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 <epsImages/ManuscriptManagement/createManuscriptServiceContract-eps-converted-t
-o.pdf, id=541, 557.08125pt x 428.60126pt>
+o.pdf, id=571, 557.08125pt x 428.60126pt>
 File: epsImages/ManuscriptManagement/createManuscriptServiceContract-eps-conver
 ted-to.pdf Graphic file (type pdf)
 
@@ -713,7 +713,7 @@ eManuscript.eps>
 (epstopdf)             \includegraphics on input line 35.
 Package epstopdf Info: Output file is already uptodate.
 
-<epsImages/ManuscriptManagement/deleteManuscript-eps-converted-to.pdf, id=608, 
+<epsImages/ManuscriptManagement/deleteManuscript-eps-converted-to.pdf, id=638, 
 557.08125pt x 436.63126pt>
 File: epsImages/ManuscriptManagement/deleteManuscript-eps-converted-to.pdf Grap
 hic file (type pdf)
@@ -750,7 +750,7 @@ ToSocialMedia.eps>
 (epstopdf)             \includegraphics on input line 46.
 Package epstopdf Info: Output file is already uptodate.
 
-<epsImages/ManuscriptManagement/linkToSocialMedia-eps-converted-to.pdf, id=659,
+<epsImages/ManuscriptManagement/linkToSocialMedia-eps-converted-to.pdf, id=689,
  557.08125pt x 498.86375pt>
 File: epsImages/ManuscriptManagement/linkToSocialMedia-eps-converted-to.pdf Gra
 phic file (type pdf)
@@ -782,7 +782,7 @@ uscript.eps>
 (epstopdf)             \includegraphics on input line 58.
 Package epstopdf Info: Output file is already uptodate.
 
-<epsImages/ManuscriptManagement/editManuscript-eps-converted-to.pdf, id=715, 55
+<epsImages/ManuscriptManagement/editManuscript-eps-converted-to.pdf, id=745, 55
 7.08125pt x 464.73625pt>
 File: epsImages/ManuscriptManagement/editManuscript-eps-converted-to.pdf Graphi
 c file (type pdf)
@@ -811,7 +811,7 @@ luateManuscript.eps>
 (epstopdf)             \includegraphics on input line 69.
 Package epstopdf Info: Output file is already uptodate.
 
-<epsImages/ManuscriptManagement/EvaluateManuscript-eps-converted-to.pdf, id=765
+<epsImages/ManuscriptManagement/EvaluateManuscript-eps-converted-to.pdf, id=795
 , 557.08125pt x 396.48125pt>
 File: epsImages/ManuscriptManagement/EvaluateManuscript-eps-converted-to.pdf Gr
 aphic file (type pdf)
@@ -839,7 +839,7 @@ ateActivity.eps>
 (epstopdf)             \includegraphics on input line 75.
 Package epstopdf Info: Output file is already uptodate.
 
-<epsImages/ManuscriptManagement/EvaluateActivity-eps-converted-to.pdf, id=766, 
+<epsImages/ManuscriptManagement/EvaluateActivity-eps-converted-to.pdf, id=796, 
 557.08125pt x 219.82124pt>
 File: epsImages/ManuscriptManagement/EvaluateActivity-eps-converted-to.pdf Grap
 hic file (type pdf)
@@ -869,7 +869,7 @@ uscript.eps>
 (epstopdf)             \includegraphics on input line 86.
 Package epstopdf Info: Output file is already uptodate.
 
-<epsImages/ManuscriptManagement/ReadManuscript-eps-converted-to.pdf, id=881, 55
+<epsImages/ManuscriptManagement/ReadManuscript-eps-converted-to.pdf, id=911, 55
 7.08125pt x 490.83376pt>
 File: epsImages/ManuscriptManagement/ReadManuscript-eps-converted-to.pdf Graphi
 c file (type pdf)
@@ -899,7 +899,7 @@ agement/sendManuscriptServiceContract.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 <epsImages/ManuscriptManagement/sendManuscriptServiceContract-eps-converted-to.
-pdf, id=936, 557.08125pt x 382.42876pt>
+pdf, id=966, 557.08125pt x 382.42876pt>
 File: epsImages/ManuscriptManagement/sendManuscriptServiceContract-eps-converte
 d-to.pdf Graphic file (type pdf)
 
@@ -929,8 +929,8 @@ ent.eps>
 (epstopdf)             \includegraphics on input line 105.
 Package epstopdf Info: Output file is already uptodate.
 
-<epsImages/DomainModels/ManuscriptManagement-eps-converted-to.pdf, id=999, 557.
-08125pt x 378.41376pt>
+<epsImages/DomainModels/ManuscriptManagement-eps-converted-to.pdf, id=1029, 557
+.08125pt x 378.41376pt>
 File: epsImages/DomainModels/ManuscriptManagement-eps-converted-to.pdf Graphic 
 file (type pdf)
 
@@ -959,7 +959,7 @@ e.eps>
 (epstopdf)             \includegraphics on input line 8.
 Package epstopdf Info: Output file is already uptodate.
 
-<epsImages/Communication/CommunicationScope-eps-converted-to.pdf, id=1040, 557.
+<epsImages/Communication/CommunicationScope-eps-converted-to.pdf, id=1070, 557.
 08125pt x 249.93375pt>
 File: epsImages/Communication/CommunicationScope-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -990,8 +990,8 @@ ServiceContract.eps>
 (epstopdf)             \includegraphics on input line 20.
 Package epstopdf Info: Output file is already uptodate.
 
-<epsImages/Communication/sendLetterServiceContract-eps-converted-to.pdf, id=106
-7, 557.08125pt x 426.59375pt>
+<epsImages/Communication/sendLetterServiceContract-eps-converted-to.pdf, id=109
+4, 557.08125pt x 426.59375pt>
 File: epsImages/Communication/sendLetterServiceContract-eps-converted-to.pdf Gr
 aphic file (type pdf)
 
@@ -1034,8 +1034,8 @@ ServiceContract.eps>
 (epstopdf)             \includegraphics on input line 31.
 Package epstopdf Info: Output file is already uptodate.
 
-<epsImages/Communication/viewLetterServiceContract-eps-converted-to.pdf, id=112
-9, 557.08125pt x 332.24126pt>
+<epsImages/Communication/viewLetterServiceContract-eps-converted-to.pdf, id=115
+5, 557.08125pt x 332.24126pt>
 File: epsImages/Communication/viewLetterServiceContract-eps-converted-to.pdf Gr
 aphic file (type pdf)
 
@@ -1066,7 +1066,7 @@ mment-eps-converted-to.pdf epsImages/Communication/comment.eps>
 (epstopdf)             \includegraphics on input line 41.
 Package epstopdf Info: Output file is already uptodate.
 
-<epsImages/Communication/comment-eps-converted-to.pdf, id=1188, 557.08125pt x 5
+<epsImages/Communication/comment-eps-converted-to.pdf, id=1212, 557.08125pt x 5
 75.14874pt>
 File: epsImages/Communication/comment-eps-converted-to.pdf Graphic file (type p
 df)
@@ -1089,7 +1089,7 @@ DomainModel.eps>
 (epstopdf)             \includegraphics on input line 51.
 Package epstopdf Info: Output file is already uptodate.
 
-<epsImages/DomainModels/communicationDomainModel-eps-converted-to.pdf, id=1235,
+<epsImages/DomainModels/communicationDomainModel-eps-converted-to.pdf, id=1258,
  557.08125pt x 332.24126pt>
 File: epsImages/DomainModels/communicationDomainModel-eps-converted-to.pdf Grap
 hic file (type pdf)
@@ -1106,22 +1106,16 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 62.
 (./FunctionalRequirements.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 62.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 62.
+Package rerunfilecheck Info: File `FunctionalRequirements.out' has not changed.
 
-
-Package rerunfilecheck Warning: File `FunctionalRequirements.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `FunctionalRequirements.out':
-(rerunfilecheck)             Before: DDC780B7F02DD60CFB0C6FDFC8CF48E4;856
-(rerunfilecheck)             After:  E2BFDB3C12EA4D90B8A28E952A096579;1125.
+(rerunfilecheck)             Checksum: E2BFDB3C12EA4D90B8A28E952A096579;1125.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 62.
  ) 
 Here is how much of TeX's memory you used:
- 5964 strings out of 493304
- 94059 string characters out of 6139871
- 178084 words of memory out of 5000000
- 9243 multiletter control sequences out of 15000+600000
+ 5968 strings out of 493304
+ 94138 string characters out of 6139871
+ 180084 words of memory out of 5000000
+ 9247 multiletter control sequences out of 15000+600000
  9620 words of font info for 34 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  34i,8n,32p,456b,411s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1130,10 +1124,10 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on FunctionalRequirements.pdf (25 pages, 548644 bytes).
+Output written on FunctionalRequirements.pdf (25 pages, 549057 bytes).
 PDF statistics:
- 1310 PDF objects out of 1440 (max. 8388607)
- 1166 compressed objects within 12 object streams
+ 1331 PDF objects out of 1440 (max. 8388607)
+ 1187 compressed objects within 12 object streams
  83 named destinations out of 1000 (max. 500000)
- 225 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 257 words of extra memory for PDF output out of 10000 (max. 10000000)
 
