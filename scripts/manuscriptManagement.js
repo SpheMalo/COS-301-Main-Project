@@ -1,12 +1,14 @@
 $(document).ready(function()
 {
 	
-	$('#bookDiv').fadeOut( "fast", function() {});
-	$('#serviceImg').fadeOut( "fast", function() {});
-	$('#sidePicDiv').fadeOut( "fast", function() {});
-	$('#inputs2').fadeOut("fast",function(){});
-	$('#pageView').fadeOut("fast",function(){});
-	$('#editSection').fadeOut("fast",function(){});
+	$('#bookDiv').css('display','none');
+	$('#serviceImg').css('display','none');
+	$('#sidePicDiv').css('display','none');
+	$('#inputs2').css('display','none');
+	$('#pageView').css('display','none');
+	$('#editSection').css('display','none');
+	
+	
 	
 	$("#goBackService").click(function(){
 		window.location.href = "insideContent.php";	
