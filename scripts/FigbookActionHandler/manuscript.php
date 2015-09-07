@@ -37,7 +37,16 @@ class manuscript {
         
         $this->dbInstance = null;
     }
+
+    public function link($id,$title, $access) {
+        $queryString = "INSERT INTO user_page (user_name ,page_id ,user_role) VALUES ('$id', '$title', '$access')";
+        $queryResults = mysqli_query($this->dbInstance, $queryString);
+        $result = "userid: ".$id." linked to ".$title." with ".$access." access";
+       return $result;
+    }
     
+
+
     //go to systems database and check if the book title exists
      public function titleExists($title) {
         

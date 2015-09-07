@@ -233,6 +233,17 @@ if(isset($actionFlag) && $actionFlag != ""){
            
             
         }
+        else if($actionFlag == "getUsers"){ //Get User Status
+		    $tmpUser = new user($dbHandler->getConnection());
+		    $response = ($tmpUser->getUsers());
+		    
+		}
+
+		else if($actionFlag == "link"){ //Link users to books
+		    $tmpMen= new manuscript($dbHandler->getConnection());
+		    $response = $tmpMen->link($object->user_id, $object->title, $object->access);
+		    
+		}
         
         
 }else{

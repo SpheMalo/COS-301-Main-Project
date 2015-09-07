@@ -30,6 +30,17 @@ class user {
         
         $this->dbInstance = null;
     }
+
+    public function getUsers()
+    {
+        $sql = "SELECT user_id, user_name FROM user";
+        $result = mysqli_query($this->dbInstance, $sql);
+
+        while($row=mysqli_fetch_array($result)) {
+           $return[]= $row;
+       }
+       return $return;
+    }
     
     //go to systems database and check if the username and password match a single record
     public function loginUser($uemail,$upassword){

@@ -3,6 +3,73 @@
  * Populates relevant text for edit 
  * @param {Number} value
  */
+function link()
+{
+    var e = document.getElementById("users");
+    var strUser = e.options[e.selectedIndex].value;
+
+    var d = document.getElementById("access");
+    var access = d.options[d.selectedIndex].value;
+
+    var jsonString = {
+        "action": "link",
+        "title": localStorage.bookTitle,
+        "user_id": strUser,
+        "access": access
+    };
+    jsonString = JSON.stringify(jsonString);                
+
+    $.ajax({
+        url: "scripts/FigbookActionHandler/actionHandler.php",
+        data: "json="+jsonString,
+        dataType: 'json',
+        type: 'POST',
+        success: function (data) {
+            var jsonString = JSON.stringify(data);  
+            alert(jsonString);
+        },
+        error: function (data) {
+            console.log('Error1: Request failed. ' + (data.responseText));
+        }
+    });
+}
+
+
+function sendManuscript()
+{
+    var jsonString = {
+        "action": "getUsers",
+    };
+    jsonString = JSON.stringify(jsonString);                
+    
+
+    $.ajax({
+        url: "scripts/FigbookActionHandler/actionHandler.php",
+        data: "json="+jsonString,
+        dataType: 'json',
+        type: 'POST',
+        success: function (data) {
+
+            var html = "";
+
+            var i = 0;
+            var textnode2 = document.getElementById("users");
+            while(i <data.length)
+            {
+                var op = new Option();
+                op.value = data[i].user_id;
+                op.text = data[i].user_name;
+                textnode2.options.add(op); 
+                i++;
+            }
+        },
+        error: function (data) {
+            var jsonString = JSON.stringify(data);  
+            alert(jsonString);
+            console.log('Error2: Request failed. ' + jsonString + (data.responseText));
+        }
+    });
+}
 
 function addSection()
 {

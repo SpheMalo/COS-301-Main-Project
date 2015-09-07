@@ -76,6 +76,17 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
                        
                         	<div id="topService">
                                  <div id="services">
+                                 		<div>
+                                 			<input type="button" value="List users" onclick="sendManuscript()"></input>
+											<select id='users'>
+											</select>
+											<select id='access'>
+											  <option value="READ">READ</option>
+											  <option value="WRITE">WRITE</option>
+											</select>
+
+											<input type="button" value="Link" onclick="link()"></input>
+                                 		</div>
 										<div class="service">Create Book</div>
 										<div id="viewBooks">List Books</div>
 										<div id="writeEditorial">Editorial Letter</div>
