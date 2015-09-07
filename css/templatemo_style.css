@@ -113,7 +113,7 @@ background: linear-gradient(to bottom, rgba(142,208,232,1) 0%, rgba(153,226,250,
 #pageEditTitle{text-align:center;}
 
 #aboutme{}/*This is the about me textArea*/
-#frame2{z-index:2; float:right;overflow-x:hidden; margin-top: 30px; margin-right:20px;width:250px;text-align:center;}
+
 #addtional{margin-top:22px;}
 
 
@@ -146,15 +146,8 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);
 #manuscriptArea{margin-top:10px;resize: vertical;column-rule:medium;}
 
 	/*This is the about me edit button*/
-#profileEditButton{position:relative;
-	bottom:52px;left:50px;
-	width:120px;height:30px;}
-#editAboutMe
-{
-	position:relative;
-	bottom:15px;left:100px;
-	width:140px;height:40px;
-}
+
+
 #contactGray{width:240px;
 	float: left; 
 	background: #cccccc;
@@ -648,7 +641,7 @@ h2.resp-accordion	{ color: #ffffff; }
 	.templatemo_form textarea { height: 120px; }
 	.templatemo_address { font-size: 12px; }
 	.templatemo_portfoliotext { width: 95%; padding: 15px ; font-size: 14px; }
-	.resp-vtabs .templatemo_aboutcontainer, .resp-vtabs .templatemo_testicontainer	{ width: 75%; }
+	.resp-vtabs .templatemo_aboutcontainer, .resp-vtabs .templatemo_testicontainer	{ width:200px; }
 	.templatemo_leftgap_about	{ padding: 0px 0px 0px 6px; }
 	.templatemo_aboutlinkwrapper { width: 95.8%; float: left; background: #666666; text-align: center; display: block; }
 	.templatemo_aboutlinkwrapper1 {  display: none; }
@@ -667,6 +660,110 @@ h2.resp-accordion	{ color: #ffffff; }
 }
 
 @media(min-width:1200px) {
+  
+/*Profile*/
+#profileContainer{
+  display:none;
+  width:1200px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:40px;
+  height:800px;
+}
+#editAboutMe:hover{cursor:pointer;}
+#editAboutMe
+{
+	margin-top:20px;left:100px;
+	width:140px;height:40px;
+}
+#aboutMeContainer
+{
+   background-color:rgb(209, 209, 209);
+  overflow-y:auto;
+  display:block;
+  width:580px;
+  height:400px;
+  margin-left:auto;
+  margin-right:auto;
+  border-top:2px solid rgba(126, 126, 126,0.5);
+ border-bottom:2px solid rgba(126, 126, 126,0.5);
+  float:left;
+}
+.details
+{
+   float:left;
+   height:360px;
+   width:300px;
+  margin-top:20px;
+   text-align:center;
+}
+#aboutImage
+{
+  position:relative;
+  top:20px;
+  right:20px;
+  width:240px;
+  height:360px;
+  float:right;
+}
+
+#portfolioContainer
+{
+  margin-top:350px;
+  background-color:rgb(209, 209, 209);
+  overflow-y:auto;
+  display:block;
+  width:580px;
+  height:400px;
+  margin-left:auto;
+  margin-right:auto;
+  float:left;
+   border-top:2px solid rgba(126, 126, 126,0.5);
+ border-bottom:2px solid rgba(126, 126, 126,0.5);
+}
+#frame1
+{
+float:left;overflow-x:hidden;
+margin-top: 30px; margin-left:20px;
+width:250px;text-align:center;
+}
+#frame2
+{
+float:right;overflow-x:hidden;
+margin-top: 30px; margin-right:20px;
+width:250px;text-align:center;
+}
+#profileEditButton{
+
+	margin-top:20px;
+	width:120px;height:30px;
+}
+
+#contactInfoContainer
+{
+  margin-top:-50px;
+  background-color:rgb(209, 209, 209);
+  overflow-y:auto;
+  display:block;
+  width:580px;
+  height:400px;
+  margin-left:auto;
+  margin-right:auto;
+  float:left;
+   border-top:2px solid rgba(126, 126, 126,0.5);
+  border-bottom:2px solid rgba(126, 126, 126,0.5);
+}
+
+#profilePic
+{
+  width:100px;
+  height:100px;
+}
+/*Profile*/
+	
+  
+  
+  
 	#menu-container{width:100%;min-height:800px;}
 	#menu-1{height:auto;width:1176px;margin-left:auto;margin-right:auto;}
 	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
@@ -702,7 +799,7 @@ h2.resp-accordion	{ color: #ffffff; }
 	.templatemo_form textarea { height: 150px; }
 	.templatemo_address { font-size: 14px; }
 	.templatemo_portfoliotext { width: 95%; padding: 30px; font-size: 16px; }
-	.resp-vtabs .templatemo_aboutcontainer, .resp-vtabs .templatemo_testicontainer	{ width: 75%; }
+	.resp-vtabs .templatemo_aboutcontainer, .resp-vtabs .templatemo_testicontainer	{ width: 300px; }
 	.templatemo_leftgap_about	{ padding: 0px 0px 0px 10px; }
 	.resp-vtabs ul.templatemo_tab li, 
 	.resp-vtabs ul.templatemo_tab li.resp-tab-active, 

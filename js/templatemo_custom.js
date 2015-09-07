@@ -54,7 +54,7 @@ jQuery(document).ready(function($){
 	
 	$(".main_menu a.templatemo_page4").click(function(){    
     $('#menu-container .homepage').fadeOut(1000, function(){
-        $('#menu-container .testimonial').fadeIn(1000);
+        $('#profileContainer').fadeIn(1000);
         $('.templatemo_frame').fadeIn(1000);
         $('#cmt').fadeIn(1000);
 	    

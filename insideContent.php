@@ -92,27 +92,11 @@
                     <div class="templatemo_mainimg"><img class="menu-img" src="images/templatemo_home1.jpg" height="316px" alt="home img 01"></div>
                 </div>
                 
-
-                <div class="menuBox templatemo_mainportfolio">
-                      <div class="templatemo_link"><a id="comLink" class="show-3 templatemo_page3 menuItem" href="#">Communication</a></div> 
-                      <div class="templatemo_mainimg templatemo_portfotopgap">
-                        <img height="316px" class="menu-img" src="images/templatemo_home2.jpg" alt="home img 02">
-                      </div>               
-                </div>
-           
-            
-            
             	<div class="menuBox templatemo_maintesti ">
                 	<div class="templatemo_link"><a class="show-4 templatemo_page4 menuItem" id="profileLink" href="#">Profile</a></div>
                     <div class="templatemo_mainimg"><img class="menu-img" src="images/templatemo_home3.jpg" height="316px" alt="home img 03"></div>
                 </div>
                 
-            
-            
-            	
-            
-            
-            	
                 <div class="menuBox templatemo_mainabout">
                 	<div class="templatemo_link"><a class="show-5 templatemo_page5 menuItem" href="#">About Us</a></div>
                 </div>
@@ -131,183 +115,67 @@
    </div> <!--contains the main menu tabs END-->
     <!-- homepage end -->
     
-    
-
-		<!-- portfilio start -->
-		<div class="portfolio" id="menu-3" style="display: none;" >
-			<div class="container">
-				<div class="col-md-3 col-sm-6 templatemo_leftgap">
-				  <div class="templatemo_insideportfolio templatemo_botgap">
-					  <div class="templatemo_portfoliotext">
-					<h2>Communication</h2>
-					<div class="clear"></div>
-						</div>
-				  </div>
-					<div class="templatemo_portfolioback">
-						<div class="templatemo_link"><a class="show-1 templatemo_homeportfolio" href="#">Go Back</a></div>
+			<!-- this is the back button: <div class="templatemo_link"><a class="show-1 templatemo_hometestimonial" href="#">Go Back</a></div>-->
+			<!-- profileContainer START -->
+			<div id="profileContainer">
+				<div id="aboutMeContainer">
+					<div class="details">
+						<h2>About Me</h2>
+						<textarea readonly class="aboutMeInfo" id="aboutme" rows="5" cols="33"></textarea>
+						<h2 style="margin-top:12px;">Additional information</h2>
+						<textArea readonly class="aboutMeInfo" id="additional" rows="5" cols="33" ></textarea>
+						<button id="editAboutMe">Edit Details</button>
 					</div>
+					<img id="aboutImage" src="images/templatemo_testimonial1.jpg" alt="testimonial image">					
 					
-				</div>
-				<div class="col-md-3 col-sm-6 templatemo_leftgap">
-							<div class="templatemo_botgap templatemo_portfotopgap gallery-item">
-								<img src="images/portfolio/templatemo_portfolio01.jpg" alt="gallery 1">
-								<div class="overlay">
-									<a href="images/portfolio/templatemo_portfolio01.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
-								</div>
-							</div>				
-					<div class="templatemo_botgap templatemo_topgap gallery-item">
-					   <img src="images/portfolio/templatemo_portfolio02.jpg" alt="gallery 2">
-					   <div class="overlay">
-									<a href="images/portfolio/templatemo_portfolio02.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
-								</div>
-					</div>
-					<div class="templatemo_botgap templatemo_topgap gallery-item">
-					   <img src="images/portfolio/templatemo_portfolio03.jpg" alt="gallery 3">
-					   <div class="overlay">
-									<a href="images/portfolio/templatemo_portfolio03.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
-								</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 templatemo_leftgap">
-					<div class="templatemo_botgap templatemo_topgap gallery-item">
-						 <img src="images/portfolio/templatemo_portfolio04.jpg" alt="gallery 4">
-						 <div class="overlay">
-									<a href="images/portfolio/templatemo_portfolio04.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
-								</div>
-					</div>
-					<div class="templatemo_botgap templatemo_topgap gallery-item">
-					   <img src="images/portfolio/templatemo_portfolio05.jpg" alt="gallery 5">
-					   <div class="overlay">
-									<a href="images/portfolio/templatemo_portfolio05.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
-								</div>
-					</div>
-					<div class="templatemo_botgap templatemo_topgap gallery-item">
-					   <img src="images/portfolio/templatemo_portfolio06.jpg" alt="gallery 6">
-					   <div class="overlay">
-									<a href="images/portfolio/templatemo_portfolio06.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
-								</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 templatemo_leftgap">
-					<div class="templatemo_botgap templatemo_topgap gallery-item">
-						 <img src="images/portfolio/templatemo_portfolio07.jpg" alt="gallery 7">
-						 <div class="overlay">
-									<a href="images/portfolio/templatemo_portfolio07.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
-								</div>
-					</div>
-					<div class="templatemo_botgap templatemo_topgap gallery-item">
-					   <img src="images/portfolio/templatemo_portfolio08.jpg" alt="gallery 8">
-					   <div class="overlay">
-									<a href="images/portfolio/templatemo_portfolio08.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
-								</div>
-					</div>
-					<div class="templatemo_botgap templatemo_topgap gallery-item">
-					   <img src="images/portfolio/templatemo_portfolio09.jpg" alt="gallery 9">
-					   <div class="overlay">
-									<a href="images/portfolio/templatemo_portfolio09.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
-								</div>
-					</div>
-				</div>
-		</div>
-		</div>
-		 <!-- portfolio end -->
-		<!-- testimonial start -->
-		<div class="content testimonial" id="menu-4">
-						<div class="container">
-				<div class="row templatemo_bordergapborder">
-				<!--vertical Tabs-->
-				<div id="cmt" >
-				<div class="col-md-3 col-sm-12 templatemo_leftgap_about">
-				<ul class="resp-tabs-list templatemo_testitab">
-					<li>About Me</li>
-					<li>Portfolio</li>
-					<li>Contact</li>
-				</ul>
-				<div class="templatemo_aboutlinkwrapper">
-				<div class="templatemo_link"><a class="show-1 templatemo_hometestimonial" href="index.html">Go Back</a></div>
-				</div>
-				</div>
-				<div class="resp-tabs-container templatemo_testicontainer" >
-					<div>
-						<div id="aboutLeftBack" class=" templatemo_rightgap_about">
-							<div class="templatemo_graybg templatemo_botgap" id="aboutGrey">
-							 <div id="profileFrame" class="templatemo_frame">
-							   
-							  <h2>About Me</h2>
-							  <textarea readonly class="aboutMeInfo" id="aboutme" rows="5" cols="33"></textarea>
-							  <h2 style="margin-top:12px;">Additional information</h2>
-							  <textArea readonly class="aboutMeInfo" id="additional" rows="5" cols="33" ></textarea>
-							  
-							</div>
-							<button id="editAboutMe">Edit Details</button>
+				</div>							
+				
+						
+				<div id="portfolioContainer"><!--PortfolioContainer START-->
+						<div id="frame1">
+							<h2>Portfolio</h2>
+							<p style="margin-top:2px;">Username</p><input class="profileInfo" readonly type="text" />
+							<p style="margin-top:4px;">Firstname</p><input class="profileInfo" readonly type="text" />
+							<p style="margin-top:4px;">Surname</p><input class="profileInfo" readonly type="text" />
+							<p style="margin-top:4px;">Genres of Interest</p>
+							<textarea class="profileInfo" rows="4" cols="22" readonly></textarea>
+							<button type="button" id="profileEditButton">Edit Details</button>
 						</div>
-						</div>
-						<div id="aboutMeImage" class=" templatemo_botgap"><img src="images/templatemo_testimonial1.jpg" alt="testimonial image"></div>
-					</div>
-					<div class="col-lg-7">
-						<div class="templatemo_col50 templatemo_rightgap_about">                    	
-							<div id="portfolioGray" class="templatemo_graybg templatemo_botgap">
-							<div class="templatemo_frame">
-								<h2>Portfolio</h2>
-								<p style="margin-top:2px;">Username</p><input class="profileInfo" readonly type="text" />
-								<p style="margin-top:4px;">Firstname</p><input class="profileInfo" readonly type="text" />
-								<p style="margin-top:4px;">Surname</p><input class="profileInfo" readonly type="text" />
-							
-								<p style="margin-top:4px;">Genres of Interest</p >
-								<textarea class="profileInfo" rows="4" cols="22" readonly></textarea>
-							
-							
+					
+						<div id="frame2"><!--Frame2 START-->
+							<div id="portImageBack" class="templatemo_col50 templatemo_leftgap templatemo_botgap">
+								<img src="images/templatemo_testimonial2.jpg" alt="testimonial image" id="portImage">
 							</div>
-							
-							<div id="frame2">
-								<div id="portImageBack" class="templatemo_col50 templatemo_leftgap templatemo_botgap"><img src="images/templatemo_testimonial2.jpg" alt="testimonial image" id="portImage">
-								</div>
-								<div>
+							<div>
 								<p style="margin-top:4px;">Author of:</p>
 								<ul id="booklist">
 									<p style="font-size:8pt;">..This will be a list loaded dynamicly using javascript..</p>
 								</ul>
-									<button id="delete-button">Delete Account</button>
-									<button id="suspend-button">Suspend Account</button>
-									<button id="activate-button">Activate Account</button>
-								</div>
-								
-							</div>
+								<button id="delete-button">Delete Account</button>
+								<button id="suspend-button">Suspend Account</button>
+								<button id="activate-button">Activate Account</button>
+							</div>	
+						
+						</div><!--Frame2 END-->
+										
+				</div><!--PortfolioContainer END-->
 							
-							</div>
-							<button type="button" id="profileEditButton">Edit Details</button>
-						</div>
-						
-					</div>
-					<div>
-						<div class="templatemo_rightgap_about">
-							<div class="templatemo_botgap" id="contactGray">
-							<div class="templatemo_frame">
-							<h2>Contact</h2>
-								<p style="margin-top:2px;">Cellphone</p><input class="contactInfo" readonly type="text" />
-								<p style="margin-top:4px;">Home</p><input class="contactInfo" readonly type="text" />
-								<p style="margin-top:4px;">Work</p><input class="contactInfo" readonly type="text" />
-								<p style="margin-top:4px;">Email</p><input class="contactInfo" readonly type="text" />
-							</div>
-							<button id="editContactInfo">Edit Contact Info</button>
-							</div>
-						</div>
-						
-						<div class=" templatemo_botgap" id="contactImage"><img src="images/templatemo_testimonial3.jpg" alt="testimonial image" style="max-height:467px;" ></div>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-12 templatemo_leftgap templatemo_aboutlinkwrapper1">
-						<div class="templatemo_aboutback templatemo_botgap">
-						<div class="templatemo_link"><a class="show-1 templatemo_hometestimonial" href="#">Go Back</a></div>
-					</div>
-					</div>
-		</div>
-				</div>
-	
-		</div>
-		 <!-- testimonial end -->
-		<!-- about start -->
+				
+				<div id="contactInfoContainer"><!--contactInfoContainer START-->
+					<h2>Contact</h2>
+					<p style="margin-top:2px;">Cellphone</p><input class="contactInfo" readonly type="text" />
+					<p style="margin-top:4px;">Home</p><input class="contactInfo" readonly type="text" />
+					<p style="margin-top:4px;">Work</p><input class="contactInfo" readonly type="text" />
+					<p style="margin-top:4px;">Email</p><input class="contactInfo" readonly type="text" />
+					<button id="editContactInfo">Edit Contact Info</button>						
+					<img id="profilePic" src="images/templatemo_testimonial3.jpg" alt="profile picture" style="max-height:467px;" >
+					
+					
+				</div><!--contactInfoContainer END-->
+			</div><!--profileContainer END-->
+		
+		
+		<!-- About Us START -->
 	   <div class="content about" id="menu-5">
 		   <div class="container">
 			   <div class="row templatemo_bordergapborder">
