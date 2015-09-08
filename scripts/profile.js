@@ -84,7 +84,7 @@ window.onload = function(){
 				var action =
                 {
 					"aboutme": aboutArray[0].value,
-					"addInfo":aboutArray[1].value,
+					//"addInfo":aboutArray[1].value,
                     "action" : "updateAboutMe"
                 }
               	var JSONstring = JSON.stringify(action);

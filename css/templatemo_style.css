@@ -112,7 +112,7 @@ background: linear-gradient(to bottom, rgba(142,208,232,1) 0%, rgba(153,226,250,
 }
 #pageEditTitle{text-align:center;}
 
-#aboutme{}/*This is the about me textArea*/
+
 
 #addtional{margin-top:22px;}
 
@@ -541,7 +541,7 @@ h2.resp-accordion	{ color: #ffffff; }
   margin-left:auto;
   margin-right:auto;
   margin-top:40px;
-  height:600px;
+  height:500px;
  
 }
 #topProfileBar button:hover{cursor:pointer;}
@@ -552,6 +552,7 @@ h2.resp-accordion	{ color: #ffffff; }
   height:35px;
   padding-top:2px;
 }
+#aboutme{height:180px;padding:2px;width:305px;resize: none;}/*This is the about me textArea*/
 #editAboutMe:hover{cursor:pointer;}
 #editAboutMe
 {
@@ -564,11 +565,11 @@ h2.resp-accordion	{ color: #ffffff; }
   overflow-y:auto;
   display:block;
   width:30%;
-  height:400px;
+  height:300px;
   margin-left:auto;
   margin-right:auto;
 
- border-bottom:3px groove rgba(255, 255, 255,0.3);
+ border:3px groove rgba(255, 255, 255,0.3);
   float:left;
 }
 .details
@@ -597,9 +598,9 @@ h2.resp-accordion	{ color: #ffffff; }
   height:220px;
   
   float:left;
-  border-top:3px groove rgba(255, 255, 255,0.3);
+  
 
-  border-bottom:3px groove rgba(255, 255, 255,0.3);
+  border:3px groove rgba(255, 255, 255,0.3);
 }
 #frame1 p{font-size:12pt;margin-top:5px;}
 #frame1 input
@@ -636,12 +637,12 @@ width:350px;text-align:center;
   overflow-y:auto;
   display:block;
   width:70%;
-  height:400px;
+  height:300px;
   margin-left:auto;
   margin-right:auto;
   float:left;
   
- border-bottom:3px groove rgba(255, 255, 255,0.3);
+  border:3px groove rgba(255, 255, 255,0.3);
 }
 #authorOfList
 {
@@ -649,6 +650,7 @@ width:350px;text-align:center;
   width:200px;
   float:left;
   text-align:center;
+  
 }
 #contactInfoDiv
 {
@@ -735,6 +737,9 @@ width:350px;text-align:center;
   background-color:rgb(209, 209, 209);
   padding:5px;
   
+}
+#message{resize: none;
+height:180px;
 }
 /********************Contact Us END*****************************/
  

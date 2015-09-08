@@ -12,7 +12,8 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
     <!--CSS links here-->
    
     
-    <link rel="stylesheet" href="css/content.css">  
+    <link rel="stylesheet" href="css/content.css">
+	<link rel="stylesheet" href="css/animate.css"> 
     <link rel="stylesheet" href="textarea/samples/css/samples.css">
 	<link rel="stylesheet" href="textarea/samples/toolbarconfigurator/lib/codemirror/neo.css">
     
@@ -74,32 +75,43 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 		  
           <div id="serviceBackground">
                        
-                        	<div id="topService">
-                                 <div id="services">
-				 <div>
-                                 			<input type="button" value="List users" onclick="sendManuscript()"></input>
-											<select id='users'>
-											</select>
-											<select id='access'>
-											  <option value="READ">READ</option>
-											  <option value="WRITE">WRITE</option>
-											</select>
+                         <div id="topService">
+							  <div id="optionsContainer">
+								   <div id="options">Options</div>
+								   <div class="optionsSlide">
+										<div class="service options">Create Book</div>
+										<div class="options" id="viewBooks">List Books</div>
+										<div class="options" id="invitation">Send Invitation</div>
+										<div class="options" id="writeEditorial">Editorial Letter</div>
+										<div  class="options" id="addChapter">Add Chapter</div>
+								   </div>
+							  </div>
 
-											<input type="button" value="Link" onclick="link()"></input>
-                                 		</div>			 
-				 
-										<div class="service">Create Book</div>
-										<div id="viewBooks">List Books</div>
-										<div id="writeEditorial">Editorial Letter</div>
-										<div id="chapterButton"><div id="addChapter" onclick="addSection()">Add Chapter </div><input type='text' id='sectionName' /></div>
-								    
-                                 </div>
-                                 <div class="templatemo_mainservice templatemo_botgap" id="goBackService">
-                                    <a id="serviceGoBack" class="show-1 templatemo_homeservice" href="#">Go Back</a>
-                                 </div>
+							  <div class="templatemo_mainservice templatemo_botgap" id="goBackService">
+								 <a id="serviceGoBack" class="show-1 templatemo_homeservice" href="#">Go Back</a>
+							  </div>
 								 
-                        	 </div>
+                         </div>
 							
+							<!--This is pop up boxes for adding chapters and linking users START-->
+							<div id="addChapterArea" style="display:none;">
+								   <h2>Please enter a chapter name:</h2><br>
+								   <input type='text' id='sectionName' /><br>
+								   <button onclick="addSection()">Add This Chapter</button>
+							  </div>
+										
+							  <div id="sendManuscriptContainer" style="display:none;">
+								  <input type="button" value="List users" onclick="sendManuscript()"></input><br>
+								  <select id='users'>
+								  </select><br>
+								  <select id='access'>
+									<option value="READ">READ</option>
+									<option value="WRITE">WRITE</option>
+								  </select><br>
+
+								  <input type="button" value="Link" onclick="link()"></input>
+							  </div>
+							  <!--This is pop up boxes for adding chapters and linking users END-->
 							
                             <div id="scrollDiv">
                                 <div id="bookList">

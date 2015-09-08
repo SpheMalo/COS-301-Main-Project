@@ -5,6 +5,7 @@
  */
 function link()
 {
+	
     var e = document.getElementById("users");
     var strUser = e.options[e.selectedIndex].value;
 
@@ -27,6 +28,7 @@ function link()
         success: function (data) {
             var jsonString = JSON.stringify(data);  
             alert(jsonString);
+			closeLightbox();
         },
         error: function (data) {
             console.log('Error1: Request failed. ' + (data.responseText));
@@ -99,6 +101,7 @@ function addSection()
                 if (data && data.edit && data.edit.result === 'Success')
                 {
                     alert("Section saved successfully");
+					closeLightbox();
 					//This will display the actual page again. with updated values
 					
                 }
@@ -221,6 +224,13 @@ $(document).ready(function () {
 	///Loading/opening the editorial letter panel.
 	$("#writeEditorial").click(function(){
 		$( "#letterHide" ).trigger( "click" );
+		
+			//hides the options menu
+			$('.optionsSlide').removeClass('pullDown');
+			$('.optionsSlide').css('visibility','hidden');
+			//hides the options menu
+		
+		
 			//alert($('#serviceBackground').css('margin-left'));
 		if($('#serviceBackground').css('margin-left') != '20px'){
 			$("#serviceBackground").animate({
@@ -230,16 +240,6 @@ $(document).ready(function () {
 			$('#editorialLetter').css('display','block');
 			$('#letterHide').css('display','block');
 			
-		}else{//this should actually be triggered by another button like save or send or close
-				
-				var val = $("#serviceBackground").css('margin-right');
-				
-				var val = val.substring(0,val.indexOf('px'));
-				//alert(val);
-				
-			$("#serviceBackground").css('margin-left','auto')
-			
-			 
 		}
            //$('#serviceBackground').slideToggle(500)         
                    
@@ -253,9 +253,15 @@ $(document).ready(function () {
 		$("#commentSide").css('display','none');
 		$("#commentHide").css('display','none');
 		//Make the editorial letter dissappear
+		
 		$('#editorialLetter').css('display','none');
 		$('#letterHide').css('display','none');
-			
+		
+		//hides the options menu
+			$('.optionsSlide').removeClass('pullDown');
+			$('.optionsSlide').css('visibility','hidden');
+		//hides the options menu
+		
 		$('#editSection').fadeOut("slow",function(){
 				$('#pageView').fadeOut("slow",function(){
 					$('#bookList').fadeIn("slow",function(){});
