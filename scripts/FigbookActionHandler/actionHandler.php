@@ -198,7 +198,7 @@ if(isset($actionFlag) && $actionFlag != ""){
             $bookTitle = $object->bookTitle;
             $message = $object->text;
             $tmpMen= new manuscript($dbHandler->getConnection());
-            if ($tmpMen->getUserRole($editor_id, $bookTitle) == "Editor"){
+            if ($tmpMen->getUserRole($editor_id, $bookTitle) == "Editor" || $tmpMen->getUserRole($editor_id, $bookTitle) == "READ"){
                 $tmpMen= new communication($dbHandler->getConnection());
                 $response = $tmpMen->sendEditorialLetter($editor_id, $bookTitle, $message);
             }

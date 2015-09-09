@@ -118,7 +118,7 @@ class manuscript {
         }
         //echo "UserId ". $uid;
         //echo "BookID ". $title;
-        $queryString = "SELECT * FROM user_page WHERE user_name= '$uid' AND page_id= '$title'";
+        $queryString = "SELECT * FROM user_page WHERE user_name= '$uid' AND (page_id= '$title' OR page_id='$bookTitle')";
              $queryResults = mysqli_query($this->dbInstance, $queryString);
              if($queryResults){
                  
@@ -157,7 +157,7 @@ class manuscript {
            
         }
         
-        $queryString = "SELECT * FROM user_page WHERE user_name= '$uid' AND page_id= '$title'";
+        $queryString = "SELECT * FROM user_page WHERE user_name= '$uid' AND (page_id= '$title' OR page_id='$bookTitle')";
              $queryResults = mysqli_query($this->dbInstance, $queryString);
              if($queryResults){
                  

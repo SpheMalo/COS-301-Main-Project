@@ -33,7 +33,7 @@ $(document).ready(function () {
                 $('#letterText').css('display', 'block');
                 $('#sendLetter').css('display', 'block');
             }
-            else if (role === "Editor") {
+            else if (role === "Editor" || role === "READ") {
                 localStorage.reload = "no";
                 $('#letterText').css('display', 'none');
                 $('#sendLetter').css('display', 'none');
@@ -61,7 +61,7 @@ $(document).ready(function () {
             addErrorCode("Please select book for letter", "letterArea", "#F95050");
             send = false;
         }
-        else if (myrole !== "Editor") {
+        else if (myrole === "Creator" || myrole === "WRITE") {
             addErrorCode("You are not an editor!", "letterArea", "#F95050");
             send = false;
         }

@@ -154,6 +154,7 @@ function postComment(){
 
 function editSection(value)
 {
+    if(localStorage.userRole === "Creator" || localStorage.userRole === "WRITE"){
 	var jsonString = {
 		"format": "json",
 		"action": "getTimeStamp",
@@ -199,6 +200,10 @@ function editSection(value)
 	$(".cke_editable").html(val);
 	$("#saveBtn").attr("name","" + value);
 	localStorage.originalContent = val;
+    }
+    else{
+        alert("You can only read this book");
+    }
 }
 
 
