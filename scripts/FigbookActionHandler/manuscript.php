@@ -81,13 +81,9 @@ class manuscript {
             $uid = $row['user_id'];
 
         }
-<<<<<<< HEAD
 
         $queryString = "INSERT INTO user_page (user_name,page_id,user_role) VALUES('$uid','$title','Creator')";
-=======
-        
-        $queryString = "INSERT INTO user_page (user_name,page_id,user_role) VALUES('$uid','$bookTitle','Creator')";
->>>>>>> ba167ea1eeb6ca72e1f1ea207fb29b79f0a4754d
+
              $queryResults = mysqli_query($this->dbInstance, $queryString);
              if($queryResults){
 
@@ -161,13 +157,9 @@ class manuscript {
             $uid = $row['user_id'];
 
         }
-<<<<<<< HEAD
-        
-        $queryString = "SELECT * FROM user_page WHERE user_name= '$uid' AND (page_id= '$title' OR page_id='$bookTitle')";
-=======
 
-        $queryString = "SELECT * FROM user_page WHERE user_name= '$uid' AND page_id= '$title'";
->>>>>>> titleName
+        $queryString = "SELECT * FROM user_page WHERE user_name= '$uid' AND (page_id= '$title' OR page_id='$bookTitle')";
+
              $queryResults = mysqli_query($this->dbInstance, $queryString);
              if($queryResults){
 
