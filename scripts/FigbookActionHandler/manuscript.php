@@ -82,7 +82,7 @@ class manuscript {
            
         }
         
-        $queryString = "INSERT INTO user_page (user_name,page_id,user_role) VALUES('$uid','$title','Creator')";
+        $queryString = "INSERT INTO user_page (user_name,page_id,user_role) VALUES('$uid','$bookTitle','Creator')";
              $queryResults = mysqli_query($this->dbInstance, $queryString);
              if($queryResults){
                  
