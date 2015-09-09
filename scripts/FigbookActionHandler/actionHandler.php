@@ -73,17 +73,20 @@ if(isset($actionFlag) && $actionFlag != ""){
 		$uID = $_COOKIE['username'];
 		$tmpUser = new user($dbHandler->getConnection());
 		
-		$response = ($tmpUser->updateAboutMe($uID, $object));
+		$obj = json_decode(strip_tags($getJSONObject));
+		$response = ($tmpUser->updateAboutMe($uID, $obj));
 	}elseif ($actionFlag == "updatePortfolioInfo"){
 		$uID = $_COOKIE['username'];
 		$tmpUser = new user($dbHandler->getConnection());
 		
-		$response = ($tmpUser->updatePortfolioInfo($uID, $object));
+		$obj = json_decode(strip_tags($getJSONObject));
+		$response = ($tmpUser->updatePortfolioInfo($uID, $obj));
 	}elseif ($actionFlag == "updateContactInfo"){
 		$uID = $_COOKIE['username'];
 		$tmpUser = new user($dbHandler->getConnection());
 		
-		$response = ($tmpUser->updateContactInfo($uID, $object));
+		$obj = json_decode(strip_tags($getJSONObject));
+		$response = ($tmpUser->updateContactInfo($uID, $obj));
 	}else if($actionFlag == "login"){ //login user
         
         
