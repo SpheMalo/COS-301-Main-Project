@@ -154,6 +154,7 @@ function postComment(){
 
 function editSection(value)
 {
+    alert(localStorage.userRole);
     if(localStorage.userRole === "Creator" || localStorage.userRole === "WRITE"){
 	var jsonString = {
 		"format": "json",
@@ -527,6 +528,7 @@ $(document).ready(function () {
 							localStorage.bookTitle = params.title;
                                                         lockBook(params.title);
 							getBooks();//Repopulate list of books before loading page
+                                                        localStorage.userRole = "Creator";
                             get_page(params);
                         } else if (data && data.error) {
                             alert('Error: API returned error code "' + data.error.code + '": ' + data.error.info);
