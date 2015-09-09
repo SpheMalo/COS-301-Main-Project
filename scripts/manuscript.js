@@ -3,6 +3,97 @@
  * Populates relevant text for edit
  * @param {Number} value
  */
+ */
+function commentDropDown(page){
+	var comment = {
+		"page_name" : ""
+	}
+
+	comment.page_name = page;
+	//alert(comment.page_name);
+	//alert("called");
+	var JSONstring = JSON.stringify(comment);
+	$.ajax({
+		url: "scripts/FigbookActionHandler/commentDropDown.php",
+		data: 'json=' + JSONstring,
+		dataType: 'json',
+		success: function (data){
+			//alert(JSON.stringify(data));
+			var sel = document.getElementById("chapterSelect");
+			if(sel.length == 0){
+				var i = 1;
+				for(; i <= data; i+=1){
+					var opt = document.createElement("option");
+					opt.setAttribute("value", i);
+					opt.innerHTML = i;
+					sel.appendChild(opt);
+				}
+			}
+		}
+		, error: function (data){
+			alert(JSON.stringify(data));
+		}
+	});
+}
+
+function postComment(){
+	var comment = {
+	            "commentText": "",
+	            "page_name": "",
+	            "section_number":""
+
+	        }
+	        	//alert("Its here");
+	        comment.commentText = document.getElementById("commentText").value;
+	        comment.page_name = localStorage.bookTitle;
+	        comment.section_number = document.getElementById("chapterSelect").value;
+
+	        //alert(comment.commentText);
+	        //alert(comment.page_name);
+	        var JSONstring = JSON.stringify(comment);
+	        $.ajax({
+	            url: 'scripts/FigbookActionHandler/postComment.php',
+	            data: 'json=' + JSONstring,
+	            dataType: 'json',
+	            success: function (data)
+	            {
+	                //alert(JSON.stringify(data));
+	            }
+	            , error: function (data) {
+	                //alert(JSON.stringify(data));
+	            }
+	        });
+}
+
+function populateComment(){
+	var comment = {
+	            "section_number":"",
+	            "page_name": ""
+	}
+
+	comment.page_name = localStorage.bookTitle;
+	comment.section_number = document.getElementById("chapterSelect").value;
+
+	var JSONstring = JSON.stringify(comment);
+
+	$.ajax({
+	            url: 'scripts/FigbookActionHandler/populateComments.php',
+	            data: 'json=' + JSONstring,
+	            dataType: 'json',
+	            success: function (data)
+	            {
+	            	//alert(data);
+
+	                document.getElementById("commentText").value = data.responseText;
+	            }
+	            , error: function (data) {
+	                //alert(JSON.stringify(data));
+	                document.getElementById("commentText").value = data.responseText;
+	            }
+    });
+}
+
+ 
 function link()
 {
 
@@ -121,35 +212,6 @@ function addSection()
             }
         });//end of ajax to send save to server
     }); //end of post to retrieve edit token
-}
-function postComment(){
-	var comment = {
-	            "commentText": "",
-	            "page_name": "",
-	            "section_number":""
-
-	        }
-	        	alert("Its here");
-	        comment.commentText = document.getElementById("commentText").value;
-	        comment.page_name = localStorage.bookTitle;
-	        //comment.page_name = "Comment_Test";
-	        comment.section_number = 1;
-
-	        alert(comment.commentText);
-	        alert(comment.page_name);
-	        var JSONstring = JSON.stringify(comment);
-	        $.ajax({
-	            url: 'scripts/FigbookActionHandler/postComment.php',
-	            data: 'json=' + JSONstring,
-	            dataType: 'json',
-	            success: function (data)
-	            {
-	                alert(JSON.stringify(data));
-	            }
-	            , error: function (data) {
-	                alert(JSON.stringify(data));
-	            }
-	        });
 }
 
 function editSection(value)
