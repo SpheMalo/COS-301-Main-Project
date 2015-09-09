@@ -47,7 +47,13 @@ if(isset($actionFlag) && $actionFlag != ""){
         
         
     }
+	else if($actionFlag == "viewUserProfile"){
+		$uID = $object->userToLookFor;
+		$tmpUser = new user($dbHandler->getConnection());
+		
+		$response = ($tmpUser->getOtherUserInfo($uID, $object));
 	
+	}
 	else if($actionFlag == "viewprofile"){
 		$uID = $_COOKIE['username'];
 		$tmpUser = new user($dbHandler->getConnection());
