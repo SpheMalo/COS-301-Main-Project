@@ -1,0 +1,23 @@
+\BOOKMARK [1][-]{section.1}{Architecture Requirements}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Architecture Scope}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Quality Requirements}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Integration and Access channel requirements}{section.1}% 4
+\BOOKMARK [3][-]{subsubsection.1.3.1}{Integration Channels}{subsection.1.3}% 5
+\BOOKMARK [3][-]{subsubsection.1.3.2}{Access channels}{subsection.1.3}% 6
+\BOOKMARK [3][-]{subsubsection.1.3.3}{API Specifications used for integration and access}{subsection.1.3}% 7
+\BOOKMARK [2][-]{subsection.1.4}{Architecture Constraints}{section.1}% 8
+\BOOKMARK [3][-]{subsubsection.1.4.1}{Technical Constraints}{subsection.1.4}% 9
+\BOOKMARK [3][-]{subsubsection.1.4.2}{Business Constraints}{subsection.1.4}% 10
+\BOOKMARK [1][-]{section.2}{Architectural patterns or styles}{}% 11
+\BOOKMARK [2][-]{subsection.2.1}{Three-tier Architecture}{section.2}% 12
+\BOOKMARK [2][-]{subsection.2.2}{Blackboard Architecture}{section.2}% 13
+\BOOKMARK [1][-]{section.3}{Architectural tactics or strategies}{}% 14
+\BOOKMARK [2][-]{subsection.3.1}{Security}{section.3}% 15
+\BOOKMARK [2][-]{subsection.3.2}{Integrability}{section.3}% 16
+\BOOKMARK [2][-]{subsection.3.3}{Scalability}{section.3}% 17
+\BOOKMARK [2][-]{subsection.3.4}{Usability}{section.3}% 18
+\BOOKMARK [1][-]{section.4}{Use of reference architectures and frameworks}{}% 19
+\BOOKMARK [2][-]{subsection.4.1}{Channels}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.2}{Protocols}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.3}{API Specifications}{section.4}% 22
+\BOOKMARK [1][-]{section.5}{Technologies}{}% 23

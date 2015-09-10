@@ -1,0 +1,34 @@
+Save page (Working Backwards)
+
+ -Revision->insertOn($dbw) line 1343 //Inserts revision into the my_wiki.text table
+  --called from WikiPage::doEditContent line 1814
+   ---called from self::commitRollBack line 2996
+	----called from Article::commitRollback line 2092
+		-- Called from MediaWiki.php
+			-- Called from index.php
+   ---called from self::doEdit line 1636
+  
+  Have to create a Revision instance with all the data to pass.
+  
+ $revision = new Revision( array(
+				'page'       => $this->getId(),
+				'title'      => $this->getTitle(), // for determining the default content model
+				'comment'    => $summary,
+				'minor_edit' => $isminor,
+				'text'       => $serialized,
+				'len'        => $newsize,
+				'parent_id'  => $oldid,
+				'user'       => $user->getId(),
+				'user_text'  => $user->getName(),
+				'timestamp'  => $now,
+				'content_model' => $content->getModel(),
+				'content_format' => $serialFormat,
+			) ); // XXX: pass content object?!
+			
+	
+  
+Load page: Index.php -> MediaWiki::run -> MediaWiki::main line 576 in MediaWiki.php //actual output
+
+
+Check if user is allowed to view and/or edit page AjaxDispatcher::performAction line 104
+	What ever response is managed in AjaxResponse.php

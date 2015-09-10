@@ -1,0 +1,89 @@
+\documentclass[11pt,a4paper,titlepage]{article}
+
+\usepackage{pdflscape}
+\usepackage[margin=1in]{geometry}
+\usepackage{titling}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+
+
+\DeclareGraphicsExtensions{.png, .jpg}
+\graphicspath{ {./images/} }
+
+\setlength\parindent{24pt}
+
+\begin{document}
+
+
+\title{ \huge MediaWiki Integration}
+
+\date{\textbf{June 2015}}
+
+\maketitle
+
+\tableofcontents
+
+
+% Put all images in images folder
+\pagebreak
+
+
+\section{Introduction}
+
+MediaWiki is an exceptional content management system that has been widely used in the development of Wikis globally. The use of extensions to achieve this will be outlined with emphasis on how it is used to integrate with WordPress as it closer resembles the Figbook System. MediaWiki Integrates quite well with any system because it is platform independent in nature. Regardless of the client environment, MediaWiki may be plugged in and out without the need to refactor much of the system’s implementation.
+
+\section{Mediawiki Extensions}
+\subsection{MediaWiki with WordPress}
+Having a look at how MediaWiki integrates with WordPress, we come across a few plugins and technologies that make this possible. One of these technologies is the Wikiful MediaWiki Bridge. The plugin has to be downloaded and installed. After which point your Wiki page is successfully linked to Wordpress. With reference to Figbook, the same protocol should suffice for integrating any Wikis made into the system.\\
+
+It is not enough just to install the required plugin, the Wiki pages also need to embedded into the site. Wiki embed is one technology that achieves this. This technology needs to be downloaded and installed. It is used to create an efficient Resource Management Framework. It achieves this be pulling any requested content from your MediaWiki page and placing it into your custom site. The plugin strips and reformats the data. Any custom formatting will have to be done within the system itself. Compatibly has to be accounted for in terms of which version of Wiki Embed needs to incorporated. It is therefore ideal to install the latest released version.\\
+
+\subsection{Authentication: Single Sign-On}
+
+\textbf{MediaWiki with phpBB} \\
+Because Figbook will employ extensive use of PHP in the backend, it is essential to explore how MediaWiki integrates with the PHP Bulletin Board. phpBB  is an Internet forum package written in PHP. hIt incorporates the basic functionality of PHP such as support for multiple Database Management Systems, full-text search and instant messaging.\\
+
+The phpBB extension needs to be downloaded and installed. It is responsible for linking MediaWiki to the phpBB user table for user authentication. It prohibits the creation of new accounts in MediaWiki and users must use their phpBB credentials to login to the wiki page via the phpBB platform. \\ \\
+
+\textbf{There are some concerns:}
+\begin{itemize}	
+		
+		  %\begin{itemize}
+			  \item Usernames: MediaWiki does not use the same naming conventions as phpBB. Some username rules will therefore need to be accounted for during authentication to avoid invalid usernames.
+			  \item Some developers experience issues with integration when MediaWiki and phpBB are not on the same database. This may be a result of non-English software.
+			  \item Users with inactive (deactivated) phpBB accounts are able to log onto MediaWiki as it does not check the user listing with the DB administration.
+		  %\end{itemize}	
+\end{itemize}
+
+\textbf{Alternative technology: SimpleSAMLphp} \\
+The SimpleSAMLphp application written in PHP is used to achieve Single Sign-On with the use of an Identity Provider feature. The IdP in this case will be MediaWiki. An approach simplifies the process of integration as the same MediaWiki platform used in our system is the same one used in SimpleSAMLphp. Figbook will use SimpleSAMLphp libraries to authenticate users. \\ \\
+
+SimpleSAMLphp can use different platforms as an IdP:
+\begin{itemize}	
+		
+		  %\begin{itemize}
+			  \item Facebook
+			  \item LinkedIn
+			  \item MySpace
+			  \item SQL
+			  \item itself
+			  \item Many others
+		  %\end{itemize}	
+\end{itemize}
+
+\subsection{Criticism}
+The problem of having to install a number of plugins to incorporate MediaWiki into one's system arises. Because all these plugins are quite specific to the actions that need to be done with regard to the content of the Wiki pages, each of them need to be installed manually. It is a tedious process and may be hard to troubleshoot.
+
+\section{References}
+\begin{itemize}	
+		
+		  %\begin{itemize}
+			  \item Miteva, Mariy, and Erik Moeller. 'Mediawiki Testimonials - Mediawiki'. Mediawiki.org. N.p., 2015. Web. 1 July 2015.
+			  \item Mediawiki.org,. 'Mediawiki'. N.p., 2015. Web. 1 July 2015.
+			  \item Simplesamlphp.org,. 'Simplesamlphp'. N.p., 2014. Web. 1 July 2015.
+			  \item Phpbb.com,. 'Phpbb • Free And Open Source Forum Software'. N.p., 2015. Web. 1 July 2015.
+			  \item WordPress.org,. 'Wikiful Mediawiki Bridge'. Web. 1 July 2015.
+		  %\end{itemize}	
+\end{itemize}
+
+\end{document}

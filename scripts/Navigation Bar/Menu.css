@@ -1,0 +1,51 @@
+.Links
+{
+padding: 0;
+margin: 0;
+}
+/* for the always-visible menu options */
+.Links li
+{
+padding: 0;
+margin: 0;
+float: left;
+list-style: none;
+/*font: bold .7em Verdana;*/
+}
+/*COS 216 Java Script Control Structures and Client-Side Content Behavior*/
+.Links li a
+{
+/*display: block;*/
+/*width: 159px;*/
+/*padding: 4px 10px;*/
+/*margin: 0 1px 0 0;*/
+background-color: black;
+/*color: #FFF;*/
+text-align: center;
+/*text-decoration: none;*/
+}
+.Links li a:hover {
+	background-color: black;
+}
+/* for the drop-down menu options */
+.Links div {
+position: absolute;
+/*background-color: #C5DCC9;*/
+/*border: 1px solid #048018;*/
+visibility: hidden;
+}
+/*COS 216 Java Script Control Structures and Client-Side Content Behavior*/
+.Links div a {
+display: block;
+width: 156px;
+/*padding: 5px 10px;*/
+/*background-color: #C5DCC7;*/
+/*color: #048018;*/
+text-align: left;
+text-decoration: none;
+/*font: bold 90% Verdana;*/
+}
+.Links div a:hover {
+/*background-color: #5FB361;*/
+/*color: #FFF;*/
+}

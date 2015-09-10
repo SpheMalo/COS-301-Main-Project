@@ -1,0 +1,28 @@
+\documentclass[12pt]{article}
+
+\usepackage{pdflscape}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{titling}
+\usepackage{graphics} %Required for diagrams
+\usepackage[hidelinks]{hyperref}
+\usepackage{color}
+\usepackage{framed}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+
+\begin{document}
+
+\input{coverpage.tex}
+
+\newpage
+
+\section{What today was spent on}
+\par{Most of today was spent studying the MediaWiki code and figuring out how to use it to solve any problems we (will) have. The MediaWiki code is quite extensive, so a lot of time was spent reading documentation, finding online examples and trying different ways to edit the code to see if it worked the way we thought it did. Some minor integrating was done with the MediaWiki API's and our web application.}
+
+\section{Today's achievements Achievements}
+\par{By days end, we had a basic understanding of how to use the API's provided by MediaWiki. That being said, the team decided to use MediaWiki's functionality via the API's as opposed to modifying the actual code. There is a lot of services available via these API's, so using these will be much easier than scanning through the MediaWiki files looking for functionality to edit. Using the API's is also a lot more reliable as it is tried and tested functionality and there is far less chance of us breaking MediaWiki code.\\ \\We managed to integrate the API's to our interface. This was done (so far) for registration and logging a user in. It should be noted however, that this functionality isn't fully working the way Figbook needs it to yet. But since it does interact with the API's and database successfully, it is merely a matter of tweaking the functionality to work the way we want it to.}
+
+\section{Way Forward}
+\par{First and foremost will be getting comfortable with using the API's. Getting a proper understanding of how MediaWiki achieves these tasks is also a priority (This will help with our understanding of how our web application achieves the tasks it does).\\ \\Next we need to set up our remote server to host our web application successfully. As it stands, the database needs to be uploaded, as well as the latest copy of the web application. This is the copy that works using MediaWiki, and will be the common copy we all use to develop from here on out. This copy needs to also be pushed to our Git repository.\\ \\While we're still getting comfortable with using the MediaWiki API's, our objective now is to identify which API's MediaWiki provides that we can use to solve the the requirements we have for our system.}
+
+\end{document}

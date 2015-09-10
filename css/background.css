@@ -1,0 +1,62 @@
+/*Header styling START*/
+#header{
+	width:100%;
+	height:65px;
+	position:fixed;
+	top:0px;
+	z-index:20;
+	background-color:white;
+-webkit-box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
+
+}
+#figbookLogo{width:100px;height:100px;position:relative;left:20px;float:left;}
+#figbookHeading{position:relative;float:left;left:40px;top:-15px;
+   color:rgba(51, 204, 51,0.6);
+	text-shadow: 1px 2px 3px rgb(92, 92, 92);
+	font-size:68pt;
+	font-weight: 500;	
+}
+
+/*Footer Start*/
+
+#footer{
+
+background:rgba(10,10,10,0.9);
+position: relative;
+
+width:100%;
+height:250px;
+-webkit-box-shadow: 0px -4px 9px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px -4px 9px -4px rgba(0,0,0,0.75);
+box-shadow: 0px -4px 9px -4px rgba(0,0,0,0.75);
+}
+#footDiv{float:right;position:relative;top:170px;right:20px;}
+#footList{
+	float:left;
+	position:relative;
+	padding-top: 10px;
+	padding-bottom:10px;
+	top:0px;
+	left:40px;
+	width:250px;
+	height:250px;
+	
+}
+#footLogo{height:70px;width:180px;}
+span{background:url("../images/smallDot.png") no-repeat left;
+text-shadow: 0px 1px 4px rgba(0,0,0,1.0);font-size:15pt;
+padding-left:20px;
+color:white;
+}
+span:hover{cursor:pointer;font-size:17pt;
+background:url("../images/smallDotFilled.png") no-repeat left;
+}
+.smallDot{width:12px;height:12px; margin-right:20px;}
+/*Footer end*/
+.text-shadow{color:white;}
+
+
+
+/*Header styling END*/

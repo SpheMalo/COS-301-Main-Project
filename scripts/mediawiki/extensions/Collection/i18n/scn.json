@@ -1,0 +1,37 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aushulz",
+			"Gmelfi",
+			"Pippinu"
+		]
+	},
+	"coll-collection": "Libbru",
+	"coll-collections": "Libbra",
+	"coll-savedbook_template": "libbru_sarvatu",
+	"coll-remove": "Lèva",
+	"coll-show": "Ammustra",
+	"coll-move_up": "Sposta pi' supra",
+	"coll-move_down": "Sposta pi' sutta",
+	"coll-title": "Tìtulu:",
+	"coll-rename": "Cancia nomu",
+	"coll-empty_collection": "Libbru vacanti",
+	"coll-save_collection": "Sarva libbru",
+	"coll-yes": "Sè",
+	"coll-no": "Nò",
+	"coll-update": "Agghiorna",
+	"coll-limit_exceeded_title": "Libbru troppu 'ranni",
+	"coll-limit_exceeded_text": "Lu tò libbru è troppu 'ranni. Nun ci pò metteri autri paggini.",
+	"coll-rendering_page": "(paggina: $1)",
+	"coll-suggested_articles": "Cunsigghi",
+	"coll-suggest_show": "ammustra",
+	"coll-print_export": "Stampa/esporta",
+	"coll-create_a_book": "Crea nu libbru",
+	"coll-download_as": "Scarica comu $1",
+	"coll-bookscategory": "Libbra",
+	"coll-help": "Aiutu",
+	"coll-remove_this_page": "Leva sta pàggina dû tò libbru",
+	"coll-show_collection": "Talìa libbru",
+	"coll-suggest_empty": "vacanti",
+	"coll-image-attribution": "<b>$1</b> <i>Funti:</i> $2 <i>Licenzia:</i> $3 <i>Cuntribbuturi:</i> $4 <i>Artista urigginali:</i> $5"
+}

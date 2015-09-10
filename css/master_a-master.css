@@ -1,0 +1,67 @@
+#u72
+{
+	-pie-box-shadow: 7px 7px 8px #7F7F7F;
+	-moz-box-shadow: 7px 7px 8px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 7px 7px 8px -1px rgba(0, 0, 0, 0.5);
+	box-shadow: 7px 7px 8px rgba(0, 0, 0, 0.5);
+	background: #FFFFFF url("../images/u72-grad.png") repeat-x left top;
+	background: -webkit-gradient(linear, center top, centerF bottom, from(#C2FFFB),color-stop(100%, #FFFFFF));
+	background: -webkit-linear-gradient(top,#C2FFFB ,#FFFFFF 188px);
+	background: -o-linear-gradient(top,#C2FFFB ,#FFFFFF 188px);
+	background: linear-gradient(to bottom,#C2FFFB ,#FFFFFF 188px);
+	border-style: none;
+	border-color: transparent;
+	position: fixed;
+}
+
+#u216
+{
+	vertical-align: top;
+	position: fixed;
+	background: url("../images/figbooklogo-u216.png") no-repeat 0px 0px;
+}
+
+#u260
+{
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+}
+
+#u178
+{
+	-pie-box-shadow: 6px 6px 8px #7F7F7F;
+	-moz-box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 6px 6px 8px -1px rgba(0, 0, 0, 0.5);
+	box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.5);
+	background: #FFFFFF url("../images/u178-grad.png") repeat-x left top;
+	background: -webkit-gradient(linear, center top, center bottom, from(#C2FFFB),color-stop(100%, #FFFFFF));
+	background: -webkit-linear-gradient(top,#C2FFFB ,#FFFFFF 156px);
+	background: -o-linear-gradient(top,#C2FFFB ,#FFFFFF 156px);
+	background: linear-gradient(to bottom,#C2FFFB ,#FFFFFF 156px);
+	border-style: none;
+	border-color: transparent;
+}
+
+#u178_align_to_page
+{
+	position: relative;
+	float:bottom;
+}
+
+#u179
+{
+	border-style: none;
+	border-color: transparent;
+	position: relative;
+	background: transparent url("../images/logo.png") no-repeat center center;
+	background-size: contain;
+}
+
+#u230-4
+{
+	display: block;
+	vertical-align: top;
+	position: relative;
+}
+
