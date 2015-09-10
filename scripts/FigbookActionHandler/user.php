@@ -30,6 +30,17 @@ class user {
         
         $this->dbInstance = null;
     }
+
+    public function getUsers()
+    {
+        $sql = "SELECT user_id, user_name FROM user";
+        $result = mysqli_query($this->dbInstance, $sql);
+
+        while($row=mysqli_fetch_array($result)) {
+           $return[]= $row;
+       }
+       return $return;
+    }
     
     //go to systems database and check if the username and password match a single record
     public function loginUser($uemail,$upassword){
@@ -266,11 +277,90 @@ class user {
         }
         
     }
-	
-	public function getUserInfo($userID)
+	public function getOtherUserInfo($userID, $obj)
 	{
-		$sql = "SELECT user_role, user_name, first_name, last_name, about_me, genres_of_interest, cell, home, email, work FROM user, personal_details WHERE user.user_name='$userID' AND personal_details.username='$userID'";
+		$sql = "SELECT user_id, user_role, user_name, first_name, last_name, about_me, genres_of_interest, cell, home, email, work FROM user, personal_details WHERE user.user_name='$userID' AND personal_details.username='$userID'";
 		$myResponse = (mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql)));
+		$usersIdFromUserPage = $myResponse["user_id"];
+		$query="SELECT page_id FROM user_page WHERE user_name='$usersIdFromUserPage' AND user_role='Creator'";
+       
+	    $queryResult = mysqli_query($this->dbInstance, $query);//run query
+        $returnArray = array();
+        $arryaofBookTitles = array();
+		$count = 0;
+		if($queryResult){
+            
+            while ($row = mysqli_fetch_assoc($queryResult)) {
+
+                $returnArray[] = $row;
+            }
+			
+            $sql = "SELECT page_title, page_id FROM page";
+			$bookTitles = ((mysqli_query($this->dbInstance, $sql)));
+			
+			while ($row = mysqli_fetch_assoc($bookTitles))
+			{
+				for ($i = 0; $i < count($returnArray); $i++)
+				{
+					if ($returnArray[$i]["page_id"] == $row["page_id"])
+					{
+						
+						$myResponse['books'][$count] = $row["page_title"];
+						
+						$count++;
+						break;
+					}
+				}
+			}
+			
+        }
+        else {
+            $myResponse['books'] = "Failed";
+        }
+		
+		return ($myResponse);
+	}
+	
+		public function getUserInfo($userID)
+	{
+		$sql = "SELECT user_id, user_role, user_name, first_name, last_name, about_me, genres_of_interest, cell, home, email, work FROM user, personal_details WHERE user.user_name='$userID' AND personal_details.username='$userID'";
+		$myResponse = (mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql)));
+		$usersIdFromUserPage = $myResponse["user_id"];
+		$query="SELECT page_id FROM user_page WHERE user_name='$usersIdFromUserPage' AND user_role='Creator'";
+       
+	    $queryResult = mysqli_query($this->dbInstance, $query);//run query
+        $returnArray = array();
+        $arryaofBookTitles = array();
+		$count = 0;
+		if($queryResult){
+            
+            while ($row = mysqli_fetch_assoc($queryResult)) {
+
+                $returnArray[] = $row;
+            }
+			
+            $sql = "SELECT page_title, page_id FROM page";
+			$bookTitles = ((mysqli_query($this->dbInstance, $sql)));
+			
+			while ($row = mysqli_fetch_assoc($bookTitles))
+			{
+				for ($i = 0; $i < count($returnArray); $i++)
+				{
+					if ($returnArray[$i]["page_id"] == $row["page_id"])
+					{
+						
+						$myResponse['books'][$count] = $row["page_title"];
+						
+						$count++;
+						break;
+					}
+				}
+			}
+			
+        }
+        else {
+            $myResponse['books'] = "Failed";
+        }
 		
 		return ($myResponse);
 		
@@ -338,7 +428,6 @@ class user {
 		//Check timestamps
 		if ($myResponse["date_last_edited"] == $obj->timestamp)
 		{
-			//updating the timestamp
 			$sql = "UPDATE section_revisions SET section_content='$obj->newContent', date_last_edited=CURRENT_TIME, last_edited_by='$uID' WHERE book_title = '$obj->title' ";
 			mysqli_query($this->dbInstance, $sql);
 			
@@ -353,7 +442,7 @@ class user {
 		else
 		{
 			//attempt Automatic Merge
-			$diff = new Text_Diff3(explode("\n", $obj->originalContent), explode("\n", $myResponse["section_content"]), explode("\n", $obj->newContent));
+			$diff = new Text_Diff3($obj->originalContent, $myResponse["section_content"], $obj->newContent);
 			$var = ($diff->mergedOutput());
 			$conflict = "none";
 			for ($i = 0; $i < $var.length; $i++)
@@ -374,16 +463,7 @@ class user {
 			}
 			else //return the merged text with conflicts in them
 			{
-				//updating the timestamp
-				$sql = "UPDATE section_revisions SET section_content='$obj->newContent', date_last_edited=CURRENT_TIME, last_edited_by='$uID' WHERE book_title = '$obj->title' ";
-				mysqli_query($this->dbInstance, $sql);
-				
-				//getting the new timestamp
-				$sql = "SELECT date_last_edited FROM section_revisions WHERE book_title = '$obj->title' AND section_number = '$obj->section'";
-				$temp = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql));
-				
 				$myResponse["message"] = "conflict";
-				$myResponse["date_last_edited"] = $temp["date_last_edited"];
 				$myResponse["mergedText"] = $var;
 				return $myResponse;
 			}

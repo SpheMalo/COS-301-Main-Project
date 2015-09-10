@@ -1,9 +1,161 @@
+
 /**
  * Populates relevant text for edit 
  * @param {Number} value
  */
+function link()
+{
+	
+    var e = document.getElementById("users");
+    var strUser = e.options[e.selectedIndex].value;
+
+    var d = document.getElementById("access");
+    var access = d.options[d.selectedIndex].value;
+
+    var jsonString = {
+        "action": "link",
+        "title": localStorage.bookTitle,
+        "user_id": strUser,
+        "access": access
+    };
+    jsonString = JSON.stringify(jsonString);                
+
+    $.ajax({
+        url: "scripts/FigbookActionHandler/actionHandler.php",
+        data: "json="+jsonString,
+        dataType: 'json',
+        type: 'POST',
+        success: function (data) {
+            var jsonString = JSON.stringify(data);  
+            alert(jsonString);
+			closeLightbox();
+        },
+        error: function (data) {
+            console.log('Error1: Request failed. ' + (data.responseText));
+        }
+    });
+}
+
+
+function sendManuscript()
+{
+    var jsonString = {
+        "action": "getUsers",
+    };
+    jsonString = JSON.stringify(jsonString);                
+    
+
+    $.ajax({
+        url: "scripts/FigbookActionHandler/actionHandler.php",
+        data: "json="+jsonString,
+        dataType: 'json',
+        type: 'POST',
+        success: function (data) {
+
+            var html = "";
+
+            var i = 0;
+            var textnode2 = document.getElementById("users");
+            while(i <data.length)
+            {
+                var op = new Option();
+                op.value = data[i].user_id;
+                op.text = data[i].user_name;
+                textnode2.options.add(op); 
+                i++;
+            }
+        },
+        error: function (data) {
+            var jsonString = JSON.stringify(data);  
+            alert(jsonString);
+            console.log('Error2: Request failed. ' + jsonString + (data.responseText));
+        }
+    });
+}
+
+function addSection()
+{
+  
+	/**
+    *  This call checks the timestamp retrieved once editing began, and compares it to the timestamp in the database currently.
+    *  If the timestamps match, it means there was no conflict and "true" is returned.
+    *  If the timestamps don't match it means there is a conflict. "false" is returned
+    */
+    $.post("scripts/mediawiki/api.php?action=query&prop=info|revisions&meta=tokens&rvprop=timestamp&titles="+localStorage.bookTitle+"&format=json",function(data){	
+    
+    $.ajax({	
+            url: "scripts/mediawiki/api.php",
+            data: {
+                    format: 'json',
+                    action: 'edit',
+                    title: localStorage.bookTitle,
+                    section: 'new',
+                    text: "="+ document.getElementById('sectionName').value + "=",
+                    token: data.query.tokens.csrftoken
+                  },
+            dataType: 'json',
+            type: 'POST',
+            success: function (data)
+            {
+
+                if (data && data.edit && data.edit.result === 'Success')
+                {
+                    alert("Section saved successfully");
+					closeLightbox();
+					//This will display the actual page again. with updated values
+					
+                }
+                else if (data && data.error)
+                {
+                    alert('Error: API returned error code "' + data.error.code + '": ' + data.error.info);
+                }
+                else
+                {
+                    alert('Error: Unknown result from API.');
+                }
+            },
+            error: function (data)
+            {
+                console.log('Error: Request failed. ' + JSON.stringify(data));
+                $('#Page').append("<a href='/scripts/mediawiki/index.php/" + params.title + "'>Link to your book</a>");
+            }
+        });//end of ajax to send save to server
+    }); //end of post to retrieve edit token
+}
+function postComment(){
+	var comment = {
+	            "commentText": "",
+	            "page_name": "",
+	            "section_number":""
+
+	        }
+	        	alert("Its here");
+	        comment.commentText = document.getElementById("commentText").value;
+	        comment.page_name = localStorage.bookTitle;
+	        //comment.page_name = "Comment_Test";
+	        comment.section_number = 1;
+
+	        alert(comment.commentText);
+	        alert(comment.page_name);
+	        var JSONstring = JSON.stringify(comment);
+	        $.ajax({
+	            url: 'scripts/FigbookActionHandler/postComment.php',
+	            data: 'json=' + JSONstring,
+	            dataType: 'json',
+	            success: function (data)
+	            {
+	                alert(JSON.stringify(data));
+	            }
+	            , error: function (data) {
+	                alert(JSON.stringify(data));
+	            }
+	        });
+}
+
 function editSection(value)
 {
+    alert(localStorage.userRole);
+    if(localStorage.userRole === "Creator" || localStorage.userRole === "WRITE"){
 	var jsonString = {
 		"format": "json",
 		"action": "getTimeStamp",
@@ -49,6 +201,10 @@ function editSection(value)
 	$(".cke_editable").html(val);
 	$("#saveBtn").attr("name","" + value);
 	localStorage.originalContent = val;
+    }
+    else{
+        alert("You can only read this book");
+    }
 }
 
 
@@ -71,12 +227,53 @@ $(document).ready(function () {
 	};
 	
 	
+	///Loading/opening the editorial letter panel.
+	$("#writeEditorial").click(function(){
+		$( "#letterHide" ).trigger( "click" );
+		
+			//hides the options menu
+			$('.optionsSlide').removeClass('pullDown');
+			$('.optionsSlide').css('visibility','hidden');
+			//hides the options menu
+		
+		
+			//alert($('#serviceBackground').css('margin-left'));
+		if($('#serviceBackground').css('margin-left') != '20px'){
+			$("#serviceBackground").animate({
+				marginLeft: '20'
+			},500)
+			
+			$('#editorialLetter').css('display','block');
+			$('#letterHide').css('display','block');
+			
+		}
+           //$('#serviceBackground').slideToggle(500)         
+                   
+	});
+	
+	
 		
 	$('#viewBooks').click(function(){
-		$('#editSection').fadeOut("slow",function(){});
-		$('#pageView').fadeOut("slow",function(){
-				$('#bookList').fadeIn("slow",function(){});
-		});
+		
+		//Make the comment area dissapear
+		$("#commentSide").css('display','none');
+		$("#commentHide").css('display','none');
+		//Make the editorial letter dissappear
+		
+		$('#editorialLetter').css('display','none');
+		$('#letterHide').css('display','none');
+		
+		//hides the options menu
+			$('.optionsSlide').removeClass('pullDown');
+			$('.optionsSlide').css('visibility','hidden');
+		//hides the options menu
+		
+		$('#editSection').fadeOut("slow",function(){
+				$('#pageView').fadeOut("slow",function(){
+					$('#bookList').fadeIn("slow",function(){});
+				});
+			});
+		
 		getBooks();
 	});
 		
@@ -205,6 +402,8 @@ $(document).ready(function () {
 		
 	function getBooks(){
 		// clear this list before repopulating it
+                localStorage.userRole = "";
+                localStorage.reload = "yes";
 		$('#bookList').html("");
 			
 		$.post('scripts/mediawiki/api.php?action=query&list=allpages&aplimit=100&format=json',
@@ -236,9 +435,13 @@ $(document).ready(function () {
 	                                //div.onclick=onClickBook(pageTitle, div);
 	
 	                                $("#bookList").append("<div class='bookItem'>"+pageTitle+"</div>");
+                                        localStorage.bookTitle = "";
+                                        
 	                                $('.bookItem').click(function () {
 	                                    //alert("book clicked : "+$(this).html());
-	
+										
+										
+										
 	                                    var loadPageInfo = {
 	                                        "title": $(this).html()
 	                                    };
@@ -246,19 +449,21 @@ $(document).ready(function () {
 	                                    localStorage.bookTitle = loadPageInfo.title;
 	                                    var Inf = {
                                                 "action": "getUserRole",
-                                                "bookTitle": localStorage.bookTitle//localStorage.bookTitle
+                                                "bookTitle": localStorage.bookTitle
                                             };
+                                            var JSONstring = JSON.stringify(Inf);
                                             $.ajax({
                                                         url: 'scripts/FigbookActionHandler/actionHandler.php',
                                                         data: 'json=' + JSONstring,
                                                         dataType: 'json',
-                                                        success: function (data)
+                                                        success: function (data1)
                                                         {
-                                                            //alert(JSON.stringify(data));
-                                                            localStorage.userRole = data;
+                                                            //alert(JSON.stringify(data1));
+                                                            localStorage.userRole = data1;
+															
                                                         }
-                                                        , error: function (data) {
-                                                            //alert(JSON.stringify(data));
+                                                        , error: function (data1) {
+                                                            //alert(JSON.stringify(data1));
                                                         }
                                                     });
                                                     //event.preventDefault();
@@ -266,6 +471,7 @@ $(document).ready(function () {
 	                                    if (loadPageInfo.title !== "")
 	                                    {
 	                                        get_page(loadPageInfo);
+															
 	                                    }
 	
 	                                });
@@ -313,6 +519,7 @@ $(document).ready(function () {
 							localStorage.bookTitle = params.title;
                                                         lockBook(params.title);
 							getBooks();//Repopulate list of books before loading page
+                                                        localStorage.userRole = "Creator";
                             get_page(params);
                         } else if (data && data.error) {
                             alert('Error: API returned error code "' + data.error.code + '": ' + data.error.info);
@@ -406,6 +613,10 @@ $(document).ready(function () {
 					console.log(page);//?
 					var links = page.getElementsByClassName("mw-editsection");
 					$(links).remove();
+					
+					//Make the comment area visible
+					$("#commentSide").css('display','block');
+					$("#commentHide").css('display','block');
 
 					var num_links =1;
 					for(var i=0; i<links.length; i++) {

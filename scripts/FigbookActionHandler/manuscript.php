@@ -37,7 +37,16 @@ class manuscript {
         
         $this->dbInstance = null;
     }
+
+    public function link($id,$title, $access) {
+        $queryString = "INSERT INTO user_page (user_name ,page_id ,user_role) VALUES ('$id', '$title', '$access')";
+        $queryResults = mysqli_query($this->dbInstance, $queryString);
+        $result = "userid: ".$id." linked to ".$title." with ".$access." access";
+       return $result;
+    }
     
+
+
     //go to systems database and check if the book title exists
      public function titleExists($title) {
         
@@ -73,7 +82,7 @@ class manuscript {
            
         }
         
-        $queryString = "INSERT INTO user_page (user_name,page_id,user_role) VALUES('$uid','$title','Creator')";
+        $queryString = "INSERT INTO user_page (user_name,page_id,user_role) VALUES('$uid','$bookTitle','Creator')";
              $queryResults = mysqli_query($this->dbInstance, $queryString);
              if($queryResults){
                  
@@ -109,7 +118,7 @@ class manuscript {
         }
         //echo "UserId ". $uid;
         //echo "BookID ". $title;
-        $queryString = "SELECT * FROM user_page WHERE user_name= '$uid' AND page_id= '$title'";
+        $queryString = "SELECT * FROM user_page WHERE user_name= '$uid' AND (page_id= '$title' OR page_id='$bookTitle')";
              $queryResults = mysqli_query($this->dbInstance, $queryString);
              if($queryResults){
                  
@@ -148,7 +157,7 @@ class manuscript {
            
         }
         
-        $queryString = "SELECT * FROM user_page WHERE user_name= '$uid' AND page_id= '$title'";
+        $queryString = "SELECT * FROM user_page WHERE user_name= '$uid' AND (page_id= '$title' OR page_id='$bookTitle')";
              $queryResults = mysqli_query($this->dbInstance, $queryString);
              if($queryResults){
                  

@@ -56,9 +56,9 @@
         
         <div id="writeLetter" style="visibility: block">
           <h2 id="writeLetterTitle">Editorial Letter</h2><hr />
-              <textarea id="letter_editor" cols="100" rows="50">
+              <textarea id="letterText" cols="100" rows="50">
               </textarea>
-              <button id="letter_saveBtn"  >Send Letter</button>
+              <button id="sendLetter"  >Send Letter</button>
       </div>
 
       <!--button id="Dummy" onclick="editSection(1)">Edit</button-->
