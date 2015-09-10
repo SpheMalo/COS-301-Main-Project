@@ -1,0 +1,25 @@
+To: editor@mail.com
+Subject: Figbook email address confirmation
+From: apache@localhost
+Return-Path: apache@localhost
+Date: Tue, 25 Aug 2015 09:44:05 +0200
+Message-ID: <my_wiki.55dc1cc5ef9851.85226924@localhost>
+X-Mailer: MediaWiki mailer
+MIME-Version: 1.0
+Content-type: text/plain; charset=UTF-8
+Content-transfer-encoding: 8bit
+
+Someone, probably you, from IP address ::1,
+has registered an account "Editor" with this email address on Figbook.
+
+To confirm that this account really does belong to you and activate
+email features on Figbook, open this link in your browser:
+
+http://localhost/FigbookHtml/scripts/mediawiki/index.php/Special:ConfirmEmail/b29cf884c59dc7ae49aed51dbaec4bc1
+
+If you did *not* register the account, follow this link
+to cancel the email address confirmation:
+
+http://localhost/FigbookHtml/scripts/mediawiki/index.php/Special:InvalidateEmail/b29cf884c59dc7ae49aed51dbaec4bc1
+
+This confirmation code will expire at 07:44, 1 September 2015.

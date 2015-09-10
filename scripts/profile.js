@@ -210,8 +210,7 @@ window.onload = function(){
 		profileArray[1].value = jsonObj['home'];
 		profileArray[2].value = jsonObj['work'];
 		profileArray[3].value = jsonObj['email'];
-        
-        alert(JSON.stringify(jsonObj));
+
         var books = "";
          for (var i=0; jsonObj.books[i] != null; i++)
          {

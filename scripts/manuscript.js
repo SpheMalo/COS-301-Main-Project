@@ -5,7 +5,6 @@
  */
 function link()
 {
-
     var e = document.getElementById("users");
     var strUser = e.options[e.selectedIndex].value;
 
@@ -44,7 +43,6 @@ function sendManuscript()
     };
     jsonString = JSON.stringify(jsonString);
 
-
     $.ajax({
         url: "scripts/FigbookActionHandler/actionHandler.php",
         data: "json="+jsonString,
@@ -75,7 +73,6 @@ function sendManuscript()
 
 function addSection()
 {
-
 	/**
     *  This call checks the timestamp retrieved once editing began, and compares it to the timestamp in the database currently.
     *  If the timestamps match, it means there was no conflict and "true" is returned.
@@ -103,7 +100,6 @@ function addSection()
                     alert("Section saved successfully");
 					closeLightbox();
 					//This will display the actual page again. with updated values
-
                 }
                 else if (data && data.error)
                 {
@@ -230,13 +226,10 @@ $(document).ready(function () {
 	///Loading/opening the editorial letter panel.
 	$("#writeEditorial").click(function(){
 		$( "#letterHide" ).trigger( "click" );
-
 			//hides the options menu
 			$('.optionsSlide').removeClass('pullDown');
 			$('.optionsSlide').css('visibility','hidden');
 			//hides the options menu
-
-
 			//alert($('#serviceBackground').css('margin-left'));
 		if($('#serviceBackground').css('margin-left') != '20px'){
 			$("#serviceBackground").animate({
@@ -254,7 +247,6 @@ $(document).ready(function () {
 
 
 	$('#viewBooks').click(function(){
-
 		//Make the comment area dissapear
 		$("#commentSide").css('display','none');
 		$("#commentHide").css('display','none');
@@ -262,18 +254,15 @@ $(document).ready(function () {
 
 		$('#editorialLetter').css('display','none');
 		$('#letterHide').css('display','none');
-
 		//hides the options menu
 			$('.optionsSlide').removeClass('pullDown');
 			$('.optionsSlide').css('visibility','hidden');
 		//hides the options menu
-
 		$('#editSection').fadeOut("slow",function(){
 				$('#pageView').fadeOut("slow",function(){
 					$('#bookList').fadeIn("slow",function(){});
 				});
 			});
-
 		getBooks();
 	});
 
@@ -449,8 +438,6 @@ $(document).ready(function () {
 	                                $('.bookItem').click(function () {
 	                                    //alert("book clicked : "+$(this).html());
 
-
-
 	                                    var loadPageInfo = {
 	                                        "title": $(this).html()
 	                                    };
@@ -622,6 +609,10 @@ $(document).ready(function () {
 					console.log(page);//?
 					var links = page.getElementsByClassName("mw-editsection");
 					$(links).remove();
+					
+					//Make the comment area visible
+					$("#commentSide").css('display','block');
+					$("#commentHide").css('display','block');
 
 					//Make the comment area visible
 					$("#commentSide").css('display','block');
