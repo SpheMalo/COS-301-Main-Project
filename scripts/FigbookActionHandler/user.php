@@ -277,51 +277,8 @@ class user {
         }
         
     }
-	public function getOtherUserInfo($userID, $obj)
-	{
-		$sql = "SELECT user_id, user_role, user_name, first_name, last_name, about_me, genres_of_interest, cell, home, email, work FROM user, personal_details WHERE user.user_name='$userID' AND personal_details.username='$userID'";
-		$myResponse = (mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql)));
-		$usersIdFromUserPage = $myResponse["user_id"];
-		$query="SELECT page_id FROM user_page WHERE user_name='$usersIdFromUserPage' AND user_role='Creator'";
-       
-	    $queryResult = mysqli_query($this->dbInstance, $query);//run query
-        $returnArray = array();
-        $arryaofBookTitles = array();
-		$count = 0;
-		if($queryResult){
-            
-            while ($row = mysqli_fetch_assoc($queryResult)) {
-
-                $returnArray[] = $row;
-            }
-			
-            $sql = "SELECT page_title, page_id FROM page";
-			$bookTitles = ((mysqli_query($this->dbInstance, $sql)));
-			
-			while ($row = mysqli_fetch_assoc($bookTitles))
-			{
-				for ($i = 0; $i < count($returnArray); $i++)
-				{
-					if ($returnArray[$i]["page_id"] == $row["page_id"])
-					{
-						
-						$myResponse['books'][$count] = $row["page_title"];
-						
-						$count++;
-						break;
-					}
-				}
-			}
-			
-        }
-        else {
-            $myResponse['books'] = "Failed";
-        }
-		
-		return ($myResponse);
-	}
 	
-		public function getUserInfo($userID)
+	public function getUserInfo($userID)
 	{
 		$sql = "SELECT user_id, user_role, user_name, first_name, last_name, about_me, genres_of_interest, cell, home, email, work FROM user, personal_details WHERE user.user_name='$userID' AND personal_details.username='$userID'";
 		$myResponse = (mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql)));

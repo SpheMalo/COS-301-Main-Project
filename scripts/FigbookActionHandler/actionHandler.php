@@ -60,12 +60,6 @@ if(isset($actionFlag) && $actionFlag != ""){
 		
 		$response = ($tmpUser->getUserInfo($uID));
 	
-	}else if($actionFlag == "viewUserProfile"){
-		$uID = $object->userToLookFor;
-		$tmpUser = new user($dbHandler->getConnection());
-		
-		$response = ($tmpUser->getOtherUserInfo($uID, $object));
-	
 	}else if($actionFlag == "getTimeStamp"){
 		
 		$uID = $_COOKIE['username'];

@@ -45,6 +45,8 @@ class manuscript {
        return $result;
     }
 
+
+
     //go to systems database and check if the book title exists
      public function titleExists($title) {
         $title = str_replace(" ","_",$title);
@@ -79,6 +81,7 @@ class manuscript {
             $uid = $row['user_id'];
 
         }
+
         $queryString = "INSERT INTO user_page (user_name,page_id,user_role) VALUES('$uid','$title','Creator')";
 
              $queryResults = mysqli_query($this->dbInstance, $queryString);
@@ -154,6 +157,7 @@ class manuscript {
             $uid = $row['user_id'];
 
         }
+
         $queryString = "SELECT * FROM user_page WHERE user_name= '$uid' AND (page_id= '$title' OR page_id='$bookTitle')";
 
              $queryResults = mysqli_query($this->dbInstance, $queryString);
