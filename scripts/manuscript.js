@@ -251,7 +251,7 @@ function postComment(){
 
 function editSection(value)
 {
-    alert(localStorage.userRole);
+    //alert(localStorage.userRole);
     if(localStorage.userRole === "Creator" || localStorage.userRole === "WRITE"){
 	var jsonString = {
 		"format": "json",
@@ -307,7 +307,9 @@ function editSection(value)
 
 $(document).ready(function () {
 	
-	    
+	 $("#messageArea").load("chat.php",function(){			
+				$(".chatName").val(readCookie("username"));
+			});
 	//Populates the list of books initially when page loads.		
 	getBooks(); 
 		

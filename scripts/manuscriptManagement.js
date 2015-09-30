@@ -81,7 +81,27 @@ $(document).ready(function()
                     
                    
 	});
-	
+	$("#messageHide").click(function(){
+			 if(!$('#messageArea').is(':hidden')){						
+							$(this).html("Messages");
+							
+							$('#messageContainer').animate({
+	                    
+	                            bottom: '-300px'
+	                    
+	                        },500)
+							$('#messageArea').slideToggle(500)
+							
+	                    }else{
+							$(this).html("Hide Messages");
+							$('#messageArea').slideToggle(500)
+	                        
+							$('#messageContainer').animate({							
+	                            bottom: '0px'                    
+								},500)
+							
+	                    }
+		});
 	$("#letterHide").click(function(){
 			
                     if(!$('#editorialLetter').is(':hidden')){
