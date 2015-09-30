@@ -318,6 +318,7 @@ $(document).ready(function () {
 			dataType: 'json',
 			success: function(data)
 			{
+				alert(data);
 				
 				if(data == "false"){
 					if (document.getElementById('error_par') != null)
@@ -348,18 +349,27 @@ $(document).ready(function () {
 				else if(data == "true"){
 					
 					var form = document.getElementById("contentDiv");
-					var incorrectVal = document.createElement('p');
-					incorrectVal.id = "error_par";
-					incorrectVal.innerHTML = "Title exist: Choose a different title";
+					var incorrectVal = document.getElementById('error_par');
+					if (typeof(incorrectVal) != 'undefined' && incorrectVal != null)
+					{
+						incorrectVal.innerHTML = "Title exist: Choose a different title";
+					}
+					else
+					{
+						incorrectVal = document.createElement('p');
+						incorrectVal.id = "error_par";
+						incorrectVal.innerHTML = "Title exist: Choose a different title";
+					}
+
 					incorrectVal.style.color = "#F95050";
 					incorrectVal.style.fontSize ="18pt";
 					form.appendChild(incorrectVal);
-					
+
 					var title = document.getElementById("title");
 					title.value = '';
-					
+
 					title.style.backgroundColor = "#F95050";
-					
+
 					title.onfocus = function (){title.style.backgroundColor = "white";};
 					title.onblur = function (){title.style.backgroundColor = "#ABD1BC";};
 					//event.preventDefault();
