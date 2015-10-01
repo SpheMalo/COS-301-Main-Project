@@ -69,6 +69,7 @@ $(document).ready(function(){
 		};
 		//convert and send data to server
 		websocket.send(JSON.stringify(msg));
+		$('#message').val(''); //reset text
 	});
 	
 	//#### Message received from server?
@@ -91,10 +92,10 @@ $(document).ready(function(){
 		if(type == 'system')
 		{
 			$('#message_box').append("<div class=\"system_msg\">"+umsg+"</div>");
-			//console.log("<div class=\"system_msg\">"+umsg+"</div>");
+			console.log("<div class=\"system_msg\">"+umsg+"</div>");
 		}
 		
-		$('#message').val(''); //reset text
+		//$('#message').val(''); //reset text
 	};
 	
 	websocket.onerror	= function(ev){$('#message_box').append("<div class=\"system_error\">Error Occurred - "+ev.data+"</div>");}; 
@@ -105,7 +106,7 @@ $(document).ready(function(){
 <div class="message_box" id="message_box"></div>
 <div class="panel">
 <input class="chatName" readonly type="text" name="name" id="name" placeholder="Your Name" value="test" maxlength="10" style="width:35%;margin-top:3px;"  />
-<input type="text" name="message" id="message" placeholder="Message" maxlength="80" style="width:100%;margin-top:3px;" />
+<input type="text" name="message" id="message" placeholder="Message" maxlength="256" style="width:100%;margin-top:3px;" />
 <button id="send-btn" style="margin-top:3px;width:100%;height:28px;">Send</button>
 </div>
 </div>

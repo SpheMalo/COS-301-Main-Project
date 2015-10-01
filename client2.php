@@ -11,7 +11,7 @@
 <script>
 var socket;
 function init(){
-  var host = "ws://figbooks.cloudapp.net:12345/websocket/server.php";
+  var host = "ws://figbooks.cloudapp.net:9000/websocket/server.php";
   try{
     socket = new WebSocket(host);
     log('WebSocket - status '+socket.readyState);

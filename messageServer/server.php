@@ -42,16 +42,20 @@ while (true) {
 		//check for any incomming data
 		while(socket_recv($changed_socket, $buf, 1024, 0) >= 1)
 		{
+			
 			$received_text = unmask($buf); //unmask data
 			$tst_msg = json_decode($received_text); //json decode 
+			if (isset($tst_msg))
+			{
 			$user_name = $tst_msg->name; //sender name
 			$user_message = $tst_msg->message; //message text
 			$user_color = $tst_msg->color; //color
-			
+
 			//prepare data to be sent to client
 			$response_text = mask(json_encode(array('type'=>'usermsg', 'name'=>$user_name, 'message'=>$user_message, 'color'=>$user_color)));
 			send_message($response_text); //send data
-			break 2; //exist this loop
+			}
+			break 2; //exits this loop
 		}
 		
 		$buf = @socket_read($changed_socket, 1024, PHP_NORMAL_READ);

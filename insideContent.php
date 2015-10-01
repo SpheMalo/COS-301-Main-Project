@@ -79,7 +79,11 @@
 		<img id="figbookLogo" src="images/figbooklogo.png" alt="Figbook"/>
 		<h1 id="figbookHeading">FIGBOOK</h1>
 		 <div id="menu">
-		 </div>
+			<div id="logoutDiv" class=" templatemo_logout ">
+				<!-- <img src="images/templatemo_home4.jpg" alt="home img 04"> -->
+				<a id="logoutText" href="#" onclick="wiki_logout()">Logout</a>
+			</div>
+		 </div>		 
 	 </header>
 	<!--This is the header bar END-->
    
@@ -87,29 +91,47 @@
    <!-- homepage start -->
     <div class="content homepage " id="menu-1"> <!--contains the main menu tabs-->
           	
-            	<div class="menuBox templatemo_mainservice ">
+            	<div class="menuBox templatemo_mainservice ">					
                 	<div class="templatemo_link"><a class="show-2 templatemo_page2 menuItem" href="#">Catalogue</a></div>
-                    <div class="templatemo_mainimg"><img class="menu-img" src="images/templatemo_home1.jpg" height="316px" alt="home img 01"></div>
+                    <p class="menuInfo">Start writing a manuscript.<br>
+					Add collaborators to your manuscript.<br>
+					Write editorial letters.<br>
+					Create and view comments.<br>
+					And more...
+					</p>
                 </div>
                 
             	<div class="menuBox templatemo_maintesti ">
                 	<div class="templatemo_link"><a class="show-4 templatemo_page4 menuItem" id="profileLink" href="#">Profile</a></div>
-                    <div class="templatemo_mainimg"><img class="menu-img" src="images/templatemo_home3.jpg" height="316px" alt="home img 03"></div>
+					<p class="menuInfo">Here you can:<br>
+					Write a small biography.<br>
+					Add/Edit contact details.<br>
+					Edit personal details.<br>
+					See a list of books you are linked to.					
+					</p>
                 </div>
                 
                 <div class="menuBox templatemo_mainabout">
                 	<div class="templatemo_link"><a class="show-5 templatemo_page5 menuItem" href="#">About Us</a></div>
+					<p class="menuInfo">Text here text here text here.	<br>
+					Text here text here text here.	<br>
+					Text here text here text here.	<br>
+					Text here text here text here.	<br>
+					Text here text here text here.					
+					</p>
                 </div>
                 
                 <div class="menuBox templatemo_maincontact">
                 	<div class="templatemo_link"><a class="show-6 templatemo_page6 menuItem" href="#">Contact Us</a></div>
-                    
+                    <p class="menuInfo">Text here text here text here.	<br>
+					Text here text here text here.	<br>
+					Text here text here text here.	<br>
+					Text here text here text here.	<br>
+					Text here text here text here.					
+					</p>
                 </div>
                 
-                <div id="logoutDiv" class="menuBox templatemo_logout ">
-             	  <!-- <img src="images/templatemo_home4.jpg" alt="home img 04"> -->
-				 <div class="templatemo_link"><a class="show-7 templatemo_page7 menuItem" href="#" onclick="wiki_logout()">Logout</a></div>
-                </div>
+                
     	  
     
    </div> <!--contains the main menu tabs END-->

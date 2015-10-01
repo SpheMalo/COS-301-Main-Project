@@ -5,7 +5,7 @@
  */
 function link()
 {
-	
+		
     var e = document.getElementById("users");
     var strUser = e.options[e.selectedIndex].value;
 
@@ -210,7 +210,8 @@ function editSection(value)
 
 $(document).ready(function () {
 	
-	 $("#messageArea").load("chat.php",function(){			
+	
+	 $("#messageArea").load("chat.php",function(){//this is where the chat client is loaded into the site.
 				$(".chatName").val(readCookie("username"));
 			});
 	//Populates the list of books initially when page loads.		
@@ -231,10 +232,11 @@ $(document).ready(function () {
 	
 	///Loading/opening the editorial letter panel.
 	$("#writeEditorial").click(function(){
+		
 		$( "#letterHide" ).trigger( "click" );
 		
 			//hides the options menu
-			$('.optionsSlide').removeClass('pullDown');
+			$('.options').removeClass('pullDown');
 			$('.optionsSlide').css('visibility','hidden');
 			//hides the options menu
 		
@@ -266,7 +268,7 @@ $(document).ready(function () {
 		$('#letterHide').css('display','none');
 		
 		//hides the options menu
-			$('.optionsSlide').removeClass('pullDown');
+			$('.options').removeClass('pullDown');
 			$('.optionsSlide').css('visibility','hidden');
 		//hides the options menu
 		
