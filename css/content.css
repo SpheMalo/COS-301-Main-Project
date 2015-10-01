@@ -238,8 +238,9 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);
 #optionsContainer
 {
 	float:right;
+    margin-right:4px;
 	height:40px;
-	width:220px;	
+	width:200px;	
 }
 
 #options
@@ -258,7 +259,7 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);
 	font-size:20pt;
 }
 #options:hover{cursor:pointer;height:38px;border-bottom:solid 2px rgba(85,127,184,1.00);}
-.optionsSlide{margin-top:40px;visibility: hidden;}
+.optionsSlide{margin-top:40px;visibility: hidden;min-height:0px;height:200px;}
 #viewBooks
 {
     margin-left:4px;
@@ -347,7 +348,7 @@ background: linear-gradient(to bottom, rgba(92,194,219,1) 0%, rgba(83,186,214,1)
 
 #goBackService{
 
-width:150px;
+    width:150px;
 	height:40px;
 
 	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
@@ -366,7 +367,7 @@ color:rgba(4,42,130,1.00);
 text-shadow: 0 1px 2px rgba(107,207,198,1.00);
 text-decoration:none;
 }
-
+#editSection{display:none;}
 #serviceContainer{
     padding-top:1px;
     min-height:800px;
@@ -379,6 +380,8 @@ background:rgba(194, 202, 204,0.5);
 -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
 box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
 }
+
+
 #topService{height:60px;width:100%;
 position: fixed;
 top:0px;left: 0px;

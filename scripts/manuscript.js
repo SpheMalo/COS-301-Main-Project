@@ -102,7 +102,7 @@ function populateComment(){
 
 function link()
 {
-	
+		
     var e = document.getElementById("users");
     var strUser = e.options[e.selectedIndex].value;
 
@@ -307,7 +307,8 @@ function editSection(value)
 
 $(document).ready(function () {
 	
-	 $("#messageArea").load("chat.php",function(){			
+	
+	 $("#messageArea").load("chat.php",function(){//this is where the chat client is loaded into the site.
 				$(".chatName").val(readCookie("username"));
 			});
 	//Populates the list of books initially when page loads.		
@@ -328,10 +329,11 @@ $(document).ready(function () {
 	
 	///Loading/opening the editorial letter panel.
 	$("#writeEditorial").click(function(){
+		
 		$( "#letterHide" ).trigger( "click" );
 		
 			//hides the options menu
-			$('.optionsSlide').removeClass('pullDown');
+			$('.options').removeClass('pullDown');
 			$('.optionsSlide').css('visibility','hidden');
 			//hides the options menu
 		
@@ -363,7 +365,7 @@ $(document).ready(function () {
 		$('#letterHide').css('display','none');
 		
 		//hides the options menu
-			$('.optionsSlide').removeClass('pullDown');
+			$('.options').removeClass('pullDown');
 			$('.optionsSlide').css('visibility','hidden');
 		//hides the options menu
 		
@@ -415,6 +417,7 @@ $(document).ready(function () {
 			dataType: 'json',
 			success: function(data)
 			{
+				alert(data);
 				
 				if(data == "false"){
 					if (document.getElementById('error_par') != null)
@@ -445,18 +448,27 @@ $(document).ready(function () {
 				else if(data == "true"){
 					
 					var form = document.getElementById("contentDiv");
-					var incorrectVal = document.createElement('p');
-					incorrectVal.id = "error_par";
-					incorrectVal.innerHTML = "Title exist: Choose a different title";
+					var incorrectVal = document.getElementById('error_par');
+					if (typeof(incorrectVal) != 'undefined' && incorrectVal != null)
+					{
+						incorrectVal.innerHTML = "Title exist: Choose a different title";
+					}
+					else
+					{
+						incorrectVal = document.createElement('p');
+						incorrectVal.id = "error_par";
+						incorrectVal.innerHTML = "Title exist: Choose a different title";
+					}
+
 					incorrectVal.style.color = "#F95050";
 					incorrectVal.style.fontSize ="18pt";
 					form.appendChild(incorrectVal);
-					
+
 					var title = document.getElementById("title");
 					title.value = '';
-					
+
 					title.style.backgroundColor = "#F95050";
-					
+
 					title.onfocus = function (){title.style.backgroundColor = "white";};
 					title.onblur = function (){title.style.backgroundColor = "#ABD1BC";};
 					//event.preventDefault();

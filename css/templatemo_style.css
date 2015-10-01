@@ -41,14 +41,50 @@ html, body {
 	
 	
 }
-#push{height:250px;z-index: 0;}
+/*Logout button styling*/
+#logoutDiv
+{
+    margin-left:4px;
+	width:150px;
+	height:40px;
+	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
+	float:right;
+    border-bottom:2px dotted rgba(47,47,47,0.92);
+	color:rgba(4,42,130,1.00);
+    text-shadow: 0 1px 2px rgba(107,207,198,1.00);
+	position:relative;
+	top:10px;
+	right:2px;
+	line-height:35px;
+	font-size:20pt;
+	text-align: center;
+}
+#logoutDiv:hover{font-size:26pt;cursor:pointer;height:50px;border-bottom:solid 2px rgba(85,127,184,1.00);}
+#logoutText
+{
+    color:rgba(4,42,130,1.00);
+    text-shadow: 0 1px 2px rgba(107,207,198,1.00);
+	text-decoration: none;
+}
+/*Main menu area styling*/
+.menuInfo
+{
+  text-align:center;margin-top:5px;font-size: 18px;
+  text-shadow: 1px 2px 10px rgba(0,0,0,1.0);
+  margin-top:10px;
+  
+}
+
+ 
+
 
 #preface{margin-top:14px;resize:vertical;}
 
 .menuItem{
-	color:white;
+	color:rgba(40,40,250,1);
+	
 	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
-	font-size: 45px;
+	font-size: 50px;
 	text-decoration: none;
 	text-shadow: 0 1px 0 #ccc,
                0 1px 0 #c9c9c9,
@@ -62,16 +98,24 @@ html, body {
                0 5px 10px rgba(0,0,0,.25),
                0 10px 10px rgba(0,0,0,.2),
                0 20px 20px rgba(0,0,0,.15);
+			   
+	
 	}
-.menuItem:hover{color:white;text-decoration:none;
-	font-size: 50px;
+.menuItem:hover{
+  text-decoration: none;
+  color:rgb(20,20,250);
+  font-size: 55px;
 	}
-.menuItem:active{color:white;text-decoration:none;
-font-size: 45px;
+.menuItem:active{
+  text-decoration: none;
+  color:rgb(40,70,250);
 }
-a:visited{color:white;text-decoration:none}
-.menuItem:visited{color:white;text-decoration:none;
-font-size: 45px;
+.menuBox:nth-child(4){left:392px;position:relative;top:60px;}
+.menuBox:nth-child(1){top:130px;position:relative;}
+.menuBox:nth-child(3){top:130px;position:relative;}
+a:visited{
+  text-decoration: none;
+  color:rgba(40,40,250,1);
 }
 #portImageBack{height:200px;width:150px; float:left;margin-left:5px;margin-top:5px;}
 #portImage{height:200px;width:150px;}
@@ -161,15 +205,8 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);
 	width:120px;height:30px;
 }
 #aboutGrey{width:340px;z-index:2;}
-.templatemo_logout{
-	background: #259AB8;
-	text-align: center;
-	width: 100%;
-}
 
 
-
-	
 #viewBooks
 {
 	width:250px;
@@ -312,104 +349,6 @@ a.nontext /* used to override default properties of 'a' tag */
 {
 	color: white;
 	border: none;
-}
-
-.templatemo_link ,.templatemo_linkservice,.templatemo_linkcontact { 
-	font-size: 2em; color: #ffffff;
-	width: 95%;
-}
-
-.templatemo_link1 { 
-	font-size: 2em; color: #ffffff;
-	padding-top:20%;
-	position: absolute;
-	width: 100%;
-}
-
-.templatemo_smalltitle { 
-	float: left; 
-	padding: 0px 0px 0px 0px; 
-	font-size: 1em; 
-	color: #b5b5b5;
-	margin: 10px 0px 30px 25px;
-}
-
-.templatemo_footer { 
-	float: right; 
-	padding: 0px 0px 0px 0px; 
-	font-size: 14px; 
-	color: #b5b5b5;
-	margin: 30px 40px 20px 0px;
-}
-
-.templatemo_mainservice	{
-	background: rgba(153,153,51,1.00);
-	text-align: center;
-	width: 100%;
-	float: left;
-}
-.templatemo_mainservice:hover{
-	
-	}
-
-.templatemo_mainportfolio {
-	background: #993333;
-	text-align: center;
-	width: 100%;
-}
-
-.templatemo_maintesti {
-	background: #339966;
-	text-align: center;
-	width: 100%;
-}
-
-.templatemo_mainabout	{
-	background: #cc9933;
-	text-align: center;
-	width: 100%;
-}
-
-.templatemo_maincontact	{
-	background: #965B5B;
-	text-align: center;
-	width: 100%;
-}
-
-
-
-.templatemo_insideportfolio	 h2 { color: #ffffff; }
-.templatemo_insideportfolio	{
-	background: #993333;
-	width: 100%;
-	padding: 0px;
-	color: #ffffff;
-}
-
-.templatemo_portfoliotext { 
-	color: #ffffff;
-	position: absolute;
-	width: 95%;
-	padding: 30px;
-}
-	
-.templatemo_portfolioback { 
-	background: #666666;
-	text-align: center;
-	width: 100%;
-}
-
-	
-.templatemo_aboutback { 
-	background: #666666;
-	text-align: center;
-}
-	
-.templatemo_graybg { 
-	float: left; 
-	background: #cccccc;
-	overflow: hidden;
-	width:240px;
 }
 
 .templatemo_paddinggap	{ padding: 30px; }
@@ -748,11 +687,10 @@ height:180px;
 @media(min-width:320px) {
 	#menu-1{width:318px;}
 	
-	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
+	.templatemo_link{height:40px;line-height:40px;padding:0px;text-algin:center;width:100%;}
 	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
 	.menuBox{text-align:center;height:150px;width:305px;float:left;margin:5px;}
-	.menuItem{font-size:28pt;}
-	.menuItem:hover{font-size:30pt;}
+	
 	
 	
 	.resp-vtabs .templatemo_aboutcontainer, .resp-vtabs .templatemo_testicontainer	{ width: 100%; }
@@ -769,11 +707,10 @@ height:180px;
 	#menu-1{width:318px;margin-left:auto;margin-right:auto;}
 	#powered{display:none;}
 	#menu-container{width:100%;min-height:1200px;}
-	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
+	.templatemo_link{height:40px;line-height:40px;padding:0px;text-algin:center;width:100%;}
 	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
 	.menuBox{text-align:center;height:150px;width:305px;float:left;margin:5px;}
-	.menuItem{font-size:28pt;}
-	.menuItem:hover{font-size:30pt;}
+	
 	.text-shadow{display:block;}
 	/*This is the Catalogue area's styling for a phone size*/
 	#serviceBackground{width:300px;min-height:900px;}
@@ -797,7 +734,7 @@ height:180px;
 @media(min-width:768px) {
 	#menu-1{width:760px;margin-left:auto;margin-right:auto;}
 	#menu-container{width:100%;min-height:1200px;}
-	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
+	.templatemo_link{height:40px;line-height:40px;padding:0px;text-algin:center;width:100%;}
 	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
 	.menuBox{text-align:center;height:150px;width:750px;float:left;margin:5px;}
 	#serviceBackground{width:700px;}
@@ -828,9 +765,9 @@ height:180px;
 	#menu-container{width:100%;min-height:800px;}
 	#scrollDiv{width:980px;overflow-x:hidden;min-height:680px;}
 	#menu-1{width:990px;margin-left:auto;margin-right:auto;}
-	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
+	.templatemo_link{height:40px;line-height:40px;padding:0px;text-algin:center;width:100%;}
 	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
-	.menuBox{height:150px;width:482px;float:left;margin:5px;}
+	.menuBox{height:190px;width:482px;float:left;margin:5px;margin-top:20px;}
 	#serviceBackground{width:800px;}
 	#preface{width:90%;}
 	#scriptMenuBar{height:60px;line-height:60px;}
@@ -872,10 +809,10 @@ height:180px;
 
 	#menu-container{width:100%;min-height:800px;}
 	#menu-1{height:auto;width:1176px;margin-left:auto;margin-right:auto;}
-	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
+	.templatemo_link{height:40px;line-height:40px;padding:0px;text-algin:center;width:100%;}
 	.templatemo_mainimg{visibility:visible;width:200px;height:150px;margin-top:-30px;margin-left:41px;}
 	.menu-img{width:300px;height:150px;visibility:visible;}
-	.menuBox{height:300px;width:382px;float:left;margin:5px;}
+	.menuBox{height:300px;width:382px;float:left;margin:5px;}.menuBox{height:190px;width:382px;float:left;margin:5px;margin-top:20px;}
 	.wrapper1{height:100%;}
 	
 	#topService{width:800px;height:40px;}
@@ -914,7 +851,7 @@ height:180px;
 	.resp-vtabs .templatemo_tab li, 
 	.resp-vtabs .templatemo_testitab li { padding: 0px;  margin-bottom: 15px; }
 	.templatemo_frame	{ height: 406px; padding: 0px 30px; }
-	.templatemo_link { height: 150px; line-height: 150px; padding: 0px; }
+	.templatemo_link { height: 40px; line-height: 40px; padding: 0px; }
 	/*.container { left: 50%; margin-left: -585px; }*/
 	.logocontainer	{ width: 1140px; padding: 0px 30px; margin: 0 auto; }
 	.templatemo_insideportfolio	{ height: 316px; }

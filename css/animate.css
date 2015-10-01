@@ -3735,18 +3735,41 @@ pullDown
 */
 
 .pullDown{
-	animation-name: pullDown;
+	
 	-webkit-animation-name: pullDown;	
-
-	animation-duration: 1.1s;	
+	-webkit-transform-origin: 50% 0%; 
 	-webkit-animation-duration: 1.1s;
-
-	animation-timing-function: ease-out;	
 	-webkit-animation-timing-function: ease-out;	
-
-	transform-origin: 50% 0%;
 	-ms-transform-origin: 50% 0%;
-	-webkit-transform-origin: 50% 0%; 		
+
+	animation-name: pullDown;	
+	animation-duration: 1.1s;
+	animation-timing-function: ease-out;	
+	transform-origin: 50% 0%;	
+}
+
+@-webkit-keyframes pullDown {
+	0% {
+		-webkit-transform: scaleY(0.1);
+	}
+	40% {
+		-webkit-transform: scaleY(1.02);
+	}
+	60% {
+		-webkit-transform: scaleY(0.98);
+	}
+	80% {
+		-webkit-transform: scaleY(1.01);
+	}
+	100% {
+		-webkit-transform: scaleY(0.98);
+	}				
+	80% {
+		-webkit-transform: scaleY(1.01);
+	}
+	100% {
+		-webkit-transform: scaleY(1);
+	}		
 }
 
 @keyframes pullDown {
@@ -3773,29 +3796,7 @@ pullDown
 	}							
 }
 
-@-webkit-keyframes pullDown {
-	0% {
-		-webkit-transform: scaleY(0.1);
-	}
-	40% {
-		-webkit-transform: scaleY(1.02);
-	}
-	60% {
-		-webkit-transform: scaleY(0.98);
-	}
-	80% {
-		-webkit-transform: scaleY(1.01);
-	}
-	100% {
-		-webkit-transform: scaleY(0.98);
-	}				
-	80% {
-		-webkit-transform: scaleY(1.01);
-	}
-	100% {
-		-webkit-transform: scaleY(1);
-	}		
-}
+
 
 /*
 ==============================================
