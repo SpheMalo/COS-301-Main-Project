@@ -26,7 +26,7 @@ class communication {
     }
     
     public function sendEditorialLetter($userId, $bookTitle, $message){
-        
+        $bookTitle = str_replace(" ","_",$bookTitle);
         $query="SELECT page_id FROM page WHERE page_title ='$bookTitle'";
         $queryResult = mysqli_query($this->dbInstance, $query);//run query
         $title = "";
@@ -61,6 +61,7 @@ class communication {
     }
     
     function getEditorialLetters($bookTitle){
+        $bookTitle = str_replace(" ","_",$bookTitle);
         $query="SELECT page_id FROM page WHERE page_title ='$bookTitle'";
         $queryResult = mysqli_query($this->dbInstance, $query);//run query
         $title = "";
@@ -91,6 +92,7 @@ class communication {
     }
     
     function getEditorialLettersEditor($bookTitle,$userId){
+        $bookTitle = str_replace(" ","_",$bookTitle);
         $query="SELECT page_id FROM page WHERE page_title ='$bookTitle'";
         $queryResult = mysqli_query($this->dbInstance, $query);//run query
         $title = "";
@@ -131,7 +133,7 @@ class communication {
     
     function updateEditorialLetter($bookTitle, $message){
         
-        
+        $bookTitle = str_replace(" ","_",$bookTitle);
         $queryString = "UPDATE letter SET message='$message' WHERE letter_id='$bookTitle'";
              $queryResults = mysqli_query($this->dbInstance, $queryString);
              if($queryResults){

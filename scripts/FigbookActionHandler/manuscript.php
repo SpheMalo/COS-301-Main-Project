@@ -62,7 +62,7 @@ class manuscript {
     
     public function lockBookToUser($userId, $bookTitle) {
         
-
+        $bookTitle = str_replace(" ","_",$bookTitle);
         $query="SELECT page_id FROM page WHERE page_title ='$bookTitle'";
         $queryResult = mysqli_query($this->dbInstance, $query);//run query
         $title = "";
@@ -97,7 +97,7 @@ class manuscript {
     }
     
     public function checkPagePermissions($userId, $bookTitle) {
-        
+        $bookTitle = str_replace(" ","_",$bookTitle);
         $query="SELECT page_id FROM page WHERE page_title ='$bookTitle'";
         $queryResult = mysqli_query($this->dbInstance, $query);//run query
         $title = "";
@@ -138,6 +138,7 @@ class manuscript {
     }
     
     public function getUserRole($userId, $bookTitle){
+        $bookTitle = str_replace(" ","_",$bookTitle);
         $query="SELECT page_id FROM page WHERE page_title ='$bookTitle'";
         $queryResult = mysqli_query($this->dbInstance, $query);//run query
         $title = "";

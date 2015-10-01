@@ -2,6 +2,26 @@ window.onload = function(){
 	
    $(document).ready(function() {
 	
+	 var action =
+                {
+                    "action" : "viewprofile"
+                }
+              	var JSONstring = JSON.stringify(action);
+			
+			$.ajax({
+				url: 'scripts/FigbookActionHandler/actionHandler.php',
+				data: 'json='+JSONstring,
+				dataType: 'json',
+				success: function(data){
+                    //createProfile(data);
+                                //console.log(JSON.stringify(data));
+                                localStorage.genericUserRole = data.user_role;
+                                localStorage.userName = data.user_name;
+				},
+				error: function(data){
+					alert("error :"+data.responseText);
+				}		
+			});
 	
 	//This is the edit and save button for the users profile/portfolio.
 	//It has two states: Save and Edit.

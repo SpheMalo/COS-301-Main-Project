@@ -3,7 +3,8 @@ $(document).ready(function () {
     setInterval(function () {
         var role = localStorage.userRole;
         var book = localStorage.bookTitle;
-        //console.log(localStorage.reload + " role: " + role);
+        var GenericRole = localStorage.genericUserRole;
+        //console.log(GenericRole + "  " + role + " " + book);
         if (localStorage.reload === "yes") {
             if (document.getElementById("updateLetter") !== null) {
                 var element = document.getElementById("updateLetter");
@@ -20,8 +21,19 @@ $(document).ready(function () {
                 element.outerHTML = "";
                 delete element;
             }
+            if (document.getElementById("listL") !== null) {
+                var element = document.getElementById("listL");
+                element.outerHTML = "";
+                delete element;
+            }
+            if (document.getElementById("newL") !== null) {
+                var element = document.getElementById("newL");
+                element.outerHTML = "";
+                delete element;
+            }
 
-            if (role === "Creator") {
+            if ((role === "Creator" || GenericRole === "Author") && role !== "") {
+                //console.log("List letters");
                 localStorage.reload = "no";
                 $('#letterText').css('display', 'none');
                 $('#sendLetter').css('display', 'none');
@@ -29,11 +41,13 @@ $(document).ready(function () {
                 loadLetters(book, "letterArea");
 
             }
-            else if (role === "") {
+            if (role === "") {
+                //console.log("no selection");
                 $('#letterText').css('display', 'block');
                 $('#sendLetter').css('display', 'block');
             }
-            else if (role === "Editor" || role === "READ") {
+            if ((role === "Editor" || GenericRole === "Editor") && role !== "") {
+                //console.log("Edit letter");
                 localStorage.reload = "no";
                 $('#letterText').css('display', 'none');
                 $('#sendLetter').css('display', 'none');
@@ -45,7 +59,7 @@ $(document).ready(function () {
 
     }, 1000);
 
-
+    
     $('#sendLetter').click(function () {
         var letterInfo = {
             "text": document.getElementById("letterText").value,
@@ -54,6 +68,7 @@ $(document).ready(function () {
         };
         var JSONstring = JSON.stringify(letterInfo);
         var myrole = localStorage.userRole;
+        var GenericRole = localStorage.genericUserRole;
         //alert("Book title: " + JSONstring.bookTitle + "role: " + myrole);
         var send = true;
 
@@ -61,7 +76,7 @@ $(document).ready(function () {
             addErrorCode("Please select book for letter", "letterArea", "#F95050");
             send = false;
         }
-        else if (myrole === "Creator" || myrole === "WRITE") {
+        else if (GenericRole !== "Editor") {
             addErrorCode("You are not an editor!", "letterArea", "#F95050");
             send = false;
         }
@@ -112,7 +127,7 @@ $(document).ready(function () {
 
     }
     function addLink(linkName, placeToAdd, color, float, margin, id, type) {
-
+        //console.log("Link creake");
         if (document.getElementById(id) === null) {
             var div = document.getElementById(placeToAdd);
             var link = document.createElement('a');
@@ -193,7 +208,7 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (data)
             {
-                //alert(JSON.stringify(data));
+                console.log(JSON.stringify(data));
                 populateLetters(data, div, "editor");
             }
             , error: function (data) {
@@ -217,14 +232,14 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (data)
             {
-                //alert(JSON.stringify(data));
+                console.log(JSON.stringify(data));
                 populateLetters(data, div, "author");
             }
             , error: function (data) {
                 addErrorCode("Error getting letters", div, "#E8F229");
             }
         });
-        event.preventDefault();
+        //event.preventDefault();
     }
 
     function populateLetters(data, div, userType) {

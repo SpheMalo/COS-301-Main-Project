@@ -207,13 +207,13 @@ if(isset($actionFlag) && $actionFlag != ""){
             $bookTitle = $object->bookTitle;
             $message = $object->text;
             $tmpMen= new manuscript($dbHandler->getConnection());
-            if ($tmpMen->getUserRole($editor_id, $bookTitle) == "Editor" || $tmpMen->getUserRole($editor_id, $bookTitle) == "READ"){
+            //if ($tmpMen->getUserRole($editor_id, $bookTitle) == "Editor" || $tmpMen->getUserRole($editor_id, $bookTitle) == "READ"){
                 $tmpMen= new communication($dbHandler->getConnection());
                 $response = $tmpMen->sendEditorialLetter($editor_id, $bookTitle, $message);
-            }
-            else{
-                $response = "This User is no book editor";
-            }
+            //}
+            //else{
+            //    $response = "This User is no book editor";
+            //}
             
         }
          else if($actionFlag == "get_editorial_letter"){ //Send editorial letter
