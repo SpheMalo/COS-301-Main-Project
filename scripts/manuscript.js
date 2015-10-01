@@ -3,16 +3,30 @@
  * Populates relevant text for edit 
  * @param {Number} value
  */
+function readCookie(name) {
+		        var nameEQ = name + "=";
+		        var ca = document.cookie.split(';');
+		        for (var i = 0; i < ca.length; i++) {
+		            var c = ca[i];
+		            while (c.charAt(0) == ' ')
+		                c = c.substring(1, c.length);
+		            if (c.indexOf(nameEQ) == 0)
+		                return c.substring(nameEQ.length, c.length);
+		        }
+            return null;
+        }
 
 function commentDropDown(page){
 	var comment = {
-		"page_name" : ""
+		"page_name" : "",
+		"user_name" : ""
 	}
-
+	comment.user_name = readCookie('username');
 	comment.page_name = page;
-	//alert(comment.page_name);
+	//alert(comment.user_name);
 	//alert("called");
 	//alert("commentDropDown");
+
 	var JSONstring = JSON.stringify(comment);
 	$.ajax({
 		url: "scripts/FigbookActionHandler/commentDropDown.php",
@@ -36,7 +50,7 @@ function commentDropDown(page){
 			}
 		}
 		, error: function (data){
-			alert(JSON.stringify(data));
+			//alert(JSON.stringify(data));
 			//alert("NOT");
 		}
 	});
@@ -46,13 +60,14 @@ function postComment(){
 	var comment = {
 	            "commentText": "",
 	            "page_name": "",
-	            "section_number":""
-
+	            "section_number":"",
+	            "user_name" : readCookie('username')
 	        }
-	        	//alert("Its here");
+
 	        comment.commentText = document.getElementById("commentText").value;
 	        comment.page_name = localStorage.bookTitle;
 	        comment.section_number = document.getElementById("chapterSelect").value;
+	        //alert(comment.user_name);
 
 	        //alert(comment.commentText);
 	        //alert(comment.page_name);
@@ -77,6 +92,7 @@ function populateComment(){
 	            "page_name": ""
 	}
 
+	//comment.user_name = readCookie('username');
 	comment.page_name = localStorage.bookTitle;
 	comment.section_number = document.getElementById("chapterSelect").value;
 
@@ -102,7 +118,7 @@ function populateComment(){
 
 function link()
 {
-		
+	
     var e = document.getElementById("users");
     var strUser = e.options[e.selectedIndex].value;
 
@@ -219,6 +235,7 @@ function addSection()
         });//end of ajax to send save to server
     }); //end of post to retrieve edit token
 }
+/*
 function postComment(){
 	var comment = {
 	            "commentText": "",
@@ -248,7 +265,7 @@ function postComment(){
 	            }
 	        });
 }
-
+*/
 function editSection(value)
 {
     //alert(localStorage.userRole);
@@ -307,8 +324,7 @@ function editSection(value)
 
 $(document).ready(function () {
 	
-	
-	 $("#messageArea").load("chat.php",function(){//this is where the chat client is loaded into the site.
+	 $("#messageArea").load("chat.php",function(){			
 				$(".chatName").val(readCookie("username"));
 			});
 	//Populates the list of books initially when page loads.		
@@ -329,11 +345,10 @@ $(document).ready(function () {
 	
 	///Loading/opening the editorial letter panel.
 	$("#writeEditorial").click(function(){
-		
 		$( "#letterHide" ).trigger( "click" );
 		
 			//hides the options menu
-			$('.options').removeClass('pullDown');
+			$('.optionsSlide').removeClass('pullDown');
 			$('.optionsSlide').css('visibility','hidden');
 			//hides the options menu
 		
@@ -365,7 +380,7 @@ $(document).ready(function () {
 		$('#letterHide').css('display','none');
 		
 		//hides the options menu
-			$('.options').removeClass('pullDown');
+			$('.optionsSlide').removeClass('pullDown');
 			$('.optionsSlide').css('visibility','hidden');
 		//hides the options menu
 		
@@ -397,18 +412,7 @@ $(document).ready(function () {
 		
 		
 	});
-	function readCookie(name) {
-		        var nameEQ = name + "=";
-		        var ca = document.cookie.split(';');
-		        for (var i = 0; i < ca.length; i++) {
-		            var c = ca[i];
-		            while (c.charAt(0) == ' ')
-		                c = c.substring(1, c.length);
-		            if (c.indexOf(nameEQ) == 0)
-		                return c.substring(nameEQ.length, c.length);
-		        }
-            return null;
-        }	
+		
 	function ajaxFunction(JSONstring){
 		
 		$.ajax({
@@ -417,7 +421,6 @@ $(document).ready(function () {
 			dataType: 'json',
 			success: function(data)
 			{
-				alert(data);
 				
 				if(data == "false"){
 					if (document.getElementById('error_par') != null)
@@ -448,27 +451,18 @@ $(document).ready(function () {
 				else if(data == "true"){
 					
 					var form = document.getElementById("contentDiv");
-					var incorrectVal = document.getElementById('error_par');
-					if (typeof(incorrectVal) != 'undefined' && incorrectVal != null)
-					{
-						incorrectVal.innerHTML = "Title exist: Choose a different title";
-					}
-					else
-					{
-						incorrectVal = document.createElement('p');
-						incorrectVal.id = "error_par";
-						incorrectVal.innerHTML = "Title exist: Choose a different title";
-					}
-
+					var incorrectVal = document.createElement('p');
+					incorrectVal.id = "error_par";
+					incorrectVal.innerHTML = "Title exist: Choose a different title";
 					incorrectVal.style.color = "#F95050";
 					incorrectVal.style.fontSize ="18pt";
 					form.appendChild(incorrectVal);
-
+					
 					var title = document.getElementById("title");
 					title.value = '';
-
+					
 					title.style.backgroundColor = "#F95050";
-
+					
 					title.onfocus = function (){title.style.backgroundColor = "white";};
 					title.onblur = function (){title.style.backgroundColor = "#ABD1BC";};
 					//event.preventDefault();

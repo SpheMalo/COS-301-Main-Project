@@ -13,7 +13,7 @@
 	 		$resultString = "";
 	 		if($selectQueryResult){
 	 			while($row = $selectQueryResult->fetch_assoc()){
-	 				$resultString = $resultString . "\n *** \n" . $row["comment"];
+	 				$resultString = $row["comment"];
 	 			}
 	 		}
 	 		echo $resultString;
