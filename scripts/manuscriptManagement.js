@@ -145,12 +145,11 @@ $(document).ready(function()
 		if ($('.optionsSlide').css('visibility') == "hidden")
 		{
 			$('.optionsSlide').css('visibility','visible');
-			$('.options').addClass('pullDown');
-			
+			$('.optionsSlide').addClass('pullDown');
 		}
 		else
 		{
-			$('.options').removeClass('pullDown');
+			$('.optionsSlide').removeClass('pullDown');
 			$('.optionsSlide').css('visibility','hidden');			
 		}
 	});
@@ -169,7 +168,6 @@ $(document).ready(function()
 });
 
 function addLightbox(insertContent) {
-	$('.options').removeClass('pullDown');
 	// add lightbox/shadow <div/>'s if not previously added
 		if($('#lightbox').size() == 0){
 			var theLightbox = $('<div id="lightbox"/>');

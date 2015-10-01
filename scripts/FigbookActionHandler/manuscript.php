@@ -49,7 +49,7 @@ class manuscript {
 
     //go to systems database and check if the book title exists
      public function titleExists($title) {
-        $title = str_replace(" ","_",$title);
+        
         $query="SELECT * FROM page WHERE page_title= '$title'";
         $queryResult = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $query));//run query
         $result = "false";

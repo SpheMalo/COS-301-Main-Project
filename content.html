@@ -48,11 +48,11 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 			  </div> 	  
 		      <div id="commentArea"><br><br><br>
 					Choose a chapter to comment on:<br>
-					<select id="chapterSelect">
+					<select id="chapterSelect" onchange="populateComment()">
 						 <option disabled="true">none</option>
 					</select>
 					<textarea id="commentText" cols="32" rows="30" ></textarea>
-					<button id="saveComment">Save Comment</button>
+					<button id="saveComment" onclick="postComment()">Save Comment</button>
 		  </div>
 			  
 			  
