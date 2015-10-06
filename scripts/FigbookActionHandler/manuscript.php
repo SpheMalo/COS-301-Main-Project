@@ -39,6 +39,7 @@ class manuscript {
     }
 
     public function link($id,$title, $access) {
+	$title = str_replace(' ','_',$title);
         $queryString = "INSERT INTO user_page (user_name ,page_id ,user_role) VALUES ('$id', '$title', '$access')";
         $queryResults = mysqli_query($this->dbInstance, $queryString);
         $result = "userid: ".$id." linked to ".$title." with ".$access." access";

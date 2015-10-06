@@ -103,7 +103,7 @@
                 
             	<div class="menuBox templatemo_maintesti ">
                 	<div class="templatemo_link"><a class="show-4 templatemo_page4 menuItem" id="profileLink" href="#">Profile</a></div>
-					<p class="menuInfo">Here you can:<br>
+					<p class="menuInfo">
 					Write a small biography.<br>
 					Add/Edit contact details.<br>
 					Edit personal details.<br>
