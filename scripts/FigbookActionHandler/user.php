@@ -46,6 +46,20 @@ class user {
     {
         if($filter !== ""){
             $sql = "SELECT user_id, user_name FROM user where user_name LIKE \"%$filter%\"";
+            $words = array();
+            for ($i = 0; $i < strlen($filter); $i++) {
+                // insertions
+                $words[] = substr($filter, 0, $i) . '_' . substr($filter, $i);
+                // deletions
+                $words[] = substr($filter, 0, $i) . substr($filter, $i + 1);
+                // substitutions
+                $words[] = substr($filter, 0, $i) . '_' . substr($filter, $i + 1);
+            }
+            // last insertion
+            $words[] = $filter . '_';
+            foreach ($words as $word) {
+                $sql .= " OR user_name LIKE \"%$word%\"";
+            }
         }
         else{
             $sql = "SELECT user_id, user_name FROM user";
