@@ -2,8 +2,21 @@
     <head>
         <script src="js/jquery-1.10.2.min.js"></script>
         <script src="scripts/saveTextToDB.js"></script>
-        
+        <script src="scripts/saveConflictToDB.js"></script>
+
 		<style type="text/css">
+      h1
+      {
+        text-align: center;
+      }
+      .otherUser
+      {
+        color: red;
+      }
+      .meUser
+      {
+        color: blue;
+      }
 			#oldContent, #newContent
 			{
 				margin-left:auto;margin-right:auto;
@@ -17,20 +30,25 @@
 			#newContentTextArea{margin-left:auto;margin-right:auto;
 				border: solid 1px grey;
 				border-radius: 12px;
-				
-				height: 115px;}
-				
+        background-color: white;
+				height: 500px;}
+
 			html{background-color:
 			background: #45484d; /* Old browsers */
 			background-color:rgba(160,160,160,1.00);
-			
+
 			}
+      #last_edited_by
+      {
+        color: black;
+        text-decoration: underline;
+      }
 			#background{padding-top:1px;margin-left:auto;margin-right:auto;height:auto;width:800px;
 			background-color:rgba(229,229,229,0.83);border-radius:10px;
 			-webkit-box-shadow: 0px 1px 5px 2px rgba(0,0,0,0.75);
 			-moz-box-shadow: 0px 1px 5px 2px rgba(0,0,0,0.75);
 			box-shadow: 0px 1px 5px 2px rgba(0,0,0,0.75);
-			
+
 			}
 			#heading1{margin-top:5px;margin-right:auto;margin-left:auto;font-size:20pt;width:300px;}
 			#heading2{margin-right:auto;margin-left:auto;font-size:20pt;width:300px;}
@@ -40,31 +58,20 @@
     </head>
     <body onload='resolveConflict()'>
 		<div id='background'>
-		<div id="heading1"><p id="yourChanges">Changes made by you:</p></div>
-		<div id="newContent">
-			<p id="newPar"></p>
-		</div>
-		
-		<br />
-		<br />
-		<div id="heading2"><p id="userChanges">Changes made by </p></div>
-		<div id="oldContent">
-			<p id="oldPar"></p>
-		</div>
-		
-        <div id="buttons">
-		<button id="addBefore">Add Your Changes Before This</button>
-		<button id="addAfter">Add Your Changes After This</button>
-		</div>
-        
-		<br />
-		<br />
-            <div id="newCont">
-            <p>Your new content: </p>
-            <textarea cols="88" rows="5" id="newContentTextArea"></textarea>
-            <button id="saveConflict">Save</button>
+          <h1>Resolve Conflict then Save new content</h1>
+            <div id="key">
+              <ul>
+                <li class="otherUser">All Red Text are the changes made by: <b id="last_edited_by">sdf</b></li>
+                <li class="meUser">All Blue Text are your changes</li>
+                <li> All Black Text has no conflict and needs no editing</li>
             </div>
-            
+
+            <div id="newCont">
+            <p>Resolve Here: </p>
+            <div contenteditable="true" cols="88" rows="5" id="newContentTextArea"></div>
+            <button id="saveConflict" onclick="saveConflict()">Save</button>
+            </div>
+
         </div>
     </body>
 </html>
