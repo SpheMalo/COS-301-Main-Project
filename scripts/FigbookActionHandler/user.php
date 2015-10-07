@@ -348,9 +348,14 @@ class user {
 				{
 					if ($returnArray[$i]["page_id"] == $row["page_id"])
 					{
-
 						$myResponse['books'][$count] = $row["page_title"];
-
+						$count++;
+						break;
+					}
+					
+					else if ($returnArray[$i]["page_id"] == $row["page_title"])
+					{
+						$myResponse['books'][$count] = $row["page_title"];
 						$count++;
 						break;
 					}
