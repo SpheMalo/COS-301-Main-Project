@@ -3,6 +3,37 @@
  * Populates relevant text for edit 
  * @param {Number} value
  */
+
+function loadBook()
+{
+	$("#pageView").fadeOut("slow",function(){
+		$('#editSection').fadeIn("slow",function(){});
+	
+	});
+
+	var headings = document.getElementsByClassName("sectionHeading");
+	var insideText = document.getElementsByClassName("insideText");
+	var sectionDiv = document.getElementsByClassName("sectionDiv");
+
+	var val = [];
+	var iframe = $("iframe").contents();
+	var text = "";
+
+	for (var i = 0; i < sectionDiv.length; i++) {
+		val[i] = insideText[i].innerHTML;
+		var find = '<br>';
+		var re = new RegExp(find, 'g');
+		val[i] = val[i].replace(re,'\n');
+		text += "<h1 style='text-align: center;''>"+headings[i].innerHTML+"</h1>";
+		text += val[i];
+	};
+
+	$("#pageEditTitle").val(localStorage.bookTitle);
+	
+	iframe = iframe.find("body").html(text);
+
+}
+
 function readCookie(name) {
 		        var nameEQ = name + "=";
 		        var ca = document.cookie.split(';');
