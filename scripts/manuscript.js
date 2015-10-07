@@ -672,53 +672,54 @@ $(document).ready(function () {
             url: "scripts/mediawiki/index.php/" + replaced,
             dataType: "html"
         }, 5000).success(function (data) {
-			
+
 			//Takes you to the page content where reading and editing is done.
 			//window.location.href = "content.html";
-			commentDropDown(title_);
+
             $('#bookList').fadeOut("slow",function(){
 				$('#pageView').fadeIn("slow",function(){
 				  	document.getElementById('pageView').innerHTML = data;
 				   	var div = document.getElementById('mw-content-text');
 					var childNodes = div.childNodes;
-						
+
 					//$("#scrollDiv").append($('#editSection').fadeOut("fast",function(){
 					//}));
-					
+
 					document.getElementById('pageView').innerHTML = "";
 
 					var htmlValue = "";
 					var linkNumber = 1;
 					for(var i=0; i<childNodes.length; i++)
-					{	
+					{
 						if (childNodes[i].innerHTML !== "" && typeof childNodes[i].innerHTML !== "undefined")
-						{	
-							
+						{
+							//alert(childNodes[i])
 							if(childNodes[i].innerHTML.indexOf('mw-headline') !== -1 )
-							{	
+							{
 								//not if it is the first section
 								if (linkNumber !== 1){
 								$( "#pageView" ).append(htmlValue+"</div></div></div>");
 								}
 								// add section div
+
 								htmlValue = "<div class='sectionDiv' onclick='editSection("+linkNumber+")'><div class='sectionHeading' >"+childNodes[i].innerHTML+"</div><div class='insideText'  >";
 								linkNumber++;
 							}
 							else{
-							htmlValue += childNodes[i].innerHTML;
+							htmlValue += "<p>"+childNodes[i].innerHTML+"</p>";
 							}
 						}
 					}
 
 					$( "#pageView" ).append(htmlValue+"</div></div></div>");
-					var headings = document.getElementsByClassName("mw-headline"); 
+					var headings = document.getElementsByClassName("mw-headline");
 					console.log("headings: "+headings[0].innerHTML); //?
-						
+
 					var page = document.getElementById("pageView");
 					console.log(page);//?
 					var links = page.getElementsByClassName("mw-editsection");
 					$(links).remove();
-					
+
 					//Make the comment area visible
 					$("#commentSide").css('display','block');
 					$("#commentHide").css('display','block');
@@ -728,11 +729,11 @@ $(document).ready(function () {
 						if(links[i].innerHTML === "edit")
 						{
 							links[i].setAttribute('href', "#");
-							
+
 							num_links++;
 						}
 					}
-						
+
 					var paragraphs = page.getElementsByTagName("h1");
 					var num_par = 1;
 					for( i=0; i<paragraphs.length; i++) {
