@@ -24,6 +24,16 @@ class communication {
         
         $this->dbInstance = null;
     }
+
+    public function email($message, $subject, $from)
+    {
+        $to      = 'figbook.creativate@gmail.com';
+        $headers = 'From:' . $from . "\r\n" .phpversion();
+
+        mail($to, $subject, $message, $headers);
+
+        return "success";
+    }
     
     public function sendEditorialLetter($userId, $bookTitle, $message){
         $bookTitle = str_replace(" ","_",$bookTitle);

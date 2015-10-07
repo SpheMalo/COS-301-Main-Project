@@ -253,6 +253,7 @@ if(isset($actionFlag) && $actionFlag != ""){
 		    $response = $tmpMen->link($object->user_id, $object->title, $object->access);
 		    
 		}
+
         else if($actionFlag == "getUsersFuzzy"){
             $tmpUser = new user($dbHandler->getConnection());
                     if (isset($_REQUEST["term"])){
@@ -266,7 +267,12 @@ if(isset($actionFlag) && $actionFlag != ""){
 		    
 		    
 		}
-        
+
+		else if($actionFlag == "email"){ //Link users to books
+		    $tmpCon= new communication($dbHandler->getConnection());
+		    $response = $tmpCon->email($object->message, $object->subject, $object->from); 
+		}
+
 }else{
     
     $response = "no valid action specified";

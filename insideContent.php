@@ -29,6 +29,7 @@
     <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
     
 	<script src="scripts/authentication.js" type="text/javascript"></script>
+	<script src="scripts/communication.js" type="text/javascript"></script>
 	<script src="scripts/profile.js"></script>
    
 	
@@ -258,7 +259,7 @@
 							 	<input name="email" type="text" class="form-control" id="email" placeholder="Your Email" maxlength="40"><br><br>
 								<input name="subject" type="text" class="form-control" id="subject" placeholder="Subject" maxlength="60"><br><br>
 								<textarea name="message" class="form-control" id="message" placeholder="Your Message..."></textarea> <br><br>
-							    <button type="button" id="contactUsSend">Send</button>
+							    <button type="button" id="contactUsSend" onclick="sendEmail()">Send</button>
 							</form>
 							<img id="contactBack" src="images/templatemo_contact1.jpg" alt="contact image">
 					</div>
