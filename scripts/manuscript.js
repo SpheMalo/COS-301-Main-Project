@@ -152,7 +152,7 @@ function link()
 	
     //var e = document.getElementById("user_id").value;
     var strUser = $("#link_user_id").val();
-    alert(strUser);
+    //alert(strUser);
     var d = document.getElementById("access");
     var access = d.options[d.selectedIndex].value;
 
