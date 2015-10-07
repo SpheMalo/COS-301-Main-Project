@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+	var $loading = $('#loadingDiv').hide();
+	$(document)
+	  .ajaxStart(function () {
+	    $loading.show();
+	  })
+	  .ajaxStop(function () {
+	    $loading.hide();
+	  });</script>
+</head>
+<body>
+
+<div id="loadingDiv">
+	<img src="FeedBackIcons/loading.GIF" alt="Feedback Icon" style="width:100px;height:30px;">
+</div>
+<div id="loadingDiv">
+	<img src="FeedBackIcons/logging_in.GIF" alt="Feedback Icon" style="width:100px;height:30px;">
+</div>
+<div id="loadingDiv">
+	<img src="FeedBackIcons/logging_out.GIF" alt="Feedback Icon" style="width:100px;height:30px;">
+</div>
+<div id="loadingDiv">
+	<img src="FeedBackIcons/merging.GIF" alt="Feedback Icon" style="width:100px;height:30px;">
+</div>
+<div id="loadingDiv">
+	<img src="FeedBackIcons/Please_wait.GIF" alt="Feedback Icon" style="width:100px;height:30px;">
+</div>
+<div id="loadingDiv">
+	<img src="FeedBackIcons/saving.GIF" alt="Feedback Icon" style="width:100px;height:30px;">
+</div>
+<div id="loadingDiv">
+	<img src="FeedBackIcons/updating.GIF" alt="Feedback Icon" style="width:100px;height:30px;">
+</div>
+
+</body>
+</html>
