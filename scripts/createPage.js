@@ -85,7 +85,34 @@ function editSection(value)
     $(document).ready(function () {
 		
 		
-		//Populates the list of books initially when page loads.		
+		//Populates the list of books initially when page loads.
+                var jSonInfo = { action:"getUsersFuzzy"
+                };
+                var JSONstring = JSON.stringify(jSonInfo);
+                        
+                $('#fuzzyText').autocomplete( {
+                    source: "scripts/FigbookActionHandler/actionHandler.php?json="+JSONstring,
+                    //source: "fuzzytest.php",
+                minLength: 2,
+                appentTo: "#user_id",
+
+                change: function( event, ui ) {
+                        if ( !ui.item ) {
+
+                              $("#fuzzyText" ).val($("#link_user_name").val());
+                        }
+                  },
+
+
+                select: function( event, ui ) {
+                    //alert(JSON.stringify(ui));
+                    $("#fuzzyText" ).val( ui.item.label );
+                    $("#link_user_id").val(ui.item.id);
+                    $("#link_user_name").val(ui.item.label);
+
+                }
+                    
+                });
 		getBooks(); 
 		
 		//data for Creating a manuscript:

@@ -41,6 +41,25 @@ class user {
        }
        return $return;
     }
+    public function getUsersFuzzy($filter="")
+    {
+        if($filter !== ""){
+            $sql = "SELECT user_id, user_name FROM user where user_name LIKE \"%$filter%\"";
+        }
+        else{
+            $sql = "SELECT user_id, user_name FROM user";
+        }
+        $result = mysqli_query($this->dbInstance, $sql);
+        $return=array();
+        while($row=mysqli_fetch_array($result)) {
+           //$return[]= $row;
+           $return[]=array(
+                    "id"=>$row["user_id"],
+                    "label"=>$row["user_name"]
+                );
+       }
+       return $return;
+    }
     
     //go to systems database and check if the username and password match a single record
     public function loginUser($uemail,$upassword){

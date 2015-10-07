@@ -253,7 +253,19 @@ if(isset($actionFlag) && $actionFlag != ""){
 		    $response = $tmpMen->link($object->user_id, $object->title, $object->access);
 		    
 		}
-        
+        else if($actionFlag == "getUsersFuzzy"){
+            $tmpUser = new user($dbHandler->getConnection());
+                    if (isset($_REQUEST["term"])){
+                    $filter=$_REQUEST["term"];
+                    $response = ($tmpUser->getUsersFuzzy($filter));
+                    }
+                    else{
+                        $response = ($tmpUser->getUsersFuzzy());
+                    }
+		    
+		    
+		    
+		}
         
 }else{
     

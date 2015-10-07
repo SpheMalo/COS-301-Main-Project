@@ -14,10 +14,12 @@
 <head> 
 
     <script src="scripts/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui-1.9.2.custom.js"></script>
     <script src="scripts/createPage.js" type="text/javascript"></script>
     <script src="scripts/editSection.js" type="text/javascript"></script>
     <script src="scripts/saveTextToDB.js" type="text/javascript"></script>
     <script src="scripts/communication.js" type="text/javascript"></script>
+    <link href="css/jquery-ui-1.9.2.custom.css" rel="stylesheet">
 	<script>
     //$(function(){
      // $("#u377").load("insideContent.html"); 
@@ -30,6 +32,11 @@
   <body>
       <br>
       <br>
+      <div id="fuzzy">
+          <input id="fuzzyText" name="fuzzyText" type="text" value placeholder="User to add">
+            <input type="hidden" id="user_name" name="link_user_name" value="">
+            <input type="hidden" id="user_id" name="link_user_id" value="0">
+      </div>
       <div id="pageList"></div>
       <br>
       <br>
