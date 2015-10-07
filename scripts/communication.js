@@ -1,3 +1,28 @@
+function sendEmail() {
+        var emailInfo = {
+            "action": "email",
+            "message": document.getElementById("message").value,
+            "subject": document.getElementById("subject").value + " (" + document.getElementById("fullname").value + ")" ,
+            "from": document.getElementById("email").value,
+        };
+
+        var JSONstring = JSON.stringify(emailInfo);
+
+        $.ajax({
+                url: 'scripts/FigbookActionHandler/actionHandler.php',
+                data: 'json=' + JSONstring,
+                dataType: 'json',
+                success: function (data)
+                {
+                    if (data === "success") {
+                        alert("Email sent successfully")
+                    }
+                }
+                , error: function (data) {
+                    alert("Email sending failed");
+                }
+            });
+    }
 $(document).ready(function () {
 
     setInterval(function () {
