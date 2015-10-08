@@ -52,9 +52,34 @@ html,body
   font-family: 'Source Sans Pro', sans-serif;
   border-radius: 5px;
 }
+#DelBookDiv{
+  background: #50a3a2;
+  background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+  overflow: hidden;  
+  text-align:center;
+  margin-right:auto;margin-left:auto;
+  color:white;
+  width:350px;
+  height:260px;
+  font-family: 'Source Sans Pro', sans-serif;
+  border-radius: 5px;
+}
 button:hover{cursor:pointer;}
 
 #addChapterArea button{
+    width: 250px;
+
+  padding: 10px 15px;
+  margin-top:-20px;
+  text-align: center;
+  font-size: 24px;
+  -webkit-transition-duration: 0.25s;
+   transition-duration: 0.25s;
+  font-weight: 300;
+}
+
+#DelBookDiv button{
     width: 250px;
 
   padding: 10px 15px;
@@ -76,6 +101,27 @@ button:hover{cursor:pointer;}
   border-radius: 3px;
   padding: 10px 15px;
   margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+  font-weight: 300;
+}
+
+#DelBookDiv input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 250px;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  margin-top: 20px;
   display: block;
   text-align: center;
   font-size: 18px;
@@ -709,6 +755,26 @@ text-shadow: 0 1px 2px rgba(107,207,198,1.00);
 }
 #addChapter:hover{cursor:pointer;height:38px;border-bottom:solid 2px rgba(85,127,184,1.00);}
 /*Chapter adding*/
+/*delManuscript*/
+#delManuscript{
+	width:200px;
+	height:40px;
+  
+    margin-left:3px;
+  
+border-bottom:1px solid rgba(47,47,47,0.92);
+	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
+	float:left;
+	color:rgba(4,42,130,1.00);
+text-shadow: 0 1px 2px rgba(107,207,198,1.00);
+
+	
+	line-height:35px;
+	font-size:20pt;
+
+}
+#delManuscript:hover{cursor:pointer;height:38px;border-bottom:solid 2px rgba(85,127,184,1.00);}
+/*-----------------------------------------------------*/
 /*Instant messaging area*/
 #messageContainer
 {

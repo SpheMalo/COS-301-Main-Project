@@ -352,7 +352,69 @@ function editSection(value)
     }
 }
 
-
+function delete_page(){
+            var book_title = $("#delete_book_title").val();
+            book_title = book_title.split('_').join(' ');
+            //alert(book_title);
+            var stoken = "";
+            $.post('scripts/mediawiki/api.php?action=query&meta=tokens&type=csrf&format=json',
+                    function (data) {
+                        stoken = data.query.tokens.csrftoken;
+                        console.log(stoken);
+                        $.ajax({
+                            url: "scripts/mediawiki/api.php",
+                            data: {
+                                format: 'json',
+                                action: 'delete',
+                                title: book_title,
+                                token: stoken
+                            },
+                            dataType: 'json',
+                            type: 'POST',
+                            success: function (data) {
+                                if (data && data.delete ) {
+                                    //alert("Successful");
+                                    $('#DelBookDiv').append("<br>"+ book_title + " Deleted");
+                                    cleanDelete(book_title);
+                                    setTimeout(function(){
+                                        window.location.reload()
+                                    }, 1000);
+                                    //$.wait(2000).then(window.location.reload());
+                                } else if (data && data.error) {
+                                    alert('Error: API returned error code "' + data.error.code + '": ' + data.error.info);
+                                } else {
+                                    alert('Error: Unknown result from API.');
+                                }
+                            },
+                            error: function (data) {
+                                console.log('Error: Request failed. ' + JSON.stringify(data));
+                               
+                            }
+                        });
+                    });
+            event.preventDefault();
+        }
+function cleanDelete(bookTitle) {
+	        var replaced = bookTitle.split(' ').join('_');
+	        var UserInfo = {
+	            "action": "clean_delete",
+	            "bookTitle": replaced
+	        }
+	        var JSONstring = JSON.stringify(UserInfo);
+	        $.ajax({
+	            url: 'scripts/FigbookActionHandler/actionHandler.php',
+	            data: 'json=' + JSONstring,
+	            dataType: 'json',
+	            success: function (data)
+	            {
+	                //alert(JSON.stringify(data));
+	            }
+	            , error: function (data) {
+	                //alert(JSON.stringify(data));
+	            }
+	        });
+	        event.preventDefault();
+	    }
 $(document).ready(function () {
 	
         
@@ -379,6 +441,34 @@ $(document).ready(function () {
                     $("#fuzzyText" ).val( ui.item.label );
                     $("#link_user_id").val(ui.item.id);
                     $("#link_user_name").val(ui.item.label);
+
+                }
+                    
+                });
+                     //delete book selection. autocomplete
+                jSonInfo = { action:"getBooksFuzzy"
+                };
+                JSONstring = JSON.stringify(jSonInfo);
+                        
+                $('#fuzzyText_deleteTitle').autocomplete( {
+                    source: "scripts/FigbookActionHandler/actionHandler.php?json="+JSONstring,
+                    //source: "fuzzytest.php",
+                minLength: 0,
+                appentTo: "#delete_book_id",
+
+                change: function( event, ui ) {
+                        if ( !ui.item ) {
+
+                              $("#fuzzyText_deleteTitle" ).val($("#delete_book_title").val());
+                        }
+                  },
+
+
+                select: function( event, ui ) {
+                    //alert(JSON.stringify(ui));
+                    $("#fuzzyText_deleteTitle" ).val( ui.item.label );
+                    $("#delete_book_id").val(ui.item.id);
+                    $("#delete_book_title").val(ui.item.label);
 
                 }
                     

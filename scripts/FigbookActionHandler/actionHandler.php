@@ -267,7 +267,25 @@ if(isset($actionFlag) && $actionFlag != ""){
 		    
 		    
 		}
-
+        else if($actionFlag == "getBooksFuzzy"){
+            $tmpMen= new manuscript($dbHandler->getConnection());
+            $user_name = $_COOKIE['username'];
+            if (isset($_REQUEST["term"])){
+                $filter=$_REQUEST["term"];
+                $response = ($tmpMen->getBooksFuzzy($filter, $user_name));
+            }
+            else{
+                $response = ($tmpMen->getBooksFuzzy($user_name));
+            }
+	}
+        else if($actionFlag == "clean_delete"){ //Get User Status
+            
+            $bookTitle = $object->bookTitle;
+            
+            $tmpMen= new manuscript($dbHandler->getConnection());
+            $response = $tmpMen->clean_delete($bookTitle);
+            
+        }
 		else if($actionFlag == "email"){ //Link users to books
 		    $tmpCon= new communication($dbHandler->getConnection());
 		    $response = $tmpCon->email($object->message, $object->subject, $object->from); 

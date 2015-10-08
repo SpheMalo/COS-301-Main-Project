@@ -88,6 +88,7 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 										<div class="options" id="invitation">Send Invitation</div>
 										<div class="options" id="writeEditorial">Editorial Letter</div>
 										<div  class="options" id="addChapter">Add Chapter</div>
+                                                                                <div  class="options" id="delManuscript">Delete Book</div>
 								   </div>
 							  </div>
 
@@ -118,6 +119,13 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 
 								  <input type="button" value="Link" onclick="link()"></input>
 							  </div>
+                                                        
+                                                               <div id="DelBookDiv" style="display:none;">
+                                                                    <input id="fuzzyText_deleteTitle" name="fuzzyText_deleteTitle" type="text" value placeholder="Book to delete"><br><br>
+                                                                    <input type="hidden" id="delete_book_title" name="delete_book_title" value="">
+                                                                    <input type="hidden" id="delete_book_id" name="delete_book_id" value="">
+                                                                    <button type="button" onclick="delete_page()">delete</button>
+                                                                </div>
 							  <!--This is pop up boxes for adding chapters and linking users END-->
 							
                             <div id="scrollDiv">

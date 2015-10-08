@@ -178,6 +178,55 @@ class manuscript {
             //send success message and current user details 
             return $this->message;
     }
+    function getBooksFuzzy($filter="", $user_name){
+        
+        if($filter !== ""){
+            $sql = "SELECT page_id, page_title FROM page where page_title LIKE \"%$filter%\"";
+            $words = array();
+            for ($i = 0; $i < strlen($filter); $i++) {
+                // insertions
+                $words[] = substr($filter, 0, $i) . '_' . substr($filter, $i);
+                // deletions
+                $words[] = substr($filter, 0, $i) . substr($filter, $i + 1);
+                // substitutions
+                $words[] = substr($filter, 0, $i) . '_' . substr($filter, $i + 1);
+            }
+            // last insertion
+            $words[] = $filter . '_';
+            foreach ($words as $word) {
+                $sql .= " OR page_title LIKE \"%$word%\"";
+            }
+        }
+        else{
+            $sql = "SELECT page_id, page_title FROM page";
+        }
+        $result = mysqli_query($this->dbInstance, $sql);
+        $return=array();
+        while($row=mysqli_fetch_array($result)) {
+           //$return[]= $row;
+            if($this->checkPagePermissions($user_name, $row["page_title"]) ==="success"){
+                $return[]=array(
+                    "id"=>$row["page_id"],
+                    "label"=>$row["page_title"]
+                );
+            }
+           
+       }
+       return $return;
+    }
+    function clean_delete($bookTitle){
+        $queryString = "DELETE FROM user_page WHERE page_id ='$bookTitle'";
+             $queryResults = mysqli_query($this->dbInstance, $queryString);
+             if($queryResults){
+                 
+                 $this->message = "success";
+                 
+             }else if(!$queryResults){
+                 $this->message = "Failed";
+             }
+            //send success message and current user details 
+            return $this->message;
+    }
 }
 
 
