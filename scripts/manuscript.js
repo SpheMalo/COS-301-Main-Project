@@ -438,9 +438,7 @@ $(document).ready(function () {
                 }
                     
                 });
-	 $("#messageArea").load("chat.php",function(){			
-				$(".chatName").val(readCookie("username"));
-			});
+	
 	//Populates the list of books initially when page loads.		
 	getBooks(); 
 		
