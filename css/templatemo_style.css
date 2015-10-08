@@ -27,7 +27,7 @@ html, body {
 
 	margin-bottom: -250px;
 	margin-top: 0px;
-	min-height: 600px;
+	min-height: 550px;
 	position: relative;
 	padding:100px;
 	width:100%;
@@ -110,9 +110,8 @@ html, body {
   text-decoration: none;
   color:rgb(40,70,250);
 }
-.menuBox:nth-child(4){left:392px;position:relative;top:60px;}
-.menuBox:nth-child(1){top:130px;position:relative;}
-.menuBox:nth-child(3){top:130px;position:relative;}
+
+
 a:visited{
   text-decoration: none;
   color:rgba(40,40,250,1);
@@ -684,30 +683,22 @@ height:180px;
  
 /*----- Page Load ------*/
 
-@media(min-width:320px) {
-	#menu-1{width:318px;}
-	
-	.templatemo_link{height:40px;line-height:40px;padding:0px;text-algin:center;width:100%;}
-	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
-	.menuBox{text-align:center;height:150px;width:305px;float:left;margin:5px;}
-	
-	
-	
-	.resp-vtabs .templatemo_aboutcontainer, .resp-vtabs .templatemo_testicontainer	{ width: 100%; }
-	.templatemo_aboutlinkwrapper{ display: none; }
-	.templatemo_aboutlinkwrapper1{  display: block; }
-	.templatemo_frame	{ padding: 0px 30px 30px 30px; }
-	.templatemo_link { padding-top: 20%; }
-	.logocontainer	{ padding: 0px 15px; margin: 0 auto; }
-	.templatemo_insideportfolio	{ padding-bottom: 30px; }
-	.templatemo_link, .templatemo_linkservice, .templatemo_linkcontact  { padding: 50px 0px; }
 
-}	
-@media(max-width: 767px) {
+@media(min-width:320px) {
+	/*figbook heading remove and add with different screen size*/
+	#figbookHeading{display:none;}
+	
+	
+	/*Styling menu items*/
+	.menuBox:nth-child(1){margin-top:40px;}
+	.menuBox:nth-child(2){margin-top:40px;}
+	.menuBox:nth-child(3){margin-top:40px;}
+	.menuBox:nth-child(4){margin-top:40px;}
+	
 	#menu-1{width:318px;margin-left:auto;margin-right:auto;}
 	#powered{display:none;}
-	#menu-container{width:100%;min-height:1200px;}
-	.templatemo_link{height:40px;line-height:40px;padding:0px;text-algin:center;width:100%;}
+	#menu-container{width:100%;min-height:1200px;padding:20px;padding-top: 100px;}
+	.templatemo_link{height:40px;line-height:40px;padding:0px;text-align:center;width:100%;}
 	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
 	.menuBox{text-align:center;height:150px;width:305px;float:left;margin:5px;}
 	
@@ -732,9 +723,19 @@ height:180px;
 	/*.container	{ left: 15px; right: 15px; padding: 0px; }*/
 }
 @media(min-width:768px) {
+	
+	/*figbook heading remove and add with different screen size*/
+	#figbookHeading{display:block;}
+	
+	/*Styling menu items*/
+	.menuBox:nth-child(1){margin-top:40px;}
+	.menuBox:nth-child(2){margin-top:40px;}
+	.menuBox:nth-child(3){margin-top:40px;}
+	.menuBox:nth-child(4){margin-top:40px;}
+  
 	#menu-1{width:760px;margin-left:auto;margin-right:auto;}
 	#menu-container{width:100%;min-height:1200px;}
-	.templatemo_link{height:40px;line-height:40px;padding:0px;text-algin:center;width:100%;}
+	.templatemo_link{height:40px;line-height:40px;padding:0px;text-align:center;width:100%;}
 	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
 	.menuBox{text-align:center;height:150px;width:750px;float:left;margin:5px;}
 	#serviceBackground{width:700px;}
@@ -762,10 +763,20 @@ height:180px;
 }
 
 @media(min-width:992px) {
+	
+	/*figbook heading remove and add with different screen size*/
+	#figbookHeading{display:block;}
+	
+	/*Styling menu items*/
+	.menuBox:nth-child(1){position:relative;}
+	.menuBox:nth-child(2){position:relative;}
+	.menuBox:nth-child(3){top:130px;position:relative;}
+	.menuBox:nth-child(4){top:130px;position:relative;}
+	
 	#menu-container{width:100%;min-height:800px;}
 	#scrollDiv{width:980px;overflow-x:hidden;min-height:680px;}
 	#menu-1{width:990px;margin-left:auto;margin-right:auto;}
-	.templatemo_link{height:40px;line-height:40px;padding:0px;text-algin:center;width:100%;}
+	.templatemo_link{height:40px;line-height:40px;padding:0px;text-align:center;width:100%;}
 	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
 	.menuBox{height:190px;width:482px;float:left;margin:5px;margin-top:20px;}
 	#serviceBackground{width:800px;}
@@ -807,9 +818,18 @@ height:180px;
 
 @media(min-width:1200px) {
 
-	#menu-container{width:100%;min-height:800px;}
+	/*figbook heading remove and add with different screen size*/
+	#figbookHeading{display:block;}
+
+	/*Styling menu items*/
+	.menuBox:nth-child(1){position:relative;left:392px;}
+	.menuBox:nth-child(2){left:-392px;top:130px;position:relative;}
+	.menuBox:nth-child(3){top:130px;position:relative;}
+	.menuBox:nth-child(4){left:392px;position:relative;top:60px;}
+	
+	#menu-container{width:100%;min-height:750px;}
 	#menu-1{height:auto;width:1176px;margin-left:auto;margin-right:auto;}
-	.templatemo_link{height:40px;line-height:40px;padding:0px;text-algin:center;width:100%;}
+	.templatemo_link{height:40px;line-height:40px;padding:0px;text-align:center;width:100%;}
 	.templatemo_mainimg{visibility:visible;width:200px;height:150px;margin-top:-30px;margin-left:41px;}
 	.menu-img{width:300px;height:150px;visibility:visible;}
 	.menuBox{height:300px;width:382px;float:left;margin:5px;}.menuBox{height:190px;width:382px;float:left;margin:5px;margin-top:20px;}

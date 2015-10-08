@@ -231,7 +231,7 @@ window.onload = function(){
 		profileArray[1].value = jsonObj['home'];
 		profileArray[2].value = jsonObj['work'];
 		profileArray[3].value = jsonObj['email'];
-		
+		$('#portImage').attr("src", "images/profilePictures/"+jsonObj.user_profile_picture);
     }
 });
    

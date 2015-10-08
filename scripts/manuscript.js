@@ -4,6 +4,58 @@
  * @param {Number} value
  */
 
+  function deleteSection()
+{
+	/**
+    *  This call checks the timestamp retrieved once editing began, and compares it to the timestamp in the database currently.
+    *  If the timestamps match, it means there was no conflict and "true" is returned.
+    *  If the timestamps don't match it means there is a conflict. "false" is returned
+    */
+    $.post("scripts/mediawiki/api.php?action=query&prop=info|revisions&meta=tokens&rvprop=timestamp&titles="+localStorage.bookTitle+"&format=json",function(data){	
+    
+    $.ajax({	
+            url: "scripts/mediawiki/api.php",
+            data: {
+                    format: 'json',
+                    action: 'edit',
+                    title: localStorage.bookTitle,
+                    section:$("#saveBtn").attr("name"),
+                    text: "",
+                    token: data.query.tokens.csrftoken
+                  },
+            dataType: 'json',
+            type: 'POST',
+
+            success: function (data)
+            {
+
+                if (data && data.edit && data.edit.result === 'Success')
+                {
+                    alert("Section deleted successfully");
+					closeLightbox();
+					//This will display the actual page again. with updated values
+					
+                }
+                else if (data && data.error)
+                {
+                    alert('Error: API returned error code "' + data.error.code + '": ' + data.error.info);
+                }
+                else
+                {
+                    alert('Error: Unknown result from API.');
+                }
+            },
+            error: function (data)
+            {
+                console.log('Error: Request failed. ' + JSON.stringify(data));
+                $('#Page').append("<a href='/scripts/mediawiki/index.php/" + params.title + "'>Link to your book</a>");
+            }
+        });//end of ajax to send save to server
+    }); //end of post to retrieve edit token
+	//document.getElementById("editSection").remove();
+}
+
+
 function loadBook()
 {
 	$("#pageView").fadeOut("slow",function(){
@@ -98,10 +150,10 @@ function postComment(){
 	        comment.commentText = document.getElementById("commentText").value;
 	        comment.page_name = localStorage.bookTitle;
 	        comment.section_number = document.getElementById("chapterSelect").value;
-	        //alert(comment.user_name);
+	       // alert(comment.user_name);
 
 	        //alert(comment.commentText);
-	        //alert(comment.page_name);
+	       // alert(comment.page_name);
 	        var JSONstring = JSON.stringify(comment);
 	        $.ajax({
 	            url: 'scripts/FigbookActionHandler/postComment.php',
@@ -417,7 +469,10 @@ function cleanDelete(bookTitle) {
 	    }
 $(document).ready(function () {
 	
-        
+        $("#messageArea").load("chat.php",function(){//this is where the chat client is loaded into the site.
+				$(".chatName").val(readCookie("username"));
+			});
+			
         var jSonInfo = { action:"getUsersFuzzy"
                 };
                 var JSONstring = JSON.stringify(jSonInfo);
@@ -445,6 +500,7 @@ $(document).ready(function () {
                 }
                     
                 });
+
                      //delete book selection. autocomplete
                 jSonInfo = { action:"getBooksFuzzy"
                 };
@@ -473,9 +529,6 @@ $(document).ready(function () {
                 }
                     
                 });
-	 $("#messageArea").load("chat.php",function(){			
-				$(".chatName").val(readCookie("username"));
-			});
 	//Populates the list of books initially when page loads.		
 	getBooks(); 
 		
@@ -889,6 +942,9 @@ $(document).ready(function () {
 						paragraphs[i].setAttribute('id', num_par);
 						num_par++;
 					}
+					
+					//Populating comment dropdown and  comments for each chapter.
+					commentDropDown(localStorage.bookTitle);
 				});
 			});
 

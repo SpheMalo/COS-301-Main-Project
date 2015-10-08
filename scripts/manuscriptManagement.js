@@ -1,14 +1,11 @@
 $(document).ready(function()
 {
-	
 	$('#bookDiv').css('display','none');
 	$('#serviceImg').css('display','none');
 	$('#sidePicDiv').css('display','none');
 	$('#inputs2').css('display','none');
 	$('#pageView').css('display','none');
 	$('#editSection').css('display','none');
-	
-	
 	
 	$("#goBackService").click(function(){
 		window.location.href = "insideContent.php";	
@@ -145,11 +142,12 @@ $(document).ready(function()
 		if ($('.optionsSlide').css('visibility') == "hidden")
 		{
 			$('.optionsSlide').css('visibility','visible');
-			$('.optionsSlide').addClass('pullDown');
+			$('.options').addClass('pullDown');
+			
 		}
 		else
 		{
-			$('.optionsSlide').removeClass('pullDown');
+			$('.options').removeClass('pullDown');
 			$('.optionsSlide').css('visibility','hidden');			
 		}
 	});
@@ -176,6 +174,7 @@ $(document).ready(function()
 });
 
 function addLightbox(insertContent) {
+	$('.options').removeClass('pullDown');
 	// add lightbox/shadow <div/>'s if not previously added
 		if($('#lightbox').size() == 0){
 			var theLightbox = $('<div id="lightbox"/>');

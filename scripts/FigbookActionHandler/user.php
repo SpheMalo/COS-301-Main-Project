@@ -359,7 +359,7 @@ class user {
 
 		public function getUserInfo($userID)
 	{
-		$sql = "SELECT user_id, user_role, user_name, first_name, last_name, about_me, genres_of_interest, cell, home, email, work FROM user, personal_details WHERE user.user_name='$userID' AND personal_details.username='$userID'";
+		$sql = "SELECT user_id, user_profile_picture, user_role, user_name, first_name, last_name, about_me, genres_of_interest, cell, home, email, work FROM user, personal_details WHERE user.user_name='$userID' AND personal_details.username='$userID'";
 		$myResponse = (mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql)));
 		$usersIdFromUserPage = $myResponse["user_id"];
 		$query="SELECT page_id FROM user_page WHERE user_name='$usersIdFromUserPage' AND user_role='Creator'";
