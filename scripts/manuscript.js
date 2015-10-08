@@ -98,10 +98,10 @@ function postComment(){
 	        comment.commentText = document.getElementById("commentText").value;
 	        comment.page_name = localStorage.bookTitle;
 	        comment.section_number = document.getElementById("chapterSelect").value;
-	        //alert(comment.user_name);
+	       // alert(comment.user_name);
 
 	        //alert(comment.commentText);
-	        //alert(comment.page_name);
+	       // alert(comment.page_name);
 	        var JSONstring = JSON.stringify(comment);
 	        $.ajax({
 	            url: 'scripts/FigbookActionHandler/postComment.php',
@@ -802,6 +802,9 @@ $(document).ready(function () {
 						paragraphs[i].setAttribute('id', num_par);
 						num_par++;
 					}
+					
+					//Populating comment dropdown and  comments for each chapter.
+					commentDropDown(localStorage.bookTitle);
 				});
 			});
 
