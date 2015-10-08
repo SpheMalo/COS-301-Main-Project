@@ -59,7 +59,7 @@ function saveText()
 									//This will display the actual page again. with updated values
 									var inside = document.getElementsByClassName('insideText'); 
 									var head = document.getElementsByClassName('sectionHeading'); 
-									$('#editSection').fadeOut("slow",function(){//$(inside[(sectionNumber-1)]).html(content);	
+									/*$('#editSection').fadeOut("slow",function(){//$(inside[(sectionNumber-1)]).html(content);	
 										//$(head[(sectionNumber-1)]).html(sectionHeading);								
 										$('#pageView').fadeIn("slow",function(){
 											$( "#viewBooks" ).trigger( "click" );
@@ -68,10 +68,10 @@ function saveText()
 												{
 																"title": localStorage.bookTitle
 												};
-												get_page(loadPageInfo);*/
+												get_page(loadPageInfo);
 											 //alert(document.getElementsByClassName("bookItem").length);
 											});
-										});
+										});*/
 								
                                     console.log(JSON.stringify(data));
                                     localStorage.tStamp = result.date_last_edited;

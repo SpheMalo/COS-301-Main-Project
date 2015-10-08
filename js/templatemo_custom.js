@@ -12,7 +12,7 @@ jQuery(document).ready(function($){
 		return false;
 	});
 	
-
+	
 	$(".main_menu a.templatemo_homeservice").click(function(){
 		$("#menu-container .portfolio").hide();
 		$('#menu-container .services').fadeOut(1000, function(){
@@ -54,20 +54,26 @@ jQuery(document).ready(function($){
 	
 	$(".main_menu a.templatemo_page4").click(function(){    
     $('#menu-container .homepage').fadeOut(1000, function(){
-        $('#menu-container .testimonial').fadeIn(1000);
+        $('#profileContainer').fadeIn(1000);
         $('.templatemo_frame').fadeIn(1000);
-        $('#cmt').fadeIn(1000);
-	    
+			$('#cmt').fadeIn(1000);	    
 	    });
 		return false
 	});
-	$(".main_menu a.templatemo_homeabout").click(function(){
+	$(".main_menu button.templatemo_homeabout").click(function(){
 		$('#menu-container .about').fadeOut(1000, function(){
-        $('#menu-container .homepage').fadeIn(1000);
+			
+			$('#profileContainer').fadeOut(1000,function(){
+				$('#menu-6').fadeOut(1000,function(){
+					$('#menu-container .homepage').fadeIn(1000);
+				});
+			});
+        
 	    });
 		return false;
-	});
+	});	
 
+	
 	$(".main_menu a.templatemo_page5").click(function(){    
     $('#menu-container .homepage').fadeOut(1000, function(){
         $('#menu-container .about').fadeIn(1000);
@@ -130,8 +136,8 @@ function loadScript() {
 
 function initialize() {
     var mapOptions = {
-      zoom: 12,
-      center: new google.maps.LatLng(40.7823234,-73.9654161)
+      zoom: 18,
+      center: new google.maps.LatLng(-26.120681,28.053737)
     };
     var map = new google.maps.Map(document.getElementById('templatemo_map'),  mapOptions);
 }

@@ -54,6 +54,12 @@ if(isset($actionFlag) && $actionFlag != ""){
 		
 		$response = ($tmpUser->getUserInfo($uID));
 	
+	}else if($actionFlag == "viewUserProfile"){
+		$uID = $object->userToLookFor;
+		$tmpUser = new user($dbHandler->getConnection());
+		
+		$response = ($tmpUser->getOtherUserInfo($uID, $object));
+	
 	}else if($actionFlag == "getTimeStamp"){
 		
 		$uID = $_COOKIE['username'];
@@ -73,17 +79,20 @@ if(isset($actionFlag) && $actionFlag != ""){
 		$uID = $_COOKIE['username'];
 		$tmpUser = new user($dbHandler->getConnection());
 		
-		$response = ($tmpUser->updateAboutMe($uID, $object));
+		$obj = json_decode(strip_tags($getJSONObject));
+		$response = ($tmpUser->updateAboutMe($uID, $obj));
 	}elseif ($actionFlag == "updatePortfolioInfo"){
 		$uID = $_COOKIE['username'];
 		$tmpUser = new user($dbHandler->getConnection());
 		
-		$response = ($tmpUser->updatePortfolioInfo($uID, $object));
+		$obj = json_decode(strip_tags($getJSONObject));
+		$response = ($tmpUser->updatePortfolioInfo($uID, $obj));
 	}elseif ($actionFlag == "updateContactInfo"){
 		$uID = $_COOKIE['username'];
 		$tmpUser = new user($dbHandler->getConnection());
 		
-		$response = ($tmpUser->updateContactInfo($uID, $object));
+		$obj = json_decode(strip_tags($getJSONObject));
+		$response = ($tmpUser->updateContactInfo($uID, $obj));
 	}else if($actionFlag == "login"){ //login user
         
         
@@ -198,7 +207,7 @@ if(isset($actionFlag) && $actionFlag != ""){
             $bookTitle = $object->bookTitle;
             $message = $object->text;
             $tmpMen= new manuscript($dbHandler->getConnection());
-            if ($tmpMen->getUserRole($editor_id, $bookTitle) == "Editor"){
+            if ($tmpMen->getUserRole($editor_id, $bookTitle) == "Editor" || $tmpMen->getUserRole($editor_id, $bookTitle) == "READ"){
                 $tmpMen= new communication($dbHandler->getConnection());
                 $response = $tmpMen->sendEditorialLetter($editor_id, $bookTitle, $message);
             }
@@ -215,6 +224,36 @@ if(isset($actionFlag) && $actionFlag != ""){
             
             
         }
+        else if($actionFlag == "get_editorial_letter_editor"){ //Send editorial letter
+            $editor_id = $_COOKIE['username'];
+            $bookTitle = $object->bookTitle;
+            $tmpMen= new communication($dbHandler->getConnection());
+            $response = $tmpMen->getEditorialLettersEditor($bookTitle, $editor_id); 
+            
+            
+        }
+        else if($actionFlag == "editorial_letter_update"){ //Send editorial letter
+            
+            $editor_id = $_COOKIE['username'];
+            $bookTitle = $object->letter;
+            $message = $object->text;
+            $tmpMen= new communication($dbHandler->getConnection());
+            $response = $tmpMen->updateEditorialLetter($bookTitle, $message);
+           
+            
+        }
+        else if($actionFlag == "getUsers"){ //Get User Status
+		    $tmpUser = new user($dbHandler->getConnection());
+		    $response = ($tmpUser->getUsers());
+		    
+		}
+
+		else if($actionFlag == "link"){ //Link users to books
+		    $tmpMen= new manuscript($dbHandler->getConnection());
+		    $response = $tmpMen->link($object->user_id, $object->title, $object->access);
+		    
+		}
+        
         
 }else{
     

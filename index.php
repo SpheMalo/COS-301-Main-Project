@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+d<!DOCTYPE html>
  <html>
   <head>
    <title>Figbook</title>
