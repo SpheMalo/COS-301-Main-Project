@@ -29,7 +29,6 @@
     <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
     
 	<script src="scripts/authentication.js" type="text/javascript"></script>
-	<script src="scripts/communication.js" type="text/javascript"></script>
 	<script src="scripts/profile.js"></script>
    
 	
@@ -114,21 +113,18 @@
                 
                 <div class="menuBox templatemo_mainabout">
                 	<div class="templatemo_link"><a class="show-5 templatemo_page5 menuItem" href="#">About Us</a></div>
-					<p class="menuInfo">Text here text here text here.	<br>
-					Text here text here text here.	<br>
-					Text here text here text here.	<br>
-					Text here text here text here.	<br>
-					Text here text here text here.					
+					<p class="menuInfo">Read More about:<br>
+					Our Team.<br>
+					Our History.<br>
+					Our Vision.
 					</p>
                 </div>
                 
                 <div class="menuBox templatemo_maincontact">
                 	<div class="templatemo_link"><a class="show-6 templatemo_page6 menuItem" href="#">Contact Us</a></div>
-                    <p class="menuInfo">Text here text here text here.	<br>
-					Text here text here text here.	<br>
-					Text here text here text here.	<br>
-					Text here text here text here.	<br>
-					Text here text here text here.					
+                    <p class="menuInfo">Write a small message to an admin.	<br>
+					See our location on google maps.<br>
+					Get our address.					
 					</p>
                 </div>
                 
@@ -259,7 +255,7 @@
 							 	<input name="email" type="text" class="form-control" id="email" placeholder="Your Email" maxlength="40"><br><br>
 								<input name="subject" type="text" class="form-control" id="subject" placeholder="Subject" maxlength="60"><br><br>
 								<textarea name="message" class="form-control" id="message" placeholder="Your Message..."></textarea> <br><br>
-							    <button type="button" id="contactUsSend" onclick="sendEmail()">Send</button>
+							    <button type="button" id="contactUsSend">Send</button>
 							</form>
 							<img id="contactBack" src="images/templatemo_contact1.jpg" alt="contact image">
 					</div>
