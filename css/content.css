@@ -367,7 +367,12 @@ color:rgba(4,42,130,1.00);
 text-shadow: 0 1px 2px rgba(107,207,198,1.00);
 text-decoration:none;
 }
-#editSection{display:none;}
+
+
+
+#editSection{display:none;
+	height:100%;
+}
 #serviceContainer{
     padding-top:1px;
     min-height:800px;
@@ -405,7 +410,9 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);*/
 .grid-width-100{margin-top:-6px;background: transparent;}
 .grid-container{margin-top:41px;background: grey;z-index: inherit;}
 #editSection{ z-index:1;background:grey; }
-#saveBtn{width:80px;height:30px;margin-left:32px;}
+#saveBtn{width:80px;height:30px;margin-left:4.17%;
+margin-top:15px;
+}
 #saveBtn:hover{cursor: pointer;}
 /*Figbook styling END*/
 
@@ -652,12 +659,13 @@ text-shadow: 1px 2px 2px rgba(0,0,0,0.3);
 }
 
 
-#letterHide{position:absolute;width:16px;
+#letterHide{position:absolute;width:18px;
 float:left;
 right:620px;
 background-color:rgb(235,235,235);
 min-height:inherit;
 border-right:2px solid rgb(220,220,220);
+border-left:2px solid rgb(220,220,220);
 background-image: url("../images/arrow-right.png");
 background-size: 35px 50px;
 background-position: center;
@@ -712,7 +720,8 @@ text-shadow: 0 1px 2px rgba(107,207,198,1.00);
 /*Instant messaging area*/
 #messageContainer
 {
-	width:400px;
+	
+	width:500px;
 	height:320px;
 	background-color:rgba(100,100,100,0.7);
 	position:fixed;
@@ -725,17 +734,26 @@ text-shadow: 0 1px 2px rgba(107,207,198,1.00);
 	display:none;
 	width:400px;
 	height:300px;
-	background-color:rgba(100,100,100,0.7);
+	background-color:rgba(50,50,50,0.7);
 	position:fixed;
 	bottom:0px;
 	float:right;
 	right:20px;
 	
 }
+.chat_wrapper{float:right;}
+#contacts{
+	float:left;
+	height:300px;width:100px;
+	border-left:2px solid rgba(100,100,100,1);
+	border-right:2px solid rgba(100,100,100,1);
+	background-color:black;
+}
+
 #messageHide:hover{cursor: pointer;}
 #messageHide
 {
-	width:400px;
+	width:500px;
 	height:20px;
 	border:1px solid rgba(100,100,100,1);
 	background-color:rgba(200,200,200,1);

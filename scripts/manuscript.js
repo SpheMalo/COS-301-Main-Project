@@ -355,7 +355,10 @@ function editSection(value)
 
 $(document).ready(function () {
 	
-        
+        $("#messageArea").load("chat.php",function(){//this is where the chat client is loaded into the site.
+				$(".chatName").val(readCookie("username"));
+			});
+			
         var jSonInfo = { action:"getUsersFuzzy"
                 };
                 var JSONstring = JSON.stringify(jSonInfo);

@@ -24,9 +24,8 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 	<script src="textarea/ckeditor.js"></script>
 	<script src="textarea/samples/js/sample.js"></script>
 	<script src="js/jquery-1.10.2.min.js"></script>
-        <script src="js/jquery-ui-1.9.2.custom.js"></script>
 	<script src="scripts/manuscriptManagement.js"></script> <!--The window.onload function is in here-->	
-	 
+	 <script src="js/jquery-ui-1.9.2.custom.js"></script>
     <script src="scripts/manuscript.js" type="text/javascript"></script>
 	<script src="scripts/saveTextToDB.js"></script>
         <script src="scripts/communication.js" type="text/javascript"></script>
@@ -49,11 +48,11 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 			  </div> 	  
 		      <div id="commentArea"><br><br><br>
 					Choose a chapter to comment on:<br>
-					<select id="chapterSelect" onchange="populateComment()">
+					<select id="chapterSelect">
 						 <option disabled="true">none</option>
 					</select>
 					<textarea id="commentText" cols="32" rows="30" ></textarea>
-					<button id="saveComment" onclick="postComment()">Save Comment</button>
+					<button id="saveComment">Save Comment</button>
 		  </div>
 			  
 			  
@@ -73,9 +72,13 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 			  
 		  </div>
 		   <div id="letterHide"></div>
+		   
 		  <div id="messageContainer">
 				<div id="messageHide">Messages</div>
-				<div id="messageArea"></div>
+				<div id="contacts"></div>
+				<div id="messageArea">
+					
+				</div>
 			  </div>
           <div id="serviceBackground">
                        
@@ -106,11 +109,12 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 										
 							  <div id="sendManuscriptContainer" style="display:none;">
 								  <!--input type="button" value="List users" onclick="sendManuscript()"></input><br>
-								  <select id='users'>
+								  <select id='users'>							  
 								  </select><br-->
-                                                                  <input id="fuzzyText" name="fuzzyText" type="text" value placeholder="User to add"><br><br>
+						      <input id="fuzzyText" name="fuzzyText" type="text" value placeholder="User to add"><br><br>
                                                                   <input type="hidden" id="link_user_name" name="link_user_name" value="">
                                                                   <input type="hidden" id="link_user_id" name="link_user_id" value="">
+								  
 								  <select id='access'>
 									<option value="READ">READ</option>
 									<option value="WRITE">WRITE</option>
