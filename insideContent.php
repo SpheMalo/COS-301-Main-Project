@@ -147,8 +147,17 @@
 				</div>
 				<div id="portfolioContainer"><!--PortfolioContainer START-->
 					<div id="portImageBack">
-						<img src="images/profile.jpg" alt="testimonial image" id="portImage">
+						<img alt="testimonial image" id="portImage">
 					</div>
+						
+						<div id="uploadPictureDiv"><!--Upload for profile picture-->
+							<form action="scripts/upload.php" method="post" enctype="multipart/form-data">
+    						Select image to upload:
+    						<input type="file" name="fileToUpload" id="fileToUpload">
+    						<input type="submit" value="Upload Image" name="submit">
+							</form>
+						</div>
+						
 						<div id="frame1"><!--Frame1 START-->
 							<p>Username:</p>
 							<input class="profileInfo" readonly type="text" />
