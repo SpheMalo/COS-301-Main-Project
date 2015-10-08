@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10deb1
+-- version 4.3.11
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Jul 15, 2015 at 11:56 AM
--- Server version: 5.5.43-0ubuntu0.14.04.1
--- PHP Version: 5.5.9-1ubuntu4.11
+-- Host: 127.0.0.1
+-- Generation Time: Oct 08, 2015 at 01:02 PM
+-- Server version: 5.6.24
+-- PHP Version: 5.6.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -25,16 +25,23 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `user_page`
 --
-use my_wiki;
+
 CREATE TABLE IF NOT EXISTS `user_page` (
   `user_name` int(11) NOT NULL DEFAULT '0',
-  `page_id` int(11) NOT NULL DEFAULT '0',
-  `user_role` varchar(25) DEFAULT NULL,
-  PRIMARY KEY (`user_name`,`page_id`)
+  `page_id` varchar(255) NOT NULL DEFAULT '0',
+  `user_role` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-ALTER TABLE `my_wiki`.`user_page`   
-  DROP PRIMARY KEY;
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `user_page`
+--
+ALTER TABLE `user_page`
+  ADD PRIMARY KEY (`user_name`,`page_id`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
