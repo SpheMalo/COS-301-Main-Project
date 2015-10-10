@@ -51,7 +51,7 @@ $(document).ready(function(){
 	//create a new WebSocket object.
 	var wsUri = "ws://localhost:9000/server.php"; 	
 	websocket = new WebSocket(wsUri); 
-	var myto = "Rainier";
+	var myto = "Rain";
 	var nameList = Array();
 	
 	websocket.onopen = function(ev) { // connection is open 
@@ -103,11 +103,8 @@ $(document).ready(function(){
 			for(var i = 0;i< nameList.length;i++)
 			{
 				//alert(nameList[i]);
-				if (nameList[i] !== readCookie("username"))
-				{				
 				var newDiv = $('<div class="content">'+nameList[i]+'</div>');
 				$('#contacts').append(newDiv);
-				}
 			}
 			
 		}

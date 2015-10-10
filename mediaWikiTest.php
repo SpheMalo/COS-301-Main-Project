@@ -36,13 +36,7 @@
           <input id="fuzzyText" name="fuzzyText" type="text" value placeholder="User to add">
             <input type="hidden" id="user_name" name="link_user_name" value="">
             <input type="hidden" id="user_id" name="link_user_id" value="0">
-      </div><br><br>
-       <div id="DelBookDiv">
-           <input id="fuzzyText_deleteTitle" name="fuzzyText_deleteTitle" type="text" value placeholder="Book to delete">
-           <input type="hidden" id="delete_book_title" name="delete_book_title" value="">
-           <input type="hidden" id="delete_book_id" name="delete_book_id" value="">
-           <input type="button" id="delete-manuscript" value="delete" onclick="delete_page()">
-		</div><br>
+      </div>
       <div id="pageList"></div>
       <br>
       <br>

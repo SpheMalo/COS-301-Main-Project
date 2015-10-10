@@ -2,22 +2,26 @@
     <title>User's Profile</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
 	<!--stylesheets linked here-->
     <!--<link href="css/bootstrap.min.css" rel="stylesheet"/>-->
     <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery-ui-1.9.2.custom.js"></script>
     <link href="css/font-awesome.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/templatemo_misc.css"/>
    	<link type="text/css" rel="stylesheet" href="css/easy-responsive-tabs.css" />
-    <link href="css/templatemo_style2.css" rel="stylesheet"/> 
+    <link href="css/templatemo_style2.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/background.css"/>
-	
+
 
 	<script src="scripts/profile.js"></script>
 	<script src="scripts/userProfile.js"></script>
+  <script src="scripts/manuscript.js"></script>
+  <link rel="stylesheet" href="css/jquery-ui-1.9.2.custom.css">
+
 	</head>
-	<body onload="viewUserProfile('Edm')">
-		<header id="header">
+	<body>
+    <header id="header">
 		<img id="figbookLogo" src="images/figbooklogo.png" alt="Figbook"/>
 		<h1 id="figbookHeading">FIGBOOK</h1>
 		 <div id="menu">
@@ -30,6 +34,9 @@
 			<br>
 			<br>
 	<!-- profileContainer START -->
+  <button onclick="viewUserProfile()">View User</button>
+  <input id="fuzzyText" name="fuzzyText" type="text" value="" placeholder="User to add" class="ui-autocomplete-input" autocomplete="off">
+
 			<div id="profileContainer">
 				<div id="topProfileBar">
 					<button id="goBack" onclick="goBack()" class="show-1 templatemo_homeabout">Go Back</button>
@@ -45,29 +52,29 @@
 							<input class="profileInfo" readonly type="text" />
 							<p>Surname:</p>
 							<input class="profileInfo" readonly type="text" />
-							
+
 						</div><!--Frame1 END-->
 						<div id="frame2"><!--Frame2 START-->
 							<h2>Genres of Interest</h2>
 							<textarea class="profileInfo" rows="4" cols="22" readonly></textarea>
-							
+
 						</div><!--Frame2 END-->
-									
+
 				</div><!--PortfolioContainer END-->
-				
-				
+
+
 				<div id="aboutMeContainer">
 					<!-- This is the Who are you image <img id="aboutImage" src="images/whoAreYou.png" alt="testimonial image">-->
 					<div class="details">
 						<h2>About me:</h2>
-						<textarea readonly class="aboutMeInfo" id="aboutme" rows="5" cols="33"></textarea>		
+						<textarea readonly class="aboutMeInfo" id="aboutme" rows="5" cols="33"></textarea>
 					</div>
-										
-					
-				</div>		
-				
+
+
+				</div>
+
 				<div id="contactInfoContainer"><!--contactInfoContainer START-->
-					<div id="authorOfList">				
+					<div id="authorOfList">
 						<h2>Author of:</h2>
 						<ul id="booklist">
 						</ul>
@@ -77,8 +84,8 @@
 						<p style="margin-top:2px;">Cellphone</p><input class="contactInfo" readonly type="text" />
 						<p style="margin-top:4px;">Home</p><input class="contactInfo" readonly type="text" />
 						<p style="margin-top:4px;">Work</p><input class="contactInfo" readonly type="text" />
-						<p style="margin-top:4px;">Email</p><input class="contactInfo" readonly type="text" /><br>					
-						
+						<p style="margin-top:4px;">Email</p><input class="contactInfo" readonly type="text" /><br>
+
 					</div>
 				</div><!--contactInfoContainer END-->
 			</div><!--profileContainer END-->

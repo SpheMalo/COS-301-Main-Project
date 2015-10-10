@@ -153,7 +153,6 @@ $wgCollectionPODPartners = false;
 $wgEnableWriteAPI = true;
 $wgGroupPermissions['user']['collectionsaveasuserpage'] = true;
 $wgGroupPermissions['autoconfirmed']['collectionsaveascommunitypage'] = true;
-$wgGroupPermissions['user']['delete'] = true;
 # End of automatically generated settings.
 # Add more configuration options below.
 
