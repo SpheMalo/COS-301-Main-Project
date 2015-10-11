@@ -4,24 +4,12 @@ html,body
     background: white; /* Old browsers */
     height: 100%;
 	background-size:cover;
-
+    
 }
 
 .wrapper{display:none;}
 .wrapperReg{display:none;}
-/*style for the forgot password link*/
-#forgot-password
-{
-  font-size: 15pt;
-  text-decoration: none;
-  font-family: cursive;
-  color: white;
-}
-#forgot-password:hover
-{
-  text-decoration: underline;
-  font-size: 16pt;
-}
+
 /*This is the header and footer styling START*/
 #header{
 	width:100%;
@@ -39,7 +27,7 @@ box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
    color:rgba(51, 204, 51,0.9);
 	text-shadow: 3px 3px 3px rgba(92, 92, 92,0.4);
 	font-size:64pt;
-	font-weight: 500;
+	font-weight: 500;	
 }
 #menu{float:right;
 	height:40px;
@@ -105,11 +93,11 @@ box-shadow: 0px -4px 9px -4px rgba(0,0,0,0.75);
 	left:40px;
 	width:250px;
 	height:250px;
-
+	
 }
 span{background:url("../images/smallDot.png") no-repeat left;
 text-shadow: 0px 1px 4px rgba(0,0,0,1.0);font-size:15pt;
-padding-left:20px;
+padding-left:20px; 
 }
 span:hover{cursor:pointer;font-size:17pt;
 background:url("../images/smallDotFilled.png") no-repeat left;
@@ -132,7 +120,7 @@ background:url("../images/smallDotFilled.png") no-repeat left;
 	min-height:600px;
 	height:auto;
 	width:1000px;
-
+	
 	/*background:white;*/
 }
 #whatWorks{
@@ -158,13 +146,13 @@ background:url("../images/smallDotFilled.png") no-repeat left;
 	right:100px;
 	height:200px;
 	width:320px;
-
+	
 }
 #lightbox {
 	position: absolute;
 	top: 0;
 	width: 600px;
-
+	
 	background: transparent;
 	z-index: 1001;
 	display: none;
@@ -200,3 +188,5 @@ text-shadow: 1px 2px 10px rgba(0,0,0,1.0);
 	text-shadow: 1px 2px 10px rgba(0,0,0,1.0);
 }
 /*All text related styling END*/
+
+

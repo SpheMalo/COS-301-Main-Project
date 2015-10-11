@@ -160,6 +160,14 @@ $(document).ready(function()
 		$('#sendManuscriptContainer').css('display','block');
 		addLightbox($('#sendManuscriptContainer'));	
 	});
+        $('#delManuscript').click(function(){
+		$('#DelBookDiv').css('display','block');
+                if(localStorage.bookTitle !== ""){
+                    $("#delete_book_title").val(localStorage.bookTitle);
+                    $("#fuzzyText_deleteTitle" ).val(localStorage.bookTitle);
+                }
+		addLightbox($('#DelBookDiv'));	
+	});
 	
 	
 	//$('#serviceBackground').append($('#goBackService'));
@@ -208,6 +216,7 @@ function addLightbox(insertContent) {
 			// hide lightbox/shadow <div/>'s
 			$("#addChapterArea").fadeOut("slow",function(){});
 			$("#sendManuscriptContainer").fadeOut("slow",function(){});
+                        $("#DelBookDiv").fadeOut("slow",function(){});
 			$('#lightbox').hide();
 			$('#lightbox-shadow').hide();
 			

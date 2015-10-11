@@ -8,44 +8,44 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 	<meta charset="utf-8">
 	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Book Editor</title>
-
+	
     <!--CSS links here-->
-
-
+   
+    
     <link rel="stylesheet" href="css/content.css">
-	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/animate.css"> 
     <link rel="stylesheet" href="textarea/samples/css/samples.css">
 	<link rel="stylesheet" href="textarea/samples/toolbarconfigurator/lib/codemirror/neo.css">
     <link href="css/jquery-ui-1.9.2.custom.css" rel="stylesheet">
-
-
+    
+    
 	<!--Links for textarea formmating-->
-
+    
 	<script src="textarea/ckeditor.js"></script>
 	<script src="textarea/samples/js/sample.js"></script>
 	<script src="js/jquery-1.10.2.min.js"></script>
-	<script src="scripts/manuscriptManagement.js"></script> <!--The window.onload function is in here-->
+	<script src="scripts/manuscriptManagement.js"></script> <!--The window.onload function is in here-->	
 	 <script src="js/jquery-ui-1.9.2.custom.js"></script>
     <script src="scripts/manuscript.js" type="text/javascript"></script>
 	<script src="scripts/saveTextToDB.js"></script>
         <script src="scripts/communication.js" type="text/javascript"></script>
-
-
-
+	 
+	
+	
 </head>
 <body>
 	<!--This is the book list, view and creator-->
 	<!--services start -->
-
+	
    <div class="content1 services" id="menu-2">
 		<div id="serviceContainer" >
-
+		  
 		  <div id="commentSide">
-
+			  
 			  <div id="commentTop">
 			   Comments
 			   <span id="commentImage"></span>
-			  </div>
+			  </div> 	  
 		      <div id="commentArea"><br><br><br>
 					Choose a chapter to comment on:<br>
 					<select id="chapterSelect"  onchange="populateComment();">
@@ -54,67 +54,69 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 					<textarea id="commentText" cols="32" rows="30" ></textarea>
 					<button id="saveComment" onclick="postComment();">Save Comment</button>
 		  </div>
-
-
+			  
+			  
 		  </div>
 		  <div id="commentHide"></div>
-
+		  
 		  <div id="editorialLetter">
-
+			  
 			  <div id="letterTop">
 			   Editorial Letter
 			   <span id="letterImage"></span>
-			  </div>
+			  </div> 	  
 		      <div id="letterArea">
 					<textarea id="letterText" cols="66" rows="38" ></textarea>
 					<button id="sendLetter">Send</button>
-		       </div>
-
+		       </div>  
+			  
 		  </div>
 		   <div id="letterHide"></div>
-
+		   
 		  <div id="messageContainer">
 				<div id="messageHide">Messages</div>
 				<div id="contacts"></div>
 				<div id="messageArea">
-
+					
 				</div>
 			  </div>
           <div id="serviceBackground">
-
+                       
                          <div id="topService">
 							  <div id="optionsContainer">
 								   <div id="options">Options</div>
 								   <div class="optionsSlide">
 										<div class="service options">Create Book</div>
+										<div class="options" id="loadbook" onclick="loadBook()">Load Book</div>
 										<div class="options" id="viewBooks">List Books</div>
 										<div class="options" id="invitation">Send Invitation</div>
 										<div class="options" id="writeEditorial">Editorial Letter</div>
 										<div  class="options" id="addChapter">Add Chapter</div>
+                                                                                <div  class="options" id="delManuscript">Delete Book</div>
 								   </div>
 							  </div>
 
 							  <div class="templatemo_mainservice templatemo_botgap" id="goBackService">
 								 <a id="serviceGoBack" class="show-1 templatemo_homeservice" href="#">Main Menu</a>
 							  </div>
-
+								 
                          </div>
-
+							
 							<!--This is pop up boxes for adding chapters and linking users START-->
 							<div id="addChapterArea" style="display:none;">
 								   <h2>Please enter a chapter name:</h2><br>
 								   <input type='text' id='sectionName' /><br>
 								   <button onclick="addSection()">Add This Chapter</button>
 							  </div>
-
+										
 							  <div id="sendManuscriptContainer" style="display:none;">
 								  <!--input type="button" value="List users" onclick="sendManuscript()"></input><br>
-								  <select id='users'>
+								  <select id='users'>							  
 								  </select><br-->
 						      <input id="fuzzyText" name="fuzzyText" type="text" value placeholder="User to add"><br><br>
                                                                   <input type="hidden" id="link_user_name" name="link_user_name" value="">
                                                                   <input type="hidden" id="link_user_id" name="link_user_id" value="">
-
+								  
 								  <select id='access'>
 									<option value="READ">READ</option>
 									<option value="WRITE">WRITE</option>
@@ -122,11 +124,18 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 
 								  <input type="button" value="Link" onclick="link()"></input>
 							  </div>
+                                                        
+                                                               <div id="DelBookDiv" style="display:none;">
+                                                                    <input id="fuzzyText_deleteTitle" name="fuzzyText_deleteTitle" type="text" value placeholder="Book to delete"><br><br>
+                                                                    <input type="hidden" id="delete_book_title" name="delete_book_title" value="">
+                                                                    <input type="hidden" id="delete_book_id" name="delete_book_id" value="">
+                                                                    <button type="button" onclick="delete_page()">delete</button>
+                                                                </div>
 							  <!--This is pop up boxes for adding chapters and linking users END-->
-
+							
                             <div id="scrollDiv">
                                 <div id="bookList">
-
+                                        
                                 </div>
                                 <div id="pageView">
             						<button id="refreshBook" style="visibility:hidden;" onclick="refreshBook()">Refresh</button>
@@ -145,23 +154,24 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
                                             </div>
                                         </div>
                                         <!-- Replace textarea-->
-
-
-
+					
+					
+                                          
                                           <button id="saveBtn" onclick="saveText()" >Save</button>
+                                          <button id="delBtn" onclick="deleteSection()">Delete</button>
                                   </div>
                             </div>
-
+							
             </div>
-
+            
 
                   <div id="bookDiv">
-            			<div id="scriptMenuBar">Please fill in author details.</div>
+            			<div id="scriptMenuBar">Please fill in author details.</div>                  	
                         <div id="pageList"></div>
-
+                        
                         <div id="contentDiv">
                         	<div id="infoBox">
-                                 <div id="labels">
+                                 <div id="labels">	
                                      <label>Book Title:</label><br/>
                                      <label>Author's</label><br/>
                                      <label>Firstname:</label><br/>
@@ -172,38 +182,38 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
                                      <input id="firstname" type="text"/><br/>
                                      <input id="surname" type="text"/>
                                  </div>
-                             </div>
+                             </div>                             
                              <div id="inputs2">
                                  <textarea id="preface" cols="50" rows="14" ></textarea>
-
+				 
 			</div>
                              </div>
                             <textarea id="manuscriptArea" cols="96" rows="14" ></textarea>
-
-
+                            
+                            
                             <form class="form" id="saveBookForm">
                             	<button type="submit" id="back-button">Back</button>
                             	<button type="submit" id="next-button">Next</button>
                             </form>
                         </div>
                         <div id="Page">
-
-                        </div>
+                        	
+                        </div>     
 				</div><!--bookDiv ends here-->
-
-
+                  	
+                  
 
                 <div id="sidePicDiv" class="templatemo_col37 col-sm-12 templatemo_leftgap templatemo_topgap">
                 	<div class="templatemo_mainimg templatemo_botgap"><img src="images/templatemo_service2.jpg" alt="service image"></div>
                 </div>
-
-
-
-
-
+                
+            
+            
+            
+			   
         </div><!--serviceContainer ends here-->
-     </div><!--menu-2 ends here-->
-    <!-- services end -->
+     </div><!--menu-2 ends here--> 
+    <!-- services end -->	
 	<!--Footer START-->
 
 	<footer id="footer">
@@ -219,9 +229,9 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 		 </div>
 	</footer>
 
-	<!--Footer END-->
+	<!--Footer END-->	
 
-
+	
 
 </body>
 	 <script>

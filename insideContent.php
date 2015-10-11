@@ -12,42 +12,42 @@
     <title>Figbook</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
 	<!--stylesheets linked here-->
     <!--<link href="css/bootstrap.min.css" rel="stylesheet"/>-->
     <link href="css/font-awesome.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/templatemo_misc.css"/>
    	<link type="text/css" rel="stylesheet" href="css/easy-responsive-tabs.css" />
-    <link href="css/templatemo_style.css" rel="stylesheet"/>
+    <link href="css/templatemo_style.css" rel="stylesheet"/> 
     <link rel="stylesheet" href="css/background.css"/>
-
+	
 	<!--Scripts linked here-->
 	<!--<script language="Javascript" src="scripts/textarea/jquery-1.3.2.min.js" type="text/javascript"></script>-->
-    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script> 
     <script src="js/jquery.lightbox.js"></script>
 	<script src="js/templatemo_custom.js"></script>
     <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
-
+    
 	<script src="scripts/authentication.js" type="text/javascript"></script>
 	<script src="scripts/profile.js"></script>
-
-
-
+   
+	
+    
      <script>
-
+     
     function showhide()
     {
         var div = document.getElementById("newpost");
-		if (div.style.display !== "none")
+		if (div.style.display !== "none") 
 		{
 			div.style.display = "none";
 		}
-		else
+		else 
 		{
 			div.style.display = "block";
 		}
     }
-
+	
 	///$('.show7').click(function(){ alert("Clicking div"); wiki_logout(); });
 	//this function will log the user out using the api.php and sending through the logout action.
 		function wiki_logout() {
@@ -60,20 +60,20 @@
 						//document.cookie = "sessionLives" + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 						//alert(document.cookie.valueOf("username"));
 						window.location.href="index.php"
-					  });
-
+					  });		
+				   
 		}
 		var delete_cookie = function(name) {
 		document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 	};
-
+	
   </script>
 
   </head>
   <body>
+  	
 
-
-
+	
 	<!--This is the header bar START-->
 	<header id="header">
 		<img id="figbookLogo" src="images/figbooklogo.png" alt="Figbook"/>
@@ -83,15 +83,15 @@
 				<!-- <img src="images/templatemo_home4.jpg" alt="home img 04"> -->
 				<a id="logoutText" href="#" onclick="wiki_logout()">Logout</a>
 			</div>
-		 </div>
+		 </div>		 
 	 </header>
 	<!--This is the header bar END-->
-
+   
    <div id="menu-container" class="main_menu"><!--All menus are inside this container-->
    <!-- homepage start -->
     <div class="content homepage " id="menu-1"> <!--contains the main menu tabs-->
-
-            	<div class="menuBox templatemo_mainservice ">
+          	
+            	<div class="menuBox templatemo_mainservice ">					
                 	<div class="templatemo_link"><a class="show-2 templatemo_page2 menuItem" href="#">Catalogue</a></div>
                     <p class="menuInfo">Start writing a manuscript.<br>
 					Add collaborators to your manuscript.<br>
@@ -100,17 +100,17 @@
 					And more...
 					</p>
                 </div>
-
+                
             	<div class="menuBox templatemo_maintesti ">
                 	<div class="templatemo_link"><a class="show-4 templatemo_page4 menuItem" id="profileLink" href="#">Profile</a></div>
 					<p class="menuInfo">
 					Write a small biography.<br>
 					Add/Edit contact details.<br>
 					Edit personal details.<br>
-					See a list of books you are linked to.
+					See a list of books you are linked to.					
 					</p>
                 </div>
-
+                
                 <div class="menuBox templatemo_mainabout">
                 	<div class="templatemo_link"><a class="show-5 templatemo_page5 menuItem" href="#">About Us</a></div>
 					<p class="menuInfo">Read More about:<br>
@@ -119,27 +119,27 @@
 					Our Vision.
 					</p>
                 </div>
-
+                
                 <div class="menuBox templatemo_maincontact">
                 	<div class="templatemo_link"><a class="show-6 templatemo_page6 menuItem" href="#">Contact Us</a></div>
                     <p class="menuInfo">Write a small message to an admin.	<br>
 					See our location on google maps.<br>
-					Get our address.
+					Get our address.					
 					</p>
                 </div>
-
-
-
-
+                
+                
+    	  
+    
    </div> <!--contains the main menu tabs END-->
     <!-- homepage end -->
-
+    
 			<!-- this is the back button: <div class="templatemo_link"><a class="show-1 templatemo_hometestimonial" href="#">Go Back</a></div>-->
 			<!-- profileContainer START -->
 			<div id="profileContainer">
 				<div id="topProfileBar">
 					<button class="show-1 templatemo_homeabout">Go Back</button>
-					<div style="width:370px;float:right;">
+					<div style="width:370px;float:right;">								
 						<button id="delete-button">Delete Account</button>
 						<button id="suspend-button">Suspend Account</button>
 						<button id="activate-button">Activate Account</button>
@@ -147,7 +147,7 @@
 				</div>
 				<div id="portfolioContainer"><!--PortfolioContainer START-->
 					<div id="portImageBack">
-						<img alt="Profile Picture" id="portImage">
+						<img alt="testimonial image" id="portImage">
 					</div>
 						
 						<div id="uploadPictureDiv"><!--Upload for profile picture-->
@@ -157,7 +157,7 @@
     						<input type="submit" value="Upload Image" name="submit">
 							</form>
 						</div>
-
+						
 						<div id="frame1"><!--Frame1 START-->
 							<p>Username:</p>
 							<input class="profileInfo" readonly type="text" />
@@ -165,31 +165,31 @@
 							<input class="profileInfo" readonly type="text" />
 							<p>Surname:</p>
 							<input class="profileInfo" readonly type="text" />
-
+							
 						</div><!--Frame1 END-->
 						<div id="frame2"><!--Frame2 START-->
 							<h2>Genres of Interest</h2>
 							<textarea class="profileInfo" rows="4" cols="22" readonly></textarea>
-
+							
 						</div><!--Frame2 END-->
-
-						<button type="button" id="profileEditButton">Edit Details</button>
+						
+						<button type="button" id="profileEditButton">Edit Details</button>				
 				</div><!--PortfolioContainer END-->
-
-
+				
+				
 				<div id="aboutMeContainer">
 					<!-- This is the Who are you image <img id="aboutImage" src="images/whoAreYou.png" alt="testimonial image">-->
 					<div class="details">
 						<h2>About me:</h2>
-						<textarea readonly class="aboutMeInfo" id="aboutme" rows="5" cols="33"></textarea>
+						<textarea readonly class="aboutMeInfo" id="aboutme" rows="5" cols="33"></textarea>						
 						<button id="editAboutMe">Edit About Me</button>
 					</div>
-
-
-				</div>
-
+										
+					
+				</div>		
+				
 				<div id="contactInfoContainer"><!--contactInfoContainer START-->
-					<div id="authorOfList">
+					<div id="authorOfList">				
 						<h2>Author of:</h2>
 						<ul id="booklist">
 							<p style="font-size:8pt;">..This will be a dynamically loaded list..</p>
@@ -201,15 +201,15 @@
 						<p style="margin-top:4px;">Home</p><input class="contactInfo" readonly type="text" />
 						<p style="margin-top:4px;">Work</p><input class="contactInfo" readonly type="text" />
 						<p style="margin-top:4px;">Email</p><input class="contactInfo" readonly type="text" /><br>
-						<button id="editContactInfo">Edit Contact Info</button>
-
+						<button id="editContactInfo">Edit Contact Info</button>						
+						
 					</div>
 				</div><!--contactInfoContainer END-->
 			</div><!--profileContainer END-->
-
-
+		
+		
 	   <!-- About Us START -->
-	   <div class="content about" id="menu-5">
+	   <div class="content about" id="menu-5">			
 				<div class="topAboutBar">
 						 <button class="show-1 templatemo_homeabout" href="#">Go Back</button>
 				</div>
@@ -222,42 +222,42 @@
 					Sito : Frontend and backend developer.<br>
 					Jimmy : Unit testing and backend developer.<br>
 					Ndivhuwo : Backend developer.<br>
-					</p>
+					</p>						 
 				</div>
 				<div class="aboutFrame">
 					<h2>Our History</h2>
 					<p>
 					We started working together in our final year of study.<br>
 					Our main focus being Figbook for the year.<br><br>
-
+					
 					Area of study:<br>
 					Armand : BSc IT software development.<br>
 					Sito : BSc IT software development.<br>
-					Sphe : BSc IT & Enterprise.<br>
+					Sphe : BSc IT & Enterprise.<br>					
 					Jimmy : BSc Computer science.<br>
 					Ndivhuwo : BSc Computer science.<br>
-					</p>
+					</p>					
 				</div>
-				<div class="aboutFrame">
+				<div class="aboutFrame">		
 					<h2>Our Vision</h2>
 					<p>
 					Is to work towards a better future.<br>
 					Providing companies and individuals with software<br> that doesn't just work, but looks and feels great to use.
 					While using it should be seamlesly smooth, without the need of exstensive training.<br><br>
 					Thus we aim to keep usibility as our key priority when designing and developing any software.
-					</p>
-				</div>
+					</p>						
+				</div>			
 	   </div>
 	   <!-- About Us END-->
-
+	   
 		<!-- Contact Us START -->
 		<div class="content contact" id="menu-6">
-					<div class="topContactBar">
-						<button class="show-1 templatemo_homeabout" href="#">Go Back</button>
+					<div class="topContactBar">						
+						<button class="show-1 templatemo_homeabout" href="#">Go Back</button>	
 					</div>
-
+					
 					<div class="contactForm">
-
+						
 							<form id="contactUsForm">
 								<h2>Contact Us</h2>
 								<input name="fullname" type="text" class="form-control" id="fullname" placeholder="Your Name" maxlength="40"><br><br>
@@ -268,31 +268,31 @@
 							</form>
 							<img id="contactBack" src="images/templatemo_contact1.jpg" alt="contact image">
 					</div>
-
+				  
 					<div class="locationBack">
-
+						
 						<h2>Our Location</h2>
 						<div class="clear"></div>
 						<div class="templatemo_contactmap">
-								<div id="templatemo_map"></div>
+								<div id="templatemo_map"></div>                        
 						</div>
 						<div class="templatemo_address">
 							4 Chaplin Road, <br>
-							Illovo Boulevard ,<br> Johannesburg,<br>
+							Illovo Boulevard ,<br> Johannesburg,<br> 
 							2196, <br>
-							South Africa <br>
-							Tel: +27 11 042 6509  Email: info@figtory.com
+							South Africa <br> 
+							Tel: +27 11 042 6509  Email: info@figtory.com 
 						</div>
-
+						
 					</div>
 		</div>
 
 
 
         <!-- Contact Us START -->
-
+    
     </div> <!--Menu container END-->
-
+	
 	<!--Footer START-->
 
 	<footer id="footer">
@@ -309,8 +309,8 @@
 	</footer>
 
 	<!--Footer END-->
-
-    <!-- logo end -->
+	
+    <!-- logo end -->  
    <script type="text/javascript">
 
 
@@ -328,7 +328,7 @@
                 $name.text($tab.text());
 
                 $info.show();
-
+				
             }
         });
 
@@ -337,7 +337,7 @@
             width: 'auto',
             fit: true,
         });
-
+		
 
 		$('#cmt').easyResponsiveTabs({
             type: 'vertical',
