@@ -122,7 +122,7 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 									<option value="WRITE">WRITE</option>
 								  </select><br>
 
-								  <input type="button" value="Link" onclick="link()"></input>
+								  <input id="sendManuButton" type="button" value="Link" onclick="link()"></input>
 							  </div>
                                                         
                                                                <div id="DelBookDiv" style="display:none;">
@@ -165,32 +165,22 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
             </div>
             
 
-                  <div id="bookDiv">
-            			<div id="scriptMenuBar">Please fill in author details.</div>                  	
-                        <div id="pageList"></div>
+                <div id="bookDiv">
+            			<h2>Please enter a book title.</h2>                  	
+                        <div id="pageList" style=" display:none;"></div>
                         
                         <div id="contentDiv">
                         	<div id="infoBox">
                                  <div id="labels">	
-                                     <label>Book Title:</label><br/>
-                                     <label>Author's</label><br/>
-                                     <label>Firstname:</label><br/>
-                                     <label>Surname:</label>
+                                     <label>Book Title:</label><br/>                                   
                                  </div>
                                  <div id="inputs">
-                                     <input id="title" type="text"/><br/><br/>
-                                     <input id="firstname" type="text"/><br/>
-                                     <input id="surname" type="text"/>
+                                     <input id="title" type="text"/><br/><br/>                                     
                                  </div>
                              </div>                             
-                             <div id="inputs2">
-                                 <textarea id="preface" cols="50" rows="14" ></textarea>
-				 
-			</div>
-                             </div>
-                            <textarea id="manuscriptArea" cols="96" rows="14" ></textarea>
-                            
-                            
+                             
+                         </div>                  
+
                             <form class="form" id="saveBookForm">
                             	<button type="submit" id="back-button">Back</button>
                             	<button type="submit" id="next-button">Next</button>

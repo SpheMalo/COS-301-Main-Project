@@ -636,26 +636,16 @@ $(document).ready(function () {
 					{
 						document.getElementById('error_par').innerHTML = "";
 					}
-					if ($('#infoBox').css('display') === "none") //this is when the book gets created...
-					{
-						info.preface = "=Preface= \n"+$('#preface').val();
+					info.preface = "=Preface= \n"+" "; //blank area is needed to create book text.
 						info.text = info.preface;
-						$('#preface').val("");
-						//Todo call the create page function
-						create_page(info);
-						$('#inputs2').fadeOut("slow",function(){});
+						
+						create_page(info); //call the create page(create book) API
+						closeLightbox(); // close the lightbox.
+						
 						$('#bookDiv').fadeOut("slow",function(){
 							$('#infoBox').fadeIn("slow",function(){});
 							$('#serviceBackground').fadeIn("slow",function(){});
 						});
-					}	
-					else 
-					{						
-						$('#infoBox').fadeOut("slow",function(){
-							$('#scriptMenuBar').html("Please Write a short preface.");
-							$('#inputs2').fadeIn("slow",function(){});
-						});
-					}
 				}
 				else if(data == "true"){
 					

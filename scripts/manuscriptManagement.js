@@ -13,35 +13,12 @@ $(document).ready(function()
 	
 	$('.service').click(function()
 	{
-		//Make the comment area dissapear
-		$("#commentSide").css('display','none');
-		$("#commentHide").css('display','none');
-		
 		//hides the options menu
 		$('.optionsSlide').removeClass('pullDown');
 		$('.optionsSlide').css('visibility','hidden');
 		//hides the options menu
-		
-		
-		$('#sidePicDiv').fadeOut( "slow", function() {
-    		// Animation complete.
- 		 });
-		$('#serviceBackground').fadeOut( "slow", function() {});
-		$('#pageList').fadeOut('slow',function(){});
-		
-		$('#bookDiv').fadeOut( "slow", function() {});	
-		
-			$('#manuscriptArea').fadeOut("fast",function(){});
-			$('#goBackService').fadeOut( "slow", function() {
-				$('#serviceContainer').append($('#bookDiv'));	
-				
-				$('#goBackService').fadeIn( "slow", function() {});
-				$('#bookDiv').fadeIn( "slow", function() {});
-			});
-			
-			
-		//$('html').css('overflow-y','auto');
-		
+		$('#bookDiv').css('display','block');
+		addLightbox($("#bookDiv"));	
 		
 	});
 	
@@ -230,6 +207,7 @@ function addLightbox(insertContent) {
 			$("#addChapterArea").fadeOut("slow",function(){});
 			$("#sendManuscriptContainer").fadeOut("slow",function(){});
                         $("#DelBookDiv").fadeOut("slow",function(){});
+			$("#bookDiv").fadeOut("slow",function(){});
 			$('#lightbox').hide();
 			$('#lightbox-shadow').hide();
 			
