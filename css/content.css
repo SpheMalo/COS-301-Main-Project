@@ -63,15 +63,20 @@ background: linear-gradient(to bottom, #ebf1f6 0%,#d5ebfb 100%); /* W3C */
   border-radius: 3px;
 }
 #DelBookDiv{
-  background: #50a3a2;
-  background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
-  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+  background: #ebf1f6; /* Old browsers */
+background: -moz-linear-gradient(top, #ebf1f6 0%, #d5ebfb 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebf1f6), color-stop(100%,#d5ebfb)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ebf1f6 0%,#d5ebfb 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ebf1f6 0%,#d5ebfb 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ebf1f6 0%,#d5ebfb 100%); /* IE10+ */
+background: linear-gradient(to bottom, #ebf1f6 0%,#d5ebfb 100%); /* W3C */
+
   overflow: hidden;  
   text-align:center;
   margin-right:auto;margin-left:auto;
-  color:white;
+  color:black;
   width:350px;
-  height:260px;
+  height:180px;
   font-family: 'Source Sans Pro', sans-serif;
   border-radius: 5px;
 }
@@ -83,7 +88,8 @@ button:hover{cursor:pointer;}
     width: 250px;
 
   padding: 10px 15px;
-  margin-top:-20px;
+  position: relative;
+  top: -45px;
   text-align: center;
   font-size: 24px;
   -webkit-transition-duration: 0.25s;
@@ -122,21 +128,20 @@ button:hover{cursor:pointer;}
   font-weight: 300;
 }
 #DelBookDiv input {
-  -webkit-appearance: none;
+   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   outline: 0;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(180, 180, 180, 0.9);
+  background-color: rgba(255, 255, 255, 0.5);
   width: 250px;
   border-radius: 3px;
   padding: 10px 15px;
-  margin: 0 auto 10px auto;
-  margin-top: 20px;
+  margin: 15px auto 5px auto;
   display: block;
   text-align: center;
   font-size: 18px;
-  color: white;
+  color: black;
   -webkit-transition-duration: 0.25s;
           transition-duration: 0.25s;
   font-weight: 300;
@@ -148,26 +153,36 @@ button:hover{cursor:pointer;}
 #fuzzyText{font-size:10px;}
 
 #sendManuscriptContainer{
-  background: #50a3a2;
-  background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
-  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+  /* background: #50a3a2;
+   background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+   background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+  */
+  
+background: #ebf1f6; /* Old browsers */
+background: -moz-linear-gradient(top, #ebf1f6 0%, #d5ebfb 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebf1f6), color-stop(100%,#d5ebfb)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ebf1f6 0%,#d5ebfb 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ebf1f6 0%,#d5ebfb 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ebf1f6 0%,#d5ebfb 100%); /* IE10+ */
+background: linear-gradient(to bottom, #ebf1f6 0%,#d5ebfb 100%); /* W3C */
+
   overflow: hidden;  
   text-align:center;
   margin-right:auto;margin-left:auto;
   color:white;
   width:250px;
-  height:240px;
+  height:190px;
   font-family: 'Source Sans Pro', sans-serif;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 #sendManuButton:hover{cursor:pointer;}
 #sendManuscriptContainer input{
-
+  
   width: 150px;
   height:30px;
-  margin-top:20px;
+  margin-top:15px;
   text-align: center;
-  font-size: 24px;
+  font-size: 18px;
   -webkit-transition-duration: 0.25s;
    transition-duration: 0.25s;
   font-weight: 300;
@@ -270,11 +285,21 @@ font-size: 24px;}
 font-size: 14px;cursor: pointer;font-weight: bold;
     
 }
-
-#infoBox{width:320px;height:110px;margin-left:auto;margin-right:auto;margin-top:20px;}
+#contentDiv{margin-top:20px;}
+#infoBox{width:320px;height:50px;margin-left:auto;margin-right:auto;}
 #labels{float:left;height:auto;width:100px;}
 #inputs{float:right;;height:auto;width:200px;}
-#saveBookForm{margin-top:10px;margin-bottom:10px;}
+#saveBookForm{
+	margin-top:10px;
+	margin-bottom:10px;
+	text-align: center;
+	width:200px;
+	margin-left:auto;
+	margin-right:auto;
+	height:40px;
+	padding:0px;
+}
+#next-button{width:80px;height:25px;position:relative;left:130px;}
 
 #scriptMenuBar{width:100%;height:60px;
 background: rgba(196,192,196,1);
@@ -549,7 +574,7 @@ margin-top:15px;
 	#inputs{margin-right:15px;}
 	#preface{width:90%;}
 	#scriptMenuBar{height:80px;line-height:40px;}
-	#next-button{margin-bottom:10px;}
+	
 	/*This is the Catalogue area's styling for a phone size*/
 	#powered{display:none;}
 	
@@ -582,7 +607,7 @@ margin-top:15px;
 	#inputs{margin-right:15px;}
 	#preface{width:250px;}
 	#scriptMenuBar{height:60px;line-height:60px;}
-	#next-button{margin-bottom:10px;}
+	
 	#preface{width:90%;}
 
 	/*.container { left: 50%; margin-left: -375px; right: 0px; }*/
@@ -611,7 +636,7 @@ margin-top:15px;
     }
 	#inputs{margin-right:15px;}
 	#scriptMenuBar{height:60px;line-height:60px;}
-	#next-button{margin-bottom:10px;}
+	
 	#serviceBackground{width:860px;min-height:780px;}
 	
 	#contactImage{width:400px;float:left;}
@@ -645,7 +670,7 @@ margin-top:15px;
     }
 	#inputs{margin-right:15px;}
 	#scriptMenuBar{height:60px;line-height:60px;}
-	#next-button{margin-bottom:10px;}
+
 	#serviceBackground{width:1000px;min-height:780px;}
 	
 	#contactImage{width:400px;float:left;}
