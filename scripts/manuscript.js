@@ -371,7 +371,7 @@ function cleanDelete(bookTitle) {
 	        event.preventDefault();
 	    }
 $(document).ready(function () {
-    $("#delBtn").click(function(){
+    $("#delBtn").click(function(event){
         $.post("scripts/mediawiki/api.php?action=query&prop=info|revisions&meta=tokens&rvprop=timestamp&titles="+localStorage.bookTitle+"&format=json",function(data){	
     
     $.ajax({	
@@ -417,7 +417,7 @@ $(document).ready(function () {
 	//document.getElementById("editSection").remove();
         
     });
-	$("#addSectionButton").click(function(){
+	$("#addSectionButton").click(function(event){
   
 	/**
     *  This call checks the timestamp retrieved once editing began, and compares it to the timestamp in the database currently.
@@ -553,7 +553,7 @@ $(document).ready(function () {
 	
 	
 	///Loading/opening the editorial letter panel.
-	$("#writeEditorial").click(function(){
+	$("#writeEditorial").click(function(event){
 		$( "#letterHide" ).trigger( "click" );
 		
 			//hides the options menu
@@ -578,7 +578,7 @@ $(document).ready(function () {
 	
 	
 		
-	$('#viewBooks').click(function(){
+	$('#viewBooks').click(function(event){
 		
 		//Make the comment area dissapear
 		$("#commentSide").css('display','none');
@@ -604,7 +604,7 @@ $(document).ready(function () {
 		
 		
 	//This is the next button click event when creating a new manuscript.
-	$('#next-button').click(function(){
+	$('#next-button').click(function(event){
 		//Get the data from inputs
 		info.title = $('#title').val();
 		info.firstname = readCookie('username');
@@ -687,7 +687,7 @@ $(document).ready(function () {
 	
 	//This is the test to see if the div was faded out... if value is null its faded...
 	//Use it for the back button.
-	$('#back-button').click(function(){
+	$('#back-button').click(function(event){
 		//event.preventDefault();
 		if ($('#infoBox').css('display') === "none")
 		{
@@ -706,7 +706,7 @@ $(document).ready(function () {
 		
 	//this is a function that finds all the books that exist
 	//needs to be refined to only find books by that user
-        $('#backToBook').click(function(){
+        $('#backToBook').click(function(event){
             //$('#editSection').fadeOut("fast",function(){});
 		refreshBook();
 	});
@@ -756,7 +756,7 @@ $(document).ready(function () {
 	                                $("#bookList").append("<div class='bookItem'>"+pageTitle+"</div>");
                                         localStorage.bookTitle = "";
                                         
-	                                $('.bookItem').click(function () {
+	                                $('.bookItem').click(function (event) {
 	                                    //alert("book clicked : "+$(this).html());
 										
 										
@@ -807,7 +807,7 @@ $(document).ready(function () {
         });
 	}
 		
-    $("#load-button").click(function () {
+    $("#load-button").click(function (event) {
 
         var loadPageInfo = {
             "title": document.getElementById("gettitle").value

@@ -43,7 +43,8 @@ if ($uploadOk == 0) {
 
         if($dbHandler->isConnected())
         {
-          $sql = "UPDATE user SET user_profile_picture='$newfilename'";
+          $uID = $_COOKIE['username'];
+          $sql = "UPDATE user SET user_profile_picture='$newfilename' WHERE user_name='$uID' ";
           $result = mysqli_query($dbHandler->getConnection(), $sql);
 
           if ($result == false)//Incase the update Failed

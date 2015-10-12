@@ -54,6 +54,18 @@ if(isset($actionFlag) && $actionFlag != ""){
 		
 		$response = ($tmpUser->getUserInfo($uID));
 	
+	}else if($actionFlag == "setNewPassword"){
+		$tmpUser = new user($dbHandler->getConnection());
+
+		$response = ($tmpUser->setNewPassword($object));
+
+	}else if($actionFlag == "forgotPassword"){
+
+		$uID = $_COOKIE['username'];
+		$tmpUser = new user($dbHandler->getConnection());
+
+		$response = ($tmpUser->sendForgotPasswordEmail($object));
+
 	}else if($actionFlag == "viewUserProfile"){
 		$uID = $object->userToLookFor;
 		$tmpUser = new user($dbHandler->getConnection());

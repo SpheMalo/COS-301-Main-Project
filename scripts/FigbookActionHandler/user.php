@@ -542,8 +542,91 @@ class user {
 			}
 		}
 	}
+public function sendForgotPasswordEmail($object)
+  {
+
+    $returnObj; //response object
+    $sql = "SELECT user_email, user_name FROM user WHERE user_email = '$object->email'";
+
+    $temp = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql));
+
+    if ($temp == false)
+    {
+      $returnObj["message"] = "invalid email";
+      return $returnObj;
+    }
+    else
+    {
+      $uID = $temp['user_name'];
+      $token = md5(uniqid(md5($uID), true));
+      $minutes_to_add = 30;
+
+      $time = new DateTime();
+      $currTime = $time->format('Y-m-d H:i:s');
+      $time->add(new DateInterval('PT' . $minutes_to_add . 'M')); // adding 30 minutes to the current time to create an expiry date on the token
+      $expireTime = $time->format('Y-m-d H:i:s');
+
+      //Send email with the token to the user.
+      $to      = $object->email;
+      $subject = "Figbook Password Recovery";
+      $message = "Hi there user. Your token for password recovery is: ". "\r\n". $token."\r\n";
+      $headers = 'From: webmaster@example.com' . "\r\n" .
+                 'Reply-To: webmaster@example.com' . "\r\n" .
+                 'X-Mailer: PHP/' . phpversion();
 
 
+      $returnObj["mailSent"] = mail($to, $subject, $message, $headers);
+
+      $sql = "SELECT username FROM user_password_recovery_tokens WHERE username='$uID'";
+      if (mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql))['username'] == $uID)
+      {
+        $sql = "UPDATE user_password_recovery_tokens SET token='$token', token_expire_date='$expireTime',number_of_times_recovered=number_of_times_recovered+1, last_recovered_date='$currTime' WHERE username='$uID'";
+        mysqli_query($this->dbInstance, $sql);
+        $returnObj['message'] = "Email sent";
+        return $returnObj;
+      }
+      else
+      {
+        $sql = "INSERT INTO user_password_recovery_tokens (username, token, token_expire_date, number_of_times_recovered, last_recovered_date) VALUES('$uID', '$token', '$expireTime', 1, '$currTime')";
+        mysqli_query($this->dbInstance, $sql);
+
+        $returnObj['message'] = "Email sent";
+        return $returnObj;
+      }
+
+    }
+
+
+  }
+
+  public function setNewPassword($obj)
+  {
+    $sql = "SELECT * FROM user_password_recovery_tokens WHERE token='$obj->token'";
+    $response = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql));
+
+    if ($response == false)
+    {
+      $response['message'] = "invalid token";
+    }
+    else
+    {
+      $time = new DateTime();
+
+      if ($time->format('Y-m-d H:i:s') > $response['token_expire_date'])
+      {
+        $response['message'] = "invalid token";
+      }
+      else
+      {
+        $uID = $response['username'];
+        $sql = "SELECT * FROM user WHERE user_name='$uID'";
+        $response = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql));
+        $response['message'] = "valid token";
+      }
+    }
+    return $response;
+
+  }
 }
 
 

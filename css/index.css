@@ -10,6 +10,18 @@ html,body
 .wrapper{display:none;}
 .wrapperReg{display:none;}
 
+#forgot-password
+{
+  font-size: 15pt;
+  text-decoration: none;
+  font-family: cursive;
+  color: white;
+}
+#forgot-password:hover
+{
+  text-decoration: underline;
+  font-size: 16pt;
+}
 /*This is the header and footer styling START*/
 #header{
 	width:100%;

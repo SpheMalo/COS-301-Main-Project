@@ -24,7 +24,8 @@ d<!DOCTYPE html>
 			<form class="form" method="POST">
 				<input id="LoginUsername" type="text" placeholder="Username">
 				<input id="LoginPassword" type="password" placeholder="Password">
-				<button id="login-button">Login</button>
+				<button id="login-button">Login</button><br/> <br/>
+				<a id="forgot-password" href="passwordRecovery.php">Forgot Password?</a>
 			</form>
 	</div>
 		

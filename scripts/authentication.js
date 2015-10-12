@@ -79,7 +79,7 @@ window.onload = function()
 		});
 		
 		
-		$('#register-button').click(function(){
+		$('#register-button').click(function(event){
 
 			var pass1 = document.getElementById('password');
 			var pass2 = document.getElementById('confirmpassword');
@@ -217,7 +217,7 @@ window.onload = function()
 		
 		$('#logoutDiv').click(function(){wiki_logout(); });
 		
-		$( "#login-button" ).click(function() {
+		$( "#login-button" ).click(function(event) {
 			var UserInfo = {
 				"username" : document.getElementById("LoginUsername").value,
 				"password" : document.getElementById("LoginPassword").value,
@@ -350,7 +350,7 @@ window.onload = function()
 			);
 		}
 		
-		$('#activate-button').click(function(){
+		$('#activate-button').click(function(event){
 			var UserInfo = {
 					"action" : "activate"
 			}
@@ -360,7 +360,7 @@ window.onload = function()
 			event.preventDefault();
 		});
 		
-		$('#delete-button').click(function(){
+		$('#delete-button').click(function(event){
 			alert("here");
 			//console.log(document.cookie);
 			var UserInfo = {				
@@ -383,7 +383,7 @@ window.onload = function()
 			event.preventDefault();
 		});
 
-		$('#getStatus-button').click(function(){
+		$('#getStatus-button').click(function(event){
             var UserInfo = {			
 				"action" : "getUserStatus"
 			}

@@ -1,0 +1,17 @@
+body
+{
+  background-color: #AAA;
+}
+
+#containerDiv
+{
+  width:100%;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+}
+p{
+  color: black;
+  padding: 5px;
+  text-align: center;
+}

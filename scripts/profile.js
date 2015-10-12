@@ -248,3 +248,72 @@ window.onload = function(){
    }
   
 };
+
+//Clicks the "send email" button on forgot password page when enter is pressed
+$("#emailInput").keyup(function(event)
+{
+	 if(event.keyCode == 13)
+	 {
+			 $("#sendEmailBtn").click();
+	 }
+});
+
+//Sends email to user with tokenised link
+function verifyAndSendRecoveryLink()
+{
+	var jsonObj = {
+		"action" : "forgotPassword",
+		"email" : document.getElementById("emailInput").value
+	}
+
+	jsonObj = JSON.stringify(jsonObj);
+
+	$.ajax({
+		url: 'scripts/FigbookActionHandler/actionHandler.php',
+		data: 'json='+jsonObj,
+		dataType: 'json',
+		success: function(data){
+			if (data.message == "invalid email")
+			{
+				alert( JSON.parse(jsonObj).email + " doesn't have a Figbook account. Please try again.");
+			}
+			else
+			{
+				alert("Email sent successfully to " + JSON.parse(jsonObj).email);
+			}
+		},
+		error: function(data){
+			alert("error :"+JSON.stringify(data));
+		}
+	});
+}
+
+function updatePassword()
+{
+  var jsonObj = {
+		"action" : "setNewPassword",
+		"email" : document.getElementById("emailInput").value,
+    "token" : document.getElementById("passwordToken").value,
+    }
+
+	jsonObj = JSON.stringify(jsonObj);
+
+    $.ajax({
+  		url: 'scripts/FigbookActionHandler/actionHandler.php',
+  		data: 'json='+jsonObj,
+  		dataType: 'json',
+  		success: function(data){
+  			if (data.message == "invalid token")
+  			{
+  				alert("Invalid/Expired Token. Check that you entered the complete token or request another");
+  			}
+  			else
+  			{
+          //TODO: use mediawiki api to set new password for user
+  			}
+  		},
+  		error: function(data){
+  			alert("error :"+JSON.stringify(data));
+  		}
+  	});
+}
