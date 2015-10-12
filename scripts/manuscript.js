@@ -839,7 +839,7 @@ $(document).ready(function () {
                                                         lockBook(params.title);
 							getBooks();//Repopulate list of books before loading page
                                                         localStorage.userRole = "Creator";
-                                                        localStorage.bookTitle = params.title;
+                                                        
                             get_page(params);
                         } else if (data && data.error) {
                             alert('Error: API returned error code "' + data.error.code + '": ' + data.error.info);
@@ -901,7 +901,8 @@ $(document).ready(function () {
 					//}));
 
 					document.getElementById('pageView').innerHTML = "";
-                                        $( "#pageView" ).append("<div id='bookTitleDiv'><span id='bookTitle'>"+title_+"</span></div>")
+                                        $( "#pageView" ).append("<div id='bookTitleDiv'><span id='bookTitle'>"+title_+"</span></div>");
+                                        localStorage.bookTitle = title_;
 					var htmlValue = "";
 					var linkNumber = 1;
 					for(var i=0; i<childNodes.length; i++)
