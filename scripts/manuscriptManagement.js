@@ -139,6 +139,19 @@ $(document).ready(function()
 	});	
 	
 	$('#options').click(function(){
+            console.log(localStorage.bookTitle);
+                if(localStorage.bookTitle !==""){
+                    $('#loadbook').css('display','block');
+                    $('#invitation').css('display','block');
+                    $('#writeEditorial').css('display','block');
+                    $('#addChapter').css('display','block');
+                }
+                else{
+                    $('#loadbook').css('display','none');
+                     $('#invitation').css('display','none');
+                     $('#writeEditorial').css('display','none');
+                     $('#addChapter').css('display','none');
+                }
 		if ($('.optionsSlide').css('visibility') == "hidden")
 		{
 			$('.optionsSlide').css('visibility','visible');

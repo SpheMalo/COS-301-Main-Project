@@ -87,11 +87,11 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 								   <div id="options">Options</div>
 								   <div class="optionsSlide">
 										<div class="service options">Create Book</div>
-										<div class="options" id="loadbook" onclick="loadBook()">Load Book</div>
+										<div class="options" id="loadbook" style="display:none;" onclick="loadBook()">Load Book</div>
 										<div class="options" id="viewBooks">List Books</div>
-										<div class="options" id="invitation">Send Invitation</div>
-										<div class="options" id="writeEditorial">Editorial Letter</div>
-										<div  class="options" id="addChapter">Add Chapter</div>
+										<div class="options" id="invitation" style="display:none;">Send Invitation</div>
+										<div class="options" id="writeEditorial" style="display:none;">Editorial Letter</div>
+										<div  class="options" id="addChapter" style="display:none;">Add Chapter</div>
                                                                                 <div  class="options" id="delManuscript">Delete Book</div>
 								   </div>
 							  </div>
@@ -106,7 +106,7 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 							<div id="addChapterArea" style="display:none;">
 								   <h2>Please enter a chapter name:</h2><br>
 								   <input type='text' id='sectionName' /><br>
-								   <button onclick="addSection()">Add This Chapter</button>
+								   <button id="addSectionButton">Add This Chapter</button>
 							  </div>
 										
 							  <div id="sendManuscriptContainer" style="display:none;">
@@ -141,7 +141,7 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
             						<button id="refreshBook" style="visibility:hidden;" onclick="refreshBook()">Refresh</button>
             					</div>
                                  <div id="editSection">
-                                      <div id="inputHeading"><input type="text" id="pageEditTitle"/></div><!--<hr/>-->
+                                      <div id="inputHeading"><span id="backToBook">Back-to-Book</span><input type="text" id="pageEditTitle"/></div><!--<hr/>-->
                                         <!--  <textarea id="editor" cols="93" rows="10">-->
 					  						<!--This is the rich text editor-->
                                         <!-- Replace textarea-->
@@ -158,7 +158,7 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 					
                                           
                                           <button id="saveBtn" onclick="saveText()" >Save</button>
-                                          <button id="delBtn" onclick="deleteSection()">Delete</button>
+                                          <button id="delBtn" >Delete</button>
                                   </div>
                             </div>
 							

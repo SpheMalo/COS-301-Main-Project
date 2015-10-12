@@ -184,6 +184,13 @@ line-height:40px;
 border-bottom:1px solid rgba(220,220,220,1.00);
 border-top:1px solid rgba(220,220,220,1.00);
 }
+#bookTitleDiv{width:100%;background-color:rgba(33, 109, 149, 0.4);min-height: 55px;text-align:center;font-size:28pt;
+line-height:55px;
+border-bottom:1px solid rgba(220,220,220,1.00);
+border-top:1px solid rgba(220,220,220,1.00);
+margin-bottom: 30px;
+}
+
 .insideText{white-space:pre-line;padding:20px;}
 #preface{margin-top:14px;resize:vertical;}
 
@@ -216,6 +223,10 @@ font-size: 45px;
 }
 #pageEditTitle{text-align:center;height:36px;padding:1px;margin-top:0px;
 font-size: 24px;}
+#backToBook{float:left;height:36px;padding:1px;margin-top:6px;margin-left:10px;
+font-size: 14px;cursor: pointer;font-weight: bold;
+    
+}
 
 #infoBox{width:320px;height:110px;margin-left:auto;margin-right:auto;margin-top:20px;}
 #labels{float:left;height:auto;width:100px;}
@@ -247,7 +258,7 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);
 #writeEditorial
 {
 	width:200px;
-	height:40px;
+	max-height:40px;
 	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
 	float:left;
     border-bottom:1px solid rgba(47,47,47,0.92);
@@ -263,7 +274,7 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);
 #invitation{
    margin-left:4px;
 	width:200px;
-	height:40px;
+	max-height:40px;
 	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
 	float:left;
     border-bottom:1px solid rgba(47,47,47,0.92);
@@ -460,6 +471,10 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);*/
 margin-top:15px;
 }
 #saveBtn:hover{cursor: pointer;}
+#delBtn{width:80px;height:30px;margin-left:4.17%;
+margin-top:15px;
+}
+#delBtn:hover{cursor: pointer;}
 /*Figbook styling END*/
 
 @media(max-width: 767px) {
@@ -746,7 +761,7 @@ top:-4px;
 /*Chapter adding*/
 #addChapter{
 	width:200px;
-	height:40px;
+	max-height:40px;
   
     margin-left:3px;
   
@@ -786,7 +801,7 @@ text-shadow: 0 1px 2px rgba(107,207,198,1.00);
 /*loadbook*/
 #loadbook{
 	width:200px;
-	height:40px;
+	max-height:40px;
   
     margin-left:3px;
   
@@ -801,7 +816,7 @@ text-shadow: 0 1px 2px rgba(107,207,198,1.00);
 	font-size:20pt;
 
 }
-#loadbook:hover{cursor:pointer;height:38px;border-bottom:solid 2px rgba(85,127,184,1.00);}
+#loadbook:hover{cursor:pointer;max-height:38px;border-bottom:solid 2px rgba(85,127,184,1.00);}
 /*-----------------------------------------------------*/
 
 /*Instant messaging area*/
