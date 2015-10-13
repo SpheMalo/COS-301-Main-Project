@@ -1,6 +1,131 @@
 window.onload = function(){
 	
-   $(document).ready(function() {
+$(document).ready(function() {
+	
+	
+$('#portImage').click(function(){
+	
+	//open the file upload dialog by clicking on the image.
+	//and then when done upload it.
+		$( "#fileToUpload" ).trigger( "click");
+		
+		$( "#fileToUpload" ).change(function() {
+		  //alert( "Handler for .change() called." );
+		  	$( "#submitFile" ).trigger("click");	
+		});
+	
+});
+
+
+var form = document.getElementById('uploadForm');
+var fileSelect = document.getElementById('fileToUpload');
+
+//this will use ajax to upload files.
+form.onsubmit = function(event)
+{
+	event.preventDefault();
+	
+  
+	// The rest of the code will go here...
+	var files = fileSelect.files;
+	// Create a new FormData object.
+	var formData = new FormData();
+	
+	// Loop through each of the selected files.
+	for (var i = 0; i < files.length; i++) {
+	  var file = files[i];
+	
+	  // Check the file type.
+	  if (!file.type.match('image.*')) {
+		continue;
+	  }
+	
+	  // Add the file to the request.
+	  formData.append('fileToUpload', file, file.name);
+
+	}
+	// Set up the request.
+		var xhr = new XMLHttpRequest();
+	  // Open the connection.
+		xhr.open('POST', 'scripts/upload.php', true);
+		// Set up a handler for when the request finishes.
+		xhr.onload = function () {
+		  if (xhr.status === 200) {
+			// File(s) uploaded.
+			//alert(xhr.responseText);
+			$("#profileLink").trigger("click");
+			
+			//uploadButton.innerHTML = 'Upload';
+		  } else {
+			alert('An error occurred!');
+		  }
+		};
+	
+	// Send the Data.
+	xhr.send(formData);
+	
+}
+
+
+	
+function addLightbox(insertContent) {
+	$('.options').removeClass('pullDown');
+	// add lightbox/shadow <div/>'s if not previously added
+		if($('#lightbox').size() == 0){
+			var theLightbox = $('<div id="lightbox"/>');
+			var theShadow = $('<div id="lightbox-shadow"/>');
+			$(theShadow).click(function(e){
+				closeLightbox();
+			});
+			$('body').append(theShadow);
+			$('body').append(theLightbox);
+		}
+		
+		// remove any previously added content
+		$('#lightbox').empty();
+		
+		//center the lightbox
+		//alert(window.innerWidth+" "+$('#lightbox').width());
+		var val = (window.innerWidth-$('#lightbox').width())/2;
+		$('#lightbox').css("left",val);
+		
+		// insert HTML content
+		if(insertContent != null){
+			$('#lightbox').append(insertContent);
+		}
+		
+		//$('#lightbox').css('top', $(window).scrollTop() + 100 + 'px');
+		
+		//display the lightbox
+		
+		
+		$('#lightbox').show();
+		$('#lightbox-shadow').show();
+	}	
+
+	// close the lightbox
+	function closeLightbox(){
+		
+		// jQuery wrapper (optional, for compatibility only)
+		(function($) {
+			
+			// hide lightbox/shadow <div/>'s
+			$("#addChapterArea").fadeOut("slow",function(){});
+			$("#sendManuscriptContainer").fadeOut("slow",function(){});
+                        $("#DelBookDiv").fadeOut("slow",function(){});
+			$("#bookDiv").fadeOut("slow",function(){});
+			$('#lightbox').hide();
+			$('#lightbox-shadow').hide();
+			
+			// remove contents of lightbox in case a video or other content is actively playing
+			//$('#lightbox').empty();
+		
+		})(jQuery); // end jQuery wrapper
+		
+	}
+	
+	
+	
 	
 	 var action =
                 {
@@ -15,6 +140,7 @@ window.onload = function(){
 				success: function(data){
                     //createProfile(data);
                                 //console.log(JSON.stringify(data));
+								
                                 localStorage.genericUserRole = data.user_role;
                                 localStorage.userName = data.user_name;
 				},
@@ -26,23 +152,30 @@ window.onload = function(){
 	//This is the edit and save button for the users profile/portfolio.
 	//It has two states: Save and Edit.
 	
-	$("#profileEditButton").click(function(){
-			
-			//This click starts the editing state.
-			if ($(".profileInfo").attr("readonly"))
-			{
-				//The input boxes are now editable.
-				this.innerHTML = "Save Details";
-				$(".profileInfo").attr("readonly", false);
+	function addGif(name)
+	{
+		var obj = '<div id="loadingDiv" style="position:relative;width:100px;height:30px;">'
+				+'<img src="FeedBackIcons/'+name+'.GIF" alt="Feedback Icon" '
+				+'style="width:100px;height:30px;">'
+				+'</div>';
+		var left = (window.innerWidth-100)/2;
+		//var top = (window.innerHeight-30)/2;
+		
+		addLightbox(obj);
+		$("#loadingDiv").css('left',left);
+		$("#loadingDiv").css('top','200px');
+	}
+	function removeGif()
+	{
+		$("#loadingDiv").delay(1000).fadeOut(600, function(){
+			$(this).remove();
+			closeLightbox();
+		});
+	}
+	
+	$("#profileEditButton").click(function(){			
 				
-			}
-			//This click starts the Saving state.
-			else
-			{
-				//The input boxes are now uneditable.
-				this.innerHTML = "Edit Details";
-				//document.getElementById("profileEditButton").innnerHTML="Edit account";
-				$(".profileInfo").attr("readonly", true);
+				addGif('saving');
 				
 				//Persisting to the database
 				var profileArray = document.getElementsByClassName("profileInfo");
@@ -62,7 +195,7 @@ window.onload = function(){
 				dataType: 'json',
 				success: function(data){
 					if (data == true) {
-						alert("successfully updated");
+						console.log("successfully updated");
 						
 					}
 					else{
@@ -73,32 +206,8 @@ window.onload = function(){
 					alert("error :"+data.responseText);
 				}		
 			});
-			}
 			
 			
-		});
-	
-	
-		//This is the edit and save button for the users profile/about me.
-	//It has two states: Save and Edit.
-	$("#editAboutMe").click(function(){
-		
-			//This click starts the editing state.
-			if ($(".aboutMeInfo").attr("readonly"))
-			{
-				//The input boxes are now editable.
-				this.innerHTML = "Save Details";
-				$(".aboutMeInfo").attr("readonly", false);
-				
-			}
-			//This click starts the Saving state.
-			else
-			{
-				//The input boxes are now uneditable.
-				this.innerHTML = "Edit Details";
-				
-				$(".aboutMeInfo").attr("readonly", true);
-				
 				//Persist changes to the database
 				var aboutArray = document.getElementsByClassName("aboutMeInfo");
 				var action =
@@ -115,7 +224,7 @@ window.onload = function(){
 				dataType: 'json',
 				success: function(data){
 					if (data == true) {
-						alert("successfully updated");
+						console.log("successfully updated");
 						
 					}
 					else{
@@ -126,32 +235,8 @@ window.onload = function(){
 					alert("error :"+data.responseText);
 				}		
 			});
-			}
 			
-			
-		});
-		
-	//This is the edit and save button for the users profile/Contact info.
-	//It has two states: Save and Edit.
-	$("#editContactInfo").click(function(){
-			
-			//This click starts the editing state.
-			if ($(".contactInfo").attr("readonly"))
-			{
-				//The input boxes are now editable.
-				this.innerHTML = "Save Details";
-				$(".contactInfo").attr("readonly", false);
-				
-			}
-			//This click starts the Saving state.
-			else
-			{
-				//The input boxes are now uneditable.
-				this.innerHTML = "Edit Details";
-				
-				$(".contactInfo").attr("readonly", true);
-				
-				//Persisting changes to the database
+			//Persisting changes to the database
 				var profileArray = document.getElementsByClassName("contactInfo");
 				var action =
                 {
@@ -169,8 +254,10 @@ window.onload = function(){
 				dataType: 'json',
 				success: function(data){
 					if (data == true) {
-						alert("successfully updated");
-						
+						console.log("successfully updated");
+					
+						//this function removes the loading,saving gif's with small 1s delay
+						removeGif();				
 					}
 					else{
 						alert("update failed. Try again");
@@ -180,10 +267,13 @@ window.onload = function(){
 					alert("error :"+data.responseText);
 				}		
 			});
-			}
 			
+		}); // END of profile edit button.
+	
+				
 			
-		});
+		
+
 	
 	$("#profileLink").click(function(){
 		 var action =

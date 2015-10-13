@@ -5,7 +5,26 @@
  */
 
  
-
+function addGif(name)
+{
+	var obj = '<div id="loadingDiv" style="position:relative;width:100px;height:30px;">'
+			+'<img src="FeedBackIcons/'+name+'.GIF" alt="Feedback Icon" '
+			+'style="width:100px;height:30px;">'
+			+'</div>';
+	var left = (window.innerWidth-100)/2;
+	//var top = (window.innerHeight-30)/2;
+	
+	addLightbox(obj);
+	$("#loadingDiv").css('left',left);
+	$("#loadingDiv").css('top','200px');
+}
+function removeGif()
+{
+	$("#loadingDiv").delay(1000).fadeOut(600, function(){
+		$(this).remove();
+		closeLightbox();
+	});
+}
 
 function loadBook()
 {
@@ -606,6 +625,7 @@ $(document).ready(function () {
 	//This is the next button click event when creating a new manuscript.
 	$('#next-button').click(function(event){
 		//Get the data from inputs
+		
 		info.title = $('#title').val();
 		info.firstname = readCookie('username');
 		info.surname = $('#surname').val();
@@ -780,7 +800,7 @@ $(document).ready(function () {
 	                                    if (loadPageInfo.title !== "")
 	                                    {
 	                                        get_page(loadPageInfo);
-															
+														
 	                                    }
 	
 	                                });
@@ -831,6 +851,7 @@ $(document).ready(function () {
                                                         localStorage.userRole = "Creator";
                                                         
                             get_page(params);
+							
                         } else if (data && data.error) {
                             alert('Error: API returned error code "' + data.error.code + '": ' + data.error.info);
                         } else {
@@ -916,6 +937,7 @@ $(document).ready(function () {
 							}
 						}
 					}
+					
 
 					$( "#pageView" ).append(htmlValue+"</div></div></div>");
 					var headings = document.getElementsByClassName("mw-headline");
@@ -929,7 +951,10 @@ $(document).ready(function () {
 					//Make the comment area visible
 					$("#commentSide").css('display','block');
 					$("#commentHide").css('display','block');
-
+					//Make the comment hide automatically after showing it.
+					$("#commentHide").trigger("click");	
+					
+					
 					var num_links =1;
 					for(var i=0; i<links.length; i++) {
 						if(links[i].innerHTML === "edit")

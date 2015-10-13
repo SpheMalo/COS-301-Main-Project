@@ -44,22 +44,6 @@ CREATE TABLE IF NOT EXISTS `personal_details` (
 -- Dumping data for table `personal_details`
 --
 
-INSERT INTO `personal_details` (`username`, `first_name`, `last_name`, `about_me`, `genres_of_interest`, `cell`, `home`, `work`, `email`) VALUES
-('Alex', 'Enter First name...', 'Enter Last Name...', 'Tell us about yourself in 160 characters...', 'No genres entered...', 'NA', 'NA', 'NA', 'Alex@gmail.com'),
-('Brady', 'Enter First name...', 'Enter Last Name...', 'Tell us about yourself in 160 characters...', 'No genres entered...', 'NA', 'NA', 'NA', 'Brad@gmail.com'),
-('Cat', 'Enter First name...', 'Enter Last Name...', 'Tell us about yourself in 160 characters...', 'No genres entered...', 'NA', 'NA', 'NA', 'd@d'),
-('DED', 'Enter First name...', 'Enter Last Name...', 'Tell us about yourself in 160 characters...', 'No genres entered...', 'NA', 'NA', 'NA', ''),
-('Derfd', 'Enter First name...', 'Enter Last Name...', 'Tell us about yourself in 160 characters...', 'No genres entered...', 'NA', 'NA', 'NA', ''),
-('Dof', 'Enter First name...', 'Enter Last Name...', 'Tell us about yourself in 160 characters...', 'No genres entered...', 'NA', 'NA', 'NA', 's@s'),
-('Dref', 'Enter First name...', 'Enter Last Name...', 'Tell us about yourself in 160 characters...', 'No genres entered...', 'NA', 'NA', 'NA', 'ssmalo2@gmail.com'),
-('Edf', 'Enter First name...', 'Enter Last Name...', 'Tell us about yourself in 160 characters...', 'No genres entered...', 'NA', 'NA', 'NA', ''),
-('Edm', 'Sphelele', 'Malo', 'My new bio. Hope u like it.', 'Thriller,Comedy,nErotic Novels', '0749794141', 'NA', 'NA', 'Spelzm@gmail.com'),
-('Fredd', 'Enter First name...', 'Enter Last Name...', 'Tell us about yourself in 160 characters...', 'No genres entered...', 'NA', 'NA', 'NA', ''),
-('Jimmy', 'Enter First name...', 'Enter Last Name...', 'Tell us about yourself in 160 characters...', 'No genres entered...', 'N/A', 'N/A', 'N/A', 'Jimmy@gmail.com'),
-('Lol', 'Enter First name...', 'Enter Last Name...', 'Tell us about yourself in 160 characters...', 'No genres entered...', 'NA', 'NA', 'NA', 'lol@lol'),
-('SSphe', 'Enter First name...', 'Enter Last Name...', 'Tell us about yourself in 160 characters...', 'No genres entered...', 'NA', 'NA', 'NA', 'ssmalo2@gmail.com'),
-('Ver', 'Enter First name...', 'Enter Last Name...', 'Tell us about yourself in 160 characters...', 'No genres entered...', 'NA', 'NA', 'NA', ''),
-('Verd', 'Enter First name...', 'Enter Last Name...', 'Tell us about yourself in 160 characters...', 'No genres entered...', 'NA', 'NA', 'NA', 'ss@ss');
 
 --
 -- Indexes for dumped tables

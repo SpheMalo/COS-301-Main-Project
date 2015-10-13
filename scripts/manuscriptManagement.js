@@ -192,9 +192,9 @@ function addLightbox(insertContent) {
 		$('#lightbox').css('top', $(window).scrollTop() + 100 + 'px');
 		
 		// display the lightbox
-		$('#lightbox').show();
-		$('#lightbox-shadow').show();
 		
+		$('#lightbox-shadow').show();
+		$('#lightbox').show();
 	}	
 
 	// close the lightbox
@@ -206,7 +206,7 @@ function addLightbox(insertContent) {
 			// hide lightbox/shadow <div/>'s
 			$("#addChapterArea").fadeOut("slow",function(){});
 			$("#sendManuscriptContainer").fadeOut("slow",function(){});
-                        $("#DelBookDiv").fadeOut("slow",function(){});
+            $("#DelBookDiv").fadeOut("slow",function(){});
 			$("#bookDiv").fadeOut("slow",function(){});
 			$('#lightbox').hide();
 			$('#lightbox-shadow').hide();

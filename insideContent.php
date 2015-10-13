@@ -137,6 +137,7 @@
 			<!-- this is the back button: <div class="templatemo_link"><a class="show-1 templatemo_hometestimonial" href="#">Go Back</a></div>-->
 			<!-- profileContainer START -->
 			<div id="profileContainer">
+				
 				<div id="topProfileBar">
 					<button class="show-1 templatemo_homeabout">Go Back</button>
 					<div style="width:370px;float:right;">								
@@ -147,33 +148,32 @@
 				</div>
 				<div id="portfolioContainer"><!--PortfolioContainer START-->
 					<div id="portImageBack">
-						<img alt="testimonial image" id="portImage">
-					</div>
+						<img id="editImage" src="images/edit.png" width='25px' height="25px">
+						<img alt="testimonial image" id="portImage" >
 						
+					</div>
+						<button type="button" id="profileEditButton"></button>
 						<div id="uploadPictureDiv"><!--Upload for profile picture-->
-							<form action="scripts/upload.php" method="post" enctype="multipart/form-data">
+							<form id="uploadForm" action="scripts/upload.php" method="post" enctype="multipart/form-data">
     						Select image to upload:
     						<input type="file" name="fileToUpload" id="fileToUpload">
-    						<input type="submit" value="Upload Image" name="submit">
+    						<input id="submitFile" type="submit" value="Upload Image" name="submit">
 							</form>
 						</div>
 						
 						<div id="frame1"><!--Frame1 START-->
-							<p>Username:</p>
-							<input class="profileInfo" readonly type="text" />
-							<p>Firstname:</p>
-							<input class="profileInfo" readonly type="text" />
-							<p>Surname:</p>
-							<input class="profileInfo" readonly type="text" />
-							
-						</div><!--Frame1 END-->
-						<div id="frame2"><!--Frame2 START-->
-							<h2>Genres of Interest</h2>
-							<textarea class="profileInfo" rows="4" cols="22" readonly></textarea>
-							
-						</div><!--Frame2 END-->
 						
-						<button type="button" id="profileEditButton">Edit Details</button>				
+							<p>Username:</p>
+							<input class="profileInfo" type="text" />
+							<p>Firstname:</p>
+							<input class="profileInfo" type="text" />
+							<p>Surname:</p>
+							<input class="profileInfo" type="text" />
+								
+						</div><!--Frame1 END-->
+						
+						
+									
 				</div><!--PortfolioContainer END-->
 				
 				
@@ -181,27 +181,32 @@
 					<!-- This is the Who are you image <img id="aboutImage" src="images/whoAreYou.png" alt="testimonial image">-->
 					<div class="details">
 						<h2>About me:</h2>
-						<textarea readonly class="aboutMeInfo" id="aboutme" rows="5" cols="33"></textarea>						
-						<button id="editAboutMe">Edit About Me</button>
+						<textarea class="aboutMeInfo" id="aboutme" rows="5" cols="33"></textarea>						
+						
 					</div>
 										
 					
-				</div>		
+				</div>
 				
-				<div id="contactInfoContainer"><!--contactInfoContainer START-->
-					<div id="authorOfList">				
+				<div id="frame2"><!--Frame2 START-->
+							<h2>Genres of Interest:</h2>
+							<textarea class="profileInfo" rows="5" cols="22"></textarea>							
+				</div><!--Frame2 END-->
+				<div id="authorOfList">				
 						<h2>Author of:</h2>
 						<ul id="booklist">
 							<p style="font-size:8pt;">..This will be a dynamically loaded list..</p>
 						</ul>
-					</div>
+				</div>
+				<div id="contactInfoContainer"><!--contactInfoContainer START-->
+					
 					<div id="contactInfoDiv">
 						<h2>Contact Info:</h2>
-						<p style="margin-top:2px;">Cellphone</p><input class="contactInfo" readonly type="text" />
-						<p style="margin-top:4px;">Home</p><input class="contactInfo" readonly type="text" />
-						<p style="margin-top:4px;">Work</p><input class="contactInfo" readonly type="text" />
-						<p style="margin-top:4px;">Email</p><input class="contactInfo" readonly type="text" /><br>
-						<button id="editContactInfo">Edit Contact Info</button>						
+						<p style="margin-top:2px;">Cellphone</p><input class="contactInfo" type="text" />
+						<p style="margin-top:4px;">Home</p><input class="contactInfo" type="text" />
+						<p style="margin-top:4px;">Work</p><input class="contactInfo" type="text" />
+						<p style="margin-top:4px;">Email</p><input class="contactInfo" type="text" /><br>
+											
 						
 					</div>
 				</div><!--contactInfoContainer END-->

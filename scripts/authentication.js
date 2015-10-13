@@ -1,4 +1,36 @@
 
+function addGif(name,wrap)
+{
+    var obj = '<div id="loadingDiv" style="position:relative;width:100px;height:30px;">'
+            +'<img src="FeedBackIcons/'+name+'.GIF" alt="Feedback Icon" '
+            +'style="width:100px;height:30px;">'
+            +'</div>';
+    var left = (window.innerWidth-100)/2;
+    //var top = (window.innerHeight-30)/2;
+   // alert($('.wrapper').html());
+    //addLightbox(obj);
+    $(wrap).append(obj);
+    $("#loadingDiv").css('left','250px');
+    if (wrap === '.wrapper') {
+        $("#loadingDiv").css('top','-50px');
+    }
+    else{
+        $("#loadingDiv").css('top','20px');
+        
+    }
+    
+    
+    $("#loadingDiv").css('background-color','white');
+}
+function removeGif()
+{
+    $("#loadingDiv").delay(1000).fadeOut(600, function(){
+        $(this).remove();
+        closeLightbox();
+    });
+}
+
+
 function addLightbox(insertContent) {
 	// add lightbox/shadow <div/>'s if not previously added
 		if($('#lightbox').size() == 0){
@@ -80,7 +112,7 @@ window.onload = function()
 		
 		
 		$('#register-button').click(function(event){
-
+            addGif('loading','.wrapperReg');
 			var pass1 = document.getElementById('password');
 			var pass2 = document.getElementById('confirmpassword');
 			
@@ -218,7 +250,8 @@ window.onload = function()
 		$('#logoutDiv').click(function(){wiki_logout(); });
 		
 		$( "#login-button" ).click(function(event) {
-			var UserInfo = {
+			addGif('logging_in','.wrapper');
+            var UserInfo = {
 				"username" : document.getElementById("LoginUsername").value,
 				"password" : document.getElementById("LoginPassword").value,
 				"action" : "login"
@@ -252,8 +285,10 @@ window.onload = function()
 								   if (data.createaccount.result === "Success") { 
 									   //alert(data.login.sessionid);
 									   //document.location.href=ref; 
-									   alert("You have successfully registered, you can now log in.");
-									    window.location.href = "";
+									  removeGif();
+                                       alert("You have successfully registered, you can now log in.");
+									    
+                                        window.location.href = "";
 									   
 									  console.log("Succesfully registered");
 								   } else {
@@ -309,7 +344,12 @@ window.onload = function()
                                                                                 success: function(data1){
                                                                                         console.log(data1);
                                                                                         if(data1 === "1"){
-                                                                                            document.location.href=ref; 
+                                                                                            removeGif();
+                                                                                            document.location.href=ref;
+                                                                                        
+                                                                                            
+                                                                                              
+                                                                                             
                                                                                         }
                                                                                         else if(data1 === "0"){
                                                                                             
