@@ -95,7 +95,7 @@
 		   <!--About START-->		 
 		     <div id="whatWorks">
 			 <h2 class="text-color h2">What makes it work?</h2>
-			 <p class="text-color p">It's the seamless combination of MediaWiki API's, CKE's Rich-Text-Editor,
+			 <p class="text-color p">It's the seamless combination of MediaWiki API's, CK's Rich-Text-Editor,
 			 an endless amount of coffee and then a dash of the magic our team produces by working together. 
 			 </p>
 			 <p class="text-color p">

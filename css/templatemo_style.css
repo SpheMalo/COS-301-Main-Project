@@ -503,7 +503,7 @@ h2.resp-accordion	{ color: #ffffff; }
   height:35px;
   padding-top:2px;
 }
-#aboutme{height:180px;padding:2px;width:305px;resize: none;}/*This is the about me textArea*/
+#aboutme{height:180px;padding:2px;resize: none;}/*This is the about me textArea*/
 #editAboutMe:hover{cursor:pointer;}
 #editAboutMe
 {
@@ -565,7 +565,7 @@ margin-left:20px;
 width:260px;text-align:left;
 margin-top: -10px;
 }
-#frame2 textarea{width:300px;height:180px;}
+#frame2 textarea{height:180px;}
 #frame2
 {
   background-color:rgb(209, 209, 209);
@@ -627,12 +627,74 @@ margin-top: -10px;
   float:left;
   text-align:center;
 }
-.aboutMeInfo
-{
-  width:300px;
-  height:150px;
-}
+
 /********************Profile END*****************************/
+ 
+ /*Header styling START*/
+#header{
+	width:100%;
+	height:65px;
+	position:fixed;
+	top:0px;
+	z-index:20;
+	background-color:white;
+-webkit-box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
+
+}
+#figbookLogo{width:100px;height:100px;position:relative;left:20px;float:left;}
+#figbookHeading{position:relative;float:left;left:40px;top:-24px;
+   color:rgba(51, 204, 51,0.9);
+	text-shadow: 3px 3px 3px rgba(92, 92, 92,0.4);
+	font-size:64pt;
+	font-weight: 500;	
+}
+
+/*Footer Start*/
+
+#footer{
+
+background:rgba(10,10,10,0.9);
+position: relative;
+
+width:100%;
+height:250px;
+-webkit-box-shadow: 0px -4px 9px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px -4px 9px -4px rgba(0,0,0,0.75);
+box-shadow: 0px -4px 9px -4px rgba(0,0,0,0.75);
+}
+#footDiv{float:right;position:relative;right:20px;}
+#footList{
+	float:left;
+	position:relative;
+	padding-top: 10px;
+	padding-bottom:10px;
+	top:0px;
+	left:40px;
+	width:250px;
+	height:auto;
+	
+}
+#footLogo{height:70px;width:180px;}
+span{background:url("../images/smallDot.png") no-repeat left;
+text-shadow: 0px 1px 4px rgba(0,0,0,1.0);font-size:15pt;
+padding-left:20px;
+color:white;
+}
+span:hover{cursor:pointer;font-size:17pt;
+background:url("../images/smallDotFilled.png") no-repeat left;
+}
+.smallDot{width:12px;height:12px; margin-right:20px;}
+/*Footer end*/
+.text-shadow{color:white;}
+
+
+
+/*Header styling END*/
+ 
+ 
+ 
  
 /********************About Us START*****************************/
 .topAboutBar button:hover{cursor:pointer;}
@@ -713,20 +775,92 @@ height:180px;
 /*----- Page Load ------*/
 
 
-@media(min-width:320px) {
+/*Size styling START*/
+@media(min-width:320px) and (max-width:767px)
+{
+    /*Profile area START*/
+	#profileContainer
+	{
+		width:300px;
+		height:auto;
+	}
+	#topProfileBar
+	{
+		height:70px;
+		text-align:center;
+	}
+	#topProfileBar div{height:70px;width:300px;}
+	#topProfileBar button
+	{
+	    margin-top:2px;
+		float:none;
+	}
+	#portfolioContainer{height:420px;}
+	#portImageBack
+	{
+	  position:static;margin-left:auto;margin-right:auto;
+	  float:none;
+	  margin-top:7px;
+    }
+	#profileEditButton{top:-202px;}
+	#uploadPictureDiv{display: none;}
+	
+	#aboutMeContainer, #frame2, #authorOfList,#contactInfoContainer
+	{
+	  float: none;width:100%;
+	 height:260px;
+	}
+	#aboutMe{
+	 width:100%;float:none;margin-left:auto;margin-right:auto;
+	 position:static;
+	 }
+	.details, .profileInfo{width:90%;float:none;margin-left:auto;margin-right:auto;
+	 position:static;
+	}
+	
+	/*Profile area END*/
+	
+	/*Figbook menu area START*/
 	/*figbook heading remove and add with different screen size*/
 	#figbookHeading{display:none;}
-	
-	
 	/*Styling menu items*/
 	.menuBox:nth-child(1){margin-top:40px;}
 	.menuBox:nth-child(2){margin-top:40px;}
 	.menuBox:nth-child(3){margin-top:40px;}
 	.menuBox:nth-child(4){margin-top:40px;}
 	
+	 #footer{height:230px;width:100%;padding:1px;}
+    #footDiv
+    {
+        position: static;
+        float:none;margin-left:auto;margin-right:auto;
+        margin-top:10px;
+        width:200px;
+    }
+    #footDiv h2{display: none;}
+    #footList{float:none;margin-left:auto;margin-right:auto;height:auto;}
+	/*Figbook menu area END*/
+	
+	/*About us Area START*/
+	#menu-5{height:auto;width:300px;margin-left:auto;margin-right:auto;}
+	.aboutFrame{height:320px;width:300px;float:none;}
+ 	.aboutFrame:nth-of-type(4) {margin-bottom:40px;}
+	.topAboutBar{width:300px;}
+	#menu-container{padding-left:1px;padding-right:1px;}
+	/*About us Area END*/
+	
+}
+
+/*Size styling START*/
+
+
+
+@media(min-width:320px) {
+	
+	
 	#menu-1{width:318px;margin-left:auto;margin-right:auto;}
 	#powered{display:none;}
-	#menu-container{width:100%;min-height:1200px;padding:20px;padding-top: 100px;}
+	#menu-container{width:100%;min-height:1000px;padding:1px;padding-top: 100px;}
 	.templatemo_link{height:40px;line-height:40px;padding:0px;text-align:center;width:100%;}
 	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
 	.menuBox{text-align:center;height:150px;width:305px;float:left;margin:5px;}
@@ -879,34 +1013,9 @@ height:180px;
 	#contactImage{width:400px;float:left;}
 	#aboutMeImage{width:400px;float:left;}
 	#aboutLeftBack{width:360px;}
-	.templatemo_rightgap_about	{ width:260px;float:left;   }
-	.templatemo_botgap	{ margin: 0px 0px 16px 0px; }
-	.templatemo_topgap	{ margin-top: 0px; }
-	
-	.templatemo_bordergapborder	{ padding: 0px 16px; }
-	.templatemo_graybg	{ height: 466px; }
-	.templatemo_col37	{ float: left; width: 37.5%; position: relative; }
-	.templatemo_col50	{ float: left; width: 50%; position: relative; }
-	.templatemo_form { padding: 10px 0px; }
-	.templatemo_form textarea { height: 150px; }
-	.templatemo_address { font-size: 14px; }
-	.templatemo_portfoliotext { width: 95%; padding: 30px; font-size: 16px; }
-	.resp-vtabs .templatemo_aboutcontainer, .resp-vtabs .templatemo_testicontainer	{ width: 300px; }
-	.templatemo_leftgap_about	{ padding: 0px 0px 0px 10px; }
-	.resp-vtabs ul.templatemo_tab li, 
-	.resp-vtabs ul.templatemo_tab li.resp-tab-active, 
-	.resp-vtabs ul.templatemo_testitab li, 
-	.resp-vtabs ul.templatemo_testitab li.resp-tab-active { line-height: 93px; height: 93px; }
-	.resp-vtabs .templatemo_tab li, 
-	.resp-vtabs .templatemo_testitab li { padding: 0px;  margin-bottom: 15px; }
-	.templatemo_frame	{ height: 406px; padding: 0px 30px; }
-	.templatemo_link { height: 40px; line-height: 40px; padding: 0px; }
-	/*.container { left: 50%; margin-left: -585px; }*/
-	.logocontainer	{ width: 1140px; padding: 0px 30px; margin: 0 auto; }
-	.templatemo_insideportfolio	{ height: 316px; }
-	.templatemo_leftgap_about .templatemo_link { height: 142px; line-height: 142px; padding: 0px; }
-	.templatemo_linkservice, .templatemo_linkcontact { height: 145px; line-height: 145px; padding: 0px; }
-}#contactGray {
+}
+
+#contactGray {
 }
 #templatemo_graybg {
 }

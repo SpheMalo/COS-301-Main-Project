@@ -140,11 +140,11 @@
 				
 				<div id="topProfileBar">
 					<button class="show-1 templatemo_homeabout">Go Back</button>
-					<div style="width:370px;float:right;">								
+													
 						<button id="delete-button">Delete Account</button>
 						<button id="suspend-button">Suspend Account</button>
 						<button id="activate-button">Activate Account</button>
-					</div>
+					
 				</div>
 				<div id="portfolioContainer"><!--PortfolioContainer START-->
 					<div id="portImageBack">

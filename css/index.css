@@ -10,6 +10,35 @@ html,body
 .wrapper{display:none;}
 .wrapperReg{display:none;}
 
+.wrapper {
+  background: #50a3a2;
+  background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+  position:relative;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:100px;
+  width: 600px;
+  height: 400px;
+  overflow: hidden;
+  z-index = 10001;
+}
+.wrapperReg{
+  background: #50a3a2;
+  background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+  position:relative;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:100px;
+  width: 600px;
+  height: 500px;
+  overflow: hidden;
+  z-index = 10001;
+
+}
+
+
 #forgot-password
 {
   font-size: 15pt;
@@ -90,12 +119,12 @@ text-shadow: 0 1px 2px rgba(107,207,198,1.00);
 background:rgba(10,10,10,0.9);
 bottom:0px;
 width:100%;
-height:250px;
+height:180px;
 -webkit-box-shadow: 0px -4px 9px -4px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px -4px 9px -4px rgba(0,0,0,0.75);
 box-shadow: 0px -4px 9px -4px rgba(0,0,0,0.75);
 }
-#footDiv{float:right;position:relative;top:170px;right:20px;}
+#footDiv{float:right;margin-right:20px;margin-top:10px;width:200px;}
 #footList{
 	float:left;
 	position:relative;
@@ -104,7 +133,7 @@ box-shadow: 0px -4px 9px -4px rgba(0,0,0,0.75);
 	top:0px;
 	left:40px;
 	width:250px;
-	height:250px;
+	height:auto;
 	
 }
 span{background:url("../images/smallDot.png") no-repeat left;
@@ -200,5 +229,126 @@ text-shadow: 1px 2px 10px rgba(0,0,0,1.0);
 	text-shadow: 1px 2px 10px rgba(0,0,0,1.0);
 }
 /*All text related styling END*/
+
+/*Size styling START*/
+@media(min-width:320px) and (max-width:767px)
+{
+    html,body{overflow-x:hidden;}
+    /*Set container size START*/
+    #background{height:auto;min-height:1400px;width:100%; min-width:320px; }
+    #container
+    {   min-width:320px;     
+        width:100%;
+        height:auto;
+        min-height:1400px;
+    }
+    /*Set container size END*/
+    
+    /*Style tree texts START*/
+    #whatWorks,#whyFigbook,#figtoryWho
+    {
+        width:300px;
+        height:auto;
+        float:none;
+        margin-left:auto;margin-right:auto;
+        margin-top:50px;
+        position: static;
+    }
+    /*Style tree texts END*/
+    
+    /*Style Footer START*/
+    #footer{height:230px;width:100%;padding:1px;}
+    #footDiv
+    {
+        position: static;
+        float:none;margin-left:auto;margin-right:auto;
+        margin-top:10px;
+        width:200px;
+    }
+    #footDiv h2{display: none;}
+    #footList{float:none;margin-left:auto;margin-right:auto;height:auto;}
+    /*Style Footer END*/
+    
+    /*Login and register Style START*/
+    #figbookHeading{display:none;}
+    #menu{width: auto;height:auto;}
+    #log,#reg
+    {
+        font-size: 14pt;
+        width:75px;
+        float:right;
+        margin-left:3px;
+    }
+    #log:hover ,#reg:hover{font-size: 15pt;height:45px;}
+    
+    .wrapper, .wrapperReg{width:300px;}
+    #lightbox-shadow{min-height:1200px;}
+    #lightbox{margin-bottom:200px;}
+    /*Login and register Style END*/
+    
+}/*End of 320px*/
+
+@media(min-width:768px) and (max-width:991px)
+{
+    html,body{overflow-x:hidden;}
+    /*Set container size START*/
+    #background{height:auto;min-height:1100px;width:100%; min-width:320px; }
+    #container
+    {   min-width:320px;     
+        width:100%;
+        height:auto;
+        min-height:1100px;
+    }
+    /*Set container size END*/
+    
+    /*Style tree texts START*/
+    #whatWorks,#whyFigbook,#figtoryWho
+    {
+        width:500px;
+        height:auto;
+        float:none;
+        margin-left:auto;margin-right:auto;
+        margin-top:50px;
+        position: static;
+    }
+    /*Style tree texts END*/
+    
+    /*Login and register Style START*/
+    #log,#reg
+    {
+        font-size: 16pt;
+        width:100px;
+        float:right;
+        margin-left:3px;
+    }
+    #log:hover ,#reg:hover{font-size: 17pt;height:45px;}
+    /*Login and register Style END*/
+    
+    /*Style Footer START*/
+    #footer{height:180px;width:100%;padding:1px;}
+    #footDiv
+    {
+        position: static;
+        float:right;
+        margin-top:10px;
+        margin-right:20px;
+        width:200px;
+    }
+    #footList{height:auto;}
+    /*Style Footer START*/
+    
+    /*Lightbox bottom adjust*/
+    #lightbox{margin-bottom:200px;}
+}
+@media(min-width:992px and max-width:1199px)
+{
+    
+}
+@media(min-width:1200px)
+{
+    
+}
+
+/*Size styling END*/
 
 
