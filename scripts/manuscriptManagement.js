@@ -115,6 +115,11 @@ $(document).ready(function()
                    
 	});	
 	
+	$('.options').click(function(){
+		    $('.optionsSlide').removeClass('pullDown');
+			$('.optionsSlide').css('visibility','hidden');	
+	});
+	
 	$('#options').click(function(){
             console.log(localStorage.bookTitle);
                 if(localStorage.bookTitle !==""){
@@ -136,7 +141,7 @@ $(document).ready(function()
 			
 		}
 		else
-		{
+		{	
 			$('.options').removeClass('pullDown');
 			$('.optionsSlide').css('visibility','hidden');			
 		}
@@ -176,7 +181,16 @@ function addLightbox(insertContent) {
 			$('body').append(theLightbox);
 		}
 		
+		$(insertContent).css('display','block');
 		// remove any previously added content
+		var copy = document.getElementById("lightbox").childNodes;
+		if (copy.length >= 1) {
+			for (var i = 1;i<=copy.length; i++) {
+				$(copy[i]).css('display','none');
+				$('body').append(copy[i]);
+			}
+			
+		}
 		//$('#lightbox').empty();
 		
 		//center the lightbox
@@ -192,6 +206,9 @@ function addLightbox(insertContent) {
 		$('#lightbox').css('top', $(window).scrollTop() + 100 + 'px');
 		
 		// display the lightbox
+		//alert($('#lightbox-shadow').css('background-color'));
+		
+		
 		
 		$('#lightbox-shadow').show();
 		$('#lightbox').show();
@@ -206,7 +223,7 @@ function addLightbox(insertContent) {
 			// hide lightbox/shadow <div/>'s
 			$("#addChapterArea").fadeOut("slow",function(){});
 			$("#sendManuscriptContainer").fadeOut("slow",function(){});
-            $("#DelBookDiv").fadeOut("slow",function(){});
+			$("#DelBookDiv").fadeOut("slow",function(){});
 			$("#bookDiv").fadeOut("slow",function(){});
 			$('#lightbox').hide();
 			$('#lightbox-shadow').hide();

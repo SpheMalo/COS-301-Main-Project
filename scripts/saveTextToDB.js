@@ -1,6 +1,7 @@
 
 function saveText()
 {
+    addGif('saving');
     //Getting info to pass to the ajax function
     var sectionHeading = $("#pageEditTitle").val();
     var sectionNumber = $("#saveBtn").attr("name");
@@ -31,7 +32,7 @@ function saveText()
             data: "json="+jsonString,
             dataType: 'json',
             type: 'POST',
-            success: function (result) {alert(JSON.stringify(result));
+            success: function (result) {//alert(JSON.stringify(result));
                 if (result.message == "no_conflict")//No conflict occured so the text can be persisted to the database
                 {
 
@@ -53,8 +54,8 @@ function saveText()
                             {
                                 if (data && data.edit && data.edit.result === 'Success')
                                 {
-
-                                    alert("Section saved successfully");
+                                    removeGif();       
+                                    //alert("Section saved successfully");
 									//This will display the actual page again. with updated values
 									var inside = document.getElementsByClassName('insideText');
 									var head = document.getElementsByClassName('sectionHeading');
@@ -96,6 +97,8 @@ function saveText()
                 }//end of if data == true
                 else if (result.message == "conflict")
                 {
+                    removeGif(); 
+                  alert("There was a merging conflict, you will be forwarded to a resolution page.");
                   var bookDetails = {
                           "sectionHeading": sectionHeading,
                           "title": localStorage.bookTitle,
@@ -115,6 +118,7 @@ function saveText()
 
             }
 			});
+            removeGif(); 
 }
 
 
@@ -156,3 +160,30 @@ function resolveConflict()
     $("#newContentTextArea").html(contentToParse);
     document.getElementById("last_edited_by").innerHTML = conflictData.last_edited_by;
 }
+
+//Adding lightbox effects
+	
+
+function addGif(name)
+{
+    var obj = '<div id="loadingDiv" style="position:relative;width:100px;height:30px;">'
+            +'<img src="FeedBackIcons/'+name+'.GIF" alt="Feedback Icon" '
+            +'style="width:100px;height:30px;">'
+            +'</div>';
+    var left = (window.innerWidth-100)/2;
+    //var top = (window.innerHeight-30)/2;
+    
+    addLightbox(obj);
+    $("#loadingDiv").css('left','250px');
+    $("#loadingDiv").css('top','100px');
+   // $("#lightbox-shadow").css('background-color','rgba(250,250,250,0.7)');
+}
+function removeGif()
+{
+    $("#loadingDiv").delay(1000).fadeOut(600, function(){
+        $(this).remove();
+        closeLightbox();
+    });
+}
+
+

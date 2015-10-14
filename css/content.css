@@ -15,9 +15,10 @@ html,body
 	background-size:cover;
     
 }
+
 #lightbox {
 	position: absolute;
-	top: 0;
+	top: 200px;
 	width: 600px;
 	text-align: center;
 	background: transparent;
