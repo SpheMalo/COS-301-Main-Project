@@ -31,20 +31,42 @@ $(document).ready(function()
                             left: '0px'
                     
                         },500)
-						$('#commentSide').animate({
-                    
-                            left: '-320px'
-                    
-                        },500)
+						if ($('#commentSide').css('width') < '320px')
+						{
+							$('#commentSide').animate({						
+								
+									left: '-280px'	
+								
+							},500)
+						}
+						else{
+							$('#commentSide').animate({						
+								
+									left: '-320px'	
+								
+							},500)
+							
+						}
 						$('#commentSide').slideToggle(500)
                     }else{
 						$(this).css('background-image','url("images/arrow-left.png")');
 						$('#commentSide').slideToggle(0)
-                        $(this).animate({
-                    
-                            left: '320px'
+						if ($('#commentSide').css('width') < '320px'){
 							
-                        },500)
+							$(this).animate({                  
+								
+									left: '280px'
+							
+							},500)
+						}
+						else
+						{
+							$(this).animate({                  
+								
+									left: '320px'
+							
+							},500)
+						}
 						$('#commentSide').animate({
 							
                             left: '0px'
@@ -85,21 +107,43 @@ $(document).ready(function()
                             right: '0px'
                     
                         },500)
-						$('#editorialLetter').animate({
-                    
-                            right: '-620px'
-                    
-                        },500)
+						if ($('#editorialLetter').css('width') < '620px')
+						{
+							$('#editorialLetter').animate({
+								
+								right: '-280px'
+						
+							},500)
+						}
+						else
+						{							
+							$('#editorialLetter').animate({
+								
+								right: '-620px'
+						
+							},500)
+						}
 						$('#editorialLetter').slideToggle(500)
 						$("#serviceBackground").css('margin-left','auto');
                     }else{
 						$(this).css('background-image','url("images/arrow-right.png")');
 						$('#editorialLetter').slideToggle(0)
-                        $(this).animate({
-                    
-                            right: '620px'
-							
-                        },500)
+                        if ($('#editorialLetter').css('width') < '620px')
+						{
+							$(this).animate({
+						
+								right: '280px'
+								
+							},500)
+						}
+						else
+						{
+							$(this).animate({
+						
+								right: '620px'
+								
+							},500)
+						}
 						$('#editorialLetter').animate({
 							
                             right: '0px'

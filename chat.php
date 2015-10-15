@@ -4,37 +4,7 @@
 <meta charset='UTF-8' />
 <style type="text/css">
 <!--
-.chat_wrapper {
-	width: 400px;
-	height:300px;
-	margin-right: auto;
-	margin-left: auto;
-	background: #CCCCCC;
-	border: 1px solid #999999;
-	padding: 10px;
-	font: 12px 'lucida grande',tahoma,verdana,arial,sans-serif;
-}
-.chat_wrapper .message_box {
-	background: #FFFFFF;
-	height: 150px;
-	overflow: auto;
-	padding: 10px;
-	border: 1px solid #999999;
-}
-.chat_wrapper .panel input{
-	padding: 2px 2px 2px 5px;
-}
-.content{
-	width:100%;min-width:100px;height:30px;
-	text-align:center;
-	border:1px solid rgb(100,100,100);
-	background-color: rgb(200,200,200);
-}
 
-.system_msg{color: #BDBDBD;font-style: italic;}
-.user_name{font-weight:bold;}
-.user_message{color: #88B6E0;}
-#message_box{height:200px;}
 -->
 </style>
 </head>
@@ -105,7 +75,7 @@ $(document).ready(function(){
 				//alert(nameList[i]);
 				if (nameList[i] !== readCookie("username"))
 				{				
-				var newDiv = $('<div class="content">'+nameList[i]+'</div>');
+				var newDiv = $('<div class="contact">'+nameList[i]+'</div>');
 				$('#contacts').append(newDiv);
 				}
 			}

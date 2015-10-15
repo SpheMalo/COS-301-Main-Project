@@ -5,12 +5,14 @@ function addGif(name,wrap)
             +'<img src="FeedBackIcons/'+name+'.GIF" alt="Feedback Icon" '
             +'style="width:100px;height:30px;">'
             +'</div>';
-    var left = (window.innerWidth-100)/2;
+	
+    var left = ($(wrap).width()-100)/2;
     //var top = (window.innerHeight-30)/2;
    // alert($('.wrapper').html());
     //addLightbox(obj);
     $(wrap).append(obj);
-    $("#loadingDiv").css('left','250px');
+   
+    $("#loadingDiv").css('left',left);
     if (wrap === '.wrapper') {
         $("#loadingDiv").css('top','-50px');
     }
