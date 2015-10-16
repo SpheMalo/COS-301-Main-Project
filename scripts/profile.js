@@ -384,6 +384,7 @@ function updatePassword()
 		"action" : "setNewPassword",
 		"email" : document.getElementById("emailInput").value,
     "token" : document.getElementById("passwordToken").value,
+    "password" : document.getElementById("newPass").value
     }
 
 	jsonObj = JSON.stringify(jsonObj);
@@ -393,14 +394,27 @@ function updatePassword()
   		data: 'json='+jsonObj,
   		dataType: 'json',
   		success: function(data){
-  			if (data.message == "invalid token")
+  			if (data.message === "invalid token")
   			{
-  				alert("Invalid/Expired Token. Check that you entered the complete token or request another");
+  				alert("Invalid Token. Check that you entered the complete token or request another");
   			}
-  			else
+                        else if (data.message === "expired token")
+  			{
+  				alert("Expired Token. Check that you entered the complete token or request another");
+  			}
+  			else if(data.message === "success")
   			{
           //TODO: use mediawiki api to set new password for user
+                            alert("Successful, Please login with the new password");
+                            window.location.href = "index.php";
   			}
+                        else if(data.message === "failedToUpdatePassword"){
+                            alert("Failed, Please contact systems administrator at sysadmin@figbooks.cloudapp.net");
+                        }
+                        else{
+                            alert(data.message);
+                            window.location.href = "index.php";
+                        }
   		},
   		error: function(data){
   			alert("error :"+JSON.stringify(data));
