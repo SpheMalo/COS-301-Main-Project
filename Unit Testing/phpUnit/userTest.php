@@ -365,7 +365,5 @@
 		$json = json_encode($item);
 		$this->assertNotNull($this->updateAboutMe("Fakopeleha", $json));
 	}
-
-
     }
 ?>
