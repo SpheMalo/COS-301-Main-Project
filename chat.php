@@ -21,7 +21,7 @@ $(document).ready(function(){
 	//create a new WebSocket object.
 	var wsUri = "ws://localhost:9000/server.php"; 	
 	websocket = new WebSocket(wsUri); 
-	var myto = "Rainier";
+	var myto = "all";
 	var nameList = Array();
 	
 	websocket.onopen = function(ev) { // connection is open 
@@ -101,8 +101,8 @@ $(document).ready(function(){
 			}
 			if(type == 'system')
 			{
-				$('#message_box').append("<div class=\"system_msg\">"+umsg+"</div>");
-				console.log("<div class=\"system_msg\">"+umsg+"</div>");
+				//$('#message_box').append("<div class=\"system_msg\">"+umsg+"</div>");
+				//console.log("<div class=\"system_msg\">"+umsg+"</div>");
 			}
 		}
 		//$('#message').val(''); //reset text

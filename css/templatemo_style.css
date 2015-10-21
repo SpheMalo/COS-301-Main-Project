@@ -1053,8 +1053,8 @@ height:180px;
 	.menuBox:nth-child(4){left:392px;position:relative;top:60px;}
 	
 	/*Main menu styling*/
-	#menu-container{width:100%;min-height:750px;}
-	#menu-1{height:auto;width:1176px;margin-left:auto;margin-right:auto;}
+	#menu-container{width:100%;min-height:800px;}
+	#menu-1{height:auto;width:1176px;margin-left:auto;margin-right:auto;margin-top:60px;}
 	.templatemo_link{height:40px;line-height:40px;padding:0px;text-align:center;width:100%;}
 	.templatemo_mainimg{visibility:visible;width:200px;height:150px;margin-top:-30px;margin-left:41px;}
 	.menu-img{width:300px;height:150px;visibility:visible;}
@@ -1063,4 +1063,5 @@ height:180px;
 	/*Main menu styling*/
 	
 }
+
 

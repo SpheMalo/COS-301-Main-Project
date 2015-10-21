@@ -21,7 +21,7 @@
 		if($db->isConnected()){
 
 			$insertQuery = "INSERT INTO page_comment (comment, page_name, section_number, last_edited_by) VALUES ('$com', '$page_name', '$section_number', '$uName')";
-			$updateQuery = "UPDATE page_comment SET comment = '$com', last_edited_by = '$uName' WHERE section_number = '$section_number' And WHERE page_name= '$page_name' ";
+			$updateQuery = "UPDATE page_comment SET comment = '$com', last_edited_by = '$uName' WHERE section_number = '$section_number' AND page_name= '$page_name' ";
 			
 			$selectQuery = "SELECT * FROM page_comment WHERE section_number = '$section_number' AND page_name = '$page_name' ";
 			
@@ -38,7 +38,7 @@
 			}
 
            	if(isset($insertQueryResult) || isset($updateQueryResult)){
-        		echo $uName;
+        		echo $uName." Successfull." ;
         		//return "successful";
         	}
         	else{
