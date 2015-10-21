@@ -614,25 +614,14 @@ public function sendForgotPasswordEmail($object)
 
       if ($time->format('Y-m-d H:i:s') > $response['token_expire_date'])
       {
-        $response['message'] = "expired token";
+        $response['message'] = "invalid token";
       }
       else
       {
         $uID = $response['username'];
-        //$tmpUser = new PasswordFactory();
-        $pass = stripslashes($obj->password);
-        //$upassword = mysql_real_escape_string($upassword);
-        $pass = mysqli_real_escape_string($this->dbInstance,$pass);
-        //$sql = "UPDATE user SET user_password=CONCAT(':A:', MD5('$pass')) WHERE user_name ='$uID'";
-        $output = shell_exec('php ../mediawiki/maintenance/changePassword.php --user='.$uID.' --password='.escapeshellarg($pass));
-        //if(mysqli_query($this->dbInstance, $sql)){
-        
-          //  $response['message'] = "success";
-        //}
-        //else{
-           // $response['message'] = "failedToUpdatePassword";
-         $response['message'] = $output;
-        
+        $sql = "SELECT * FROM user WHERE user_name='$uID'";
+        $response = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql));
+        $response['message'] = "valid token";
       }
     }
     return $response;

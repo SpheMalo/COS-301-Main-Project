@@ -92,6 +92,16 @@
 	   
 	   <div id="background"> <!--Background START-->
 		 <div id="container"> <!--Container START-->
+		   
+		   <div id="vidContainer"> <!--Video container START-->
+		   <div id="vidMenu"><div>Registration Example</div><div>Login Example</div></div>
+			<video id="vidPlayer" autoplay loop>
+			  <source src="videos/reg.mp4" type="video/mp4">		
+			Your browser does not support the video tag.
+			</video>
+			
+		   </div><!--Video container END-->
+		 
 		   <!--About START-->		 
 		     <div id="whatWorks">
 			 <h2 class="text-color h2">What makes it work?</h2>

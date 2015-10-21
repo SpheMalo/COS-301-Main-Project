@@ -92,7 +92,7 @@
     <div class="content homepage " id="menu-1"> <!--contains the main menu tabs-->
           	
             	<div class="menuBox templatemo_mainservice ">					
-                	<div class="templatemo_link"><a class="show-2 templatemo_page2 menuItem" href="#">Catalogue</a></div>
+                	<div class="templatemo_link"><a class="show-2 templatemo_page2 menuItem" href="#">Manuscripts</a></div>
                     <p class="menuInfo">Start writing a manuscript.<br>
 					Add collaborators to your manuscript.<br>
 					Write editorial letters.<br>
@@ -139,12 +139,10 @@
 			<div id="profileContainer">
 				
 				<div id="topProfileBar">
-					<button class="show-1 templatemo_homeabout">Go Back</button>
-													
+					<button class="show-1 templatemo_homeabout">Go Back</button>						
 						<button id="delete-button">Delete Account</button>
 						<button id="suspend-button">Suspend Account</button>
 						<button id="activate-button">Activate Account</button>
-					
 				</div>
 				<div id="portfolioContainer"><!--PortfolioContainer START-->
 					<div id="portImageBack">

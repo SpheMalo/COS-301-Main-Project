@@ -152,12 +152,14 @@ function addLightbox(insertContent) {
 	//This is the edit and save button for the users profile/portfolio.
 	//It has two states: Save and Edit.
 	
-	function addGif(name)
+	function addGif(statement,name)
 	{
-		var obj = '<div id="loadingDiv" style="position:relative;width:100px;height:30px;">'
-				+'<img src="FeedBackIcons/'+name+'.GIF" alt="Feedback Icon" '
-				+'style="width:100px;height:30px;">'
-				+'</div>';
+    var obj = '<div id="loadingDiv" style="position:relative;width:160px;height:30px;">'
+            +'<div style="height:30px;font-size:20px;font-weight:500;line-height:30px;float:left;color:white;">'+statement+'</div> '
+            +'<img src="FeedBackIcons/'+name+'.GIF" alt="Feedback Icon" '
+            +'style="width:50px;height:30px;">'
+            +'</div>';
+			
 		var left = (window.innerWidth-100)/2;
 		//var top = (window.innerHeight-30)/2;
 		
@@ -175,7 +177,7 @@ function addLightbox(insertContent) {
 	
 	$("#profileEditButton").click(function(){			
 				
-				addGif('saving');
+				addGif('Saving...','loadingNew');
 				
 				//Persisting to the database
 				var profileArray = document.getElementsByClassName("profileInfo");
@@ -384,7 +386,6 @@ function updatePassword()
 		"action" : "setNewPassword",
 		"email" : document.getElementById("emailInput").value,
     "token" : document.getElementById("passwordToken").value,
-    "password" : document.getElementById("newPass").value
     }
 
 	jsonObj = JSON.stringify(jsonObj);
@@ -394,27 +395,14 @@ function updatePassword()
   		data: 'json='+jsonObj,
   		dataType: 'json',
   		success: function(data){
-  			if (data.message === "invalid token")
+  			if (data.message == "invalid token")
   			{
-  				alert("Invalid Token. Check that you entered the complete token or request another");
+  				alert("Invalid/Expired Token. Check that you entered the complete token or request another");
   			}
-                        else if (data.message === "expired token")
-  			{
-  				alert("Expired Token. Check that you entered the complete token or request another");
-  			}
-  			else if(data.message === "success")
+  			else
   			{
           //TODO: use mediawiki api to set new password for user
-                            alert("Successful, Please login with the new password");
-                            window.location.href = "index.php";
   			}
-                        else if(data.message === "failedToUpdatePassword"){
-                            alert("Failed, Please contact systems administrator at sysadmin@figbooks.cloudapp.net");
-                        }
-                        else{
-                            alert(data.message);
-                            window.location.href = "index.php";
-                        }
   		},
   		error: function(data){
   			alert("error :"+JSON.stringify(data));
