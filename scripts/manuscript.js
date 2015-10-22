@@ -795,8 +795,8 @@ $(document).ready(function () {
 									var books = document.getElementsByClassName('bookItem');
 									
 									
-									
-								if ((dataLength+1) === books.length)//This is to force the click calls to execute only once... 
+								//alert(dataLength+" "+counter);	
+								if (dataLength === counter)//This is to force the click calls to execute only once... 
 								{
 											//alert(counter);
 											//Sorting the booklist START	
@@ -823,7 +823,7 @@ $(document).ready(function () {
 									$('.bookItem').click(function (event) {
 										//alert("book clicked : "+$(this).html());
 										//Populating comment dropdown and  comments for each chapter.
-										
+										//alert("Success");
 										
 										
 										var loadPageInfo = {
@@ -854,6 +854,7 @@ $(document).ready(function () {
 															}
 														}
 														, error: function (data1) {
+															
 															//alert(JSON.stringify(data1));
 														}
 													});
@@ -864,7 +865,62 @@ $(document).ready(function () {
 								
 							}
 							else {
+								counter++;
 								//localStorage.permission = "false";
+								if (dataLength === counter)//This is to force the click calls to execute only once...
+								{
+									
+											
+									 $('#createBook').click(function(){
+											//alert('hello');
+											$('.service:nth-child(1)').trigger("click");	
+									  });
+									 
+										$('.bookItem').click(function (event) {
+										//alert("book clicked : "+$(this).html());
+										//Populating comment dropdown and  comments for each chapter.
+										//alert("else");
+										
+										
+										var loadPageInfo = {
+											"title": $(this).html()
+										};
+										//alert(loadPageInfo.title);
+										localStorage.bookTitle = loadPageInfo.title;
+										var Inf = {
+												"action": "getUserRole",
+												"bookTitle": localStorage.bookTitle
+											};
+											var JSONstring = JSON.stringify(Inf);
+											
+											
+											$.ajax({
+														url: 'scripts/FigbookActionHandler/actionHandler.php',
+														data: 'json=' + JSONstring,
+														dataType: 'json',
+														success: function (data1)
+														{
+															//alert(JSON.stringify(data1));
+															localStorage.userRole = data1;
+															//make sure it gets a title for a book to load
+															if (loadPageInfo.title !== "")
+															{
+																get_page(loadPageInfo);
+																commentDropDown(loadPageInfo.title);			
+															}
+														}
+														, error: function (data1) {
+															
+															//alert(JSON.stringify(data1));
+														}
+													});
+													//event.preventDefault();
+													
+									});
+								}
+								
+								
+								
 							}
 						});
 						
@@ -950,15 +1006,11 @@ $(document).ready(function () {
 	                //alert(JSON.stringify(data));
 	            }
 	        });
-	        event.preventDefault();
+	        //event.preventDefault();
 	    }
     function get_page(params) {
 					//alert("Get page call");
-					//Make the comment area visible
-					$("#commentSide").css('display','block');
-					$("#commentHide").css('display','block');
-					//Make the comment hide automatically after showing it.
-					$("#commentHide").trigger("click");
+					
 					
         var title_ = params.title;
         var replaced = title_.split(' ').join('_');
@@ -1007,7 +1059,11 @@ $(document).ready(function () {
 							}
 						}
 					}
-					
+					//Make the comment area visible
+					$("#commentSide").css('display','block');
+					$("#commentHide").css('display','block');
+					//Make the comment hide automatically after showing it.
+					$("#commentHide").trigger("click");
 
 					$( "#pageView" ).append(htmlValue+"</div></div></div>");
 					var headings = document.getElementsByClassName("mw-headline");
