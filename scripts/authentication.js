@@ -1,4 +1,40 @@
 
+function addGif(statement,name,wrap)
+{
+    var obj = '<div id="loadingDiv" style="position:relative;width:160px;height:30px;">'
+            +'<div style="height:30px;font-size:20px;font-weight:500;line-height:30px;float:left;">'+statement+'</div> '
+            +'<img src="FeedBackIcons/'+name+'.GIF" alt="Feedback Icon" '
+            +'style="width:50px;height:30px;">'
+            +'</div>';
+	
+    var left = ($(wrap).width()-100)/2;
+    //var top = (window.innerHeight-30)/2;
+   // alert($('.wrapper').html());
+    //addLightbox(obj);
+    $(wrap).append(obj);
+   
+    $("#loadingDiv").css('left',left);
+    if (wrap === '.wrapper') {
+        $("#loadingDiv").css('top','20px');
+    }
+    else if (wrap === '.wrapperReg') {
+        $("#loadingDiv").css('top','80px');
+        
+    }
+    
+    
+   
+}
+function removeGif()
+{
+    $("#loadingDiv").fadeOut(600, function(){
+        $(this).remove();
+        //closeLightbox();
+    });
+}
+
+
+
 function addLightbox(insertContent) {
 	// add lightbox/shadow <div/>'s if not previously added
 		if($('#lightbox').size() == 0){
@@ -60,12 +96,33 @@ window.onload = function()
 {
 		
 	$(document).ready(function(){
-			
+		
+        //Clicking on the register example link
+         $("#vidMenu div:nth-child(1)").click(function(){
+                $("#vidPlayer").fadeOut(600,function(){
+                        $(this).attr('src','videos/reg.mp4');                        
+                        $("#vidPlayer").fadeIn(600);
+                });  
+               
+        });
+         
+        //Clicking on the Login example link
+        $("#vidMenu div:nth-child(2)").click(function(){
+                
+                $("#vidPlayer").fadeOut(600,function(){
+                        $(this).attr('src','videos/login.mp4');
+                        $("#vidPlayer").fadeIn(600);
+                });              
+        });
+        
+        //Play and Pause video when clicking on it
+        $("#vidPlayer").click(function(){
+                
+              $(this).get(0).paused ? $(this).get(0).play() : $(this).get(0).pause(); 
+        });
 				
 		$('#log').click(function(){
 			addLightbox($(".wrapper"));
-				   
-
 			$(".wrapper").fadeIn("slow",function(){/*finished*/});
 
 		});
@@ -80,17 +137,19 @@ window.onload = function()
 		
 		
 		$('#register-button').click(function(event){
-
+            addGif('Registering...','loadingNew','.wrapperReg');
 			var pass1 = document.getElementById('password');
 			var pass2 = document.getElementById('confirmpassword');
 			
 			if (pass1.value == "" || pass2.value == "")
 			{
+                removeGif();
 				addErrorCode("Passwords Do Not Match. Please try again", "password");
 				event.preventDefault();
 			}
 			else if (pass2.value != pass1.value)
 			{
+                removeGif();
 				addErrorCode("Passwords Do Not Match. Please try again", "password");
 				
 				event.preventDefault();
@@ -110,7 +169,8 @@ window.onload = function()
 				
 				var stat = 1;
 				wiki_createAccount(UserInfo.username,UserInfo.password,UserInfo.email, UserInfo.role, stat);
-				event.preventDefault();
+				removeGif();
+                event.preventDefault();
 			}
 		});
 		
@@ -136,13 +196,15 @@ window.onload = function()
 			}
 			
 			else
-			{	
+			{
+                removeGif();
 				var incorrectVal = document.getElementById('incorrectVal');
 				incorrectVal.innerHTML = errCode;
 			}
 				
 			if (field == "password" || field == "password-name-match")
 			{
+                removeGif();
 				var pass1 = document.getElementById('password');
 				var pass2 = document.getElementById('confirmpassword');
 			
@@ -159,6 +221,7 @@ window.onload = function()
 			}
 			else if (field == "invalidemailaddress")
 			{
+                removeGif();
 				var email = document.getElementById('email');
 				
 				email.value = '';
@@ -170,6 +233,8 @@ window.onload = function()
 			}	
 			else if (field == "userexists")
 			{
+                
+                removeGif();
 				var username = document.getElementById('username');
 				
 				username.value = '';
@@ -181,6 +246,7 @@ window.onload = function()
 			}
 			else if (field == "loginErr")
 			{
+                removeGif();
 				if (document.getElementById('loginIncorrect') == null)
 				{
 					var form = document.getElementById("logDiv");
@@ -193,7 +259,8 @@ window.onload = function()
 					form.appendChild(incorrectVal);
 				}
 				else
-				{	
+				{
+                        
 					var incorrectVal = document.getElementById('loginIncorrect');
 					incorrectVal.innerHTML = errCode;
 				}
@@ -218,7 +285,8 @@ window.onload = function()
 		$('#logoutDiv').click(function(){wiki_logout(); });
 		
 		$( "#login-button" ).click(function(event) {
-			var UserInfo = {
+			addGif('Logging in...','loadingNew','.wrapper');
+            var UserInfo = {
 				"username" : document.getElementById("LoginUsername").value,
 				"password" : document.getElementById("LoginPassword").value,
 				"action" : "login"
@@ -230,6 +298,7 @@ window.onload = function()
 
 		function ajaxLoginFunction(UserInfo){
 			wiki_auth(UserInfo.username,UserInfo.password,"insideContent.php");
+            removeGif();
 		}
 
 		/**
@@ -252,8 +321,10 @@ window.onload = function()
 								   if (data.createaccount.result === "Success") { 
 									   //alert(data.login.sessionid);
 									   //document.location.href=ref; 
-									   alert("You have successfully registered, you can now log in.");
-									    window.location.href = "";
+									  removeGif();
+                                       alert("You have successfully registered, you can now log in.");
+									    
+                                        window.location.href = "";
 									   
 									  console.log("Succesfully registered");
 								   } else {
@@ -309,14 +380,20 @@ window.onload = function()
                                                                                 success: function(data1){
                                                                                         console.log(data1);
                                                                                         if(data1 === "1"){
-                                                                                            document.location.href=ref; 
+                                                                                            removeGif();
+                                                                                            document.location.href=ref;
+                                                                                        
+                                                                                            
+                                                                                              
+                                                                                             
                                                                                         }
                                                                                         else if(data1 === "0"){
-                                                                                            
+                                                                                            removeGif();
                                                                                             document.cookie = "username" + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
                                                                                             addErrorCode("Your account has been deleted, contact administrator", "loginErr");
                                                                                         }
                                                                                         else if(data1 === "2"){
+                                                                                                removeGif();
                                                                                             document.cookie = "username" + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
                                                                                             addErrorCode("This account has been suspended, contact administrator", "loginErr");
                                                                                         }
@@ -324,26 +401,31 @@ window.onload = function()
                                                                                         //document.location.href=ref; 
                                                                                 },
                                                                                 error: function(data1){
+                                                                                        removeGif();
                                                                                         console.log("error :"+data1.responseText);
                                                                                 }		
                                                                             });
 									  
 									
 								   } else {
+                                        removeGif();
 									addErrorCode("Invalid Credentials. Please enter valid credentials or Register a new account.", "loginErr");
 									console.log('Result: '+ data.login.result);
 								   }
 								} 
 								else {
+                                        removeGif();
 					   				console.log('Error: ' + data.error);
 								}
 			   				 }
 			   			);
 					} else {
+                        removeGif();
 			    		console.log('Result: ' + data.login.result);
 					}
 
 					if(data.error) {
+                        removeGif();
 					    console.log('Error: ' + data.error);
 					}
 			    }

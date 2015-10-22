@@ -30,6 +30,7 @@ html, body {
 	min-height: 550px;
 	position: relative;
 	padding:100px;
+	padding-left:10px;padding-right:10px;
 	width:100%;
 	
 	background:rgba(194, 202, 204,0.5);
@@ -116,8 +117,19 @@ a:visited{
   text-decoration: none;
   color:rgba(40,40,250,1);
 }
-#portImageBack{height:200px;width:150px; float:left;margin-left:5px;margin-top:5px;}
-#portImage{height:200px;width:150px;}
+#portImageBack{
+
+  height:200px;width:150px;float:left;
+  margin-left:5px;margin-top:5px;
+}
+#editImage{visibility: hidden;position: relative;float:right; top: 0;z-index:2;}
+#portImageBack:hover img{
+  visibility: visible;
+}
+#portImage{height:200px;width:150px; position: relative; top:-27px;z-index:1;}
+#portImage:hover{cursor: pointer;}
+#uploadForm{visibility: hidden;}
+
 
 #portfolioGray{width:550px;
 	float: left; 
@@ -126,18 +138,7 @@ a:visited{
 	z-index:2;
 }
 /*this is the background div for the textarea where the manuscript will be written*/
-#bookDiv{width:500px;min-height:240px;margin-right:auto;margin-left:auto;background-color:rgba(200,200,200,1.00);
-	text-align:center;
-	
-	
-background: rgba(142,208,232,1);
-background: -moz-linear-gradient(top, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(142,208,232,1)), color-stop(50%, rgba(153,226,250,1)), color-stop(100%, rgba(156,218,240,1)));
-background: -webkit-linear-gradient(top, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
-background: -o-linear-gradient(top, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
-background: -ms-linear-gradient(top, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
-background: linear-gradient(to bottom, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
-}
+
 #backDiv{overflow-y:auto;
 	overflow-x:hidden;
 	height:100%;
@@ -273,7 +274,6 @@ background: -o-linear-gradient(top, rgba(92,194,219,1) 0%, rgba(83,186,214,1) 50
 background: -ms-linear-gradient(top, rgba(92,194,219,1) 0%, rgba(83,186,214,1) 50%, rgba(109,189,209,1) 100%);
 background: linear-gradient(to bottom, rgba(92,194,219,1) 0%, rgba(83,186,214,1) 50%, rgba(109,189,209,1) 100%);
 
-
 }
 #goBackService{
 
@@ -321,6 +321,19 @@ background: linear-gradient(to bottom, rgba(196,192,196,1) 0%, rgba(130,132,133,
 box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);
 
 }
+
+#lightbox {
+	position: fixed;
+	top: 0;
+	height:100%;
+	width: 100%;
+	text-align: center;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1001;
+	display: none;
+}
+
+
 a:active
 {
 	color: white;
@@ -490,11 +503,10 @@ h2.resp-accordion	{ color: #ffffff; }
   height:35px;
   padding-top:2px;
 }
-#aboutme{height:180px;padding:2px;width:305px;resize: none;}/*This is the about me textArea*/
+#aboutme{height:180px;padding:2px;resize: none;width:100%;}/*This is the about me textArea*/
 #editAboutMe:hover{cursor:pointer;}
 #editAboutMe
-{
-	margin-top:20px;
+{ 	 
 	width:120px;height:30px;
 }
 #aboutMeContainer
@@ -514,8 +526,8 @@ h2.resp-accordion	{ color: #ffffff; }
 {
    float:left;
    height:auto;
-   width:300px;
-  margin-left:20px;
+   width:90%;
+   margin-left:5%;
    text-align:center;
 }
 #aboutImage
@@ -524,8 +536,7 @@ h2.resp-accordion	{ color: #ffffff; }
   height:120px;
   
 }
-#portfolioContainer button:hover{cursor:pointer;}
-#portfolioContainer button{width:120px;height:30px;}
+
 #portfolioContainer
 {
  
@@ -533,13 +544,13 @@ h2.resp-accordion	{ color: #ffffff; }
   overflow-y:auto;
   display:block;
   width:100%;
-  height:220px;
-  
+  height:240px;  
   float:left;
   
 
   border:3px groove rgba(255, 255, 255,0.3);
 }
+#frame1 p:nth-of-type(1){margin-top:15px;}
 #frame1 p{font-size:12pt;margin-top:5px;}
 #frame1 input
 {
@@ -549,23 +560,36 @@ font-size:14pt;
 {
 float:left;overflow-x:hidden;
 margin-left:20px;
-width:250px;text-align:left;
-
+width:260px;text-align:left;
+margin-top: -10px;
 }
-#frame2 textarea{width:300px;height:160px;}
+#frame2 textarea{height:180px;width:90%;resize: none;}
 #frame2
 {
-float:left;overflow-x:hidden;
-margin-top: 5px;
-width:350px;text-align:center;
+  background-color:rgb(209, 209, 209);
+  overflow-y:auto;
+  display:block;
+  width:30%;
+  height:300px;
+  margin-left:auto;
+  margin-right:auto;
+  float:left;
+  text-align: center;
+  
+  border:3px groove rgba(255, 255, 255,0.3);
 
 }
 
 #profileEditButton:hover{cursor: pointer;}
 #profileEditButton{
 	float:right;
-	margin-top:5px;
-	width:120px;height:30px;
+	position:relative;
+	top:3px;
+	right:3px;
+	width:30px;height:30px;
+	background-image: url("../images/save.png");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 #contactInfoContainer
@@ -574,36 +598,101 @@ width:350px;text-align:center;
   background-color:rgb(209, 209, 209);
   overflow-y:auto;
   display:block;
-  width:70%;
+  width:22%;
   height:300px;
   margin-left:auto;
   margin-right:auto;
   float:left;
-  
+  margin-bottom:40px;
   border:3px groove rgba(255, 255, 255,0.3);
 }
 #authorOfList
 {
-  margin-left:20px;
-  width:200px;
+  background-color:rgb(209, 209, 209);
+
+  width:18%;
+  height:300px;
   float:left;
   text-align:center;
-  
+  border:3px groove rgba(255, 255, 255,0.3);
 }
+#booklist li{width:160px;margin-left:20px;text-align: left;}
+#booklist{width: auto;margin-left:20px;}
 #contactInfoDiv
 {
-  
+
   width:250px;
   float:left;
-  margin-left:10px;
   text-align:center;
 }
-.aboutMeInfo
-{
-  width:300px;
-  height:150px;
-}
+
 /********************Profile END*****************************/
+ 
+ /*Header styling START*/
+#header{
+	width:100%;
+	height:65px;
+	position:fixed;
+	top:0px;
+	z-index:20;
+	background-color:white;
+-webkit-box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
+
+}
+#figbookLogo{width:100px;height:100px;position:relative;left:20px;float:left;}
+#figbookHeading{position:relative;float:left;left:40px;top:-24px;
+   color:rgba(51, 204, 51,0.9);
+	text-shadow: 3px 3px 3px rgba(92, 92, 92,0.4);
+	font-size:64pt;
+	font-weight: 500;	
+}
+
+/*Footer Start*/
+
+#footer{
+
+background:rgba(10,10,10,0.9);
+position: relative;
+
+width:100%;
+height:180px;
+-webkit-box-shadow: 0px -4px 9px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px -4px 9px -4px rgba(0,0,0,0.75);
+box-shadow: 0px -4px 9px -4px rgba(0,0,0,0.75);
+}
+#footDiv{float:right;margin-right:20px;margin-top:10px;width:200px;}
+#footList{
+	float:left;
+	position:relative;
+	padding-top: 10px;
+	padding-bottom:10px;
+	top:0px;
+	left:40px;
+	width:250px;
+	height:auto;
+	
+}
+#footLogo{height:70px;width:180px;}
+span{background:url("../images/smallDot.png") no-repeat left;
+text-shadow: 0px 1px 4px rgba(0,0,0,1.0);font-size:15pt;
+padding-left:20px;
+color:white;
+}
+span:hover{cursor:pointer;font-size:17pt;
+background:url("../images/smallDotFilled.png") no-repeat left;
+}
+.smallDot{width:12px;height:12px; margin-right:20px;}
+/*Footer end*/
+.text-shadow{color:white;}
+
+
+
+/*Header styling END*/
+ 
+ 
+ 
  
 /********************About Us START*****************************/
 .topAboutBar button:hover{cursor:pointer;}
@@ -661,8 +750,9 @@ width:350px;text-align:center;
   margin-top:40px;
   height:450px;
 }
+button.show-1{width:120px;}
 #menu-6 button:hover{cursor:pointer;}
-#menu-6 button{width:120px;height:30px;}
+#menu-6 button{height:30px;}
 .contactForm{width:45%;height:450px;float:left;
   border:3px groove rgba(255, 255, 255,0.3);
   background-color:rgb(209, 209, 209);
@@ -679,50 +769,235 @@ width:350px;text-align:center;
 #message{resize: none;
 height:180px;
 }
+#contactUsSend{width:120px;}
 /********************Contact Us END*****************************/
- 
-/*----- Page Load ------*/
 
 
-@media(min-width:320px) {
+/*menuBox styling*/
+.menuBox{
+  background-color:#f7f7f7;
+border: 5px solid rgb(190, 190, 190);
+z-index:1;
+padding-top:10px;
+background-repeat: no-repeat;
+background-position: bottom;
+background-size: 90px 100px;
+
+}
+.menuBox p{display:none;}
+.menuBox:hover{
+background-color:white;
+border: 5px solid rgb(145, 145, 145);
+height:300px;
+z-index:500;
+margin-bottom:-108px;
+
+cursor: default;
+-webkit-box-shadow: 3px 0px 40px 0px rgba(54,54,54,1);
+-moz-box-shadow: 3px 0px 40px 0px rgba(54,54,54,1);
+box-shadow: 3px 0px 40px 0px rgba(54,54,54,1);
+
+}
+.menuBox:hover p{display:block;}
+.menuBox:nth-child(1){background-image: url('../images/manuIcon.png');}
+.menuBox:nth-child(2){background-image: url('../images/profIcon.png');}
+.menuBox:nth-child(3){background-image: url('../images/aboutIcon.png');}
+.menuBox:nth-child(4){background-image: url('../images/contactIcon.png');
+background-size: 100px 100px;
+}
+
+
+
+.menuBox:nth-child(3):hover{margin-bottom:-105px;}
+
+/*Size styling START*/
+@media(min-width:320px) and (max-width:767px)
+{
+	
+  
+  
+    /*Profile area START*/
+	#profileContainer
+	{
+		width:300px;
+		height:auto;
+	}
+	#topProfileBar
+	{
+		height:70px;
+		text-align:center;
+	}
+	#topProfileBar div{height:70px;width:300px;}
+	#topProfileBar button
+	{
+	    margin-top:2px;
+		float:none;
+	}
+	#portfolioContainer{height:420px;}
+	#portImageBack
+	{
+	  position:static;margin-left:auto;margin-right:auto;
+	  float:none;
+	  margin-top:7px;
+    }
+	#profileEditButton{top:-202px;}
+	#uploadPictureDiv{display: none;}
+	
+	#aboutMeContainer, #frame2, #authorOfList,#contactInfoContainer
+	{
+	  float: none;width:100%;
+	 height:260px;
+	}
+	#aboutMe{
+	 width:100%;float:none;margin-left:auto;margin-right:auto;
+	 position:static;
+	 }
+	.details, .profileInfo{width:90%;float:none;margin-left:auto;margin-right:auto;
+	 position:static;
+	}
+	/*Profile area END*/
+	
+	/*Figbook menu area START*/
 	/*figbook heading remove and add with different screen size*/
 	#figbookHeading{display:none;}
-	
-	
 	/*Styling menu items*/
 	.menuBox:nth-child(1){margin-top:40px;}
 	.menuBox:nth-child(2){margin-top:40px;}
 	.menuBox:nth-child(3){margin-top:40px;}
-	.menuBox:nth-child(4){margin-top:40px;}
+	.menuBox:nth-child(4){margin-top:40px;}	
+	.menuBox:hover{
+	  background-color:white;
+	  border: 5px solid rgb(145, 145, 145);
+	  height:300px;
+	  z-index:500;
+	  margin-bottom:20px;
+	  cursor: default;
+	  -webkit-box-shadow: 3px 0px 40px 0px rgba(54,54,54,1);
+	  -moz-box-shadow: 3px 0px 40px 0px rgba(54,54,54,1);
+	  box-shadow: 3px 0px 40px 0px rgba(54,54,54,1);
+	  
+	  }
+	  .menuBox:nth-child(3):hover{margin-bottom:20px;}
 	
+	
+	#footer{height:230px;width:100%;padding:1px;}
+    #footDiv
+    {
+        position: static;
+        float:none;margin-left:auto;margin-right:auto;
+        margin-top:10px;
+        width:200px;
+    }
+    #footDiv h2{display: none;}
+    #footList{float:none;margin-left:auto;margin-right:auto;height:auto;}
+	/*Figbook menu area END*/
+	
+	/*About us Area START*/
+	#menu-5{height:auto;width:300px;margin-left:auto;margin-right:auto;}
+	.aboutFrame{height:320px;width:300px;float:none;}
+ 	.aboutFrame:nth-of-type(4) {margin-bottom:40px;}
+	.topAboutBar{width:300px;}
+	#menu-container{padding-left:1px;padding-right:1px;}
+	/*About us Area END*/
+	
+	/*Main menu styling START*/
 	#menu-1{width:318px;margin-left:auto;margin-right:auto;}
 	#powered{display:none;}
-	#menu-container{width:100%;min-height:1200px;padding:20px;padding-top: 100px;}
-	.templatemo_link{height:40px;line-height:40px;padding:0px;text-align:center;width:100%;}
-	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
-	.menuBox{text-align:center;height:150px;width:305px;float:left;margin:5px;}
-	
+	#menu-container{width:100%;min-height:1100px;padding:1px;padding-top: 100px;}
+	.menuBox{text-align:center;height:170px;width:305px;float:left;margin:5px;}
 	.text-shadow{display:block;}
-	/*This is the Catalogue area's styling for a phone size*/
-	#serviceBackground{width:300px;min-height:900px;}
-	#topService{width:300px;height:140px;}
-	#services{height:90px;width:300px;}
-	.service{margin-top:5px;float:left;margin-left:25px;}
-	#scrollDiv{width:260px;overflow-x:hidden;height:700px;}
-	#viewBooks{margin-left:25px;margin-top:5px;}
-	#goBackService{margin-left:75px;margin-top:5px;}
-	#bookDiv{width:98%;}
-	#bookList{width:98%;}
-	#inputs{margin-right:15px;}
-	#preface{width:90%;}
-	#scriptMenuBar{height:80px;line-height:40px;}
-	#next-button{margin-bottom:10px;}
-	/*This is the Catalogue area's styling for a phone size*/
-	.wrapper1{min-height:1000px;}
+	.templatemo_link{height:40px;line-height:40px;padding:0px;text-align:center;width:100%;}
+	/*Main menu styling END*/	
 	
-	/*.container	{ left: 15px; right: 15px; padding: 0px; }*/
+	/*Contact us styling START*/
+	#menu-6{width:92%;min-width:300px;height:auto;}
+	.topContactBar{width:92%;min-width:300px;}
+	.contactForm, .locationBack{width:100%;min-width:300px;float:none;margin-left:auto;margin-right:auto;}
+	.locationBack h2{text-align: center;}
+	.locationBack{margin-bottom:40px;}
+	.contactForm{height:auto;}
+	#contactBack,#contactUsForm{float:none;width:90%;margin-left:5%;margin-right:auto;}
+	#contactBack{text-align:center;position:static;margin-top:20px;margin-bottom:20px;}
+	#contactUsForm input,#contactUsForm textarea{margin-left:5%;width:90%;}
+	#contactUsForm h2{text-align: center;margin-bottom:10px;}
+	#contactUsSend{width:50%;margin-left:25%;}
+	/*Contact us styling END*/
+	
 }
-@media(min-width:768px) {
+
+@media(min-width:768px) and (max-width:991px)
+{
+	  #menu-1{padding:bottom:40px;}
+	  .menuBox:hover{
+		background-color:white;
+		border: 5px solid rgb(145, 145, 145);
+		height:300px;
+		z-index:500;
+		margin-bottom:20px;
+		cursor: default;
+		-webkit-box-shadow: 3px 0px 40px 0px rgba(54,54,54,1);
+		-moz-box-shadow: 3px 0px 40px 0px rgba(54,54,54,1);
+		box-shadow: 3px 0px 40px 0px rgba(54,54,54,1);
+		
+		}
+		.menuBox:nth-child(3):hover{margin-bottom:20px;}
+	 /*Profile area START*/
+	#profileContainer
+	{
+		width:90%;
+		height:auto;
+	}
+	#topProfileBar
+	{
+		height:35px;
+	}
+	
+	#portfolioContainer{height:420px;width:35%;float:left;}
+	#portfolioContainer input{width:160px;}
+	#frame1{width:90%;margin-top:5px;margin-left:5%;}
+	
+	#portImageBack,#portImage{width:170px;height:220px;}
+	
+	
+	#uploadPictureDiv{display: none;}
+	#aboutme{height:160px;padding:2px;resize: none;width:100%;}
+	#frame2 textarea{height:160px;padding:2px;resize: none;}
+	#aboutMeContainer, #frame2 
+	{
+	  float: right;width:65%;
+	  height:210px;
+	}
+	#authorOfList,#contactInfoContainer
+	{
+	 float: left;width:50%;
+	 height:260px;
+	}
+	.details, .profileInfo{width:90%;float:none;margin-left:auto;margin-right:auto;
+	 position:static;
+	}
+	/*Profile area END*/
+	
+	/*About us Area START*/
+	#menu-5{height:auto;width:500px;margin-left:auto;margin-right:auto;}
+	.aboutFrame{height:300px;width:500px;float:none;}
+ 	.aboutFrame:nth-of-type(4) {margin-bottom:40px;}
+	.topAboutBar{width:500px;}
+	#menu-container{padding-left:1px;padding-right:1px;}
+	/*About us Area END*/
+	
+	/*Contact us styling START*/
+	#menu-6{width:92%;min-width:300px;height:auto;}
+	.topContactBar{width:92%;min-width:300px;}
+	.contactForm, .locationBack{width:100%;min-width:300px;float:none;margin-left:auto;margin-right:auto;}
+	.locationBack h2{text-align: center;}
+	.locationBack{margin-bottom:40px;}
+	#contactUsForm {width:55%}
+	#contactUsForm input,#contactUsForm textarea{margin-left:5%;width:90%;}
+	#contactUsForm h2{text-align: center;margin-bottom:10px;}
+	#contactUsSend{width:30%;margin-left:35%;}
+	/*Contact us styling END*/
+	
+	
 	
 	/*figbook heading remove and add with different screen size*/
 	#figbookHeading{display:block;}
@@ -734,86 +1009,105 @@ height:180px;
 	.menuBox:nth-child(4){margin-top:40px;}
   
 	#menu-1{width:760px;margin-left:auto;margin-right:auto;}
-	#menu-container{width:100%;min-height:1200px;}
+	#menu-container{width:100%;min-height:1100px;}
 	.templatemo_link{height:40px;line-height:40px;padding:0px;text-align:center;width:100%;}
 	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
-	.menuBox{text-align:center;height:150px;width:750px;float:left;margin:5px;}
+	.menuBox{text-align:center;height:170px;width:750px;float:left;margin:5px;}
 	#serviceBackground{width:700px;}
 	
-	/*This is the Catalogue area's styling for a 768+ px size*/
-	#serviceBackground{width:700px;min-height:700px;}
-	#topService{width:700px;height:40px;}
-	.text-shadow{display:block;}
-	
-	
-	
-	#bookDiv{width:50%;}
-	#bookList{width:98%;}
-	#inputs{margin-right:15px;}
-	#preface{width:250px;}
-	#scriptMenuBar{height:60px;line-height:60px;}
-	#next-button{margin-bottom:10px;}
-	#preface{width:90%;}
-
-	/*.container { left: 50%; margin-left: -375px; right: 0px; }*/
-	.logocontainer	{ width: 750px; padding: 0px 15px; margin: 0 auto; }
-	.templatemo_insideportfolio	{ height: 398px; }
-	.templatemo_linkservice, .templatemo_linkcontact 	{ height: 189px; line-height: 189px; padding: 0px; }
-
 }
 
-@media(min-width:992px) {
+/*Size styling END*/
+
+@media(min-width:992px) and (max-width:1199px)  {
+	
+	 /*Profile area START*/
+	#profileContainer
+	{
+		width:90%;
+		height:auto;
+	}
+	#topProfileBar
+	{
+		height:35px;
+	}
+	
+	#portfolioContainer{height:220px;width:50%;float:left;overflow-y: hidden;}
+	#portfolioContainer input{width:160px;}
+	#frame1{width:40%;margin-top:5px;}
+	
+	#portImageBack,#portImage{width:150px;height:200px;top:-27px;}
+	#uploadPictureDiv{display: none;}
+	
+	
+	#aboutme{height:160px;padding:2px;resize: none;width:100%;}
+	#frame2 textarea{height:160px;padding:2px;resize: none;}
+	#aboutMeContainer
+	{
+	  float: right;width:50%;
+	  height:220px;
+	}
+	#authorOfList
+	{
+	  float: left;width:20%;
+	 height:260px;
+	}
+	#contactInfoContainer, #frame2 
+	{
+	 float: left;width:40%;
+	 height:260px;
+	}
+	.details, .profileInfo{width:90%;float:none;margin-left:auto;margin-right:auto;
+	 position:static;
+	}
+	/*Profile area END*/	
+	
+	/*Contact us styling START*/
+	#menu-6{width:98%;min-width:300px;height:auto;}
+	.topContactBar{width:100%;min-width:300px;}
+	.contactForm, .locationBack{width:50%;min-width:300px;float:left;margin-left:auto;margin-right:auto;}
+	.locationBack h2{text-align: center;}
+	.locationBack{height:450px;}
+	#contactBack{width:50%;height:90%;}
+	#contactUsForm {width:50%;height:427px;}
+	#contactUsForm input,#contactUsForm textarea{margin-left:5%;width:90%;}
+	#contactUsForm h2{text-align: center;}
+	#contactUsSend{width:50%;margin-left:25%;}
+	/*Contact us styling END*/
+	
+	/*About us START*/
+	#menu-5{width:90%;height:900px;}
+	.aboutFrame{width:50%;float:left;}
+	.aboutFrame:nth-child(4){margin-left:25%;}
+	/*About us END*/
 	
 	/*figbook heading remove and add with different screen size*/
 	#figbookHeading{display:block;}
 	
 	/*Styling menu items*/
-	.menuBox:nth-child(1){position:relative;}
-	.menuBox:nth-child(2){position:relative;}
-	.menuBox:nth-child(3){top:130px;position:relative;}
-	.menuBox:nth-child(4){top:130px;position:relative;}
+	.menuBox:nth-child(1){position:relative;margin-left:10%;}
+	.menuBox:nth-child(2){position:relative;margin-left:14%;}
+	.menuBox:nth-child(3){top:130px;position:relative;margin-left:10%;}
+	.menuBox:nth-child(4){top:130px;position:relative;margin-left:14%;}
+	.menuBox:nth-child(2):hover{margin-bottom:-105px;}
+	
 	
 	#menu-container{width:100%;min-height:800px;}
 	#scrollDiv{width:980px;overflow-x:hidden;min-height:680px;}
 	#menu-1{width:990px;margin-left:auto;margin-right:auto;}
 	.templatemo_link{height:40px;line-height:40px;padding:0px;text-align:center;width:100%;}
 	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
-	.menuBox{height:190px;width:482px;float:left;margin:5px;margin-top:20px;}
+	.menuBox{height:190px;width:32%;float:left;margin:5px;margin-top:20px;}
 	#serviceBackground{width:800px;}
 	#preface{width:90%;}
 	#scriptMenuBar{height:60px;line-height:60px;}
-	
 
-	.text-shadow{display:block;}
-	.templatemo_leftgap	{ padding: 0px 6px; }
-	.templatemo_rightgap_about	{ padding: 0px 6px 0px 2px; }
-	.templatemo_botgap	{ margin: 0px 0px 12px 0px; }
-	.templatemo_topgap	{	margin-top: 0px; }
-	.templatemo_portfotopgap	{ margin-top: 0px; }
-	.templatemo_bordergapborder	{ padding: 0px; margin: 0px; }
-	.templatemo_graybg	{height: 397px; }
-	.templatemo_col37	{ float: left; width: 37.5%; }
-	.templatemo_col50	{ float: left; width: 50%; position: relative; }
-	.templatemo_form { padding: 5px 0px; }
-	.templatemo_form textarea { height: 120px; }
-	.templatemo_address { font-size: 12px; }
-	.templatemo_portfoliotext { width: 95%; padding: 15px ; font-size: 14px; }
-	.resp-vtabs .templatemo_aboutcontainer, .resp-vtabs .templatemo_testicontainer	{ width:200px; }
-	.templatemo_leftgap_about	{ padding: 0px 0px 0px 6px; }
-	.templatemo_aboutlinkwrapper { width: 95.8%; float: left; background: #666666; text-align: center; display: block; }
-	.templatemo_aboutlinkwrapper1 {  display: none; }
-	.resp-vtabs .templatemo_tab li,
-	.resp-vtabs .templatemo_testitab li{ padding: 0px;  margin-bottom: 12px; }
-	.resp-vtabs ul.templatemo_tab li, 
-	.resp-vtabs ul.templatemo_tab li.resp-tab-active, 
-	.resp-vtabs ul.templatemo_testitab li, 
-	.resp-vtabs ul.templatemo_testitab li.resp-tab-active	{ line-height: 79px; height: 79px; }
-	.templatemo_frame	{ height: 337px; margin-right: 1px; padding: 0px 30px; }
-	
-	/*.container { left: 50%; margin-left: -485px; }*/
 	 .templatemo_linkservice, .templatemo_linkcontact { height: 124px; line-height: 124px; padding: 0px; }
 	.logocontainer	{ width: 970px; padding: 0px 15px; margin: 0 auto; }
 	.templatemo_insideportfolio	{ height: 260px; }
+	
+	
+	
 }
 
 @media(min-width:1200px) {
@@ -827,57 +1121,16 @@ height:180px;
 	.menuBox:nth-child(3){top:130px;position:relative;}
 	.menuBox:nth-child(4){left:392px;position:relative;top:60px;}
 	
-	#menu-container{width:100%;min-height:750px;}
-	#menu-1{height:auto;width:1176px;margin-left:auto;margin-right:auto;}
+	/*Main menu styling*/
+	#menu-container{width:100%;min-height:800px;}
+	#menu-1{height:auto;width:1176px;margin-left:auto;margin-right:auto;margin-top:60px;}
 	.templatemo_link{height:40px;line-height:40px;padding:0px;text-align:center;width:100%;}
 	.templatemo_mainimg{visibility:visible;width:200px;height:150px;margin-top:-30px;margin-left:41px;}
 	.menu-img{width:300px;height:150px;visibility:visible;}
-	.menuBox{height:300px;width:382px;float:left;margin:5px;}.menuBox{height:190px;width:382px;float:left;margin:5px;margin-top:20px;}
+	.menuBox{height:190px;width:382px;float:left;margin:5px;margin-top:20px;}
 	.wrapper1{height:100%;}
+	/*Main menu styling*/
 	
-	#topService{width:800px;height:40px;}
-	.text-shadow{display:block;}
-	
-	#scrollDiv{width:780px;overflow-x:hidden;min-height:600px;max-height:680px;}
-	#bookDiv{width:40%;}
-	#preface{width:90%;}
-	
-	#inputs{margin-right:15px;}
-	#scriptMenuBar{height:60px;line-height:60px;}
-	#next-button{margin-bottom:10px;}
-	
-	
-	#contactImage{width:400px;float:left;}
-	#aboutMeImage{width:400px;float:left;}
-	#aboutLeftBack{width:360px;}
-	.templatemo_rightgap_about	{ width:260px;float:left;   }
-	.templatemo_botgap	{ margin: 0px 0px 16px 0px; }
-	.templatemo_topgap	{ margin-top: 0px; }
-	
-	.templatemo_bordergapborder	{ padding: 0px 16px; }
-	.templatemo_graybg	{ height: 466px; }
-	.templatemo_col37	{ float: left; width: 37.5%; position: relative; }
-	.templatemo_col50	{ float: left; width: 50%; position: relative; }
-	.templatemo_form { padding: 10px 0px; }
-	.templatemo_form textarea { height: 150px; }
-	.templatemo_address { font-size: 14px; }
-	.templatemo_portfoliotext { width: 95%; padding: 30px; font-size: 16px; }
-	.resp-vtabs .templatemo_aboutcontainer, .resp-vtabs .templatemo_testicontainer	{ width: 300px; }
-	.templatemo_leftgap_about	{ padding: 0px 0px 0px 10px; }
-	.resp-vtabs ul.templatemo_tab li, 
-	.resp-vtabs ul.templatemo_tab li.resp-tab-active, 
-	.resp-vtabs ul.templatemo_testitab li, 
-	.resp-vtabs ul.templatemo_testitab li.resp-tab-active { line-height: 93px; height: 93px; }
-	.resp-vtabs .templatemo_tab li, 
-	.resp-vtabs .templatemo_testitab li { padding: 0px;  margin-bottom: 15px; }
-	.templatemo_frame	{ height: 406px; padding: 0px 30px; }
-	.templatemo_link { height: 40px; line-height: 40px; padding: 0px; }
-	/*.container { left: 50%; margin-left: -585px; }*/
-	.logocontainer	{ width: 1140px; padding: 0px 30px; margin: 0 auto; }
-	.templatemo_insideportfolio	{ height: 316px; }
-	.templatemo_leftgap_about .templatemo_link { height: 142px; line-height: 142px; padding: 0px; }
-	.templatemo_linkservice, .templatemo_linkcontact { height: 145px; line-height: 145px; padding: 0px; }
-}#contactGray {
 }
-#templatemo_graybg {
-}
+
+

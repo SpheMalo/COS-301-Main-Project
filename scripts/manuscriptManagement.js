@@ -13,35 +13,12 @@ $(document).ready(function()
 	
 	$('.service').click(function()
 	{
-		//Make the comment area dissapear
-		$("#commentSide").css('display','none');
-		$("#commentHide").css('display','none');
-		
 		//hides the options menu
 		$('.optionsSlide').removeClass('pullDown');
 		$('.optionsSlide').css('visibility','hidden');
 		//hides the options menu
-		
-		
-		$('#sidePicDiv').fadeOut( "slow", function() {
-    		// Animation complete.
- 		 });
-		$('#serviceBackground').fadeOut( "slow", function() {});
-		$('#pageList').fadeOut('slow',function(){});
-		
-		$('#bookDiv').fadeOut( "slow", function() {});	
-		
-			$('#manuscriptArea').fadeOut("fast",function(){});
-			$('#goBackService').fadeOut( "slow", function() {
-				$('#serviceContainer').append($('#bookDiv'));	
-				
-				$('#goBackService').fadeIn( "slow", function() {});
-				$('#bookDiv').fadeIn( "slow", function() {});
-			});
-			
-			
-		//$('html').css('overflow-y','auto');
-		
+		$('#bookDiv').css('display','block');
+		addLightbox($("#bookDiv"));	
 		
 	});
 	
@@ -54,20 +31,42 @@ $(document).ready(function()
                             left: '0px'
                     
                         },500)
-						$('#commentSide').animate({
-                    
-                            left: '-320px'
-                    
-                        },500)
+						if ($('#commentSide').css('width') < '320px')
+						{
+							$('#commentSide').animate({						
+								
+									left: '-280px'	
+								
+							},500)
+						}
+						else{
+							$('#commentSide').animate({						
+								
+									left: '-320px'	
+								
+							},500)
+							
+						}
 						$('#commentSide').slideToggle(500)
                     }else{
 						$(this).css('background-image','url("images/arrow-left.png")');
 						$('#commentSide').slideToggle(0)
-                        $(this).animate({
-                    
-                            left: '320px'
+						if ($('#commentSide').css('width') < '320px'){
 							
-                        },500)
+							$(this).animate({                  
+								
+									left: '280px'
+							
+							},500)
+						}
+						else
+						{
+							$(this).animate({                  
+								
+									left: '320px'
+							
+							},500)
+						}
 						$('#commentSide').animate({
 							
                             left: '0px'
@@ -108,21 +107,43 @@ $(document).ready(function()
                             right: '0px'
                     
                         },500)
-						$('#editorialLetter').animate({
-                    
-                            right: '-620px'
-                    
-                        },500)
+						if ($('#editorialLetter').css('width') < '620px')
+						{
+							$('#editorialLetter').animate({
+								
+								right: '-280px'
+						
+							},500)
+						}
+						else
+						{							
+							$('#editorialLetter').animate({
+								
+								right: '-620px'
+						
+							},500)
+						}
 						$('#editorialLetter').slideToggle(500)
 						$("#serviceBackground").css('margin-left','auto');
                     }else{
 						$(this).css('background-image','url("images/arrow-right.png")');
 						$('#editorialLetter').slideToggle(0)
-                        $(this).animate({
-                    
-                            right: '620px'
-							
-                        },500)
+                        if ($('#editorialLetter').css('width') < '620px')
+						{
+							$(this).animate({
+						
+								right: '280px'
+								
+							},500)
+						}
+						else
+						{
+							$(this).animate({
+						
+								right: '620px'
+								
+							},500)
+						}
 						$('#editorialLetter').animate({
 							
                             right: '0px'
@@ -137,6 +158,11 @@ $(document).ready(function()
                     
                    
 	});	
+	
+	$('.options').click(function(){
+		    $('.optionsSlide').removeClass('pullDown');
+			$('.optionsSlide').css('visibility','hidden');	
+	});
 	
 	$('#options').click(function(){
             console.log(localStorage.bookTitle);
@@ -159,7 +185,7 @@ $(document).ready(function()
 			
 		}
 		else
-		{
+		{	
 			$('.options').removeClass('pullDown');
 			$('.optionsSlide').css('visibility','hidden');			
 		}
@@ -199,7 +225,16 @@ function addLightbox(insertContent) {
 			$('body').append(theLightbox);
 		}
 		
+		$(insertContent).css('display','block');
 		// remove any previously added content
+		var copy = document.getElementById("lightbox").childNodes;
+		if (copy.length >= 1) {
+			for (var i = 1;i<=copy.length; i++) {
+				$(copy[i]).css('display','none');
+				$('body').append(copy[i]);
+			}
+			
+		}
 		//$('#lightbox').empty();
 		
 		//center the lightbox
@@ -215,9 +250,12 @@ function addLightbox(insertContent) {
 		$('#lightbox').css('top', $(window).scrollTop() + 100 + 'px');
 		
 		// display the lightbox
-		$('#lightbox').show();
-		$('#lightbox-shadow').show();
+		//alert($('#lightbox-shadow').css('background-color'));
 		
+		
+		
+		$('#lightbox-shadow').show();
+		$('#lightbox').show();
 	}	
 
 	// close the lightbox
@@ -229,7 +267,8 @@ function addLightbox(insertContent) {
 			// hide lightbox/shadow <div/>'s
 			$("#addChapterArea").fadeOut("slow",function(){});
 			$("#sendManuscriptContainer").fadeOut("slow",function(){});
-                        $("#DelBookDiv").fadeOut("slow",function(){});
+			$("#DelBookDiv").fadeOut("slow",function(){});
+			$("#bookDiv").fadeOut("slow",function(){});
 			$('#lightbox').hide();
 			$('#lightbox-shadow').hide();
 			

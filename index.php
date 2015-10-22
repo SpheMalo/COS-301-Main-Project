@@ -1,4 +1,4 @@
-d<!DOCTYPE html>
+<!DOCTYPE html>
  <html>
   <head>
    <title>Figbook</title>
@@ -92,10 +92,20 @@ d<!DOCTYPE html>
 	   
 	   <div id="background"> <!--Background START-->
 		 <div id="container"> <!--Container START-->
+		   
+		   <div id="vidContainer"> <!--Video container START-->
+		   <div id="vidMenu"><div>Registration Example</div><div>Login Example</div></div>
+			<video id="vidPlayer" autoplay loop>
+			  <source src="videos/reg.mp4" type="video/mp4">		
+			Your browser does not support the video tag.
+			</video>
+			
+		   </div><!--Video container END-->
+		 
 		   <!--About START-->		 
 		     <div id="whatWorks">
 			 <h2 class="text-color h2">What makes it work?</h2>
-			 <p class="text-color p">It's the seamless combination of MediaWiki API's, CKE's Rich-Text-Editor,
+			 <p class="text-color p">It's the seamless combination of MediaWiki API's, CK's Rich-Text-Editor,
 			 an endless amount of coffee and then a dash of the magic our team produces by working together. 
 			 </p>
 			 <p class="text-color p">

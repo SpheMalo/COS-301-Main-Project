@@ -15,9 +15,10 @@ html,body
 	background-size:cover;
     
 }
+
 #lightbox {
 	position: absolute;
-	top: 0;
+	top: 200px;
 	width: 600px;
 	text-align: center;
 	background: transparent;
@@ -39,33 +40,82 @@ html,body
 	display: none;
 }
 
+#addChapterArea h2{font-weight:700;}
 #addChapterArea{
-  background: #50a3a2;
-  background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
-  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+
+  
+background: #ebf1f6; /* Old browsers */
+background: -moz-linear-gradient(top, #ebf1f6 0%, #d5ebfb 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebf1f6), color-stop(100%,#d5ebfb)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ebf1f6 0%,#d5ebfb 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ebf1f6 0%,#d5ebfb 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ebf1f6 0%,#d5ebfb 100%); /* IE10+ */
+background: linear-gradient(to bottom, #ebf1f6 0%,#d5ebfb 100%); /* W3C */
+  
   overflow: hidden;  
   text-align:center;
   margin-right:auto;margin-left:auto;
-  color:white;
+  color:black;
+  font-size: 18px;
+  
   width:350px;
-  height:260px;
+  height:220px;
   font-family: 'Source Sans Pro', sans-serif;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 #DelBookDiv{
-  background: #50a3a2;
-  background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
-  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+  background: #ebf1f6; /* Old browsers */
+background: -moz-linear-gradient(top, #ebf1f6 0%, #d5ebfb 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebf1f6), color-stop(100%,#d5ebfb)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ebf1f6 0%,#d5ebfb 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ebf1f6 0%,#d5ebfb 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ebf1f6 0%,#d5ebfb 100%); /* IE10+ */
+background: linear-gradient(to bottom, #ebf1f6 0%,#d5ebfb 100%); /* W3C */
+
   overflow: hidden;  
   text-align:center;
   margin-right:auto;margin-left:auto;
-  color:white;
+  color:black;
   width:350px;
-  height:260px;
+  height:180px;
   font-family: 'Source Sans Pro', sans-serif;
   border-radius: 5px;
 }
 button:hover{cursor:pointer;}
+
+
+
+#DelBookDiv button{
+    width: 250px;
+
+  padding: 10px 15px;
+  position: relative;
+  top: -45px;
+  text-align: center;
+  font-size: 24px;
+  -webkit-transition-duration: 0.25s;
+   transition-duration: 0.25s;
+  font-weight: 300;
+}
+#addChapterArea input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  border: 1px solid rgba(180, 180, 180, 0.9);
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 250px;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin: -10px auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+  font-weight: 300;
+}
 
 #addChapterArea button{
     width: 250px;
@@ -78,80 +128,62 @@ button:hover{cursor:pointer;}
    transition-duration: 0.25s;
   font-weight: 300;
 }
-
-#DelBookDiv button{
-    width: 250px;
-
-  padding: 10px 15px;
-  margin-top:-20px;
-  text-align: center;
-  font-size: 24px;
-  -webkit-transition-duration: 0.25s;
-   transition-duration: 0.25s;
-  font-weight: 300;
-}
-#addChapterArea input {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  outline: 0;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  background-color: rgba(255, 255, 255, 0.3);
-  width: 250px;
-  border-radius: 3px;
-  padding: 10px 15px;
-  margin: 0 auto 10px auto;
-  display: block;
-  text-align: center;
-  font-size: 18px;
-  color: white;
-  -webkit-transition-duration: 0.25s;
-          transition-duration: 0.25s;
-  font-weight: 300;
-}
-
 #DelBookDiv input {
-  -webkit-appearance: none;
+   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   outline: 0;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(180, 180, 180, 0.9);
+  background-color: rgba(255, 255, 255, 0.5);
   width: 250px;
   border-radius: 3px;
   padding: 10px 15px;
-  margin: 0 auto 10px auto;
-  margin-top: 20px;
+  margin: 15px auto 5px auto;
   display: block;
   text-align: center;
   font-size: 18px;
-  color: white;
+  color: black;
   -webkit-transition-duration: 0.25s;
           transition-duration: 0.25s;
   font-weight: 300;
 }
 /*Send manuscript*/
+#access{width:100px;height:25px;}
+#access:hover{cursor: pointer;}
+#fuzzyText:hover{cursor:text;}
+#fuzzyText{font-size:10px;}
+
 #sendManuscriptContainer{
-  background: #50a3a2;
-  background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
-  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+  /* background: #50a3a2;
+   background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+   background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+  */
+  
+background: #ebf1f6; /* Old browsers */
+background: -moz-linear-gradient(top, #ebf1f6 0%, #d5ebfb 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebf1f6), color-stop(100%,#d5ebfb)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ebf1f6 0%,#d5ebfb 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ebf1f6 0%,#d5ebfb 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ebf1f6 0%,#d5ebfb 100%); /* IE10+ */
+background: linear-gradient(to bottom, #ebf1f6 0%,#d5ebfb 100%); /* W3C */
+
   overflow: hidden;  
   text-align:center;
   margin-right:auto;margin-left:auto;
   color:white;
   width:250px;
-  height:240px;
+  height:190px;
   font-family: 'Source Sans Pro', sans-serif;
-  border-radius: 5px;
+  border-radius: 3px;
 }
-#sendManuscriptContainer input:hover{cursor:pointer;}
+#sendManuButton:hover{cursor:pointer;}
 #sendManuscriptContainer input{
-
+  
   width: 150px;
   height:30px;
-  margin-top:20px;
+  margin-top:15px;
   text-align: center;
-  font-size: 24px;
+  font-size: 18px;
   -webkit-transition-duration: 0.25s;
    transition-duration: 0.25s;
   font-weight: 300;
@@ -161,16 +193,43 @@ button:hover{cursor:pointer;}
 
 
 #bookDiv{
-width:500px;min-height:240px;margin-right:auto;margin-left:auto;background-color:rgba(200,200,200,1.00);
-text-align:center;margin-top:80px;
-background: rgba(142,208,232,1);
-background: -moz-linear-gradient(top, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(142,208,232,1)), color-stop(50%, rgba(153,226,250,1)), color-stop(100%, rgba(156,218,240,1)));
-background: -webkit-linear-gradient(top, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
-background: -o-linear-gradient(top, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
-background: -ms-linear-gradient(top, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
-background: linear-gradient(to bottom, rgba(142,208,232,1) 0%, rgba(153,226,250,1) 50%, rgba(156,218,240,1) 100%);
-display:none;
+background: #ebf1f6; /* Old browsers */
+background: -moz-linear-gradient(top, #ebf1f6 0%, #d5ebfb 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebf1f6), color-stop(100%,#d5ebfb)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ebf1f6 0%,#d5ebfb 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ebf1f6 0%,#d5ebfb 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ebf1f6 0%,#d5ebfb 100%); /* IE10+ */
+background: linear-gradient(to bottom, #ebf1f6 0%,#d5ebfb 100%); /* W3C */
+  
+  overflow: hidden;  
+  text-align:center;
+  margin-right:auto;margin-left:auto;
+  color:black;
+  font-size: 18px;
+  
+  width:420px;
+  height:160px;
+  font-family: 'Source Sans Pro', sans-serif;
+  border-radius: 3px;
+}
+#bookDiv input{
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  border: 1px solid rgba(180, 180, 180, 0.9);
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 250px;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin: 0 auto 0 auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+  font-weight: 300;
 }
 #backDiv{
     overflow-y:auto;
@@ -221,17 +280,31 @@ font-size: 45px;
 #inputHeading{width:100%;height:40px;text-align:center;background-color:rgba(243,243,243,1.00);
 	font-size:18pt;margin-bottom:-20px;
 }
-#pageEditTitle{text-align:center;height:36px;padding:1px;margin-top:0px;
+#pageEditTitle{margin-left:-80px;text-align:center;height:36px;padding:1px;margin-top:0px;
 font-size: 24px;}
-#backToBook{float:left;height:36px;padding:1px;margin-top:6px;margin-left:10px;
+#backToBook{float:left;height:41px;padding:1px;margin-left:6px;
 font-size: 14px;cursor: pointer;font-weight: bold;
-    
+margin-top:-1px;
+padding-top:5px;
+background-color:rgba(240,240,240,0.9);
+border:2px solid rgba(220,220,220,1.00);
+width:130px;
 }
-
-#infoBox{width:320px;height:110px;margin-left:auto;margin-right:auto;margin-top:20px;}
+#contentDiv{margin-top:20px;}
+#infoBox{width:320px;height:50px;margin-left:auto;margin-right:auto;}
 #labels{float:left;height:auto;width:100px;}
 #inputs{float:right;;height:auto;width:200px;}
-#saveBookForm{margin-top:10px;margin-bottom:10px;}
+#saveBookForm{
+	margin-top:10px;
+	margin-bottom:10px;
+	text-align: center;
+	width:200px;
+	margin-left:auto;
+	margin-right:auto;
+	height:40px;
+	padding:0px;
+}
+#next-button{width:80px;height:25px;position:relative;left:130px;}
 
 #scriptMenuBar{width:100%;height:60px;
 background: rgba(196,192,196,1);
@@ -267,12 +340,12 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);
 
 	line-height:35px;
 	font-size:20pt;
-    margin-left:4px;
+    
     
 }
 #writeEditorial:hover{cursor:pointer;height:38px;border-bottom:solid 2px rgba(85,127,184,1.00);}
 #invitation{
-   margin-left:4px;
+  
 	width:200px;
 	max-height:40px;
 	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
@@ -302,7 +375,7 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);
 
 #options
 {
-    margin-left:4px;
+   
 	width:200px;
 	height:40px;
 	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
@@ -319,7 +392,7 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);
 .optionsSlide{margin-top:40px;visibility: hidden;min-height:0px;height:200px;}
 #viewBooks
 {
-    margin-left:4px;
+    
 	width:200px;
 	height:40px;
 	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
@@ -343,7 +416,7 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);
 	float:left;
 	color:rgba(4,42,130,1.00);
     text-shadow: 0 1px 2px rgba(107,207,198,1.00);
-    margin-left:4px;
+    
 	
 	line-height:35px;
 	font-size:20pt;
@@ -477,140 +550,6 @@ margin-top:15px;
 #delBtn:hover{cursor: pointer;}
 /*Figbook styling END*/
 
-@media(max-width: 767px) {
-	#menu-container{width:318px;}
-	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
-	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
-	.menuBox{text-align:center;height:150px;width:305px;float:left;margin:5px;}
-	.menuItem{font-size:28pt;}
-	.menuItem:hover{font-size:30pt;}
-	
-	/*This is the Catalogue area's styling for a phone size*/
-	#serviceBackground{width:300px;min-height:1020px;margin-bottom:1px;}
-	#topService{width:100%;height:140px;z-index:9999;}
-	#services{height:90px;width:200px;margin-right:auto;margin-left:auto;float:none;}
-	.service{margin-top:5px;float:none;margin-left:auto;margin-right:auto;}
-	#scrollDiv{width:100%;overflow-x:hidden;min-height:100%;height:100%;overflow-y:auto;
-    border-right:3px solid rgb(220,220,220);
-    border-left:3px solid rgb(220,220,220);
-     border-top:2px solid rgb(220,220,220);
-     border-bottom:2px solid rgb(220,220,220);
-     margin-top:78px;
-     margin-bottom:1px;
-    }
-    #serviceContainer{margin-top:60px;min-height:100%}
-	#viewBooks{margin-left:25px;margin-top:5px;}
-	#goBackService{float:none;margin-left:auto;margin-right:auto;margin-top:5px;}
-	#bookDiv{width:98%;}
-	#bookList{width:250px;}
-	#inputs{margin-right:15px;}
-	#preface{width:90%;}
-	#scriptMenuBar{height:80px;line-height:40px;}
-	#next-button{margin-bottom:10px;}
-	/*This is the Catalogue area's styling for a phone size*/
-	#powered{display:none;}
-	
-    #commentSide{margin-top:98px;height:1020px;}
-    #commentHide{margin-top:78px;height:1020px;}
-    
-	/*.container	{ left: 15px; right: 15px; padding: 0px; }*/
-}
-@media(min-width:768px) {
-	#menu-container{width:760px;}
-    #powered{display:block;}
-	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
-	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
-	.menuBox{text-align:center;height:150px;width:750px;float:left;margin:5px;}
-	#serviceBackground{width:700px;}
-	
-	/*This is the Catalogue area's styling for a 768+ px size*/
-	#serviceBackground{width:760px;min-height:780px;}
-	#topService{width:100%;height:42px;z-index:9999;}
-	
-	
-	#scrollDiv{width:100%;overflow-x:hidden;min-height:100%;height:100%;overflow-y:auto;
-    border-right:3px solid rgb(220,220,220);
-    border-left:3px solid rgb(220,220,220);
-     border-top:2px solid rgb(220,220,220);
-     border-bottom:2px solid rgb(220,220,220);
-    }
-    
-	#bookDiv{width:50%;}
-	#bookList{width:98%;}
-	#inputs{margin-right:15px;}
-	#preface{width:250px;}
-	#scriptMenuBar{height:60px;line-height:60px;}
-	#next-button{margin-bottom:10px;}
-	#preface{width:90%;}
-
-	/*.container { left: 50%; margin-left: -375px; right: 0px; }*/
-}
-@media(min-width:960px)
-{
-    #menu-container{width:1180px;height:auto;}
-	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
-	.templatemo_mainimg{visibility:visible;width:200px;height:150px;margin-top:-30px;margin-left:41px;}
-	.menu-img{width:300px;height:150px;visibility:visible;}
-	.menuBox{height:300px;width:382px;float:left;margin:5px;}
-	#powered{display:block;}
-	
-	#topService{width:100%;height:42px;z-index:9999;}	
-	#serviceContainer{min-height:800px;}
-	#scrollDiv{width:100%;overflow-x:hidden;min-height:100%;height:100%;overflow-y:auto;
-     border-right:3px solid rgb(220,220,220);
-     border-left:3px solid rgb(220,220,220);
-     border-top:2px solid rgb(220,220,220);
-     border-bottom:2px solid rgb(220,220,220);
-    }
-	#bookDiv{width:40%;}
-	#preface{width:90%;}
-	#bookList{width:720px;min-height:340px;height:auto;max-height:580px;padding-bottom:1px;
-      margin-left:auto;margin-right:auto;
-    }
-	#inputs{margin-right:15px;}
-	#scriptMenuBar{height:60px;line-height:60px;}
-	#next-button{margin-bottom:10px;}
-	#serviceBackground{width:860px;min-height:780px;}
-	
-	#contactImage{width:400px;float:left;}
-	#aboutMeImage{width:400px;float:left;}
-	#aboutLeftBack{width:360px;}
-  
-}
-
-
-@media(min-width:1200px) {
-	#menu-container{width:1180px;height:auto;}
-	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
-	.templatemo_mainimg{visibility:visible;width:200px;height:150px;margin-top:-30px;margin-left:41px;}
-	.menu-img{width:300px;height:150px;visibility:visible;}
-	.menuBox{height:300px;width:382px;float:left;margin:5px;}
-	#powered{display:block;}
-	
-	#topService{width:100%;height:42px;z-index:9999;}
-	
-	#serviceContainer{min-height:800px;}
-	#scrollDiv{width:100%;overflow-x:hidden;min-height:100%;height:100%;overflow-y:auto;
-    border-right:3px solid rgb(220,220,220);
-    border-left:3px solid rgb(220,220,220);
-     border-top:2px solid rgb(220,220,220);
-     border-bottom:2px solid rgb(220,220,220);
-    }
-	#bookDiv{width:40%;}
-	#preface{width:90%;}
-	#bookList{width:720px;min-height:340px;height:auto;max-height:580px;padding-bottom:1px;
-      margin-left:auto;margin-right:auto;
-    }
-	#inputs{margin-right:15px;}
-	#scriptMenuBar{height:60px;line-height:60px;}
-	#next-button{margin-bottom:10px;}
-	#serviceBackground{width:1000px;min-height:780px;}
-	
-	#contactImage{width:400px;float:left;}
-	#aboutMeImage{width:400px;float:left;}
-	#aboutLeftBack{width:360px;}
- 
-}
 
 /*Footer Start*/
 
@@ -620,12 +559,12 @@ background:rgba(10,10,10,0.9);
 position: relative;
 z-index: 101;
 width:100%;
-height:250px;
+height:190px;
 -webkit-box-shadow: 0px -4px 9px -4px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px -4px 9px -4px rgba(0,0,0,0.75);
 box-shadow: 0px -4px 9px -4px rgba(0,0,0,0.75);
 }
-#footDiv{float:right;position:relative;top:170px;right:20px;}
+#footDiv{float:right;margin-right:20px;margin-top:10px;width:200px;}
 #footList{
 	float:left;
 	position:relative;
@@ -634,7 +573,7 @@ box-shadow: 0px -4px 9px -4px rgba(0,0,0,0.75);
 	top:0px;
 	left:40px;
 	width:250px;
-	height:250px;
+	height:170px;
 }
 
 #footLogo{height:70px;width:180px;}
@@ -763,7 +702,7 @@ top:-4px;
 	width:200px;
 	max-height:40px;
   
-    margin-left:3px;
+  
   
 border-bottom:1px solid rgba(47,47,47,0.92);
 	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
@@ -783,7 +722,7 @@ text-shadow: 0 1px 2px rgba(107,207,198,1.00);
 	width:200px;
 	height:40px;
   
-    margin-left:3px;
+    
   
 border-bottom:1px solid rgba(47,47,47,0.92);
 	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
@@ -803,7 +742,7 @@ text-shadow: 0 1px 2px rgba(107,207,198,1.00);
 	width:200px;
 	max-height:40px;
   
-    margin-left:3px;
+   
   
 border-bottom:1px solid rgba(47,47,47,0.92);
 	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
@@ -820,6 +759,41 @@ text-shadow: 0 1px 2px rgba(107,207,198,1.00);
 /*-----------------------------------------------------*/
 
 /*Instant messaging area*/
+.chat_wrapper {
+	width: 400px;
+	height:300px;
+	margin-right: auto;
+	margin-left: auto;
+	background: #CCCCCC;
+	border: 1px solid #999999;
+	padding: 10px;
+	font: 12px 'lucida grande',tahoma,verdana,arial,sans-serif;
+}
+.chat_wrapper .message_box {
+	background: #FFFFFF;
+	height: 150px;
+	overflow: auto;
+	padding: 10px;
+	border: 1px solid #999999;
+}
+.chat_wrapper .panel input{
+	padding: 2px 2px 2px 5px;
+}
+.contact{
+	width:100%;height:30px;
+	text-align:center;
+	border-bottom:1px solid rgb(100,100,100);
+	border-top:1px solid rgb(100,100,100);
+	background-color: rgb(200,200,200);
+}
+.contact:hover{cursor: pointer;}
+
+.system_msg{color: #BDBDBD;font-style: italic;}
+.user_name{font-weight:bold;}
+.user_message{color: #88B6E0;}
+#message_box{height:200px;}
+
+
 #messageContainer
 {
 	
@@ -835,12 +809,13 @@ text-shadow: 0 1px 2px rgba(107,207,198,1.00);
 #messageArea{
 	display:none;
 	width:400px;
-	height:300px;
-	background-color:rgba(50,50,50,0.7);
+	height:300px;	
 	position:fixed;
 	bottom:0px;
 	float:right;
 	right:20px;
+	
+	border-left:1px solid rgb(157, 157, 157);
 	
 }
 .chat_wrapper{float:right;}
@@ -849,7 +824,7 @@ text-shadow: 0 1px 2px rgba(107,207,198,1.00);
 	height:300px;width:100px;
 	border-left:2px solid rgba(100,100,100,1);
 	border-right:2px solid rgba(100,100,100,1);
-	background-color:black;
+	background-color:rgb(212, 212, 212);
 }
 
 #messageHide:hover{cursor: pointer;}
@@ -863,3 +838,196 @@ text-shadow: 0 1px 2px rgba(107,207,198,1.00);
 	line-height: 19px;
 }
 /*Instant messaging area*/
+
+@media(max-width: 767px){
+	
+	/*Options menu*/
+	#optionsContainer
+	{
+		float:none;margin-left:auto;margin-right:auto;
+		
+	}
+	#options{margin-top:-40px;margin-left:0px;position: static;}
+	.optionsSlide{height:auto;}
+	.options{width:200px;float:none;margin:0;}
+	#viewBooks{width:200px;float:none;height:40px;margin:0px;}
+	#delManuscript{margin-left:0px;}
+	
+	#loadbook{height: 40px;float: none;}
+	#topService{width:100%;height:95px;z-index:9999;}
+	/*Options menu*/
+	
+	/*commenting and editorial*/
+	#commentSide{margin-top:53px;height:1100px;width:280px;}
+    #commentHide{margin-top:33px;}
+	#commentText{width:95%;}
+	#editorialLetter{width:280px;margin-top:55px;height:1100px;}
+	#letterText{width:90%;margin-top:100px;}
+	#sendLetter{margin-left:40px;}
+	#newL{margin-top:52px;}
+	#letterArea{margin-top:95px;}
+	#letterHide{margin-top:33px;};
+	/*commenting and editorial*/
+	
+	/*Menu items*/
+	#menu-container{width:318px;}
+	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
+	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
+	.menuBox{text-align:center;height:150px;width:305px;float:left;margin:5px;}
+	.menuItem{font-size:28pt;}
+	.menuItem:hover{font-size:30pt;}
+	
+	/*This is the Catalogue area's styling for a phone size*/
+	#serviceBackground{width:80%;min-height:1100px;margin-bottom:1px;}
+	
+	#services{height:90px;width:200px;margin-right:auto;margin-left:auto;float:none;}
+	.service{margin-top:5px;float:none;margin-left:auto;margin-right:auto;}
+	#scrollDiv{width:100%;overflow-x:hidden;min-height:1100px;height:100%;overflow-y:auto;
+    border-right:3px solid rgb(220,220,220);
+    border-left:3px solid rgb(220,220,220);
+     border-top:2px solid rgb(220,220,220);
+     border-bottom:2px solid rgb(220,220,220);
+     margin-top:33px;
+     margin-bottom:1px;
+    }
+    #serviceContainer{margin-top:60px;min-height:100%}
+	
+	#goBackService{float:none;margin-left:auto;margin-right:auto;margin-top:5px;}
+	
+	
+	#bookList{max-width:240px;margin-left:auto;margin-right:auto;}
+	#inputs{margin-right:15px;}
+	#preface{width:90%;}
+	#scriptMenuBar{height:80px;line-height:40px;}
+	
+	/*This is the Catalogue area's styling for a phone size*/
+	#powered{display:none;}
+	
+    
+    
+	/*Style Footer START*/
+    #footer{height:320px;width:100%;padding:1px;}
+    #footDiv
+    {
+        position: static;
+        float:none;margin-left:auto;margin-right:auto;
+        margin-top:10px;
+        width:200px;
+    }
+    #footDiv h2{display: none;}
+    #footList{float:none;margin-left:auto;margin-right:auto;height:auto;}
+    /*Style Footer END*/
+	
+	/*messanger style START*/
+		.chat_wrapper{width:230px;}
+		#messageBox{width:230px;}
+		#messageContainer,#messageHide{width:300px;right: 0px;}
+		#messageArea{width:230px;right: 0px;}
+		#contacts{width:70px;}
+		.contact{font-size: 11pt;width:65px;}
+	/*messanger style START*/
+	
+	/*Editor*/
+	.grid-container{margin-top:68px;}
+	
+	
+	#pageEditTitle{width:100%;margin-left: 0px;margin-top:0px;}
+	/*Editor*/
+	
+}
+@media(min-width:768px) {
+	#menu-container{width:760px;}
+    #powered{display:block;}
+	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
+	.templatemo_mainimg{visibility:hidden;height:0px;margin:0;}
+	.menuBox{text-align:center;height:150px;width:750px;float:left;margin:5px;}
+	#serviceBackground{width:700px;}
+	
+	/*This is the Catalogue area's styling for a 768+ px size*/
+	#serviceBackground{width:760px;min-height:780px;}
+	#topService{width:100%;height:42px;z-index:9999;}
+	
+	
+	#scrollDiv{width:100%;overflow-x:hidden;min-height:100%;height:100%;overflow-y:auto;
+    border-right:3px solid rgb(220,220,220);
+    border-left:3px solid rgb(220,220,220);
+     border-top:2px solid rgb(220,220,220);
+     border-bottom:2px solid rgb(220,220,220);
+    }
+    
+	#bookList{width:98%;}
+	#inputs{margin-right:15px;}
+	#preface{width:250px;}
+	#scriptMenuBar{height:60px;line-height:60px;}
+	
+	#preface{width:90%;}
+
+	/*.container { left: 50%; margin-left: -375px; right: 0px; }*/
+}
+@media(min-width:960px)
+{
+    #menu-container{width:1180px;height:auto;}
+	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
+	.templatemo_mainimg{visibility:visible;width:200px;height:150px;margin-top:-30px;margin-left:41px;}
+	.menu-img{width:300px;height:150px;visibility:visible;}
+	.menuBox{height:300px;width:382px;float:left;margin:5px;}
+	#powered{display:block;}
+	
+	#topService{width:100%;height:42px;z-index:9999;}	
+	#serviceContainer{min-height:800px;}
+	#scrollDiv{width:100%;overflow-x:hidden;min-height:100%;height:100%;overflow-y:auto;
+     border-right:3px solid rgb(220,220,220);
+     border-left:3px solid rgb(220,220,220);
+     border-top:2px solid rgb(220,220,220);
+     border-bottom:2px solid rgb(220,220,220);
+    }
+	
+	#preface{width:90%;}
+	#bookList{width:720px;min-height:340px;height:auto;max-height:580px;padding-bottom:1px;
+      margin-left:auto;margin-right:auto;
+    }
+	#inputs{margin-right:15px;}
+	#scriptMenuBar{height:60px;line-height:60px;}
+	
+	#serviceBackground{width:860px;min-height:780px;}
+	
+	#contactImage{width:400px;float:left;}
+	#aboutMeImage{width:400px;float:left;}
+	#aboutLeftBack{width:360px;}
+  
+}
+
+
+@media(min-width:1200px) {
+	#menu-container{width:1180px;height:auto;}
+	.templatemo_link{height:150px;line-height:150px;padding:0px;text-algin:center;width:100%;}
+	.templatemo_mainimg{visibility:visible;width:200px;height:150px;margin-top:-30px;margin-left:41px;}
+	.menu-img{width:300px;height:150px;visibility:visible;}
+	.menuBox{height:300px;width:382px;float:left;margin:5px;}
+	#powered{display:block;}
+	
+	#topService{width:100%;height:42px;z-index:9999;}
+	
+	#serviceContainer{min-height:800px;}
+	#scrollDiv{width:100%;overflow-x:hidden;min-height:100%;height:100%;overflow-y:auto;
+    border-right:3px solid rgb(220,220,220);
+    border-left:3px solid rgb(220,220,220);
+     border-top:2px solid rgb(220,220,220);
+     border-bottom:2px solid rgb(220,220,220);
+    }
+	
+	#preface{width:90%;}
+	#bookList{width:720px;min-height:340px;height:auto;max-height:580px;padding-bottom:1px;
+      margin-left:auto;margin-right:auto;
+    }
+	#inputs{margin-right:15px;}
+	#scriptMenuBar{height:60px;line-height:60px;}
+
+	#serviceBackground{width:1000px;min-height:780px;}
+	
+	#contactImage{width:400px;float:left;}
+	#aboutMeImage{width:400px;float:left;}
+	#aboutLeftBack{width:360px;}
+ 
+}
+

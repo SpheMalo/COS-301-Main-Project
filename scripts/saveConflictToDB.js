@@ -21,7 +21,7 @@ function saveConflict()
     re = new RegExp(find, 'g');
   	content = content.replace(re,"");
 
-    alert(content);
+    //alert(content);
 
     var timeStamp = localStorage.getItem("tStamp");
 	  var jsonString = {
@@ -45,7 +45,7 @@ function saveConflict()
             data: "json="+jsonString,
             dataType: 'json',
             type: 'POST',
-            success: function (result) {alert(JSON.stringify(result));
+            success: function (result) {//alert(JSON.stringify(result));
                 if (result.message == "no_conflict")//No conflict occured so the text can be persisted to the database
                 {
                     $.post("scripts/mediawiki/api.php?action=query&prop=info|revisions&meta=tokens&rvprop=timestamp&titles="+localStorage.bookTitle+"&format=json",function(data)
@@ -91,6 +91,7 @@ function saveConflict()
                 }//end of if data == true
                 else if (result.message == "conflict")
                 {
+                  alert("Merge conflict occurred, please resolve again.");
                   var newBookDetails = {
                           "sectionHeading": sectionHeading,
                           "title": bookDetails.title,

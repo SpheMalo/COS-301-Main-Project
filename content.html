@@ -82,7 +82,12 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 			  </div>
           <div id="serviceBackground">
                        
+					     
                          <div id="topService">
+							  <div class="templatemo_mainservice templatemo_botgap" id="goBackService">
+								    <a id="serviceGoBack" class="show-1 templatemo_homeservice" href="#">Main Menu</a>
+							  </div>
+							  
 							  <div id="optionsContainer">
 								   <div id="options">Options</div>
 								   <div class="optionsSlide">
@@ -92,13 +97,11 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 										<div class="options" id="invitation" style="display:none;">Send Invitation</div>
 										<div class="options" id="writeEditorial" style="display:none;">Editorial Letter</div>
 										<div  class="options" id="addChapter" style="display:none;">Add Chapter</div>
-                                                                                <div  class="options" id="delManuscript">Delete Book</div>
+                                        <div  class="options" id="delManuscript">Delete Book</div>
 								   </div>
 							  </div>
 
-							  <div class="templatemo_mainservice templatemo_botgap" id="goBackService">
-								 <a id="serviceGoBack" class="show-1 templatemo_homeservice" href="#">Main Menu</a>
-							  </div>
+							  
 								 
                          </div>
 							
@@ -114,15 +117,15 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 								  <select id='users'>							  
 								  </select><br-->
 						      <input id="fuzzyText" name="fuzzyText" type="text" value placeholder="User to add"><br><br>
-                                                                  <input type="hidden" id="link_user_name" name="link_user_name" value="">
-                                                                  <input type="hidden" id="link_user_id" name="link_user_id" value="">
+							  <input type="hidden" id="link_user_name" name="link_user_name" value="">
+							  <input type="hidden" id="link_user_id" name="link_user_id" value="">
 								  
 								  <select id='access'>
 									<option value="READ">READ</option>
 									<option value="WRITE">WRITE</option>
 								  </select><br>
 
-								  <input type="button" value="Link" onclick="link()"></input>
+								  <input id="sendManuButton" type="button" value="Send" onclick="link()"></input>
 							  </div>
                                                         
                                                                <div id="DelBookDiv" style="display:none;">
@@ -165,41 +168,28 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
             </div>
             
 
-                  <div id="bookDiv">
-            			<div id="scriptMenuBar">Please fill in author details.</div>                  	
-                        <div id="pageList"></div>
+                <div id="bookDiv">
+            			<h2>Please enter a book title.</h2>                  	
+                        <div id="pageList" style=" display:none;"></div>
                         
                         <div id="contentDiv">
                         	<div id="infoBox">
                                  <div id="labels">	
-                                     <label>Book Title:</label><br/>
-                                     <label>Author's</label><br/>
-                                     <label>Firstname:</label><br/>
-                                     <label>Surname:</label>
+                                     <label>Book Title:</label><br/>                                   
                                  </div>
                                  <div id="inputs">
-                                     <input id="title" type="text"/><br/><br/>
-                                     <input id="firstname" type="text"/><br/>
-                                     <input id="surname" type="text"/>
+                                     <input id="title" type="text"/><br/><br/>                                     
                                  </div>
                              </div>                             
-                             <div id="inputs2">
-                                 <textarea id="preface" cols="50" rows="14" ></textarea>
-				 
-			</div>
-                             </div>
-                            <textarea id="manuscriptArea" cols="96" rows="14" ></textarea>
-                            
-                            
-                            <form class="form" id="saveBookForm">
-                            	<button type="submit" id="back-button">Back</button>
-                            	<button type="submit" id="next-button">Next</button>
-                            </form>
-                        </div>
-                        <div id="Page">
-                        	
-                        </div>     
-				</div><!--bookDiv ends here-->
+                             
+                         </div>                  
+
+                                                   	
+                         <button type="submit" id="next-button">Create Book</button>
+                                        
+				   
+			       
+			   </div><!--bookDiv ends here-->
                   	
                   
 

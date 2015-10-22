@@ -53,6 +53,7 @@ if(isset($actionFlag) && $actionFlag != ""){
 		$tmpUser = new user($dbHandler->getConnection());
 		
 		$response = ($tmpUser->getUserInfo($uID));
+		//$response = "Username = ".$uID;
 	
 	}else if($actionFlag == "setNewPassword"){
 		$tmpUser = new user($dbHandler->getConnection());
