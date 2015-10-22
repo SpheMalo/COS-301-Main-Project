@@ -164,7 +164,25 @@ function resolveConflict()
 //Adding lightbox effects
 	
 
-function addGif(name)
+function addGif(statement,name)
+{
+	var obj = '<div id="loadingDiv" style="position:relative;width:160px;height:30px;">'
+            +'<div style="height:30px;font-size:20px;font-weight:500;line-height:30px;float:left;color:white;">'+statement+'</div> '
+            +'<img src="FeedBackIcons/'+name+'.gif" alt="Feedback Icon" '
+            +'style="width:50px;height:30px;">'
+            +'</div>';
+		
+		//var top = (window.innerHeight-30)/2;
+		
+		addLightbox(obj);
+	
+			
+		var left = ($('#lightbox').width()-160)/2;
+	
+		$("#loadingDiv").css('left',left);
+		$("#loadingDiv").css('top','200px');
+}
+/*function addGif(name)
 {
     var obj = '<div id="loadingDiv" style="position:relative;width:100px;height:30px;">'
             +'<img src="FeedBackIcons/'+name+'.GIF" alt="Feedback Icon" '
@@ -177,7 +195,15 @@ function addGif(name)
     $("#loadingDiv").css('left','250px');
     $("#loadingDiv").css('top','100px');
    // $("#lightbox-shadow").css('background-color','rgba(250,250,250,0.7)');
+}*/
+function removeGif()
+{
+	$("#loadingDiv").fadeOut(600, function(){
+		$(this).remove();
+		closeLightbox();
+	});
 }
+/*
 function removeGif()
 {
     $("#loadingDiv").delay(1000).fadeOut(600, function(){
@@ -185,5 +211,6 @@ function removeGif()
         closeLightbox();
     });
 }
+*/
 
 

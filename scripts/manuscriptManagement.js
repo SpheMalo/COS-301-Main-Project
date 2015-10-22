@@ -25,11 +25,12 @@ $(document).ready(function()
 	$("#commentHide").click(function(){
 			
                     if(!$('#commentSide').is(':hidden')){
+						//alert("Hiding");
 						$(this).css('background-image','url("images/arrow-right.png")');
                         $(this).animate({
                     
                             left: '0px'
-                    
+							
                         },500)
 						if ($('#commentSide').css('width') < '320px')
 						{
@@ -49,6 +50,7 @@ $(document).ready(function()
 						}
 						$('#commentSide').slideToggle(500)
                     }else{
+						//alert("Showing");
 						$(this).css('background-image','url("images/arrow-left.png")');
 						$('#commentSide').slideToggle(0)
 						if ($('#commentSide').css('width') < '320px'){

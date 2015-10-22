@@ -4,30 +4,34 @@
  * @param {Number} value
  */
 
- 
-function addGif(name)
+ /* all this is called from saveTextToDb.js
+function addGif(statement,name)
 {
-	var obj = '<div id="loadingDiv" style="position:relative;width:100px;height:30px;">'
-			+'<img src="FeedBackIcons/'+name+'.GIF" alt="Feedback Icon" '
-			+'style="width:100px;height:30px;">'
-			+'</div>';
-	var left = (window.innerWidth-100)/2;
-	//var top = (window.innerHeight-30)/2;
-	
-	addLightbox(obj);
-	$("#loadingDiv").css('left',left);
-	$("#loadingDiv").css('top','200px');
-}
+	var obj = '<div id="loadingDiv" style="position:relative;width:160px;height:30px;">'
+            +'<div style="height:30px;font-size:20px;font-weight:500;line-height:30px;float:left;color:white;">'+statement+'</div> '
+            +'<img src="FeedBackIcons/'+name+'.gif" alt="Feedback Icon" '
+            +'style="width:50px;height:30px;">'
+            +'</div>';
+			
+		var left = (window.innerWidth-100)/2;
+		//var top = (window.innerHeight-30)/2;
+		
+		addLightbox(obj);
+		$("#loadingDiv").css('left',left);
+		$("#loadingDiv").css('top','200px');
+}*/
+ /*
 function removeGif()
 {
-	$("#loadingDiv").delay(1000).fadeOut(600, function(){
+	$("#loadingDiv").fadeOut(600, function(){
 		$(this).remove();
 		closeLightbox();
 	});
-}
+}*/
 
 function loadBook()
 {
+	addGif('Loading Content...','loadingNew');
 	$("#pageView").fadeOut("slow",function(){
 		$('#editSection').fadeIn("slow",function(){});
 	
@@ -49,11 +53,11 @@ function loadBook()
 		text += "<h1 style='text-align: center;''>"+headings[i].innerHTML+"</h1>";
 		text += val[i];
 	};
-
+	
 	$("#pageEditTitle").val(localStorage.bookTitle);
 	
 	iframe = iframe.find("body").html(text);
-
+	removeGif();
 }
 
 function readCookie(name) {
@@ -79,7 +83,10 @@ function commentDropDown(page){
 	//alert(comment.user_name);
 	//alert("called");
 	//alert("commentDropDown");
-
+		document.getElementById("chapterSelect").innerHTML="";
+		document.getElementById("commentText").value="";
+		var sel = document.getElementById("chapterSelect");
+			sel.innerHTML="<option>None</option>";
 	var JSONstring = JSON.stringify(comment);
 	$.ajax({
 		url: "scripts/FigbookActionHandler/commentDropDown.php",
@@ -87,7 +94,7 @@ function commentDropDown(page){
 		dataType: 'json',
 		success: function (data){
 			//alert(JSON.stringify(data));
-			var sel = document.getElementById("chapterSelect");
+			
 			if(sel.length == 1){
 				//alert("here");
 				var i = 1;
@@ -110,7 +117,8 @@ function commentDropDown(page){
 }
 
 function postComment(){
-	var comment = {
+		addGif('Saving...','loadingNew');
+		var comment = {
 	            "commentText": "",
 	            "page_name": "",
 	            "section_number":"",
@@ -131,9 +139,11 @@ function postComment(){
 	            dataType: 'json',
 	            success: function (data)
 	            {
+					removeGif();
 	                //alert(JSON.stringify(data));
 	            }
 	            , error: function (data) {
+					removeGif();
 	                //alert(JSON.stringify(data));
 	            }
 	        });
@@ -748,6 +758,9 @@ $(document).ready(function () {
 			html += "Page List: <select placeholder='Select Page' id='pageSelect' >" +
 				"<option value='' disabled='disabled' selected='selected'>Page List</option>";
 			$("#bookList").append("<div id='createBook' class='createBook bookItem'></div>");
+			var counter = 0;
+			
+			
 			$.each(data.query.allpages, function (i, v) {
 				html += "<option value='" + data.query.allpages[i].title + "'>" + data.query.allpages[i].title + "</option>";				//alert("ishere");
 						
@@ -757,69 +770,107 @@ $(document).ready(function () {
 	                            "action": "checkPagePermissions",
 	                            "bookTitle": replaced
 	                        };
+							var dataLength = data.query.allpages.length;
+							
 		
 	                        var JSONstring = JSON.stringify(loadPageInfo);
-	                        $.post('scripts/FigbookActionHandler/actionHandler.php?json=' + JSONstring, function (data)
-	                        {
-	                            // console.log(JSON.stringify(data));
-	                            if (data === "\"success\"") {
-	                                html += "<option value='" + pageTitle + "'>" + pageTitle + "</option>";
-	                               
-	                                //div.off('click');
-	                                //div.onclick=onClickBook(pageTitle, div);
+	                        
+						$.post('scripts/FigbookActionHandler/actionHandler.php?json=' + JSONstring, function (data)
+						{
+							// console.log(JSON.stringify(data));
+							if (data === "\"success\"") {
+								
+								html += "<option value='" + pageTitle + "'>" + pageTitle + "</option>";
+							   
+								//div.off('click');
+								//div.onclick=onClickBook(pageTitle, div);
+								
+								localStorage.bookTitle = "";
+								$("#bookList").append("<div class='bookItem'>"+pageTitle+"</div>");
+										
+								
+								
+									counter++;
+									//alert(counter);
+									var books = document.getElementsByClassName('bookItem');
 									
-	                                $("#bookList").append("<div class='bookItem'>"+pageTitle+"</div>");
-                                        localStorage.bookTitle = "";
-                                      
+									
+									
+								if ((dataLength+1) === books.length)//This is to force the click calls to execute only once... 
+								{
+											//alert(counter);
+											//Sorting the booklist START	
+											var temp;
+											for (var k = 0;k<books.length-1;k++)
+											{
+												for (var j = k;j<books.length;j++)
+												{
+													if (books[k].innerHTML > books[j].innerHTML) {
+														temp = books[j].innerHTML;
+														books[j].innerHTML = books[k].innerHTML;
+														books[k].innerHTML = temp;
+													}
+													
+												}								
+								
+											}//Sorting the booklist END
+										
 									 $('#createBook').click(function(){
 											//alert('hello');
 											$('.service:nth-child(1)').trigger("click");	
 									  }); 
-									    
-	                                $('.bookItem').click(function (event) {
-	                                    //alert("book clicked : "+$(this).html());
+										
+									$('.bookItem').click(function (event) {
+										//alert("book clicked : "+$(this).html());
+										//Populating comment dropdown and  comments for each chapter.
 										
 										
 										
-	                                    var loadPageInfo = {
-	                                        "title": $(this).html()
-	                                    };
-	                                    //alert(loadPageInfo.title);
-	                                    localStorage.bookTitle = loadPageInfo.title;
-	                                    var Inf = {
-                                                "action": "getUserRole",
-                                                "bookTitle": localStorage.bookTitle
-                                            };
-                                            var JSONstring = JSON.stringify(Inf);
-                                            $.ajax({
-                                                        url: 'scripts/FigbookActionHandler/actionHandler.php',
-                                                        data: 'json=' + JSONstring,
-                                                        dataType: 'json',
-                                                        success: function (data1)
-                                                        {
-                                                            //alert(JSON.stringify(data1));
-                                                            localStorage.userRole = data1;
-															
-                                                        }
-                                                        , error: function (data1) {
-                                                            //alert(JSON.stringify(data1));
-                                                        }
-                                                    });
-                                                    //event.preventDefault();
-	                                    //make sure it gets a title for a book to load
-	                                    if (loadPageInfo.title !== "")
-	                                    {
-	                                        get_page(loadPageInfo);
-														
-	                                    }
-	
-	                                });
-	                            }
-	                            else {
-	                                //localStorage.permission = "false";
-	                            }
-	                        });
+										var loadPageInfo = {
+											"title": $(this).html()
+										};
+										//alert(loadPageInfo.title);
+										localStorage.bookTitle = loadPageInfo.title;
+										var Inf = {
+												"action": "getUserRole",
+												"bookTitle": localStorage.bookTitle
+											};
+											var JSONstring = JSON.stringify(Inf);
+											
+											
+											$.ajax({
+														url: 'scripts/FigbookActionHandler/actionHandler.php',
+														data: 'json=' + JSONstring,
+														dataType: 'json',
+														success: function (data1)
+														{
+															//alert(JSON.stringify(data1));
+															localStorage.userRole = data1;
+															//make sure it gets a title for a book to load
+															if (loadPageInfo.title !== "")
+															{
+																get_page(loadPageInfo);
+																commentDropDown(loadPageInfo.title);			
+															}
+														}
+														, error: function (data1) {
+															//alert(JSON.stringify(data1));
+														}
+													});
+													//event.preventDefault();
+													
+									});
+								}
+								
+							}
+							else {
+								//localStorage.permission = "false";
+							}
+						});
+						
+								
 			});
+			
 			html += "< /select>";
 			
 			document.getElementById("pageList").innerHTML = html;
@@ -902,6 +953,13 @@ $(document).ready(function () {
 	        event.preventDefault();
 	    }
     function get_page(params) {
+					//alert("Get page call");
+					//Make the comment area visible
+					$("#commentSide").css('display','block');
+					$("#commentHide").css('display','block');
+					//Make the comment hide automatically after showing it.
+					$("#commentHide").trigger("click");
+					
         var title_ = params.title;
         var replaced = title_.split(' ').join('_');
         $.ajax({
@@ -911,7 +969,9 @@ $(document).ready(function () {
 
 			//Takes you to the page content where reading and editing is done.
 			//window.location.href = "content.html";
-
+			
+					
+			
             $('#bookList').fadeOut("slow",function(){
 				$('#pageView').fadeIn("slow",function(){
 				  	document.getElementById('pageView').innerHTML = data;
@@ -958,11 +1018,7 @@ $(document).ready(function () {
 					var links = page.getElementsByClassName("mw-editsection");
 					$(links).remove();
 
-					//Make the comment area visible
-					$("#commentSide").css('display','block');
-					$("#commentHide").css('display','block');
-					//Make the comment hide automatically after showing it.
-					$("#commentHide").trigger("click");	
+						
 					
 					
 					var num_links =1;
