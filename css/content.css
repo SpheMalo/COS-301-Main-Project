@@ -423,6 +423,7 @@ box-shadow: 2px 4px 24px 3px rgba(0,0,0,0.75);
 }
 .service:hover{cursor:pointer;height:38px;border-bottom:solid 2px rgba(85,127,184,1.00);}
 
+
 .bookItem{margin:5px;float:left;width:230px;height:220px;
 
 background-color:transparent;
@@ -436,7 +437,18 @@ font-size: 20pt;
 color:rgba(4,32,160,1.00);
 text-shadow: 0 1px 5px rgba(0,0,0,0.50);
 }
-.bookItem:hover{cursor:pointer;
+.createBook{background:url("../images/addBook.png") center no-repeat;
+background-color:transparent;
+background-size:150px 150px;
+line-height:50px;text-align:center;/*
+-webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);*/
+font-size: 20pt;
+color:rgba(4,32,160,1.00);
+text-shadow: 0 1px 5px rgba(0,0,0,0.50);
+}
+.bookItem:hover,.createBook:hover{cursor:pointer;
 box-shadow: 0px 0px 10px 0px rgba(119, 119, 119, 0.75);
 -moz-box-shadow: 0px 0px 10px 0px rgba(119, 119, 119, 0.75);
 -webkit-box-shadow: 0px 0px 10px 0px rgba(119, 119, 119, 0.75);
