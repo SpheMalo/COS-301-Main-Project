@@ -390,6 +390,9 @@ function cleanDelete(bookTitle) {
 	        event.preventDefault();
 	    }
 $(document).ready(function () {
+	
+	
+	
     $("#delBtn").click(function(event){
         $.post("scripts/mediawiki/api.php?action=query&prop=info|revisions&meta=tokens&rvprop=timestamp&titles="+localStorage.bookTitle+"&format=json",function(data){	
     
@@ -735,6 +738,8 @@ $(document).ready(function () {
                 localStorage.reload = "yes";
 		$('#bookList').html("");
 			
+		
+			
 		$.post('scripts/mediawiki/api.php?action=query&list=allpages&aplimit=100&format=json',
 		function (data) {
 			console.log(JSON.stringify(data));
@@ -742,7 +747,7 @@ $(document).ready(function () {
 			var html = "";
 			html += "Page List: <select placeholder='Select Page' id='pageSelect' >" +
 				"<option value='' disabled='disabled' selected='selected'>Page List</option>";
-			
+			$("#bookList").append("<div id='createBook' class='createBook bookItem'></div>");
 			$.each(data.query.allpages, function (i, v) {
 				html += "<option value='" + data.query.allpages[i].title + "'>" + data.query.allpages[i].title + "</option>";				//alert("ishere");
 						
@@ -752,7 +757,7 @@ $(document).ready(function () {
 	                            "action": "checkPagePermissions",
 	                            "bookTitle": replaced
 	                        };
-	
+		
 	                        var JSONstring = JSON.stringify(loadPageInfo);
 	                        $.post('scripts/FigbookActionHandler/actionHandler.php?json=' + JSONstring, function (data)
 	                        {
@@ -762,10 +767,15 @@ $(document).ready(function () {
 	                               
 	                                //div.off('click');
 	                                //div.onclick=onClickBook(pageTitle, div);
-	
+									
 	                                $("#bookList").append("<div class='bookItem'>"+pageTitle+"</div>");
                                         localStorage.bookTitle = "";
-                                        
+                                      
+									 $('#createBook').click(function(){
+											//alert('hello');
+											$('.service:nth-child(1)').trigger("click");	
+									  }); 
+									    
 	                                $('.bookItem').click(function (event) {
 	                                    //alert("book clicked : "+$(this).html());
 										
