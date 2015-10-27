@@ -21,6 +21,14 @@ function saveConflict()
     re = new RegExp(find, 'g');
   	content = content.replace(re,"");
 
+    //Replace all double and single quotes
+    var find = "\"";
+  	var re = new RegExp(find, 'g');
+  	content = content.replace(re,"<dQt>");
+    
+    var find = "'";
+  	var re = new RegExp(find, 'g');
+  	content = content.replace(re,"<sQt>");
     //alert(content);
 
     var timeStamp = localStorage.getItem("tStamp");

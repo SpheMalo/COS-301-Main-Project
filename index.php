@@ -95,7 +95,7 @@
 		   
 		   <div id="vidContainer"> <!--Video container START-->
 		   <div id="vidMenu"><div>Registration Example</div><div>Login Example</div></div>
-			<video id="vidPlayer" autoplay loop>
+			<video id="vidPlayer" controls>
 			  <source src="videos/reg.mp4" type="video/mp4">		
 			Your browser does not support the video tag.
 			</video>

@@ -137,6 +137,13 @@ window.onload = function()
 		
 		
 		$('#register-button').click(function(event){
+            
+            //Remove error message if there is one
+            if (document.getElementById("incorrectVal") != null) {
+                
+                document.getElementById("incorrectVal").innerHTML = "";
+            }
+            
             addGif('Registering...','loadingNew','.wrapperReg');
 			var pass1 = document.getElementById('password');
 			var pass2 = document.getElementById('confirmpassword');
@@ -154,6 +161,14 @@ window.onload = function()
 				
 				event.preventDefault();
 			}
+            //Ensure password is atleast 8 characters
+            else if (pass1.value.length < 8)
+            {
+                removeGif();
+                addErrorCode("For your security, passwords must be atleast 8 characters", "password");
+                
+                event.preventDefault();
+            }
 			else
 			{
 				event.preventDefault();
@@ -285,6 +300,19 @@ window.onload = function()
 		$('#logoutDiv').click(function(){wiki_logout(); });
 		
 		$( "#login-button" ).click(function(event) {
+                        
+            //remove the error message if there is one.    
+            if (document.getElementById('loginIncorrect') != null)
+            {
+                document.getElementById('loginIncorrect').innerHTML = "";    
+            }
+            
+            if (document.getElementById("LoginUsername").value == "" || document.getElementById("LoginPassword").value == "") {
+                removeGif();
+                addErrorCode("Fields cannot be empty.", "loginErr");
+                event.preventDefault();
+            }
+            
 			addGif('Logging in...','loadingNew','.wrapper');
             var UserInfo = {
 				"username" : document.getElementById("LoginUsername").value,
@@ -368,48 +396,48 @@ window.onload = function()
 								   if (data.login.result == "Success") { 
 									   //alert(data.login.sessionid);
 									  console.log(JSON.stringify(data));
-                                                                          document.cookie="username="+data.login.lgusername;
-                                                                          var UserInfo = {			
-                                                                            "action" : "getUserStatus"
-                                                                            }
-                                                                          var JSONstring = JSON.stringify(UserInfo);
-                                                                          $.ajax({
-                                                                                url: 'scripts/FigbookActionHandler/actionHandler.php',
-                                                                                data: 'json='+JSONstring,
-                                                                                dataType: 'json',
-                                                                                success: function(data1){
-                                                                                        console.log(data1);
-                                                                                        if(data1 === "1"){
-                                                                                            removeGif();
-                                                                                            document.location.href=ref;
-                                                                                        
-                                                                                            
-                                                                                              
-                                                                                             
-                                                                                        }
-                                                                                        else if(data1 === "0"){
-                                                                                            removeGif();
-                                                                                            document.cookie = "username" + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-                                                                                            addErrorCode("Your account has been deleted, contact administrator", "loginErr");
-                                                                                        }
-                                                                                        else if(data1 === "2"){
-                                                                                                removeGif();
-                                                                                            document.cookie = "username" + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-                                                                                            addErrorCode("This account has been suspended, contact administrator", "loginErr");
-                                                                                        }
-                                                                                        //localStorage.setItem("lgusername", data.login.lgusername);
-                                                                                        //document.location.href=ref; 
-                                                                                },
-                                                                                error: function(data1){
-                                                                                        removeGif();
-                                                                                        console.log("error :"+data1.responseText);
-                                                                                }		
-                                                                            });
-									  
+                                                document.cookie="username="+data.login.lgusername;
+                                                var UserInfo = {			
+                                                  "action" : "getUserStatus"
+                                                  }
+                                                var JSONstring = JSON.stringify(UserInfo);
+                                                $.ajax({
+                                                      url: 'scripts/FigbookActionHandler/actionHandler.php',
+                                                      data: 'json='+JSONstring,
+                                                      dataType: 'json',
+                                                      success: function(data1){
+                                                              console.log(data1);
+                                                              if(data1 === "1"){
+                                                                  removeGif();
+                                                                  document.location.href=ref;
+                                                              
+                                                                  
+                                                                    
+                                                                   
+                                                              }
+                                                              else if(data1 === "0"){
+                                                                  removeGif();
+                                                                  document.cookie = "username" + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                                                                  addErrorCode("Your account has been deleted, contact administrator", "loginErr");
+                                                              }
+                                                              else if(data1 === "2"){
+                                                                      removeGif();
+                                                                  document.cookie = "username" + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                                                                  addErrorCode("This account has been suspended, contact administrator", "loginErr");
+                                                              }
+                                                              //localStorage.setItem("lgusername", data.login.lgusername);
+                                                              //document.location.href=ref; 
+                                                      },
+                                                      error: function(data1){
+                                                              removeGif();
+                                                              console.log("error :"+data1.responseText);
+                                                      }		
+                                                  });
+            
 									
 								   } else {
                                         removeGif();
-									addErrorCode("Invalid Credentials. Please enter valid credentials or Register a new account.", "loginErr");
+									addErrorCode("Invalid Credentials. Please check credentials, Register an account or click \"forgot password\" above.", "loginErr");
 									console.log('Result: '+ data.login.result);
 								   }
 								} 

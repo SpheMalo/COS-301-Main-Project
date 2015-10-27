@@ -1105,7 +1105,17 @@ $(document).ready(function () {
 								linkNumber++;
 							}
 							else{
-							htmlValue += "<p>"+childNodes[i].innerHTML+"</p>";
+								var contentOfParagraph = childNodes[i].innerHTML;
+								
+								//Replace all double and single quotes
+								var find = "<dQt>";
+								var re = new RegExp(find, 'g');
+								contentOfParagraph = contentOfParagraph.replace(re,"\"");
+								
+								var find = "<sQt>";
+								var re = new RegExp(find, 'g');
+								contentOfParagraph = contentOfParagraph.replace(re,"'");
+							htmlValue += "<p>"+contentOfParagraph+"</p>";
 							}
 						}
 					}

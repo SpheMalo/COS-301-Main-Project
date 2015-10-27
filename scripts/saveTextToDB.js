@@ -9,6 +9,15 @@ function saveText()
     var content = iframe.find("body").html();
     sectionNumber = parseInt(sectionNumber);
 
+    //Replace all double and single quotes
+    var find = "\"";
+  	var re = new RegExp(find, 'g');
+  	content = content.replace(re,"<dQt>");
+    
+    var find = "'";
+  	var re = new RegExp(find, 'g');
+  	content = content.replace(re,"<sQt>");
+    
     var timeStamp = localStorage.getItem("tStamp");
     console.log("Before saving: " + timeStamp);
 	var jsonString = {
@@ -148,7 +157,16 @@ window.onload = function() {
 function resolveConflict()
 {
     var conflictData = JSON.parse(localStorage.conflictInfo);
-
+    
+    //Replace all double and single quotes
+    var find = "<dQt>";
+  	var re = new RegExp(find, 'g');
+  	conflictData.mergedText = conflictData.mergedText.replace(re,"\"");
+    
+    var find = "<sQt>";
+  	var re = new RegExp(find, 'g');
+  	conflictData.mergedText = conflictData.mergedText.replace(re,"'");
+    
     var contentToParse = conflictData.mergedText;
     var find = "<<<<<<<";
   	var re = new RegExp(find, 'g');
