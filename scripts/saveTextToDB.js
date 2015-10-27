@@ -127,6 +127,8 @@ function saveText()
 
 
 window.onload = function() {
+    
+    
 //window.onload = function(){
     $("#addBefore").click(function(){
         var newContent = $("#newPar").html();

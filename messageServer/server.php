@@ -53,6 +53,10 @@ while (true) {
 		//check for any incomming data
 		if(isset($changed_socket))
 		{
+			//$status = socket_get_status($changed_socket);
+			//print $status;
+			//if (socket_get_status($changed_socket))
+			
 			while(socket_recv($changed_socket, $buf, 1024, 0) >= 1)
 			{
 				//print "Received buffer: ".$buf.PHP_EOL;
@@ -129,7 +133,7 @@ while (true) {
 				
 				//notify all users about disconnected connection
 				$response = mask(json_encode(array('type'=>'system', 'message'=>$ip.' disconnected')));
-				send_message($response);
+				//send_message($response);
 			}
 		}
 	}

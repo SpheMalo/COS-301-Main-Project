@@ -14,12 +14,14 @@ $colours = array('007AFF','FF7000','FF7000','15E25F','CFC700','CFC700','CF1100',
 $user_colour = array_rand($colours);
 ?>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>-->
 
-<script language="javascript" type="text/javascript">  
+<script language="javascript" type="text/javascript">
+	//function onkey(event){ if(event.keyCode==13){ alert('hello') ; } }
+	
 $(document).ready(function(){
 	//create a new WebSocket object.
-	var wsUri = "ws://localhost:9000/server.php"; 	
+	var wsUri = "ws://10.0.0.4:9000/server.php"; 	
 	websocket = new WebSocket(wsUri); 
 	var myto = "all";
 	var nameList = Array();
@@ -88,7 +90,7 @@ $(document).ready(function(){
 					var name = $(this).html();
 					
 					myto = name;
-					alert(name);
+					//alert(name);
 			});
 		}
 		else
@@ -117,7 +119,12 @@ $(document).ready(function(){
 		}
 		//$('#message').val(''); //reset text
 	};
-	
+	$('#message').bind('keypress',function(e){
+		if (e.keyCode == 13)
+		{
+			$('#send-btn').trigger('click');
+		}
+	})
 	websocket.onerror	= function(ev){$('#message_box').append("<div class=\"system_error\">Error Occurred - "+ev.data+"</div>");}; 
 	websocket.onclose 	= function(ev){$('#message_box').append("<div class=\"system_msg\">Connection Closed</div>");}; 
 });
