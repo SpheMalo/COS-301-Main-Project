@@ -51,13 +51,21 @@ class manuscript {
     //go to systems database and check if the book title exists
      public function titleExists($title) {
         
-        $query="SELECT * FROM page WHERE page_title= '$title'";
-        $queryResult = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $query));//run query
+	    
+        $query="SELECT page_title FROM page where page_id >= 0";
+        $queryResult = mysqli_query($this->dbInstance, $query);//run query
         $result = "false";
-	if(($queryResult) > 0){
-		$result = "true";
-	}
-	
+		
+		while($row = mysqli_fetch_assoc($queryResult))
+		{
+		  if ( strcmp(strtolower($row['page_title']),strtolower($title)) == 0)
+		  {
+			   $result = "true";
+			   
+			   break;
+		  }
+		}
+
        return $result;
     }
     

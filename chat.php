@@ -24,6 +24,9 @@ $(document).ready(function(){
 	var myto = "all";
 	var nameList = Array();
 	
+	
+	
+	
 	websocket.onopen = function(ev) { // connection is open 
 		$('#message_box').append("<div class=\"system_msg\">Connected!</div>"); //notify user
 		var myname = $('#name').val();
@@ -78,8 +81,15 @@ $(document).ready(function(){
 				var newDiv = $('<div class="contact">'+nameList[i]+'</div>');
 				$('#contacts').append(newDiv);
 				}
+				
+				
 			}
-			
+			$('.contact').click(function(){
+					var name = $(this).html();
+					
+					myto = name;
+					alert(name);
+			});
 		}
 		else
 		{		

@@ -57,7 +57,7 @@ form.onsubmit = function(event)
 		xhr.onload = function () {
 		  if (xhr.status === 200) {
 			// File(s) uploaded.
-			alert(xhr.responseText);
+			//alert(xhr.responseText);
 			$("#profileLink").trigger("click");
 			removeGif();
 			//uploadButton.innerHTML = 'Upload';

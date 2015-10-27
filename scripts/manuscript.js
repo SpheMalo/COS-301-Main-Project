@@ -663,9 +663,10 @@ $(document).ready(function () {
 		//Get the data from inputs
 		
 		info.title = $('#title').val();
-		info.firstname = readCookie('username');
-		info.surname = $('#surname').val();
-		
+		//info.firstname = readCookie('username');
+		//info.surname = $('#surname').val();
+	    info.title = (info.title).split(' ').join('_');
+		//alert(info.title);
 		var UserInfo = {
 			"action" : "checkTitle",
 			"title" : info.title
@@ -686,7 +687,7 @@ $(document).ready(function () {
 			dataType: 'json',
 			success: function(data)
 			{
-				
+				//alert(data);
 				if(data == "false"){
 					if (document.getElementById('error_par') != null)
 					{
@@ -706,9 +707,10 @@ $(document).ready(function () {
 				else if(data == "true"){
 					
 					var form = document.getElementById("contentDiv");
+					$('#bookDiv').css('height','200px');
 					var incorrectVal = document.createElement('p');
 					incorrectVal.id = "error_par";
-					incorrectVal.innerHTML = "Title exist: Choose a different title";
+					incorrectVal.innerHTML = "Title exists: Choose a different title";
 					incorrectVal.style.color = "#F95050";
 					incorrectVal.style.fontSize ="18pt";
 					form.appendChild(incorrectVal);
@@ -780,7 +782,7 @@ $(document).ready(function () {
 			var html = "";
 			html += "Page List: <select placeholder='Select Page' id='pageSelect' >" +
 				"<option value='' disabled='disabled' selected='selected'>Page List</option>";
-			$("#bookList").append("<div id='createBook' class='createBook bookItem'></div>");
+			$("#bookList").append("<div id='createBook' class='createBook'></div>");
 			var counter = 0;
 			
 			
@@ -797,7 +799,7 @@ $(document).ready(function () {
 							
 		
 	                        var JSONstring = JSON.stringify(loadPageInfo);
-	                        
+	                        var books;
 						$.post('scripts/FigbookActionHandler/actionHandler.php?json=' + JSONstring, function (data)
 						{
 							// console.log(JSON.stringify(data));
@@ -815,14 +817,16 @@ $(document).ready(function () {
 								
 									counter++;
 									//alert(counter);
-									var books = document.getElementsByClassName('bookItem');
+									
 									
 									
 								//alert(dataLength+" "+counter);	
 								if (dataLength === counter)//This is to force the click calls to execute only once... 
 								{
 											//alert(counter);
-											//Sorting the booklist START	
+											//Sorting the booklist START
+											 books = document.getElementsByClassName('bookItem');
+											
 											var temp;
 											for (var k = 0;k<books.length-1;k++)
 											{
@@ -895,7 +899,26 @@ $(document).ready(function () {
 								if (dataLength === counter)//This is to force the click calls to execute only once...
 								{
 									
-											
+										 books = document.getElementsByClassName('bookItem');
+										 
+										 
+										 //alert(counter);
+											//Sorting the booklist START	
+											var temp;
+											for (var k = 0;k<books.length-1;k++)
+											{
+												for (var j = k;j<books.length;j++)
+												{
+													if (books[k].innerHTML > books[j].innerHTML) {
+														temp = books[j].innerHTML;
+														books[j].innerHTML = books[k].innerHTML;
+														books[k].innerHTML = temp;
+													}
+													
+												}								
+								
+											}//Sorting the booklist END
+										 
 									 $('#createBook').click(function(){
 											//alert('hello');
 											$('.service:nth-child(1)').trigger("click");	

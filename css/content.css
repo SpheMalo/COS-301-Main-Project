@@ -338,7 +338,7 @@ width:130px;
 #contentDiv{margin-top:20px;}
 #infoBox{width:320px;height:50px;margin-left:auto;margin-right:auto;}
 #labels{float:left;height:auto;width:100px;}
-#inputs{float:right;;height:auto;width:200px;}
+#inputs{float:right;height:50px;width:200px;}
 #saveBookForm{
 	margin-top:10px;
 	margin-bottom:10px;
@@ -349,7 +349,7 @@ width:130px;
 	height:40px;
 	padding:0px;
 }
-#next-button{width:80px;height:25px;position:relative;left:130px;}
+#next-button{width:80px;height:25px;position:relative;}
 
 #scriptMenuBar{width:100%;height:60px;
 background: rgba(196,192,196,1);
@@ -482,17 +482,19 @@ font-size: 20pt;
 color:rgba(4,32,160,1.00);
 text-shadow: 0 1px 5px rgba(0,0,0,0.50);
 }
-.createBook{background:url("../images/addBook.png") center no-repeat;
+.createBook{
+margin:5px;float:left;width:230px;height:220px;
+background:url("../images/addBook.png") center no-repeat;
 background-color:transparent;
 background-size:150px 150px;
-line-height:50px;text-align:center;/*
--webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);*/
+line-height:50px;text-align:center;
+
 font-size: 20pt;
 color:rgba(4,32,160,1.00);
 text-shadow: 0 1px 5px rgba(0,0,0,0.50);
+
 }
+
 .bookItem:hover,.createBook:hover{cursor:pointer;
 box-shadow: 0px 0px 10px 0px rgba(119, 119, 119, 0.75);
 -moz-box-shadow: 0px 0px 10px 0px rgba(119, 119, 119, 0.75);
