@@ -147,7 +147,7 @@
 				<div id="portfolioContainer"><!--PortfolioContainer START-->
 					<div id="portImageBack">
 						<img id="editImage" src="images/edit.png" width='25px' height="25px">
-						<img alt="testimonial image" id="portImage" >
+						<img alt="Profile picture" id="portImage" >
 						
 					</div>
 						<button type="button" id="profileEditButton"></button>

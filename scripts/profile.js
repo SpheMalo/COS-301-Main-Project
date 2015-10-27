@@ -8,12 +8,14 @@ $('#portImage').click(function(){
 	//open the file upload dialog by clicking on the image.
 	//and then when done upload it.
 		$( "#fileToUpload" ).trigger( "click");
-		
-		$( "#fileToUpload" ).change(function() {
-		  //alert( "Handler for .change() called." );
-		  	$( "#submitFile" ).trigger("click");	
-		});
+		var counter = 0;
+			
 	
+});
+
+$( "#fileToUpload" ).change(function() {		  
+             addGif('Uploading Picture','loadingNew');
+		  	 $( "#submitFile" ).trigger("click");	
 });
 
 
@@ -25,7 +27,7 @@ form.onsubmit = function(event)
 {
 	event.preventDefault();
 	
-  
+	
 	// The rest of the code will go here...
 	var files = fileSelect.files;
 	// Create a new FormData object.
@@ -37,7 +39,10 @@ form.onsubmit = function(event)
 	
 	  // Check the file type.
 	  if (!file.type.match('image.*')) {
+		removeGif();
+		alert("Wrong file type");
 		continue;
+		
 	  }
 	
 	  // Add the file to the request.
@@ -52,11 +57,12 @@ form.onsubmit = function(event)
 		xhr.onload = function () {
 		  if (xhr.status === 200) {
 			// File(s) uploaded.
-			//alert(xhr.responseText);
+			alert(xhr.responseText);
 			$("#profileLink").trigger("click");
-			
+			removeGif();
 			//uploadButton.innerHTML = 'Upload';
 		  } else {
+			removeGif();
 			alert('An error occurred!');
 		  }
 		};

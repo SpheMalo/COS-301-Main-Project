@@ -231,7 +231,7 @@ function addLightbox(insertContent) {
 		// remove any previously added content
 		var copy = document.getElementById("lightbox").childNodes;
 		if (copy.length >= 1) {
-			for (var i = 1;i<=copy.length; i++) {
+			for (var i = 0;i<copy.length; i++) {
 				$(copy[i]).css('display','none');
 				$('body').append(copy[i]);
 			}
@@ -246,6 +246,7 @@ function addLightbox(insertContent) {
 		
 		// insert HTML content
 		if(insertContent != null){
+			$(insertContent).css('display','block'); 
 			$('#lightbox').append(insertContent);
 		}
 		

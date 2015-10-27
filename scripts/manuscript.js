@@ -94,15 +94,23 @@ function commentDropDown(page){
 		dataType: 'json',
 		success: function (data){
 			//alert(JSON.stringify(data));
-			
+			//alert(data);
 			if(sel.length == 1){
-				//alert("here");
-				var i = 1;
-				for(; i <= data; i+=1){
+				var sections = document.getElementsByClassName('mw-headline');
+				var i = 0;
+				
+				for(; i <= sections.length; i+=1){
 					var opt = document.createElement("option");
-					opt.setAttribute("value", i);
-					opt.innerHTML = i;
-					sel.appendChild(opt);
+					
+					
+					if (sections[i] !== undefined) {
+						opt.setAttribute("value", i+1);
+						opt.innerHTML = sections[i].innerHTML;
+						sel.appendChild(opt);
+					}
+					
+					
+					
 				}
 			}
 			else{
@@ -203,7 +211,7 @@ function link()
         type: 'POST',
         success: function (data) {
             var jsonString = JSON.stringify(data);  
-            alert(jsonString);
+            alert("You have shared the book with: "+$('#fuzzyText').val()+", with "+access+" access." );
 			closeLightbox();
         },
         error: function (data) {
@@ -337,6 +345,7 @@ function editSection(value)
 }
 
 function delete_page(){
+			addGif('Deleting Book','loadingNew');
             var book_title = $("#delete_book_title").val();
             book_title = book_title.split('_').join(' ');
             //alert(book_title);
@@ -365,12 +374,15 @@ function delete_page(){
                                     }, 1000);
                                     //$.wait(2000).then(window.location.reload());
                                 } else if (data && data.error) {
+									removeGif();
                                     alert('Error: API returned error code "' + data.error.code + '": ' + data.error.info);
                                 } else {
+									removeGif();
                                     alert('Error: Unknown result from API.');
                                 }
                             },
                             error: function (data) {
+								removeGif();
                                 console.log('Error: Request failed. ' + JSON.stringify(data));
                                
                             }
@@ -392,9 +404,11 @@ function cleanDelete(bookTitle) {
 	            success: function (data)
 	            {
 	                //alert(JSON.stringify(data));
+					removeGif();
 	            }
 	            , error: function (data) {
 	                //alert(JSON.stringify(data));
+					removeGif();
 	            }
 	        });
 	        event.preventDefault();
@@ -404,8 +418,9 @@ $(document).ready(function () {
 	
 	
     $("#delBtn").click(function(event){
-        $.post("scripts/mediawiki/api.php?action=query&prop=info|revisions&meta=tokens&rvprop=timestamp&titles="+localStorage.bookTitle+"&format=json",function(data){	
-    
+        addGif('Deleting Chapter','loadingNew');
+		$.post("scripts/mediawiki/api.php?action=query&prop=info|revisions&meta=tokens&rvprop=timestamp&titles="+localStorage.bookTitle+"&format=json",function(data){	
+		
     $.ajax({	
             url: "scripts/mediawiki/api.php",
             data: {
@@ -424,23 +439,28 @@ $(document).ready(function () {
 
                 if (data && data.edit && data.edit.result === 'Success')
                 {
-                    alert("Section deleted successfully");
-					closeLightbox();
-                                        refreshBook();
+                    //alert("Section deleted successfully");
+					
+                    refreshBook();
+					removeGif();
+					//closeLightbox();
 					//This will display the actual page again. with updated values
 					
                 }
                 else if (data && data.error)
                 {
+					removeGif();
                     alert('Error: API returned error code "' + data.error.code + '": ' + data.error.info);
                 }
                 else
                 {
+					removeGif();
                     alert('Error: Unknown result from API.');
                 }
             },
             error: function (data)
             {
+				removeGif();
                 console.log('Error: Request failed. ' + JSON.stringify(data));
                 $('#Page').append("<a href='/scripts/mediawiki/index.php/" + params.title + "'>Link to your book</a>");
             }
@@ -456,6 +476,7 @@ $(document).ready(function () {
     *  If the timestamps match, it means there was no conflict and "true" is returned.
     *  If the timestamps don't match it means there is a conflict. "false" is returned
     */
+	addGif('Adding Section','loadingNew');
     $.post("scripts/mediawiki/api.php?action=query&prop=info|revisions&meta=tokens&rvprop=timestamp&titles="+localStorage.bookTitle+"&format=json",function(data){	
     
     $.ajax({	
@@ -483,7 +504,7 @@ $(document).ready(function () {
                                     element.outerHTML = "";
                                     delete element;
                                     }
-                                        closeLightbox();
+                                        //closeLightbox();
                                         refreshBook();
                                         
                                     }, 1000);
@@ -493,15 +514,18 @@ $(document).ready(function () {
                 }
                 else if (data && data.error)
                 {
+					removeGif();
                     alert('Error: API returned error code "' + data.error.code + '": ' + data.error.info);
                 }
                 else
                 {
+					removeGif();
                     alert('Error: Unknown result from API.');
                 }
             },
             error: function (data)
             {
+				removeGif();
                 console.log('Error: Request failed. ' + JSON.stringify(data));
                 $('#Page').append("<a href='/scripts/mediawiki/index.php/" + params.title + "'>Link to your book</a>");
             }
@@ -524,7 +548,6 @@ $(document).ready(function () {
 
                 change: function( event, ui ) {
                         if ( !ui.item ) {
-
                               $("#fuzzyText" ).val($("#link_user_name").val());
                         }
                   },
@@ -825,7 +848,7 @@ $(document).ready(function () {
 										//Populating comment dropdown and  comments for each chapter.
 										//alert("Success");
 										
-										
+										addGif('Loading Book','loadingNew');
 										var loadPageInfo = {
 											"title": $(this).html()
 										};
@@ -850,11 +873,13 @@ $(document).ready(function () {
 															if (loadPageInfo.title !== "")
 															{
 																get_page(loadPageInfo);
-																commentDropDown(loadPageInfo.title);			
+																commentDropDown(loadPageInfo.title);
+																//removeGif();
 															}
+															//removeGif();
 														}
 														, error: function (data1) {
-															
+															removeGif();
 															//alert(JSON.stringify(data1));
 														}
 													});
@@ -880,7 +905,7 @@ $(document).ready(function () {
 										//alert("book clicked : "+$(this).html());
 										//Populating comment dropdown and  comments for each chapter.
 										//alert("else");
-										
+										addGif('Loading Book','loadingNew');
 										
 										var loadPageInfo = {
 											"title": $(this).html()
@@ -906,11 +931,13 @@ $(document).ready(function () {
 															if (loadPageInfo.title !== "")
 															{
 																get_page(loadPageInfo);
-																commentDropDown(loadPageInfo.title);			
+																commentDropDown(loadPageInfo.title);
+																//removeGif();
 															}
+															//removeGif();
 														}
 														, error: function (data1) {
-															
+															removeGif();
 															//alert(JSON.stringify(data1));
 														}
 													});
@@ -1034,7 +1061,7 @@ $(document).ready(function () {
 					//}));
 
 					document.getElementById('pageView').innerHTML = "";
-                                        $( "#pageView" ).append("<div id='bookTitleDiv'><span id='bookTitle'>"+title_+"</span></div>");
+                                        $( "#pageView" ).append("<div id='bookTitleDiv'><span id='backList'>Back-To-Booklist</span><span id='bookTitle'>"+title_+"</span></div>");
                                         localStorage.bookTitle = title_;
 					var htmlValue = "";
 					var linkNumber = 1;
@@ -1051,7 +1078,7 @@ $(document).ready(function () {
 								}
 								// add section div
 
-								htmlValue = "<div class='sectionDiv' onclick='editSection("+linkNumber+")'><div class='sectionHeading' >"+childNodes[i].innerHTML+"</div><div class='insideText'  >";
+								htmlValue = "<div class='sectionDiv' onclick='editSection("+linkNumber+")'><div class='sectionHeading' >"+childNodes[i].innerHTML+"<span class='deleteSectionSpan'></span></div><div class='insideText'  >";
 								linkNumber++;
 							}
 							else{
@@ -1059,6 +1086,8 @@ $(document).ready(function () {
 							}
 						}
 					}
+					
+					
 					//Make the comment area visible
 					$("#commentSide").css('display','block');
 					$("#commentHide").css('display','block');
@@ -1066,11 +1095,36 @@ $(document).ready(function () {
 					$("#commentHide").trigger("click");
 
 					$( "#pageView" ).append(htmlValue+"</div></div></div>");
+					
+					//Create an easy interface to add a chapter to the book.
+					$("#pageView").append("<div class='addChapterBar'><p>Click To Add A Chapter</p></div>");
+					$('.addChapterBar').click(function(){							
+						$('#addChapter').trigger('click');
+					});
+					$('.deleteSectionSpan').click(function(){
+						
+						var test = confirm('Are you sure you want to delete this chapter?');
+						if (test === true) {
+							$("#delBtn").trigger('click');
+						}
+						else
+						{
+							//$("#backToBook").trigger('click');							
+						}
+						
+						//alert("delete");
+					});
+					//easy Back to book list functionality
+					$('#backList').click(function(){
+						$('#viewBooks').trigger('click');	
+						
+					});
+					
 					var headings = document.getElementsByClassName("mw-headline");
-					console.log("headings: "+headings[0].innerHTML); //?
+					//console.log("headings: "+headings[0].innerHTML); //?
 
 					var page = document.getElementById("pageView");
-					console.log(page);//?
+					//console.log(page);//?
 					var links = page.getElementsByClassName("mw-editsection");
 					$(links).remove();
 
@@ -1096,11 +1150,14 @@ $(document).ready(function () {
 					
 					//Populating comment dropdown and  comments for each chapter.
 					commentDropDown(localStorage.bookTitle);
+					
+					removeGif();
 				});
 			});
 
         }, 5000).error(function (data) {
             console.log(JSON.stringify(data));
+			removeGif();
             //window.location.href = "/scripts/mediawiki/index.php/"+ params.title;
         });
         //event.preventDefault();

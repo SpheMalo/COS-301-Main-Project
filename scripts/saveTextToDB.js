@@ -1,7 +1,7 @@
 
 function saveText()
 {
-    addGif('saving');
+    addGif('Saving','loadingNew');
     //Getting info to pass to the ajax function
     var sectionHeading = $("#pageEditTitle").val();
     var sectionNumber = $("#saveBtn").attr("name");
@@ -80,15 +80,18 @@ function saveText()
                                 }
                                 else if (data && data.error)
                                 {
+                                    removeGif();
                                     alert('Error: API returned error code "' + data.error.code + '": ' + data.error.info);
                                 }
                                 else
                                 {
+                                    removeGif();
                                     alert('Error: Unknown result from API.');
                                 }
                             },
                             error: function (data)
                             {
+                                removeGif();
                                 console.log('Error: Request failed. ' + JSON.stringify(data));
                                 $('#Page').append("<a href='/scripts/mediawiki/index.php/" + params.title + "'>Link to your book</a>");
                             }
@@ -114,6 +117,7 @@ function saveText()
                 }
             },
             error: function (data) {
+                    removeGif();
                 console.log('Error: Request failed. ' + (data.responseText));
 
             }

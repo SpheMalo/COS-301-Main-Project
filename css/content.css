@@ -243,6 +243,51 @@ line-height:40px;
 border-bottom:1px solid rgba(220,220,220,1.00);
 border-top:1px solid rgba(220,220,220,1.00);
 }
+.addChapterBar{
+width:100%;background-color:rgba(243,243,243,1.00);height:40px;text-align:center;font-size:10pt;
+line-height:60px;
+border-bottom:1px solid rgba(220,220,220,1.00);
+border-top:1px solid rgba(220,220,220,1.00);
+color:rgb(175, 207, 203);
+background-image: url('../images/addChapter.png');
+background-position: center;
+background-repeat: no-repeat;
+background-size: 40px 38px;
+
+}
+
+.addChapterBar:hover p{visibility: visible;}
+.addChapterBar:hover{cursor: pointer;height:41px;}
+.addChapterBar p{margin-left:190px;display: inline;visibility: hidden;}
+.deleteSectionSpan{
+	float:right;
+	margin-right:4px;
+	width:30px;height:30px;
+	background-image: url('../images/deleteChapter.png');
+	background-position: right center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-top: 3px;
+	margin-left:-40px;
+}
+.deleteSectionSpan:hover{
+	cursor: pointer;
+	width:32px;height:32px;
+	margin-top:1px;
+}
+#backList{
+	float:left;height:40px;margin-left:6px;
+	font-size: 14px;cursor: pointer;font-weight: bold;
+	margin-top:7px;
+	
+	background-color:rgba(240,240,240,0.9);
+	border:2px solid rgba(220,220,220,1.00);
+	width:130px;
+	margin-right:-136px;
+	line-height: 40px;
+}
+#backList:hover{width:132px;height:42px;margin-right:-138px;}
+
 #bookTitleDiv{width:100%;background-color:rgba(33, 109, 149, 0.4);min-height: 55px;text-align:center;font-size:28pt;
 line-height:55px;
 border-bottom:1px solid rgba(220,220,220,1.00);
@@ -852,7 +897,7 @@ text-shadow: 0 1px 2px rgba(107,207,198,1.00);
 /*Instant messaging area*/
 
 @media(max-width: 767px){
-	
+	.addChapterBar p{display: none;}
 	/*Options menu*/
 	#optionsContainer
 	{
