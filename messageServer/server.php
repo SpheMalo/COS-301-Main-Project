@@ -53,9 +53,6 @@ while (true) {
 		//check for any incomming data
 		if(isset($changed_socket))
 		{
-			//$status = socket_get_status($changed_socket);
-			//print $status;
-			//if (socket_get_status($changed_socket))
 			
 			while(socket_recv($changed_socket, $buf, 1024, 0) >= 1)
 			{
@@ -67,10 +64,10 @@ while (true) {
 				
 				if (isset($tst_msg))
 				{
-				$user_name = $tst_msg->name; //sender name
-				$user_message = $tst_msg->message; //message text
-				$user_to = $tst_msg->to;
-				$user_color = $tst_msg->color; //color
+					$user_name = $tst_msg->name; //sender name
+					$user_message = $tst_msg->message; //message text
+					$user_to = $tst_msg->to;
+					$user_color = $tst_msg->color; //color
 				
 					if ($user_message === "setName" &&  $user_to === "Server")
 					{
@@ -124,10 +121,10 @@ while (true) {
 				$found_socket = array_search($changed_socket, $clients);
 				socket_getpeername($changed_socket, $ip);
 				
-				//unset($clients[$found_socket]);
-				//unset($clientsName[$found_socket]);			
-				//$clients = array_values($clients);
-				//$clientsName = array_values($clientsName);
+				unset($clients[$found_socket]);
+				unset($clientsName[$found_socket-1]);			
+				$clients = array_values($clients);
+				$clientsName = array_values($clientsName);
 				//print_r($clients);
 				//print_r($clientsName);
 				
@@ -149,12 +146,13 @@ function send_message($msg)
 	$pos = strpos($msg,"{");
 	$txt = json_decode(substr($msg,$pos) ); //remove weird symbols in front of json object before decoding.
 	if(isset($txt->message)) 
-	{print "Decoded: ".$txt->message.PHP_EOL;}
+	{print "Decoded Message: ".$txt->message.PHP_EOL;}
 	
 	//$txt->{'message'} = 'Hello:';
 	if (isset($txt->to))
 	{
-		print 'JSON text here: '.$txt->to.PHP_EOL;
+		print 'Message from: '.$txt->name.PHP_EOL;
+		print 'Message to: '.$txt->to.PHP_EOL;
 	}
 	
 		if (isset($txt->to) ) //check if this is a user message
@@ -168,7 +166,7 @@ function send_message($msg)
 			}			
 			else 
 			{
-				
+				//if there is that one socket at the start which still lives but is not occupied.
 				for ($i = 1; $i<count($clients);$i++)
 				{	
 					if (count($clients) != count($clientsName))
@@ -184,6 +182,7 @@ function send_message($msg)
 							@socket_write($clients[$i],$msg,strlen($msg));							
 						}
 					}
+					//else there is just the same amount of client sockets than there are names.
 					else if (count($clients) == count($clientsName))
 					{					
 						if ($txt->to === $clientsName[$i])					

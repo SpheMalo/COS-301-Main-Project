@@ -823,8 +823,8 @@ text-shadow: 0 1px 2px rgba(107,207,198,1.00);
 	height:300px;
 	margin-right: auto;
 	margin-left: auto;
-	background: #CCCCCC;
-	border: 1px solid #999999;
+	background: #f0f4f2;
+	
 	padding: 10px;
 	font: 12px 'lucida grande',tahoma,verdana,arial,sans-serif;
 }
@@ -839,26 +839,41 @@ text-shadow: 0 1px 2px rgba(107,207,198,1.00);
 	padding: 2px 2px 2px 5px;
 }
 .contact{
-	width:100%;height:30px;
-	text-align:center;
-	border-bottom:1px solid rgb(100,100,100);
-	border-top:1px solid rgb(100,100,100);
-	background-color: rgb(200,200,200);
+	width:98%;height:30px;
+	text-align:center;margin-left:1%;
+	border-bottom:1px solid rgb(176, 200, 168);
+	border-top:1px solid rgb(176, 200, 168);
+	background-color: rgb(215, 236, 213);
 }
 .contact:hover{cursor: pointer;}
-
+#nameTo
+{
+	width:100%;height:25px;margin-bottom:10px;line-height:25px;
+	text-align: center;
+	font-size: 18px;
+	border: 1px solid #b4c9bf;
+	color:black;
+	background-color: #d8e2dd;
+}
 .system_msg{color: #BDBDBD;font-style: italic;}
 .user_name{font-weight:bold;}
 .user_message{color: #88B6E0;}
-#message_box{height:200px;}
-
+#message_box{height:150px;background: rgb(214, 238, 204);}
+#message_box div{height:auto;min-height:25px;padding:5px;margin-top:4px;
+	border: 1px solid rgb(188, 226, 175);
+	border-radius: 5px;
+	border-top-left-radius:0px;
+	background: #f3f3f3;
+	word-wrap: break-word;
+	line-height:20px;
+}
 
 #messageContainer
 {
 	
 	width:500px;
 	height:320px;
-	background-color:rgba(100,100,100,0.7);
+	background-color:rgba(215, 216, 175, 0.7);
 	position:fixed;
 	bottom:-300px;
 	float:right;
@@ -881,9 +896,9 @@ text-shadow: 0 1px 2px rgba(107,207,198,1.00);
 #contacts{
 	float:left;
 	height:300px;width:100px;
-	border-left:2px solid rgba(100,100,100,1);
-	border-right:2px solid rgba(100,100,100,1);
-	background-color:rgb(212, 212, 212);
+	border-left:1px solid rgb(166, 168, 170);
+	border-right:1px solid rgb(187, 218, 186);
+	background: #f0f4f2;
 }
 
 #messageHide:hover{cursor: pointer;}
@@ -892,9 +907,10 @@ text-shadow: 0 1px 2px rgba(107,207,198,1.00);
 	width:500px;
 	height:20px;
 	border:1px solid rgba(100,100,100,1);
-	background-color:rgba(200,200,200,1);
+	background-color:rgb(196, 224, 186);
 	text-align: center;
 	line-height: 19px;
+	color:black;
 }
 /*Instant messaging area*/
 

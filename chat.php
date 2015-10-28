@@ -80,8 +80,8 @@ $(document).ready(function(){
 				//alert(nameList[i]);
 				if (nameList[i] !== readCookie("username"))
 				{				
-				var newDiv = $('<div class="contact">'+nameList[i]+'</div>');
-				$('#contacts').append(newDiv);
+					var newDiv = $('<div class="contact">'+nameList[i]+'</div>');
+					$('#contacts').append(newDiv);
 				}
 				
 				
@@ -89,7 +89,18 @@ $(document).ready(function(){
 			$('.contact').click(function(){
 					var name = $(this).html();
 					
+					if ($('.contact').css('background-color') != 'rgb(233, 201, 197)')
+					{
+						$('.contact').css('background-color','rgb(215, 236, 213)');
+					}
+					
+					$(this).css('background-color','rgb(190, 222, 224)');
+					
 					myto = name;
+					$('#nameTo').html(name);
+					
+					loadMessages($('#nameTo').html(),$('#name').val());
+					
 					//alert(name);
 			});
 		}
@@ -105,9 +116,51 @@ $(document).ready(function(){
 					
 				}
 				else{
-					$('#message_box').append("<div><span class=\"user_name\" style=\"color:#"+ucolor+"\">"+uname+"</span> : <span class=\"user_message\">"+umsg+"</span></div>");
-					//document.getElementById("message_box").scrollTo(0,$('#message_box').scrollHeight);
-					document.getElementById("message_box").scrollTop = document.getElementById("message_box").scrollHeight;
+					//alert(msg.name+" "+$('#name').val());
+					
+					//if Sender is me
+					if (msg.name === $('#name').val() && msg.to !== "all")
+					{
+						$('#message_box').append("<div><span class=\"user_name\" style=\"color:#"+ucolor+"\">"+uname+"</span> : <span class=\"user_message\">"+umsg+"</span></div>");
+						document.getElementById("message_box").scrollTop = document.getElementById("message_box").scrollHeight;
+					}
+					//if Sender is not me and it's sent to me and i'm in his chat
+					else if (msg.name === $('#nameTo').html() && msg.to !== "all" )
+					{
+						$('#message_box').append("<div><span class=\"user_name\" style=\"color:#"+ucolor+"\">"+uname+"</span> : <span class=\"user_message\">"+umsg+"</span></div>");
+						document.getElementById("message_box").scrollTop = document.getElementById("message_box").scrollHeight;
+						saveMessage(msg.message,msg.name,msg.to,1);
+					}
+					//if Sender is not me and it's sent to me and i'm not in his chat
+					else if (msg.name !== $('#nameTo').html() && msg.to !== "all" )
+					{
+						saveMessage(msg.message,msg.name,msg.to,0); //save the message and show unread.
+						
+						//check if not in the tab of this person then change to red to show new msg.
+						for (var i = 1;i<=$('.contact').length;i++)
+						{
+							//alert($('.contact:nth-child('+i+')').css('background-color'));
+							if ($('.contact:nth-child('+i+')').css('background-color') != 'rgb(190, 222, 224)' && $('.contact:nth-child('+i+')').html() === msg.name ) {
+								$('.contact:nth-child('+i+')').css('background-color','rgb(233, 201, 197)');
+							}
+						}
+						
+						
+					}					
+					//if Sender is me and it's sent to all(broadcast) 
+					else if (msg.to === "all" && msg.name === $('#name').val() && $('#nameTo').html() === "Global")
+					{
+						$('#message_box').append("<div><span class=\"user_name\" style=\"color:#"+ucolor+"\">"+uname+"</span> : <span class=\"user_message\">"+umsg+"</span></div>");
+						saveMessage(msg.message,msg.name,msg.to,1);
+						document.getElementById("message_box").scrollTop = document.getElementById("message_box").scrollHeight;
+					}
+					//if Sender is not me and it's sent to all(broadcast) and i'm in global chat
+					else if (msg.to === "all" && $('#nameTo').html() === "Global" && msg.name !== $('#name').val()) 					
+					{
+						$('#message_box').append("<div><span class=\"user_name\" style=\"color:#"+ucolor+"\">"+uname+"</span> : <span class=\"user_message\">"+umsg+"</span></div>");
+						document.getElementById("message_box").scrollTop = document.getElementById("message_box").scrollHeight;
+					}					
+					
 				}
 				
 			}
@@ -127,9 +180,90 @@ $(document).ready(function(){
 	})
 	websocket.onerror	= function(ev){$('#message_box').append("<div class=\"system_error\">Error Occurred - "+ev.data+"</div>");}; 
 	websocket.onclose 	= function(ev){$('#message_box').append("<div class=\"system_msg\">Connection Closed</div>");}; 
+
+	function saveMessage(message,from,to,seen)
+	{
+		
+		var obj = {
+	            "action":"save",
+				"from": from,
+	            "to": to,
+	            "message":message,
+	            "seen" : seen
+	        }
+
+		//alert(obj.message);
+	  
+		var JSONstring = JSON.stringify(obj);
+		$.ajax({
+			url: 'scripts/FigbookActionHandler/instantMessaging.php',
+			data: 'json=' + JSONstring,
+			dataType: 'json',
+			success: function (data)
+			{				
+				//alert(JSON.stringify(data));
+			}
+			, error: function (data)
+			{				
+				//alert(JSON.stringify(data));
+			}
+		});
+		
+	} //end of saveMessage function	
+
+	//Loading the messages on contact click
+	function loadMessages(from,me)
+	{
+		var obj = {
+	            "action":"load",
+				"from": from,
+	            "to": me	            
+	        }
+
+		//alert(obj.message);
+	  
+		var JSONstring = JSON.stringify(obj);
+		$.ajax({
+			url: 'scripts/FigbookActionHandler/instantMessaging.php',
+			data: 'json=' + JSONstring,
+			dataType: 'json',
+			success: function (data)
+			{				
+				//alert(JSON.stringify(data));
+				
+				//clear the messagebox before adding all msgs
+				$('#message_box').html("");
+				//alert(data.length);
+				for (var i =0;i<data.length;i++)
+				{
+					if (data[i].message_from === $('#name').val())
+					{
+						$('#message_box').append("<div><span class=\"user_name\" style=\"color:rgb(36, 227, 2)\">"+data[i].message_from+"</span>"+
+						" : <span class=\"user_message\">"+data[i].message+"</span></div>");
+					}
+					else
+					{
+						$('#message_box').append("<div><span class=\"user_name\" style=\"color:rgb(244, 143, 6)\">"+data[i].message_from+"</span>"+
+						" : <span class=\"user_message\">"+data[i].message+"</span></div>");
+					}
+					
+				}
+				document.getElementById("message_box").scrollTop = document.getElementById("message_box").scrollHeight;
+				
+			}
+			, error: function (data)
+			{				
+				alert(JSON.stringify(data));
+			}
+		});
+	}
+
 });
+
+
 </script>
 <div class="chat_wrapper">
+<div id="nameTo">Global</div>
 <div class="message_box" id="message_box"></div>
 <div class="panel">
 <input class="chatName" readonly type="text" name="name" id="name" placeholder="Your Name" value="test" maxlength="10" style="width:35%;margin-top:3px;"  />
