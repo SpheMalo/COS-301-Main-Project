@@ -9,20 +9,25 @@
  * register user,login user
  * @author Ndivhuwo
  */
-
+require_once('aes.php');
 require_once('ext/Diff/Diff3.php');
+
 class user {
 
     //properties
     private $dbInstance;
     private $responseObject;
     private $message;
-    //methods
+    private $inputKey;
+	private $blockSize;
+		//methods
 
     //initialise member variable/ properties
     public function __construct($dbInstance) {
 
         $this->dbInstance = $dbInstance;
+		$this->inputKey = "FigbookSourceEncryptKey";
+		$this->blockSize = 256;
     }
 
     //clean up, all references
@@ -463,13 +468,24 @@ class user {
 
 	public function verifyTimeStamp($uID, $obj)
 	{
+		
+		
 		$sql = "SELECT * FROM section_revisions WHERE book_title = '$obj->title' AND section_number = '$obj->section'";
 		$myResponse = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql));
-
+		
+		//decrypt the text from the db
+		$aes = new AES(null, $this->inputKey, $this->blockSize); //Create AES object
+		$aes->setData($myResponse["section_content"]); //pass encrypted text to object
+		$myResponse["section_content"]=$aes->decrypt(); //decrypt the text
+		
+		
 		//Check timestamps
 		if ($myResponse["date_last_edited"] == $obj->timestamp)
 		{
-      $sql = "UPDATE section_revisions SET date_last_edited=CURRENT_TIME, last_edited_by='$uID', section_content='$obj->newContent' WHERE section_number='$obj->section' AND book_title='$obj->title'";
+		  $aes->setData($obj->newContent);
+		  $obj->newContent = $aes->encrypt();//encrypt the section content before sending it to the DB
+		  
+	  	  $sql = "UPDATE section_revisions SET date_last_edited=CURRENT_TIME, last_edited_by='$uID', section_content='$obj->newContent' WHERE section_number='$obj->section' AND book_title='$obj->title'";
 		  $result = mysqli_query($this->dbInstance, $sql);
 
       //Incase the above call to the database fails.
@@ -482,10 +498,10 @@ class user {
 			$sql = "SELECT date_last_edited FROM section_revisions WHERE book_title = '$obj->title' AND section_number = '$obj->section'";
 		    $temp = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql));
 
-      $myResponse['section_content'] = $obj->newContent;
+			$myResponse['section_content'] = $obj->newContent;
 			$myResponse["message"] = "no_conflict";
 			$myResponse["date_last_edited"] = $temp["date_last_edited"];
-      $myResponse['mergedText'] = $obj->newContent;
+			$myResponse['mergedText'] = $obj->newContent;
 			return $myResponse;
 		}
 		else
@@ -508,6 +524,8 @@ class user {
 			//automatic merge completed with no conflicts
 			if ($conflict == "none")
 			{
+				$aes->seData($var);
+				$var = $aes->encrypt();
         //Save merged text and update timestamp
         $sql = "UPDATE section_revisions SET date_last_edited=CURRENT_TIME, last_edited_by='$uID', section_content='$var' WHERE section_number='$obj->section' AND book_title='$obj->title'";
   		  $result = mysqli_query($this->dbInstance, $sql);
@@ -534,6 +552,9 @@ class user {
   			$sql = "SELECT date_last_edited, section_content FROM section_revisions WHERE book_title = '$obj->title' AND section_number = '$obj->section'";
   		  $temp = mysqli_fetch_assoc(mysqli_query($this->dbInstance, $sql));
 
+		$aes->setData($temp["section_content"]);
+		$temp["section_content"] = $aes->decrypt();
+		
         $myResponse["section_content"] = $temp["section_content"];
         $myResponse["date_last_edited"] = $temp["date_last_edited"];
         $myResponse["message"] = "conflict";
