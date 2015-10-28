@@ -157,7 +157,7 @@ function send_message($msg)
 	
 		if (isset($txt->to) ) //check if this is a user message
 		{
-			if ($txt->to === "all")
+			if ($txt->to === "Global")
 			{
 				foreach($clients as $changed_socket)
 				{	

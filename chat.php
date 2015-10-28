@@ -23,7 +23,7 @@ $(document).ready(function(){
 	//create a new WebSocket object.
 	var wsUri = "ws://10.0.0.4:9000/server.php"; 	
 	websocket = new WebSocket(wsUri); 
-	var myto = "all";
+	var myto = "Global";
 	var nameList = Array();
 	
 	
@@ -83,11 +83,31 @@ $(document).ready(function(){
 					var newDiv = $('<div class="contact">'+nameList[i]+'</div>');
 					$('#contacts').append(newDiv);
 				}
-				
-				
+							
 			}
+			
+			var newDiv = $('<div class="contact">Global</div>');
+			$('#contacts').append(newDiv);
+			
+			for (var i = 1;i<$('.contact').length;i++)
+			{
+				for (var k = i;k<=$('.contact').length;k++)
+				{
+					if ($('.contact:nth-child('+i+')').html() > $('.contact:nth-child('+k+')').html())
+					{
+						var temp = $('.contact:nth-child('+i+')').html();
+						$('.contact:nth-child('+i+')').html($('.contact:nth-child('+k+')').html());
+						$('.contact:nth-child('+k+')').html(temp);
+					}
+				}		
+			}
+			
 			$('.contact').click(function(){
+					
+					
 					var name = $(this).html();
+					
+					
 					
 					if ($('.contact').css('background-color') != 'rgb(233, 201, 197)')
 					{
@@ -96,7 +116,16 @@ $(document).ready(function(){
 					
 					$(this).css('background-color','rgb(190, 222, 224)');
 					
-					myto = name;
+					if ($(this).html() === "Global")
+					{
+						myto = "Global";
+					}
+					else
+					{
+						myto = $(this).html();
+					}
+					
+					
 					$('#nameTo').html(name);
 					
 					loadMessages($('#nameTo').html(),$('#name').val());
@@ -119,20 +148,20 @@ $(document).ready(function(){
 					//alert(msg.name+" "+$('#name').val());
 					
 					//if Sender is me
-					if (msg.name === $('#name').val() && msg.to !== "all")
+					if (msg.name === $('#name').val() && msg.to !== "Global")
 					{
 						$('#message_box').append("<div><span class=\"user_name\" style=\"color:#"+ucolor+"\">"+uname+"</span> : <span class=\"user_message\">"+umsg+"</span></div>");
 						document.getElementById("message_box").scrollTop = document.getElementById("message_box").scrollHeight;
 					}
 					//if Sender is not me and it's sent to me and i'm in his chat
-					else if (msg.name === $('#nameTo').html() && msg.to !== "all" )
+					else if (msg.name === $('#nameTo').html() && msg.to !== "Global" )
 					{
 						$('#message_box').append("<div><span class=\"user_name\" style=\"color:#"+ucolor+"\">"+uname+"</span> : <span class=\"user_message\">"+umsg+"</span></div>");
 						document.getElementById("message_box").scrollTop = document.getElementById("message_box").scrollHeight;
 						saveMessage(msg.message,msg.name,msg.to,1);
 					}
 					//if Sender is not me and it's sent to me and i'm not in his chat
-					else if (msg.name !== $('#nameTo').html() && msg.to !== "all" )
+					else if (msg.name !== $('#nameTo').html() && msg.to !== "Global" )
 					{
 						saveMessage(msg.message,msg.name,msg.to,0); //save the message and show unread.
 						
@@ -148,14 +177,14 @@ $(document).ready(function(){
 						
 					}					
 					//if Sender is me and it's sent to all(broadcast) 
-					else if (msg.to === "all" && msg.name === $('#name').val() && $('#nameTo').html() === "Global")
+					else if (msg.to === "Global" && msg.name === $('#name').val() && $('#nameTo').html() === "Global")
 					{
 						$('#message_box').append("<div><span class=\"user_name\" style=\"color:#"+ucolor+"\">"+uname+"</span> : <span class=\"user_message\">"+umsg+"</span></div>");
 						saveMessage(msg.message,msg.name,msg.to,1);
 						document.getElementById("message_box").scrollTop = document.getElementById("message_box").scrollHeight;
 					}
 					//if Sender is not me and it's sent to all(broadcast) and i'm in global chat
-					else if (msg.to === "all" && $('#nameTo').html() === "Global" && msg.name !== $('#name').val()) 					
+					else if (msg.to === "Global" && $('#nameTo').html() === "Global" && msg.name !== $('#name').val()) 					
 					{
 						$('#message_box').append("<div><span class=\"user_name\" style=\"color:#"+ucolor+"\">"+uname+"</span> : <span class=\"user_message\">"+umsg+"</span></div>");
 						document.getElementById("message_box").scrollTop = document.getElementById("message_box").scrollHeight;

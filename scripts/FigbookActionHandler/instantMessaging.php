@@ -33,9 +33,16 @@
         $db = new databaseHandler();
 		if($db->isConnected())
         {
-			$selectQuery = "Select * from instant_messaging where message_from = '$from' and message_to = '$to' ".
-            "or message_from = '$to' and message_to = '$from' ORDER BY time";
-            
+            if ($from === "Global" || $to === "Global")
+            {
+                $selectQuery = "Select * from instant_messaging where message_from = 'Global' or message_to = 'Global' ".
+               " ORDER BY time";                 
+            }
+            else
+            {
+                $selectQuery = "Select * from instant_messaging where message_from = '$from' and message_to = '$to' ".
+                "or message_from = '$to' and message_to = '$from' ORDER BY time";
+            }
 			
 			$dbconn = $db->getConnection();
         	$selectQueryResult = mysqli_query($dbconn,$selectQuery);			
