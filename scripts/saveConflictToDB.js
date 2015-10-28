@@ -12,7 +12,7 @@ function saveConflict()
     var find = "<span class=\"otherUser\">";
   	var re = new RegExp(find, 'g');
   	content = content.replace(re,"");
-
+    
     find = "<span class=\"meUser\">";
   	re = new RegExp(find, 'g');
   	content = content.replace(re,"");
@@ -20,17 +20,10 @@ function saveConflict()
     find = "</span>";
     re = new RegExp(find, 'g');
   	content = content.replace(re,"");
-
-    //Replace all double and single quotes
-    var find = "\"";
-  	var re = new RegExp(find, 'g');
-  	content = content.replace(re,"<dQt>");
     
-    var find = "'";
-  	var re = new RegExp(find, 'g');
-  	content = content.replace(re,"<sQt>");
-    //alert(content);
-
+    alert(content);
+    content = escapeSpecial(content);
+    alert(content);
     var timeStamp = localStorage.getItem("tStamp");
 	  var jsonString = {
 					"format" : "json",
@@ -119,4 +112,22 @@ function saveConflict()
 
             }
 			});
+}
+
+function escapeSpecial(text)
+{
+    var find = "\"";
+  	var re = new RegExp(find, 'g');
+  	text = text.replace(re,"<dQt>");
+    
+    var find = "'";
+  	var re = new RegExp(find, 'g');
+  	text = text.replace(re,"<sQt>");
+    
+    var find = "&nbsp;";
+  	var re = new RegExp(find, 'g');
+  	text = text.replace(re,"<nBl>");
+    
+    
+    return text;
 }

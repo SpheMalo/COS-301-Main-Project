@@ -9,14 +9,9 @@ function saveText()
     var content = iframe.find("body").html();
     sectionNumber = parseInt(sectionNumber);
 
-    //Replace all double and single quotes
-    var find = "\"";
-  	var re = new RegExp(find, 'g');
-  	content = content.replace(re,"<dQt>");
-    
-    var find = "'";
-  	var re = new RegExp(find, 'g');
-  	content = content.replace(re,"<sQt>");
+    //Escaping special characters
+    content = escapeSpecial(content);
+    localStorage.originalContent = escapeSpecial(localStorage.originalContent);
     
     var timeStamp = localStorage.getItem("tStamp");
     console.log("Before saving: " + timeStamp);
@@ -41,7 +36,7 @@ function saveText()
             data: "json="+jsonString,
             dataType: 'json',
             type: 'POST',
-            success: function (result) {//alert(JSON.stringify(result));
+            success: function (result) {
                 if (result.message == "no_conflict")//No conflict occured so the text can be persisted to the database
                 {
 
@@ -64,24 +59,9 @@ function saveText()
                                 if (data && data.edit && data.edit.result === 'Success')
                                 {
                                     removeGif();       
-                                    //alert("Section saved successfully");
-									//This will display the actual page again. with updated values
+                                    alert("Section saved successfully");
 									var inside = document.getElementsByClassName('insideText');
 									var head = document.getElementsByClassName('sectionHeading');
-									/*$('#editSection').fadeOut("slow",function(){//$(inside[(sectionNumber-1)]).html(content);
-										//$(head[(sectionNumber-1)]).html(sectionHeading);
-										$('#pageView').fadeIn("slow",function(){
-											$( "#viewBooks" ).trigger( "click" );
-
-												/*var loadPageInfo =
-												{
-																"title": localStorage.bookTitle
-												};
-												get_page(loadPageInfo);
-											 //alert(document.getElementsByClassName("bookItem").length);
-											});
-										});*/
-
                                     console.log(JSON.stringify(data));
                                     localStorage.originalContent = result.mergedText;
                                     localStorage.tStamp = result.date_last_edited;
@@ -125,7 +105,7 @@ function saveText()
                     location.href = "conflictResolution.html";
                 }
             },
-            error: function (data) {
+            error: function (data) {alert(JSON.stringify(data));
                     removeGif();
                 console.log('Error: Request failed. ' + (data.responseText));
 
@@ -134,6 +114,30 @@ function saveText()
             removeGif(); 
 }
 
+function escapeSpecial(text)
+{
+    var find = "\"";
+  	var re = new RegExp(find, 'g');
+  	text = text.replace(re,"<dQt>");
+    
+    var find = "'";
+  	var re = new RegExp(find, 'g');
+  	text = text.replace(re,"<sQt>");
+    
+    var find = "&nbsp;";
+  	var re = new RegExp(find, 'g');
+  	text = text.replace(re,"<nBl>");
+    
+    var find = "&lt;";
+  	var re = new RegExp(find, 'g');
+  	text = text.replace(re,"<LesThn>");
+    
+    var find = "&gt;";
+  	var re = new RegExp(find, 'g');
+  	text = text.replace(re,"<GreThn>");
+    
+    return text;
+}
 
 window.onload = function() {
     
@@ -157,17 +161,30 @@ window.onload = function() {
 function resolveConflict()
 {
     var conflictData = JSON.parse(localStorage.conflictInfo);
+    var escapeTemp = conflictData.mergedText;
     
-    //Replace all double and single quotes
+    alert(escapeTemp);
     var find = "<dQt>";
-  	var re = new RegExp(find, 'g');
-  	conflictData.mergedText = conflictData.mergedText.replace(re,"\"");
+    var re = new RegExp(find, 'g');
+    escapeTemp = escapeTemp.replace(re,"\"");
     
     var find = "<sQt>";
-  	var re = new RegExp(find, 'g');
-  	conflictData.mergedText = conflictData.mergedText.replace(re,"'");
+    var re = new RegExp(find, 'g');
+    escapeTemp = escapeTemp.replace(re,"'");
     
-    var contentToParse = conflictData.mergedText;
+    var find = "<nBl>";
+    var re = new RegExp(find, 'g');
+    escapeTemp = escapeTemp.replace(re,"&nbsp;");
+    
+    var find = "<LesThn>";
+    var re = new RegExp(find, 'g');
+    escapeTemp = escapeTemp.replace(re,"<");
+    
+    var find = "<GreThn>";
+    var re = new RegExp(find, 'g');
+    escapeTemp = escapeTemp.replace(re,">");
+    alert(escapeTemp);
+    var contentToParse = escapeTemp;
     var find = "<<<<<<<";
   	var re = new RegExp(find, 'g');
   	contentToParse = contentToParse.replace(re,"<span class='otherUser'>");
@@ -180,7 +197,7 @@ function resolveConflict()
     re = new RegExp(find, 'g');
   	contentToParse = contentToParse.replace(re,"</span>");
 
-
+    
     $("#newContentTextArea").html(contentToParse);
     document.getElementById("last_edited_by").innerHTML = conflictData.last_edited_by;
 }
@@ -206,20 +223,6 @@ function addGif(statement,name)
 		$("#loadingDiv").css('left',left);
 		$("#loadingDiv").css('top','200px');
 }
-/*function addGif(name)
-{
-    var obj = '<div id="loadingDiv" style="position:relative;width:100px;height:30px;">'
-            +'<img src="FeedBackIcons/'+name+'.GIF" alt="Feedback Icon" '
-            +'style="width:100px;height:30px;">'
-            +'</div>';
-    var left = (window.innerWidth-100)/2;
-    //var top = (window.innerHeight-30)/2;
-    
-    addLightbox(obj);
-    $("#loadingDiv").css('left','250px');
-    $("#loadingDiv").css('top','100px');
-   // $("#lightbox-shadow").css('background-color','rgba(250,250,250,0.7)');
-}*/
 function removeGif()
 {
 	$("#loadingDiv").fadeOut(600, function(){
@@ -227,14 +230,5 @@ function removeGif()
 		closeLightbox();
 	});
 }
-/*
-function removeGif()
-{
-    $("#loadingDiv").delay(1000).fadeOut(600, function(){
-        $(this).remove();
-        closeLightbox();
-    });
-}
-*/
 
 

@@ -306,7 +306,7 @@ if(isset($actionFlag) && $actionFlag != ""){
 
 }else{
     
-    $response = "no valid action specified";
+    $response = json_encode("no valid action specified ".$object);
 }
 
 }else{ //db connection failed   

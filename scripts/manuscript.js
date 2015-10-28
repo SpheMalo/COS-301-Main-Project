@@ -1108,13 +1108,31 @@ $(document).ready(function () {
 								var contentOfParagraph = childNodes[i].innerHTML;
 								
 								//Replace all double and single quotes
-								var find = "<dQt>";
+								var find = "&lt;dQt&gt;";
 								var re = new RegExp(find, 'g');
-								contentOfParagraph = contentOfParagraph.replace(re,"\"");
+								contentOfParagraph = contentOfParagraph.replace(re,"&quot;");
 								
-								var find = "<sQt>";
+								var find = "&lt;sQt&gt;";
 								var re = new RegExp(find, 'g');
-								contentOfParagraph = contentOfParagraph.replace(re,"'");
+								contentOfParagraph = contentOfParagraph.replace(re,"&#39;");
+								
+								var find = "&lt;nBl&gt;";
+								var re = new RegExp(find, 'g');
+								contentOfParagraph = contentOfParagraph.replace(re,"&nbsp;");
+								
+								var find = "&lt;sCl&gt;";
+								var re = new RegExp(find, 'g');
+								contentOfParagraph = contentOfParagraph.replace(re,";");
+								
+								var find = "&lt;LesThn&gt;";
+								var re = new RegExp(find, 'g');
+								contentOfParagraph = contentOfParagraph.replace(re,"&lt;");
+								
+								var find = "&lt;GreThn&gt;";
+								var re = new RegExp(find, 'g');
+								contentOfParagraph = contentOfParagraph.replace(re,"&gt;");
+								
+								
 							htmlValue += "<p>"+contentOfParagraph+"</p>";
 							}
 						}
