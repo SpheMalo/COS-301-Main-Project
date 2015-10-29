@@ -305,11 +305,11 @@ $(document).ready(function () {
             $('.lettr').click(function () {
                 //localStorage.reload = "no";
                 //console.log($(this).attr('value'));
-                var generator = window.open('', 'name', 'height=400,width=500');
+                var generator = window.open('', 'name', 'height=300,width=600');
                 var styleSheet = "<link rel='stylesheet' href='css/content.css'>  ";
                 generator.document.write('<html><head><title>Editorial Letter</title>' + styleSheet + '</head><body>');
-                generator.document.write('<h2>From: ' + $(this).attr('from') + '</h2><br>');
-                var content = "<textarea id='letterText' cols='50' rows='20' >" + $(this).attr('value') + "</textarea>";
+                generator.document.write('<div id="bookTitleDiv"><h2>From: ' + $(this).attr('from') + '</h2></div>');
+                var content = "<textarea style='margin-left:5%;margin-right:5%;margin-bottom:5%;resize:none;padding:10px;' cols='66' rows='38' >" + $(this).attr('value') + "</textarea>";
                 generator.document.write(content);
                 generator.document.write('</body></html>');
                 generator.document.close();
