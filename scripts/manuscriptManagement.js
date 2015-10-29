@@ -169,10 +169,24 @@ $(document).ready(function()
 	$('#options').click(function(){
             console.log(localStorage.bookTitle);
                 if(localStorage.bookTitle !==""){
+                    if(localStorage.userRole === "READ"){
+                        $('#addChapter').css('display','none');
+                        $('#invitation').css('display','none');
+                    }
+                    else{
+                        $('#addChapter').css('display','block');
+                        $('#invitation').css('display','block');
+                    }
+                    if(localStorage.userRole === "Creator"){
+                        $('#delManuscript').css('display','block');
+                    }
+                    else{
+                         $('#delManuscript').css('display','none');
+                    }
                     $('#loadbook').css('display','block');
-                    $('#invitation').css('display','block');
+                    
                     $('#writeEditorial').css('display','block');
-                    $('#addChapter').css('display','block');
+                    
                 }
                 else{
                     $('#loadbook').css('display','none');

@@ -1100,8 +1100,11 @@ $(document).ready(function () {
 								$( "#pageView" ).append(htmlValue+"</div></div></div>");
 								}
 								// add section div
-
-								htmlValue = "<div class='sectionDiv' onclick='editSection("+linkNumber+")'><div class='sectionHeading' >"+childNodes[i].innerHTML+"<span class='deleteSectionSpan'></span></div><div class='insideText'  >";
+                                                                if(localStorage.userRole === "Creator"){
+                                                                    htmlValue = "<div class='sectionDiv' onclick='editSection("+linkNumber+")'><div class='sectionHeading' >"+childNodes[i].innerHTML+"<span class='deleteSectionSpan'></span></div><div class='insideText'  >";
+                                                                }else {
+                                                                    htmlValue = "<div class='sectionDiv' onclick='editSection("+linkNumber+")'><div class='sectionHeading' >"+childNodes[i].innerHTML+"</div><div class='insideText'  >";
+                                                                }
 								linkNumber++;
 							}
 							else{
@@ -1148,7 +1151,13 @@ $(document).ready(function () {
 					$( "#pageView" ).append(htmlValue+"</div></div></div>");
 					
 					//Create an easy interface to add a chapter to the book.
-					$("#pageView").append("<div class='addChapterBar'><p>Click To Add A Chapter</p></div>");
+                                        if(localStorage.userRole === "READ"){
+                                            
+                                        }
+                                        else{
+                                            $("#pageView").append("<div class='addChapterBar'><p>Click To Add A Chapter</p></div>");
+                                        }
+					
 					$('.addChapterBar').click(function(){							
 						$('#addChapter').trigger('click');
 					});
