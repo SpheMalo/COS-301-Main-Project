@@ -19,8 +19,10 @@
 \contentsline {subsection}{\numberline {3.2}Integrability}{8}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Scalability}{8}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}Usability}{8}{subsection.3.4}
-\contentsline {section}{\numberline {4}Use of reference architectures and frameworks}{9}{section.4}
-\contentsline {subsection}{\numberline {4.1}Channels}{9}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Protocols}{9}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}API Specifications}{9}{subsection.4.3}
-\contentsline {section}{\numberline {5}Technologies}{10}{section.5}
+\contentsline {subsection}{\numberline {3.5}Reliability}{8}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Flexibility}{9}{subsection.3.6}
+\contentsline {section}{\numberline {4}Use of reference architectures and frameworks}{10}{section.4}
+\contentsline {subsection}{\numberline {4.1}Channels}{10}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Protocols}{10}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}API Specifications}{10}{subsection.4.3}
+\contentsline {section}{\numberline {5}Technologies}{11}{section.5}

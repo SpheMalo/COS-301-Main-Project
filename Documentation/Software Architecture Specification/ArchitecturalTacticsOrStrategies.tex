@@ -1,5 +1,9 @@
 \subsection{Security}
-\par{\textbf{Authentication} - achieved via the Authentication module of the website. Users need to log in with a valid username and password before they can use any functionality of the website. \\\textbf{Encryption} - sensitive information like user passwords, content of the books etc is encrypted in the database instead of being stored in plain text. }
+\par{\textbf{Authentication} - achieved via the Authentication module of the website. Users need to log in with a valid username and password before they can use any functionality of the website. 
+\\\textbf{Minimum access points}  The system has only one access point which uses authorization to control user operations.
+\\\textbf{Fail safe operations} - Requests and Connections are dropped in a failure situation, this prevents any unusual activities to occur to the integrity of the text in the database.
+\\\textbf{Encryption} - Sensitive information like user passwords and content of the books is encrypted using AES encryption to prevent back-door modifications. Scalability and performance are negatively impacted by encryption, but it is a price worth paying for more security.
+ }
 
 \subsection{Integrability}
 \par{\textbf{Project planning and system process management} - by assigning roles and making use of an online scrum tool i.e ASANA.
@@ -9,11 +13,19 @@
 \\\textbf{design patterns} - e.g Edit Pages: Template Pattern}
 
 \subsection{Scalability}
-\par{\textbf{Memcached} - is used to cache image metadata, parser data, differences, users and sessions, and revision text. Metadata, such as article revision history, article relations (links, categories etc.), user accounts and settings are stored in the core databases.
-\\\textbf{Compression} - text is compressed and only revisions between articles are stored. 
+\par{\textbf{Memcached} - is used to cache image meta-data, parser data, differences, users and sessions, and revision text. Metadata, such as article revision history, article relations (links, categories etc.), user accounts and settings are stored in the core databases.
+\\\textbf{Database indexing} - Each entry in the database has a simple and unique index to efficiently retrieve data, thus increasing both scalability and performance of the system. 
+\\\textbf{Compression} - Text is compressed and only revisions between articles are stored. 
 \\\textbf{Scale by separating} read and write operations (master/slave).
-\\\textbf{Caching} - cached expensive results with the use of temporal locality of reference e.g – Reference value(row in array) each iteration and cycling through loop repeatedly .
 \\\textbf{Avoided expensive algorithm and database queries}
 }
 \subsection{Usability}
-\par{\textbf{Naming Convention} - buttons and information on the website are labeled with functional names. Whatever a section/button/link does, is what it's called (avoided "Click Me" or "Click Here" type of labels). \\\textbf{Logical Flow of Page Elements} - the webpages follow a human natural flow with its content (beginning of elements on the left, anything that follows from there goes in a right-down direction). }
+\par{\textbf{Naming Convention} - buttons and information on the website are labelled with functional names. Whatever a section/button/link does, is what it's called (avoided "Click Me" or "Click Here" type of labels). \\\textbf{Logical Flow of Page Elements} - the webpages follow a human natural flow with its content (beginning of elements on the left, anything that follows from there goes in a right-down direction). }
+\subsection{Reliability}
+\par{\textbf{Fault prevention} - Text is grouped by section revisions and therefore harder to have multiple use. 
+\\\textbf{Fault detection} - Deadlock detection is used in the sense of having time stamps on sections revisions.
+\\\textbf{Fault recovery} - The system has provision for conflict resolution to recover from merge conflicts.
+}
+\subsection{Flexibility}
+\par{\textbf{Dedicated work-flow controller} - The systems uses an action handler to handle all requests and then delegates each request to the appropriate service provider. If the action is invalid an exception is thrown.
+}
