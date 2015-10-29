@@ -2,6 +2,10 @@ window.onload = function(){
 	
 $(document).ready(function() {
 	
+	$('#figbookLogo').click(function(){
+		window.location.href = 'insideContent.php';	
+	});	
+
 	
 $('#portImage').click(function(){
 	

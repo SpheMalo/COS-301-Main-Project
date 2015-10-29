@@ -8,11 +8,13 @@ function saveText()
     var iframe = $("iframe").contents();
     var content = iframe.find("body").html();
     sectionNumber = parseInt(sectionNumber);
-
+	
+    //alert("Before: "+content);
     //Escaping special characters
     content = escapeSpecial(content);
     localStorage.originalContent = escapeSpecial(localStorage.originalContent);
     
+	
     var timeStamp = localStorage.getItem("tStamp");
     console.log("Before saving: " + timeStamp);
 	var jsonString = {
@@ -39,7 +41,7 @@ function saveText()
             success: function (result) {
                 if (result.message == "no_conflict")//No conflict occured so the text can be persisted to the database
                 {
-
+			
                     $.post("scripts/mediawiki/api.php?action=query&prop=info|revisions&meta=tokens&rvprop=timestamp&titles="+localStorage.bookTitle+"&format=json",function(data){
 
                     $.ajax({
@@ -58,6 +60,7 @@ function saveText()
                             {
                                 if (data && data.edit && data.edit.result === 'Success')
                                 {
+					//alert("After: "+JSON.stringify(data));
                                     removeGif();       
                                     alert("Section saved successfully");
 									var inside = document.getElementsByClassName('insideText');
@@ -207,7 +210,7 @@ function resolveConflict()
 
 function addGif(statement,name)
 {
-	var obj = '<div id="loadingDiv" style="position:relative;width:160px;height:30px;">'
+	var obj = '<div id="loadingDiv" style="position:relative;width:220px;height:30px;">'
             +'<div style="height:30px;font-size:20px;font-weight:500;line-height:30px;float:left;color:white;">'+statement+'</div> '
             +'<img src="FeedBackIcons/'+name+'.gif" alt="Feedback Icon" '
             +'style="width:50px;height:30px;">'
@@ -218,7 +221,7 @@ function addGif(statement,name)
 		addLightbox(obj);
 	
 			
-		var left = ($('#lightbox').width()-160)/2;
+		var left = ($('#lightbox').width()-220)/2;
 	
 		$("#loadingDiv").css('left',left);
 		$("#loadingDiv").css('top','200px');

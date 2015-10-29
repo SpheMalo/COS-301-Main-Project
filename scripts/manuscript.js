@@ -1079,7 +1079,7 @@ $(document).ready(function () {
 				  	document.getElementById('pageView').innerHTML = data;
 				   	var div = document.getElementById('mw-content-text');
 					var childNodes = div.childNodes;
-
+					//alert("Div: "+div.innerHTML);
 					//$("#scrollDiv").append($('#editSection').fadeOut("fast",function(){
 					//}));
 
@@ -1092,7 +1092,7 @@ $(document).ready(function () {
 					{
 						if (childNodes[i].innerHTML !== "" && typeof childNodes[i].innerHTML !== "undefined")
 						{
-							//alert(childNodes[i])
+							//alert(childNodes[i].innerHTML)
 							if(childNodes[i].innerHTML.indexOf('mw-headline') !== -1 )
 							{
 								//not if it is the first section
@@ -1109,15 +1109,15 @@ $(document).ready(function () {
 							}
 							else{
 								var contentOfParagraph = childNodes[i].innerHTML;
-								
+								//alert(contentOfParagraph);
 								//Replace all double and single quotes
 								var find = "&lt;dQt&gt;";
 								var re = new RegExp(find, 'g');
-								contentOfParagraph = contentOfParagraph.replace(re,"&quot;");
+								contentOfParagraph = contentOfParagraph.replace(re,"\"");
 								
 								var find = "&lt;sQt&gt;";
 								var re = new RegExp(find, 'g');
-								contentOfParagraph = contentOfParagraph.replace(re,"&#39;");
+								contentOfParagraph = contentOfParagraph.replace(re,"'");
 								
 								var find = "&lt;nBl&gt;";
 								var re = new RegExp(find, 'g');
@@ -1127,16 +1127,19 @@ $(document).ready(function () {
 								var re = new RegExp(find, 'g');
 								contentOfParagraph = contentOfParagraph.replace(re,";");
 								
-								var find = "&lt;LesThn&gt;";
+								var find = "&lt;";
 								var re = new RegExp(find, 'g');
-								contentOfParagraph = contentOfParagraph.replace(re,"&lt;");
+								contentOfParagraph = contentOfParagraph.replace(re,"<");
 								
-								var find = "&lt;GreThn&gt;";
+								var find = "&gt;";
 								var re = new RegExp(find, 'g');
-								contentOfParagraph = contentOfParagraph.replace(re,"&gt;");
+								contentOfParagraph = contentOfParagraph.replace(re,">");
+								
+								//alert("After : "+contentOfParagraph)
+								
+									htmlValue += contentOfParagraph;
 								
 								
-							htmlValue += "<p>"+contentOfParagraph+"</p>";
 							}
 						}
 					}
