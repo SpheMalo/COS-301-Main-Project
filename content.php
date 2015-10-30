@@ -219,8 +219,6 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 	<footer id="footer">
 		 <div id="footList">
 		  <span class="span">Figtory Animation</span><br>
-		  <span class="span">Figbook on Facebook</span><br>
-		  <span class="span">Figbook Examples</span><br>
 		  <span class="span">Figbook Tutorial</span><br>
 		  <span class="span">More on us</span><br>
 		 </div>

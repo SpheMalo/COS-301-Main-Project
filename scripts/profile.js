@@ -2,6 +2,14 @@ window.onload = function(){
 	
 $(document).ready(function() {
 	
+	$('#footList span:nth-child(1)').click(function(){
+			location.replace('http://www.figtory.com');       
+	});
+	
+	$('#footList span:nth-child(3)').click(function(){
+			window.location.href = 'tutorials.html';       
+	});
+	
 	$('#figbookLogo').click(function(){
 		window.location.href = 'insideContent.php';	
 	});	

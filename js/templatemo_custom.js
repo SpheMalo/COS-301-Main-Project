@@ -23,7 +23,7 @@ jQuery(document).ready(function($){
 	
 	$(".main_menu a.templatemo_page2").click(function( ){
     $('#menu-container .homepage').fadeOut(1000, function(){
-	window.location.href="content.html";
+	window.location.href="content.php";
         //$('#menu-container .services').fadeIn(1000);
 	    });
 	return false;

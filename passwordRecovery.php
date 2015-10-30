@@ -34,8 +34,6 @@
      <footer id="footer">
    		 <div id="footList">
    		  <span>Figtory Animation</span><br>
-   		  <span>Figbook on Facebook</span><br>
-   		  <span>Figbook Examples</span><br>
    		  <span>Figbook Tutorial</span><br>
    		  <span>More on us</span><br>
    		 </div>

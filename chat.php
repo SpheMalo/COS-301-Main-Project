@@ -21,7 +21,7 @@ $user_colour = array_rand($colours);
 	
 $(document).ready(function(){
 	//create a new WebSocket object.
-	var wsUri = "ws://10.0.0.14:9000/server.php"; 	
+	var wsUri = "ws://10.0.0.4:9000/server.php"; 	
 	websocket = new WebSocket(wsUri); 
 	var myto = "Global";
 	var nameList = Array();

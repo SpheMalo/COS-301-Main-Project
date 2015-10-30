@@ -235,11 +235,12 @@ text-shadow: 1px 2px 10px rgba(0,0,0,1.0);
 /*Video Styling here*/
 #vidContainer
 {
-height:auto;width:80%;border-bottom: 2px groove rgb(230, 230, 230);
+height:auto;width:80%;
 margin-left: auto;margin-right:auto;text-align: center;
-margin-bottom:10px;
+margin-bottom:30px;
 color:black;
 }
+
 #vidPlayer{
    border: 2px groove rgb(253, 253, 253);
    border-radius: 2px;
@@ -248,6 +249,8 @@ color:black;
 -moz-box-shadow: 3px 0px 44px 0px rgba(138,138,138,1);
 box-shadow: 3px 0px 44px 0px rgba(138,138,138,1);
    margin-bottom:20px;
+   display:none;
+   
 }
 #vidPlayer:hover{cursor:pointer;}
 #vidMenu
@@ -264,6 +267,17 @@ box-shadow: 3px 0px 44px 0px rgba(138,138,138,1);
 }
 #vidMenu div:hover{font-size: 20px;cursor:pointer;}
 /*Video Styling here*/
+#vidMenu div:nth-child(3){
+    background-image: url('../images/close1.ico');
+    background-size: 30px 30px;
+    background-position: right;
+    background-repeat: no-repeat;
+    width:30px;
+    float:right;
+}
+#vidMenu div:nth-child(3):hover{
+    background-image: url('../images/close2.ico');
+}
 
 #loginIncorrect{width:80%;margin-left:10%;}
 

@@ -309,7 +309,7 @@ $(document).ready(function () {
                 var styleSheet = "<link rel='stylesheet' href='css/content.css'>  ";
                 generator.document.write('<html><head><title>Editorial Letter</title>' + styleSheet + '</head><body>');
                 generator.document.write('<div id="bookTitleDiv"><h2>From: ' + $(this).attr('from') + '</h2></div>');
-                var content = "<textarea style='margin-left:5%;margin-right:5%;margin-bottom:5%;resize:none;padding:10px;' cols='66' rows='38' >" + $(this).attr('value') + "</textarea>";
+                var content = "<textarea style='margin-left:5%;margin-right:5%;margin-bottom:5%;resize:none;padding:20px;' cols='66' rows='38' >" + $(this).attr('value') + "</textarea>";
                 generator.document.write(content);
                 generator.document.write('</body></html>');
                 generator.document.close();

@@ -13,7 +13,7 @@ html,body
     background: white; /* Old browsers */
     font-family: 'Source Sans Pro', sans-serif;
 	background-size:cover;
-    
+    background:rgb(216, 217, 213);
 }
 
 #lightbox {
@@ -349,7 +349,7 @@ width:130px;
 	height:40px;
 	padding:0px;
 }
-#next-button{width:80px;height:25px;position:relative;}
+#next-button{width:200px;height:35px;position:relative;}
 
 #scriptMenuBar{width:100%;height:60px;
 background: rgba(196,192,196,1);
@@ -604,7 +604,7 @@ margin-top:15px;
 }
 #saveBtn:hover{cursor: pointer;}
 #delBtn{width:80px;height:30px;margin-left:4.17%;
-margin-top:15px;
+margin-top:15px;display:none;
 }
 #delBtn:hover{cursor: pointer;}
 /*Figbook styling END*/

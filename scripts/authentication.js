@@ -95,29 +95,101 @@ window.onresize = function(){
 window.onload = function()
 {
 		
+        
+    $('#figbookLogo').click(function(){
+        window.location.href = "index.php";
+    });
+    
 	$(document).ready(function(){
 		
         //Clicking on the register example link
          $("#vidMenu div:nth-child(1)").click(function(){
                 $("#vidPlayer").fadeOut(600,function(){
-                        $(this).attr('src','videos/reg.mp4');                        
+                        $(this).attr('src','videos/reg.mp4');
+                        $('#vidContainer').css('border-bottom', '2px groove rgb(230, 230, 230)');
                         $("#vidPlayer").fadeIn(600);
-                });  
-               
+                }); 
+        });
+         
+        $("#vidMenu div:nth-child(3)").click(function(){
+                $("#vidPlayer").fadeOut(600);
+                $('#vidContainer').css('border-bottom', 'none');                        
         });
          
         //Clicking on the Login example link
-        $("#vidMenu div:nth-child(2)").click(function(){
-                
+        $("#vidMenu div:nth-child(2)").click(function(){                
                 $("#vidPlayer").fadeOut(600,function(){
                         $(this).attr('src','videos/login.mp4');
+                        $('#vidContainer').css('border-bottom', '2px groove rgb(230, 230, 230)');
                         $("#vidPlayer").fadeIn(600);
                 });              
         });
         
+        //All tutorial videos play here... START
+        $(".panelItem:nth-child(1)").click(function(){                
+                $("#tutPlayer").fadeOut(600,function(){
+                    $('#tutPlayer').attr('src','videos/createBook.mp4');                       
+                    $("#tutPlayer").fadeIn(600);    
+                });
+        });
+        $(".panelItem:nth-child(3)").click(function(){                
+                $("#tutPlayer").fadeOut(600,function(){
+                    $('#tutPlayer').attr('src','videos/addChapter.mp4');                       
+                    $("#tutPlayer").fadeIn(600);    
+                });
+        });
+        $(".panelItem:nth-child(5)").click(function(){                
+                $("#tutPlayer").fadeOut(600,function(){
+                    $('#tutPlayer').attr('src','videos/deleteChapter.mp4');                       
+                    $("#tutPlayer").fadeIn(600);    
+                });
+        });
+        $(".panelItem:nth-child(7)").click(function(){                
+                $("#tutPlayer").fadeOut(600,function(){
+                    $('#tutPlayer').attr('src','videos/comment.mp4');                       
+                    $("#tutPlayer").fadeIn(600);    
+                });
+        });
+        $(".panelItem:nth-child(9)").click(function(){                
+                $("#tutPlayer").fadeOut(600,function(){
+                    $('#tutPlayer').attr('src','videos/shareBook.mp4');                       
+                    $("#tutPlayer").fadeIn(600);    
+                });
+        });
+        $(".panelItem:nth-child(11)").click(function(){                
+                $("#tutPlayer").fadeOut(600,function(){
+                    $('#tutPlayer').attr('src','videos/letters.mp4');                       
+                    $("#tutPlayer").fadeIn(600);    
+                });
+        });
+        $(".panelItem:nth-child(13)").click(function(){                
+                $("#tutPlayer").fadeOut(600,function(){
+                    $('#tutPlayer').attr('src','videos/messaging.mp4');                       
+                    $("#tutPlayer").fadeIn(600);    
+                });
+        });
+        $(".panelItem:nth-child(15)").click(function(){                
+                $("#tutPlayer").fadeOut(600,function(){
+                    $('#tutPlayer').attr('src','videos/export.mp4');                       
+                    $("#tutPlayer").fadeIn(600);    
+                });
+        });
+        //All tutorial videos play here... END
+        
+        $('#footList span:nth-child(1)').click(function(){
+                location.replace('http://www.figtory.com');       
+        });
+        
+        $('#footList span:nth-child(3)').click(function(){
+                window.location.href = 'tutorials.html';       
+        });
+        
         //Play and Pause video when clicking on it
-        $("#vidPlayer").click(function(){
-                
+        $("#vidPlayer").click(function(){                
+              $(this).get(0).paused ? $(this).get(0).play() : $(this).get(0).pause(); 
+        });
+        
+         $("#tutPlayer").click(function(){                
               $(this).get(0).paused ? $(this).get(0).play() : $(this).get(0).pause(); 
         });
 				

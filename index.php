@@ -94,7 +94,7 @@
 		 <div id="container"> <!--Container START-->
 		   
 		   <div id="vidContainer"> <!--Video container START-->
-		   <div id="vidMenu"><div>Registration Example</div><div>Login Example</div></div>
+		   <div id="vidMenu"><div>Registration Example</div><div>Login Example</div><div></div></div>
 			<video id="vidPlayer" controls>
 			  <source src="videos/reg.mp4" type="video/mp4">		
 			Your browser does not support the video tag.
@@ -157,10 +157,8 @@
 		
 		<footer id="footer">
 		 <div id="footList">
-		  <span>Figtory Animation</span><br>
-		  <span>Figbook on Facebook</span><br>
-		  <span>Figbook Examples</span><br>
-		  <span>Figbook Tutorial</span><br>
+		  <span>Figtory Animation</span><br>		  
+		  <span>Figbook Video Tutorials</span><br>
 		  <span>More on us</span><br>
 		 </div>
 		 <div id="footDiv">

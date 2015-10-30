@@ -92,7 +92,7 @@
     <div class="content homepage " id="menu-1"> <!--contains the main menu tabs-->
           	
             	<div class="menuBox templatemo_mainservice ">					
-                	<div class="templatemo_link"><a class="show-2 templatemo_page2 menuItem" href="#">Manuscripts</a></div>
+                	<div class="templatemo_link"><a class="show-2 templatemo_page2 menuItem" href="#">My Books</a></div>
                     <p class="menuInfo">Start writing a manuscript.<br>
 					Add collaborators to your manuscript.<br>
 					Write editorial letters.<br>
@@ -299,8 +299,6 @@
 	<footer id="footer">
 		 <div id="footList">
 		  <span>Figtory Animation</span><br>
-		  <span>Figbook on Facebook</span><br>
-		  <span>Figbook Examples</span><br>
 		  <span>Figbook Tutorial</span><br>
 		  <span>More on us</span><br>
 		 </div>
